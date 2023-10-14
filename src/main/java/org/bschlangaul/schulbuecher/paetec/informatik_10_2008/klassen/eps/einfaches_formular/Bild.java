@@ -9,11 +9,11 @@ import java.util.Arrays;
  * der Klasse Bild stellen einige einfache Dienste zum Darstellen von Dateien des Typs jpg, png,
  * gif, eps... auf dem Zeichenfenster bereit. Die Bilder muessen im Unterordner "bilder" liegen.
  * Dieser muss sich im Verzeichnis befinden, indem auch die Datei
- * org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.fortgeschrittenes_formular.Bild.class liegt. Es
- * muss dort mindestens das Standardbild mit Namen Pirateninsel.jpg vorhanden sein. Versucht der
- * Nutzer eines erfolgreich erzeugten Bildobjekts, einen dateinamen zu setzen, der im Unterordner
- * nicht vorhanden ist, dann gibt es eine kurze freundliche Fehlermeldung im unteren Teil der
- * Konsole, ansonsten wird der Aenderungsversuch jedoch ignoriert.<BR>
+ * org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.fortgeschrittenes_formular.Bild.class
+ * liegt. Es muss dort mindestens das Standardbild mit Namen Pirateninsel.jpg vorhanden sein.
+ * Versucht der Nutzer eines erfolgreich erzeugten Bildobjekts, einen dateinamen zu setzen, der im
+ * Unterordner nicht vorhanden ist, dann gibt es eine kurze freundliche Fehlermeldung im unteren
+ * Teil der Konsole, ansonsten wird der Aenderungsversuch jedoch ignoriert.<BR>
  * <BR>
  * Technische Details werden verborgen. Das einzige Attribut internesBild eignet sich (wie der Name
  * intern andeuten soll) nicht zum Inspizieren.

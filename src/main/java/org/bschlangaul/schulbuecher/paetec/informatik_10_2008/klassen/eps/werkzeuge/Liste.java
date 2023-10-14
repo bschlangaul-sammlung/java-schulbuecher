@@ -43,7 +43,8 @@ public class Liste<Typ> implements Iterable<Typ>
      * Wert des Typ-Parameters ein: String . Wollen Sie eine Liste fuer ganze Zahlen erzeugen, dann
      * geben Sie als Wert des Typ-Parameters ein: Integer . Wollen Sie eine Liste fuer Dreiecke
      * erzeugen, dann geben Sie als Wert des Typ-Parameters ein:
-     * org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.einfache_grafik.Dreieck . u.s.w.
+     * org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.einfache_grafik.Dreieck .
+     * u.s.w.
      */
     public Liste()
     {}

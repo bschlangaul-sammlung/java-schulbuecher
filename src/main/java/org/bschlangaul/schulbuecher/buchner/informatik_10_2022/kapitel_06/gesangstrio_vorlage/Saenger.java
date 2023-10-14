@@ -1,4 +1,5 @@
 package org.bschlangaul.schulbuecher.buchner.informatik_10_2022.kapitel_06.gesangstrio_vorlage;
+
 /**
  * Klasse Saenger für Kapitel 4.6 Aufgabe 1
  *
