@@ -1,0 +1,15 @@
+#BlueJ package filepackage.editor.width=600
+package.editor.height=400
+package.frame.width=800
+package.frame.height=600
+package.editor.x=0
+package.editor.y=0
+project.charset=UTF-8
+target1.height=50
+target1.name=Zweierpotenz
+target1.naviview.expanded=true
+target1.showInterface=false
+target1.type=ClassTarget
+target1.width=110
+target1.x=70
+target1.y=10
