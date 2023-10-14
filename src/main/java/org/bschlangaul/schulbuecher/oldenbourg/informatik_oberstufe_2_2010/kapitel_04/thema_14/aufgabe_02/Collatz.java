@@ -1,4 +1,4 @@
-package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapitel_04.thema_14.aufgabe_02;
+package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_2_2010.kapitel_04.thema_14.aufgabe_02;
 
 /**
  * Klasse zur Realisierung der Collatz-Funktion Oldenbourg Schulbuchverlag Informatik Oberstufe 2

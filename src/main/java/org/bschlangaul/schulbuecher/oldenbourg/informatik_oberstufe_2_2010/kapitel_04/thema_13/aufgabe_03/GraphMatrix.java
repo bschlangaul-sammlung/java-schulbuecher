@@ -1,4 +1,4 @@
-package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapitel_04.thema_13.aufgabe_03;
+package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_2_2010.kapitel_04.thema_13.aufgabe_03;
 
 /**
  * Klasse GRAPH_MATRIX Klasse für einen ungerichteten, gewichteten Graphen Als Datenstruktur wird

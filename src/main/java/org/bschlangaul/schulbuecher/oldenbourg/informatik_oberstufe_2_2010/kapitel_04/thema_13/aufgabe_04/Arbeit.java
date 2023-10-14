@@ -1,4 +1,4 @@
-package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapitel_04.thema_13.aufgabe_04;
+package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_2_2010.kapitel_04.thema_13.aufgabe_04;
 
 /**
  * Baut einen sortierten, balancierten Baum und eine Liste entsprechend der Aufgabe 4 in Kapitel 13
