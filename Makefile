@@ -4,4 +4,7 @@ test:
 format:
 	mvn formatter:format
 
-.PHONY: test
+doc:
+	mvn javadoc:javadoc
+
+.PHONY: test format
