@@ -1,10 +1,9 @@
 package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapitel_03.thema_11.aufgabe_07.teilaufgabe_b.graph_liste;
+
 /**
- * Klasse KANTE
- * für die Darstellungen eines Graphen durch Adjazenzlisten
+ * Klasse KANTE für die Darstellungen eines Graphen durch Adjazenzlisten
  *
- * Schulbuch Informatik 1 Oberstufe
- * Oldenbourg Verlag
+ * Schulbuch Informatik 1 Oberstufe Oldenbourg Verlag
  *
  * @author U.Freiberger
  * @version 1.0
@@ -31,7 +30,7 @@ public class KANTE
     /**
      * Gibt den Bezeichner des Zielknotens der Kante zurück
      *
-     * @return  Bezeichner
+     * @return Bezeichner
      *
      */
     public String ZielknotenGeben()
@@ -43,7 +42,7 @@ public class KANTE
     /**
      * Gibt die Gewichtung der Kante zurück
      *
-     * @return  Gewichtung
+     * @return Gewichtung
      *
      */
     public int GewichtungGeben()
@@ -53,18 +52,18 @@ public class KANTE
 
 
     /**
-     * Gibt die Kanteliste ab dieser Kante in der Konsole aus,
-     * jeweils Bezeichner des Zielknoten und Gewichtung
+     * Gibt die Kanteliste ab dieser Kante in der Konsole aus, jeweils Bezeichner des Zielknoten und
+     * Gewichtung
      *
-     * Ruft, wenn es nicht die letzte Kante in der Adjazenzliste eines Knotens ist,
-     *    deren Nachfolger auf
+     * Ruft, wenn es nicht die letzte Kante in der Adjazenzliste eines Knotens ist, deren Nachfolger
+     * auf
      *
      */
-     public void Ausgeben()
+    public void Ausgeben()
     {
-         System.out.print(ZielknotenGeben()+","+GewichtungGeben()+"; ");
-         if (nachfolger!= null)
-             nachfolger.Ausgeben();
+        System.out.print(ZielknotenGeben() + "," + GewichtungGeben() + "; ");
+        if (nachfolger != null)
+            nachfolger.Ausgeben();
     }
 
 

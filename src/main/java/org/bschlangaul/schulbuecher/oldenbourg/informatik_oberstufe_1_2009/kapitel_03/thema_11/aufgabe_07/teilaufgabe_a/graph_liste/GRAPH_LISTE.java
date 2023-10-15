@@ -1,11 +1,10 @@
 package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapitel_03.thema_11.aufgabe_07.teilaufgabe_a.graph_liste;
+
 /**
- * Klasse GRAPH_LISTE
- * Klasse für einen ungerichteten, gewichteten Graphen
- * Als Datenstruktur werden Adjazenzlisten verwendet
+ * Klasse GRAPH_LISTE Klasse für einen ungerichteten, gewichteten Graphen Als Datenstruktur werden
+ * Adjazenzlisten verwendet
  *
- * Schulbuch Informatik 1 Oberstufe
- * Oldenbourg Verlag
+ * Schulbuch Informatik 1 Oberstufe Oldenbourg Verlag
  *
  * @author U.Freiberger
  * @version 1.0
@@ -34,7 +33,7 @@ public class GRAPH_LISTE
     /**
      * Einfügen eines neuen Knoten in den Graphen
      *
-     * @param   bezeichner   Bezeichner des neuen Knotens, der dem Graphen hinzugefügt wird.
+     * @param bezeichner Bezeichner des neuen Knotens, der dem Graphen hinzugefügt wird.
      *
      */
     public void KnotenEinfuegen(String bezeichner)
@@ -49,32 +48,32 @@ public class GRAPH_LISTE
     }
 
     /**
-     * Einfügen einer Kante in den Graphen
-     * Eine Kante ist durch einen Anfangsknoten und einen Endknoten festgelegt und hat eine Gewichtung
-     * Da der Graph ungerichtet ist muss die Kante für beide "Richtungen" eingetragen werden.
+     * Einfügen einer Kante in den Graphen Eine Kante ist durch einen Anfangsknoten und einen
+     * Endknoten festgelegt und hat eine Gewichtung Da der Graph ungerichtet ist muss die Kante für
+     * beide "Richtungen" eingetragen werden.
      *
-     * @param   von         Bezeichner des Anfangsknotens
-     * @param   nach        Bezeichner des Endknotens
-     * @param   gewichtung  Gewichtung der Kante als Ganzzahl
+     * @param von Bezeichner des Anfangsknotens
+     * @param nach Bezeichner des Endknotens
+     * @param gewichtung Gewichtung der Kante als Ganzzahl
      *
      */
     public void KanteEinfuegen(String von, String nach, int gewichtung)
     {
         KNOTEN vonKnoten, nachKnoten;
 
-        vonKnoten  = anfang.Suchen(von);
+        vonKnoten = anfang.Suchen(von);
         nachKnoten = anfang.Suchen(nach);
-        if ((vonKnoten!=null) && (nachKnoten!=null) && (vonKnoten!=nachKnoten))
+        if ((vonKnoten != null) && (nachKnoten != null) && (vonKnoten != nachKnoten))
         {
             // da ungerichteter Graph, in beiden Kantenlisten eintragen
-            vonKnoten.KanteEinfuegen(nachKnoten,gewichtung);
-            nachKnoten.KanteEinfuegen(vonKnoten,gewichtung);
+            vonKnoten.KanteEinfuegen(nachKnoten, gewichtung);
+            nachKnoten.KanteEinfuegen(vonKnoten, gewichtung);
         }
     }
 
-     /**
-     * Gibt die Adjazenzlisten des Graphen in der Konsole aus
-     * für jeden Knoten und seine Kantenadjazenzliste eine Zeile
+    /**
+     * Gibt die Adjazenzlisten des Graphen in der Konsole aus für jeden Knoten und seine
+     * Kantenadjazenzliste eine Zeile
      *
      */
     public void Ausgeben()
@@ -86,7 +85,7 @@ public class GRAPH_LISTE
     /**
      * Gibt die Anzahl der Knoten des Graphen
      *
-     * @return  Anzahl der Knoten
+     * @return Anzahl der Knoten
      *
      */
     int KnotenAnzahlGeben()

@@ -1,10 +1,9 @@
 package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapitel_03.thema_13.aufgabe_05.graph_liste;
+
 /**
- * Klasse KNOTEN
- * für die Darstellungen eines Graphen durch Adjazenzlisten
+ * Klasse KNOTEN für die Darstellungen eines Graphen durch Adjazenzlisten
  *
- * Schulbuch Informatik 1 Oberstufe
- * Oldenbourg Verlag
+ * Schulbuch Informatik 1 Oberstufe Oldenbourg Verlag
  *
  * @author U.Freiberger
  * @version 1.0
@@ -24,8 +23,8 @@ public class KNOTEN
     /**
      * Konstruktor für Objekte der Klasse KNOTEN
      *
-     * @param   neuerWert           Bezeichnung des neuen Knotenobjekts
-     * @param   neuerNachfolger     Referenz auf den Nachfolgeknoten
+     * @param neuerWert Bezeichnung des neuen Knotenobjekts
+     * @param neuerNachfolger Referenz auf den Nachfolgeknoten
      *
      */
     public KNOTEN(String neuerWert, KNOTEN neuerNachfolger)
@@ -41,7 +40,7 @@ public class KNOTEN
     /**
      * Gibt den Bezeichner des Knotenobjekts zurück
      *
-     * @return  Bezeichner
+     * @return Bezeichner
      *
      */
     public String BezeichnungGeben()
@@ -52,7 +51,7 @@ public class KNOTEN
     /**
      * Gibt eine Referenz auf das erste Kantenobjekt des Knotens
      *
-     * @return  Referenz auf Kantenobjekt
+     * @return Referenz auf Kantenobjekt
      *
      */
     public KANTE AnfangGeben()
@@ -63,7 +62,7 @@ public class KNOTEN
     /**
      * Gibt eine Referenz auf das nachfolgende Knotenobjekt
      *
-     * @return  Referenz auf Knotenobjekt
+     * @return Referenz auf Knotenobjekt
      *
      */
     public KNOTEN NachfolgerGeben()
@@ -74,7 +73,7 @@ public class KNOTEN
     /**
      * Setzt den Status des Attributs besucht
      *
-     * @param   neuerWert   neuer Wert für besucht
+     * @param neuerWert neuer Wert für besucht
      *
      */
     public void BesuchtSetzen(boolean neuerWert)
@@ -83,10 +82,10 @@ public class KNOTEN
     }
 
     /**
-     * Setzt den Status des Attributs besucht
-     * für diesen und alle nachfolgenden Knoten in der Knotenliste
+     * Setzt den Status des Attributs besucht für diesen und alle nachfolgenden Knoten in der
+     * Knotenliste
      *
-     * @param   neuerWert   neuer Wert für besucht
+     * @param neuerWert neuer Wert für besucht
      *
      */
     public void AlleBesuchtSetzen(boolean neuerWert)
@@ -99,7 +98,7 @@ public class KNOTEN
     /**
      * Gibt den Status des Attributs besucht des Knotenobjekts zurück
      *
-     * @return  Bezeichner
+     * @return Bezeichner
      *
      */
     public boolean BesuchtGeben()
@@ -110,7 +109,7 @@ public class KNOTEN
     /**
      * Setzt den Status des Attributs distanz
      *
-     * @param   neuerWert   neuer Wert für distanz
+     * @param neuerWert neuer Wert für distanz
      *
      */
     public void DistanzSetzen(int neuerWert)
@@ -119,10 +118,10 @@ public class KNOTEN
     }
 
     /**
-     * Setzt den Status des Attributs distanz
-     * für diesen und alle nachfolgenden Knoten in der Knotenliste
+     * Setzt den Status des Attributs distanz für diesen und alle nachfolgenden Knoten in der
+     * Knotenliste
      *
-     * @param   neuerWert   neuer Wert für distanz
+     * @param neuerWert neuer Wert für distanz
      *
      */
     public void AlleDistanzSetzen(int neuerWert)
@@ -135,7 +134,7 @@ public class KNOTEN
     /**
      * Gibt den Status des Attributs distanz des Knotenobjekts zurück
      *
-     * @return  Bezeichner
+     * @return Bezeichner
      *
      */
     public int DistanzGeben()
@@ -146,7 +145,7 @@ public class KNOTEN
     /**
      * Setzt den Status des Attributs kommtVon
      *
-     * @param   neuerWert   neuer Wert für kommtVon
+     * @param neuerWert neuer Wert für kommtVon
      *
      */
     public void KommtVonSetzen(KNOTEN neuerWert)
@@ -157,7 +156,7 @@ public class KNOTEN
     /**
      * Gibt den Status des Attributs kommtVon des Knotenobjekts zurück
      *
-     * @return  Referenz auf Knotenobjekt
+     * @return Referenz auf Knotenobjekt
      *
      */
     public KNOTEN KommtVonGeben()
@@ -166,31 +165,28 @@ public class KNOTEN
     }
 
     /**
-     * Sucht in der Knotenliste nach einem Knoten mit dem übergebenen Bezeichner;
-     * die Suche beginnt ab dem aufgerufenen Knoten;
-     * ruft rekursiv das Suchen des Nachfolgers auf
+     * Sucht in der Knotenliste nach einem Knoten mit dem übergebenen Bezeichner; die Suche beginnt
+     * ab dem aufgerufenen Knoten; ruft rekursiv das Suchen des Nachfolgers auf
      *
-     * @return  Referenz auf den gefundenen Knoten, null wenn nicht gefunden
+     * @return Referenz auf den gefundenen Knoten, null wenn nicht gefunden
      *
      */
     public KNOTEN Suchen(String suchBezeichnung)
     {
         if (bezeichnung.compareTo(suchBezeichnung) == 0)
             return this;
+        else if (nachfolger == null)
+            return null;
         else
-            if (nachfolger == null)
-                return null;
-            else
-                return nachfolger.Suchen(suchBezeichnung);
+            return nachfolger.Suchen(suchBezeichnung);
     }
 
     /**
-     * Einfügen einer Kante in die Adjazenzliste des Knotens
-     * Eine Kante ist durch einen Anfangsknoten (=dieser Knoten) und einen Endknoten festgelegt
-     * und hat eine Gewichtung.
+     * Einfügen einer Kante in die Adjazenzliste des Knotens Eine Kante ist durch einen
+     * Anfangsknoten (=dieser Knoten) und einen Endknoten festgelegt und hat eine Gewichtung.
      *
-     * @param   nachKnoten  Referenz auf den Endknoten der Kante
-     * @param   gewichtung  Gewichtung der Kante als Ganzzahl
+     * @param nachKnoten Referenz auf den Endknoten der Kante
+     * @param gewichtung Gewichtung der Kante als Ganzzahl
      *
      */
     public void KanteEinfuegen(KNOTEN nachKnoten, int gewichtung)
@@ -198,24 +194,23 @@ public class KNOTEN
         KANTE alterAnfang;
 
         alterAnfang = anfang;
-        anfang = new KANTE(nachKnoten,alterAnfang,gewichtung);
+        anfang = new KANTE(nachKnoten, alterAnfang, gewichtung);
     }
 
     /**
-     * Gibt den Bezeichner des Knotenobjekts
-     *    zusammen mit der Adjazenzliste, die zu diesem Knoten gehört
-     *    in der Konsole aus
-     * ruft, sofern nicht letzter Knoten in der Liste, die Ausgabe des Nachfolgers auf
+     * Gibt den Bezeichner des Knotenobjekts zusammen mit der Adjazenzliste, die zu diesem Knoten
+     * gehört in der Konsole aus ruft, sofern nicht letzter Knoten in der Liste, die Ausgabe des
+     * Nachfolgers auf
      *
      */
-     public void Ausgeben()
-     {
-         System.out.print(BezeichnungGeben()+": ");
-         if (anfang!= null)
-             anfang.Ausgeben();
-         System.out.println();
-         if (nachfolger!= null)
-             nachfolger.Ausgeben();
-     }
+    public void Ausgeben()
+    {
+        System.out.print(BezeichnungGeben() + ": ");
+        if (anfang != null)
+            anfang.Ausgeben();
+        System.out.println();
+        if (nachfolger != null)
+            nachfolger.Ausgeben();
+    }
 
 }

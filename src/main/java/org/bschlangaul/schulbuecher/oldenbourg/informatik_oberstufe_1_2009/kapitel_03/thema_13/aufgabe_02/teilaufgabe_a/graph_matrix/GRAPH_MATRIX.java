@@ -1,4 +1,5 @@
 package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapitel_03.thema_13.aufgabe_02.teilaufgabe_a.graph_matrix;
+
 /**
  * Klasse GRAPH_MATRIX Klasse für einen ungerichteten, gewichteten Graphen Als Datenstruktur wird
  * eine Adjazenzmatrix verwendet

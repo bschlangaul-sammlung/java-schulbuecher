@@ -1,12 +1,10 @@
 package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapitel_03.thema_13.aufgabe_05.graph_liste;
 
 /**
- * Klasse GRAPH_LISTE
- * Klasse für einen ungerichteten, gewichteten Graphen
- * Als Datenstruktur werden Adjazenzlisten verwendet
+ * Klasse GRAPH_LISTE Klasse für einen ungerichteten, gewichteten Graphen Als Datenstruktur werden
+ * Adjazenzlisten verwendet
  *
- * Schulbuch Informatik 1 Oberstufe
- * Oldenbourg Verlag
+ * Schulbuch Informatik 1 Oberstufe Oldenbourg Verlag
  *
  * @author U.Freiberger
  * @version 1.0
@@ -35,7 +33,7 @@ public class GRAPH_LISTE
     /**
      * Einfügen eines neuen Knoten in den Graphen
      *
-     * @param   bezeichner   Bezeichner des neuen Knotens, der dem Graphen hinzugefügt wird.
+     * @param bezeichner Bezeichner des neuen Knotens, der dem Graphen hinzugefügt wird.
      *
      */
     public void KnotenEinfuegen(String bezeichner)
@@ -50,32 +48,32 @@ public class GRAPH_LISTE
     }
 
     /**
-     * Einfügen einer Kante in den Graphen
-     * Eine Kante ist durch einen Anfangsknoten und einen Endknoten festgelegt und hat eine Gewichtung
-     * Da der Graph ungerichtet ist muss die Kante für beide "Richtungen" eingetragen werden.
+     * Einfügen einer Kante in den Graphen Eine Kante ist durch einen Anfangsknoten und einen
+     * Endknoten festgelegt und hat eine Gewichtung Da der Graph ungerichtet ist muss die Kante für
+     * beide "Richtungen" eingetragen werden.
      *
-     * @param   von         Bezeichner des Anfangsknotens
-     * @param   nach        Bezeichner des Endknotens
-     * @param   gewichtung  Gewichtung der Kante als Ganzzahl
+     * @param von Bezeichner des Anfangsknotens
+     * @param nach Bezeichner des Endknotens
+     * @param gewichtung Gewichtung der Kante als Ganzzahl
      *
      */
     public void KanteEinfuegen(String von, String nach, int gewichtung)
     {
         KNOTEN vonKnoten, nachKnoten;
 
-        vonKnoten  = anfang.Suchen(von);
+        vonKnoten = anfang.Suchen(von);
         nachKnoten = anfang.Suchen(nach);
-        if ((vonKnoten!=null) && (nachKnoten!=null) && (vonKnoten!=nachKnoten))
+        if ((vonKnoten != null) && (nachKnoten != null) && (vonKnoten != nachKnoten))
         {
             // da ungerichteter Graph, in beiden Kantenlisten eintragen
-            vonKnoten.KanteEinfuegen(nachKnoten,gewichtung);
-            nachKnoten.KanteEinfuegen(vonKnoten,gewichtung);
+            vonKnoten.KanteEinfuegen(nachKnoten, gewichtung);
+            nachKnoten.KanteEinfuegen(vonKnoten, gewichtung);
         }
     }
 
-     /**
-     * Gibt die Adjazenzlisten des Graphen in der Konsole aus
-     * für jeden Knoten und seine Kantenadjazenzliste eine Zeile
+    /**
+     * Gibt die Adjazenzlisten des Graphen in der Konsole aus für jeden Knoten und seine
+     * Kantenadjazenzliste eine Zeile
      *
      */
     public void Ausgeben()
@@ -87,7 +85,7 @@ public class GRAPH_LISTE
     /**
      * Gibt die Anzahl der Knoten des Graphen
      *
-     * @return  Anzahl der Knoten
+     * @return Anzahl der Knoten
      *
      */
     int KnotenAnzahlGeben()
@@ -96,48 +94,46 @@ public class GRAPH_LISTE
     }
 
     /**
-    * Besucht einen Knoten
-    * und besucht dann alle von diesem Knoten ausgehenden Knoten
-    * sofern diese noch nicht besucht wurden.
-    *
-    * @param   knoten    Referenz auf den zu besuchenden Knoten
-    *
-    */
+     * Besucht einen Knoten und besucht dann alle von diesem Knoten ausgehenden Knoten sofern diese
+     * noch nicht besucht wurden.
+     *
+     * @param knoten Referenz auf den zu besuchenden Knoten
+     *
+     */
     private void Besuchen(KNOTEN knoten)
     {
         KANTE kante;
         KNOTEN abzweig;
 
-       // aktiven Knoten auf besucht setzen und in der Konsole ausgeben
-       knoten.BesuchtSetzen(true);
-       System.out.print("besucht " + knoten.BezeichnungGeben()+"; ");
-       // Alle Kanten des aktiven Knotens durchlaufen
-       kante = knoten.AnfangGeben();
-       while (kante != null)
-       {
-           abzweig = kante.ZielGeben();
-           // es gibt eine Kante und deren Zeilknoten ist noch nicht besucht
-           if (!abzweig.BesuchtGeben())
-           {
-               Besuchen(abzweig);
-               System.out.print("zurück nach " + knoten.BezeichnungGeben()+"; ");
-           }
-           kante = kante.NachfolgerGeben();
-       }
+        // aktiven Knoten auf besucht setzen und in der Konsole ausgeben
+        knoten.BesuchtSetzen(true);
+        System.out.print("besucht " + knoten.BezeichnungGeben() + "; ");
+        // Alle Kanten des aktiven Knotens durchlaufen
+        kante = knoten.AnfangGeben();
+        while (kante != null)
+        {
+            abzweig = kante.ZielGeben();
+            // es gibt eine Kante und deren Zeilknoten ist noch nicht besucht
+            if (!abzweig.BesuchtGeben())
+            {
+                Besuchen(abzweig);
+                System.out.print("zurück nach " + knoten.BezeichnungGeben() + "; ");
+            }
+            kante = kante.NachfolgerGeben();
+        }
 
-       // der aktive Knoten mit der knotenNummer ist fertig bearbeitet
-       System.out.println("fertig mit " + knoten.BezeichnungGeben()+"; ");
+        // der aktive Knoten mit der knotenNummer ist fertig bearbeitet
+        System.out.println("fertig mit " + knoten.BezeichnungGeben() + "; ");
     }
 
-     /**
-     * Eigentliche Tiefensuche
-     * ruft die rekursive Methode Besuchen mit dem Startknoten auf
+    /**
+     * Eigentliche Tiefensuche ruft die rekursive Methode Besuchen mit dem Startknoten auf
      *
-     * @param   startKnoten    Bezeichner des Startknotens für die Tiefensuche
+     * @param startKnoten Bezeichner des Startknotens für die Tiefensuche
      *
      */
-     public void TiefenSuche(String startKnoten)
-     {
+    public void TiefenSuche(String startKnoten)
+    {
         KNOTEN start;
 
         if (anfang != null)
@@ -150,25 +146,23 @@ public class GRAPH_LISTE
                 Besuchen(start);
             }
         }
-     }
+    }
 
-     /**
-     * Besucht einen Knoten
-     * und läuft alle Abzweigungen ab, die von diesem Knoten ausgehen
-     * sofern deren Zielknoten noch nicht besucht wurde.
-     * Bricht ab, wenn der Zielknoten erreicht wurde.
+    /**
+     * Besucht einen Knoten und läuft alle Abzweigungen ab, die von diesem Knoten ausgehen sofern
+     * deren Zielknoten noch nicht besucht wurde. Bricht ab, wenn der Zielknoten erreicht wurde.
      *
-     * @param   knoten        Referenz des zu besuchenden Knotens
-     * @param   zielKnoten    Referenz des Zielknoten, der erreicht werden soll
-     * @param   pfad          bisher abgelaufener Pfad in der Notation kn1/kn2/kn3 ...
-     * @param   int           Gewichtung des bisher abgelaufenen Pfads
+     * @param knoten Referenz des zu besuchenden Knotens
+     * @param zielKnoten Referenz des Zielknoten, der erreicht werden soll
+     * @param pfad bisher abgelaufener Pfad in der Notation kn1/kn2/kn3 ...
+     * @param int Gewichtung des bisher abgelaufenen Pfads
      *
      */
-     private void Ablaufen(KNOTEN knoten, KNOTEN zielKnoten, String pfad, int laenge)
-     {
-        int    neueLaenge;
+    private void Ablaufen(KNOTEN knoten, KNOTEN zielKnoten, String pfad, int laenge)
+    {
+        int neueLaenge;
         String neuerPfad;
-        KANTE  kante;
+        KANTE kante;
         KNOTEN abzweig;
 
         // aktiven Knoten auf besucht setzen
@@ -202,24 +196,24 @@ public class GRAPH_LISTE
 
         // Knoten im Gegensatz zur Tiefensuche wieder freigeben
         knoten.BesuchtSetzen(false);
-     }
+    }
 
-     /**
-     * Eigentliche Wegesuche
-     * ruft die rekursive Methode Ablaufen mit dem Startknoten und Zielknoten auf
+    /**
+     * Eigentliche Wegesuche ruft die rekursive Methode Ablaufen mit dem Startknoten und Zielknoten
+     * auf
      *
-     * @param   startKnoten    Bezeichner des Startknotens für die Wegesuche
-     * @param   zielKnoten     Bezeichner des Zielknotens für die Wegesuche
+     * @param startKnoten Bezeichner des Startknotens für die Wegesuche
+     * @param zielKnoten Bezeichner des Zielknotens für die Wegesuche
      *
      */
-     public void WegeSuchen(String startKnoten, String zielKnoten)
-     {
+    public void WegeSuchen(String startKnoten, String zielKnoten)
+    {
         KNOTEN start, ziel;
 
         if (anfang != null)
         {
             start = anfang.Suchen(startKnoten);
-            ziel  = anfang.Suchen(zielKnoten);
+            ziel = anfang.Suchen(zielKnoten);
 
             if ((start != null) && (ziel != null) && (start != ziel))
             {
@@ -227,13 +221,13 @@ public class GRAPH_LISTE
                 Ablaufen(start, ziel, start.BezeichnungGeben(), 0);
             }
         }
-     }
+    }
 
-     /**
-     * Sucht nach dem unbesuchten Knoten mit derzeit minimalsten Distanzwert
-     * wird von KuerzesterWeg() aufgerufen
+    /**
+     * Sucht nach dem unbesuchten Knoten mit derzeit minimalsten Distanzwert wird von
+     * KuerzesterWeg() aufgerufen
      *
-     * @return  Referenz auf den unbesuchten Knotens mit dem kleinsten Distanzwert
+     * @return Referenz auf den unbesuchten Knotens mit dem kleinsten Distanzwert
      *
      */
     private KNOTEN MinKnoten()
@@ -255,16 +249,16 @@ public class GRAPH_LISTE
         return minKnoten;
     }
 
-     /**
-     * Suche nach dem kürzesten Weg zwischen Startknoten und Zielknoten
-     * nach dem Algorithmus von Dijkstra
+    /**
+     * Suche nach dem kürzesten Weg zwischen Startknoten und Zielknoten nach dem Algorithmus von
+     * Dijkstra
      *
-     * @param   start    Referenz des Startknotens für die Suche des kürzesten Wegs
-     * @param   ziel     Referenz des Zielknotens für die Suche des kürzesten Wegs
+     * @param start Referenz des Startknotens für die Suche des kürzesten Wegs
+     * @param ziel Referenz des Zielknotens für die Suche des kürzesten Wegs
      *
      */
-     public void KuerzesterWeg(String startKnoten, String zielKnoten)
-     {
+    public void KuerzesterWeg(String startKnoten, String zielKnoten)
+    {
         KNOTEN start, ziel, knoten, abzweig;
         KANTE kante;
         int neueDistanz;
@@ -273,7 +267,7 @@ public class GRAPH_LISTE
         if (anfang != null)
         {
             start = anfang.Suchen(startKnoten);
-            ziel  = anfang.Suchen(zielKnoten);
+            ziel = anfang.Suchen(zielKnoten);
 
             // Vorbereitung
             anfang.AlleBesuchtSetzen(false);
@@ -283,7 +277,7 @@ public class GRAPH_LISTE
             start.KommtVonSetzen(start);
 
             // wiederhole bis alle Knoten besucht sind
-            for (int i=0; i<anzahlKnoten; i++)
+            for (int i = 0; i < anzahlKnoten; i++)
             {
                 // der unbesuchte Knoten mit der minimalen Distanz wird zum aktiven Knoten
                 knoten = MinKnoten();
