@@ -1,0 +1,22 @@
+-classpath
+'/home/jf/.m2/repository/greenfoot/greenfoot/3.7.0/greenfoot-3.7.0.jar:/home/jf/.m2/repository/ea/edu/AlphaEngine/4.0.0/AlphaEngine-4.0.0.jar:/home/jf/.m2/repository/javazoom/jlayer/1.0.1/jlayer-1.0.1.jar:/home/jf/.m2/repository/javakarol/javakarol/3.0/javakarol-3.0.jar:/home/jf/.m2/repository/junit/junit/4.13/junit-4.13.jar:/home/jf/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar'
+-encoding
+'UTF-8'
+-private
+-sourcepath
+'/home/jf/repos/code/java-schulbuecher/src/main/java'
+-author
+-bottom
+'Copyright &#169; 2023. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'/home/jf/repos/code/java-schulbuecher/docs'
+-docencoding
+'UTF-8'
+-doctitle
+'java-schulbuecher 0.1.0 API'
+-use
+-version
+-windowtitle
+'java-schulbuecher 0.1.0 API'

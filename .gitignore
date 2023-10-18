@@ -35,8 +35,6 @@ target/
 
 *.ods
 .DS_Store
-*.html
+
 *.bat
-*.css
 *.gif
-docs/
