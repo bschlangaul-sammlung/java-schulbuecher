@@ -7,4 +7,7 @@ format:
 doc:
 	mvn javadoc:javadoc
 
+build:
+	mvn compile
+
 .PHONY: test format
