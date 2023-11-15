@@ -8,6 +8,7 @@ doc:
 	mvn javadoc:javadoc
 
 build:
+	mvn clean
 	mvn compile
 
 .PHONY: test format
