@@ -1,3 +1,4 @@
+package org.bschlangaul.schulbuecher.isb.handreichung_11.kapitel_03.anwendungsorientierte_aufgaben.it_kompetent.ueberblick_durch_sortierung;
 class ABSCHLUSS extends LISTENELEMENT
 {
 
@@ -18,7 +19,7 @@ class ABSCHLUSS extends LISTENELEMENT
     {
         return null;
     }
-    
+
 
     // weitere Methoden
     DATENELEMENT EndeGeben()
@@ -29,18 +30,18 @@ class ABSCHLUSS extends LISTENELEMENT
     LISTENELEMENT EndeEinfuegen(DATENELEMENT datenObjekt)
     {
             return new KNOTEN(this, datenObjekt);
-    }           
+    }
 
     LISTENELEMENT SortiertEinfuegen(DATENELEMENT datenObjekt)
     {
             return new KNOTEN(this, datenObjekt);
-    }           
+    }
 
     boolean Suchen(DATENELEMENT datenObjekt)
     {
         return false;
     }
-       
+
     LISTENELEMENT Entfernen(DATENELEMENT datenObjekt)
     {
         return this;
@@ -54,11 +55,11 @@ class ABSCHLUSS extends LISTENELEMENT
     void AlleAusgeben()
     {
     }
-    
-    
+
+
      // Erweiterung der Klasse um notwendige Suchmethoden
     DATENELEMENT DatenAbHierSuchen(DATENELEMENT vergleichsdaten) {
         return null;
-    }  
+    }
 
 }

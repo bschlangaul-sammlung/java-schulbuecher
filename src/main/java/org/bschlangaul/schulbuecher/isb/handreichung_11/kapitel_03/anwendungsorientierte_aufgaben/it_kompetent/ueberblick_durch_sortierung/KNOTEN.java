@@ -1,3 +1,4 @@
+package org.bschlangaul.schulbuecher.isb.handreichung_11.kapitel_03.anwendungsorientierte_aufgaben.it_kompetent.ueberblick_durch_sortierung;
 class KNOTEN extends LISTENELEMENT
 {
     private LISTENELEMENT nachfolger;
@@ -56,7 +57,7 @@ class KNOTEN extends LISTENELEMENT
     {
             nachfolger = nachfolger.EndeEinfuegen(datenObjekt);
             return this;
-    }           
+    }
 
     LISTENELEMENT SortiertEinfuegen(DATENELEMENT datenObjekt)
     {
@@ -69,7 +70,7 @@ class KNOTEN extends LISTENELEMENT
         // meine Daten sind größer oder gleich
         else
             return new KNOTEN(this, datenObjekt);
-    }           
+    }
 
     boolean Suchen(DATENELEMENT datenObjekt)
     {
@@ -78,7 +79,7 @@ class KNOTEN extends LISTENELEMENT
         else
             return nachfolger.Suchen(datenObjekt);
     }
-       
+
     LISTENELEMENT Entfernen(DATENELEMENT datenObjekt)
     {
         if (daten.Vergleichen(datenObjekt) == 0)
@@ -89,12 +90,12 @@ class KNOTEN extends LISTENELEMENT
                 return this;
             }
     }
-       
+
     int AnzahlAbHierGeben()
     {
             return nachfolger.AnzahlAbHierGeben() + 1;
     }
-    
+
     void AlleAusgeben()
     {
         daten.Ausgeben();
@@ -107,6 +108,6 @@ class KNOTEN extends LISTENELEMENT
             return daten;
         } else {
             return nachfolger.DatenAbHierSuchen(vergleichsdaten);
-        }    
-    }  
+        }
+    }
 }

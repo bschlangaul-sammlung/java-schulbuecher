@@ -1,3 +1,4 @@
+package org.bschlangaul.schulbuecher.isb.handreichung_11.kapitel_03.anwendungsorientierte_aufgaben.it_kompetent.ueberblick_durch_sortierung;
 class LISTE
 {
     private LISTENELEMENT anfang;
@@ -27,7 +28,7 @@ class LISTE
 
         entfernt = anfang.DatenGeben();
         anfang = anfang.NachfolgerGeben();
-        
+
         return entfernt;
     }
 
@@ -45,12 +46,12 @@ class LISTE
     {
         return anfang.Suchen(datenObjekt);
     }
-    
+
     void Entfernen(DATENELEMENT datenObjekt)
     {
         anfang = anfang.Entfernen(datenObjekt);
     }
-    
+
     int AnzahlGeben()
     {
         return anfang.AnzahlAbHierGeben();
@@ -60,12 +61,12 @@ class LISTE
     {
         anfang.AlleAusgeben();
     }
-    
+
     // Erweiterung der Klasse um notwendige Suchmethoden
     DATENELEMENT DatenSuchen(DATENELEMENT vergleichsdaten) {
         return anfang.DatenAbHierSuchen(vergleichsdaten);
-    }    
-    
-     
+    }
+
+
 
 }

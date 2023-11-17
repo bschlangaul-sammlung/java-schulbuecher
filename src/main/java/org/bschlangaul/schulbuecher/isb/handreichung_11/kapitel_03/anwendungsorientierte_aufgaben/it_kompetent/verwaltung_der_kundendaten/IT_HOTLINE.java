@@ -1,3 +1,4 @@
+package org.bschlangaul.schulbuecher.isb.handreichung_11.kapitel_03.anwendungsorientierte_aufgaben.it_kompetent.verwaltung_der_kundendaten;
 class IT_HOTLINE
 {
     // Referenzattribut
@@ -91,8 +92,5 @@ class IT_HOTLINE
         KUNDE k = (KUNDE) kundendaten.DatenSuchen(vergleichskunde);
         k.SchulnameAendern(neuerSchulname);
     }
-
-
-
 
 }

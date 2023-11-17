@@ -1,3 +1,4 @@
+package org.bschlangaul.schulbuecher.isb.handreichung_11.kapitel_03.anwendungsorientierte_aufgaben.it_kompetent.verwaltung_der_kundendaten;
 class KUNDE extends DATENELEMENT {
     // Attribute
     private int kundennummer;
