@@ -1,4 +1,5 @@
 package org.bschlangaul.schulbuecher.isb.handreichung_11.kapitel_03.anwendungsorientierte_aufgaben.rangierbahnhof.handreichung;
+
 class KNOTEN extends LISTENELEMENT
 {
     private LISTENELEMENT nachfolger;
@@ -53,12 +54,14 @@ class KNOTEN extends LISTENELEMENT
             return wert;
     }
 
-    LISTENELEMENT EndeEinfuegen(DATENELEMENT datenObjekt) {
-            nachfolger = nachfolger.EndeEinfuegen(datenObjekt);
-            return this;
+    LISTENELEMENT EndeEinfuegen(DATENELEMENT datenObjekt)
+    {
+        nachfolger = nachfolger.EndeEinfuegen(datenObjekt);
+        return this;
     }
 
-    boolean Suchen(DATENELEMENT datenObjekt) {
+    boolean Suchen(DATENELEMENT datenObjekt)
+    {
         if (daten.Vergleichen(datenObjekt))
             return true;
         else
@@ -70,14 +73,15 @@ class KNOTEN extends LISTENELEMENT
         if (daten.Vergleichen(datenObjekt))
             return nachfolger;
         else
-            {
-                nachfolger = nachfolger.Entfernen(datenObjekt);
-                return this;
-            }
+        {
+            nachfolger = nachfolger.Entfernen(datenObjekt);
+            return this;
+        }
     }
 
-    int AnzahlGeben() {
-            return nachfolger.AnzahlGeben() + 1;
+    int AnzahlGeben()
+    {
+        return nachfolger.AnzahlGeben() + 1;
     }
 
     void AlleAusgeben()
@@ -87,15 +91,18 @@ class KNOTEN extends LISTENELEMENT
     }
 
     // Aufgabe 1ciii
-    int AnzahlMitEigenschaftAbHierGeben(DATENELEMENT datenObjekt) {
-        if (daten.EigenschaftVergleichen(datenObjekt)) {
-          return nachfolger.AnzahlMitEigenschaftAbHierGeben(datenObjekt) + 1;
-        } else {
-          return nachfolger.AnzahlMitEigenschaftAbHierGeben(datenObjekt);
+    int AnzahlMitEigenschaftAbHierGeben(DATENELEMENT datenObjekt)
+    {
+        if (daten.EigenschaftVergleichen(datenObjekt))
+        {
+            return nachfolger.AnzahlMitEigenschaftAbHierGeben(datenObjekt) + 1;
+        }
+        else
+        {
+            return nachfolger.AnzahlMitEigenschaftAbHierGeben(datenObjekt);
 
         }
     }
-
 
 
 

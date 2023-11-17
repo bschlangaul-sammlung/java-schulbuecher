@@ -1,32 +1,37 @@
 package org.bschlangaul.schulbuecher.isb.handreichung_11.kapitel_03.anwendungsorientierte_aufgaben.rangierbahnhof.handreichung;
-class LISTE {
+
+class LISTE
+{
     private LISTENELEMENT anfang;
 
     // Konstruktor
-     LISTE()
-	{
-		anfang = new ABSCHLUSS();
-	}
+    LISTE()
+    {
+        anfang = new ABSCHLUSS();
+    }
 
 
     // weitere Methoden
-    boolean IstLeer() {
+    boolean IstLeer()
+    {
         return (anfang.AnzahlGeben() == 0);
     }
 
-    void EndeEinfuegen(DATENELEMENT neueDaten) {
+    void EndeEinfuegen(DATENELEMENT neueDaten)
+    {
         if (!IstLeer())
             anfang.EndeEinfuegen(neueDaten);
         else
             AnfangEinfuegen(neueDaten);
     }
 
-    void AnfangEinfuegen(DATENELEMENT neueDaten) {
+    void AnfangEinfuegen(DATENELEMENT neueDaten)
+    {
         KNOTEN n = new KNOTEN(anfang, neueDaten);
         anfang = n;
     }
 
-   DATENELEMENT AnfangEntfernen()
+    DATENELEMENT AnfangEntfernen()
     {
         DATENELEMENT entfernt;
 
@@ -36,7 +41,8 @@ class LISTE {
         return entfernt;
     }
 
-   DATENELEMENT AnfangGeben() {
+    DATENELEMENT AnfangGeben()
+    {
         if (!IstLeer())
             return anfang.DatenGeben();
         else
@@ -58,19 +64,20 @@ class LISTE {
     }
 
     boolean Suchen(DATENELEMENT datenObjekt)
-	{
-		return anfang.Suchen(datenObjekt);
-	}
+    {
+        return anfang.Suchen(datenObjekt);
+    }
 
-	boolean Anzahl(DATENELEMENT datenObjekt)
-	{
-		return anfang.Suchen(datenObjekt);
-	}
+    boolean Anzahl(DATENELEMENT datenObjekt)
+    {
+        return anfang.Suchen(datenObjekt);
+    }
 
-	// Aufgabe 1ciii
-	// Zusatzmethode: Anzahl der Elemente mit bestimmter Eigenschaft
-	int AnzahlMitEigenschaftGeben(DATENELEMENT datenObjekt) {
-	    return anfang.AnzahlMitEigenschaftAbHierGeben(datenObjekt);
-	}
+    // Aufgabe 1ciii
+    // Zusatzmethode: Anzahl der Elemente mit bestimmter Eigenschaft
+    int AnzahlMitEigenschaftGeben(DATENELEMENT datenObjekt)
+    {
+        return anfang.AnzahlMitEigenschaftAbHierGeben(datenObjekt);
+    }
 
 }

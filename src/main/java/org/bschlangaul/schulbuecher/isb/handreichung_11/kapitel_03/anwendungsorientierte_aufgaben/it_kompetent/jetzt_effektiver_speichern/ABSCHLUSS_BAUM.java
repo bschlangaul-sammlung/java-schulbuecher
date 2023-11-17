@@ -14,47 +14,46 @@ class ABSCHLUSS_BAUM extends BAUMELEMENT
      */
     ABSCHLUSS_BAUM()
     {
-        super ();
+        super();
     }
 
     /**
      * Sucht im Baum nach dem gegebenen Datenelelement.
+     *
      * @param wert Referenz auf ein Datenelement mit dem Vergleichswert
-     * @return Referenz auf das Datenelement, wenn der Wert gefunden wurde<br>null: sonst
+     * @return Referenz auf das Datenelement, wenn der Wert gefunden wurde<br>
+     *         null: sonst
      */
-    DATENELEMENT Suchen (DATENELEMENT wert)
+    DATENELEMENT Suchen(DATENELEMENT wert)
     {
         return null;
     }
 
     /**
-     * Fügt ein neues Datenelement in den Baum ein.
-     * Der Wert darf noch nicht vorkommen
+     * Fügt ein neues Datenelement in den Baum ein. Der Wert darf noch nicht vorkommen
+     *
      * @param wert Referenz auf das einzufügende Datenelement
      */
-    BAUMELEMENT Einfuegen (DATENELEMENT wert)
+    BAUMELEMENT Einfuegen(DATENELEMENT wert)
     {
-        return new KNOTEN_BAUM (wert);
+        return new KNOTEN_BAUM(wert);
     }
 
     /**
      * Durchläft den Baum in Preorder
      */
-    void PreOrder ()
-    {
-    }
+    void PreOrder()
+    {}
 
     /**
      * Durchläft den Baum in Inorder
      */
-    void InOrder ()
-    {
-    }
+    void InOrder()
+    {}
 
     /**
      * Durchläft den Baum in Postorder
      */
-    void PostOrder ()
-    {
-    }
+    void PostOrder()
+    {}
 }

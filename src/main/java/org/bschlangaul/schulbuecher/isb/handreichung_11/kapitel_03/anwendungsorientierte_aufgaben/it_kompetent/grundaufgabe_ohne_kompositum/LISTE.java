@@ -1,60 +1,71 @@
 package org.bschlangaul.schulbuecher.isb.handreichung_11.kapitel_03.anwendungsorientierte_aufgaben.it_kompetent.grundaufgabe_ohne_kompositum;
-class LISTE {
+
+class LISTE
+{
     private KNOTEN anfang;
 
     // Konstruktor
-    LISTE() {
+    LISTE()
+    {
         anfang = null;
     }
 
 
     // weitere Methoden
-    boolean IstLeer() {
+    boolean IstLeer()
+    {
         return (anfang == null);
     }
 
-    void EndeEinfuegen(DATENELEMENT neueDaten) {
+    void EndeEinfuegen(DATENELEMENT neueDaten)
+    {
         if (!IstLeer())
             anfang.EndeEinfuegen(neueDaten);
         else
             AnfangEinfuegen(neueDaten);
     }
 
-    void AnfangEinfuegen(DATENELEMENT neueDaten) {
+    void AnfangEinfuegen(DATENELEMENT neueDaten)
+    {
         KNOTEN n = new KNOTEN(anfang, neueDaten);
         anfang = n;
     }
 
-    DATENELEMENT AnfangEntfernen() {
+    DATENELEMENT AnfangEntfernen()
+    {
         DATENELEMENT entfernt;
-        if (!IstLeer()) {
+        if (!IstLeer())
+        {
             entfernt = anfang.DatenGeben();
             anfang = anfang.NachfolgerGeben();
-        } else {
+        }
+        else
+        {
             entfernt = null;
         }
         return entfernt;
     }
 
-    DATENELEMENT AnfangGeben() {
-		if (!IstLeer())
-			return anfang.DatenGeben();
-		else
-			return null;
-	}
+    DATENELEMENT AnfangGeben()
+    {
+        if (!IstLeer())
+            return anfang.DatenGeben();
+        else
+            return null;
+    }
 
-	void AlleAusgeben()
-	{
-		if (!IstLeer())
-			anfang.AlleAusgeben();
-	}
+    void AlleAusgeben()
+    {
+        if (!IstLeer())
+            anfang.AlleAusgeben();
+    }
 
-	int AnzahlGeben()
-	{
-		if (!IstLeer())
-			return anfang.AnzahlGeben();
-		else
-			return 0;
-	}
+    int AnzahlGeben()
+    {
+        if (!IstLeer())
+            return anfang.AnzahlGeben();
+        else
+            return 0;
+    }
 
 }

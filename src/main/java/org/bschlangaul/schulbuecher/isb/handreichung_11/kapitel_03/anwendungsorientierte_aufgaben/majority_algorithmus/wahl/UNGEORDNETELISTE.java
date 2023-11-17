@@ -4,7 +4,7 @@ class UNGEORDNETELISTE
     private LISTE liste;
 
     // Konstruktor
-    UNGEORDNETELISTE() 
+    UNGEORDNETELISTE()
     {
         liste = new LISTE();
     }
@@ -24,16 +24,17 @@ class UNGEORDNETELISTE
     {
         return liste.IstLeer();
     }
-    
-    int AnzahlGeben() {
-         return liste.AnzahlGeben();
+
+    int AnzahlGeben()
+    {
+        return liste.AnzahlGeben();
     }
-    
-      int AnzahlMitEigenschaftGeben(DATENELEMENT daten) {
-         return liste.AnzahlmitEigenschaftGeben(daten);
+
+    int AnzahlMitEigenschaftGeben(DATENELEMENT daten)
+    {
+        return liste.AnzahlmitEigenschaftGeben(daten);
     }
-    
-    
-    
-    
+
+
+
 }

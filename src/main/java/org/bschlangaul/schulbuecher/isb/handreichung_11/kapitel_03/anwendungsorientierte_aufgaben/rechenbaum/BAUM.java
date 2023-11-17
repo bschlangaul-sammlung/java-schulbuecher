@@ -16,7 +16,7 @@ class BAUM
      */
     BAUM()
     {
-        wurzel = new ABSCHLUSS_BAUM ();
+        wurzel = new ABSCHLUSS_BAUM();
     }
 
     BAUM(ZEICHEN z)
@@ -24,7 +24,7 @@ class BAUM
         wurzel = new KNOTEN_BAUM(z);
     }
 
-     /**
+    /**
      * gibt die Wurzel, also den entsprechenden Knoten, zurück
      */
     BAUMELEMENT WurzelGeben()
@@ -33,46 +33,46 @@ class BAUM
     }
 
     /**
-     * Fügt einen Baum als linken Nachfolger der Wurzel ein
-     * Der Wert darf noch nicht vorkommen
+     * Fügt einen Baum als linken Nachfolger der Wurzel ein Der Wert darf noch nicht vorkommen
+     *
      * @param Referenz auf einen Baum b, eigentlich Referenz auf die Wurzel des Baumes
      */
-    void LinksEinfuegen (BAUM b)
+    void LinksEinfuegen(BAUM b)
     {
-        wurzel.LinksEinfuegen (b);
+        wurzel.LinksEinfuegen(b);
     }
 
     /**
-     * Fügt einen Baum als rechter Nachfolger der Wurzel ein
-     * Der Wert darf noch nicht vorkommen
+     * Fügt einen Baum als rechter Nachfolger der Wurzel ein Der Wert darf noch nicht vorkommen
+     *
      * @param Referenz auf einen Baum b, eigentlich Referenz auf die Wurzel des Baumes
      */
-     void RechtsEinfuegen (BAUM b)
+    void RechtsEinfuegen(BAUM b)
     {
-        wurzel.RechtsEinfuegen (b);
+        wurzel.RechtsEinfuegen(b);
     }
 
     /**
      * Durchläft den Baum in Preorder
      */
-    void PreOrder ()
+    void PreOrder()
     {
-        wurzel. PreOrder ();
+        wurzel.PreOrder();
     }
 
     /**
      * Durchläft den Baum in Inorder
      */
-    void InOrder ()
+    void InOrder()
     {
-        wurzel. InOrder ();
+        wurzel.InOrder();
     }
 
     /**
      * Durchläft den Baum in Postorder
      */
-    void PostOrder ()
+    void PostOrder()
     {
-        wurzel. PostOrder ();
+        wurzel.PostOrder();
     }
 }

@@ -1,4 +1,5 @@
 package org.bschlangaul.schulbuecher.isb.handreichung_11.kapitel_03.anwendungsorientierte_aufgaben.it_kompetent.jetzt_effektiver_speichern;
+
 class ABSCHLUSS_LISTE extends LISTENELEMENT
 {
 
@@ -29,12 +30,12 @@ class ABSCHLUSS_LISTE extends LISTENELEMENT
 
     LISTENELEMENT EndeEinfuegen(DATENELEMENT datenObjekt)
     {
-            return new KNOTEN_LISTE(this, datenObjekt);
+        return new KNOTEN_LISTE(this, datenObjekt);
     }
 
     LISTENELEMENT SortiertEinfuegen(DATENELEMENT datenObjekt)
     {
-            return new KNOTEN_LISTE(this, datenObjekt);
+        return new KNOTEN_LISTE(this, datenObjekt);
     }
 
     boolean Suchen(DATENELEMENT datenObjekt)
@@ -49,16 +50,16 @@ class ABSCHLUSS_LISTE extends LISTENELEMENT
 
     int AnzahlAbHierGeben()
     {
-            return 0;
+        return 0;
     }
 
     void AlleAusgeben()
+    {}
+
+
+    // Erweiterung der Klasse um notwendige Suchmethoden
+    DATENELEMENT DatenAbHierSuchen(DATENELEMENT vergleichsdaten)
     {
-    }
-
-
-     // Erweiterung der Klasse um notwendige Suchmethoden
-    DATENELEMENT DatenAbHierSuchen(DATENELEMENT vergleichsdaten) {
         return null;
     }
 

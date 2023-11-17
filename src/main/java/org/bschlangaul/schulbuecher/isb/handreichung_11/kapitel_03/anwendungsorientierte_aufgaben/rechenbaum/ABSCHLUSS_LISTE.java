@@ -1,4 +1,5 @@
 package org.bschlangaul.schulbuecher.isb.handreichung_11.kapitel_03.anwendungsorientierte_aufgaben.rechenbaum;
+
 class ABSCHLUSS_LISTE extends LISTENELEMENT
 {
 
@@ -18,4 +19,4 @@ class ABSCHLUSS_LISTE extends LISTENELEMENT
         return null;
     }
 
-   }
+}

@@ -1,4 +1,5 @@
 package org.bschlangaul.schulbuecher.isb.handreichung_11.kapitel_03.anwendungsorientierte_aufgaben.it_kompetent.grundaufgabe_mit_kompositum;
+
 class KNOTEN extends LISTENELEMENT
 {
     private LISTENELEMENT nachfolger;
@@ -55,8 +56,8 @@ class KNOTEN extends LISTENELEMENT
 
     LISTENELEMENT EndeEinfuegen(DATENELEMENT datenObjekt)
     {
-            nachfolger = nachfolger.EndeEinfuegen(datenObjekt);
-            return this;
+        nachfolger = nachfolger.EndeEinfuegen(datenObjekt);
+        return this;
     }
 
     LISTENELEMENT SortiertEinfuegen(DATENELEMENT datenObjekt)
@@ -85,15 +86,15 @@ class KNOTEN extends LISTENELEMENT
         if (daten.Vergleichen(datenObjekt) == 0)
             return nachfolger;
         else
-            {
-                nachfolger = nachfolger.Entfernen(datenObjekt);
-                return this;
-            }
+        {
+            nachfolger = nachfolger.Entfernen(datenObjekt);
+            return this;
+        }
     }
 
     int AnzahlAbHierGeben()
     {
-            return nachfolger.AnzahlAbHierGeben() + 1;
+        return nachfolger.AnzahlAbHierGeben() + 1;
     }
 
     void AlleAusgeben()

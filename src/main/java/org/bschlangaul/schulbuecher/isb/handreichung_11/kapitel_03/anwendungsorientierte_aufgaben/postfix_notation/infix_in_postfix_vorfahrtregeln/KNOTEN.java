@@ -1,4 +1,5 @@
 package org.bschlangaul.schulbuecher.isb.handreichung_11.kapitel_03.anwendungsorientierte_aufgaben.postfix_notation.infix_in_postfix_vorfahrtregeln;
+
 class KNOTEN extends LISTENELEMENT
 {
     private LISTENELEMENT nachfolger;
@@ -55,8 +56,8 @@ class KNOTEN extends LISTENELEMENT
 
     LISTENELEMENT EndeEinfuegen(DATENELEMENT datenObjekt)
     {
-            nachfolger = nachfolger.EndeEinfuegen(datenObjekt);
-            return this;
+        nachfolger = nachfolger.EndeEinfuegen(datenObjekt);
+        return this;
     }
 
 
@@ -66,15 +67,15 @@ class KNOTEN extends LISTENELEMENT
         if (daten.Vergleichen(datenObjekt))
             return nachfolger;
         else
-            {
-                nachfolger = nachfolger.Entfernen(datenObjekt);
-                return this;
-            }
+        {
+            nachfolger = nachfolger.Entfernen(datenObjekt);
+            return this;
+        }
     }
 
     int AnzahlGeben()
     {
-            return nachfolger.AnzahlGeben() + 1;
+        return nachfolger.AnzahlGeben() + 1;
     }
 
     void AlleAusgeben()

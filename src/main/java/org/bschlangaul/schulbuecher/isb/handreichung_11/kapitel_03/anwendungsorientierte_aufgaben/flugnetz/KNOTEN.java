@@ -1,22 +1,23 @@
 package org.bschlangaul.schulbuecher.isb.handreichung_11.kapitel_03.anwendungsorientierte_aufgaben.flugnetz;
+
 /**
- * Diese Klasse stellt die Knoten eines Graphen dar.
- * Jedes Objekt dieser Klasse enthält genau ein Datenelement.
+ * Diese Klasse stellt die Knoten eines Graphen dar. Jedes Objekt dieser Klasse enthält genau ein
+ * Datenelement.
  *
  */
 class KNOTEN
 {
     private DATENELEMENT daten;
 
-    //Dieses Attribut wird für Verfahren zum Graphendurchlauf benötigt.
+    // Dieses Attribut wird für Verfahren zum Graphendurchlauf benötigt.
     private boolean markierung;
 
-   KNOTEN(DATENELEMENT inhalt)
+    KNOTEN(DATENELEMENT inhalt)
     {
         daten = inhalt;
     }
 
-   void ausgeben()
+    void ausgeben()
     {
         daten.Ausgeben();
     }

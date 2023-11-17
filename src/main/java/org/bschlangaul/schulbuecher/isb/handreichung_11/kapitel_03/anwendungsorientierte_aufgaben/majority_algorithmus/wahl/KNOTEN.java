@@ -52,9 +52,9 @@ class KNOTEN extends LISTENELEMENT
 
     LISTENELEMENT EndeEinfuegen(DATENELEMENT datenObjekt)
     {
-            nachfolger = nachfolger.EndeEinfuegen(datenObjekt);
-            return this;
-    }           
+        nachfolger = nachfolger.EndeEinfuegen(datenObjekt);
+        return this;
+    }
 
     boolean Suchen(DATENELEMENT datenObjekt)
     {
@@ -62,19 +62,19 @@ class KNOTEN extends LISTENELEMENT
             return true;
         else
             return nachfolger.Suchen(datenObjekt);
-    } 
-       
-     LISTENELEMENT Entfernen(DATENELEMENT datenObjekt)
+    }
+
+    LISTENELEMENT Entfernen(DATENELEMENT datenObjekt)
     {
         if (daten.Vergleichen(datenObjekt))
             return nachfolger;
         else
-            {
-                nachfolger = nachfolger.Entfernen(datenObjekt);
-                return this;
-            }
-    } 
-    
+        {
+            nachfolger = nachfolger.Entfernen(datenObjekt);
+            return this;
+        }
+    }
+
     LISTENELEMENT SortiertEinfuegen(DATENELEMENT datenObjekt)
     {
         // meine Daten sind kleiner
@@ -86,31 +86,32 @@ class KNOTEN extends LISTENELEMENT
         // meine Daten sind größer oder gleich
         else
             return new KNOTEN(this, datenObjekt);
-    }           
+    }
 
-       
+
     int AnzahlGeben()
     {
-            return nachfolger.AnzahlGeben() + 1;
+        return nachfolger.AnzahlGeben() + 1;
     }
-    
+
     void AlleAbHierAusgeben()
     {
         daten.Ausgeben();
         nachfolger.AlleAbHierAusgeben();
     }
-    
+
     int AnzahlMitEigenschaftAbHierGeben(DATENELEMENT datenObjekt)
     {
-        if(daten.Vergleichen(datenObjekt)) {
+        if (daten.Vergleichen(datenObjekt))
+        {
             return nachfolger.AnzahlMitEigenschaftAbHierGeben(datenObjekt) + 1;
-        } else {
+        }
+        else
+        {
             return nachfolger.AnzahlMitEigenschaftAbHierGeben(datenObjekt);
-        }    
+        }
     }
-    
-      
-    
+
 
 
 }

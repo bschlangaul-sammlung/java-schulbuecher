@@ -1,4 +1,5 @@
 package org.bschlangaul.schulbuecher.isb.handreichung_11.kapitel_03.anwendungsorientierte_aufgaben.postfix_notation.infix_in_postfix_vertiefung_I;
+
 class LISTE
 {
     private LISTENELEMENT anfang;
@@ -59,7 +60,9 @@ class LISTE
         if (anfang.AnzahlGeben() == 0)
         {
             return true;
-        } else {
+        }
+        else
+        {
             return false;
         }
 

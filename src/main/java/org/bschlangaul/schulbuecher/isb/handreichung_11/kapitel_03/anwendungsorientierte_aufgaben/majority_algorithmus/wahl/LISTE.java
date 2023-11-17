@@ -1,18 +1,20 @@
-class LISTE {
+class LISTE
+{
     private LISTENELEMENT anfang;
 
     // Konstruktor
-     LISTE()
-	{
-		anfang = new ABSCHLUSS();
-	}
+    LISTE()
+    {
+        anfang = new ABSCHLUSS();
+    }
 
     // Methoden
-    boolean IstLeer() {
-        return(AnzahlGeben() == 0);
+    boolean IstLeer()
+    {
+        return (AnzahlGeben() == 0);
     }
-    
-        void EndeEinfuegen(DATENELEMENT neueDaten)
+
+    void EndeEinfuegen(DATENELEMENT neueDaten)
     {
         anfang = anfang.EndeEinfuegen(neueDaten);
     }
@@ -29,7 +31,7 @@ class LISTE {
 
         entfernt = anfang.DatenGeben();
         anfang = anfang.NachfolgerGeben();
-        
+
         return entfernt;
     }
 
@@ -47,12 +49,12 @@ class LISTE {
     {
         return anfang.Suchen(datenObjekt);
     }
-    
+
     void Entfernen(DATENELEMENT datenObjekt)
     {
         anfang = anfang.Entfernen(datenObjekt);
     }
-    
+
     int AnzahlGeben()
     {
         return anfang.AnzahlGeben();
@@ -62,14 +64,13 @@ class LISTE {
     {
         anfang.AlleAbHierAusgeben();
     }
-    
+
     int AnzahlmitEigenschaftGeben(DATENELEMENT datenObjekt)
     {
         return anfang.AnzahlMitEigenschaftAbHierGeben(datenObjekt);
     }
 
 
-   
+
 }
-    
-    
+

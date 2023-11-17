@@ -1,18 +1,22 @@
-class STIMMZETTEL extends DATENELEMENT {
+class STIMMZETTEL extends DATENELEMENT
+{
     // Reihenfolgennummer
     private String name;
-    
-    public STIMMZETTEL(String name) {
+
+    public STIMMZETTEL(String name)
+    {
         this.name = name;
     }
 
-    public void Ausgeben()  {
+    public void Ausgeben()
+    {
         System.out.print(name + " ");
     }
-      
-    boolean Vergleichen(DATENELEMENT vergleichsObjekt) {
+
+    boolean Vergleichen(DATENELEMENT vergleichsObjekt)
+    {
         STIMMZETTEL stimmzettel = (STIMMZETTEL) vergleichsObjekt;
-        return (name == stimmzettel.name) ;
+        return (name == stimmzettel.name);
     }
-   
+
 }

@@ -4,7 +4,7 @@ class STAPEL
     private LISTE liste;
 
     // Konstruktor
-    STAPEL() 
+    STAPEL()
     {
         liste = new LISTE();
     }
@@ -24,13 +24,14 @@ class STAPEL
     {
         return liste.IstLeer();
     }
-    
+
     DATENELEMENT AnfangGeben()
     {
-         return liste.AnfangGeben();
-    } 
-    
-    void AlleAusgeben() {
-         liste.AlleAusgeben();
+        return liste.AnfangGeben();
+    }
+
+    void AlleAusgeben()
+    {
+        liste.AlleAusgeben();
     }
 }

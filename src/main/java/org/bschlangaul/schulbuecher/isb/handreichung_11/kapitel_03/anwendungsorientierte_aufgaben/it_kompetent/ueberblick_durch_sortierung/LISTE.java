@@ -1,4 +1,5 @@
 package org.bschlangaul.schulbuecher.isb.handreichung_11.kapitel_03.anwendungsorientierte_aufgaben.it_kompetent.ueberblick_durch_sortierung;
+
 class LISTE
 {
     private LISTENELEMENT anfang;
@@ -11,7 +12,7 @@ class LISTE
 
 
     // weitere Methoden
-     void EndeEinfuegen(DATENELEMENT neueDaten)
+    void EndeEinfuegen(DATENELEMENT neueDaten)
     {
         anfang = anfang.EndeEinfuegen(neueDaten);
     }
@@ -63,7 +64,8 @@ class LISTE
     }
 
     // Erweiterung der Klasse um notwendige Suchmethoden
-    DATENELEMENT DatenSuchen(DATENELEMENT vergleichsdaten) {
+    DATENELEMENT DatenSuchen(DATENELEMENT vergleichsdaten)
+    {
         return anfang.DatenAbHierSuchen(vergleichsdaten);
     }
 

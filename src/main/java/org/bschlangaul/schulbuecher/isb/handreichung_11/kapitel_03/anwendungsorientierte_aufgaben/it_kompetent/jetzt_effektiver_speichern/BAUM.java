@@ -16,50 +16,52 @@ class BAUM
      */
     BAUM()
     {
-        wurzel = new ABSCHLUSS_BAUM ();
+        wurzel = new ABSCHLUSS_BAUM();
     }
 
     /**
      * Sucht im Baum nach dem gegebenen Datenelelement.
+     *
      * @param wert Referenz auf ein Datenelement mit dem Vergleichswert
-     * @return Referenz auf das Datenelement, wenn der Wert gefunden wurde<br>null: sonst
+     * @return Referenz auf das Datenelement, wenn der Wert gefunden wurde<br>
+     *         null: sonst
      */
-    DATENELEMENT Suchen (DATENELEMENT wert)
+    DATENELEMENT Suchen(DATENELEMENT wert)
     {
-        return wurzel. Suchen (wert);
+        return wurzel.Suchen(wert);
     }
 
     /**
-     * Fügt ein neues Datenelement in den Baum ein.
-     * Der Wert darf noch nicht vorkommen
+     * Fügt ein neues Datenelement in den Baum ein. Der Wert darf noch nicht vorkommen
+     *
      * @param wert Referenz auf das einzufügende Datenelement
      */
-    void Einfuegen (DATENELEMENT wert)
+    void Einfuegen(DATENELEMENT wert)
     {
-        wurzel = wurzel. Einfuegen (wert);
+        wurzel = wurzel.Einfuegen(wert);
     }
 
     /**
      * Durchläft den Baum in Preorder
      */
-    void PreOrder ()
+    void PreOrder()
     {
-        wurzel. PreOrder ();
+        wurzel.PreOrder();
     }
 
     /**
      * Durchläft den Baum in Inorder
      */
-    void InOrder ()
+    void InOrder()
     {
-        wurzel. InOrder ();
+        wurzel.InOrder();
     }
 
     /**
      * Durchläft den Baum in Postorder
      */
-    void PostOrder ()
+    void PostOrder()
     {
-        wurzel. PostOrder ();
+        wurzel.PostOrder();
     }
 }

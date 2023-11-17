@@ -1,4 +1,5 @@
 package org.bschlangaul.schulbuecher.isb.handreichung_11.kapitel_03.anwendungsorientierte_aufgaben.rangierbahnhof.abgeaenderte_situation;
+
 class ABSCHLUSS extends LISTENELEMENT
 {
 
@@ -28,17 +29,16 @@ class ABSCHLUSS extends LISTENELEMENT
 
     LISTENELEMENT EndeEinfuegen(DATENELEMENT datenObjekt)
     {
-            return new KNOTEN(this, datenObjekt);
+        return new KNOTEN(this, datenObjekt);
     }
 
-    int AnzahlGeben() {
+    int AnzahlGeben()
+    {
         return 0;
     }
 
     void AlleAbHierAusgeben()
-    {
-    }
-
+    {}
 
 
 

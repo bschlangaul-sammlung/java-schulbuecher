@@ -1,4 +1,5 @@
 package org.bschlangaul.schulbuecher.isb.handreichung_11.kapitel_03.anwendungsorientierte_aufgaben.rangierbahnhof.abgeaenderte_situation;
+
 class STAPEL
 {
 
@@ -28,10 +29,11 @@ class STAPEL
 
     DATENELEMENT AnfangGeben()
     {
-         return liste.AnfangGeben();
+        return liste.AnfangGeben();
     }
 
-    void AlleAusgeben() {
-         liste.AlleAusgeben();
+    void AlleAusgeben()
+    {
+        liste.AlleAusgeben();
     }
 }

@@ -1,4 +1,5 @@
 package org.bschlangaul.schulbuecher.isb.handreichung_11.kapitel_03.anwendungsorientierte_aufgaben.rangierbahnhof.handreichung;
+
 class STAPEL
 {
 
@@ -28,7 +29,7 @@ class STAPEL
 
     void AlleAusgeben()
     {
-         liste.AlleAusgeben();
+        liste.AlleAusgeben();
     }
 
     int AnzahlGeben()
@@ -45,7 +46,7 @@ class STAPEL
     // Zusatzmethode: Anzahl der Elemente mit bestimmter Eigenschaft
     int AnzahlmitEigenschaftGeben(DATENELEMENT datenObjekt)
     {
-        return liste.AnzahlMitEigenschaftGeben(datenObjekt) ;
+        return liste.AnzahlMitEigenschaftGeben(datenObjekt);
     }
 
 }

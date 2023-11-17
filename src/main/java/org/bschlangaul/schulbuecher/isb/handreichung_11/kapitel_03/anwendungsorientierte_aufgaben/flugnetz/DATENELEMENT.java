@@ -1,39 +1,45 @@
 package org.bschlangaul.schulbuecher.isb.handreichung_11.kapitel_03.anwendungsorientierte_aufgaben.flugnetz;
-public class DATENELEMENT {
+
+public class DATENELEMENT
+{
     // Attribute
     private String flughafenname;
     private String stadt;
     private boolean zuganbindung;
 
     // Konstruktor
-    public DATENELEMENT(String fh, String st, boolean zug) {
+    public DATENELEMENT(String fh, String st, boolean zug)
+    {
         flughafenname = fh;
         stadt = st;
         zuganbindung = zug;
     }
 
     // Methoden
-    public void Ausgeben() {
-        System.out.println( "Flughafen der Stadt " + stadt + ": " + flughafenname);
+    public void Ausgeben()
+    {
+        System.out.println("Flughafen der Stadt " + stadt + ": " + flughafenname);
     }
 
-    public void FlughafennameAusgeben() {
+    public void FlughafennameAusgeben()
+    {
         System.out.println(flughafenname);
     }
 
-    public String FlughafennameGeben() {
+    public String FlughafennameGeben()
+    {
         return flughafenname;
     }
 
-    public boolean ZuganbindungGeben() {
+    public boolean ZuganbindungGeben()
+    {
         return zuganbindung;
     }
 
-    public boolean FlughafennameVergleichen(String name) {
-        return (flughafenname==name);
+    public boolean FlughafennameVergleichen(String name)
+    {
+        return (flughafenname == name);
     }
-
-
 
 
 

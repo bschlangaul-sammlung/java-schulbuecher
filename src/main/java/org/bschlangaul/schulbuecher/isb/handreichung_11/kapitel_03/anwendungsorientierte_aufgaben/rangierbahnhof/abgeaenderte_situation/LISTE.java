@@ -1,25 +1,30 @@
 package org.bschlangaul.schulbuecher.isb.handreichung_11.kapitel_03.anwendungsorientierte_aufgaben.rangierbahnhof.abgeaenderte_situation;
-class LISTE {
+
+class LISTE
+{
     private LISTENELEMENT anfang;
 
     // Konstruktor
-     LISTE()
-	{
-		anfang = new ABSCHLUSS();
-	}
+    LISTE()
+    {
+        anfang = new ABSCHLUSS();
+    }
 
 
     // weitere Methoden
-    boolean IstLeer() {
+    boolean IstLeer()
+    {
         return (anfang.AnzahlGeben() == 0);
     }
 
-    void AnfangEinfuegen(DATENELEMENT neueDaten) {
+    void AnfangEinfuegen(DATENELEMENT neueDaten)
+    {
         KNOTEN n = new KNOTEN(anfang, neueDaten);
         anfang = n;
     }
 
-    DATENELEMENT AnfangGeben() {
+    DATENELEMENT AnfangGeben()
+    {
         if (!IstLeer())
             return anfang.DatenGeben();
         else
@@ -38,7 +43,8 @@ class LISTE {
 
     void AlleAusgeben()
     {
-        if (!IstLeer()) {
+        if (!IstLeer())
+        {
             anfang.AlleAbHierAusgeben();
         }
     }

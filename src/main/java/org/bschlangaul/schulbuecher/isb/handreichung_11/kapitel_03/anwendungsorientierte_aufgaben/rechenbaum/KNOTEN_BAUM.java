@@ -17,63 +17,64 @@ class KNOTEN_BAUM extends BAUMELEMENT
 
     /**
      * Erzeugt einen Knoten mit den dem angegebenen Datenelement.
+     *
      * @param d Referenz auf das verwaltete Datenelement
      */
     KNOTEN_BAUM(DATENELEMENT d)
     {
-        super ();
-        linkerNachfolger = new ABSCHLUSS_BAUM ();
-        rechterNachfolger = new ABSCHLUSS_BAUM ();
+        super();
+        linkerNachfolger = new ABSCHLUSS_BAUM();
+        rechterNachfolger = new ABSCHLUSS_BAUM();
         daten = d;
     }
 
 
     /**
-     * Fügt ein neues Datenelement in den Baum ein.
-     * Der Wert darf noch nicht vorkommen
+     * Fügt ein neues Datenelement in den Baum ein. Der Wert darf noch nicht vorkommen
+     *
      * @param wert Referenz auf das einzufügende Datenelement
      * @return der (neue) Nachfolger des Aufrufers
      */
-    void LinksEinfuegen (BAUM b)
+    void LinksEinfuegen(BAUM b)
     {
-        linkerNachfolger= b.WurzelGeben();
+        linkerNachfolger = b.WurzelGeben();
 
     }
 
-     void RechtsEinfuegen (BAUM b)
+    void RechtsEinfuegen(BAUM b)
     {
-        rechterNachfolger= b.WurzelGeben();
+        rechterNachfolger = b.WurzelGeben();
 
     }
 
     /**
      * Durchläft den Baum in Preorder
      */
-    void PreOrder ()
+    void PreOrder()
     {
-        daten. Ausgeben ();
-        linkerNachfolger. PreOrder ();
-        rechterNachfolger. PreOrder ();
+        daten.Ausgeben();
+        linkerNachfolger.PreOrder();
+        rechterNachfolger.PreOrder();
     }
 
     /**
      * Durchläft den Baum in Inorder
      */
-    void InOrder ()
+    void InOrder()
     {
-        linkerNachfolger. InOrder ();
-        daten. Ausgeben ();
-        rechterNachfolger. InOrder ();
+        linkerNachfolger.InOrder();
+        daten.Ausgeben();
+        rechterNachfolger.InOrder();
     }
 
     /**
      * Durchläft den Baum in Postorder
      */
-    void PostOrder ()
+    void PostOrder()
     {
-        linkerNachfolger. PostOrder ();
-        rechterNachfolger. PostOrder ();
-        daten. Ausgeben ();
+        linkerNachfolger.PostOrder();
+        rechterNachfolger.PostOrder();
+        daten.Ausgeben();
     }
 
 }

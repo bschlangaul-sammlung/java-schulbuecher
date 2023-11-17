@@ -1,12 +1,15 @@
 package org.bschlangaul.schulbuecher.isb.handreichung_11.kapitel_03.anwendungsorientierte_aufgaben.it_kompetent.ueberblick_durch_sortierung;
-class KUNDE extends DATENELEMENT {
+
+class KUNDE extends DATENELEMENT
+{
     // Attribute
     private int kundennummer;
     private String schulname;
     private String software;
 
     // Konstruktor
-    KUNDE(int kundennummer, String schulname, String software) {
+    KUNDE(int kundennummer, String schulname, String software)
+    {
         this.kundennummer = kundennummer;
         this.schulname = schulname;
         this.software = software;
@@ -26,7 +29,7 @@ class KUNDE extends DATENELEMENT {
     /**
      * vergleicht die Kundennummer
      */
-     int Vergleichen(DATENELEMENT vergleichsObjekt)
+    int Vergleichen(DATENELEMENT vergleichsObjekt)
     {
         KUNDE vergleichskunde = (KUNDE) vergleichsObjekt;
         int ergebnis = 0;
@@ -43,10 +46,11 @@ class KUNDE extends DATENELEMENT {
     // Zusaetzliche Methoden
     /**
      * erlaubt das ändern des Schulnamens
-    */
-   void SchulnameAendern(String name) {
-         schulname = name;
-   }
+     */
+    void SchulnameAendern(String name)
+    {
+        schulname = name;
+    }
 
 
 }

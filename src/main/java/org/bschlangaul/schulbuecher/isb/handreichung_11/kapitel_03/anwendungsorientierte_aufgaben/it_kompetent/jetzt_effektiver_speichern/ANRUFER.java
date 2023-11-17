@@ -1,11 +1,14 @@
 package org.bschlangaul.schulbuecher.isb.handreichung_11.kapitel_03.anwendungsorientierte_aufgaben.it_kompetent.jetzt_effektiver_speichern;
-class ANRUFER extends DATENELEMENT {
+
+class ANRUFER extends DATENELEMENT
+{
     // Attribute
     private int kundennummer;
     private String problembeschreibung;
 
     // Konstruktor
-    ANRUFER(int kundennummer, String problem) {
+    ANRUFER(int kundennummer, String problem)
+    {
         this.kundennummer = kundennummer;
         problembeschreibung = problem;
     }
@@ -23,7 +26,7 @@ class ANRUFER extends DATENELEMENT {
     /**
      * vergleicht die Kundennummer
      */
-     int Vergleichen(DATENELEMENT vergleichsObjekt)
+    int Vergleichen(DATENELEMENT vergleichsObjekt)
     {
         ANRUFER vergleichskunde = (ANRUFER) vergleichsObjekt;
         int ergebnis = 0;
@@ -40,8 +43,9 @@ class ANRUFER extends DATENELEMENT {
     // Zusaetzliche Methoden
     /**
      * gibt die Kundennummer zurück
-    */
-   int KundennummerGeben() {
-         return kundennummer;
-   }
+     */
+    int KundennummerGeben()
+    {
+        return kundennummer;
+    }
 }

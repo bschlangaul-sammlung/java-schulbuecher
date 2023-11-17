@@ -11,14 +11,15 @@ interface DATENELEMENT
 {
     /**
      * Vergleicht das vorhandene Datenelement mit dem übergebenen.
+     *
      * @param wert der Vergleichswert
      * @return Boolscher Wert<br>
      *
      */
-    boolean Vergleichen (DATENELEMENT wert);
+    boolean Vergleichen(DATENELEMENT wert);
 
     /**
      * Gibt die relevante Information des Datenelements auf die Konsole aus.
      */
-    void Ausgeben ();
+    void Ausgeben();
 }

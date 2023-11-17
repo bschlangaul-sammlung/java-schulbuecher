@@ -17,61 +17,64 @@ class KNOTEN_BAUM extends BAUMELEMENT
 
     /**
      * Erzeugt einen Knoten mit den dem angegebenen Datenelement.
+     *
      * @param d Referenz auf das verwaltete Datenelement
      */
     KNOTEN_BAUM(DATENELEMENT d)
     {
-        super ();
-        linkerNachfolger = new ABSCHLUSS_BAUM ();
-        rechterNachfolger = new ABSCHLUSS_BAUM ();
+        super();
+        linkerNachfolger = new ABSCHLUSS_BAUM();
+        rechterNachfolger = new ABSCHLUSS_BAUM();
         daten = d;
     }
 
     /**
      * Sucht im Baum nach dem gegebenen Datenelelement.
+     *
      * @param wert Referenz auf ein Datenelement mit dem Vergleichswert
-     * @return Referenz auf das Datenelement, wenn der Wert gefunden wurde<br>null: sonst
+     * @return Referenz auf das Datenelement, wenn der Wert gefunden wurde<br>
+     *         null: sonst
      */
-    DATENELEMENT Suchen (DATENELEMENT wert)
+    DATENELEMENT Suchen(DATENELEMENT wert)
     {
-        if (daten. Vergleichen (wert) == 0)
+        if (daten.Vergleichen(wert) == 0)
         {
             return daten;
         }
         else
         {
-            if (daten. Vergleichen (wert) < 0)
+            if (daten.Vergleichen(wert) < 0)
             {
-                return rechterNachfolger. Suchen (wert);
+                return rechterNachfolger.Suchen(wert);
             }
             else
             {
-                return linkerNachfolger. Suchen (wert);
+                return linkerNachfolger.Suchen(wert);
             }
         }
     }
 
     /**
-     * Fügt ein neues Datenelement in den Baum ein.
-     * Der Wert darf noch nicht vorkommen
+     * Fügt ein neues Datenelement in den Baum ein. Der Wert darf noch nicht vorkommen
+     *
      * @param wert Referenz auf das einzufügende Datenelement
      */
-    BAUMELEMENT Einfuegen (DATENELEMENT wert)
+    BAUMELEMENT Einfuegen(DATENELEMENT wert)
     {
-        if (daten. Vergleichen (wert) == 0)
+        if (daten.Vergleichen(wert) == 0)
         {
-            System. out. print ("Das Datenelement ist schon vorhanden: ");
-            wert. Ausgeben ();
+            System.out.print("Das Datenelement ist schon vorhanden: ");
+            wert.Ausgeben();
         }
         else
         {
-            if (daten. Vergleichen (wert) < 0)
+            if (daten.Vergleichen(wert) < 0)
             {
-                rechterNachfolger = rechterNachfolger. Einfuegen (wert);
+                rechterNachfolger = rechterNachfolger.Einfuegen(wert);
             }
             else
             {
-                linkerNachfolger = linkerNachfolger. Einfuegen (wert);
+                linkerNachfolger = linkerNachfolger.Einfuegen(wert);
             }
         }
         return this;
@@ -80,30 +83,30 @@ class KNOTEN_BAUM extends BAUMELEMENT
     /**
      * Durchläft den Baum in Preorder
      */
-    void PreOrder ()
+    void PreOrder()
     {
-        daten. Ausgeben ();
-        linkerNachfolger. PreOrder ();
-        rechterNachfolger. PreOrder ();
+        daten.Ausgeben();
+        linkerNachfolger.PreOrder();
+        rechterNachfolger.PreOrder();
     }
 
     /**
      * Durchläft den Baum in Inorder
      */
-    void InOrder ()
+    void InOrder()
     {
-        linkerNachfolger. InOrder ();
-        daten. Ausgeben ();
-        rechterNachfolger. InOrder ();
+        linkerNachfolger.InOrder();
+        daten.Ausgeben();
+        rechterNachfolger.InOrder();
     }
 
     /**
      * Durchläft den Baum in Postorder
      */
-    void PostOrder ()
+    void PostOrder()
     {
-        linkerNachfolger. PostOrder ();
-        rechterNachfolger. PostOrder ();
-        daten. Ausgeben ();
+        linkerNachfolger.PostOrder();
+        rechterNachfolger.PostOrder();
+        daten.Ausgeben();
     }
 }

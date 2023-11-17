@@ -1,4 +1,5 @@
 package org.bschlangaul.schulbuecher.isb.handreichung_11.kapitel_03.anwendungsorientierte_aufgaben.it_kompetent.grundaufgabe_mit_kompositum;
+
 class ABSCHLUSS extends LISTENELEMENT
 {
 
@@ -27,12 +28,12 @@ class ABSCHLUSS extends LISTENELEMENT
 
     LISTENELEMENT EndeEinfuegen(DATENELEMENT datenObjekt)
     {
-            return new KNOTEN(this, datenObjekt);
+        return new KNOTEN(this, datenObjekt);
     }
 
     LISTENELEMENT SortiertEinfuegen(DATENELEMENT datenObjekt)
     {
-            return new KNOTEN(this, datenObjekt);
+        return new KNOTEN(this, datenObjekt);
     }
 
     boolean Suchen(DATENELEMENT datenObjekt)
@@ -47,11 +48,10 @@ class ABSCHLUSS extends LISTENELEMENT
 
     int AnzahlAbHierGeben()
     {
-            return 0;
+        return 0;
     }
 
     void AlleAusgeben()
-    {
-    }
+    {}
 
 }

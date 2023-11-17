@@ -18,7 +18,7 @@ class ABSCHLUSS extends LISTENELEMENT
     {
         return null;
     }
-    
+
 
     // weitere Methoden
     DATENELEMENT EndeGeben()
@@ -28,19 +28,19 @@ class ABSCHLUSS extends LISTENELEMENT
 
     LISTENELEMENT EndeEinfuegen(DATENELEMENT datenObjekt)
     {
-            return new KNOTEN(this, datenObjekt);
-    }           
+        return new KNOTEN(this, datenObjekt);
+    }
 
     LISTENELEMENT SortiertEinfuegen(DATENELEMENT datenObjekt)
     {
-            return new KNOTEN(this, datenObjekt);
-    }           
+        return new KNOTEN(this, datenObjekt);
+    }
 
     boolean Suchen(DATENELEMENT datenObjekt)
     {
         return false;
     }
-       
+
     LISTENELEMENT Entfernen(DATENELEMENT datenObjekt)
     {
         return this;
@@ -48,16 +48,15 @@ class ABSCHLUSS extends LISTENELEMENT
 
     int AnzahlGeben()
     {
-            return 0;
+        return 0;
     }
 
     void AlleAbHierAusgeben()
-    {
-    }
-    
+    {}
+
     int AnzahlMitEigenschaftAbHierGeben(DATENELEMENT datenObjekt)
     {
-             return 0;
+        return 0;
     }
 
 }

@@ -1,4 +1,5 @@
 package org.bschlangaul.schulbuecher.isb.handreichung_11.kapitel_03.anwendungsorientierte_aufgaben.rangierbahnhof.abgeaenderte_situation;
+
 class RANGIERBAHNHOF
 {
     // Attribute
@@ -20,7 +21,9 @@ class RANGIERBAHNHOF
 
     // Methoden
     /**
-     * erzeugt einen neuen Waggon mit der gewüschten Nummer (im sortierten Zug) setzt ihn auf Gleis 1
+     * erzeugt einen neuen Waggon mit der gewüschten Nummer (im sortierten Zug) setzt ihn auf Gleis
+     * 1
+     *
      * @param gewüschten Nummer (im sortierten Zug von der Lok aus gesehen)
      */
 
@@ -32,39 +35,48 @@ class RANGIERBAHNHOF
 
     /**
      * gibt die aktuelle Belegung aller drei Gleise aus
-    */
+     */
     void AktuelleSituationGeben()
     {
-        System.out.print ("Gleis 1: ");
+        System.out.print("Gleis 1: ");
         gleis1.AlleAusgeben();
-        System.out.println ();
-        System.out.print ("Gleis 2: ");
+        System.out.println();
+        System.out.print("Gleis 2: ");
         gleis2.AlleAusgeben();
-        System.out.println ();
-        System.out.print ("Gleis 3: ");
+        System.out.println();
+        System.out.print("Gleis 3: ");
         gleis3.AlleAusgeben();
-        System.out.println ();
-        System.out.println ("--------------------------------------------------------------");
-   }
+        System.out.println();
+        System.out.println("--------------------------------------------------------------");
+    }
 
     /**
-     * führt den Rangiervorgang nach dem ersten Algorithmus aus Aufgabe 'Rangierbahnhof - Abgeäderte Situation'aus
-    */
-   void Rangieren()
-   {
-      int anzahlschritte = 0;
-      DATENELEMENT waggon;
+     * führt den Rangiervorgang nach dem ersten Algorithmus aus Aufgabe 'Rangierbahnhof - Abgeäderte
+     * Situation'aus
+     */
+    void Rangieren()
+    {
+        int anzahlschritte = 0;
+        DATENELEMENT waggon;
 
-      while (!gleis1.IstLeer() ) {
-            while (!gleis1.IstLeer() ) {
-                if (gleis3.IstLeer()) {
-                     waggon = gleis1.Entfernen();
-                     gleis3.Einfuegen(waggon);
-                } else {
-                    if (gleis1.AnfangGeben().SchluesselIstKleiner(gleis3.AnfangGeben())){
+        while (!gleis1.IstLeer())
+        {
+            while (!gleis1.IstLeer())
+            {
+                if (gleis3.IstLeer())
+                {
+                    waggon = gleis1.Entfernen();
+                    gleis3.Einfuegen(waggon);
+                }
+                else
+                {
+                    if (gleis1.AnfangGeben().SchluesselIstKleiner(gleis3.AnfangGeben()))
+                    {
                         waggon = gleis1.Entfernen();
                         gleis3.Einfuegen(waggon);
-                    } else {
+                    }
+                    else
+                    {
                         waggon = gleis3.Entfernen();
                         gleis2.Einfuegen(waggon);
                     }
@@ -72,8 +84,10 @@ class RANGIERBAHNHOF
                 AktuelleSituationGeben();
                 anzahlschritte = anzahlschritte + 1;
             }
-            // Gleis 1 leer und Gleis 2 nicht leer --> Verschiebe alle Waggons von Gleis 2 auf Gleis 1
-            while (!gleis2.IstLeer() ) {
+            // Gleis 1 leer und Gleis 2 nicht leer --> Verschiebe alle Waggons von Gleis 2 auf Gleis
+            // 1
+            while (!gleis2.IstLeer())
+            {
                 waggon = gleis2.Entfernen();
                 gleis1.Einfuegen(waggon);
                 AktuelleSituationGeben();
@@ -83,25 +97,35 @@ class RANGIERBAHNHOF
         System.out.println("Anzahl der Rangierschritte: " + anzahlschritte);
     }
 
-     /**
-     * führt den Rangiervorgang nach dem optimierten Algorithmus aus Aufgabe 'Rangierbahnhof - Abgeäderte Situation'aus
-    */
-    void RangierenBesser() {
+    /**
+     * führt den Rangiervorgang nach dem optimierten Algorithmus aus Aufgabe 'Rangierbahnhof -
+     * Abgeäderte Situation'aus
+     */
+    void RangierenBesser()
+    {
         int anzahlschritte = 0;
         DATENELEMENT waggon;
         STAPEL startgleis = gleis1;
         // Hilfsvariable zum Vertauschen zweier Werte
         STAPEL hilfsgleis = gleis2;
-         while (!startgleis.IstLeer() ) {
-            while (!startgleis.IstLeer() ) {
-                if (gleis3.IstLeer()) {
-                     waggon = startgleis.Entfernen();
-                     gleis3.Einfuegen(waggon);
-                } else {
-                    if (startgleis.AnfangGeben().SchluesselIstKleiner(gleis3.AnfangGeben())){
+        while (!startgleis.IstLeer())
+        {
+            while (!startgleis.IstLeer())
+            {
+                if (gleis3.IstLeer())
+                {
+                    waggon = startgleis.Entfernen();
+                    gleis3.Einfuegen(waggon);
+                }
+                else
+                {
+                    if (startgleis.AnfangGeben().SchluesselIstKleiner(gleis3.AnfangGeben()))
+                    {
                         waggon = startgleis.Entfernen();
                         gleis3.Einfuegen(waggon);
-                    } else {
+                    }
+                    else
+                    {
                         waggon = gleis3.Entfernen();
                         hilfsgleis.Einfuegen(waggon);
                     }
@@ -109,7 +133,8 @@ class RANGIERBAHNHOF
                 AktuelleSituationGeben();
                 anzahlschritte = anzahlschritte + 1;
             }
-            if (!hilfsgleis.IstLeer() ) {
+            if (!hilfsgleis.IstLeer())
+            {
                 STAPEL tausch = hilfsgleis;
                 hilfsgleis = startgleis;
                 startgleis = tausch;

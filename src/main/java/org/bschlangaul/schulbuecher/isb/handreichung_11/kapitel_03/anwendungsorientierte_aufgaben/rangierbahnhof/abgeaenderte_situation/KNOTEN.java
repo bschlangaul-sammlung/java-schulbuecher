@@ -1,4 +1,5 @@
 package org.bschlangaul.schulbuecher.isb.handreichung_11.kapitel_03.anwendungsorientierte_aufgaben.rangierbahnhof.abgeaenderte_situation;
+
 class KNOTEN extends LISTENELEMENT
 {
     private LISTENELEMENT nachfolger;
@@ -51,34 +52,24 @@ class KNOTEN extends LISTENELEMENT
             return wert;
     }
 
-    /* LISTENELEMENT EndeEinfuegen(DATENELEMENT datenObjekt)
-    {
-            nachfolger = nachfolger.EndeEinfuegen(datenObjekt);
-            return this;
-    }   */
+    /*
+     * LISTENELEMENT EndeEinfuegen(DATENELEMENT datenObjekt) { nachfolger =
+     * nachfolger.EndeEinfuegen(datenObjekt); return this; }
+     */
 
-    /* boolean Suchen(DATENELEMENT datenObjekt)
-    {
-        if (daten.Vergleichen(datenObjekt))
-            return true;
-        else
-            return nachfolger.Suchen(datenObjekt);
-    } */
+    /*
+     * boolean Suchen(DATENELEMENT datenObjekt) { if (daten.Vergleichen(datenObjekt)) return true;
+     * else return nachfolger.Suchen(datenObjekt); }
+     */
 
-    /* LISTENELEMENT Entfernen(DATENELEMENT datenObjekt)
-    {
-        if (daten.Vergleichen(datenObjekt))
-            return nachfolger;
-        else
-            {
-                nachfolger = nachfolger.Entfernen(datenObjekt);
-                return this;
-            }
-    } */
+    /*
+     * LISTENELEMENT Entfernen(DATENELEMENT datenObjekt) { if (daten.Vergleichen(datenObjekt))
+     * return nachfolger; else { nachfolger = nachfolger.Entfernen(datenObjekt); return this; } }
+     */
 
     int AnzahlGeben()
     {
-            return nachfolger.AnzahlGeben() + 1;
+        return nachfolger.AnzahlGeben() + 1;
     }
 
     void AlleAbHierAusgeben()
@@ -86,8 +77,6 @@ class KNOTEN extends LISTENELEMENT
         daten.Ausgeben();
         nachfolger.AlleAbHierAusgeben();
     }
-
-
 
 
 

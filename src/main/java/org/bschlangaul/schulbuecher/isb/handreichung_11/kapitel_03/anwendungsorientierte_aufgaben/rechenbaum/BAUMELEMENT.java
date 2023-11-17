@@ -17,28 +17,29 @@ abstract class BAUMELEMENT
         // keine spezielle Aufgabe
     }
 
-     /**
+    /**
      * ...
+     *
      * @param wert Referenz auf die Wurzel des einzufuegenden Baumes
      */
-    abstract void LinksEinfuegen (BAUM b);
-    abstract void RechtsEinfuegen (BAUM b);
+    abstract void LinksEinfuegen(BAUM b);
+
+    abstract void RechtsEinfuegen(BAUM b);
 
     /**
      * Durchläft den Baum in Preorder
      */
-    abstract void PreOrder ();
+    abstract void PreOrder();
 
     /**
      * Durchläft den Baum in Inorder
      */
-    abstract void InOrder ();
+    abstract void InOrder();
 
     /**
      * Durchläft den Baum in Postorder
      */
-    abstract void PostOrder ();
-
+    abstract void PostOrder();
 
 
 

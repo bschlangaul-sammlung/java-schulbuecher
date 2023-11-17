@@ -1,14 +1,18 @@
 package org.bschlangaul.schulbuecher.isb.handreichung_11.kapitel_03.anwendungsorientierte_aufgaben.it_kompetent.grundaufgabe_mit_kompositum;
-class LISTE {
-    private LISTENELEMENT  anfang;
+
+class LISTE
+{
+    private LISTENELEMENT anfang;
 
     // Konstruktor
-    LISTE() {
+    LISTE()
+    {
         anfang = new ABSCHLUSS();
     }
 
     // weitere Methoden
-    boolean IstLeer() {
+    boolean IstLeer()
+    {
         return (anfang == null);
     }
 
