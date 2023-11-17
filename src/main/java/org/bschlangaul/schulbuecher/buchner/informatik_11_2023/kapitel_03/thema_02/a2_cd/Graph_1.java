@@ -8,7 +8,8 @@ package org.bschlangaul.schulbuecher.buchner.informatik_11_2023.kapitel_03.thema
  */
 public class Graph_1
 {
-    public void ablaufen() {
+    public void ablaufen()
+    {
         GRAPH graph = new GRAPH(4);
 
         KNOTEN k1 = new KNOTEN("A");
@@ -21,10 +22,10 @@ public class Graph_1
         graph.knotenHinzufuegen(k3);
         graph.knotenHinzufuegen(k4);
 
-        graph.kanteHinzufuegen(0,1);
-        graph.kanteHinzufuegen(1,0);
-        graph.kanteHinzufuegen(2,2);
-        graph.kanteHinzufuegen(3,1);
+        graph.kanteHinzufuegen(0, 1);
+        graph.kanteHinzufuegen(1, 0);
+        graph.kanteHinzufuegen(2, 2);
+        graph.kanteHinzufuegen(3, 1);
 
         graph.adjaAusgeben();
     }

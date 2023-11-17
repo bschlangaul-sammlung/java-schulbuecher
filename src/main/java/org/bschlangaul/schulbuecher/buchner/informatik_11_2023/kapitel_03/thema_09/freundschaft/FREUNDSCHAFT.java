@@ -8,7 +8,8 @@ package org.bschlangaul.schulbuecher.buchner.informatik_11_2023.kapitel_03.thema
  */
 public class FREUNDSCHAFT
 {
-    public void ablaufen() {
+    public void ablaufen()
+    {
         GRAPH graph = new GRAPH(7);
 
         KNOTEN k0 = new KNOTEN("Aaron");
@@ -27,13 +28,13 @@ public class FREUNDSCHAFT
         graph.knotenHinzufuegen(k5);
         graph.knotenHinzufuegen(k6);
 
-        graph.kanteHinzufuegen(0,1, 1.0);
-        graph.kanteHinzufuegen(0,6, 3.4);
-        graph.kanteHinzufuegen(1,3, 6.1);
-        graph.kanteHinzufuegen(1,5, 2.4);
-        graph.kanteHinzufuegen(1,6, 4.7);
-        graph.kanteHinzufuegen(3,4, 0.8);
-        graph.kanteHinzufuegen(4,5, 9.4);
+        graph.kanteHinzufuegen(0, 1, 1.0);
+        graph.kanteHinzufuegen(0, 6, 3.4);
+        graph.kanteHinzufuegen(1, 3, 6.1);
+        graph.kanteHinzufuegen(1, 5, 2.4);
+        graph.kanteHinzufuegen(1, 6, 4.7);
+        graph.kanteHinzufuegen(3, 4, 0.8);
+        graph.kanteHinzufuegen(4, 5, 9.4);
 
         graph.adjaAusgeben();
         graph.existierenDickeFreunde();

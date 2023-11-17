@@ -8,7 +8,8 @@ package org.bschlangaul.schulbuecher.buchner.informatik_11_2023.kapitel_03.thema
  */
 public class BAHNHOEFE
 {
-    public void ablaufen() {
+    public void ablaufen()
+    {
         GRAPH graph = new GRAPH(12);
 
         KNOTEN k1 = new KNOTEN("Hamburg", "HH");
@@ -37,25 +38,25 @@ public class BAHNHOEFE
         graph.knotenHinzufuegen(k11);
         graph.knotenHinzufuegen(k12);
 
-        graph.kanteHinzufuegen(0,1);
-        graph.kanteHinzufuegen(0,2);
-        graph.kanteHinzufuegen(0,3);
-        graph.kanteHinzufuegen(1,4);
-        graph.kanteHinzufuegen(2,3);
-        graph.kanteHinzufuegen(2,4);
-        graph.kanteHinzufuegen(2,8);
-        graph.kanteHinzufuegen(3,5);
-        graph.kanteHinzufuegen(4,8);
-        graph.kanteHinzufuegen(5,6);
-        graph.kanteHinzufuegen(5,7);
-        graph.kanteHinzufuegen(7,8);
-        graph.kanteHinzufuegen(7,9);
-        graph.kanteHinzufuegen(8,9);
-        graph.kanteHinzufuegen(9,10);
-        graph.kanteHinzufuegen(9,11);
-        graph.kanteHinzufuegen(10,11);
+        graph.kanteHinzufuegen(0, 1);
+        graph.kanteHinzufuegen(0, 2);
+        graph.kanteHinzufuegen(0, 3);
+        graph.kanteHinzufuegen(1, 4);
+        graph.kanteHinzufuegen(2, 3);
+        graph.kanteHinzufuegen(2, 4);
+        graph.kanteHinzufuegen(2, 8);
+        graph.kanteHinzufuegen(3, 5);
+        graph.kanteHinzufuegen(4, 8);
+        graph.kanteHinzufuegen(5, 6);
+        graph.kanteHinzufuegen(5, 7);
+        graph.kanteHinzufuegen(7, 8);
+        graph.kanteHinzufuegen(7, 9);
+        graph.kanteHinzufuegen(8, 9);
+        graph.kanteHinzufuegen(9, 10);
+        graph.kanteHinzufuegen(9, 11);
+        graph.kanteHinzufuegen(10, 11);
 
-        //graph.adjaAusgeben();
+        // graph.adjaAusgeben();
         graph.breitensuche_2b("Augsburg", "Dresden");
     }
 

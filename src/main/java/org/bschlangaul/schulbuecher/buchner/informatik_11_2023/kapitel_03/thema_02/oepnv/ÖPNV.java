@@ -8,7 +8,8 @@ package org.bschlangaul.schulbuecher.buchner.informatik_11_2023.kapitel_03.thema
  */
 public class ÖPNV
 {
-    public void ablaufen() {
+    public void ablaufen()
+    {
         GRAPH graph = new GRAPH(9);
 
         KNOTEN k1 = new KNOTEN("P"); // Prinzregentenstr.
@@ -17,8 +18,8 @@ public class ÖPNV
         KNOTEN k4 = new KNOTEN("K"); // Königsplatz
         KNOTEN k5 = new KNOTEN("M"); // Moritzplatz
         KNOTEN k6 = new KNOTEN("R"); // Rathausplatz
-        KNOTEN k7 = new KNOTEN("F"); //Frohsinnstr.
-        KNOTEN k8 = new KNOTEN("T"); //Th.-Heuss-Platz/IHK
+        KNOTEN k7 = new KNOTEN("F"); // Frohsinnstr.
+        KNOTEN k8 = new KNOTEN("T"); // Th.-Heuss-Platz/IHK
         KNOTEN k9 = new KNOTEN("U"); // Ulrichsplatz
 
         graph.knotenHinzufuegen(k1);
@@ -31,24 +32,24 @@ public class ÖPNV
         graph.knotenHinzufuegen(k8);
         graph.knotenHinzufuegen(k9);
 
-        graph.kanteHinzufuegen(0,1);
-        graph.kanteHinzufuegen(1,0);
-        graph.kanteHinzufuegen(1,2);
-        graph.kanteHinzufuegen(1,3);
-        graph.kanteHinzufuegen(2,0);
-        graph.kanteHinzufuegen(2,3);
-        graph.kanteHinzufuegen(3,1);
-        graph.kanteHinzufuegen(3,2);
-        graph.kanteHinzufuegen(3,4);
-        graph.kanteHinzufuegen(3,6);
-        graph.kanteHinzufuegen(3,7);
-        graph.kanteHinzufuegen(4,3);
-        graph.kanteHinzufuegen(4,5);
-        graph.kanteHinzufuegen(4,8);
-        graph.kanteHinzufuegen(5,4);
-        graph.kanteHinzufuegen(6,3);
-        graph.kanteHinzufuegen(7,3);
-        graph.kanteHinzufuegen(8,5);
+        graph.kanteHinzufuegen(0, 1);
+        graph.kanteHinzufuegen(1, 0);
+        graph.kanteHinzufuegen(1, 2);
+        graph.kanteHinzufuegen(1, 3);
+        graph.kanteHinzufuegen(2, 0);
+        graph.kanteHinzufuegen(2, 3);
+        graph.kanteHinzufuegen(3, 1);
+        graph.kanteHinzufuegen(3, 2);
+        graph.kanteHinzufuegen(3, 4);
+        graph.kanteHinzufuegen(3, 6);
+        graph.kanteHinzufuegen(3, 7);
+        graph.kanteHinzufuegen(4, 3);
+        graph.kanteHinzufuegen(4, 5);
+        graph.kanteHinzufuegen(4, 8);
+        graph.kanteHinzufuegen(5, 4);
+        graph.kanteHinzufuegen(6, 3);
+        graph.kanteHinzufuegen(7, 3);
+        graph.kanteHinzufuegen(8, 5);
         graph.adjaAusgeben();
 
     }

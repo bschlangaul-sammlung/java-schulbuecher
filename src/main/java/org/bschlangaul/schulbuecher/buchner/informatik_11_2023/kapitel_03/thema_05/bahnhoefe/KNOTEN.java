@@ -14,19 +14,23 @@ public class KNOTEN
         this.kuerzel = ekurz;
     }
 
-    public void bezeichnerSetzen(String eNeu) {
+    public void bezeichnerSetzen(String eNeu)
+    {
         this.bezeichner = eNeu;
     }
 
-    public String bezeichnerGeben() {
+    public String bezeichnerGeben()
+    {
         return bezeichner;
     }
 
-    public String kuerzelGeben() {
+    public String kuerzelGeben()
+    {
         return kuerzel;
     }
 
-    public boolean bezeichnerIstGleich(String wert) {
-        return (bezeichner.compareTo(wert)==0);
+    public boolean bezeichnerIstGleich(String wert)
+    {
+        return (bezeichner.compareTo(wert) == 0);
     }
 }

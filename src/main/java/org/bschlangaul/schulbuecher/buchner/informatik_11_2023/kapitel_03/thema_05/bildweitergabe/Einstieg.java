@@ -8,7 +8,8 @@ package org.bschlangaul.schulbuecher.buchner.informatik_11_2023.kapitel_03.thema
  */
 public class Einstieg
 {
-    public void ablaufen() {
+    public void ablaufen()
+    {
         GRAPH graph = new GRAPH(7);
 
         KNOTEN k1 = new KNOTEN("Alan", "A");
@@ -27,13 +28,13 @@ public class Einstieg
         graph.knotenHinzufuegen(k6);
         graph.knotenHinzufuegen(k7);
 
-        graph.kanteHinzufuegen(0,3);
-        graph.kanteHinzufuegen(0,5);
-        graph.kanteHinzufuegen(0,6);
-        graph.kanteHinzufuegen(1,2);
-        graph.kanteHinzufuegen(2,5);
-        graph.kanteHinzufuegen(3,5);
-        graph.kanteHinzufuegen(4,6);
+        graph.kanteHinzufuegen(0, 3);
+        graph.kanteHinzufuegen(0, 5);
+        graph.kanteHinzufuegen(0, 6);
+        graph.kanteHinzufuegen(1, 2);
+        graph.kanteHinzufuegen(2, 5);
+        graph.kanteHinzufuegen(3, 5);
+        graph.kanteHinzufuegen(4, 6);
 
 
         graph.adjaAusgeben();

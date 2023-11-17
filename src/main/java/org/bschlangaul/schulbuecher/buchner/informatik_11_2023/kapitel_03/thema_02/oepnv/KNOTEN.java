@@ -12,15 +12,18 @@ public class KNOTEN
         bezeichner = eNeu;
     }
 
-    public void bezeichnerSetzen(String eNeu) {
+    public void bezeichnerSetzen(String eNeu)
+    {
         bezeichner = eNeu;
     }
 
-    public String bezeichnerGeben() {
+    public String bezeichnerGeben()
+    {
         return bezeichner;
     }
 
-    public boolean bezeichnerIstGleich(String wert) {
-        return bezeichner.compareTo(wert)==0;
+    public boolean bezeichnerIstGleich(String wert)
+    {
+        return bezeichner.compareTo(wert) == 0;
     }
 }

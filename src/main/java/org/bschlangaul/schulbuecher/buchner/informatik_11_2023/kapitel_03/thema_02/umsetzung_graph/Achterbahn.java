@@ -8,7 +8,8 @@ package org.bschlangaul.schulbuecher.buchner.informatik_11_2023.kapitel_03.thema
  */
 public class Achterbahn
 {
-    public void ablaufen() {
+    public void ablaufen()
+    {
         GRAPH graph = new GRAPH(6);
 
         KNOTEN k1 = new KNOTEN("Bernd");
@@ -25,19 +26,19 @@ public class Achterbahn
         graph.knotenHinzufuegen(k5);
         graph.knotenHinzufuegen(k6);
 
-        graph.kanteHinzufuegen(0,1);
-        graph.kanteHinzufuegen(0,3);
-        graph.kanteHinzufuegen(1,0);
-        graph.kanteHinzufuegen(1,4);
-        graph.kanteHinzufuegen(1,5);
-        graph.kanteHinzufuegen(2,1);
-        graph.kanteHinzufuegen(2,3);
-        graph.kanteHinzufuegen(3,4);
-        graph.kanteHinzufuegen(3,5);
-        graph.kanteHinzufuegen(4,2);
-        graph.kanteHinzufuegen(5,0);
-        graph.kanteHinzufuegen(5,2);
-        graph.kanteHinzufuegen(5,4);
+        graph.kanteHinzufuegen(0, 1);
+        graph.kanteHinzufuegen(0, 3);
+        graph.kanteHinzufuegen(1, 0);
+        graph.kanteHinzufuegen(1, 4);
+        graph.kanteHinzufuegen(1, 5);
+        graph.kanteHinzufuegen(2, 1);
+        graph.kanteHinzufuegen(2, 3);
+        graph.kanteHinzufuegen(3, 4);
+        graph.kanteHinzufuegen(3, 5);
+        graph.kanteHinzufuegen(4, 2);
+        graph.kanteHinzufuegen(5, 0);
+        graph.kanteHinzufuegen(5, 2);
+        graph.kanteHinzufuegen(5, 4);
 
         graph.adjaAusgeben();
     }
