@@ -46,7 +46,7 @@ public class Boden
      * Aendert die Breite und / oder Hoehe des Bodens.
      *
      * @param breite Die neue Breite
-     * @param hoehe Die neue Hoehe
+     * @param hoehe  Die neue Hoehe
      */
     public void setzeGroesse(double breite, double hoehe)
     {
@@ -73,8 +73,8 @@ public class Boden
     }
 
     /**
-     * Setzt den Reibungsköffizienten auf einen neuen Wert. Dies beeinflusst z.B. das Ausrollen des
-     * Balls auf dem Boden.
+     * Setzt den Reibungsköffizienten auf einen neuen Wert. Dies beeinflusst
+     * z.B. das Ausrollen des Balls auf dem Boden.
      *
      * @param Reibungsköffizient In der Regel Werte zwischen 0 und 1
      */

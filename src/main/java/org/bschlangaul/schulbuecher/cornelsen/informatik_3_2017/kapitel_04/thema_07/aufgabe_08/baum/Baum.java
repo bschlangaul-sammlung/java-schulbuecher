@@ -10,14 +10,19 @@ class Baum extends Figur
 {
     /** Der Himmel in der oberen Hälfte */
     Rechteck himmel;
+
     /** Der Boden in der unteren Hälfte */
     Rechteck boden;
+
     /** Der Baumstamm */
     Rechteck stamm;
+
     /** Die Baumkrone */
     Kreis krone;
+
     /** Die aktuelle Jahreszeit */
     String jahreszeit;
+
     /** Die aktuelle Größe */
     int größe;
 
@@ -100,7 +105,5 @@ class Baum extends Figur
     @Override
     void AktionAusführen()
     {
-
-
     }
 }

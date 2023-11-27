@@ -25,54 +25,57 @@ interface OBERFLACHENINTERFACE
     /**
      * Besetzt die Anzeigeelemente für eine bestimmte Person.
      *
-     * @param name Name der Person
-     * @param vorname Vorname der Person
-     * @param strasse Stra&szlig;e
+     * @param name       Name der Person
+     * @param vorname    Vorname der Person
+     * @param strasse    Stra&szlig;e
      * @param hausnummer Hausnummer
-     * @param plz Postleitzahl
-     * @param ort Wohnort
-     * @param nummern Feld mit den Telefonnummern
-     * @param emails Feld mit den Emiladressen
+     * @param plz        Postleitzahl
+     * @param ort        Wohnort
+     * @param nummern    Feld mit den Telefonnummern
+     * @param emails     Feld mit den Emiladressen
      */
-    void PersonenInfoSetzen(String name, String vorname, String strasse, String hausnummer,
-                    String plz, String ort, Object[] nummern, Object[] emails);
+    void PersonenInfoSetzen(String name, String vorname, String strasse,
+            String hausnummer, String plz, String ort, Object[] nummern,
+            Object[] emails);
 
     /**
      * Besetzt die Anzeigeelemente für eine bestimmte Person.
      *
-     * @param name Name der Person
-     * @param vorname Vorname der Person
-     * @param strasse Stra&szlig;e
+     * @param name       Name der Person
+     * @param vorname    Vorname der Person
+     * @param strasse    Stra&szlig;e
      * @param hausnummer Hausnummer
-     * @param plz Postleitzahl
-     * @param ort Wohnort
-     * @param nummern Feld mit den Telefonnummern
-     * @param emails Feld mit den Emiladressen
+     * @param plz        Postleitzahl
+     * @param ort        Wohnort
+     * @param nummern    Feld mit den Telefonnummern
+     * @param emails     Feld mit den Emiladressen
      */
-    void PersonenInfoSetzenBearbeiten(String name, String vorname, String strasse,
-                    String hausnummer, String plz, String ort, Object[] nummern, Object[] emails);
+    void PersonenInfoSetzenBearbeiten(String name, String vorname,
+            String strasse, String hausnummer, String plz, String ort,
+            Object[] nummern, Object[] emails);
 
     /**
      * Besetzt die Anzeigeelemente der Suche für eine bestimmte Person.
      *
-     * @param name Name der Person
-     * @param vorname Vorname der Person
-     * @param strasse Stra&szlig;e
+     * @param name       Name der Person
+     * @param vorname    Vorname der Person
+     * @param strasse    Stra&szlig;e
      * @param hausnummer Hausnummer
-     * @param plz Postleitzahl
-     * @param ort Wohnort
-     * @param nummern Feld mit den Telefonnummern
-     * @param emails Feld mit den Emiladressen
+     * @param plz        Postleitzahl
+     * @param ort        Wohnort
+     * @param nummern    Feld mit den Telefonnummern
+     * @param emails     Feld mit den Emiladressen
      */
-    void PersonenInfoSetzenSuche(String name, String vorname, String strasse, String hausnummer,
-                    String plz, String ort, Object[] nummern, Object[] emails);
+    void PersonenInfoSetzenSuche(String name, String vorname, String strasse,
+            String hausnummer, String plz, String ort, Object[] nummern,
+            Object[] emails);
 
     /**
      * Besetzt die Anzeigeelemente für eine Telefonnummer.
      *
      * @param nummer die Telefonnummer
-     * @param notiz Notiz zur Nummer
-     * @param art Art der Nummer
+     * @param notiz  Notiz zur Nummer
+     * @param art    Art der Nummer
      */
     void NummernInfoSetzenBearbeiten(String nummer, String notiz, String art);
 
@@ -80,7 +83,7 @@ interface OBERFLACHENINTERFACE
      * Besetzt die Anzeigeelemente für eine EMailadresse.
      *
      * @param adresse die Emailadresse
-     * @param notiz Notiz zur Adresse
+     * @param notiz   Notiz zur Adresse
      */
     void EmailInfoSetzenBearbeiten(String adresse, String notiz);
 

@@ -10,7 +10,6 @@ class LISTE
         anfang = new ABSCHLUSS();
     }
 
-
     // weitere Methoden
     void EndeEinfuegen(DATENELEMENT neueDaten)
     {
@@ -26,10 +25,8 @@ class LISTE
     DATENELEMENT AnfangEntfernen()
     {
         DATENELEMENT entfernt;
-
         entfernt = anfang.DatenGeben();
         anfang = anfang.NachfolgerGeben();
-
         return entfernt;
     }
 
@@ -37,8 +34,6 @@ class LISTE
     {
         return anfang.DatenGeben();
     }
-
-
 
     void Entfernen(DATENELEMENT datenObjekt)
     {
@@ -65,8 +60,5 @@ class LISTE
         {
             return false;
         }
-
     }
-
-
 }

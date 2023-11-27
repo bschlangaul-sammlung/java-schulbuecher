@@ -29,6 +29,4 @@ class TurtleBreit extends Turtle
         super.Gehen(1);
         this.Drehen(-90);
     }
-
-
 }

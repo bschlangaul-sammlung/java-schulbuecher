@@ -14,9 +14,13 @@ class KASSE
     };
 
     RECHTECK darstellung;
+
     KUNDE kunde;
+
     int x;
+
     int y;
+
     Zustaende zustand;
 
     /**

@@ -9,7 +9,9 @@ package org.bschlangaul.schulbuecher.isb.handreichung_10.konzept_02.supermarkt.s
 class WARTESCHLANGE
 {
     private KUNDE[] kunden;
+
     private int x;
+
     private int y;
 
     /**

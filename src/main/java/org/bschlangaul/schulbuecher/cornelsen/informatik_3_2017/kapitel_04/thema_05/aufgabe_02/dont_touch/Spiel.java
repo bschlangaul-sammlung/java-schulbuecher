@@ -12,6 +12,7 @@ class Spiel extends Ereignisbehandlung
 {
     /** Zufallsgenerator */
     Random zzgenerator;
+
     /** Taktzähler */
     int zähler;
 
@@ -50,7 +51,8 @@ class Spiel extends Ereignisbehandlung
      */
     @Override
     void TasteGedrückt(char taste)
-    {}
+    {
+    }
 
     /**
      * Sonderasten werden ignoriert
@@ -59,7 +61,8 @@ class Spiel extends Ereignisbehandlung
      */
     @Override
     void SonderTasteGedrückt(int taste)
-    {}
+    {
+    }
 
     /**
      * Erzeugt ein Hindernis mit zufälliger Position und Richtung
@@ -91,7 +94,8 @@ class Spiel extends Ereignisbehandlung
                     }
                     else
                     {
-                        System.out.println("Fehler in Spiel, HindernisErzeugen()");
+                        System.out.println(
+                                "Fehler in Spiel, HindernisErzeugen()");
                     }
                 }
             }
@@ -101,13 +105,14 @@ class Spiel extends Ereignisbehandlung
     /**
      * Erzeugt ein zufälliges Hindernis
      *
-     * @param x x-Koordinate des Hindernisses
-     * @param y y-Koordinate des Hindernisses
+     * @param x        x-Koordinate des Hindernisses
+     * @param y        y-Koordinate des Hindernisses
      * @param richtung Blickrichtung des Hindernisses
      */
     void HindernisErzeugen(int x, int y, char richtung)
     {
-        // Für eine neue Art von Hindernis musst du Obergrenze der Zufallszahl um eins erhöhen.
+        // Für eine neue Art von Hindernis musst du Obergrenze der Zufallszahl
+        // um eins erhöhen.
         // Füge dann einen neuen Fall für deine Klasse hinzu.
         int zufall = zzgenerator.nextInt(7);
         if (zufall == 0)
@@ -152,7 +157,8 @@ class Spiel extends Ereignisbehandlung
                                 }
                                 else
                                 {
-                                    System.out.println("Fehler in Spiel, HindernisErzeugen()");
+                                    System.out.println(
+                                            "Fehler in Spiel, HindernisErzeugen()");
                                 }
                             }
                         }

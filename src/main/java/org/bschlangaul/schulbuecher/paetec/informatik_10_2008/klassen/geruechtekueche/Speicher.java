@@ -29,7 +29,8 @@ public class Speicher extends junit.framework.TestCase
     private Schueler andreas;
 
     /**
-     * Stellt Freundschaftsbeziehungen zwischen 10 Objekten der Klasse Schueler her.
+     * Stellt Freundschaftsbeziehungen zwischen 10 Objekten der Klasse Schueler
+     * her.
      */
     public void setUp()
     {
@@ -43,31 +44,22 @@ public class Speicher extends junit.framework.TestCase
         melanie = new Schueler("Melanie");
         susanne = new Schueler("Susanne");
         andreas = new Schueler("Andreas");
-
         frank.freundschaftBeginnen(michael);
         frank.freundschaftBeginnen(birgit);
-
         stefan.freundschaftBeginnen(michael);
         stefan.freundschaftBeginnen(birgit);
-
         birgit.freundschaftBeginnen(susanne);
         birgit.freundschaftBeginnen(leon);
-
         michael.freundschaftBeginnen(susanne);
         michael.freundschaftBeginnen(barbara);
-
         barbara.freundschaftBeginnen(andreas);
         barbara.freundschaftBeginnen(stefan);
-
         rosi.freundschaftBeginnen(leon);
         rosi.freundschaftBeginnen(andreas);
-
         melanie.freundschaftBeginnen(rosi);
         melanie.freundschaftBeginnen(birgit);
-
         susanne.freundschaftBeginnen(melanie);
         susanne.freundschaftBeginnen(rosi);
-
         andreas.freundschaftBeginnen(susanne);
     }
 }

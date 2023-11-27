@@ -13,42 +13,79 @@ import java.awt.event.*;
 class OBERFLAECHE implements OBERFLAECHENINTERFACE, MELDUNGSBEOBACHTER
 {
     private static final int breite = 700;
+
     private static final int hoehe = 400;
+
     private Frame fenster;
+
     private Panel anmeldePanel;
+
     private Panel kundeAuswahlPanel;
+
     private Panel kundeArbeitPanel;
+
     private Panel angestellterAuswahlPanel;
+
     private Label l;
+
     private Button b;
+
     private Button abmelden, beenden;
+
     private Button kontoWaehlen, kontoAnlegen, kontoLoeschen, kontoAuszuege;
+
     private Button angestelltenLoeschen, kundeLoeschen;
+
     private Choice kontenwahl;
+
     private Choice kundenwahl;
+
     private Choice kontenwahl2;
+
     private Choice angestelltenwahl;
+
     private TextField anmeldePanel_name, anmeldePanel_pin;
+
     private TextField angestelltenPanel_name, angestelltenPanel_pin;
+
     private TextField angestelltenPanel_wert;
+
     private TextField angestelltenPanel_name2, angestelltenPanel_pin2;
+
     private TextField pin_neu_1, pin_neu_2;
+
     private Label aktKontoFuerKunde, kontostandFuerKunde;
+
     private Label verwendungFuerWert;
+
     private TextField kundeArbeitPanel_betrag;
+
     private Label status;
+
     private Label fehler;
+
     private Label frage;
+
     private Label angestellter_kunde;
+
     private Dialog fehlermeldung;
+
     private Dialog textanzeige;
+
     private Dialog nachfrage;
+
     private Dialog loganzeige;
+
     private TextArea anzeigetext;
+
     private TextArea logtext;
+
     private CheckboxGroup kontoart;
+
     private Checkbox sparkonto, girokonto;
+
     private KONTROLLEURINTERFACE kontroller;
+
     // Antwort auf den Fragendialog
     private boolean antwort;
 
@@ -66,7 +103,8 @@ class OBERFLAECHE implements OBERFLAECHENINTERFACE, MELDUNGSBEOBACHTER
         fenster.setResizable(false);
         fenster.setLayout(null);
         fenster.setVisible(true);
-        fenster.addWindowListener(new WindowAdapter() {
+        fenster.addWindowListener(new WindowAdapter()
+        {
             public void windowClosing(WindowEvent e)
             {
                 // Nothalt
@@ -86,7 +124,8 @@ class OBERFLAECHE implements OBERFLAECHENINTERFACE, MELDUNGSBEOBACHTER
         abmelden.setVisible(true);
         abmelden.setEnabled(false);
         fenster.add(abmelden);
-        abmelden.addActionListener(new ActionListener() {
+        abmelden.addActionListener(new ActionListener()
+        {
             public void actionPerformed(ActionEvent e)
             {
                 kontroller.AbmeldenAusfuehren();
@@ -98,7 +137,8 @@ class OBERFLAECHE implements OBERFLAECHENINTERFACE, MELDUNGSBEOBACHTER
         beenden.setLabel("Beenden");
         beenden.setVisible(false);
         fenster.add(beenden);
-        beenden.addActionListener(new ActionListener() {
+        beenden.addActionListener(new ActionListener()
+        {
             public void actionPerformed(ActionEvent e)
             {
                 kontroller.BeendenAusfuehren();
@@ -108,7 +148,6 @@ class OBERFLAECHE implements OBERFLAECHENINTERFACE, MELDUNGSBEOBACHTER
         KundenauswahlpanelAufbauen();
         KundenarbeitspanelAufbauen();
         AngestelltenauswahlpanelAufbauen();
-
         // Fehlerdialog
         fehlermeldung = new Dialog(fenster, "Fehlermeldungen", true);
         fehlermeldung.setSize(400, 150);
@@ -129,13 +168,13 @@ class OBERFLAECHE implements OBERFLAECHENINTERFACE, MELDUNGSBEOBACHTER
         b.setLabel("Schliessen");
         b.setVisible(true);
         fehlermeldung.add(b);
-        b.addActionListener(new ActionListener() {
+        b.addActionListener(new ActionListener()
+        {
             public void actionPerformed(ActionEvent e)
             {
                 fehlermeldung.setVisible(false);
             }
         });
-
         // Nachfrage
         nachfrage = new Dialog(fenster, "", true);
         nachfrage.setSize(400, 150);
@@ -156,7 +195,8 @@ class OBERFLAECHE implements OBERFLAECHENINTERFACE, MELDUNGSBEOBACHTER
         b.setLabel("Nein");
         b.setVisible(true);
         nachfrage.add(b);
-        b.addActionListener(new ActionListener() {
+        b.addActionListener(new ActionListener()
+        {
             public void actionPerformed(ActionEvent e)
             {
                 antwort = false;
@@ -169,7 +209,8 @@ class OBERFLAECHE implements OBERFLAECHENINTERFACE, MELDUNGSBEOBACHTER
         b.setLabel("Ja");
         b.setVisible(true);
         nachfrage.add(b);
-        b.addActionListener(new ActionListener() {
+        b.addActionListener(new ActionListener()
+        {
             public void actionPerformed(ActionEvent e)
             {
                 antwort = true;
@@ -177,7 +218,6 @@ class OBERFLAECHE implements OBERFLAECHENINTERFACE, MELDUNGSBEOBACHTER
             }
         });
         antwort = false;
-
         // Textfenster
         textanzeige = new Dialog(fenster, "Anzeige", true);
         textanzeige.setSize(600, 400);
@@ -197,13 +237,13 @@ class OBERFLAECHE implements OBERFLAECHENINTERFACE, MELDUNGSBEOBACHTER
         b.setLabel("Schliessen");
         b.setVisible(true);
         textanzeige.add(b);
-        b.addActionListener(new ActionListener() {
+        b.addActionListener(new ActionListener()
+        {
             public void actionPerformed(ActionEvent e)
             {
                 textanzeige.setVisible(false);
             }
         });
-
         // Logfenster
         loganzeige = new Dialog(fenster, "Log", true);
         loganzeige.setSize(600, 400);
@@ -223,7 +263,8 @@ class OBERFLAECHE implements OBERFLAECHENINTERFACE, MELDUNGSBEOBACHTER
         b.setLabel("Schliessen");
         b.setVisible(true);
         loganzeige.add(b);
-        b.addActionListener(new ActionListener() {
+        b.addActionListener(new ActionListener()
+        {
             public void actionPerformed(ActionEvent e)
             {
                 loganzeige.setVisible(false);
@@ -241,145 +282,151 @@ class OBERFLAECHE implements OBERFLAECHENINTERFACE, MELDUNGSBEOBACHTER
         int[] nummern;
         switch (status)
         {
-            case anmelden:
-                abmelden.setEnabled(false);
-                beenden.setVisible(false);
-                anmeldePanel_name.setText("");
-                anmeldePanel_pin.setText("");
-                anmeldePanel.setVisible(true);
-                kundeArbeitPanel.setVisible(false);
-                kundeAuswahlPanel.setVisible(false);
-                angestellterAuswahlPanel.setVisible(false);
-                anmeldePanel_name.requestFocus();
-                break;
-            case kundenkontowahl:
-                abmelden.setEnabled(true);
-                beenden.setVisible(false);
-                anmeldePanel.setVisible(false);
-                kundeArbeitPanel.setVisible(false);
-                angestellterAuswahlPanel.setVisible(false);
-                kontenwahl.removeAll();
-                nummern = kontroller.NummerFuerKundenGeben();
+        case anmelden:
+            abmelden.setEnabled(false);
+            beenden.setVisible(false);
+            anmeldePanel_name.setText("");
+            anmeldePanel_pin.setText("");
+            anmeldePanel.setVisible(true);
+            kundeArbeitPanel.setVisible(false);
+            kundeAuswahlPanel.setVisible(false);
+            angestellterAuswahlPanel.setVisible(false);
+            anmeldePanel_name.requestFocus();
+            break;
+
+        case kundenkontowahl:
+            abmelden.setEnabled(true);
+            beenden.setVisible(false);
+            anmeldePanel.setVisible(false);
+            kundeArbeitPanel.setVisible(false);
+            angestellterAuswahlPanel.setVisible(false);
+            kontenwahl.removeAll();
+            nummern = kontroller.NummerFuerKundenGeben();
+            if (nummern != null)
+            {
+                for (int nummer : nummern)
+                {
+                    kontenwahl.add("" + nummer);
+                }
+                kontenwahl.setEnabled(true);
+            }
+            else
+            {
+                kontenwahl.add("----");
+                kontenwahl.setEnabled(false);
+            }
+            kundeAuswahlPanel.setVisible(true);
+            break;
+
+        case kundenkontoarbeit:
+            abmelden.setEnabled(true);
+            beenden.setVisible(false);
+            anmeldePanel.setVisible(false);
+            kundeAuswahlPanel.setVisible(false);
+            angestellterAuswahlPanel.setVisible(false);
+            kundeArbeitPanel.setVisible(true);
+            kundeArbeitPanel_betrag.setText("");
+            kontostandFuerKunde
+                    .setText("" + kontroller.BetragFuerKundenKontoGeben());
+            aktKontoFuerKunde.setText("Das aktuelle Konto hat die Nummer "
+                    + kontroller.NummerFuerKundenKontoGeben());
+            break;
+
+        case angestelltensicht:
+        case angestelltensicht_kunde:
+        case angestelltensicht_kundeundkonto:
+            abmelden.setEnabled(true);
+            beenden.setVisible(true);
+            anmeldePanel.setVisible(false);
+            kundeAuswahlPanel.setVisible(false);
+            kundeArbeitPanel.setVisible(false);
+            angestellterAuswahlPanel.setVisible(true);
+            angestelltenwahl.removeAll();
+            String[] namen = kontroller.AngestelltenNamenGeben();
+            if (namen != null)
+            {
+                for (String name : namen)
+                {
+                    angestelltenwahl.add(name);
+                }
+                angestelltenwahl.setEnabled(true);
+                angestelltenLoeschen.setEnabled(true);
+            }
+            else
+            {
+                angestelltenwahl.add("----");
+                angestelltenwahl.setEnabled(false);
+                angestelltenLoeschen.setEnabled(false);
+            }
+            kundenwahl.removeAll();
+            namen = kontroller.KundenNamenGeben();
+            if (namen != null)
+            {
+                for (String name : namen)
+                {
+                    kundenwahl.add(name);
+                }
+                kundenwahl.setEnabled(true);
+            }
+            else
+            {
+                kundenwahl.add("----");
+                kundenwahl.setEnabled(false);
+            }
+            kontenwahl2.removeAll();
+            if (status == Status.angestelltensicht)
+            {
+                angestellter_kunde.setText("Es ist kein Kunde ausgew\u00E4hlt");
+                kontoWaehlen.setEnabled(false);
+                kontoAnlegen.setEnabled(false);
+                kontoAuszuege.setEnabled(false);
+                kontoLoeschen.setEnabled(false);
+                kundeLoeschen.setEnabled(false);
+            }
+            else
+            {
+                angestellter_kunde.setText("Sie arbeiten mit Kunde "
+                        + kontroller.NameVonAktkundeGeben() + ".");
+                nummern = kontroller.NummerFuerAktKundenGeben();
+                kundeLoeschen.setEnabled(true);
                 if (nummern != null)
                 {
                     for (int nummer : nummern)
                     {
-                        kontenwahl.add("" + nummer);
+                        kontenwahl2.add("" + nummer);
                     }
-                    kontenwahl.setEnabled(true);
+                    kontenwahl2.setEnabled(true);
+                    kontoWaehlen.setEnabled(true);
                 }
                 else
                 {
-                    kontenwahl.add("----");
-                    kontenwahl.setEnabled(false);
-                }
-                kundeAuswahlPanel.setVisible(true);
-                break;
-            case kundenkontoarbeit:
-                abmelden.setEnabled(true);
-                beenden.setVisible(false);
-                anmeldePanel.setVisible(false);
-                kundeAuswahlPanel.setVisible(false);
-                angestellterAuswahlPanel.setVisible(false);
-                kundeArbeitPanel.setVisible(true);
-                kundeArbeitPanel_betrag.setText("");
-                kontostandFuerKunde.setText("" + kontroller.BetragFuerKundenKontoGeben());
-                aktKontoFuerKunde.setText("Das aktuelle Konto hat die Nummer "
-                                + kontroller.NummerFuerKundenKontoGeben());
-                break;
-            case angestelltensicht:
-            case angestelltensicht_kunde:
-            case angestelltensicht_kundeundkonto:
-                abmelden.setEnabled(true);
-                beenden.setVisible(true);
-                anmeldePanel.setVisible(false);
-                kundeAuswahlPanel.setVisible(false);
-                kundeArbeitPanel.setVisible(false);
-                angestellterAuswahlPanel.setVisible(true);
-                angestelltenwahl.removeAll();
-                String[] namen = kontroller.AngestelltenNamenGeben();
-                if (namen != null)
-                {
-                    for (String name : namen)
-                    {
-                        angestelltenwahl.add(name);
-                    }
-                    angestelltenwahl.setEnabled(true);
-                    angestelltenLoeschen.setEnabled(true);
-                }
-                else
-                {
-                    angestelltenwahl.add("----");
-                    angestelltenwahl.setEnabled(false);
-                    angestelltenLoeschen.setEnabled(false);
-                }
-                kundenwahl.removeAll();
-                namen = kontroller.KundenNamenGeben();
-                if (namen != null)
-                {
-                    for (String name : namen)
-                    {
-                        kundenwahl.add(name);
-                    }
-                    kundenwahl.setEnabled(true);
-                }
-                else
-                {
-                    kundenwahl.add("----");
-                    kundenwahl.setEnabled(false);
-                }
-                kontenwahl2.removeAll();
-                if (status == Status.angestelltensicht)
-                {
-                    angestellter_kunde.setText("Es ist kein Kunde ausgew\u00E4hlt");
+                    kontenwahl2.add("----");
+                    kontenwahl2.setEnabled(false);
                     kontoWaehlen.setEnabled(false);
-                    kontoAnlegen.setEnabled(false);
+                }
+                kontoAnlegen.setEnabled(true);
+                if (status == Status.angestelltensicht_kundeundkonto)
+                {
+                    kontoAuszuege.setEnabled(true);
+                    kontoLoeschen.setEnabled(true);
+                }
+                else
+                {
                     kontoAuszuege.setEnabled(false);
                     kontoLoeschen.setEnabled(false);
-                    kundeLoeschen.setEnabled(false);
                 }
-                else
-                {
-                    angestellter_kunde.setText("Sie arbeiten mit Kunde "
-                                    + kontroller.NameVonAktkundeGeben() + ".");
-                    nummern = kontroller.NummerFuerAktKundenGeben();
-                    kundeLoeschen.setEnabled(true);
-                    if (nummern != null)
-                    {
-                        for (int nummer : nummern)
-                        {
-                            kontenwahl2.add("" + nummer);
-                        }
-                        kontenwahl2.setEnabled(true);
-                        kontoWaehlen.setEnabled(true);
-                    }
-                    else
-                    {
-                        kontenwahl2.add("----");
-                        kontenwahl2.setEnabled(false);
-                        kontoWaehlen.setEnabled(false);
-                    }
-                    kontoAnlegen.setEnabled(true);
-                    if (status == Status.angestelltensicht_kundeundkonto)
-                    {
-                        kontoAuszuege.setEnabled(true);
-                        kontoLoeschen.setEnabled(true);
-                    }
-                    else
-                    {
-                        kontoAuszuege.setEnabled(false);
-                        kontoLoeschen.setEnabled(false);
-                    }
-                }
-                break;
-            default:
-                FehlertextZeigen("Unbekannter Status: '" + status + "'.");
-                break;
+            }
+            break;
+
+        default:
+            FehlertextZeigen("Unbekannter Status: '" + status + "'.");
+            break;
         }
     }
 
     /**
-     * Zeigt einen Fehlertext an. Blockiert, bis das Fenster wieder unsichtbar wird.
+     * Zeigt einen Fehlertext an. Blockiert, bis das Fenster wieder unsichtbar
+     * wird.
      *
      * @param text der anzuzeigende Fehlertext
      */
@@ -391,8 +438,9 @@ class OBERFLAECHE implements OBERFLAECHENINTERFACE, MELDUNGSBEOBACHTER
     }
 
     /**
-     * Stellt eine mit Ja oder Nein zu beantwortende Frage. Die Antwort wird im Attribut anwort
-     * abgelegt. Blockiert, bis das Fenster wieder unsichtbar wird.
+     * Stellt eine mit Ja oder Nein zu beantwortende Frage. Die Antwort wird im
+     * Attribut anwort abgelegt. Blockiert, bis das Fenster wieder unsichtbar
+     * wird.
      *
      * @param text die anzuzeigende Frage
      */
@@ -403,8 +451,8 @@ class OBERFLAECHE implements OBERFLAECHENINTERFACE, MELDUNGSBEOBACHTER
     }
 
     /**
-     * Zeigt einen gro&szlig;en Text (logs, Ausz&uuml;ge) an. Blockiert, bis das Fenster wieder
-     * unsichtbar wird.
+     * Zeigt einen gro&szlig;en Text (logs, Ausz&uuml;ge) an. Blockiert, bis das
+     * Fenster wieder unsichtbar wird.
      *
      * @param text der anzuzeigende Fehlertext
      */
@@ -468,14 +516,16 @@ class OBERFLAECHE implements OBERFLAECHENINTERFACE, MELDUNGSBEOBACHTER
         b.setLabel("als Kunde");
         b.setVisible(true);
         anmeldePanel.add(b);
-        b.addActionListener(new ActionListener() {
+        b.addActionListener(new ActionListener()
+        {
             public void actionPerformed(ActionEvent e)
             {
                 try
                 {
                     kontroller.KundeAnmelden(anmeldePanel_name.getText(),
-                                    Integer.parseInt(anmeldePanel_pin.getText()));
-                } catch (Exception ex)
+                            Integer.parseInt(anmeldePanel_pin.getText()));
+                }
+                catch (Exception ex)
                 {
                     FehlertextZeigen("PIN muss eine ganze Zahl sein.");
                 }
@@ -487,14 +537,16 @@ class OBERFLAECHE implements OBERFLAECHENINTERFACE, MELDUNGSBEOBACHTER
         b.setLabel("als Angestellter");
         b.setVisible(true);
         anmeldePanel.add(b);
-        b.addActionListener(new ActionListener() {
+        b.addActionListener(new ActionListener()
+        {
             public void actionPerformed(ActionEvent e)
             {
                 try
                 {
                     kontroller.AngestellterAnmelden(anmeldePanel_name.getText(),
-                                    Integer.parseInt(anmeldePanel_pin.getText()));
-                } catch (Exception ex)
+                            Integer.parseInt(anmeldePanel_pin.getText()));
+                }
+                catch (Exception ex)
                 {
                     FehlertextZeigen("PIN muss eine ganze Zahl sein.");
                 }
@@ -537,13 +589,16 @@ class OBERFLAECHE implements OBERFLAECHENINTERFACE, MELDUNGSBEOBACHTER
         b.setLabel("Ok");
         b.setVisible(true);
         kundeAuswahlPanel.add(b);
-        b.addActionListener(new ActionListener() {
+        b.addActionListener(new ActionListener()
+        {
             public void actionPerformed(ActionEvent e)
             {
                 try
                 {
-                    kontroller.KundeKontoWaehlen(Integer.parseInt(kontenwahl.getSelectedItem()));
-                } catch (Exception ex)
+                    kontroller.KundeKontoWaehlen(
+                            Integer.parseInt(kontenwahl.getSelectedItem()));
+                }
+                catch (Exception ex)
                 {
                     FehlertextZeigen("Interner Fehler bei der Kontenwahl.");
                 }
@@ -579,17 +634,19 @@ class OBERFLAECHE implements OBERFLAECHENINTERFACE, MELDUNGSBEOBACHTER
         b.setLabel("PIN \u00E4ndern");
         b.setVisible(true);
         kundeAuswahlPanel.add(b);
-        b.addActionListener(new ActionListener() {
+        b.addActionListener(new ActionListener()
+        {
             public void actionPerformed(ActionEvent e)
             {
-
                 if (pin_neu_1.getText().equals(pin_neu_2.getText()))
                 {
                     try
                     {
-                        kontroller.KundePinAendern(Integer.parseInt(pin_neu_1.getText()));
+                        kontroller.KundePinAendern(
+                                Integer.parseInt(pin_neu_1.getText()));
                         StatusmeldungSetzen("Pin ge\u00E4ndert.");
-                    } catch (Exception ex)
+                    }
+                    catch (Exception ex)
                     {
                         FehlertextZeigen("Die PIN muss eine ganze Zahl sein.");
                     }
@@ -597,7 +654,7 @@ class OBERFLAECHE implements OBERFLAECHENINTERFACE, MELDUNGSBEOBACHTER
                 else
                 {
                     FehlertextZeigen(
-                                    "Die beiden Angaben f\u00FCr die PIN m\u00FCssen \u00FCbereinstimmen.");
+                            "Die beiden Angaben f\u00FCr die PIN m\u00FCssen \u00FCbereinstimmen.");
                 }
             }
         });
@@ -651,17 +708,21 @@ class OBERFLAECHE implements OBERFLAECHENINTERFACE, MELDUNGSBEOBACHTER
         b.setLabel("Abheben");
         b.setVisible(true);
         kundeArbeitPanel.add(b);
-        b.addActionListener(new ActionListener() {
+        b.addActionListener(new ActionListener()
+        {
             public void actionPerformed(ActionEvent e)
             {
                 try
                 {
-                    kontroller.KundeKontoAbheben(
-                                    Double.parseDouble(kundeArbeitPanel_betrag.getText()));
-                    kontostandFuerKunde.setText("" + kontroller.BetragFuerKundenKontoGeben());
-                } catch (Exception ex)
+                    kontroller.KundeKontoAbheben(Double
+                            .parseDouble(kundeArbeitPanel_betrag.getText()));
+                    kontostandFuerKunde.setText(
+                            "" + kontroller.BetragFuerKundenKontoGeben());
+                }
+                catch (Exception ex)
                 {
-                    StatusmeldungSetzen("Bitte einen korrekten Betrag eingeben");
+                    StatusmeldungSetzen(
+                            "Bitte einen korrekten Betrag eingeben");
                     (Toolkit.getDefaultToolkit()).beep();
                     kundeArbeitPanel_betrag.requestFocus();
                     kundeArbeitPanel_betrag.selectAll();
@@ -674,31 +735,35 @@ class OBERFLAECHE implements OBERFLAECHENINTERFACE, MELDUNGSBEOBACHTER
         b.setLabel("Einzahlen");
         b.setVisible(true);
         kundeArbeitPanel.add(b);
-        b.addActionListener(new ActionListener() {
+        b.addActionListener(new ActionListener()
+        {
             public void actionPerformed(ActionEvent e)
             {
                 try
                 {
-                    kontroller.KundeKontoEinzahlen(
-                                    Double.parseDouble(kundeArbeitPanel_betrag.getText()));
-                    kontostandFuerKunde.setText("" + kontroller.BetragFuerKundenKontoGeben());
-                } catch (Exception ex)
+                    kontroller.KundeKontoEinzahlen(Double
+                            .parseDouble(kundeArbeitPanel_betrag.getText()));
+                    kontostandFuerKunde.setText(
+                            "" + kontroller.BetragFuerKundenKontoGeben());
+                }
+                catch (Exception ex)
                 {
-                    StatusmeldungSetzen("Bitte einen korrekten Betrag eingeben");
+                    StatusmeldungSetzen(
+                            "Bitte einen korrekten Betrag eingeben");
                     (Toolkit.getDefaultToolkit()).beep();
                     kundeArbeitPanel_betrag.requestFocus();
                     kundeArbeitPanel_betrag.selectAll();
                 }
             }
         });
-
         b = new Button();
         b.setSize(200, 30);
         b.setLocation(110, 200);
         b.setLabel("Kontoausz\u00FCge anzeigen");
         b.setVisible(true);
         kundeArbeitPanel.add(b);
-        b.addActionListener(new ActionListener() {
+        b.addActionListener(new ActionListener()
+        {
             public void actionPerformed(ActionEvent e)
             {
                 AnzeigetextZeigen(kontroller.KundeKontoauszuegeGeben());
@@ -710,7 +775,8 @@ class OBERFLAECHE implements OBERFLAECHENINTERFACE, MELDUNGSBEOBACHTER
         b.setLabel("Neues Konto w\u00E4hlen");
         b.setVisible(true);
         kundeArbeitPanel.add(b);
-        b.addActionListener(new ActionListener() {
+        b.addActionListener(new ActionListener()
+        {
             public void actionPerformed(ActionEvent e)
             {
                 kontroller.KundeKontoNeuWaehlen();
@@ -719,7 +785,8 @@ class OBERFLAECHE implements OBERFLAECHENINTERFACE, MELDUNGSBEOBACHTER
     }
 
     /**
-     * Erzeugt das Auswahlpanel f&uuml;r die Arbeitsabl&auml;ufe des Angestellten
+     * Erzeugt das Auswahlpanel f&uuml;r die Arbeitsabl&auml;ufe des
+     * Angestellten
      */
     private void AngestelltenauswahlpanelAufbauen()
     {
@@ -746,13 +813,16 @@ class OBERFLAECHE implements OBERFLAECHENINTERFACE, MELDUNGSBEOBACHTER
         b.setLabel("Kunde w\u00E4hlen");
         b.setVisible(true);
         angestellterAuswahlPanel.add(b);
-        b.addActionListener(new ActionListener() {
+        b.addActionListener(new ActionListener()
+        {
             public void actionPerformed(ActionEvent e)
             {
                 try
                 {
-                    kontroller.AngestellterKundeWaehlen(kundenwahl.getSelectedItem());
-                } catch (Exception ex)
+                    kontroller.AngestellterKundeWaehlen(
+                            kundenwahl.getSelectedItem());
+                }
+                catch (Exception ex)
                 {
                     FehlertextZeigen("Interner Fehler bei der Kundenwahl.");
                 }
@@ -786,14 +856,16 @@ class OBERFLAECHE implements OBERFLAECHENINTERFACE, MELDUNGSBEOBACHTER
         b.setLabel("Neuen Kunden anlegen");
         b.setVisible(true);
         angestellterAuswahlPanel.add(b);
-        b.addActionListener(new ActionListener() {
+        b.addActionListener(new ActionListener()
+        {
             public void actionPerformed(ActionEvent e)
             {
                 try
                 {
                     kontroller.KundeErzeugen(angestelltenPanel_name.getText(),
-                                    Integer.parseInt(angestelltenPanel_pin.getText()));
-                } catch (Exception ex)
+                            Integer.parseInt(angestelltenPanel_pin.getText()));
+                }
+                catch (Exception ex)
                 {
                     FehlertextZeigen("PIN muss eine ganze Zahl sein.");
                 }
@@ -806,10 +878,12 @@ class OBERFLAECHE implements OBERFLAECHENINTERFACE, MELDUNGSBEOBACHTER
         kundeLoeschen.setVisible(true);
         kundeLoeschen.setEnabled(false);
         angestellterAuswahlPanel.add(kundeLoeschen);
-        kundeLoeschen.addActionListener(new ActionListener() {
+        kundeLoeschen.addActionListener(new ActionListener()
+        {
             public void actionPerformed(ActionEvent e)
             {
-                FrageStellen("Wollen Sie den aktuellen Kunden wirklich l\u00F6schen?");
+                FrageStellen(
+                        "Wollen Sie den aktuellen Kunden wirklich l\u00F6schen?");
                 if (antwort)
                 {
                     kontroller.KundeLoeschen();
@@ -841,14 +915,16 @@ class OBERFLAECHE implements OBERFLAECHENINTERFACE, MELDUNGSBEOBACHTER
         kontoWaehlen.setVisible(true);
         kontoWaehlen.setEnabled(false);
         angestellterAuswahlPanel.add(kontoWaehlen);
-        kontoWaehlen.addActionListener(new ActionListener() {
+        kontoWaehlen.addActionListener(new ActionListener()
+        {
             public void actionPerformed(ActionEvent e)
             {
                 try
                 {
                     kontroller.KontoFuerAngestelltenSetzen(
-                                    Integer.parseInt(kontenwahl2.getSelectedItem()));
-                } catch (Exception ex)
+                            Integer.parseInt(kontenwahl2.getSelectedItem()));
+                }
+                catch (Exception ex)
                 {
                     FehlertextZeigen("Interner Fehler bei der Kontenwahl");
                 }
@@ -860,7 +936,8 @@ class OBERFLAECHE implements OBERFLAECHENINTERFACE, MELDUNGSBEOBACHTER
         sparkonto.setLocation(250, 150);
         sparkonto.setVisible(true);
         angestellterAuswahlPanel.add(sparkonto);
-        sparkonto.addItemListener(new ItemListener() {
+        sparkonto.addItemListener(new ItemListener()
+        {
             public void itemStateChanged(ItemEvent e)
             {
                 if (e.getStateChange() == ItemEvent.SELECTED)
@@ -875,7 +952,8 @@ class OBERFLAECHE implements OBERFLAECHENINTERFACE, MELDUNGSBEOBACHTER
         girokonto.setLocation(350, 150);
         girokonto.setVisible(true);
         angestellterAuswahlPanel.add(girokonto);
-        girokonto.addItemListener(new ItemListener() {
+        girokonto.addItemListener(new ItemListener()
+        {
             public void itemStateChanged(ItemEvent e)
             {
                 if (e.getStateChange() == ItemEvent.SELECTED)
@@ -903,7 +981,8 @@ class OBERFLAECHE implements OBERFLAECHENINTERFACE, MELDUNGSBEOBACHTER
         kontoAnlegen.setVisible(true);
         kontoAnlegen.setEnabled(false);
         angestellterAuswahlPanel.add(kontoAnlegen);
-        kontoAnlegen.addActionListener(new ActionListener() {
+        kontoAnlegen.addActionListener(new ActionListener()
+        {
             public void actionPerformed(ActionEvent e)
             {
                 double wert;
@@ -918,13 +997,13 @@ class OBERFLAECHE implements OBERFLAECHENINTERFACE, MELDUNGSBEOBACHTER
                     {
                         kontroller.GirokontoEinrichten(wert);
                     }
-                } catch (Exception ex)
+                }
+                catch (Exception ex)
                 {
                     FehlertextZeigen("Bitte einen korrekten Betrag eingeben.");
                     angestelltenPanel_wert.requestFocus();
                     angestelltenPanel_wert.selectAll();
                 }
-
             }
         });
         kontoAuszuege = new Button();
@@ -934,7 +1013,8 @@ class OBERFLAECHE implements OBERFLAECHENINTERFACE, MELDUNGSBEOBACHTER
         kontoAuszuege.setVisible(true);
         kontoAuszuege.setEnabled(false);
         angestellterAuswahlPanel.add(kontoAuszuege);
-        kontoAuszuege.addActionListener(new ActionListener() {
+        kontoAuszuege.addActionListener(new ActionListener()
+        {
             public void actionPerformed(ActionEvent e)
             {
                 AnzeigetextZeigen(kontroller.KontoauszuegeGeben());
@@ -947,17 +1027,18 @@ class OBERFLAECHE implements OBERFLAECHENINTERFACE, MELDUNGSBEOBACHTER
         kontoLoeschen.setVisible(true);
         kontoLoeschen.setEnabled(false);
         angestellterAuswahlPanel.add(kontoLoeschen);
-        kontoLoeschen.addActionListener(new ActionListener() {
+        kontoLoeschen.addActionListener(new ActionListener()
+        {
             public void actionPerformed(ActionEvent e)
             {
-                FrageStellen("Wollen Sie das aktuelle Konto wirklich l\u00F6schen?");
+                FrageStellen(
+                        "Wollen Sie das aktuelle Konto wirklich l\u00F6schen?");
                 if (antwort)
                 {
                     kontroller.KontoLoeschen();
                 }
             }
         });
-
         l = new Label();
         l.setSize(80, 20);
         l.setLocation(500, 30);
@@ -976,13 +1057,16 @@ class OBERFLAECHE implements OBERFLAECHENINTERFACE, MELDUNGSBEOBACHTER
         angestelltenLoeschen.setVisible(true);
         angestelltenLoeschen.setEnabled(false);
         angestellterAuswahlPanel.add(angestelltenLoeschen);
-        angestelltenLoeschen.addActionListener(new ActionListener() {
+        angestelltenLoeschen.addActionListener(new ActionListener()
+        {
             public void actionPerformed(ActionEvent e)
             {
-                FrageStellen("Wollen Sie den Angestellten wirklich l\u00F6schen?");
+                FrageStellen(
+                        "Wollen Sie den Angestellten wirklich l\u00F6schen?");
                 if (antwort)
                 {
-                    kontroller.AngestelltenLoeschen(angestelltenwahl.getSelectedItem());
+                    kontroller.AngestelltenLoeschen(
+                            angestelltenwahl.getSelectedItem());
                 }
             }
         });
@@ -1014,14 +1098,17 @@ class OBERFLAECHE implements OBERFLAECHENINTERFACE, MELDUNGSBEOBACHTER
         b.setLabel("Neuen Angestellten anlegen");
         b.setVisible(true);
         angestellterAuswahlPanel.add(b);
-        b.addActionListener(new ActionListener() {
+        b.addActionListener(new ActionListener()
+        {
             public void actionPerformed(ActionEvent e)
             {
                 try
                 {
-                    kontroller.AngestellterErzeugen(angestelltenPanel_name2.getText(),
-                                    Integer.parseInt(angestelltenPanel_pin2.getText()));
-                } catch (Exception ex)
+                    kontroller.AngestellterErzeugen(
+                            angestelltenPanel_name2.getText(),
+                            Integer.parseInt(angestelltenPanel_pin2.getText()));
+                }
+                catch (Exception ex)
                 {
                     FehlertextZeigen("PIN muss eine ganze Zahl sein.");
                 }
@@ -1033,7 +1120,8 @@ class OBERFLAECHE implements OBERFLAECHENINTERFACE, MELDUNGSBEOBACHTER
         b.setLabel("Verzinsen");
         b.setVisible(true);
         angestellterAuswahlPanel.add(b);
-        b.addActionListener(new ActionListener() {
+        b.addActionListener(new ActionListener()
+        {
             public void actionPerformed(ActionEvent e)
             {
                 kontroller.Verzinsen();
@@ -1045,7 +1133,8 @@ class OBERFLAECHE implements OBERFLAECHENINTERFACE, MELDUNGSBEOBACHTER
         b.setLabel("Log anzeigen");
         b.setVisible(true);
         angestellterAuswahlPanel.add(b);
-        b.addActionListener(new ActionListener() {
+        b.addActionListener(new ActionListener()
+        {
             public void actionPerformed(ActionEvent e)
             {
                 loganzeige.setVisible(true);

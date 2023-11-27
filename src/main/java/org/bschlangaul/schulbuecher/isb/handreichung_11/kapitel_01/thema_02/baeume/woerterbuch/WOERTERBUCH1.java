@@ -8,7 +8,6 @@ package org.bschlangaul.schulbuecher.isb.handreichung_11.kapitel_01.thema_02.bae
  */
 class WOERTERBUCH1 extends BAUM
 {
-
     /**
      * keine speziellen Aufgaben
      */
@@ -45,10 +44,11 @@ class WOERTERBUCH1 extends BAUM
     }
 
     /**
-     * Fügt ein neues Wort in das Wörterbuch ein. Der Wert darf noch nicht vorkommen
+     * Fügt ein neues Wort in das Wörterbuch ein. Der Wert darf noch nicht
+     * vorkommen
      *
      * @param englisch der englische Begriff
-     * @param deutsch die möglichen deutschen übersetzungen
+     * @param deutsch  die möglichen deutschen übersetzungen
      */
     void Einfuegen(String englisch, String deutsch)
     {

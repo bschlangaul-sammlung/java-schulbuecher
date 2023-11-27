@@ -3,13 +3,16 @@ package org.bschlangaul.schulbuecher.isb.handreichung_10.konzept_01.mastermind;
 public class SpielWalze
 {
     private FarbKreis licht;
+
     private Kasten rahmen;
+
     private int farbnummer;
 
-    public SpielWalze(int linksStart, int obenStart, int breite, int farbnrStart)
+    public SpielWalze(int linksStart, int obenStart, int breite,
+            int farbnrStart)
     {
-        licht = new FarbKreis(linksStart + breite / 2, obenStart + breite / 2, breite / 3,
-                        farbnrStart);
+        licht = new FarbKreis(linksStart + breite / 2, obenStart + breite / 2,
+                breite / 3, farbnrStart);
         rahmen = new Kasten(linksStart, obenStart, breite, breite);
         farbnummer = farbnrStart;
     }
@@ -32,5 +35,4 @@ public class SpielWalze
         licht.verschiebe(nachRechts, nachUnten);
         rahmen.verschiebe(nachRechts, nachUnten);
     }
-
 }

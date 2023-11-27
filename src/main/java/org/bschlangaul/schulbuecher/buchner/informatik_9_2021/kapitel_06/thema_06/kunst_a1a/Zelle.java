@@ -13,6 +13,7 @@ import greenfoot.GreenfootImage;
 public class Zelle extends Actor
 {
     static int zaehler = 0; // Some serious magic happening right here!
+
     int zahl;
 
     public Zelle()
@@ -29,16 +30,20 @@ public class Zelle extends Actor
         }
         switch (zahl % 4)
         {
-            case 0:
-                return Color.ORANGE;
-            case 1:
-                return Color.RED;
-            case 2:
-                return Color.BLUE;
-            case 3:
-                return Color.GREEN;
-            default:
-                return Color.BLACK;
+        case 0:
+            return Color.ORANGE;
+
+        case 1:
+            return Color.RED;
+
+        case 2:
+            return Color.BLUE;
+
+        case 3:
+            return Color.GREEN;
+
+        default:
+            return Color.BLACK;
         }
     }
 
@@ -52,13 +57,10 @@ public class Zelle extends Actor
     {
         int cellSize;
         cellSize = getWorld().getCellSize();
-
         GreenfootImage img;
         img = new GreenfootImage(cellSize, cellSize);
         img.setColor(berechneFarbe());
         img.fillRect(0, 0, cellSize, cellSize);
-
         setImage(img);
     }
-
 }

@@ -10,20 +10,30 @@ import java.awt.event.*;
  * @version 1.0 vom 08.01.2009
  * @author
  */
-
 class FENSTER extends Frame
 {
     // Anfang Attribute
     private Choice choice1 = new Choice();
+
     private Choice choice2 = new Choice();
+
     private Label label1 = new Label();
+
     private Label label2 = new Label();
+
     private Choice choice3 = new Choice();
+
     private Label label3 = new Label();
+
     private Label label4 = new Label();
+
     private Label label5 = new Label();
+
     private Button button1 = new Button();
-    private TextArea textArea1 = new TextArea("", 1, 1, TextArea.SCROLLBARS_NONE);
+
+    private TextArea textArea1 = new TextArea("", 1, 1,
+            TextArea.SCROLLBARS_NONE);
+
     private BUNDESLIGA bundesliga;
     // Ende Attribute
 
@@ -32,11 +42,11 @@ class FENSTER extends Frame
      */
     FENSTER()
     {
-
         // Frame-Initialisierung
         super("Bundesligaverwaltung");
         bundesliga = new BUNDESLIGA(this);
-        addWindowListener(new WindowAdapter() {
+        addWindowListener(new WindowAdapter()
+        {
             public void windowClosing(WindowEvent evt)
             {
                 System.exit(0);
@@ -52,7 +62,6 @@ class FENSTER extends Frame
         Panel cp = new Panel(null);
         add(cp);
         // Anfang Komponenten
-
         choice1.setBounds(8, 128, 137, 24);
         cp.add(choice1);
         choice2.setBounds(152, 128, 137, 24);
@@ -87,7 +96,8 @@ class FENSTER extends Frame
         cp.add(textArea1);
         button1.setBounds(424, 128, 129, 25);
         button1.setLabel("Spiel aufnehmen");
-        button1.addActionListener(new ActionListener() {
+        button1.addActionListener(new ActionListener()
+        {
             public void actionPerformed(ActionEvent evt)
             {
                 int sieger;
@@ -107,20 +117,17 @@ class FENSTER extends Frame
                     }
                 }
                 bundesliga.SpielergebnisAufnehmen(choice1.getSelectedItem(),
-                                choice2.getSelectedItem(), sieger);
+                        choice2.getSelectedItem(), sieger);
                 textArea1.setText(bundesliga.ListeAusgeben());
             }
-
         });
         cp.add(button1);
         textArea1.setBounds(8, 224, 321, 433);
         textArea1.setText(bundesliga.ListeAusgeben());
         cp.add(textArea1);
         // Ende Komponenten
-
         setResizable(false);
         setVisible(true);
-
     }
 
     /**
@@ -130,6 +137,5 @@ class FENSTER extends Frame
     {
         choice1.add(s);
         choice2.add(s);
-
     }
 }

@@ -13,7 +13,6 @@ public class Eis
         kugeln[0] = "Mango";
         kugeln[1] = "Zitrone";
         kugeln[2] = "Himbeere";
-
         /**
          * Bearbeitung Aufgabe 1b)
          */
@@ -21,11 +20,9 @@ public class Eis
         kugeln[1] = "Vanille";
         kugeln[2] = "Erdbeere";
         kugeln[3] = "Erdbeere";
-
         /**
          * Bearbeitung Aufgabe 1c)
          */
         kugeln[4] = "Stracciatella";
     }
-
 }

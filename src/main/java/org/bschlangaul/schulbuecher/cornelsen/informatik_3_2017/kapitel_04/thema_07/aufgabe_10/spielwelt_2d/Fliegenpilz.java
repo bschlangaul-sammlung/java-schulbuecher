@@ -9,7 +9,8 @@ package org.bschlangaul.schulbuecher.cornelsen.informatik_3_2017.kapitel_04.them
 public class Fliegenpilz extends Figur
 {
     /**
-     * Dieser Konstruktor erzeugt einen Fliegenpilz an der Pixel-Position (325/125).
+     * Dieser Konstruktor erzeugt einen Fliegenpilz an der Pixel-Position
+     * (325/125).
      */
     Fliegenpilz()
     {
@@ -18,12 +19,12 @@ public class Fliegenpilz extends Figur
         FigurteilFestlegenEllipse(-45, -10, 90, 30, "rot");
         PositionSetzen(325, 125);
         GanzNachVornBringen();
-
     }
 
     /**
-     * Dieser Konstruktor erzeugt einen Fliegenpilz bei dem die Position wählbar ist. Die Position
-     * ist KEINE Pixelangabe, sondern die Koordinaten in einer 10x10 Zellen großen Welt.
+     * Dieser Konstruktor erzeugt einen Fliegenpilz bei dem die Position wählbar
+     * ist. Die Position ist KEINE Pixelangabe, sondern die Koordinaten in einer
+     * 10x10 Zellen großen Welt.
      *
      * @param xNeu x-Position des Fliegenpilzes
      * @param yNeu y-Position des Fliegenpilzes
@@ -35,7 +36,6 @@ public class Fliegenpilz extends Figur
         FigurteilFestlegenEllipse(-45, -10, 90, 30, "rot");
         PositionSetzen(325, 125);
         GanzNachVornBringen();
-
         if (xNeu < 10 && xNeu >= 0 && yNeu < 10 && yNeu >= 0)
         {
             PositionSetzen(xNeu * 50 + 25, yNeu * 50 + 25);

@@ -9,12 +9,16 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapi
 abstract class FAHRZEUG implements DATENELEMENT
 {
     protected FAHRZEUGSYMBOL symbol;
-    protected float x;
-    protected float y;
-    protected float v;
-    protected float vmax;
-    protected char ausrichtung;
 
+    protected float x;
+
+    protected float y;
+
+    protected float v;
+
+    protected float vmax;
+
+    protected char ausrichtung;
 
     /**
      * Erzeugtein Fahrzeug
@@ -40,7 +44,6 @@ abstract class FAHRZEUG implements DATENELEMENT
         symbol.PositionSetzen(x, y);
     }
 
-
     /**
      * Setzt die Ausrichtung des Fahrzeugs.
      *
@@ -56,7 +59,7 @@ abstract class FAHRZEUG implements DATENELEMENT
      * Fährt das Fahrzeug eine Sekunde nach rechts.
      *
      * @param wegmax maximaler Weg bis zum nächsten Hindernis
-     * @param vvorg Geschwindigkeit des Vorgängerfahrzeugs bzw. der Ampel
+     * @param vvorg  Geschwindigkeit des Vorgängerfahrzeugs bzw. der Ampel
      */
     public abstract void Fahren(float wegmax, float vvorg);
 
@@ -105,8 +108,6 @@ abstract class FAHRZEUG implements DATENELEMENT
         symbol.Entfernen();
     }
 
-
-
     /**
      * Vergleich zweier Datenelemente bezüglich einer Ordnungsrelation
      *
@@ -131,5 +132,6 @@ abstract class FAHRZEUG implements DATENELEMENT
      * Ausgabe von Information über ein Ausgabefenster
      */
     public void InformationAusgeben()
-    {}
+    {
+    }
 }

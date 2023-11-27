@@ -7,10 +7,10 @@ import greenfoot.Actor;
  *
  * Kap. 7.1 Arbeitsauftrag 2
  */
-
 class Tier extends Actor
 {
     String art;
+
     String futter;
 
     Tier()
@@ -21,7 +21,8 @@ class Tier extends Actor
 
     void stelleVor()
     {
-        String text = "Ich bin ein " + art + ", ich fresse gerne " + futter + ".";
+        String text = "Ich bin ein " + art + ", ich fresse gerne " + futter
+                + ".";
         DrawingUtil.showText(this, text, 300);
     }
 }

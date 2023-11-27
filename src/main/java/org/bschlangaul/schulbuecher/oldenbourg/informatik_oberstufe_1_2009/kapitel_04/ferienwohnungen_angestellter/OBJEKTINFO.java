@@ -10,28 +10,38 @@ import java.util.*;
 
 class OBJEKTINFO
 {
-
     enum Ausstattungen
     {
-        Fernseher, Waschmaschine, Trockner, Kuehlschrank, Gefrierschrank, Swimmingpool
+        Fernseher, Waschmaschine, Trockner, Kuehlschrank, Gefrierschrank,
+        Swimmingpool
     }
 
     private int nummer;
+
     private String name;
+
     private int groesse;
+
     private int anzahlzimmer;
+
     private int anzahlpersonen;
+
     private int landnummer;
+
     private String art;
+
     private double preis;
+
     private EnumSet<Ausstattungen> ausstattung;
+
     private boolean sperre;
 
     /**
      * Belegt die Attribute.
      */
-    OBJEKTINFO(int nummer, String name, int groesse, int anzahlzimmer, int anzahlpersonen,
-                    int landnummer, String art, double preis, String ausstattung, boolean sperre)
+    OBJEKTINFO(int nummer, String name, int groesse, int anzahlzimmer,
+            int anzahlpersonen, int landnummer, String art, double preis,
+            String ausstattung, boolean sperre)
     {
         this.nummer = nummer;
         this.name = name;
@@ -42,19 +52,20 @@ class OBJEKTINFO
         this.art = art;
         this.preis = preis;
         this.sperre = sperre;
-        this.ausstattung = EnumSet.noneOf(Ausstattungen.Fernseher.getDeclaringClass());
+        this.ausstattung = EnumSet
+                .noneOf(Ausstattungen.Fernseher.getDeclaringClass());
         String[] hilf = ausstattung.split(",");
         for (int i = 0; i < hilf.length; i++)
         {
             try
             {
-                this.ausstattung.add(Ausstattungen
-                                .valueOf(Ausstattungen.Fernseher.getDeclaringClass(), hilf[i]));
-            } catch (Exception e)
+                this.ausstattung.add(Ausstattungen.valueOf(
+                        Ausstattungen.Fernseher.getDeclaringClass(), hilf[i]));
+            }
+            catch (Exception e)
             {
                 System.out.println(e);
             }
-
         }
     }
 
@@ -177,8 +188,9 @@ class OBJEKTINFO
     }
 
     /**
-     * Vergleicht zwei Objekte. überschreibt die Methode aus Object, hat aber nur eigene Semantik,
-     * wenn das Vergleichsobjet ebenfalls von der Klasse OBJEKTINFO ist.
+     * Vergleicht zwei Objekte. überschreibt die Methode aus Object, hat aber
+     * nur eigene Semantik, wenn das Vergleichsobjet ebenfalls von der Klasse
+     * OBJEKTINFO ist.
      *
      * @param obj das zu vergleichende Objekt
      * @return wahr, wenn die Schlüssel gleich sind

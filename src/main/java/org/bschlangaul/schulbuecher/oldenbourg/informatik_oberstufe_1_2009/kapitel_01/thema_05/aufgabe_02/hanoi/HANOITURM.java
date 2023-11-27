@@ -10,24 +10,25 @@ public class HANOITURM
 {
     /** Position des Turms */
     private int xpos, ypos;
+
     /** Nutzung der Datenstruktur Stapel */
     private STAPEL stapel;
 
-
     /**
-     * Konstruktor Setzt die Position des Hanoiturms und erzeugt den Stapel x neue x-Position des
-     * Turms auf dem Fenster y neue y-Position des Turms auf dem Fenster
+     * Konstruktor Setzt die Position des Hanoiturms und erzeugt den Stapel x
+     * neue x-Position des Turms auf dem Fenster y neue y-Position des Turms auf
+     * dem Fenster
      */
     public HANOITURM(int x, int y)
     {
         xpos = x;
         ypos = y;
         stapel = new STAPEL();
-
     }
 
     /**
-     * Fügt eine Scheibe auf dem Hanoiturm ein und setzt diese auf die passende Position
+     * Fügt eine Scheibe auf dem Hanoiturm ein und setzt diese auf die passende
+     * Position
      *
      * @param s einzufügende Scheibe
      */
@@ -63,6 +64,4 @@ public class HANOITURM
             Loeschen();
         }
     }
-
-
 }

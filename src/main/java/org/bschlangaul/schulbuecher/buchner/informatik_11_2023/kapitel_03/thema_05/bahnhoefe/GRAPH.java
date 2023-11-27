@@ -9,11 +9,16 @@ package org.bschlangaul.schulbuecher.buchner.informatik_11_2023.kapitel_03.thema
 public class GRAPH
 {
     private KNOTEN[] knotennamen;
+
     private boolean[][] adja;
+
     private int aktAnzahl, maxAnzahl;
 
-    boolean[] besucht; // Feld, um zu markieren, ob der Knoten schon besucht wurde
+    boolean[] besucht; // Feld, um zu markieren, ob der Knoten schon besucht
+                       // wurde
+
     int[] warteschlange; // abzuarbeitende Warteschlange
+
     int[] reihenfolge; // Feld für die Ausgabe der Reihenfolge
 
     public GRAPH(int anzKnoten)
@@ -28,7 +33,8 @@ public class GRAPH
 
     private void warteschlangeVorbereiten()
     {
-        // Alle Plätze der Warteschlange werden mit -1 initalisiert, um zu kennzeichnen, dass sie
+        // Alle Plätze der Warteschlange werden mit -1 initalisiert, um zu
+        // kennzeichnen, dass sie
         // nicht benutzt werden.
         for (int i = 0; i < warteschlange.length; i++)
         {
@@ -52,31 +58,31 @@ public class GRAPH
                 indexEnde = i;
             }
         }
-
         // Überprüfe, ob Start- und Zielknoten im Graphen vorhanden sind
         if (indexStart == -1 || indexEnde == -1)
         {
             System.out.println("Start- oder Zielknoten nicht gefunden.");
             return;
         }
-
-        besucht[indexStart] = true; // Der Startknoten wird als besucht markiert.
-        warteschlange[0] = indexStart; // Der Start-Knoten wird als 1. abzuarbeitender Knoten
+        besucht[indexStart] = true; // Der Startknoten wird als besucht
+                                    // markiert.
+        warteschlange[0] = indexStart; // Der Start-Knoten wird als 1.
+                                       // abzuarbeitender Knoten
                                        // abgespeichert.
-
-        int wartePos = 1; // Variable gibt die Anzahl der Elemente in der Warteschlange an.
-        int besKnoten = 0; // Variable, die die Anzahl der besuchten Knoten angibt.
-
-        int vorgaenger[] = new int[maxAnzahl]; // Array zur Speicherung der Vorgänger-Knoten
-        vorgaenger[indexStart] = -1; // Startknoten hat keinen Vorgänger, daher negativer Wert
-
+        int wartePos = 1; // Variable gibt die Anzahl der Elemente in der
+                          // Warteschlange an.
+        int besKnoten = 0; // Variable, die die Anzahl der besuchten Knoten
+                           // angibt.
+        int vorgaenger[] = new int[maxAnzahl]; // Array zur Speicherung der
+                                               // Vorgänger-Knoten
+        vorgaenger[indexStart] = -1; // Startknoten hat keinen Vorgänger, daher
+                                     // negativer Wert
         // Schleife überprüft, ob noch mind. ein Element in der Schlange ist.
         while (wartePos != 0)
         {
             int tmp = warteschlange[0];
             entfernen(warteschlange);
             wartePos--;
-
             // reihenfolge[besKnoten]=tmp;
             // besKnoten++;
             for (int nachbar = 0; nachbar < maxAnzahl; nachbar++)
@@ -84,19 +90,19 @@ public class GRAPH
                 if (adja[tmp][nachbar] && (!besucht[nachbar]))
                 {
                     besucht[nachbar] = true;
-                    vorgaenger[nachbar] = tmp; // setze den Vorgängerknoten des Nachbarknotens
+                    vorgaenger[nachbar] = tmp; // setze den Vorgängerknoten des
+                                               // Nachbarknotens
                     warteschlange[wartePos] = nachbar;
                     wartePos++;
                 }
             }
-
-            // Überprüfe, ob der Zielknoten erreicht wurde und breche die Schleife dann ab.
+            // Überprüfe, ob der Zielknoten erreicht wurde und breche die
+            // Schleife dann ab.
             if (tmp == indexEnde)
             {
                 wartePos = 0;
             }
         }
-
         // Verfolge den kürzesten Weg vom Zielknoten zum Startknoten
         int aktuellerKnoten = indexEnde;
         int schritt = 0;
@@ -106,17 +112,16 @@ public class GRAPH
             aktuellerKnoten = vorgaenger[aktuellerKnoten];
             schritt++;
         }
-
         // Ausgabe der kürzesten Verbindung
-        System.out.println("Kürzeste Verbindung von " + start + " nach " + ende + ":");
+        System.out.println(
+                "Kürzeste Verbindung von " + start + " nach " + ende + ":");
         for (int i = schritt - 1; i >= 0; i--)
         {
-            System.out.print(knotennamen[reihenfolge[i]].bezeichnerGeben() + " -> ");
+            System.out.print(
+                    knotennamen[reihenfolge[i]].bezeichnerGeben() + " -> ");
         }
         System.out.print(" Ende ");
-
     }
-
     // Die folgenden Methoden sind für dich nicht relevant.
 
     private int[] entfernen(int[] feld)
@@ -131,7 +136,8 @@ public class GRAPH
 
     private void reihenfolgeAusgeben(int[] feld)
     {
-        System.out.println("Der Durchlauf der Breitensuche ergibt die Reihenfolge: ");
+        System.out.println(
+                "Der Durchlauf der Breitensuche ergibt die Reihenfolge: ");
         System.out.print(knotennamen[feld[0]].bezeichnerGeben()); // feld[0]
         for (int i = 1; i < feld.length; i++)
         {
@@ -204,7 +210,6 @@ public class GRAPH
                 position = i;
             }
         }
-
         return position;
     }
 
@@ -218,5 +223,4 @@ public class GRAPH
             }
         }
     }
-
 }

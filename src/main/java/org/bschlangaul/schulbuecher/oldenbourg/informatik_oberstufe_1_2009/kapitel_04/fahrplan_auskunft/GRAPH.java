@@ -9,6 +9,7 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapi
 class GRAPH
 {
     private GKLISTE verbindungen;
+
     private GKNOTEN startRoute;
 
     /**
@@ -64,7 +65,7 @@ class GRAPH
      * Ermitteln der kürzesten Route nach Dijkstra.
      *
      * @param start Startbahnhof
-     * @param ziel Zielbahnhof
+     * @param ziel  Zielbahnhof
      */
     void WegeSuche(BAHNHOF start, BAHNHOF ziel)
     {
@@ -77,7 +78,8 @@ class GRAPH
         rest = new GKLISTE();
         startRoute = null;
         verbindungen.VorErstesPositionieren();
-        // Alle zum Bahnhof start gehörenden Knoten sind gleichbereichtigte Startmöglichkeiten
+        // Alle zum Bahnhof start gehörenden Knoten sind gleichbereichtigte
+        // Startmöglichkeiten
         while (verbindungen.AufNaechstesPositionieren())
         {
             akt = (GKNOTEN) verbindungen.DatenGeben();
@@ -100,7 +102,8 @@ class GRAPH
             inArbeit.VorErstesPositionieren();
             while (inArbeit.AufNaechstesPositionieren())
             {
-                if ((akt == null) || (akt.GesamtlaengeGeben() > ((GKNOTEN) inArbeit.DatenGeben())
+                if ((akt == null) || (akt
+                        .GesamtlaengeGeben() > ((GKNOTEN) inArbeit.DatenGeben())
                                 .GesamtlaengeGeben()))
                 {
                     akt = (GKNOTEN) inArbeit.DatenGeben();
@@ -125,13 +128,13 @@ class GRAPH
                     if (inArbeit.Suchen(aktZiel) != null)
                     {
                         // Knoten ist schon in Arbeit
-                        if (aktZiel.GesamtlaengeGeben() > akt.GesamtlaengeGeben()
-                                        + info.LaengeGeben())
+                        if (aktZiel.GesamtlaengeGeben() > akt
+                                .GesamtlaengeGeben() + info.LaengeGeben())
                         {
                             // so geht es schneller
                             aktZiel.VorgaengerSetzen(akt);
-                            aktZiel.GesamtlaengeSetzen(
-                                            akt.GesamtlaengeGeben() + info.LaengeGeben());
+                            aktZiel.GesamtlaengeSetzen(akt.GesamtlaengeGeben()
+                                    + info.LaengeGeben());
                         }
                     }
                     else if (rest.Suchen(aktZiel) != null)
@@ -140,7 +143,8 @@ class GRAPH
                         rest.Loeschen(aktZiel);
                         inArbeit.Einfuegen(aktZiel);
                         aktZiel.VorgaengerSetzen(akt);
-                        aktZiel.GesamtlaengeSetzen(akt.GesamtlaengeGeben() + info.LaengeGeben());
+                        aktZiel.GesamtlaengeSetzen(
+                                akt.GesamtlaengeGeben() + info.LaengeGeben());
                     }
                 }
             }
@@ -165,7 +169,7 @@ class GRAPH
     /**
      * Bout die Route rekursiv auf.
      *
-     * @param akt aktueller Knoten
+     * @param akt   aktueller Knoten
      * @param linie Linie des Nachfolgers
      * @param tiefe Rekursionstiefe für Elementanzahlbestimmung
      */
@@ -200,8 +204,9 @@ class GRAPH
         akt = startRoute;
         while (akt != null)
         {
-            System.out.println("Bahnhof Nr. " + akt.BahnhofGeben().NummerGeben() + ": "
-                            + akt.BahnhofGeben().NameGeben() + " an Linie " + akt.LinieGeben());
+            System.out.println("Bahnhof Nr. " + akt.BahnhofGeben().NummerGeben()
+                    + ": " + akt.BahnhofGeben().NameGeben() + " an Linie "
+                    + akt.LinieGeben());
             akt = akt.VorgaengerGeben();
         }
     }

@@ -3,6 +3,7 @@ package org.bschlangaul.schulbuecher.isb.handreichung_11.kapitel_01.thema_01.lis
 class Knoten extends ListenElement
 {
     private ListenElement nachfolger;
+
     private DatenElement daten;
 
     // Konstruktoren
@@ -41,12 +42,10 @@ class Knoten extends ListenElement
         return daten;
     }
 
-
     // weitere Methoden
     DatenElement EndeGeben()
     {
         DatenElement wert;
-
         wert = nachfolger.EndeGeben();
         if (wert == null)
             return daten;
@@ -70,5 +69,4 @@ class Knoten extends ListenElement
         daten.Ausgeben();
         nachfolger.AlleAusgeben();
     }
-
 }

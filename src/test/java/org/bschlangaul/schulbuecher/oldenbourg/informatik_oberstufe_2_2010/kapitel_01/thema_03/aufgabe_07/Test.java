@@ -8,7 +8,6 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_2_2010.kapi
  */
 public class Test extends junit.framework.TestCase
 {
-
     public void testenZ8Endzustand()
     {
         AutomatEmail a = new AutomatEmail();
@@ -62,5 +61,4 @@ public class Test extends junit.framework.TestCase
         AutomatEmail a = new AutomatEmail();
         assertEquals(false, a.IstEingabeAkzeptiert("jenni$st@ssl.net"));
     }
-
 }

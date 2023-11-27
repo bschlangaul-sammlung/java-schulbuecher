@@ -10,16 +10,17 @@ import org.bschlangaul.schulbuecher.isb.handreichung_12.kapitel_04.modell.DATENE
  */
 class KNOTEN extends LISTENELEMENT
 {
-
     /* Referenz auf das Datenelement */
     private DATENELEMENT daten;
+
     /* Referenz auf den Nachfolgerknoten */
     private LISTENELEMENT nachfolger;
 
     /**
-     * Legt einen neuen Knoten mit gegebenem Datenelement und gegebenem Nachfolger an.
+     * Legt einen neuen Knoten mit gegebenem Datenelement und gegebenem
+     * Nachfolger an.
      *
-     * @param d Referenz auf das von diesem Knoten verwaltete Datenelement
+     * @param d  Referenz auf das von diesem Knoten verwaltete Datenelement
      * @param nf Referenz auf das Nachfolgerelement
      */
     KNOTEN(DATENELEMENT d, LISTENELEMENT nf)
@@ -50,7 +51,8 @@ class KNOTEN extends LISTENELEMENT
     /**
      * Sucht ein Datenelement mit dem in der Referenz angegebenen Schlüssel.
      *
-     * @param schluessel Referenz auf ein Datenelement mit dem zu suchenden Schlüsselwert
+     * @param schluessel Referenz auf ein Datenelement mit dem zu suchenden
+     *                   Schlüsselwert
      * @return das gefundene Datenelement oder null
      */
     DATENELEMENT Suchen(DATENELEMENT schluessel)

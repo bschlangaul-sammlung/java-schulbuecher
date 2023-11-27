@@ -6,7 +6,6 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_2_2010.kapi
  * @author Albert Wiedemann
  * @version 1.0
  */
-
 import java.net.*;
 
 class NetzwerkClient
@@ -33,7 +32,8 @@ class NetzwerkClient
         {
             socket = new Socket(name, 54000);
             return new Verbindung(socket);
-        } catch (Exception e)
+        }
+        catch (Exception e)
         {
             System.out.println("Fehler beim Verbindungsaufbau: " + e);
             return null;
@@ -48,7 +48,8 @@ class NetzwerkClient
         try
         {
             socket.close();
-        } catch (Exception e)
+        }
+        catch (Exception e)
         {
             System.out.println("Fehler beim Verbindungsaufbau: " + e);
         }

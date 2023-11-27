@@ -6,7 +6,6 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapi
  * @author Albert Wiedemann
  * @version 1.0
  */
-
 interface MELDUNGSBEOBACHTER
 {
     /**
@@ -15,5 +14,4 @@ interface MELDUNGSBEOBACHTER
      * @param text die empfangene Fehlermeldung.
      */
     void FehlermeldungEmpfangen(String text);
-
 }

@@ -8,12 +8,11 @@ package org.bschlangaul.schulbuecher.cornelsen.informatik_3_2017.kapitel_04.them
  */
 class Hindernis extends Figur
 {
-
     /**
      * Legt das Aussehen des Hindernisses an
      *
-     * @param x x-Koordinate des Hindernisses
-     * @param y y-Koordinate des Hindernisses
+     * @param x        x-Koordinate des Hindernisses
+     * @param y        y-Koordinate des Hindernisses
      * @param richtung Blickrichtung des Hindernisses
      */
     Hindernis(int x, int y, char richtung)
@@ -38,7 +37,8 @@ class Hindernis extends Figur
      */
     @Override
     void TasteGedrückt(char taste)
-    {}
+    {
+    }
 
     /**
      * Sondertasten werden ignoriert
@@ -47,7 +47,8 @@ class Hindernis extends Figur
      */
     @Override
     void SonderTasteGedrückt(int taste)
-    {}
+    {
+    }
 
     /**
      * Lässt das Hindernis um 5 Einheiten gehen
@@ -96,7 +97,8 @@ class Hindernis extends Figur
                     }
                     else
                     {
-                        System.out.println("Fehlerhafte Richtung in Konstruktor von Hindernis");
+                        System.out.println(
+                                "Fehlerhafte Richtung in Konstruktor von Hindernis");
                     }
                 }
             }
@@ -108,8 +110,8 @@ class Hindernis extends Figur
      */
     void EntfernenWennAußerhalb()
     {
-        if ((XPositionGeben() < -100) || (XPositionGeben() > 900) || (YPositionGeben() < -100)
-                        || (YPositionGeben() > 700))
+        if ((XPositionGeben() < -100) || (XPositionGeben() > 900)
+                || (YPositionGeben() < -100) || (YPositionGeben() > 700))
         {
             Entfernen();
         }

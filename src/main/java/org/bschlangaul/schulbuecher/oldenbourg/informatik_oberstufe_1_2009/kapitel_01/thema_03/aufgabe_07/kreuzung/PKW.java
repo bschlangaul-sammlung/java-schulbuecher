@@ -19,29 +19,36 @@ class PKW extends FAHRZEUG
         symbol = new PKWSYMBOL();
         switch ((new java.util.Random()).nextInt(7))
         {
-            case 0:
-                symbol.FarbeSetzen("rot");
-                break;
-            case 1:
-                symbol.FarbeSetzen("gruen");
-                break;
-            case 2:
-                symbol.FarbeSetzen("blau");
-                break;
-            case 3:
-                symbol.FarbeSetzen("gelb");
-                break;
-            case 4:
-                symbol.FarbeSetzen("cyan");
-                break;
-            case 5:
-                symbol.FarbeSetzen("magenta");
-                break;
-            case 6:
-                symbol.FarbeSetzen("weiss");
-                break;
-            default:
-                break;
+        case 0:
+            symbol.FarbeSetzen("rot");
+            break;
+
+        case 1:
+            symbol.FarbeSetzen("gruen");
+            break;
+
+        case 2:
+            symbol.FarbeSetzen("blau");
+            break;
+
+        case 3:
+            symbol.FarbeSetzen("gelb");
+            break;
+
+        case 4:
+            symbol.FarbeSetzen("cyan");
+            break;
+
+        case 5:
+            symbol.FarbeSetzen("magenta");
+            break;
+
+        case 6:
+            symbol.FarbeSetzen("weiss");
+            break;
+
+        default:
+            break;
         }
         PositionSetzen(0, 0);
         a = 4.0f;
@@ -51,7 +58,7 @@ class PKW extends FAHRZEUG
      * Fährt das Fahrzeug eine Sekunde nach rechts.
      *
      * @param wegmax maximaler Weg bis zum nächsten Hindernis
-     * @param vvorg Geschwindigkeit des Vorgängerfahrzeugs bzw. der Ampel
+     * @param vvorg  Geschwindigkeit des Vorgängerfahrzeugs bzw. der Ampel
      */
     public void Fahren(float wegmax, float vvorg)
     {
@@ -83,8 +90,11 @@ class PKW extends FAHRZEUG
         }
         else
         {
-            vneu = (wegmax + vvorg * 1.0f - weg) / 1.8f; // Maximale Geschwindigkeit für den
-                                                         // Restabstand zum Vorgänger
+            vneu = (wegmax + vvorg * 1.0f - weg) / 1.8f; // Maximale
+                                                         // Geschwindigkeit für
+                                                         // den
+                                                         // Restabstand zum
+                                                         // Vorgänger
             if (vneu < v) // Zu schnell für den Abstand
             {
                 v = vneu;
@@ -92,18 +102,21 @@ class PKW extends FAHRZEUG
         }
         switch (ausrichtung)
         {
-            case 'O':
-                PositionSetzen(x + weg, y);
-                break;
-            case 'W':
-                PositionSetzen(x - weg, y);
-                break;
-            case 'N':
-                PositionSetzen(x, y - weg);
-                break;
-            case 'S':
-                PositionSetzen(x, y + weg);
-                break;
+        case 'O':
+            PositionSetzen(x + weg, y);
+            break;
+
+        case 'W':
+            PositionSetzen(x - weg, y);
+            break;
+
+        case 'N':
+            PositionSetzen(x, y - weg);
+            break;
+
+        case 'S':
+            PositionSetzen(x, y + weg);
+            break;
         }
     }
 

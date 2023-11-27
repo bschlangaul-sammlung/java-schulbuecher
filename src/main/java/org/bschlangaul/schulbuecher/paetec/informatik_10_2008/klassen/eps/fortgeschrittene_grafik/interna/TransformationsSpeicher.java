@@ -18,8 +18,8 @@ public class TransformationsSpeicher
     AffineTransform aktuelleTransformation = new AffineTransform();
 
     /**
-     * Speichert die letzte Transformation, sofern dies eine Rotation gewesen ist. Dient zur
-     * Performanz-Optimierung
+     * Speichert die letzte Transformation, sofern dies eine Rotation gewesen
+     * ist. Dient zur Performanz-Optimierung
      */
     Rotation letzteRotation;
 
@@ -34,17 +34,18 @@ public class TransformationsSpeicher
             if (letzteRotation == null)
                 letzteRotation = (Rotation) t;
             else if (letzteRotation.xDrehpunktGeben() == r.xDrehpunktGeben()
-                            && letzteRotation.yDrehpunktGeben() == r.yDrehpunktGeben())
+                    && letzteRotation.yDrehpunktGeben() == r.yDrehpunktGeben())
             {
                 letzteRotation = new Rotation(letzteRotation.xDrehpunktGeben(),
-                                letzteRotation.yDrehpunktGeben(),
-                                letzteRotation.winkelGeben() + r.winkelGeben());
+                        letzteRotation.yDrehpunktGeben(),
+                        letzteRotation.winkelGeben() + r.winkelGeben());
             }
             else
             {
                 if (letzteRotation != null)
                 {
-                    aktuelleTransformation.preConcatenate(letzteRotation.transformationGeben());
+                    aktuelleTransformation.preConcatenate(
+                            letzteRotation.transformationGeben());
                     letzteRotation = null;
                 }
                 aktuelleTransformation.preConcatenate(t.transformationGeben());
@@ -54,7 +55,8 @@ public class TransformationsSpeicher
         {
             if (letzteRotation != null)
             {
-                aktuelleTransformation.preConcatenate(letzteRotation.transformationGeben());
+                aktuelleTransformation
+                        .preConcatenate(letzteRotation.transformationGeben());
                 letzteRotation = null;
             }
             aktuelleTransformation.preConcatenate(t.transformationGeben());
@@ -64,9 +66,11 @@ public class TransformationsSpeicher
     /**
      * Aktualisiert die Koordinaten nach einer Transformation
      */
-    public Grenze aktuelleGrenzenGeben(double standardbreite, double standardhoehe)
+    public Grenze aktuelleGrenzenGeben(double standardbreite,
+            double standardhoehe)
     {
-        Rectangle2D r = new Rectangle2D.Double(0, 0, standardbreite, standardhoehe);
+        Rectangle2D r = new Rectangle2D.Double(0, 0, standardbreite,
+                standardhoehe);
         if (letzteRotation != null)
         {
             AffineTransform af = new AffineTransform();

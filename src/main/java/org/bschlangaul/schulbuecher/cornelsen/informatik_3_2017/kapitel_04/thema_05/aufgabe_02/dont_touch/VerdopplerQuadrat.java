@@ -14,8 +14,8 @@ class VerdopplerQuadrat extends Quadrat
     /**
      * Legt das Aussehen und die Startposition fest
      *
-     * @param x x-Koordinate des Hindernisses
-     * @param y y-Koordinate des Hindernisses
+     * @param x           x-Koordinate des Hindernisses
+     * @param y           y-Koordinate des Hindernisses
      * @param richtungNeu Blickrichtung des Hindernisses
      */
     VerdopplerQuadrat(int x, int y, char richtungNeu)
@@ -52,12 +52,13 @@ class VerdopplerQuadrat extends Quadrat
                     {
                         if (richtung == 'W')
                         {
-                            new Quadrat(XPositionGeben(), YPositionGeben(), 'N');
+                            new Quadrat(XPositionGeben(), YPositionGeben(),
+                                    'N');
                         }
                         else
                         {
                             System.out.println(
-                                            "unbekannte Richtung in Methode Bewegen, Klasse VerdopplerQuadrat");
+                                    "unbekannte Richtung in Methode Bewegen, Klasse VerdopplerQuadrat");
                         }
                     }
                 }

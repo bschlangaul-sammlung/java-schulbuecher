@@ -3,6 +3,7 @@ package org.bschlangaul.schulbuecher.isb.handreichung_11.kapitel_01.thema_01.lis
 class Kunde extends DatenElement
 {
     private String name;
+
     private String vorname;
 
     Kunde(String neuerName, String neuerVorname)
@@ -16,11 +17,9 @@ class Kunde extends DatenElement
     {
         Kunde vergleichsKunde = (Kunde) vergleichsObjekt;
         int ergebnis;
-
         ergebnis = name.compareTo(vergleichsKunde.name);
         if (ergebnis == 0)
             ergebnis = vorname.compareTo(vergleichsKunde.vorname);
-
         return ergebnis;
     }
 
@@ -28,5 +27,4 @@ class Kunde extends DatenElement
     {
         System.out.println("Kunde: " + name + ", " + vorname);
     }
-
 }

@@ -13,20 +13,28 @@ import java.beans.*;
 class OBERFLAECHE
 {
     private Frame fenster;
+
     private TextField xBahnhof, yBahnhof, nameBahnhof;
-    private Button bahnhofNeu, bahnhofAendern, bahnhofLoeschen, neuerAbschnitt, abschnittAendern,
-                    abschnittLoeschen, umsteigenSetzen, umsteigenLoeschen;
+
+    private Button bahnhofNeu, bahnhofAendern, bahnhofLoeschen, neuerAbschnitt,
+            abschnittAendern, abschnittLoeschen, umsteigenSetzen,
+            umsteigenLoeschen;
+
     private TextField x1Abschnitt, y1Abschnitt, x2Abschnitt, y2Abschnitt;
-    private Choice linienAuswahl, bahnhofFuerAbschnitt, umsteigenVon, umsteigenNach, vorhanden;
+
+    private Choice linienAuswahl, bahnhofFuerAbschnitt, umsteigenVon,
+            umsteigenNach, vorhanden;
+
     private TextField linienLaenge, linienLaenge2, liniennummer1;
+
     private KONTROLLEUR kontrolleur;
 
     /**
      * Baut das Anzeigefenster auf.
      *
-     * @param k Kontrolleur
+     * @param k     Kontrolleur
      * @param namen Namen der Bahnhöfe
-     * @param plan Oberflächenkomponente zur Anzeige des Linienplans
+     * @param plan  Oberflächenkomponente zur Anzeige des Linienplans
      */
     OBERFLAECHE(KONTROLLEUR k, String[] namen, Canvas plan)
     {
@@ -77,7 +85,8 @@ class OBERFLAECHE
         bahnhofNeu.setSize(90, 30);
         bahnhofNeu.setLocation(510, 135);
         bahnhofNeu.setEnabled(true);
-        bahnhofNeu.addActionListener(new ActionListener() {
+        bahnhofNeu.addActionListener(new ActionListener()
+        {
             public void actionPerformed(ActionEvent e)
             {
                 try
@@ -85,10 +94,11 @@ class OBERFLAECHE
                     int x, y;
                     x = Integer.parseInt(xBahnhof.getText());
                     y = Integer.parseInt(yBahnhof.getText());
-                    kontrolleur.NeuenBahnhofEinfuegen(nameBahnhof.getText(), x, y);
-                } catch (Exception ex)
+                    kontrolleur.NeuenBahnhofEinfuegen(nameBahnhof.getText(), x,
+                            y);
+                }
+                catch (Exception ex)
                 {
-
                 }
             }
         });
@@ -98,7 +108,8 @@ class OBERFLAECHE
         bahnhofAendern.setSize(90, 30);
         bahnhofAendern.setLocation(605, 135);
         bahnhofAendern.setEnabled(false);
-        bahnhofAendern.addActionListener(new ActionListener() {
+        bahnhofAendern.addActionListener(new ActionListener()
+        {
             public void actionPerformed(ActionEvent e)
             {
                 try
@@ -107,9 +118,9 @@ class OBERFLAECHE
                     x = Integer.parseInt(xBahnhof.getText());
                     y = Integer.parseInt(yBahnhof.getText());
                     kontrolleur.BahnhofAendern(nameBahnhof.getText(), x, y);
-                } catch (Exception ex)
+                }
+                catch (Exception ex)
                 {
-
                 }
             }
         });
@@ -119,20 +130,21 @@ class OBERFLAECHE
         bahnhofLoeschen.setSize(90, 30);
         bahnhofLoeschen.setLocation(700, 135);
         bahnhofLoeschen.setEnabled(false);
-        bahnhofLoeschen.addActionListener(new ActionListener() {
+        bahnhofLoeschen.addActionListener(new ActionListener()
+        {
             public void actionPerformed(ActionEvent e)
             {
                 kontrolleur.BahnhofLoeschen();
             }
         });
         fenster.add(bahnhofLoeschen);
-
         neuerAbschnitt = new Button();
         neuerAbschnitt.setLabel("Abschnitt nach");
         neuerAbschnitt.setSize(120, 30);
         neuerAbschnitt.setLocation(510, 175);
         neuerAbschnitt.setEnabled(false);
-        neuerAbschnitt.addActionListener(new ActionListener() {
+        neuerAbschnitt.addActionListener(new ActionListener()
+        {
             public void actionPerformed(ActionEvent e)
             {
                 try
@@ -142,9 +154,9 @@ class OBERFLAECHE
                     linie = Integer.parseInt(liniennummer1.getText());
                     laenge = Float.parseFloat(linienLaenge2.getText());
                     kontrolleur.NeuenAbschnittAnlegen(linie, laenge);
-                } catch (Exception ex)
+                }
+                catch (Exception ex)
                 {
-
                 }
             }
         });
@@ -152,10 +164,12 @@ class OBERFLAECHE
         bahnhofFuerAbschnitt = new Choice();
         bahnhofFuerAbschnitt.setSize(150, 30);
         bahnhofFuerAbschnitt.setLocation(640, 180);
-        bahnhofFuerAbschnitt.addItemListener(new ItemListener() {
+        bahnhofFuerAbschnitt.addItemListener(new ItemListener()
+        {
             public void itemStateChanged(ItemEvent e)
             {
-                kontrolleur.ZielbahnhofWaehlen(bahnhofFuerAbschnitt.getSelectedIndex());
+                kontrolleur.ZielbahnhofWaehlen(
+                        bahnhofFuerAbschnitt.getSelectedIndex());
             }
         });
         fenster.add(bahnhofFuerAbschnitt);
@@ -179,7 +193,6 @@ class OBERFLAECHE
         linienLaenge2.setSize(170, 20);
         linienLaenge2.setLocation(620, 250);
         fenster.add(linienLaenge2);
-
         l = new Label();
         l.setText("Abschnitt");
         l.setSize(280, 20);
@@ -190,16 +203,17 @@ class OBERFLAECHE
         linienAuswahl.setSize(90, 30);
         linienAuswahl.setLocation(510, 325);
         linienAuswahl.setEnabled(false);
-        linienAuswahl.addItemListener(new ItemListener() {
+        linienAuswahl.addItemListener(new ItemListener()
+        {
             public void itemStateChanged(ItemEvent e)
             {
                 try
                 {
                     kontrolleur.LinienabschnittSetzen(
-                                    Integer.parseInt(linienAuswahl.getSelectedItem()));
-                } catch (Exception ex)
+                            Integer.parseInt(linienAuswahl.getSelectedItem()));
+                }
+                catch (Exception ex)
                 {
-
                 }
             }
         });
@@ -219,7 +233,8 @@ class OBERFLAECHE
         abschnittAendern.setSize(135, 30);
         abschnittAendern.setLocation(510, 360);
         abschnittAendern.setEnabled(false);
-        abschnittAendern.addActionListener(new ActionListener() {
+        abschnittAendern.addActionListener(new ActionListener()
+        {
             public void actionPerformed(ActionEvent e)
             {
                 try
@@ -229,9 +244,9 @@ class OBERFLAECHE
                     linie = Integer.parseInt(linienAuswahl.getSelectedItem());
                     laenge = Float.parseFloat(linienLaenge.getText());
                     kontrolleur.AbschnittAendern(linie, laenge);
-                } catch (Exception ex)
+                }
+                catch (Exception ex)
                 {
-
                 }
             }
         });
@@ -241,7 +256,8 @@ class OBERFLAECHE
         abschnittLoeschen.setSize(135, 30);
         abschnittLoeschen.setLocation(655, 360);
         abschnittLoeschen.setEnabled(false);
-        abschnittLoeschen.addActionListener(new ActionListener() {
+        abschnittLoeschen.addActionListener(new ActionListener()
+        {
             public void actionPerformed(ActionEvent e)
             {
                 try
@@ -249,14 +265,13 @@ class OBERFLAECHE
                     int linie;
                     linie = Integer.parseInt(linienAuswahl.getSelectedItem());
                     kontrolleur.AbschnittLoeschen(linie);
-                } catch (Exception ex)
+                }
+                catch (Exception ex)
                 {
-
                 }
             }
         });
         fenster.add(abschnittLoeschen);
-
         l = new Label();
         l.setText("Umsteigem\u00F6glichkeiten");
         l.setSize(280, 20);
@@ -295,7 +310,8 @@ class OBERFLAECHE
         umsteigenSetzen.setSize(135, 30);
         umsteigenSetzen.setLocation(510, 490);
         umsteigenSetzen.setEnabled(false);
-        umsteigenSetzen.addActionListener(new ActionListener() {
+        umsteigenSetzen.addActionListener(new ActionListener()
+        {
             public void actionPerformed(ActionEvent e)
             {
                 try
@@ -304,9 +320,9 @@ class OBERFLAECHE
                     linie1 = Integer.parseInt(umsteigenVon.getSelectedItem());
                     linie2 = Integer.parseInt(umsteigenNach.getSelectedItem());
                     kontrolleur.UmsteigenEinfuegen(linie1, linie2);
-                } catch (Exception ex)
+                }
+                catch (Exception ex)
                 {
-
                 }
             }
         });
@@ -316,19 +332,20 @@ class OBERFLAECHE
         umsteigenLoeschen.setSize(135, 30);
         umsteigenLoeschen.setLocation(655, 490);
         umsteigenLoeschen.setEnabled(false);
-        umsteigenLoeschen.addActionListener(new ActionListener() {
+        umsteigenLoeschen.addActionListener(new ActionListener()
+        {
             public void actionPerformed(ActionEvent e)
             {
                 kontrolleur.UmsteigenLoeschen(vorhanden.getSelectedIndex());
             }
         });
         fenster.add(umsteigenLoeschen);
-
         b = new Button();
         b.setLabel("Beenden");
         b.setSize(280, 30);
         b.setLocation(510, 550);
-        b.addActionListener(new ActionListener() {
+        b.addActionListener(new ActionListener()
+        {
             public void actionPerformed(ActionEvent e)
             {
                 kontrolleur.Beenden();
@@ -336,7 +353,8 @@ class OBERFLAECHE
         });
         fenster.add(b);
         plan.setLocation(50, 50);
-        plan.addPropertyChangeListener(new PropertyChangeListener() {
+        plan.addPropertyChangeListener(new PropertyChangeListener()
+        {
             public void propertyChange(PropertyChangeEvent e)
             {
                 if (e.getPropertyName() == "Bahnhof")
@@ -359,7 +377,8 @@ class OBERFLAECHE
                     {
                         kontrolleur.BahnhofGewaehlt();
                         bahnhofAendern.setEnabled(true);
-                        bahnhofLoeschen.setEnabled(kontrolleur.KannAktbahnhofGeloeschtWerden());
+                        bahnhofLoeschen.setEnabled(
+                                kontrolleur.KannAktbahnhofGeloeschtWerden());
                         neuerAbschnitt.setEnabled(true);
                         umsteigenLoeschen.setEnabled(true);
                         umsteigenSetzen.setEnabled(true);
@@ -385,7 +404,6 @@ class OBERFLAECHE
                         abschnittAendern.setEnabled(true);
                         abschnittLoeschen.setEnabled(true);
                     }
-
                 }
             }
         });
@@ -396,8 +414,8 @@ class OBERFLAECHE
     /**
      * Setzt die Bahnhofsdaten.
      *
-     * @param x x-Koordinate
-     * @param y y-Koordinate
+     * @param x    x-Koordinate
+     * @param y    y-Koordinate
      * @param name Name
      */
     void BahnhofsdatenSetzen(String x, String y, String name)
@@ -438,7 +456,8 @@ class OBERFLAECHE
         try
         {
             kontrolleur.LinienabschnittSetzen(Integer.parseInt(werte[0]));
-        } catch (Exception e)
+        }
+        catch (Exception e)
         {
         }
     }

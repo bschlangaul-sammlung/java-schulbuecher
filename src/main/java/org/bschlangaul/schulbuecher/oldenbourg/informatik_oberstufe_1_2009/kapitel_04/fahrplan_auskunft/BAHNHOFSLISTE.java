@@ -17,7 +17,8 @@ class BAHNHOFSLISTE extends LISTE
     }
 
     /**
-     * Sucht den Bahnhof mit der angegebenen Nummer. Nutzt die Sortierung der Liste aus.
+     * Sucht den Bahnhof mit der angegebenen Nummer. Nutzt die Sortierung der
+     * Liste aus.
      *
      * @param nummer Nummer des zu suchenden Bahnhofs
      * @return Referenz auf den Bahnhof oder null

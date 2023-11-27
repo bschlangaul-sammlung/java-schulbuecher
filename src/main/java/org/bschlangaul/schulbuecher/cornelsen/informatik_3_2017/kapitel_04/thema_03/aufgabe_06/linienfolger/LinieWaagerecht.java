@@ -11,8 +11,8 @@ class LinieWaagerecht extends Rechteck
     /**
      * Setzt Größe und Position der Linie, negative Längen werden korrigiert
      *
-     * @param x x-Positon der Linie
-     * @param y y-Positon der Linie
+     * @param x      x-Positon der Linie
+     * @param y      y-Positon der Linie
      * @param laenge Länge der Linie
      * @param breite Breite der Linie
      */
@@ -28,6 +28,4 @@ class LinieWaagerecht extends Rechteck
         GrößeSetzen(laenge, breite);
         FarbeSetzen("schwarz");
     }
-
-
 }

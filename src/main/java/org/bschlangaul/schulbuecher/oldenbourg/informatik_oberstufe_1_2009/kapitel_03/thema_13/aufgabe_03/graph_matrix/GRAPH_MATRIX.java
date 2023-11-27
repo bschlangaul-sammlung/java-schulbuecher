@@ -1,8 +1,8 @@
 package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapitel_03.thema_13.aufgabe_03.graph_matrix;
 
 /**
- * Klasse GRAPH_MATRIX Klasse für einen ungerichteten, gewichteten Graphen Als Datenstruktur wird
- * eine Adjazenzmatrix verwendet
+ * Klasse GRAPH_MATRIX Klasse für einen ungerichteten, gewichteten Graphen Als
+ * Datenstruktur wird eine Adjazenzmatrix verwendet
  *
  * Schulbuch Informatik 1 Oberstufe Oldenbourg Verlag
  *
@@ -10,11 +10,11 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapi
  * @version 1.0
  *
  */
-
 public class GRAPH_MATRIX
 {
     // aktuelle Knotenanzahl
     private int anzahlKnoten;
+
     private int besuchZaehler;
 
     // Feld der Knoten des Graphen
@@ -22,12 +22,14 @@ public class GRAPH_MATRIX
 
     // 2-dim Feld der Adjazenzmatrix
     private int[][] matrix;
-    // Hilfsfeld zur temporären Speicherung ob ein Knoten besucht wurde oder nicht
+
+    // Hilfsfeld zur temporären Speicherung ob ein Knoten besucht wurde oder
+    // nicht
     private boolean[] besucht;
 
     /**
-     * Konstruktor für Objekte der Klasse GRAPH_MATRIX Die maximale Anzahl der Knoten wird dabei
-     * festgelegt
+     * Konstruktor für Objekte der Klasse GRAPH_MATRIX Die maximale Anzahl der
+     * Knoten wird dabei festgelegt
      *
      * @param maximaleKnoten Anzahl der maximal möglichen Knoten
      *
@@ -41,10 +43,11 @@ public class GRAPH_MATRIX
     }
 
     /**
-     * Einfügen eines neuen Knoten in den Graphen Wenn die maximale Anzahl an Knoten erreicht wird,
-     * dann erfolgt kein Einfügen
+     * Einfügen eines neuen Knoten in den Graphen Wenn die maximale Anzahl an
+     * Knoten erreicht wird, dann erfolgt kein Einfügen
      *
-     * @param bezeichner Bezeichner des neuen Knotens, der dem Graphen hinzugefügt wird.
+     * @param bezeichner Bezeichner des neuen Knotens, der dem Graphen
+     *                   hinzugefügt wird.
      *
      */
     public void KnotenEinfuegen(String bezeichner)
@@ -64,8 +67,8 @@ public class GRAPH_MATRIX
     }
 
     /**
-     * Gibt die interne Nummer des Knoten Wenn ein Knoten mit diesem Bezeichner nicht bekannt ist
-     * wird -1 zurückgegeben
+     * Gibt die interne Nummer des Knoten Wenn ein Knoten mit diesem Bezeichner
+     * nicht bekannt ist wird -1 zurückgegeben
      *
      * @param bezeichner Bezeichner des Knoten der gesucht wird
      * @return Indexnummer des Knotens im Knotenarray; 0<= x <= anzahl-1 bzw. -1
@@ -74,12 +77,10 @@ public class GRAPH_MATRIX
     private int KnotenNummer(String bezeichner)
     {
         int i, ergeb;
-
         ergeb = -1;
         for (i = 0; (i < anzahlKnoten) && (ergeb == -1); i++)
             if (knoten[i].BezeichnungGeben().equals(bezeichner))
                 ergeb = i;
-
         return ergeb;
     }
 
@@ -99,21 +100,21 @@ public class GRAPH_MATRIX
     }
 
     /**
-     * Einfügen einer Kante in den Graphen Eine Kante ist durch einen Anfangsknoten und einen
-     * Endknoten festgelegt und hat eine Gewichtung
+     * Einfügen einer Kante in den Graphen Eine Kante ist durch einen
+     * Anfangsknoten und einen Endknoten festgelegt und hat eine Gewichtung
      *
-     * @param von Bezeichner des Anfangsknotens
-     * @param nach Bezeichner des Endknotens
+     * @param von        Bezeichner des Anfangsknotens
+     * @param nach       Bezeichner des Endknotens
      * @param gewichtung Gewichtung der Kante als Ganzzahl
      *
      */
     public void KanteEinfuegen(String von, String nach, int gewichtung)
     {
         int vonNummer, nachNummer;
-
         vonNummer = KnotenNummer(von);
         nachNummer = KnotenNummer(nach);
-        if ((vonNummer != -1) && (nachNummer != -1) && (vonNummer != nachNummer))
+        if ((vonNummer != -1) && (nachNummer != -1)
+                && (vonNummer != nachNummer))
         {
             matrix[vonNummer][nachNummer] = gewichtung;
             matrix[nachNummer][vonNummer] = gewichtung;
@@ -121,8 +122,8 @@ public class GRAPH_MATRIX
     }
 
     /**
-     * Gibt die Adjazenzmatrix des Graphen in der Konsole aus Nach Zeilen und Spalten formatiert Als
-     * Spaltenbreite wurde hier 4 Zeichen gewählt.
+     * Gibt die Adjazenzmatrix des Graphen in der Konsole aus Nach Zeilen und
+     * Spalten formatiert Als Spaltenbreite wurde hier 4 Zeichen gewählt.
      *
      */
     public void Ausgeben()
@@ -133,13 +134,13 @@ public class GRAPH_MATRIX
         for (int i = 0; i < anzahlKnoten; i++)
             System.out.print(knoten[i].BezFormatGeben(breite));
         System.out.println();
-
         for (int i = 0; i < anzahlKnoten; i++)
         {
             System.out.print(knoten[i].BezFormatGeben(breite));
             for (int j = 0; j < anzahlKnoten; j++)
                 if (matrix[i][j] != -1)
-                    System.out.print((matrix[i][j] + "   ").substring(0, breite));
+                    System.out
+                            .print((matrix[i][j] + "   ").substring(0, breite));
                 else
                     System.out.print("    ");
             System.out.println();
@@ -158,10 +159,10 @@ public class GRAPH_MATRIX
     }
 
     /**
-     * Gibt die Gewichtung einer Kante Die Kante ist durch einen Anfangsknoten und einen Endknoten
-     * festgelegt
+     * Gibt die Gewichtung einer Kante Die Kante ist durch einen Anfangsknoten
+     * und einen Endknoten festgelegt
      *
-     * @param von Bezeichner des Anfangsknotens
+     * @param von  Bezeichner des Anfangsknotens
      * @param nach Bezeichner des Endknotens
      * @return Gewichtung der Kante
      *
@@ -169,7 +170,6 @@ public class GRAPH_MATRIX
     int KanteGewichtGeben(String von, String nach)
     {
         int vonNummer, nachNummer;
-
         vonNummer = KnotenNummer(von);
         nachNummer = KnotenNummer(nach);
         if ((vonNummer != -1) && (nachNummer != -1))
@@ -179,8 +179,8 @@ public class GRAPH_MATRIX
     }
 
     /**
-     * Besucht einen Knoten und besucht dann alle von diesem Knoten ausgehenden Knoten sofern diese
-     * noch nicht besucht wurden.
+     * Besucht einen Knoten und besucht dann alle von diesem Knoten ausgehenden
+     * Knoten sofern diese noch nicht besucht wurden.
      *
      * @param knotenNummer Knotennummer des zu besuchenden Knotens
      *
@@ -189,25 +189,28 @@ public class GRAPH_MATRIX
     {
         // aktiven Knoten auf besucht setzen und in der Konsole ausgeben
         besucht[knotenNummer] = true;
-        System.out.print("besucht " + knoten[knotenNummer].BezeichnungGeben() + "; ");
-
+        System.out.print(
+                "besucht " + knoten[knotenNummer].BezeichnungGeben() + "; ");
         // in der Matrix die Zeile des aktiven Knotens nach Kanten durchforsten
         for (int abzweigNummer = 0; abzweigNummer < anzahlKnoten; abzweigNummer++)
         {
             // es gibt eine Kante und deren Zeilknoten ist noch nicht besucht
-            if ((matrix[knotenNummer][abzweigNummer] > 0) && !(besucht[abzweigNummer]))
+            if ((matrix[knotenNummer][abzweigNummer] > 0)
+                    && !(besucht[abzweigNummer]))
             {
                 Besuchen(abzweigNummer);
-                System.out.print("zurück nach " + knoten[knotenNummer].BezeichnungGeben() + "; ");
+                System.out.print("zurück nach "
+                        + knoten[knotenNummer].BezeichnungGeben() + "; ");
             }
         }
-
         // der aktive Knoten mit der knotenNummer ist fertig bearbeitet
-        System.out.println("fertig mit " + knoten[knotenNummer].BezeichnungGeben() + "; ");
+        System.out.println(
+                "fertig mit " + knoten[knotenNummer].BezeichnungGeben() + "; ");
     }
 
     /**
-     * Eigentliche Tiefensuche ruft die rekursive Methode Besuchen mit dem Startknoten auf
+     * Eigentliche Tiefensuche ruft die rekursive Methode Besuchen mit dem
+     * Startknoten auf
      *
      * @param startKnoten Bezeichner des Startknotens für die Tiefensuche
      *
@@ -215,9 +218,7 @@ public class GRAPH_MATRIX
     public void TiefenSuche(String startKnoten)
     {
         int startNummer;
-
         startNummer = KnotenNummer(startKnoten);
-
         if (startNummer != -1)
         {
             for (int i = 0; i < anzahlKnoten; i++)
@@ -227,70 +228,75 @@ public class GRAPH_MATRIX
     }
 
     /**
-     * Besucht einen Knoten und läuft alle Abzweigungen ab, die von diesem Knoten ausgehen sofern
-     * deren Zielknoten noch nicht besucht wurden. Bricht ab, wenn der Zielknoten erreicht wurde.
+     * Besucht einen Knoten und läuft alle Abzweigungen ab, die von diesem
+     * Knoten ausgehen sofern deren Zielknoten noch nicht besucht wurden. Bricht
+     * ab, wenn der Zielknoten erreicht wurde.
      *
-     * @param knotenNummer Knotennummer des zu besuchenden Knotens
-     * @param zielKnotenNummer Knotennummer des Zielknoten, der erreicht werden soll
-     * @param pfad bisher abgelaufener Pfad in der Notation kn1/kn2/kn3 ...
-     * @param int Gewichtung des bisher abgelaufenen Pfads
+     * @param knotenNummer     Knotennummer des zu besuchenden Knotens
+     * @param zielKnotenNummer Knotennummer des Zielknoten, der erreicht werden
+     *                         soll
+     * @param pfad             bisher abgelaufener Pfad in der Notation
+     *                         kn1/kn2/kn3 ...
+     * @param int              Gewichtung des bisher abgelaufenen Pfads
      *
      */
-    private void Ablaufen(int knotenNummer, int zielKnotenNummer, String pfad, int laenge)
+    private void Ablaufen(int knotenNummer, int zielKnotenNummer, String pfad,
+            int laenge)
     {
         int neueLaenge;
         String neuerPfad;
         boolean wegEnde;
-
         besuchZaehler = besuchZaehler + 1;
         // aktiven Knoten auf besucht setzen
         besucht[knotenNummer] = true;
-
         // wenn der Zielknoten erreicht wird, dann abbrechen und Pfad ausgeben
         if (knotenNummer == zielKnotenNummer)
             System.out.println(pfad + "; Länge " + laenge);
-
         // sonst alle existierenden und noch möglichen Abzweigungen ablaufen
         // wie bei der Tiefensuche
         else
         {
             wegEnde = true;
-            // in der Matrix die Zeile des aktiven Knotens nach Kanten durchforsten
+            // in der Matrix die Zeile des aktiven Knotens nach Kanten
+            // durchforsten
             for (int abzweigNummer = 0; abzweigNummer < anzahlKnoten; abzweigNummer++)
             {
-                // es gibt eine Kante und deren Zielknoten ist noch nicht besucht
-                if ((matrix[knotenNummer][abzweigNummer] > 0) && (!besucht[abzweigNummer]))
+                // es gibt eine Kante und deren Zielknoten ist noch nicht
+                // besucht
+                if ((matrix[knotenNummer][abzweigNummer] > 0)
+                        && (!besucht[abzweigNummer]))
                 {
                     // der Weg wird in Richtung der Abzweigung verlängert
-                    neuerPfad = pfad + "/" + knoten[abzweigNummer].BezeichnungGeben();
+                    neuerPfad = pfad + "/"
+                            + knoten[abzweigNummer].BezeichnungGeben();
                     neueLaenge = laenge + matrix[knotenNummer][abzweigNummer];
                     wegEnde = false;
                     // rekursiver Aufruf des Ablaufes
-                    Ablaufen(abzweigNummer, zielKnotenNummer, neuerPfad, neueLaenge);
+                    Ablaufen(abzweigNummer, zielKnotenNummer, neuerPfad,
+                            neueLaenge);
                 }
             }
             if (wegEnde)
                 System.out.println(pfad + "; endet, verworfen");
         }
-
         // Knoten im Gegensatz zur Tiefensuche wieder freigeben
         besucht[knotenNummer] = false;
     }
 
     /**
-     * Eigentliche Wegesuche ruft die rekursive Methode Ablaufen mit dem Startknoten und Zielknoten
-     * auf
+     * Eigentliche Wegesuche ruft die rekursive Methode Ablaufen mit dem
+     * Startknoten und Zielknoten auf
      *
      * @param startKnoten Bezeichner des Startknotens für die Wegesuche
-     * @param zielKnoten Bezeichner des Zielknotens für die Wegesuche
+     * @param zielKnoten  Bezeichner des Zielknotens für die Wegesuche
      *
      */
     public void WegeSuchen(String startKnoten, String zielKnoten)
     {
         int startNummer = KnotenNummer(startKnoten);
         int zielNummer = KnotenNummer(zielKnoten);
-
-        if ((startNummer != -1) && (zielNummer != -1) && (startNummer != zielNummer))
+        if ((startNummer != -1) && (zielNummer != -1)
+                && (startNummer != zielNummer))
         {
             for (int i = 0; i < anzahlKnoten; i++)
                 besucht[i] = false;
@@ -298,5 +304,4 @@ public class GRAPH_MATRIX
             System.out.println(besuchZaehler);
         }
     }
-
 }

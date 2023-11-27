@@ -32,7 +32,8 @@ class BAUM
     }
 
     /**
-     * Fügt ein neues Datenelement in den Baum ein. Der Wert darf noch nicht vorkommen
+     * Fügt ein neues Datenelement in den Baum ein. Der Wert darf noch nicht
+     * vorkommen
      *
      * @param wert Referenz auf das einzufügende Datenelement
      */

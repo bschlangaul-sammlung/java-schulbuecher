@@ -10,8 +10,8 @@ import greenfoot.*; // (World, Actor, GreenfootImage, Greenfoot und MouseInfo)
  */
 public class KryptoWorld extends World
 {
-
     private BuchstabenAnzeige[] buchstaben;
+
     SchluesselAnzeige sa;
 
     public KryptoWorld()
@@ -19,13 +19,8 @@ public class KryptoWorld extends World
         super(600, 200, 1);
         sa = new SchluesselAnzeige(this, 3);
         addObject(sa, 600 - 50, 125);
-
         createWorld("KLARTEXT");
-
-
     }
-
-
 
     void createWorld(String text)
     {
@@ -39,12 +34,10 @@ public class KryptoWorld extends World
 
     public void update()
     {
-
         if (buchstaben == null)
         {
             return;
         }
-
         for (BuchstabenAnzeige ba : buchstaben)
         {
             if (ba != null)
@@ -53,5 +46,4 @@ public class KryptoWorld extends World
             }
         }
     }
-
 }

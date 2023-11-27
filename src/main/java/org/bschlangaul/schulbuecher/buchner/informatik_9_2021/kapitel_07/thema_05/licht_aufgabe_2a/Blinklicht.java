@@ -3,14 +3,14 @@ package org.bschlangaul.schulbuecher.buchner.informatik_9_2021.kapitel_07.thema_
 import greenfoot.Color;
 
 /**
- * Ein Blinklicht beginnt nach einem Mausklick zu blinken. Das Blinken hört nach einem weiteren
- * Mausklick wieder auf.
+ * Ein Blinklicht beginnt nach einem Mausklick zu blinken. Das Blinken hört nach
+ * einem weiteren Mausklick wieder auf.
  *
  */
-
 class Blinklicht extends Licht
 {
     int umschaltzeit = 40;
+
     int zaehler = 0;
 
     Blinklicht(Color neueFarbe)

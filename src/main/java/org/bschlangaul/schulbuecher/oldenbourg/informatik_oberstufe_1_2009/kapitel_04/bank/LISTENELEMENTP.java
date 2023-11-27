@@ -25,7 +25,8 @@ abstract class LISTENELEMENTP
     abstract LISTENELEMENTP Einfuegen(PERSON person);
 
     /**
-     * Löscht das angegebene Datenlement aus der Liste. Nutzt die Sortierung der Liste aus.
+     * Löscht das angegebene Datenlement aus der Liste. Nutzt die Sortierung der
+     * Liste aus.
      *
      * @param person Referenz auf die zu löschende Person.
      * @return (neues) Nachfolgeelement des Aufrufers.
@@ -53,7 +54,8 @@ abstract class LISTENELEMENTP
      *
      * @param derNicht wird beim Eintrag übergangen.
      * @param ergebnis Referenz auf das Feld mit den gefundenen Daten.
-     * @param pos Index, auf dem das nächste Element eingetragen werden soll.
+     * @param pos      Index, auf dem das nächste Element eingetragen werden
+     *                 soll.
      */
     abstract void NamenEintragen(String derNicht, String[] ergebnis, int pos);
 }

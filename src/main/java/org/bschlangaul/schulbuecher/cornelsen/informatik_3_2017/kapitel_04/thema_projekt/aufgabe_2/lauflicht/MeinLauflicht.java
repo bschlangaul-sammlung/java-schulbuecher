@@ -116,7 +116,6 @@ public class MeinLauflicht extends Lauflicht
         super.licht(7, true);
         super.warte(0.1);
         super.licht(7, false);
-
     }
 
     public void LaufNachLinks()
@@ -146,6 +145,5 @@ public class MeinLauflicht extends Lauflicht
         super.licht(0, true);
         super.warte(0.1);
         super.licht(0, false);
-
     }
 }

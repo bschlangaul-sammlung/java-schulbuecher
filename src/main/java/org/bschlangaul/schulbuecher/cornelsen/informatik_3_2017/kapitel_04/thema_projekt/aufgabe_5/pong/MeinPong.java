@@ -8,7 +8,6 @@ package org.bschlangaul.schulbuecher.cornelsen.informatik_3_2017.kapitel_04.them
  */
 public class MeinPong extends Pong
 {
-
     public MeinPong()
     {
         super();
@@ -25,7 +24,6 @@ public class MeinPong extends Pong
         {
             super.ballWirkeImpuls(-100, 0);
         }
-
         super.bodenSetzeElastizitaet(0.5);
         super.linkerSpielerSetzeElastizitaet(0.5);
         super.rechterSpielerSetzeElastizitaet(0.5);
@@ -33,8 +31,6 @@ public class MeinPong extends Pong
         super.zeigeKoordinaten(false);
         super.starteTickerNeu(0.1);
     }
-
-
 
     @Override
     public void tasteReagieren(int tastenCode)
@@ -67,9 +63,7 @@ public class MeinPong extends Pong
                 super.linkenSpielerVerschiebenUm(0, -1);
             }
         }
-
     }
-
 
     @Override
     public void tick()
@@ -89,5 +83,4 @@ public class MeinPong extends Pong
             super.ballWirkeImpuls(-100, 0);
         }
     }
-
 }

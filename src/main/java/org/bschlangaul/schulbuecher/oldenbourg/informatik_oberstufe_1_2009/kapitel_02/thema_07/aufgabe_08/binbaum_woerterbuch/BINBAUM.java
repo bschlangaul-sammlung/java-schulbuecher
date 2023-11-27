@@ -1,9 +1,10 @@
 package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapitel_02.thema_07.aufgabe_08.binbaum_woerterbuch;
 
 /**
- * Die Klasse BINBAUM ist die Grundstruktur eines geordneten Binärbaums. Die Methoden die ein Objekt
- * dieser Klasse anbietet, leiten den Aufruf an den Wurzelknoten weiter, wenn der Baum nicht leer
- * ist. (Implementierung ohne Composite Pattern)
+ * Die Klasse BINBAUM ist die Grundstruktur eines geordneten Binärbaums. Die
+ * Methoden die ein Objekt dieser Klasse anbietet, leiten den Aufruf an den
+ * Wurzelknoten weiter, wenn der Baum nicht leer ist. (Implementierung ohne
+ * Composite Pattern)
  *
  * @author (Peter Brichzin)
  * @version (30.07.08)
@@ -20,10 +21,10 @@ public class BINBAUM
         wurzel = null;
     }
 
-
     /**
-     * Fügt ein Datenelement sortiert in den geordneten Binärbaum ein, d.h. die Eigenschaft, dass
-     * der Baum geordnet ist bleibt bei jedem Einfügevorgang erhalten.
+     * Fügt ein Datenelement sortiert in den geordneten Binärbaum ein, d.h. die
+     * Eigenschaft, dass der Baum geordnet ist bleibt bei jedem Einfügevorgang
+     * erhalten.
      *
      * @param datenNeu neues Datenelement
      */
@@ -40,8 +41,9 @@ public class BINBAUM
     }
 
     /**
-     * Sucht ein Datenelement, das über seinen Schlüssel identifiziert wird, und gibt es aus. d.h.
-     * die Eigenschaft, dass der Baum geordnet ist bleibt bei jedem Einfügevorgang erhalten.
+     * Sucht ein Datenelement, das über seinen Schlüssel identifiziert wird, und
+     * gibt es aus. d.h. die Eigenschaft, dass der Baum geordnet ist bleibt bei
+     * jedem Einfügevorgang erhalten.
      *
      * @param datenNeu neues Datenelement
      * @return gesuchtes Datenelement bzw. null, falls die Suche erfolglos ist
@@ -59,10 +61,11 @@ public class BINBAUM
     }
 
     /**
-     * überprüt, ob ein Datenelement mit dem eingegebenen Schlüssel (in Form einer Zeichenkette)
-     * vorhanden ist.
+     * überprüt, ob ein Datenelement mit dem eingegebenen Schlüssel (in Form
+     * einer Zeichenkette) vorhanden ist.
      *
-     * @param suchSchluessel Schl&uumlssel, nach dem gesucht wird als Zeichenkette
+     * @param suchSchluessel Schl&uumlssel, nach dem gesucht wird als
+     *                       Zeichenkette
      * @return true, im Erfolgsfall, false sonst.
      */
     public boolean IstVorhanden(String suchSchluessel)
@@ -76,5 +79,4 @@ public class BINBAUM
             return false;
         }
     }
-
 }

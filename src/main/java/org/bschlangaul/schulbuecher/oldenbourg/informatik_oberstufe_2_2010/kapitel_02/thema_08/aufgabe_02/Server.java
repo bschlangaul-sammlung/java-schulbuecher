@@ -14,8 +14,10 @@ class Server
 {
     /** Endeangabe */
     private boolean beendenEmpfangen;
+
     /** Liste mit den aktuellen Klienten */
     private ArrayList<ClientThread> angemeldet;
+
     /** Der Serversocket */
     ServerSocket server;
 
@@ -44,8 +46,10 @@ class Server
                 neu = new ClientThread(anruf, this);
                 angemeldet.add(neu);
                 neu.start();
-            } while (!beendenEmpfangen);
-        } catch (Exception e)
+            }
+            while (!beendenEmpfangen);
+        }
+        catch (Exception e)
         {
             if (!beendenEmpfangen)
             {
@@ -60,7 +64,7 @@ class Server
      * Gibt die Zeichen zur Ausgabe an alle Threads weiter.
      *
      * @param zeichen die auszugebenden Zeichen
-     * @param anzahl Anzahl der auszugebenden Zeichen
+     * @param anzahl  Anzahl der auszugebenden Zeichen
      */
     synchronized void Ausgeben(int[] zeichen, int anzahl)
     {
@@ -89,7 +93,8 @@ class Server
         try
         {
             server.close();
-        } catch (Exception e)
+        }
+        catch (Exception e)
         {
         }
     }

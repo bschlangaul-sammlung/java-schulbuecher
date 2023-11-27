@@ -8,7 +8,6 @@ package org.bschlangaul.schulbuecher.cornelsen.informatik_3_2017.kapitel_04.them
  */
 class HausbauTurtle extends Turtle
 {
-
     /**
      * Zeichnet ein Quadrat mit Seitenlänge 50
      */
@@ -49,6 +48,5 @@ class HausbauTurtle extends Turtle
         this.Gehen(50);
         this.Drehen(-90);
         this.DreieckZeichnen(100);
-
     }
 }

@@ -6,7 +6,6 @@ package org.bschlangaul.schulbuecher.isb.handreichung_10.konzept_02.supermarkt.s
  * @author Albert Wiedemann
  * @version 1.0
  */
-
 import java.util.Random;
 
 class KUNDEZUFALL extends KUNDE
@@ -14,8 +13,8 @@ class KUNDEZUFALL extends KUNDE
     Random zufall;
 
     /**
-     * Konstruktor des Kunden. Setzt eine zufällige Farbe und die Grö&szlig;e gemä&szlig; der
-     * Artikelanzahl
+     * Konstruktor des Kunden. Setzt eine zufällige Farbe und die Grö&szlig;e
+     * gemä&szlig; der Artikelanzahl
      */
     KUNDEZUFALL(int artikel)
     {
@@ -24,8 +23,8 @@ class KUNDEZUFALL extends KUNDE
     }
 
     /**
-     * Entscheidet, an welche Schlange sich der Kunde anstellt. Hier ist die Strategie: zufllige
-     * Schlange pre: es gibt mindestens eine offene Kasse
+     * Entscheidet, an welche Schlange sich der Kunde anstellt. Hier ist die
+     * Strategie: zufllige Schlange pre: es gibt mindestens eine offene Kasse
      *
      * @param kassen Feld der im Markt vorhandenen Kassen
      */

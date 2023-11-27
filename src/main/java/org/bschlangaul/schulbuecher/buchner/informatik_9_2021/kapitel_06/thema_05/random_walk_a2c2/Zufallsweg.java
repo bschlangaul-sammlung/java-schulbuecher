@@ -10,6 +10,7 @@ import greenfoot.World;
 public class Zufallsweg extends World
 {
     int breite = 300; // Breite der Welt (= Länge des Weges)
+
     int hoehe = 21; // Höhe der Welt (= Breite des Weges)
 
     public Zufallsweg(int neueBreite, int neueHoehe)
@@ -38,7 +39,8 @@ public class Zufallsweg extends World
         {
             faerbeZelle(x, y); // Methode vorhanden
             x = x + 1; // neue x-Koordinate: 1 Schritt nach rechts
-            zz = gibZufallszahl(); // Zufallszahl zwischen 1 und 100, Methode vorhanden
+            zz = gibZufallszahl(); // Zufallszahl zwischen 1 und 100, Methode
+                                   // vorhanden
             as = gibZufallszahl();
             if (as <= 50)
             {
@@ -57,7 +59,6 @@ public class Zufallsweg extends World
                 y = y + dy; // ... einen oder mehr Schritte nach unten
             }
             // Mit den restlichen 40% Wahrscheinlichkeit wird y nicht geändert.
-
             // Überschreitet y den erlaubten Wert, wird x so hoch gesetzt,
             // dass die Wiederholung nicht nochmals durchgeführt wirde.
             if (y < 0 || y >= hoehe)

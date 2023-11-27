@@ -28,9 +28,10 @@ class Regen extends Ereignisbehandlung
     /**
      * Erzeugt bei einem Musklick einen neuen Tropfen an der Stelle des Klicks
      *
-     * @param x x-Position des Mausklicks
-     * @param y y-Position des Mausklicks
-     * @param anzahl Anzahl der aufeinanderfolgenden Mausklicks (hier nicht benötigt)
+     * @param x      x-Position des Mausklicks
+     * @param y      y-Position des Mausklicks
+     * @param anzahl Anzahl der aufeinanderfolgenden Mausklicks (hier nicht
+     *               benötigt)
      */
     @Override
     void MausGeklickt(int x, int y, int anzahl)

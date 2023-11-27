@@ -10,8 +10,10 @@ class LISTE
 {
     /** Referenz auf das erste Listenelement */
     private LISTENELEMENT erstes;
+
     /** Referenz auf das aktuelle Datenelement für Durchlauf */
     private LISTENELEMENT aktuelles;
+
     /** Referenz auf das aktuelle Datenelement */
     private DATENELEMENT daten;
 
@@ -46,8 +48,8 @@ class LISTE
     }
 
     /**
-     * Sucht das Datenelement mit dem angegebenen Referenzschlüssel. Nutzt die Sortierung der Liste
-     * aus.
+     * Sucht das Datenelement mit dem angegebenen Referenzschlüssel. Nutzt die
+     * Sortierung der Liste aus.
      *
      * @param daten Referenzelement mit dem Schlüssel des zu suchenden Elements.
      * @return Referenz auf das Datenelement oder null

@@ -10,13 +10,12 @@ import org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.fortge
 public class Translationstest extends junit.framework.TestCase
 {
     private Rechteck rechteck1;
-
     // Typ und Name der Objekte, deren Zustand spaeter
     // wiederhergestellt werden soll
 
     /**
-     * Hier koennen Zustandsaenderungen (<-> Methodenaufrufe) mitprotokolliert werden. Beim
-     * Wiederherstellen werden diese ausgefuehrt.
+     * Hier koennen Zustandsaenderungen (<-> Methodenaufrufe) mitprotokolliert
+     * werden. Beim Wiederherstellen werden diese ausgefuehrt.
      */
     protected void setUp()
     {
@@ -33,5 +32,6 @@ public class Translationstest extends junit.framework.TestCase
      * Diese Methode kann in der 10.Klasse ignoriert werden.
      */
     protected void tearDown()
-    {}
+    {
+    }
 }

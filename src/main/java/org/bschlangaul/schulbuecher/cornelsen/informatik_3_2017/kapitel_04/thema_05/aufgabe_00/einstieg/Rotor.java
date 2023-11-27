@@ -14,15 +14,14 @@ class Rotor extends Hindernis
     /**
      * Legt das Aussehen und die Startposition fest
      *
-     * @param x x-Koordinate des Hindernisses
-     * @param y y-Koordinate des Hindernisses
+     * @param x           x-Koordinate des Hindernisses
+     * @param y           y-Koordinate des Hindernisses
      * @param richtungNeu Blickrichtung des Hindernisses
      */
     Rotor(int x, int y, char richtungNeu)
     {
         super(x, y, richtungNeu);
         richtung = richtungNeu;
-
         Zeichnen();
         RichtungSetzen(richtung);
         PositionSetzen(x, y);
@@ -60,12 +59,11 @@ class Rotor extends Hindernis
                     else
                     {
                         System.out.println(
-                                        "unbekannte Richtung in Methode Bewegen, Klasse Hindernis");
+                                "unbekannte Richtung in Methode Bewegen, Klasse Hindernis");
                     }
                 }
             }
         }
-
         EntfernenWennAußerhalb();
     }
 

@@ -6,6 +6,7 @@ package org.bschlangaul.schulbuecher.buchner.informatik_10_2022.kapitel_05.thema
 public class Spieler
 {
     private String name;
+
     private int nummer;
 
     public Spieler(String name, int nummer)

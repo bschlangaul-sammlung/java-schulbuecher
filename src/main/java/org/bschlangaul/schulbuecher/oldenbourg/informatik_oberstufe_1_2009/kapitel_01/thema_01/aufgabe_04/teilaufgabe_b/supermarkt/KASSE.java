@@ -43,7 +43,8 @@ class KASSE
     }
 
     /**
-     * Holt einen Kunden von der Warteschlange und lässt die nachfolgenden Kunden Aufrücken.
+     * Holt einen Kunden von der Warteschlange und lässt die nachfolgenden
+     * Kunden Aufrücken.
      *
      * @param schlange zugehörige Warteschlange
      */

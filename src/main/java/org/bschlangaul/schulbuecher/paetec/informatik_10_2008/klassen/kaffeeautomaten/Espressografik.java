@@ -7,9 +7,10 @@ import org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.einfac
 import org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.einfache_grafik.Zeichenfenster;
 
 /**
- * Objekte der Klasse Espressografik koennen das ("dumme") Gehaeuse eines einfachen italienischen
- * Kaffeeautomaten darstellen. Objekte der Klasse Espressografik bieten folgende Dienste an: Zahlen
- * und Texte auf dem Display anzeigen und ein beliebiges Getraenk ausgeben.
+ * Objekte der Klasse Espressografik koennen das ("dumme") Gehaeuse eines
+ * einfachen italienischen Kaffeeautomaten darstellen. Objekte der Klasse
+ * Espressografik bieten folgende Dienste an: Zahlen und Texte auf dem Display
+ * anzeigen und ein beliebiges Getraenk ausgeben.
  *
  * @author Florian Prager, Ute Heuer, Universität Passau
  * @version 05.2008
@@ -45,6 +46,7 @@ public class Espressografik
      * Teil der Espressografik
      */
     private Ellipse kaffee;
+
     private Ellipse crema;
 
     /**
@@ -73,8 +75,8 @@ public class Espressografik
     private Rechteck rechteDuese;
 
     /**
-     * Das Attribut angezeigterInhalt haelt den Text, der im Display des Espressoautomaten angezeigt
-     * werden soll.
+     * Das Attribut angezeigterInhalt haelt den Text, der im Display des
+     * Espressoautomaten angezeigt werden soll.
      */
     private String angezeigterInhalt;
 
@@ -84,11 +86,11 @@ public class Espressografik
     private Zeichenfenster fenster;
 
     /**
-     * Die Display-Anzeige kann initialisiert werden. Ein moeglicher Eingabewert ist: "Willkommen!"
-     * . Die Anfuehrungsstriche sind noetig.
+     * Die Display-Anzeige kann initialisiert werden. Ein moeglicher Eingabewert
+     * ist: "Willkommen!" . Die Anfuehrungsstriche sind noetig.
      *
-     * Das Display hat 12 Stellen fuer Buchstaben. Werden mehr als 12 Zeichen eingegeben, dann
-     * werden nur die ersten 12 angezeigt.
+     * Das Display hat 12 Stellen fuer Buchstaben. Werden mehr als 12 Zeichen
+     * eingegeben, dann werden nur die ersten 12 angezeigt.
      */
     public Espressografik(String text)
     {
@@ -113,9 +115,10 @@ public class Espressografik
     }
 
     /**
-     * Zeigt den vom Nutzer uebergebenen Hinweis im Display an. Das Display hat 12 Stellen fuer
-     * Buchstaben. Werden mehr als 12 Zeichen eingegeben, dann werden nur die ersten 12 angezeigt.
-     * Ein moeglicher Eingabewert ist: "waehlen" . Die Anfuehrungsstriche sind noetig.
+     * Zeigt den vom Nutzer uebergebenen Hinweis im Display an. Das Display hat
+     * 12 Stellen fuer Buchstaben. Werden mehr als 12 Zeichen eingegeben, dann
+     * werden nur die ersten 12 angezeigt. Ein moeglicher Eingabewert ist:
+     * "waehlen" . Die Anfuehrungsstriche sind noetig.
      */
     private void anzeigen(String hinweis)
     {
@@ -145,9 +148,10 @@ public class Espressografik
     }
 
     /**
-     * Zeigt den vom Nutzer uebergebenen Geldbetrag in Cent im Display an. Das Display hat nur 6
-     * Stellen fuer Ziffern. Wird ein groesserer Geldbetrag angegeben, werden nur die letzten 6
-     * Stellen angezeigt. Ein moeglicher Eingabewert ist: 80
+     * Zeigt den vom Nutzer uebergebenen Geldbetrag in Cent im Display an. Das
+     * Display hat nur 6 Stellen fuer Ziffern. Wird ein groesserer Geldbetrag
+     * angegeben, werden nur die letzten 6 Stellen angezeigt. Ein moeglicher
+     * Eingabewert ist: 80
      */
     public void centAnzeigen(int neuerBetrag)
     {
@@ -158,9 +162,10 @@ public class Espressografik
     }
 
     /**
-     * Zeichnet ein Becherbild in das Ausgabefach und fuellt eine graue Fluessigkeit ein und zeigt
-     * das vom Nutzer gewuenschte Getraenk im Display an. Ein moeglicher Eingabewert ist: "Espresso"
-     * . Die Anfuehrungsstriche sind noetig.
+     * Zeichnet ein Becherbild in das Ausgabefach und fuellt eine graue
+     * Fluessigkeit ein und zeigt das vom Nutzer gewuenschte Getraenk im Display
+     * an. Ein moeglicher Eingabewert ist: "Espresso" . Die Anfuehrungsstriche
+     * sind noetig.
      */
     public void becherFuellen(String neuesGetraenk)
     {
@@ -186,7 +191,6 @@ public class Espressografik
         crema.anzeigen();
         cremaZeichnen();
     }
-
     // /**
     // * Der Dienst zeigen malt die Grafik erneut ins Zeichenfenster
     // */
@@ -205,7 +209,6 @@ public class Espressografik
     // if (kaffee != null)
     // kaffee.anzeigen();
     // }
-
     // /**
     // * Der Dienst verstecken entfernt die Grafik aus dem Zeichenfenster Er hat
     // * somit die gleiche Wirkung wie der "Besen" des Zeichenfensters
@@ -286,7 +289,6 @@ public class Espressografik
         duesenVerkleidung.positionSetzen(175, 250);
         linkeDuese.positionSetzen(185, 265);
         rechteDuese.positionSetzen(205, 265);
-
         gehaeuse.anzeigen();
         anzeigefeld.anzeigen();
         ausgabefeld.anzeigen();
@@ -340,5 +342,4 @@ public class Espressografik
             crema.anzeigen();
         }
     }
-
 }

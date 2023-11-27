@@ -1,11 +1,13 @@
 package org.bschlangaul.schulbuecher.buchner.informatik_10_2022.kapitel_05.thema_01.fussball_vorlage;
 
 /**
- * Klasse zur Darstellung einer Fußballmannschaft mit Mannschaftsname und Spielerliste
+ * Klasse zur Darstellung einer Fußballmannschaft mit Mannschaftsname und
+ * Spielerliste
  */
 public class Mannschaft
 {
     private String name;
+
     private Spieler[] spielerliste;
 
     public Mannschaft()

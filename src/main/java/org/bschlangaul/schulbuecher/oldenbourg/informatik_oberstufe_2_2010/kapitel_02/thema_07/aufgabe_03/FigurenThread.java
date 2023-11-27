@@ -7,8 +7,10 @@ class FigurenThread extends Thread
 {
     /** Die zu verwaltende Figur */
     private Figur figur;
+
     /** Die Wartezeit der Figur */
     private long warteZeit;
+
     /** Endebedingung für die Threads */
     private static boolean ende;
 
@@ -16,7 +18,7 @@ class FigurenThread extends Thread
      * Legt die Attribute an.
      *
      * @param figur die zu bewegende Figur
-     * @param zeit die Wartezeit
+     * @param zeit  die Wartezeit
      */
     FigurenThread(Figur figur, long zeit)
     {
@@ -41,7 +43,8 @@ class FigurenThread extends Thread
                 try
                 {
                     wait(ende - akt);
-                } catch (Exception e)
+                }
+                catch (Exception e)
                 {
                 }
                 akt = System.currentTimeMillis();

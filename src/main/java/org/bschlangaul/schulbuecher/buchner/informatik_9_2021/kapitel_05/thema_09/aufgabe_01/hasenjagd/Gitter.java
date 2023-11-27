@@ -11,8 +11,8 @@ import greenfoot.Actor;
 public class Gitter extends Actor
 {
     /**
-     * Act - tut, was auch immer Gitter tun will. Diese Methode wird aufgerufen, sobald der 'Act'
-     * oder 'Run' Button in der Umgebung angeklickt werden.
+     * Act - tut, was auch immer Gitter tun will. Diese Methode wird aufgerufen,
+     * sobald der 'Act' oder 'Run' Button in der Umgebung angeklickt werden.
      */
     public void act()
     {

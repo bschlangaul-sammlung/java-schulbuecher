@@ -14,11 +14,17 @@ class KASSE
     };
 
     RECHTECK darstellung;
+
     KUNDE kunde;
+
     WARTESCHLANGE warteschlange;
+
     int x;
+
     int y;
+
     Zustaende zustand;
+
     int wartezeit;
 
     /**
@@ -163,6 +169,4 @@ class KASSE
             wartezeit = wartezeit - 1;
         }
     }
-
-
 }

@@ -6,8 +6,6 @@ import greenfoot.Actor;
  * Klasse Auftriebszone <br>
  * Enthält weder Attribute noch Methoden.
  */
-
 public class Auftriebzone extends Actor
 {
-
 }

@@ -8,7 +8,6 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapi
  */
 class PERSON implements DATENELEMENT
 {
-
     private String name;
 
     /**
@@ -39,8 +38,6 @@ class PERSON implements DATENELEMENT
         return name.compareTo(pvergleich.name) < 0;
     }
 
-
-
     /**
      * Identifikation eines Datenelements aufgrund seines Schlüssels
      *
@@ -50,6 +47,4 @@ class PERSON implements DATENELEMENT
     {
         return name.compareTo(s) == 0;
     }
-
-
 }

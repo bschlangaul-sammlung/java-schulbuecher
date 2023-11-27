@@ -25,18 +25,16 @@ public class Spieler extends Actor
     }
 
     /**
-     * Der Programmtext an hier braucht für die Bearbeitung der Arbeitsaufträge und Aufgaben weder
-     * gelesen noch verstanden zu werden.
+     * Der Programmtext an hier braucht für die Bearbeitung der Arbeitsaufträge
+     * und Aufgaben weder gelesen noch verstanden zu werden.
      */
     public void act()
     {
         Ball ball = getWorld().getObjects(Ball.class).get(0);
-
         if (ball.gibGeschwindigkeit() == 0)
         {
             return;
         }
-
         if (ball.gibRichtung().equals("links"))
         {
             move(geschwindigkeit);

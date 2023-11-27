@@ -8,16 +8,12 @@ import greenfoot.*;
  * @author Wolfgang Riffelmacher
  * @version 2022-09-12
  */
-
 public class Sonnenblume extends Actor
 {
-
     public void act()
     {
         wachsen();
-
         // Mögliche Bilder findest du im Projektordner!
-
     }
 
     public void wachsen()

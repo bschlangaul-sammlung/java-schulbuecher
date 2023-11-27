@@ -6,6 +6,7 @@ import static org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps
 public class Dreieck
 {
     private String farbe;
+
     /**
      * Die Groesse des Dreiecks
      */
@@ -32,7 +33,8 @@ public class Dreieck
     private boolean wirdAngezeigt;
 
     /**
-     * Es wird ein neues Dreieck mit den Standardeinstellungen erzeugt. Das Dreieck ist gefuellt.
+     * Es wird ein neues Dreieck mit den Standardeinstellungen erzeugt. Das
+     * Dreieck ist gefuellt.
      */
     public Dreieck()
     {
@@ -40,17 +42,17 @@ public class Dreieck
     }
 
     /**
-     * Es wird ein neues Dreieck mit den Standardeinstellungen erzeugt. Das Fenster, an dem das
-     * Dreieck angemeldet wird, kann dabei angegeben werden. Dazu muss zuerst ein Zeichenfenster
-     * erzeugt worden sein. Dieses kann dann "waehrend des Konstruktoraufrufs eingefuellt" werden.
-     * Das Dreieck ist gefuellt.
+     * Es wird ein neues Dreieck mit den Standardeinstellungen erzeugt. Das
+     * Fenster, an dem das Dreieck angemeldet wird, kann dabei angegeben werden.
+     * Dazu muss zuerst ein Zeichenfenster erzeugt worden sein. Dieses kann dann
+     * "waehrend des Konstruktoraufrufs eingefuellt" werden. Das Dreieck ist
+     * gefuellt.
      */
     public Dreieck(Zeichenfenster fenster)
     {// uh
         einfachegrafikAnmelden(this, fortgeschrittenesFensterGeben(fenster));// uh
-        org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.fortgeschrittene_grafik.Dreieck fg =
-                        (org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.fortgeschrittene_grafik.Dreieck) fortgeschrittenegrafikGeben(
-                                        this);
+        org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.fortgeschrittene_grafik.Dreieck fg = (org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.fortgeschrittene_grafik.Dreieck) fortgeschrittenegrafikGeben(
+                this);
         wirdAngezeigt = false;
         breite = fg.breiteGeben();
         hoehe = fg.hoeheGeben();
@@ -58,64 +60,61 @@ public class Dreieck
     }
 
     /**
-     * Breite und Hoehe des Dreiecks koennen gewaehlt werden. Nicht positive (unsinnige) Angaben
-     * werden automatisch auf den kleinsten noch sinnvollen Wert fuer eine Grafik gesetzt, hier 1.
-     * Die Grafik ist dann entsprechend auf dem Zeichenfenster zu sehen.
+     * Breite und Hoehe des Dreiecks koennen gewaehlt werden. Nicht positive
+     * (unsinnige) Angaben werden automatisch auf den kleinsten noch sinnvollen
+     * Wert fuer eine Grafik gesetzt, hier 1. Die Grafik ist dann entsprechend
+     * auf dem Zeichenfenster zu sehen.
      */
     public void groesseSetzen(int neueBreite, int neueHoehe)
     {
-        org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.fortgeschrittene_grafik.Dreieck fg =
-                        (org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.fortgeschrittene_grafik.Dreieck) fortgeschrittenegrafikGeben(
-                                        this);
+        org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.fortgeschrittene_grafik.Dreieck fg = (org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.fortgeschrittene_grafik.Dreieck) fortgeschrittenegrafikGeben(
+                this);
         fg.groesseSetzen(neueBreite, neueHoehe);
         breite = fg.breiteGeben();
         hoehe = fg.hoeheGeben();
         if (wirdAngezeigt)
             fg.fensterGeben().zeichnen();
-
     }
 
     /**
-     * Veraendert den Aufpunkt der Grafik. Der Aufpunkt ist die linke obere Ecke des die Grafik
-     * ueberdeckenden Rechtecks.
+     * Veraendert den Aufpunkt der Grafik. Der Aufpunkt ist die linke obere Ecke
+     * des die Grafik ueberdeckenden Rechtecks.
      */
     public void positionSetzen(int neueXPosition, int neueYPosition)
     {
         xPosition = neueXPosition;
         yPosition = neueYPosition;
-        org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.fortgeschrittene_grafik.Dreieck fg =
-                        (org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.fortgeschrittene_grafik.Dreieck) fortgeschrittenegrafikGeben(
-                                        this);
+        org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.fortgeschrittene_grafik.Dreieck fg = (org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.fortgeschrittene_grafik.Dreieck) fortgeschrittenegrafikGeben(
+                this);
         fg.positionSetzen(neueXPosition, neueYPosition);
         if (wirdAngezeigt)
             fg.fensterGeben().zeichnen();
     }
 
     /**
-     * Verschiebt die Grafik um deltaX in x-Richtung und um deltaY in y-Richtung.
+     * Verschiebt die Grafik um deltaX in x-Richtung und um deltaY in
+     * y-Richtung.
      */
     public void verschieben(int deltaX, int deltaY)
     {
         xPosition += deltaX;
         yPosition += deltaY;
-        org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.fortgeschrittene_grafik.Dreieck fg =
-                        (org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.fortgeschrittene_grafik.Dreieck) fortgeschrittenegrafikGeben(
-                                        this);
+        org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.fortgeschrittene_grafik.Dreieck fg = (org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.fortgeschrittene_grafik.Dreieck) fortgeschrittenegrafikGeben(
+                this);
         fg.verschieben(deltaX, deltaY);
         if (wirdAngezeigt)
             fg.fensterGeben().zeichnen();
     }
 
     /**
-     * Die Farbe der Grafik kann gewaehlt werden. Mögliche Farben sind: "weiss", "gelb", "orange",
-     * "rot", "pink", "magenta", "cyan", "gruen", "blau", "grau", "schwarz" Achtung: Die
-     * Anfuehrungsstriche sind noetig!
+     * Die Farbe der Grafik kann gewaehlt werden. Mögliche Farben sind: "weiss",
+     * "gelb", "orange", "rot", "pink", "magenta", "cyan", "gruen", "blau",
+     * "grau", "schwarz" Achtung: Die Anfuehrungsstriche sind noetig!
      */
     public void farbeSetzen(String neueFarbe)
     {
-        org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.fortgeschrittene_grafik.Dreieck fg =
-                        (org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.fortgeschrittene_grafik.Dreieck) fortgeschrittenegrafikGeben(
-                                        this);
+        org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.fortgeschrittene_grafik.Dreieck fg = (org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.fortgeschrittene_grafik.Dreieck) fortgeschrittenegrafikGeben(
+                this);
         fg.farbeSetzen(neueFarbe);
         farbe = fg.farbeGeben();
         if (wirdAngezeigt)
@@ -127,9 +126,8 @@ public class Dreieck
      */
     public void anzeigen()
     {
-        org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.fortgeschrittene_grafik.Dreieck fg =
-                        (org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.fortgeschrittene_grafik.Dreieck) fortgeschrittenegrafikGeben(
-                                        this);
+        org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.fortgeschrittene_grafik.Dreieck fg = (org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.fortgeschrittene_grafik.Dreieck) fortgeschrittenegrafikGeben(
+                this);
         fg.abmelden();
         fg.anmelden();
         wirdAngezeigt = true;
@@ -141,9 +139,8 @@ public class Dreieck
      */
     public void verstecken()
     {
-        org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.fortgeschrittene_grafik.Dreieck fg =
-                        (org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.fortgeschrittene_grafik.Dreieck) fortgeschrittenegrafikGeben(
-                                        this);
+        org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.fortgeschrittene_grafik.Dreieck fg = (org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.fortgeschrittene_grafik.Dreieck) fortgeschrittenegrafikGeben(
+                this);
         fg.abmelden();
         wirdAngezeigt = false;
         fg.fensterGeben().zeichnen();
@@ -158,13 +155,13 @@ public class Dreieck
     }
 
     /**
-     * Unsere einfache "Visitenkarte": unser Klassenname gefolgt von interessanten Attributwerten
+     * Unsere einfache "Visitenkarte": unser Klassenname gefolgt von
+     * interessanten Attributwerten
      */
     public String toString()
     {
-        org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.fortgeschrittene_grafik.Dreieck fg =
-                        (org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.fortgeschrittene_grafik.Dreieck) fortgeschrittenegrafikGeben(
-                                        this);
+        org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.fortgeschrittene_grafik.Dreieck fg = (org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.fortgeschrittene_grafik.Dreieck) fortgeschrittenegrafikGeben(
+                this);
         return fg.toString();
     }
 }

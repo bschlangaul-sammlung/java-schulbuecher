@@ -9,11 +9,17 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapi
 class KONTROLLEUR implements KONTROLLEURINTERFACE
 {
     private OBERFLACHENINTERFACE oberflaeche;
+
     private DATENBANKVERBINDUNG verb;
+
     private PERSON aktPerson;
+
     private String tabName;
+
     private LISTE personenListe;
+
     private LISTE aktNummern;
+
     private LISTE aktEmails;
 
     /**
@@ -56,14 +62,16 @@ class KONTROLLEUR implements KONTROLLEURINTERFACE
             emails = new LISTE();
             verb.TelefonnummernHolen(nummern, aktPerson.NummerGeben());
             verb.EMailadressenHolen(emails, aktPerson.NummerGeben());
-            oberflaeche.PersonenInfoSetzen(aktPerson.NameGeben(), aktPerson.VornameGeben(),
-                            aktPerson.StrasseGeben(), aktPerson.HausnummerGeben(),
-                            aktPerson.PlzGeben(), aktPerson.OrtGeben(),
-                            nummern.ReferenzenAlsFeldGeben(), emails.ReferenzenAlsFeldGeben());
+            oberflaeche.PersonenInfoSetzen(aktPerson.NameGeben(),
+                    aktPerson.VornameGeben(), aktPerson.StrasseGeben(),
+                    aktPerson.HausnummerGeben(), aktPerson.PlzGeben(),
+                    aktPerson.OrtGeben(), nummern.ReferenzenAlsFeldGeben(),
+                    emails.ReferenzenAlsFeldGeben());
         }
         else
         {
-            oberflaeche.PersonenInfoSetzen("", "", "", "", "", "", new Object[0], new Object[0]);
+            oberflaeche.PersonenInfoSetzen("", "", "", "", "", "",
+                    new Object[0], new Object[0]);
         }
     }
 
@@ -83,14 +91,15 @@ class KONTROLLEUR implements KONTROLLEURINTERFACE
             verb.TelefonnummernHolen(nummern, aktPerson.NummerGeben());
             verb.EMailadressenHolen(emails, aktPerson.NummerGeben());
             oberflaeche.PersonenInfoSetzenBearbeiten(aktPerson.NameGeben(),
-                            aktPerson.VornameGeben(), aktPerson.StrasseGeben(),
-                            aktPerson.HausnummerGeben(), aktPerson.PlzGeben(), aktPerson.OrtGeben(),
-                            nummern.ReferenzenAlsFeldGeben(), emails.ReferenzenAlsFeldGeben());
+                    aktPerson.VornameGeben(), aktPerson.StrasseGeben(),
+                    aktPerson.HausnummerGeben(), aktPerson.PlzGeben(),
+                    aktPerson.OrtGeben(), nummern.ReferenzenAlsFeldGeben(),
+                    emails.ReferenzenAlsFeldGeben());
         }
         else
         {
-            oberflaeche.PersonenInfoSetzenBearbeiten("", "", "", "", "", "", new Object[0],
-                            new Object[0]);
+            oberflaeche.PersonenInfoSetzenBearbeiten("", "", "", "", "", "",
+                    new Object[0], new Object[0]);
         }
     }
 
@@ -110,14 +119,15 @@ class KONTROLLEUR implements KONTROLLEURINTERFACE
             emails = new LISTE();
             verb.TelefonnummernHolen(nummern, p.NummerGeben());
             verb.EMailadressenHolen(emails, p.NummerGeben());
-            oberflaeche.PersonenInfoSetzenSuche(p.NameGeben(), p.VornameGeben(), p.StrasseGeben(),
-                            p.HausnummerGeben(), p.PlzGeben(), p.OrtGeben(),
-                            nummern.ReferenzenAlsFeldGeben(), emails.ReferenzenAlsFeldGeben());
+            oberflaeche.PersonenInfoSetzenSuche(p.NameGeben(), p.VornameGeben(),
+                    p.StrasseGeben(), p.HausnummerGeben(), p.PlzGeben(),
+                    p.OrtGeben(), nummern.ReferenzenAlsFeldGeben(),
+                    emails.ReferenzenAlsFeldGeben());
         }
         else
         {
-            oberflaeche.PersonenInfoSetzenSuche("", "", "", "", "", "", new Object[0],
-                            new Object[0]);
+            oberflaeche.PersonenInfoSetzenSuche("", "", "", "", "", "",
+                    new Object[0], new Object[0]);
         }
     }
 
@@ -131,10 +141,10 @@ class KONTROLLEUR implements KONTROLLEURINTERFACE
         if (objekt != null)
         {
             TELEFON t = (TELEFON) objekt;
-            oberflaeche.NummernInfoSetzenBearbeiten(t.NummerGeben(), t.NotizGeben(), t.ArtGeben());
+            oberflaeche.NummernInfoSetzenBearbeiten(t.NummerGeben(),
+                    t.NotizGeben(), t.ArtGeben());
         }
     }
-
 
     /**
      * Behandelt die Emailwahl für die Bearbeitung
@@ -146,14 +156,15 @@ class KONTROLLEUR implements KONTROLLEURINTERFACE
         if (objekt != null)
         {
             EMAIL e = (EMAIL) objekt;
-            oberflaeche.EmailInfoSetzenBearbeiten(e.AdresseGeben(), e.NotizGeben());
+            oberflaeche.EmailInfoSetzenBearbeiten(e.AdresseGeben(),
+                    e.NotizGeben());
         }
     }
 
     /**
      * ändert die Personendaten der aktuellen Person.
      *
-     * @param name Name der Person
+     * @param name    Name der Person
      * @param vorname Vorname der Person
      */
     public void PersonendatenAendern(String name, String vorname)
@@ -188,25 +199,24 @@ class KONTROLLEUR implements KONTROLLEURINTERFACE
         oberflaeche.PersonenSetzen(personenListe.ReferenzenAlsFeldGeben());
     }
 
-
     /**
      * ändert die Personendaten der aktuellen Person.
      *
-     * @param name Name der Person
-     * @param vorname Vorname der Person
-     * @param strasse Stra&szlig;e
+     * @param name       Name der Person
+     * @param vorname    Vorname der Person
+     * @param strasse    Stra&szlig;e
      * @param hausnummer Hausnummer
-     * @param plz Postleitzahl
-     * @param ort Wohnort
-     * @param nummer die Telefonnummer
-     * @param art die Art des Anschlusses
-     * @param notiz1 Bemerkung zum Anschluss
-     * @param adresse die Emailadresse
-     * @param notiz2 Bemerkung zur Adresse
+     * @param plz        Postleitzahl
+     * @param ort        Wohnort
+     * @param nummer     die Telefonnummer
+     * @param art        die Art des Anschlusses
+     * @param notiz1     Bemerkung zum Anschluss
+     * @param adresse    die Emailadresse
+     * @param notiz2     Bemerkung zur Adresse
      */
-    public void PersonAnlegen(String name, String vorname, String strasse, String hausnummer,
-                    String plz, String ort, String nummer, String art, String notiz1,
-                    String adresse, String notiz2)
+    public void PersonAnlegen(String name, String vorname, String strasse,
+            String hausnummer, String plz, String ort, String nummer,
+            String art, String notiz1, String adresse, String notiz2)
     {
         PERSON p;
         p = new PERSON(-1, name, vorname, -1, strasse, hausnummer, plz, ort);
@@ -215,11 +225,13 @@ class KONTROLLEUR implements KONTROLLEURINTERFACE
             personenListe.Einfuegen(p);
             if (nummer != "")
             {
-                verb.TelefonAnlegen(new TELEFON(p.NummerGeben(), -1, nummer, notiz1, art));
+                verb.TelefonAnlegen(
+                        new TELEFON(p.NummerGeben(), -1, nummer, notiz1, art));
             }
             if (adresse != "")
             {
-                verb.EmailAnlegen(new EMAIL(p.NummerGeben(), -1, adresse, notiz2));
+                verb.EmailAnlegen(
+                        new EMAIL(p.NummerGeben(), -1, adresse, notiz2));
             }
             oberflaeche.StatusSetzen("Person angelegt.");
             oberflaeche.PersonenSetzen(personenListe.ReferenzenAlsFeldGeben());
@@ -229,14 +241,16 @@ class KONTROLLEUR implements KONTROLLEURINTERFACE
     /**
      * ändert die Adressdaten der aktuellen Person.
      *
-     * @param strasse Stra&szlig;e
+     * @param strasse    Stra&szlig;e
      * @param hausnummer Hausnummer
-     * @param plz Postleitzahl
-     * @param ort Wohnort
+     * @param plz        Postleitzahl
+     * @param ort        Wohnort
      */
-    public void AdressdatenAendern(String strasse, String hausnummer, String plz, String ort)
+    public void AdressdatenAendern(String strasse, String hausnummer,
+            String plz, String ort)
     {
-        aktPerson.AdresseSetzen(aktPerson.AdressNummerGeben(), strasse, hausnummer, plz, ort);
+        aktPerson.AdresseSetzen(aktPerson.AdressNummerGeben(), strasse,
+                hausnummer, plz, ort);
         if (verb.AdressdatenAendern(aktPerson))
         {
             oberflaeche.StatusSetzen("Adressdaten ge\u00E4ndert.");
@@ -247,12 +261,13 @@ class KONTROLLEUR implements KONTROLLEURINTERFACE
     /**
      * Legt die Adressdaten der aktuellen Person neu an.
      *
-     * @param strasse Stra&szlig;e
+     * @param strasse    Stra&szlig;e
      * @param hausnummer Hausnummer
-     * @param plz Postleitzahl
-     * @param ort Wohnort
+     * @param plz        Postleitzahl
+     * @param ort        Wohnort
      */
-    public void AdressdatenAnlegen(String strasse, String hausnummer, String plz, String ort)
+    public void AdressdatenAnlegen(String strasse, String hausnummer,
+            String plz, String ort)
     {
         aktPerson.AdresseSetzen(-1, strasse, hausnummer, plz, ort);
         if (verb.AdressdatenAnlegen(aktPerson))
@@ -271,8 +286,8 @@ class KONTROLLEUR implements KONTROLLEURINTERFACE
     {
         PERSON p;
         p = (PERSON) person;
-        aktPerson.AdresseSetzen(p.AdressNummerGeben(), p.StrasseGeben(), p.HausnummerGeben(),
-                        p.PlzGeben(), p.OrtGeben());
+        aktPerson.AdresseSetzen(p.AdressNummerGeben(), p.StrasseGeben(),
+                p.HausnummerGeben(), p.PlzGeben(), p.OrtGeben());
         if (verb.AdressdatenUebernehmen(aktPerson))
         {
             oberflaeche.StatusSetzen("Adressdaten \u00FCbernommen.");
@@ -285,11 +300,12 @@ class KONTROLLEUR implements KONTROLLEURINTERFACE
      * ändert die Daten des gegebenen Telefoneintrags.
      *
      * @param telefon aktueller Eintrag
-     * @param nummer die Telefonnummer
-     * @param art die Art des Anschlusses
-     * @param notiz Bemerkung zum Anschluss
+     * @param nummer  die Telefonnummer
+     * @param art     die Art des Anschlusses
+     * @param notiz   Bemerkung zum Anschluss
      */
-    public void TelefonAendern(Object telefon, String nummer, String art, String notiz)
+    public void TelefonAendern(Object telefon, String nummer, String art,
+            String notiz)
     {
         TELEFON t = (TELEFON) telefon;
         t.DatenSetzen(nummer, art, notiz);
@@ -304,12 +320,13 @@ class KONTROLLEUR implements KONTROLLEURINTERFACE
      * Legt eine Telefonnummer neu an.
      *
      * @param nummer die Telefonnummer
-     * @param art die Art des Anschlusses
-     * @param notiz Bemerkung zum Anschluss
+     * @param art    die Art des Anschlusses
+     * @param notiz  Bemerkung zum Anschluss
      */
     public void TelefonAnlegen(String nummer, String art, String notiz)
     {
-        TELEFON t = new TELEFON(aktPerson.NummerGeben(), -1, nummer, notiz, art);
+        TELEFON t = new TELEFON(aktPerson.NummerGeben(), -1, nummer, notiz,
+                art);
         if (verb.TelefonAnlegen(t))
         {
             oberflaeche.StatusSetzen("Telefondaten angelegt.");
@@ -334,9 +351,9 @@ class KONTROLLEUR implements KONTROLLEURINTERFACE
     /**
      * ändert die Daten des gegebenen Emaileintrags.
      *
-     * @param email aktueller Eintrag
+     * @param email   aktueller Eintrag
      * @param adresse die Emailadresse
-     * @param notiz Bemerkung zur Adresse
+     * @param notiz   Bemerkung zur Adresse
      */
     public void EmailAendern(Object email, String adresse, String notiz)
     {
@@ -353,7 +370,7 @@ class KONTROLLEUR implements KONTROLLEURINTERFACE
      * Legt eine Emailadresse neu an.
      *
      * @param adresse die Emailadresse
-     * @param notiz Bemerkung zur Adresse
+     * @param notiz   Bemerkung zur Adresse
      */
     public void EmailAnlegen(String adresse, String notiz)
     {
@@ -421,7 +438,7 @@ class KONTROLLEUR implements KONTROLLEURINTERFACE
      * Sucht alle Personen mit gegebener (Teil-)Adresse.
      *
      * @param strasse Strassennamen(steil)
-     * @param ort Ort(steil)
+     * @param ort     Ort(steil)
      */
     public void AdresseSuchen(String strasse, String ort)
     {

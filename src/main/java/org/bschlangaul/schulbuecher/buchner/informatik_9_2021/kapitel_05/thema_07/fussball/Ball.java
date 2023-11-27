@@ -5,6 +5,7 @@ import greenfoot.Actor;
 public class Ball extends Actor
 {
     String richtung = "";
+
     int geschwindigkeit;
 
     Ball()
@@ -27,8 +28,8 @@ public class Ball extends Actor
     }
 
     /**
-     * Der Programmtext an hier braucht für die Bearbeitung der Arbeitsaufträge und Aufgaben weder
-     * gelesen noch verstanden zu werden.
+     * Der Programmtext an hier braucht für die Bearbeitung der Arbeitsaufträge
+     * und Aufgaben weder gelesen noch verstanden zu werden.
      */
     void wechsleRichtung()
     {
@@ -47,7 +48,6 @@ public class Ball extends Actor
         if (gibRichtung().equals("links") == true)
         {
             move(-geschwindigkeit);
-
             if (istLinksVonAllenSpielern() == true)
             {
                 richtung = "rechts";
@@ -56,7 +56,6 @@ public class Ball extends Actor
         else
         {
             move(geschwindigkeit);
-
             if (istRechtsVonAllenSpielern() == true)
             {
                 richtung = "links";

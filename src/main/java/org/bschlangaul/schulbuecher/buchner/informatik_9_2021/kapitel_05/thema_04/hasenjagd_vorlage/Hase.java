@@ -7,7 +7,6 @@ import greenfoot.Greenfoot;
  * Klasse Hase <br>
  * Kap. 5.2 Arbeitsaufträge 1-4, Aufgabe 1
  */
-
 public class Hase extends Actor
 {
     void geheNachRechts() // bewegt den Hasen um eine Zelle nach rechts
@@ -19,7 +18,6 @@ public class Hase extends Actor
 
     void geheNachUnten() // bewegt den Hasen um eine Zelle nach unten
     {
-
     }
 
     void geheNachLinks() // bewegt den Hasen um eine Zelle nach links
@@ -31,35 +29,32 @@ public class Hase extends Actor
 
     void geheNachOben() // bewegt den Hasen um eine Zelle nach oben
     {
-
     }
 
     /*
-     * Der Programmtext ab hier braucht für die Bearbeitung der Arbeitsaufträge und Aufgaben weder
-     * gelesen noch verstanden zu werden.
+     * Der Programmtext ab hier braucht für die Bearbeitung der Arbeitsaufträge
+     * und Aufgaben weder gelesen noch verstanden zu werden.
      */
     Hase() // erzeugt einen Hasen
     {
         setImage("Hase.png");
     }
 
-    public void act() // realsiert die Möglichkeit den Hasen mithilfe der Pfeiltasten zu bewegen
+    public void act() // realsiert die Möglichkeit den Hasen mithilfe der
+                      // Pfeiltasten zu bewegen
     {
         if (Greenfoot.isKeyDown("left"))
         {
             geheNachLinks();
         }
-
         if (Greenfoot.isKeyDown("right"))
         {
             geheNachRechts();
         }
-
         if (Greenfoot.isKeyDown("up"))
         {
             geheNachOben();
         }
-
         if (Greenfoot.isKeyDown("down"))
         {
             geheNachUnten();

@@ -9,17 +9,20 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapi
 class KUNDENINFO
 {
     private String ID;
+
     private String name;
+
     private String vorname;
+
     private String pass;
 
     /**
      * Besetzt die Attribute
      *
-     * @param ID Schlüssel des Kunden
-     * @param name Name des Kunden
+     * @param ID      Schlüssel des Kunden
+     * @param name    Name des Kunden
      * @param vorname Vorname des Kunden
-     * @param pass Passwort des Kunden
+     * @param pass    Passwort des Kunden
      */
     KUNDENINFO(String ID, String name, String vorname, String pass)
     {
@@ -70,8 +73,9 @@ class KUNDENINFO
     }
 
     /**
-     * Vergleicht zwei Objekte. überschreibt die Methode aus Object, hat aber nur eigene Semantik,
-     * wenn das Vergleichsobjet ebenfalls von der Klasse KUNDENINFO ist.
+     * Vergleicht zwei Objekte. überschreibt die Methode aus Object, hat aber
+     * nur eigene Semantik, wenn das Vergleichsobjet ebenfalls von der Klasse
+     * KUNDENINFO ist.
      *
      * @param obj das zu vergleichende Objekt
      * @return wahr, wenn die Schlüssel gleich sind

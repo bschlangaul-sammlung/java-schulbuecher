@@ -9,10 +9,15 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapi
 class BANK
 {
     private static BANK dieBank = new BANK();
+
     private KONTENLISTE konten;
+
     private PERSONENLISTE kunden;
+
     private PERSONENLISTE angestellte;
+
     private DATENBANKVERBINDUNG verbindung;
+
     private LOGDATEI log;
 
     /**
@@ -61,11 +66,12 @@ class BANK
     }
 
     /**
-     * Trägt einen neuen Kunden ein und setzt ihn als aktuellen Kunden. Die Namenseindeutigkeit muss
-     * schon überprüft sein. Der Kunde wird auch in der Datenbank eingetragen.
+     * Trägt einen neuen Kunden ein und setzt ihn als aktuellen Kunden. Die
+     * Namenseindeutigkeit muss schon überprüft sein. Der Kunde wird auch in der
+     * Datenbank eingetragen.
      *
      * @param name Name des neuen Kunden.
-     * @param pin PIN des neuen Kunden.
+     * @param pin  PIN des neuen Kunden.
      */
     void NeuenKundenEinrichten(String name, int pin)
     {
@@ -86,7 +92,8 @@ class BANK
     }
 
     /**
-     * Löscht den angegebenen Kunden. pre: Es darf kein Konto dieses Kunden mehr existieren.
+     * Löscht den angegebenen Kunden. pre: Es darf kein Konto dieses Kunden mehr
+     * existieren.
      *
      * @param k der zu löschende Kunde
      */
@@ -107,12 +114,12 @@ class BANK
     }
 
     /**
-     * Trägt einen neuen Angestellten ein und setzt ihn als aktuellen Angestellten. Die
-     * Namenseindeutigkeit muss schon überprüft sein. Der Angestellte wird auch in der Datenbank
-     * eingetragen.
+     * Trägt einen neuen Angestellten ein und setzt ihn als aktuellen
+     * Angestellten. Die Namenseindeutigkeit muss schon überprüft sein. Der
+     * Angestellte wird auch in der Datenbank eingetragen.
      *
      * @param name Name des neuen Angestellten.
-     * @param pin PIN des neuen Angestellten.
+     * @param pin  PIN des neuen Angestellten.
      */
     void NeuenAngestelltenEinrichten(String name, int pin)
     {
@@ -157,7 +164,7 @@ class BANK
     /**
      * Legt ein neues Sparkonto an. Die Referenz wird in konten gespeichert.
      *
-     * @param zins der Zinssatz für das neue Konto
+     * @param zins      der Zinssatz für das neue Konto
      * @param fuerKunde der Besitzer des neuen Kontos
      * @return die Nummer des neuen Kontos
      */
@@ -175,7 +182,7 @@ class BANK
     /**
      * Legt ein neues Girokonto an. Die Referenz wird in konten gespeichert.
      *
-     * @param kredit der überziehungsrahmen für das neue Konto
+     * @param kredit    der überziehungsrahmen für das neue Konto
      * @param fuerKunde der Besitzer des neuen Kontos
      * @return die Nummer des neuen Kontos
      */

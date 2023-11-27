@@ -21,12 +21,11 @@ class RANGIERBAHNHOF
 
     // Methoden
     /**
-     * erzeugt einen neuen Waggon mit der gewüschten Nummer (im sortierten Zug) setzt ihn auf Gleis
-     * 1
+     * erzeugt einen neuen Waggon mit der gewüschten Nummer (im sortierten Zug)
+     * setzt ihn auf Gleis 1
      *
      * @param gewüschten Nummer (im sortierten Zug von der Lok aus gesehen)
      */
-
     void WaggonAufstellen(int nummer)
     {
         DATENELEMENT waggon = new WAGGON(nummer);
@@ -47,18 +46,18 @@ class RANGIERBAHNHOF
         System.out.print("Gleis 3: ");
         gleis3.AlleAusgeben();
         System.out.println();
-        System.out.println("--------------------------------------------------------------");
+        System.out.println(
+                "--------------------------------------------------------------");
     }
 
     /**
-     * führt den Rangiervorgang nach dem ersten Algorithmus aus Aufgabe 'Rangierbahnhof - Abgeäderte
-     * Situation'aus
+     * führt den Rangiervorgang nach dem ersten Algorithmus aus Aufgabe
+     * 'Rangierbahnhof - Abgeäderte Situation'aus
      */
     void Rangieren()
     {
         int anzahlschritte = 0;
         DATENELEMENT waggon;
-
         while (!gleis1.IstLeer())
         {
             while (!gleis1.IstLeer())
@@ -70,7 +69,8 @@ class RANGIERBAHNHOF
                 }
                 else
                 {
-                    if (gleis1.AnfangGeben().SchluesselIstKleiner(gleis3.AnfangGeben()))
+                    if (gleis1.AnfangGeben()
+                            .SchluesselIstKleiner(gleis3.AnfangGeben()))
                     {
                         waggon = gleis1.Entfernen();
                         gleis3.Einfuegen(waggon);
@@ -84,7 +84,8 @@ class RANGIERBAHNHOF
                 AktuelleSituationGeben();
                 anzahlschritte = anzahlschritte + 1;
             }
-            // Gleis 1 leer und Gleis 2 nicht leer --> Verschiebe alle Waggons von Gleis 2 auf Gleis
+            // Gleis 1 leer und Gleis 2 nicht leer --> Verschiebe alle Waggons
+            // von Gleis 2 auf Gleis
             // 1
             while (!gleis2.IstLeer())
             {
@@ -98,8 +99,8 @@ class RANGIERBAHNHOF
     }
 
     /**
-     * führt den Rangiervorgang nach dem optimierten Algorithmus aus Aufgabe 'Rangierbahnhof -
-     * Abgeäderte Situation'aus
+     * führt den Rangiervorgang nach dem optimierten Algorithmus aus Aufgabe
+     * 'Rangierbahnhof - Abgeäderte Situation'aus
      */
     void RangierenBesser()
     {
@@ -119,7 +120,8 @@ class RANGIERBAHNHOF
                 }
                 else
                 {
-                    if (startgleis.AnfangGeben().SchluesselIstKleiner(gleis3.AnfangGeben()))
+                    if (startgleis.AnfangGeben()
+                            .SchluesselIstKleiner(gleis3.AnfangGeben()))
                     {
                         waggon = startgleis.Entfernen();
                         gleis3.Einfuegen(waggon);
@@ -139,11 +141,7 @@ class RANGIERBAHNHOF
                 hilfsgleis = startgleis;
                 startgleis = tausch;
             }
-
         }
         System.out.println("Anzahl der Rangierschritte: " + anzahlschritte);
     }
-
-
-
 }

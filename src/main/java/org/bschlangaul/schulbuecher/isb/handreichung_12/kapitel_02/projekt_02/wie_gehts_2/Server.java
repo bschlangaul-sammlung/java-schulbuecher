@@ -6,7 +6,6 @@ import org.bschlangaul.schulbuecher.isb.handreichung_12.kapitel_02.ServerVerhalt
 
 public class Server extends ErsterServer
 {
-
     public Server(ServerVerhalten serverVerhalten) throws IOException
     {
         super(serverVerhalten);
@@ -19,11 +18,11 @@ public class Server extends ErsterServer
      */
     public static void main(String[] args)
     {
-
         try
         {
             new Server(new WieGehtsServerVerhalten2());
-        } catch (Exception e)
+        }
+        catch (Exception e)
         {
             System.err.println("Fehler in der Serververabeitung.");
             System.exit(1);

@@ -8,8 +8,8 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_2_2010.kapi
  */
 public class Zaehler
 {
-
     private static Zaehler z = new Zaehler();
+
     private static int i;
 
     /**

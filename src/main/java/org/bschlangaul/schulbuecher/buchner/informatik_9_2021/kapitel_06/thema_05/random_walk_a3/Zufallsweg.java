@@ -6,7 +6,6 @@ import greenfoot.World;
 /**
  * Kompetenzerwerb Aufgabe 3
  */
-
 public class Zufallsweg extends World
 {
     public Zufallsweg()
@@ -33,7 +32,6 @@ public class Zufallsweg extends World
             {
                 x = x + 1;
             }
-
             zz = gibZufallszahl();
             if (zz <= 50)
             {
@@ -44,7 +42,6 @@ public class Zufallsweg extends World
                 y = y + 1;
             }
             t = t + 1;
-
             if (x < 0 || x > 199 || y < 0 || y > 199)
             {
                 t = 3000;

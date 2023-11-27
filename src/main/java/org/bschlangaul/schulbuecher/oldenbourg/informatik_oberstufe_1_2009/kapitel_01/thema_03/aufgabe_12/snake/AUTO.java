@@ -6,7 +6,6 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapi
  * @author Klaus van Dijkstran
  * @version 1.0
  */
-
 class AUTO extends HINDERNIS
 {
     /**
@@ -28,7 +27,6 @@ class AUTO extends HINDERNIS
         int xneu, yneu;
         xneu = super.X_VorausBerechnen();
         yneu = super.Y_VorausBerechnen();
-
         if (s.IstInSpielfeld(xneu, yneu))
         {
             x = xneu;
@@ -53,10 +51,5 @@ class AUTO extends HINDERNIS
             }
             s.FeldBelegen(x, y, 'a');
         }
-
-
-
     }
-
-
 }

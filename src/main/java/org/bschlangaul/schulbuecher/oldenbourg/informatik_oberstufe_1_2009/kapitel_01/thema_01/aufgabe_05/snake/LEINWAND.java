@@ -11,7 +11,6 @@ import java.awt.event.*;
  */
 class LEINWAND extends Canvas
 {
-
     /** Verwaltung der Darstellung, die im Konstruktor übergeben wird */
     private DARSTELLUNG darstellung;
 
@@ -25,13 +24,16 @@ class LEINWAND extends Canvas
     private int kaestchenzahl_nach_unten;
 
     /**
-     * Konstruktor der Klasse LEINWAND Setzt die Attribute gemä&szlig; den übergebenen Parametern
-     * legt Grö&szlig;e und Sichbarkeit der Leinwand fest.
+     * Konstruktor der Klasse LEINWAND Setzt die Attribute gemä&szlig; den
+     * übergebenen Parametern legt Grö&szlig;e und Sichbarkeit der Leinwand
+     * fest.
      *
-     * @param d Objekt für die Verwaltung der Darstellung
+     * @param d        Objekt für die Verwaltung der Darstellung
      * @param kgroesse Grö&szlig;e eines Kästchens
-     * @param kr Anzahl der Kästchen, die auf der Leinwand dargestellt werden (Breite)
-     * @param ku Anzahl der Kästchen, die auf der Leinwand dargestellt werden (Höhe)
+     * @param kr       Anzahl der Kästchen, die auf der Leinwand dargestellt
+     *                 werden (Breite)
+     * @param ku       Anzahl der Kästchen, die auf der Leinwand dargestellt
+     *                 werden (Höhe)
      */
     LEINWAND(DARSTELLUNG d, int kgroesse, int krechts, int kunten)
     {
@@ -40,27 +42,28 @@ class LEINWAND extends Canvas
         kaestchenzahl_nach_rechts = krechts;
         kaestchenzahl_nach_unten = kunten;
         setSize(kaestchengroesse * kaestchenzahl_nach_rechts,
-                        kaestchengroesse * kaestchenzahl_nach_unten);
+                kaestchengroesse * kaestchenzahl_nach_unten);
         darstellung = d;
     }
 
     /**
-     * Aufruf der Zeichenmethoden für das Spielfeldsymbol und die einzelnen Quadrate param g
-     * Graphics-Objekt
+     * Aufruf der Zeichenmethoden für das Spielfeldsymbol und die einzelnen
+     * Quadrate param g Graphics-Objekt
      */
     public void paint(Graphics g)
     {
         // Zeichnen des Spielfeldsymbols
         g.setColor(Color.red);
-        for (int x = 0; x < kaestchengroesse * kaestchenzahl_nach_rechts; x = x + kaestchengroesse)
+        for (int x = 0; x < kaestchengroesse * kaestchenzahl_nach_rechts; x = x
+                + kaestchengroesse)
         {
             g.drawLine(x, 0, x, kaestchengroesse * kaestchenzahl_nach_unten);
         } ;
-        for (int y = 0; y < kaestchengroesse * kaestchenzahl_nach_unten; y = y + kaestchengroesse)
+        for (int y = 0; y < kaestchengroesse * kaestchenzahl_nach_unten; y = y
+                + kaestchengroesse)
         {
             g.drawLine(0, y, kaestchengroesse * kaestchenzahl_nach_rechts, y);
         } ;
-
         // Zeichnen der Quadrate
         char[][] spielfeld;
         spielfeld = new char[kaestchenzahl_nach_rechts][kaestchenzahl_nach_unten];
@@ -71,21 +74,20 @@ class LEINWAND extends Canvas
             {
                 switch (spielfeld[i][j])
                 {
-                    case 'f':
-                        g.setColor(Color.red);
-                        break;
-                    case 's':
-                        g.setColor(Color.green);
-                        break;
-                    default:
-                        g.setColor(Color.white);
+                case 'f':
+                    g.setColor(Color.red);
+                    break;
 
+                case 's':
+                    g.setColor(Color.green);
+                    break;
+
+                default:
+                    g.setColor(Color.white);
                 }
-                g.fillRect(i * kaestchengroesse + 1, j * kaestchengroesse + 1, kaestchengroesse - 1,
-                                kaestchengroesse - 1);
+                g.fillRect(i * kaestchengroesse + 1, j * kaestchengroesse + 1,
+                        kaestchengroesse - 1, kaestchengroesse - 1);
             }
         }
     }
-
-
 }

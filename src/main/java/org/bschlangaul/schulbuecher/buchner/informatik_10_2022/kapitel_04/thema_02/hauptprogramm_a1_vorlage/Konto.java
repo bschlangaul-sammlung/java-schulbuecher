@@ -11,7 +11,9 @@ package org.bschlangaul.schulbuecher.buchner.informatik_10_2022.kapitel_04.thema
 public class Konto
 {
     private double kontostand;
+
     private int kontonummer;
+
     private int pin;
 
     public Konto(int eineNummer, int einePin)
@@ -46,15 +48,12 @@ public class Konto
     public void abheben(double betrag, int einePin)
     {
         if (pin == einePin)
-
         {
             kontostand = kontostand - betrag;
         }
         else
-
         {
             System.out.println("falsche Pin-Eingabe");
         }
     }
-
 }

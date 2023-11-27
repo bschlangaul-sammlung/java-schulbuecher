@@ -6,13 +6,12 @@ package org.bschlangaul.schulbuecher.buchner.informatik_10_2022.kapitel_05.thema
 public class Schueler
 {
     private String name;
+
     private int[] noten;
 
     private Schueler(String n)
-
     {
         name = n;
-
         noten = new int[7];
         noten[0] = 1;
         noten[1] = 4;

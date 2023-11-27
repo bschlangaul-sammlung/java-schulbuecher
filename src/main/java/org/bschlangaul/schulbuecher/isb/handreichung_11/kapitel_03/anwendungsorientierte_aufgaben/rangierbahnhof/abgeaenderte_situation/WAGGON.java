@@ -20,5 +20,4 @@ class WAGGON extends DATENELEMENT
         WAGGON vergleichswaggon = (WAGGON) vergleichsObjekt;
         return (nummer < vergleichswaggon.nummer);
     }
-
 }

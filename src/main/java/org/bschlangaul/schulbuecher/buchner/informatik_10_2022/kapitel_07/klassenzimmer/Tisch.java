@@ -9,7 +9,9 @@ package org.bschlangaul.schulbuecher.buchner.informatik_10_2022.kapitel_07.klass
 class Tisch
 {
     String raum;
+
     Schueler schueler1;
+
     Schueler schueler2;
 
     /**

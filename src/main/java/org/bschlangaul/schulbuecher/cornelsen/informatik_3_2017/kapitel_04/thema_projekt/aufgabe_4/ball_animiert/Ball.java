@@ -10,8 +10,11 @@ package org.bschlangaul.schulbuecher.cornelsen.informatik_3_2017.kapitel_04.them
 public class Ball extends SPIEL
 {
     private KREIS k;
+
     private long zaehler;
+
     private double vx, vy;
+
     private KREIS hindernis;
 
     /**
@@ -42,7 +45,8 @@ public class Ball extends SPIEL
     }
 
     /**
-     * Setzt die Schrittweiten und damit Richtung und Geschwindigkeit auf einen neuen Wert.
+     * Setzt die Schrittweiten und damit Richtung und Geschwindigkeit auf einen
+     * neuen Wert.
      *
      * @param vx Grafikfenster-Einheiten in x-Richtung pro Bewegungs-Schritt
      * @param vy Grafikfenster-Einheiten in x-Richtung pro Bewegungs-Schritt
@@ -58,11 +62,11 @@ public class Ball extends SPIEL
      */
     public void umdrehen()
     {
-
     }
 
     /**
-     * Nennt die aktuelle Schrittweite in Grafikfenster-Einheiten der Bewegung in x-Richtung.
+     * Nennt die aktuelle Schrittweite in Grafikfenster-Einheiten der Bewegung
+     * in x-Richtung.
      *
      * @return Wert der aktuellen Schrittweite in x-Richtung
      */
@@ -72,7 +76,8 @@ public class Ball extends SPIEL
     }
 
     /**
-     * Nennt die aktuelle Schrittweite in Grafikfenster-Einheiten der Bewegung in y-Richtung.
+     * Nennt die aktuelle Schrittweite in Grafikfenster-Einheiten der Bewegung
+     * in y-Richtung.
      *
      * @return Wert der aktuellen Schrittweite in y-Richtung
      */
@@ -82,7 +87,8 @@ public class Ball extends SPIEL
     }
 
     /**
-     * verschiebt den Ball um die eingestellte Schrittweite. Siehe Methode setzeSchrittweite.
+     * verschiebt den Ball um die eingestellte Schrittweite. Siehe Methode
+     * setzeSchrittweite.
      *
      */
     public void bewegen()
@@ -113,10 +119,11 @@ public class Ball extends SPIEL
     }
 
     /**
-     * Methode zum Ueberschreiben in einer Unterklasse. Die Methode wird nach dem Starten des
-     * Ticker-Systems in regelmaessigen Zeitabstaenden immer wieder automatisch aufgerufen. ! ! !
-     * Die Dauer fuer die Ausfuehrung des Rumpfes darf NICHT laenger sein als die Dauer zwischen
-     * zwei aufeinanderfolgenden Ticks !!!
+     * Methode zum Ueberschreiben in einer Unterklasse. Die Methode wird nach
+     * dem Starten des Ticker-Systems in regelmaessigen Zeitabstaenden immer
+     * wieder automatisch aufgerufen. ! ! ! Die Dauer fuer die Ausfuehrung des
+     * Rumpfes darf NICHT laenger sein als die Dauer zwischen zwei
+     * aufeinanderfolgenden Ticks !!!
      *
      */
     @Override
@@ -144,7 +151,6 @@ public class Ball extends SPIEL
     {
         super.zeigeKoordinatensystem(zeigen);
     }
-
 
     public void zeigeHindernis(boolean zeigen)
     {

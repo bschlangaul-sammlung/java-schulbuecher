@@ -9,17 +9,20 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapi
 class EMAIL implements DATENELEMENT
 {
     private int personennummer;
+
     private int lfnr;
+
     private String email;
+
     private String notiz;
 
     /**
      * Legt die Daten der E-Mail-Adresse an.
      *
      * @param personennummer Schlüssel der Person
-     * @param lfnr laufende Nummer innerhalb der Person
-     * @param email eigentliche Mailadresse
-     * @param notiz Notiz
+     * @param lfnr           laufende Nummer innerhalb der Person
+     * @param email          eigentliche Mailadresse
+     * @param notiz          Notiz
      */
     EMAIL(int personennummer, int lfnr, String email, String notiz)
     {
@@ -37,14 +40,18 @@ class EMAIL implements DATENELEMENT
      */
     public boolean IstGleich(DATENELEMENT test)
     {
-        return ((personennummer == ((EMAIL) test).personennummer) && (lfnr == ((EMAIL) test).lfnr));
+        return ((personennummer == ((EMAIL) test).personennummer)
+                && (lfnr == ((EMAIL) test).lfnr));
     }
 
     /**
      * Vergleicht das Datemelement mit dem Parameter. <br>
-     * Hat das Datenelement einen kleineren Schlüssel als test, ist das Ergebnis -1. <br>
-     * Hat das Datenelement den gleichen Schlüssel wie test, ist das Ergebnis 0. <br>
-     * Hat das Datenelement einen grö&szlig;eren Schlüssel als test, ist das Ergebnis 1.
+     * Hat das Datenelement einen kleineren Schlüssel als test, ist das Ergebnis
+     * -1. <br>
+     * Hat das Datenelement den gleichen Schlüssel wie test, ist das Ergebnis 0.
+     * <br>
+     * Hat das Datenelement einen grö&szlig;eren Schlüssel als test, ist das
+     * Ergebnis 1.
      *
      * @param test Datenelement mit dem Testschlüssel
      * @return Vergleichsergebnis
@@ -53,7 +60,7 @@ class EMAIL implements DATENELEMENT
     {
         EMAIL t = (EMAIL) test;
         if ((personennummer < t.personennummer)
-                        || (personennummer == t.personennummer) && (lfnr < t.lfnr))
+                || (personennummer == t.personennummer) && (lfnr < t.lfnr))
         {
             return -1;
         }

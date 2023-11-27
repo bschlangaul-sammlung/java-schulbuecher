@@ -1,15 +1,14 @@
 package org.bschlangaul.schulbuecher.cornelsen.informatik_3_2017.kapitel_04.thema_projekt.aufgabe_3.ampel;
 
 /**
- * Erweiterung der Klasse AMPEL um eine Steuerung mit den Pfeiltasten sowie einer
- * Durchlaufsimluation.
+ * Erweiterung der Klasse AMPEL um eine Steuerung mit den Pfeiltasten sowie
+ * einer Durchlaufsimluation.
  *
  * @author Mike Ganshorn (Mike_gans@yahoo.de)
  * @version 1.0 (2019-12-28)
  */
 public class MeineAmpel extends Ampel
 {
-
     public MeineAmpel()
     {
         super();
@@ -47,13 +46,10 @@ public class MeineAmpel extends Ampel
     {
         this.rot();
         this.warte(2);
-
         this.rotGelb();
         this.warte(0.5);
-
         this.gruen();
         warte(2);
-
         this.gelb();
         warte(0.5);
         this.rot();
@@ -87,6 +83,4 @@ public class MeineAmpel extends Ampel
             this.ampeldurchlaufSimulieren();
         }
     }
-
-
 }

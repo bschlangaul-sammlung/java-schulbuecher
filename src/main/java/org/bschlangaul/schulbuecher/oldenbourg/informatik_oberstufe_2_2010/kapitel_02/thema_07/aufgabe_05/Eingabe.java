@@ -6,7 +6,6 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_2_2010.kapi
  * @author Albert Wiedemann
  * @version 1.0
  */
-
 import java.io.*;
 
 class Eingabe
@@ -33,7 +32,8 @@ class Eingabe
         try
         {
             return in.readLine();
-        } catch (IOException e)
+        }
+        catch (IOException e)
         {
             System.out.println("Eingabefehler");
             return "";

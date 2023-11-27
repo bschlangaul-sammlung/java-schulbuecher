@@ -3,9 +3,9 @@ package org.bschlangaul.schulbuecher.buchner.informatik_9_2021.kapitel_07.thema_
 import greenfoot.Color;
 
 /**
- * Ein Objekt der Klasse DauerlichtFarbe ändert seine Farbe während es leuchtet. Kap. 7.5, Aufgabe 3
+ * Ein Objekt der Klasse DauerlichtFarbe ändert seine Farbe während es leuchtet.
+ * Kap. 7.5, Aufgabe 3
  */
-
 public class DauerlichtFarbe extends Dauerlicht
 {
     void zeigeLichtEin()
@@ -28,7 +28,6 @@ public class DauerlichtFarbe extends Dauerlicht
                 }
             }
         }
-
         licht.setColor(farbe);
         licht.fillOval(0, 0, 100, 100);
         setImage(licht);

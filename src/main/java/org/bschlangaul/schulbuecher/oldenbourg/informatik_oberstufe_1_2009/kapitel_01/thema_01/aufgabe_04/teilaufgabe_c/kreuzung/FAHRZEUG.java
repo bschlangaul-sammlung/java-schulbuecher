@@ -9,11 +9,17 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapi
 abstract class FAHRZEUG
 {
     protected FAHRZEUGSYMBOL symbol;
+
     protected float x;
+
     protected float y;
+
     protected float v;
+
     protected float vmax;
+
     protected char ausrichtung;
+
     protected FAHRZEUG nachfolger;
 
     /**
@@ -41,7 +47,6 @@ abstract class FAHRZEUG
         symbol.PositionSetzen(x, y);
     }
 
-
     /**
      * Setzt die Ausrichtung des Fahrzeugs.
      *
@@ -57,7 +62,7 @@ abstract class FAHRZEUG
      * Fährt das Fahrzeug eine Sekunde nach rechts.
      *
      * @param wegmax maximaler Weg bis zum nächsten Hindernis
-     * @param vvorg Geschwindigkeit des Vorgängerfahrzeugs bzw. der Ampel
+     * @param vvorg  Geschwindigkeit des Vorgängerfahrzeugs bzw. der Ampel
      */
     abstract void Fahren(float wegmax, float vvorg);
 

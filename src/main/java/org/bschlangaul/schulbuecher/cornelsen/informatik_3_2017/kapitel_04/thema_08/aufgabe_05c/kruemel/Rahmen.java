@@ -8,7 +8,6 @@ package org.bschlangaul.schulbuecher.cornelsen.informatik_3_2017.kapitel_04.them
  */
 class Rahmen extends Ereignisbehandlung
 {
-
     /**
      * Legt die Krümel und das Monster an
      */
@@ -52,9 +51,7 @@ class Rahmen extends Ereignisbehandlung
         new MauerRechteck(140, 480, 40, 40);
         new MauerRechteck(380, 480, 40, 40);
         new MauerRechteck(100, 540, 360, 40);
-
         new MauerRechteck(0, 600, 560, 20);
-
         new Monster(90, 30);
         for (int i = 0; i < 26; i += 1)
         {
@@ -136,7 +133,6 @@ class Rahmen extends Ereignisbehandlung
         new Kruemel(410, 470);
         new Kruemel(270, 470);
         new Kruemel(290, 470);
-
         Starten();
     }
 
@@ -145,19 +141,22 @@ class Rahmen extends Ereignisbehandlung
      */
     @Override
     void SonderTasteGedrückt(int taste)
-    {}
+    {
+    }
 
     /**
      * nichts
      */
     @Override
     void TasteGedrückt(char taste)
-    {}
+    {
+    }
 
     /**
      * nichts
      */
     @Override
     void TaktImpulsAusführen()
-    {}
+    {
+    }
 }

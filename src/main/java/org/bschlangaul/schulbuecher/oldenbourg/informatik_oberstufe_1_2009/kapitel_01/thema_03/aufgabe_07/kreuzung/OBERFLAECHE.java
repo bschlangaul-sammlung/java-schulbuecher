@@ -6,7 +6,6 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapi
  * @author Albert Wiedemann
  * @version 1.0
  */
-
 import java.awt.*;
 import java.awt.event.*;
 
@@ -14,16 +13,24 @@ class OBERFLAECHE
 {
     /** Höhe des Anzeigefensters */
     private static final int hoeheFenster = 600;
+
     /** Breite des Anzeigefensters */
     private static final int breiteFenster = 1000;
+
     /** Anzeigegrö&szlig;e für eine Lampe */
     private static final int rasterGroesse = 20;
+
     /** Umrechnung Meter nach Pixel */
     private static final float meter2pixel = 5.0f;
+
     private static OBERFLAECHE o = null;
+
     private Frame fenster = null;
+
     private ADAPTER a;
+
     private TextField eingabe;
+
     private TextField eingabe2;
 
     /**
@@ -39,13 +46,15 @@ class OBERFLAECHE
         fenster.setVisible(true);
         fenster.setLayout(null);
         fenster.setBackground(Color.white);
-        fenster.addWindowListener(new WindowAdapter() {
+        fenster.addWindowListener(new WindowAdapter()
+        {
             public void windowClosing(WindowEvent e)
             {
                 System.exit(1);
             }
         });
-        Canvas hintergrund = new Canvas() {
+        Canvas hintergrund = new Canvas()
+        {
             /**
              * Zeichnet das Hintergrundmuster.
              */
@@ -54,21 +63,27 @@ class OBERFLAECHE
                 g.setColor(Color.lightGray);
                 for (int i = 1; i <= hoeheFenster / (rasterGroesse * 2); i++)
                 {
-                    g.drawLine(0, hoeheFenster / 2 + i * rasterGroesse, breiteFenster - 1,
-                                    hoeheFenster / 2 + i * rasterGroesse);
-                    g.drawLine(0, hoeheFenster / 2 - i * rasterGroesse, breiteFenster - 1,
-                                    hoeheFenster / 2 - i * rasterGroesse);
+                    g.drawLine(0, hoeheFenster / 2 + i * rasterGroesse,
+                            breiteFenster - 1,
+                            hoeheFenster / 2 + i * rasterGroesse);
+                    g.drawLine(0, hoeheFenster / 2 - i * rasterGroesse,
+                            breiteFenster - 1,
+                            hoeheFenster / 2 - i * rasterGroesse);
                 }
                 for (int i = 1; i <= breiteFenster / (rasterGroesse * 2); i++)
                 {
                     g.drawLine(breiteFenster / 2 + i * rasterGroesse, 0,
-                                    breiteFenster / 2 + i * rasterGroesse, hoeheFenster - 1);
+                            breiteFenster / 2 + i * rasterGroesse,
+                            hoeheFenster - 1);
                     g.drawLine(breiteFenster / 2 - i * rasterGroesse, 0,
-                                    breiteFenster / 2 - i * rasterGroesse, hoeheFenster - 1);
+                            breiteFenster / 2 - i * rasterGroesse,
+                            hoeheFenster - 1);
                 }
                 g.setColor(Color.black);
-                g.drawLine(0, hoeheFenster / 2, breiteFenster - 1, hoeheFenster / 2);
-                g.drawLine(breiteFenster / 2, 0, breiteFenster / 2, hoeheFenster - 1);
+                g.drawLine(0, hoeheFenster / 2, breiteFenster - 1,
+                        hoeheFenster / 2);
+                g.drawLine(breiteFenster / 2, 0, breiteFenster / 2,
+                        hoeheFenster - 1);
             }
         };
         hintergrund.setVisible(true);
@@ -94,20 +109,22 @@ class OBERFLAECHE
         button.setVisible(true);
         button.setSize(80, 30);
         button.setEnabled(true);
-        button.addActionListener(new ActionListener() {
+        button.addActionListener(new ActionListener()
+        {
             public void actionPerformed(ActionEvent e)
             {
                 try
                 {
-                    a.FahrzeugabstandSetzen(Integer.parseInt(eingabe.getText()));
-                } catch (Exception ex)
+                    a.FahrzeugabstandSetzen(
+                            Integer.parseInt(eingabe.getText()));
+                }
+                catch (Exception ex)
                 {
                     (Toolkit.getDefaultToolkit()).beep();
                 }
             }
         });
         fenster.add(button);
-
         l = new Label();
         l.setText("Taktl\u00E4nge in Millisekunden");
         l.setLocation(400, hoeheFenster + 35);
@@ -127,27 +144,29 @@ class OBERFLAECHE
         button.setVisible(true);
         button.setSize(80, 30);
         button.setEnabled(true);
-        button.addActionListener(new ActionListener() {
+        button.addActionListener(new ActionListener()
+        {
             public void actionPerformed(ActionEvent e)
             {
                 try
                 {
                     a.TaktdauerSetzen(Integer.parseInt(eingabe2.getText()));
-                } catch (Exception ex)
+                }
+                catch (Exception ex)
                 {
                     (Toolkit.getDefaultToolkit()).beep();
                 }
             }
         });
         fenster.add(button);
-
         button = new Button();
         button.setLocation(800, hoeheFenster + 30);
         button.setLabel("Starten");
         button.setVisible(true);
         button.setSize(80, 30);
         button.setEnabled(true);
-        button.addActionListener(new ActionListener() {
+        button.addActionListener(new ActionListener()
+        {
             public void actionPerformed(ActionEvent e)
             {
                 a.Starten();
@@ -160,7 +179,8 @@ class OBERFLAECHE
         button.setVisible(true);
         button.setSize(80, 30);
         button.setEnabled(true);
-        button.addActionListener(new ActionListener() {
+        button.addActionListener(new ActionListener()
+        {
             public void actionPerformed(ActionEvent e)
             {
                 a.Anhalten();

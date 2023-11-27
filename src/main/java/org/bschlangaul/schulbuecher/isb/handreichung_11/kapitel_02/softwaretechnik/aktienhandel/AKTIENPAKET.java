@@ -9,21 +9,26 @@ package org.bschlangaul.schulbuecher.isb.handreichung_11.kapitel_02.softwaretech
 class AKTIENPAKET
 {
     private int anzahl;
+
     private int paketNummer;
+
     private String aktienName;
+
     private int aktienID;
+
     private double kaufKurs;
+
     private String kaufDatum;
 
     /**
      * Besetzt die Attribute vor.
      *
      * @param paketNummer laufende Nummer des Aktienpakets
-     * @param anzahl Anzahl der Aktien im Paket
+     * @param anzahl      Anzahl der Aktien im Paket
      * @aktienName Name der Aktie
      */
-    AKTIENPAKET(int paketNummer, int anzahl, String aktienName, int aktienID, double kaufKurs,
-                    String kaufDatum)
+    AKTIENPAKET(int paketNummer, int anzahl, String aktienName, int aktienID,
+            double kaufKurs, String kaufDatum)
     {
         this.anzahl = anzahl;
         this.paketNummer = paketNummer;

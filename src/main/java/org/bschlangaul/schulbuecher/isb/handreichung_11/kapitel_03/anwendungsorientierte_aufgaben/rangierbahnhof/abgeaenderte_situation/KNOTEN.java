@@ -3,6 +3,7 @@ package org.bschlangaul.schulbuecher.isb.handreichung_11.kapitel_03.anwendungsor
 class KNOTEN extends LISTENELEMENT
 {
     private LISTENELEMENT nachfolger;
+
     private DATENELEMENT daten;
 
     // Konstruktoren
@@ -51,20 +52,19 @@ class KNOTEN extends LISTENELEMENT
         else
             return wert;
     }
-
     /*
      * LISTENELEMENT EndeEinfuegen(DATENELEMENT datenObjekt) { nachfolger =
      * nachfolger.EndeEinfuegen(datenObjekt); return this; }
      */
-
     /*
-     * boolean Suchen(DATENELEMENT datenObjekt) { if (daten.Vergleichen(datenObjekt)) return true;
-     * else return nachfolger.Suchen(datenObjekt); }
+     * boolean Suchen(DATENELEMENT datenObjekt) { if
+     * (daten.Vergleichen(datenObjekt)) return true; else return
+     * nachfolger.Suchen(datenObjekt); }
      */
-
     /*
-     * LISTENELEMENT Entfernen(DATENELEMENT datenObjekt) { if (daten.Vergleichen(datenObjekt))
-     * return nachfolger; else { nachfolger = nachfolger.Entfernen(datenObjekt); return this; } }
+     * LISTENELEMENT Entfernen(DATENELEMENT datenObjekt) { if
+     * (daten.Vergleichen(datenObjekt)) return nachfolger; else { nachfolger =
+     * nachfolger.Entfernen(datenObjekt); return this; } }
      */
 
     int AnzahlGeben()
@@ -77,7 +77,4 @@ class KNOTEN extends LISTENELEMENT
         daten.Ausgeben();
         nachfolger.AlleAbHierAusgeben();
     }
-
-
-
 }

@@ -10,30 +10,39 @@ public class Turtle
 {
     /** x-Position der Turtle. */
     private int x;
+
     /** y-Position der Turtle. */
     private int y;
+
     /** Größe der Turtle. */
     private int größe;
+
     /** Farbe der Turtle. */
     private String farbe;
+
     /** Sichtbarkeit der Turtles. */
     private boolean sichtbar;
+
     /** Drehwinkel (mathemtisch positiver Drehsinn) der Turtle in Grad. */
     private int winkel;
+
     /** Stiftposition */
     private boolean stiftUnten;
+
     /** Referenz auf das echte Turtlesybol. */
     Zeichenfenster.TurtleIntern symbol;
+
     /** Referenz auf das Aktionsempfängerobjekt. */
     Zeichenfenster.AktionsEmpfaenger aktionsEmpfänger;
 
     /**
-     * Konstruktor der Turtle Erzeugt eine Turtle und versetzt sie in einen gültigen Startzustand.
+     * Konstruktor der Turtle Erzeugt eine Turtle und versetzt sie in einen
+     * gültigen Startzustand.
      */
     Turtle()
     {
         symbol = (Zeichenfenster.TurtleIntern) Zeichenfenster
-                        .SymbolErzeugen(Zeichenfenster.SymbolArt.turtle);
+                .SymbolErzeugen(Zeichenfenster.SymbolArt.turtle);
         symbol.SichtbarkeitSetzen(true);
         x = symbol.x;
         y = symbol.y;
@@ -41,7 +50,8 @@ public class Turtle
         größe = symbol.b;
         stiftUnten = symbol.stiftUnten;
         sichtbar = symbol.sichtbar;
-        aktionsEmpfänger = new Zeichenfenster.AktionsEmpfaenger() {
+        aktionsEmpfänger = new Zeichenfenster.AktionsEmpfaenger()
+        {
             public void Ausführen()
             {
                 AktionAusführen();
@@ -66,10 +76,12 @@ public class Turtle
     }
 
     /**
-     * Methode wird aufgerufen, wenn die Turtle handeln soll. Die vordefinierte Methode tut nichts.
+     * Methode wird aufgerufen, wenn die Turtle handeln soll. Die vordefinierte
+     * Methode tut nichts.
      */
     void AktionAusführen()
-    {}
+    {
+    }
 
     /**
      * Die eigentliche Aktionsmethode für gedrückte Tasten. <br>
@@ -97,8 +109,8 @@ public class Turtle
      * Die eigentliche Aktionsmethode für einen Mausklick. <br>
      * Muss bei Bedarf von einer Unterklasse überschrieben werden.
      *
-     * @param x x-Position des Mausklicks
-     * @param y y-Position des Mausklicks
+     * @param x      x-Position des Mausklicks
+     * @param y      y-Position des Mausklicks
      * @param anzahl Anzahl der aufeinanderfolgenden Mausklicks
      */
     void MausGeklickt(int x, int y, int anzahl)
@@ -131,9 +143,10 @@ public class Turtle
     }
 
     /**
-     * Setzt die Farbe der Linie. Erlaubte Farben sind: "weiß", "weiss", "rot", "grün", "gruen",
-     * "blau", "gelb", "magenta", "cyan", "hellgelb", "hellgrün", "hellgruen", "orange", "braun",
-     * "grau", "schwarz" Alle anderen Eingaben werden auf die Farbe schwarz abgebildet.
+     * Setzt die Farbe der Linie. Erlaubte Farben sind: "weiß", "weiss", "rot",
+     * "grün", "gruen", "blau", "gelb", "magenta", "cyan", "hellgelb",
+     * "hellgrün", "hellgruen", "orange", "braun", "grau", "schwarz" Alle
+     * anderen Eingaben werden auf die Farbe schwarz abgebildet.
      *
      * @param farbe (neue) Farbe
      */
@@ -144,9 +157,10 @@ public class Turtle
     }
 
     /**
-     * Setzt den Drehwinkel der Turtle. Die Winkelangabe ist in Grad, positive Werte drehen gegen
-     * den Uhrzeigersinn, negative Werte drehen im Uhrzeigersinn (mathematisch positiver Drehsinn),
-     * d. h. 0˚: Turtle schaut nach rechts, 90˚: Turtle schaut nach oben, 180˚: Turtle schaut nach
+     * Setzt den Drehwinkel der Turtle. Die Winkelangabe ist in Grad, positive
+     * Werte drehen gegen den Uhrzeigersinn, negative Werte drehen im
+     * Uhrzeigersinn (mathematisch positiver Drehsinn), d. h. 0˚: Turtle schaut
+     * nach rechts, 90˚: Turtle schaut nach oben, 180˚: Turtle schaut nach
      * links, 270˚bzw. -90˚: Turtle schaut nach unten
      *
      * @param winkel der (neue) Drehwinkel der Turtle
@@ -158,7 +172,8 @@ public class Turtle
     }
 
     /**
-     * Schaltet die Sichtbarkeit der Turtle ein oder aus. Erlaubte Parameterwerte: true, false
+     * Schaltet die Sichtbarkeit der Turtle ein oder aus. Erlaubte
+     * Parameterwerte: true, false
      *
      * @param sichtbar (neue) Sichtbarkeit der Turtle
      */
@@ -270,10 +285,11 @@ public class Turtle
     }
 
     /**
-     * Gibt den aktuellen Winkel der Turtle zurück. Die Winkelangabe ist in Grad, positive Werte
-     * drehen gegen den Uhrzeigersinn, negative Werte drehen im Uhrzeigersinn (mathematisch
-     * positiver Drehsinn), d. h. 0˚: Turtle schaut nach rechts, 90˚: Turtle schaut nach oben, 180˚:
-     * Turtle schaut nach links, 270˚bzw. -90˚: Turtle schaut nach unten
+     * Gibt den aktuellen Winkel der Turtle zurück. Die Winkelangabe ist in
+     * Grad, positive Werte drehen gegen den Uhrzeigersinn, negative Werte
+     * drehen im Uhrzeigersinn (mathematisch positiver Drehsinn), d. h. 0˚:
+     * Turtle schaut nach rechts, 90˚: Turtle schaut nach oben, 180˚: Turtle
+     * schaut nach links, 270˚bzw. -90˚: Turtle schaut nach unten
      *
      * @return Winkel im Gradmass
      */
@@ -303,8 +319,8 @@ public class Turtle
     }
 
     /**
-     * Schaltet die Sichtbarkeit des Turtlesymbols ein oder aus. Erlaubte Parameterwerte: true,
-     * false
+     * Schaltet die Sichtbarkeit des Turtlesymbols ein oder aus. Erlaubte
+     * Parameterwerte: true, false
      *
      * @param sichtbar (neue) Sichtbarkeit des Turtlesymbols
      */
@@ -327,8 +343,8 @@ public class Turtle
      * Testet, ob die Turtle eine Figur in der angegebenen Farbe berührt.
      *
      * @param farbe die Farbe, die die berührte Figur haben muss.
-     * @return true, wenn die Turtlekoordinaten innerhalb einer Grafikfigur in der angegebenen Farbe
-     *         sind
+     * @return true, wenn die Turtlekoordinaten innerhalb einer Grafikfigur in
+     *         der angegebenen Farbe sind
      */
     boolean Berührt(String farbe)
     {
@@ -339,7 +355,8 @@ public class Turtle
      * Testet, ob die Turtle die angegebene Figur berührt.
      *
      * @param objekt das Objekt, das getestet werden soll.
-     * @return true, wenn die Turtlekoordinaten innerhalb der angegebenen Grafikfigur sind
+     * @return true, wenn die Turtlekoordinaten innerhalb der angegebenen
+     *         Grafikfigur sind
      */
     boolean Berührt(Object objekt)
     {

@@ -10,8 +10,10 @@ class KNOTEN_BAUM extends BAUMELEMENT
 {
     /** Referenz auf den linken Nachfolger */
     private BAUMELEMENT linkerNachfolger;
+
     /** Referenz auf den rechten Nachfolger */
     private BAUMELEMENT rechterNachfolger;
+
     /** Referenz auf das Datenelement */
     private DATENELEMENT daten;
 
@@ -28,9 +30,9 @@ class KNOTEN_BAUM extends BAUMELEMENT
         daten = d;
     }
 
-
     /**
-     * Fügt ein neues Datenelement in den Baum ein. Der Wert darf noch nicht vorkommen
+     * Fügt ein neues Datenelement in den Baum ein. Der Wert darf noch nicht
+     * vorkommen
      *
      * @param wert Referenz auf das einzufügende Datenelement
      * @return der (neue) Nachfolger des Aufrufers
@@ -38,13 +40,11 @@ class KNOTEN_BAUM extends BAUMELEMENT
     void LinksEinfuegen(BAUM b)
     {
         linkerNachfolger = b.WurzelGeben();
-
     }
 
     void RechtsEinfuegen(BAUM b)
     {
         rechterNachfolger = b.WurzelGeben();
-
     }
 
     /**
@@ -76,5 +76,4 @@ class KNOTEN_BAUM extends BAUMELEMENT
         rechterNachfolger.PostOrder();
         daten.Ausgeben();
     }
-
 }

@@ -5,6 +5,7 @@ import org.bschlangaul.schulbuecher.isb.handreichung_10.konzept_01.ZeichenFenste
 public class Wolke
 {
     private Niederschlag[] elemente;
+
     private int anzahl;
 
     public Wolke()
@@ -59,5 +60,4 @@ public class Wolke
             entferne(elemente[0]);
         }
     }
-
 }

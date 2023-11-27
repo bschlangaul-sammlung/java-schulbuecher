@@ -8,7 +8,6 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_2_2010.kapi
  */
 public class Test extends junit.framework.TestCase
 {
-
     public void testenPositivNullEuro()
     {
         AutomatEurobetrag a = new AutomatEurobetrag();
@@ -50,5 +49,4 @@ public class Test extends junit.framework.TestCase
         AutomatEurobetrag a = new AutomatEurobetrag();
         assertEquals(false, a.IstEingabeAkzeptiert("42 \u20AC"));
     }
-
 }

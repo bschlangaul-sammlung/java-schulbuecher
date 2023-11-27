@@ -10,8 +10,10 @@ class ANGESTELLTER extends PERSON
 {
     /** Der Kunde, der gerade bearbeitet wird */
     private KUNDE aktKunde;
+
     /** Die Bank, in der der Angestellte arbeitet. */
     private BANK bank;
+
     /** Das Konto, das geade bearbeitet wird. */
     private KONTO aktKonto;
 
@@ -34,12 +36,13 @@ class ANGESTELLTER extends PERSON
      * Trägt einen neuen Kunden ein und setzt ihn als aktuellen Kunden.
      *
      * @param name Name des neuen Kunden.
-     * @param pin PIN des neuen Kunden.
+     * @param pin  PIN des neuen Kunden.
      * @return true, wenn der Kunde eingerichtet werden konnte.
      */
     boolean NeuenKundenEinrichten(String name, int pin)
     {
-        if ((bank.KundenSuchen(name) != null) || (bank.AngestelltenSuchen(name) != null))
+        if ((bank.KundenSuchen(name) != null)
+                || (bank.AngestelltenSuchen(name) != null))
         {
             return false;
         }
@@ -117,7 +120,6 @@ class ANGESTELLTER extends PERSON
         return bank.GirokontoEinrichten(kredit, aktKunde);
     }
 
-
     /**
      * Setzt das aktuelle Konto. pre: das Konto gehört dem aktuellen Kunden.
      *
@@ -129,8 +131,8 @@ class ANGESTELLTER extends PERSON
     }
 
     /**
-     * Löscht das aktuelle Konto, falls der Kontostand 0 ist. pre: das Konto gehört dem aktuellen
-     * Kunden.
+     * Löscht das aktuelle Konto, falls der Kontostand 0 ist. pre: das Konto
+     * gehört dem aktuellen Kunden.
      *
      * @return true, falls das Konto gelöscht wurde
      */
@@ -161,12 +163,13 @@ class ANGESTELLTER extends PERSON
      * Trägt einen neuen Angestellten ein.
      *
      * @param name Name des neuen Angestellten.
-     * @param pin PIN des neuen Angestellten.
+     * @param pin  PIN des neuen Angestellten.
      * @return true, wenn der Angestellte eingerichtet werden konnte.
      */
     boolean NeuenAngestelltenEinrichten(String name, int pin)
     {
-        if ((bank.KundenSuchen(name) != null) || (bank.AngestelltenSuchen(name) != null))
+        if ((bank.KundenSuchen(name) != null)
+                || (bank.AngestelltenSuchen(name) != null))
         {
             return false;
         }

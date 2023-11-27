@@ -8,7 +8,6 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapi
  */
 class VERWALTUNG
 {
-
     /**
      * Legt die Teile an
      */

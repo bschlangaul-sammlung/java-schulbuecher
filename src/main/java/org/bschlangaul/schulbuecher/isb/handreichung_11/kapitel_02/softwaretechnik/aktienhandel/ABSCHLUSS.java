@@ -8,7 +8,6 @@ package org.bschlangaul.schulbuecher.isb.handreichung_11.kapitel_02.softwaretech
  */
 class ABSCHLUSS extends LISTENELEMENT
 {
-
     /**
      * Belegt die Attribute.
      */
@@ -53,7 +52,8 @@ class ABSCHLUSS extends LISTENELEMENT
      * Trägt die Kontonummern der Konten des angegebenen Kunden in das Feld ein.
      *
      * @param ergebnis Referenz auf das Feld mit den gefundenen Daten.
-     * @param pos Index, auf dem das nächste Element eingetragen werden soll.
+     * @param pos      Index, auf dem das nächste Element eingetragen werden
+     *                 soll.
      */
     void KontonummernEintragen(int[] ergebnis, int pos)
     {

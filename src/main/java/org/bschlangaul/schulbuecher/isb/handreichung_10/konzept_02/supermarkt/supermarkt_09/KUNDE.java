@@ -9,12 +9,14 @@ package org.bschlangaul.schulbuecher.isb.handreichung_10.konzept_02.supermarkt.s
 class KUNDE
 {
     KREIS darstellung;
+
     int artikelmenge;
+
     int groesse;
 
     /**
-     * Konstruktor des Kunden. Setzt eine zufällige Farbe und die Grö&szlig;e gemä&szlig; der
-     * Artikelanzahl
+     * Konstruktor des Kunden. Setzt eine zufällige Farbe und die Grö&szlig;e
+     * gemä&szlig; der Artikelanzahl
      *
      * @param artikel Anzahl der Artikel im Warenkorb
      */
@@ -48,8 +50,8 @@ class KUNDE
     }
 
     /**
-     * Entscheidet, an welche Schlange sich der Kunde anstellt. Hier ist die Strategie: kürzeste
-     * Schlange pre: es gibt mindestens eine offene Kasse
+     * Entscheidet, an welche Schlange sich der Kunde anstellt. Hier ist die
+     * Strategie: kürzeste Schlange pre: es gibt mindestens eine offene Kasse
      *
      * @param kassen Feld der im Markt vorhandenen Kassen
      */
@@ -61,8 +63,8 @@ class KUNDE
         for (int i = 0; i < kassen.length; i++)
         {
             w = kassen[i].WarteschlangeHolen();
-            if ((kassen[i].IstOffen())
-                            && ((beste == null) || (w.LaengeHolen() < beste.LaengeHolen())))
+            if ((kassen[i].IstOffen()) && ((beste == null)
+                    || (w.LaengeHolen() < beste.LaengeHolen())))
             {
                 beste = w;
             }

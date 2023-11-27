@@ -1,4 +1,5 @@
 package org.bschlangaul.schulbuecher.cornelsen.informatik_3_2017.kapitel_04.thema_projekt.aufgabe_6.lauflicht;
+
 /**
  * @author mike_gans@yahoo.de and michael andonie
  *
@@ -16,7 +17,6 @@ import ea.edu.Kreis;
  */
 public class KREIS extends Kreis
 {
-
     /**
      * Die Farbe dieses Kreises
      */
@@ -47,19 +47,18 @@ public class KREIS extends Kreis
      */
     private float M_y;
 
-
     /**
-     * Konstruktor der Klasse <code>KREIS</code>. Erstellt einen neuen Standard-Kreis.
+     * Konstruktor der Klasse <code>KREIS</code>. Erstellt einen neuen
+     * Standard-Kreis.
      */
     public KREIS()
     {
         this(2);
     }
 
-
     /**
-     * Konstruktor der Klasse <code>KREIS</code>. Erstellt einen neuen Kreis mit gegebenem Radius
-     * (in Bildschirm-Metern).
+     * Konstruktor der Klasse <code>KREIS</code>. Erstellt einen neuen Kreis mit
+     * gegebenem Radius (in Bildschirm-Metern).
      *
      * @param rNeu Der radius des Kreises (in Bildschirm-Metern)
      */
@@ -77,27 +76,28 @@ public class KREIS extends Kreis
         super.setzeMittelpunkt(this.M_x, this.M_y);
     }
 
-
     /**
-     * Legt die Ebene fest, in der das Objekt gezeichnet wird. Ebenen mit grossen Nummern
-     * ueberdecken Ebenen mit kleineren Nummern. Der Hintergrund ist -1. Jedes Objekt wird zunaechst
-     * in Ebene 0 erzeugt. Innerhalb derselben Ebene ueberdecken spaeter erzeugte Objekte die
-     * frueher erzeugten.
+     * Legt die Ebene fest, in der das Objekt gezeichnet wird. Ebenen mit
+     * grossen Nummern ueberdecken Ebenen mit kleineren Nummern. Der Hintergrund
+     * ist -1. Jedes Objekt wird zunaechst in Ebene 0 erzeugt. Innerhalb
+     * derselben Ebene ueberdecken spaeter erzeugte Objekte die frueher
+     * erzeugten.
      *
-     * @param ebenenNummer -1=Hintergrund ; 0=Standard (ueberdeckt Hintergrund) ; 1=weiter vorne
-     *        (ueberdeckt Hintergrund und Ebene 0) ; ...
+     * @param ebenenNummer -1=Hintergrund ; 0=Standard (ueberdeckt Hintergrund)
+     *                     ; 1=weiter vorne (ueberdeckt Hintergrund und Ebene 0)
+     *                     ; ...
      */
     public void setzeEbene(int ebenenNummer)
     {
         super.getActor().setLayerPosition(ebenenNummer);
     }
 
-
     /**
      * Setzt die Farbe dieses Kreises neu.
      *
-     * @param farbeNeu Diese Farbe erhaelt der Kreis (z.B. "Rot") Farbnamen koennen in der
-     *        Readme.txt im BlueJ-Projekt nachgelesen werden.
+     * @param farbeNeu Diese Farbe erhaelt der Kreis (z.B. "Rot") Farbnamen
+     *                 koennen in der Readme.txt im BlueJ-Projekt nachgelesen
+     *                 werden.
      *
      */
     public void setzeFarbe(String farbeNeu)
@@ -105,7 +105,6 @@ public class KREIS extends Kreis
         this.farbe = farbeNeu;
         super.setzeFarbe(farbe);
     }
-
 
     /**
      * Setzt den Mittelpunkt dieses Kreises neu.
@@ -120,7 +119,6 @@ public class KREIS extends Kreis
         this.M_y = y;
         super.setzeMittelpunkt(x, y);
     }
-
 
     /**
      * Setzt den Radius dieses Kreises (in Bildschirm-Metern) neu.
@@ -140,13 +138,13 @@ public class KREIS extends Kreis
         super.setzeMittelpunkt(x, y);
     }
 
-
     /**
      * Setzt, ob dieser Kreis sichtbar sein soll.
      *
-     * @param sichtbarNeu Ist dieser Wert <code>true</code>, ist nach dem Aufruf dieser Methode
-     *        dieser Kreis sichtbar. Ist dieser Wert <code>false</code>, so ist nach dem Aufruf
-     *        dieser Methode dieser Kreis unsichtbar.
+     * @param sichtbarNeu Ist dieser Wert <code>true</code>, ist nach dem Aufruf
+     *                    dieser Methode dieser Kreis sichtbar. Ist dieser Wert
+     *                    <code>false</code>, so ist nach dem Aufruf dieser
+     *                    Methode dieser Kreis unsichtbar.
      */
     public void setzeSichtbar(boolean sichtbarNeu)
     {
@@ -154,15 +152,16 @@ public class KREIS extends Kreis
         super.setzeSichtbar(sichtbarNeu);
     }
 
-
     /**
-     * Verschiebt diesen Kreis um eine Strecke - angegeben durch ein "Delta X" und "Delta Y".
+     * Verschiebt diesen Kreis um eine Strecke - angegeben durch ein "Delta X"
+     * und "Delta Y".
      *
-     * @param deltaX Der X Anteil (in Bildschirm-Metern) dieser Verschiebung. Positive Werte
-     *        verschieben nach rechts, negative nach links.
+     * @param deltaX Der X Anteil (in Bildschirm-Metern) dieser Verschiebung.
+     *               Positive Werte verschieben nach rechts, negative nach
+     *               links.
      *
-     * @param deltaY Der Y Anteil (in Bildschirm-Metern) dieser Verschiebung. Positive Werte
-     *        verschieben nach unten, negative nach oben.
+     * @param deltaY Der Y Anteil (in Bildschirm-Metern) dieser Verschiebung.
+     *               Positive Werte verschieben nach unten, negative nach oben.
      */
     public void verschiebenUm(double deltaX, double deltaY)
     {
@@ -170,7 +169,6 @@ public class KREIS extends Kreis
         this.M_y = this.M_y + (float) deltaY;
         super.verschieben(deltaX, deltaY);
     }
-
 
     /**
      * Methode beruehrt
@@ -184,9 +182,9 @@ public class KREIS extends Kreis
         return super.schneidet(ea);
     }
 
-
     /**
-     * Diese Methode prueft, ob ein bestimmter Punkt in dem Objekt enthalten ist. <br />
+     * Diese Methode prueft, ob ein bestimmter Punkt in dem Objekt enthalten
+     * ist. <br />
      * z.B. interessant zum Auswerten von Maus-Klicks.
      *
      * @param x x-Koordinate des Punkts (in Bildschirm-Metern)
@@ -199,48 +197,49 @@ public class KREIS extends Kreis
         return super.beinhaltetPunkt(x, y);
     }
 
-
     /**
-     * Nennt die Nummer der Ebene, in der dieses Objekt derzeit gezeichnet wird. Durch veraendern
-     * der Ebenen-Nummer kann man Objekte vor / hinter andere stellen. Ebenen mit groesserer Nummer
-     * verdecken Ebenen mit kleinerer Nummer. Innerhalb derselben Ebene ueberdecken spaeter erzeugte
-     * Objekte die frueher erzeugten.
+     * Nennt die Nummer der Ebene, in der dieses Objekt derzeit gezeichnet wird.
+     * Durch veraendern der Ebenen-Nummer kann man Objekte vor / hinter andere
+     * stellen. Ebenen mit groesserer Nummer verdecken Ebenen mit kleinerer
+     * Nummer. Innerhalb derselben Ebene ueberdecken spaeter erzeugte Objekte
+     * die frueher erzeugten.
      *
-     * @return Ebenen-Nummer: -1=Hintergrund ; 0=Standard (ueberdeckt Hintergrund) , 1=weiter vorne
-     *         (ueberdeckt Hintergrund und Ebene 0) ; ...
+     * @return Ebenen-Nummer: -1=Hintergrund ; 0=Standard (ueberdeckt
+     *         Hintergrund) , 1=weiter vorne (ueberdeckt Hintergrund und Ebene
+     *         0) ; ...
      */
     public int nenneEbenenposition()
     {
         return super.nenneEbenenposition();
     }
 
-
     /**
-     * Diese Methode gibt die x-Koordinate des Mittelpunkts dieses Kreises (in Bildschrim-Metern)
-     * zurueck.
+     * Diese Methode gibt die x-Koordinate des Mittelpunkts dieses Kreises (in
+     * Bildschrim-Metern) zurueck.
      *
-     * @return Die aktuelle x-Koordinate des Mittelpunktes dieses Kreises (in Bildschrim-Metern)
+     * @return Die aktuelle x-Koordinate des Mittelpunktes dieses Kreises (in
+     *         Bildschrim-Metern)
      */
     public float nenneMx()
     {
         return this.M_x;
     }
 
-
     /**
-     * Diese Methode gibt die y-Koordinate des Mittelpunkts dieses Kreises (in Bildschrim-Metern)
-     * zurueck.
+     * Diese Methode gibt die y-Koordinate des Mittelpunkts dieses Kreises (in
+     * Bildschrim-Metern) zurueck.
      *
-     * @return Die aktuelle y-Koordinate des Mittelpunktes dieses Kreises (in Bildschrim-Metern)
+     * @return Die aktuelle y-Koordinate des Mittelpunktes dieses Kreises (in
+     *         Bildschrim-Metern)
      */
     public float nenneMy()
     {
         return this.M_y;
     }
 
-
     /**
-     * Diese Methode gibt den Radius dieses Kreises (in Bildschrim-Metern) zurueck.
+     * Diese Methode gibt den Radius dieses Kreises (in Bildschrim-Metern)
+     * zurueck.
      *
      * @return Der aktuelle Radius dieses Kreises (in Bildschrim-Metern)
      */
@@ -248,7 +247,6 @@ public class KREIS extends Kreis
     {
         return this.radius;
     }
-
 
     /**
      * Diese Methode gibt die Farbe dieses Kreises zurueck.
@@ -260,7 +258,6 @@ public class KREIS extends Kreis
         return this.farbe;
     }
 
-
     /**
      * Diese Methode gibt die Sichtbarkeit dieses Kreises zurueck.
      *
@@ -271,42 +268,43 @@ public class KREIS extends Kreis
         return this.sichtbar;
     }
 
-
     /**
-     * Diese Methode prueft, wie weit der Mittelpunkt dieses Kreises vom Mittelpunkt eines anderen
-     * EduActors in x-Richtung (in Bildschrim-Metern) entfernt ist.
+     * Diese Methode prueft, wie weit der Mittelpunkt dieses Kreises vom
+     * Mittelpunkt eines anderen EduActors in x-Richtung (in Bildschrim-Metern)
+     * entfernt ist.
      *
      * @param ea Der andere EduActor
      *
-     * @return Abstand (in Bildschrim-Metern) dieses Rechtecks vom anderen EduActor in x-Richtung
-     *         (>0, wenn dieses Rechteck rechts des anderen EduActors liegt)
+     * @return Abstand (in Bildschrim-Metern) dieses Rechtecks vom anderen
+     *         EduActor in x-Richtung (>0, wenn dieses Rechteck rechts des
+     *         anderen EduActors liegt)
      */
     public double berechneAbstandX(EduActor ea)
     {
         return this.M_x - ea.nenneMittelpunktX();
     }
 
-
     /**
-     * Diese Methode prueft, wie weit der Mittelpunkt dieses Kreises vom Mittelpunkt eines anderen
-     * EduActors in y-Richtung entfernt ist.
+     * Diese Methode prueft, wie weit der Mittelpunkt dieses Kreises vom
+     * Mittelpunkt eines anderen EduActors in y-Richtung entfernt ist.
      *
      * @param ea Der andere EduActor
      *
-     * @return Abstand (in Pixeln) dieses Kreises vom anderen EduActor in y-Richtung (>0, wenn
-     *         dieser Kreis unterhalb des anderen EduActors liegt)
+     * @return Abstand (in Pixeln) dieses Kreises vom anderen EduActor in
+     *         y-Richtung (>0, wenn dieser Kreis unterhalb des anderen EduActors
+     *         liegt)
      */
     public double berechneAbstandY(EduActor ea)
     {
         return this.M_y - ea.nenneMittelpunktY();
     }
 
-
     /**
      * Dreht die Grafik um einen Winkel (in Grad)
      *
-     * @param winkelAenderungInGrad +: mathematisch positiver Drehsinn (gegen den Uhrzeigersinn) -:
-     *        mathematisch negativer Drehsinn (im Uhrzeigersinn)
+     * @param winkelAenderungInGrad +: mathematisch positiver Drehsinn (gegen
+     *                              den Uhrzeigersinn) -: mathematisch negativer
+     *                              Drehsinn (im Uhrzeigersinn)
      */
     public void drehenUm(double winkelAenderungInGrad)
     {
@@ -318,29 +316,29 @@ public class KREIS extends Kreis
         super.setzeSichtbar(true);
     }
 
-
     /**
      * Setzt den Drehwinkel auf einen absoluten neuen Wert (in Grad)
      *
-     * @param neuerDrehwinkelInGrad der neue Drehwinkel (in Grad) +: mathematisch positiver Drehsinn
-     *        (gegen den Uhrzeigersinn) -: mathematisch negativer Drehsinn (im Uhrzeigersinn)
+     * @param neuerDrehwinkelInGrad der neue Drehwinkel (in Grad) +:
+     *                              mathematisch positiver Drehsinn (gegen den
+     *                              Uhrzeigersinn) -: mathematisch negativer
+     *                              Drehsinn (im Uhrzeigersinn)
      */
     public void setzeDrehwinkel(float neuerDrehwinkelInGrad)
     {
         this.drehenUm(neuerDrehwinkelInGrad - this.nenneDrehwinkel());
     }
 
-
     /**
      * Nennt den Winkel (in Grad), um den die Grafik gedreht wurde
      *
-     * @return der Winkel (in Grad), um den die Grafik gedreht wurde 0: wenn nicht gedreht +: wenn
-     *         mathematisch positiver Drehsinn (gegen den Uhrzeigersinn) -: wenn mathematisch
-     *         negativer Drehsinn (im Uhrzeigersinn)
+     * @return der Winkel (in Grad), um den die Grafik gedreht wurde 0: wenn
+     *         nicht gedreht +: wenn mathematisch positiver Drehsinn (gegen den
+     *         Uhrzeigersinn) -: wenn mathematisch negativer Drehsinn (im
+     *         Uhrzeigersinn)
      */
     public double nenneDrehwinkel()
     {
         return super.nenneDrehwinkel();
     }
-
 }

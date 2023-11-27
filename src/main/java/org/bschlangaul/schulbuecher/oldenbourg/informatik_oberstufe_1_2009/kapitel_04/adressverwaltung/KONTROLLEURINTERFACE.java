@@ -6,7 +6,6 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapi
  * @author Albert Wiedemann
  * @version 1.0
  */
-
 interface KONTROLLEURINTERFACE
 {
     /**
@@ -54,26 +53,26 @@ interface KONTROLLEURINTERFACE
     /**
      * ändert die Personendaten der aktuellen Person.
      *
-     * @param name Name der Person
-     * @param vorname Vorname der Person
-     * @param strasse Stra&szlig;e
+     * @param name       Name der Person
+     * @param vorname    Vorname der Person
+     * @param strasse    Stra&szlig;e
      * @param hausnummer Hausnummer
-     * @param plz Postleitzahl
-     * @param ort Wohnort
-     * @param nummer die Telefonnummer
-     * @param art die Art des Anschlusses
-     * @param notiz1 Bemerkung zum Anschluss
-     * @param adresse die Emailadresse
-     * @param notiz2 Bemerkung zur Adresse
+     * @param plz        Postleitzahl
+     * @param ort        Wohnort
+     * @param nummer     die Telefonnummer
+     * @param art        die Art des Anschlusses
+     * @param notiz1     Bemerkung zum Anschluss
+     * @param adresse    die Emailadresse
+     * @param notiz2     Bemerkung zur Adresse
      */
-    void PersonAnlegen(String name, String vorname, String strasse, String hausnummer, String plz,
-                    String ort, String nummer, String art, String notiz1, String adresse,
-                    String notiz2);
+    void PersonAnlegen(String name, String vorname, String strasse,
+            String hausnummer, String plz, String ort, String nummer,
+            String art, String notiz1, String adresse, String notiz2);
 
     /**
      * ändert die Personendaten der aktuellen Person.
      *
-     * @param name Name der Person
+     * @param name    Name der Person
      * @param vorname Vorname der Person
      */
     void PersonendatenAendern(String name, String vorname);
@@ -86,22 +85,24 @@ interface KONTROLLEURINTERFACE
     /**
      * ändert die Adressdaten der aktuellen Person.
      *
-     * @param strasse Stra&szlig;e
+     * @param strasse    Stra&szlig;e
      * @param hausnummer Hausnummer
-     * @param plz Postleitzahl
-     * @param ort Wohnort
+     * @param plz        Postleitzahl
+     * @param ort        Wohnort
      */
-    void AdressdatenAendern(String strasse, String hausnummer, String plz, String ort);
+    void AdressdatenAendern(String strasse, String hausnummer, String plz,
+            String ort);
 
     /**
      * Legt die Adressdaten der aktuellen Person neu an.
      *
-     * @param strasse Stra&szlig;e
+     * @param strasse    Stra&szlig;e
      * @param hausnummer Hausnummer
-     * @param plz Postleitzahl
-     * @param ort Wohnort
+     * @param plz        Postleitzahl
+     * @param ort        Wohnort
      */
-    void AdressdatenAnlegen(String strasse, String hausnummer, String plz, String ort);
+    void AdressdatenAnlegen(String strasse, String hausnummer, String plz,
+            String ort);
 
     /**
      * übernimmt die Adresse von einer anderen Person.
@@ -114,18 +115,19 @@ interface KONTROLLEURINTERFACE
      * ändert die Daten des gegebenen Telefoneintrags.
      *
      * @param telefon aktueller Eintrag
-     * @param nummer die Telefonnummer
-     * @param art die Art des Anschlusses
-     * @param notiz Bemerkung zum Anschluss
+     * @param nummer  die Telefonnummer
+     * @param art     die Art des Anschlusses
+     * @param notiz   Bemerkung zum Anschluss
      */
-    void TelefonAendern(Object telefon, String nummer, String art, String notiz);
+    void TelefonAendern(Object telefon, String nummer, String art,
+            String notiz);
 
     /**
      * Legt eine Telefonnummer neu an.
      *
      * @param nummer die Telefonnummer
-     * @param art die Art des Anschlusses
-     * @param notiz Bemerkung zum Anschluss
+     * @param art    die Art des Anschlusses
+     * @param notiz  Bemerkung zum Anschluss
      */
     void TelefonAnlegen(String nummer, String art, String notiz);
 
@@ -139,9 +141,9 @@ interface KONTROLLEURINTERFACE
     /**
      * ändert die Daten des gegebenen Emaileintrags.
      *
-     * @param email aktueller Eintrag
+     * @param email   aktueller Eintrag
      * @param adresse die Emailadresse
-     * @param notiz Bemerkung zur Adresse
+     * @param notiz   Bemerkung zur Adresse
      */
     void EmailAendern(Object email, String adresse, String notiz);
 
@@ -149,7 +151,7 @@ interface KONTROLLEURINTERFACE
      * Legt eine Emailadresse neu an.
      *
      * @param adresse die Emailadresse
-     * @param notiz Bemerkung zur Adresse
+     * @param notiz   Bemerkung zur Adresse
      */
     void EmailAnlegen(String adresse, String notiz);
 
@@ -171,7 +173,7 @@ interface KONTROLLEURINTERFACE
      * Sucht alle Personen mit gegebener (Teil-)Adresse.
      *
      * @param strasse Strassennamen(steil)
-     * @param ort Ort(steil)
+     * @param ort     Ort(steil)
      */
     void AdresseSuchen(String strasse, String ort);
 

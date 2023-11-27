@@ -9,7 +9,6 @@ package org.bschlangaul.schulbuecher.isb.handreichung_12.kapitel_02.projekt_12.p
  */
 public class Erzeuger extends Thread
 {
-
     /** Referenz auf den Abstellplatz */
     AbstellPlatz abstellplatz;
 
@@ -33,19 +32,20 @@ public class Erzeuger extends Thread
         try
         {
             sleep((int) (Math.random() * 100));
-        } catch (InterruptedException e)
+        }
+        catch (InterruptedException e)
         {
         }
     }
 
     /**
      * simuliert die Arbeit des Erzeugers<br/>
-     * falls das Produkt nicht abgelegt werden konnte, wird der Thread in den Wartezustand versetzt.
+     * falls das Produkt nicht abgelegt werden konnte, wird der Thread in den
+     * Wartezustand versetzt.
      */
     @Override
     public void run()
     {
-
         while (true)
         {
             produzieren();

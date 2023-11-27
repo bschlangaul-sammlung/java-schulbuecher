@@ -10,29 +10,31 @@ import java.util.*;
 
 /**
  * Klasse DrawingUtil <br>
- * Der Programmtext dieser Klasse braucht für die Bearbeitung der Arbeitsaufträge und Aufgaben weder
- * gelesen noch verstanden zu werden.
+ * Der Programmtext dieser Klasse braucht für die Bearbeitung der
+ * Arbeitsaufträge und Aufgaben weder gelesen noch verstanden zu werden.
  */
-
 public class DrawingUtil
 {
-
     private static final java.awt.Color BACKGROUND = java.awt.Color.LIGHT_GRAY;
+
     private static final java.awt.Color FOREGROUND = java.awt.Color.BLACK;
 
-
     private List<String> lines;
+
     private int maxWidthLine = 0;
 
     private java.awt.Font font;
+
     private FontMetrics fm;
 
     private final int maxWidth;
+
     private final String text;
 
     private boolean inited = false;
 
     private Actor actor;
+
     private Actor pseudoActor;
 
     public DrawingUtil(String text, int maxWidth)
@@ -47,39 +49,36 @@ public class DrawingUtil
         {
             return;
         }
-
         this.actor = actor;
-
         // nothing to see here...
         if (actor.getWorld() == null)
         {
-            System.err.println("Cannot draw Bubble for Actor that is not in the world!");
+            System.err.println(
+                    "Cannot draw Bubble for Actor that is not in the world!");
             return;
         }
-
-        font = actor.getWorld().getBackground().getAwtImage().getGraphics().getFont();
-        fm = actor.getWorld().getBackground().getAwtImage().createGraphics().getFontMetrics(font);
-
+        font = actor.getWorld().getBackground().getAwtImage().getGraphics()
+                .getFont();
+        fm = actor.getWorld().getBackground().getAwtImage().createGraphics()
+                .getFontMetrics(font);
         initLines(text);
-
-        pseudoActor = new Actor() {};
+        pseudoActor = new Actor()
+        {
+        };
         pseudoActor.setImage(createImage());
-
         inited = true;
     }
 
     private void initLines(String text)
     {
         lines = new ArrayList<>();
-        Queue<String> remaining = new LinkedList<>(Arrays.asList(text.split("\\s")));
-
+        Queue<String> remaining = new LinkedList<>(
+                Arrays.asList(text.split("\\s")));
         String buf = "";
-
         while (remaining.size() > 0)
         {
             String testNext = buf + " " + remaining.peek();
             int width = fm.stringWidth(testNext);
-
             if (width > maxWidth)
             {
                 lines.add(buf.strip());
@@ -89,13 +88,11 @@ public class DrawingUtil
             {
                 buf += " " + remaining.poll();
             }
-
         }
         if (buf.isEmpty() == false)
         {
             lines.add(buf);
         }
-
         for (String line : lines)
         {
             int lineWidth = fm.stringWidth(line);
@@ -105,8 +102,6 @@ public class DrawingUtil
             }
         }
         maxWidthLine += fm.getHeight() * 2;
-
-
     }
 
     private GreenfootImage createImage()
@@ -114,10 +109,8 @@ public class DrawingUtil
         int acHeight = (int) (fm.getHeight() * (lines.size() + 0.5));
         GreenfootImage img = new GreenfootImage(maxWidthLine, acHeight);
         Graphics2D g = (Graphics2D) img.getAwtImage().getGraphics();
-
         g.setColor(BACKGROUND);
         g.setFont(font);
-
         g.fillRoundRect(0, 0, maxWidthLine, acHeight, 15, 15);
         int yPos = fm.getHeight();
         g.setColor(FOREGROUND);
@@ -127,23 +120,17 @@ public class DrawingUtil
             g.drawString(line, actualX, yPos);
             yPos += fm.getHeight();
         }
-
         return img;
-
     }
 
     public void show(Actor actor)
     {
         ensureInit(actor);
-
         actor.getWorld().removeObject(pseudoActor);
-
         int x = actor.getX();
         int y = actor.getY() - pseudoActor.getImage().getHeight() / 2
-                        - actor.getImage().getHeight() / 2;
-
+                - actor.getImage().getHeight() / 2;
         actor.getWorld().addObject(pseudoActor, x, y);
-
     }
 
     public void hide()
@@ -161,5 +148,4 @@ public class DrawingUtil
         du.show(actor);
         return du;
     }
-
 }

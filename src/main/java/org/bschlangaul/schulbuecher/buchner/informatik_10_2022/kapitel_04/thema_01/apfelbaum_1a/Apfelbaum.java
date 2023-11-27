@@ -9,6 +9,7 @@ package org.bschlangaul.schulbuecher.buchner.informatik_10_2022.kapitel_04.thema
 class Apfelbaum
 {
     String ort;
+
     double hoehe;
 
     /**
@@ -22,7 +23,8 @@ class Apfelbaum
     }
 
     /**
-     * Methode wachse, der Wert des Parameters einBetrag wird zum Wert des Attributes hoehe addiert.
+     * Methode wachse, der Wert des Parameters einBetrag wird zum Wert des
+     * Attributes hoehe addiert.
      */
     void wachse(double einBetrag)
     {

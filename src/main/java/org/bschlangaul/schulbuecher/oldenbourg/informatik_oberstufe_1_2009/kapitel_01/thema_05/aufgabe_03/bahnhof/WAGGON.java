@@ -8,14 +8,14 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapi
  */
 class WAGGON implements DATENELEMENT
 {
-
     private String zielort;
+
     private int distanz_zum_zielort;
 
     /**
      * Konstruktor
      *
-     * @param ort Zielort
+     * @param ort     Zielort
      * @param distanz Abstand vom Zielort
      */
     WAGGON(String ort, int distanz)

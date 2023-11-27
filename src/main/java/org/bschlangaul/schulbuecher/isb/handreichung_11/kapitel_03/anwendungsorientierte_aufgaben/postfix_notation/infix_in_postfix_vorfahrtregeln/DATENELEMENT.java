@@ -5,5 +5,4 @@ abstract class DATENELEMENT
     abstract boolean Vergleichen(DATENELEMENT d);
 
     abstract void Ausgeben();
-
 }

@@ -10,8 +10,10 @@ class KNOTEN
 {
     /** Referenz auf den linken Nachfolger */
     private KNOTEN linkerNachfolger;
+
     /** Referenz auf den rechten Nachfolger */
     private KNOTEN rechterNachfolger;
+
     /** Referenz auf das Datenelement */
     private DATENELEMENT daten;
 
@@ -68,7 +70,8 @@ class KNOTEN
     }
 
     /**
-     * Fügt ein neues Datenelement in den Baum ein. Der Wert darf noch nicht vorkommen
+     * Fügt ein neues Datenelement in den Baum ein. Der Wert darf noch nicht
+     * vorkommen
      *
      * @param wert Referenz auf das einzufügende Datenelement
      */

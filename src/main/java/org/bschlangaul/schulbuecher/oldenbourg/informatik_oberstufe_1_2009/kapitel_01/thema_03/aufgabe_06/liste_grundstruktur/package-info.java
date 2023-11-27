@@ -1,8 +1,8 @@
 /**
  * Erstellen der Grundstruktur
  *
- * Implementieren Sie die Grundstruktur der Liste gemäß Abbildung 18 und den Beschreibungen zu den
- * einzelnen Methoden im Kapitel.
+ * Implementieren Sie die Grundstruktur der Liste gemäß Abbildung 18 und den
+ * Beschreibungen zu den einzelnen Methoden im Kapitel.
  *
  * Seite 34
  */

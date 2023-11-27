@@ -26,14 +26,13 @@ class RANGIERBAHNHOF
     /**
      * Einfügen eines Waggons auf ein bestimmtes Gleis
      *
-     * @param w Waggon
+     * @param w           Waggon
      * @param gleisnummer Nummer von 0 bis 2
      */
     void WaggonEinfuegen(WAGGON w, int gleisnummer)
     {
         gleise[gleisnummer].Einfuegen(w);
     }
-
 
     /**
      * Entfernen eines Waggons von einem bestimmten Gleis
@@ -48,12 +47,11 @@ class RANGIERBAHNHOF
     /**
      * Verschieben eines Waggons zwischen zwei Gleisen
      *
-     * @param vonGleis Nummer von 0 bis 2
+     * @param vonGleis  Nummer von 0 bis 2
      * @param nachGleis Nummer von 0 bis 2
      */
     void WaggonVerschieben(int vonGleis, int nachGleis)
     {
         gleise[nachGleis].Einfuegen(gleise[vonGleis].Entfernen());
     }
-
 }

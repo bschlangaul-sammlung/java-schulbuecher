@@ -1,3 +1,5 @@
+package org.bschlangaul.schulbuecher.isb.handreichung_11.kapitel_03.anwendungsorientierte_aufgaben.majority_algorithmus.wahl;
+
 class LISTE
 {
     private LISTENELEMENT anfang;
@@ -28,10 +30,8 @@ class LISTE
     DATENELEMENT AnfangEntfernen()
     {
         DATENELEMENT entfernt;
-
         entfernt = anfang.DatenGeben();
         anfang = anfang.NachfolgerGeben();
-
         return entfernt;
     }
 
@@ -69,8 +69,4 @@ class LISTE
     {
         return anfang.AnzahlMitEigenschaftAbHierGeben(datenObjekt);
     }
-
-
-
 }
-

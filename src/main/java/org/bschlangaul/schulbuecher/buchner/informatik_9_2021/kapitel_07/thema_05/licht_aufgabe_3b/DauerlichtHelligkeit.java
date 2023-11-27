@@ -3,19 +3,20 @@ package org.bschlangaul.schulbuecher.buchner.informatik_9_2021.kapitel_07.thema_
 import greenfoot.Color;
 
 /**
- * Ein Objekt der Klasse DauerlichtHelligkeit ändert seine Helligkeit während es leuchtet. Kap. 7.5,
- * Aufgabe 3
+ * Ein Objekt der Klasse DauerlichtHelligkeit ändert seine Helligkeit während es
+ * leuchtet. Kap. 7.5, Aufgabe 3
  */
 public class DauerlichtHelligkeit extends Dauerlicht
 {
     Color rot;
+
     int helligkeit = 10;
+
     int richtung = 1; // +1: heller; -1: dunkler
 
     void zeigeLichtEin()
     {
         helligkeit = helligkeit + 10 * richtung;
-
         if ((helligkeit >= 240) || (helligkeit <= 10))
         {
             richtung = -richtung; // Richtungswechsel

@@ -1,8 +1,9 @@
 package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapitel_02.thema_09.aufgabe_07e.binbaum_abstract;
 
 /**
- * Die KLasse ADRESSBUCH erzeugt ein gefülltes Adressbuch. über die Methode WoerterbuchGeben kann
- * man auf das erzteugte Objekt zugreifen und eigene bzw. geerbte Methoden testen.
+ * Die KLasse ADRESSBUCH erzeugt ein gefülltes Adressbuch. über die Methode
+ * WoerterbuchGeben kann man auf das erzteugte Objekt zugreifen und eigene bzw.
+ * geerbte Methoden testen.
  *
  *
  * @author (Ihr Name)

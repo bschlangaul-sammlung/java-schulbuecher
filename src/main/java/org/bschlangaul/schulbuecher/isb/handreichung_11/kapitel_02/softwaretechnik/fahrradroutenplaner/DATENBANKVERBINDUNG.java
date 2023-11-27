@@ -6,17 +6,20 @@ package org.bschlangaul.schulbuecher.isb.handreichung_11.kapitel_02.softwaretech
  * @author
  * @version 1.0
  */
-
 import java.sql.*;
 
 class DATENBANKVERBINDUNG
 {
     private String treiber = "com.mysql.jdbc.Driver"; // Treiber
     // private String treiber = "sun.jdbc.odbc.JdbcOdbcDriver";
+
     private String pfad = "jdbc:mysql://localhost/frp"; // Pfad zur Datenbank
     // String pfad ="jdbc:odbc:frp";
+
     private String user = "rm";
+
     private String pWort = "5678";
+
     // Erzeugung eines Objekts (Klassenvariable) Datenbankanbindung
     private Connection conn;
 
@@ -28,19 +31,20 @@ class DATENBANKVERBINDUNG
         // ODBC bzw. JDBC Treiber laden
         try
         {
-
             Class.forName(treiber);
-        } catch (Exception e)
+        }
+        catch (Exception e)
         {
-            System.out.println("Start_Fehler beim Laden des JDBC-Treibers " + e);
+            System.out
+                    .println("Start_Fehler beim Laden des JDBC-Treibers " + e);
             System.exit(-1);
         }
-
         // öffnen der Datenbank beim MySqlServer
         try
         {
             conn = DriverManager.getConnection(pfad, user, pWort);
-        } catch (Exception e)
+        }
+        catch (Exception e)
         {
             System.out.println("Start_Fehler bei Datenbankzugriff\n" + e);
             System.exit(-1);
@@ -55,9 +59,11 @@ class DATENBANKVERBINDUNG
         try
         {
             conn.close();
-        } catch (Exception e)
+        }
+        catch (Exception e)
         {
-            System.out.println("Fehler beim Beenden der Datenbankverbindung\n" + e);
+            System.out.println(
+                    "Fehler beim Beenden der Datenbankverbindung\n" + e);
         }
     }
 
@@ -78,12 +84,14 @@ class DATENBANKVERBINDUNG
             sqlResult = stmt.executeQuery("SELECT * FROM ort");
             while (sqlResult.next())
             {
-                orte.Anfuegen(new ORT(sqlResult.getString("Name"), sqlResult.getString("Infos"),
-                                sqlResult.getInt("xpos"), sqlResult.getInt("ypos")));
+                orte.Anfuegen(new ORT(sqlResult.getString("Name"),
+                        sqlResult.getString("Infos"), sqlResult.getInt("xpos"),
+                        sqlResult.getInt("ypos")));
             }
             sqlResult.close();
             stmt.close();
-        } catch (Exception e)
+        }
+        catch (Exception e)
         {
             System.out.println("OrteHolen: Fehler bei SQL Abfrage\n" + e);
         }
@@ -113,22 +121,25 @@ class DATENBANKVERBINDUNG
                 if (ort1 == null)
                 {
                     System.out.println("StreckenHolen: Unbekannter Ort: "
-                                    + sqlResult.getString("Startort"));
+                            + sqlResult.getString("Startort"));
                 }
                 else if (ort2 == null)
                 {
                     System.out.println("StreckenHolen: Unbekannter Ort: "
-                                    + sqlResult.getString("Zielort"));
+                            + sqlResult.getString("Zielort"));
                 }
                 else
                 {
-                    strecken.Anfuegen(new STRECKE(ort1, ort2, sqlResult.getString("Infos"),
-                                    sqlResult.getInt("Laenge"), sqlResult.getInt("Steigung")));
+                    strecken.Anfuegen(new STRECKE(ort1, ort2,
+                            sqlResult.getString("Infos"),
+                            sqlResult.getInt("Laenge"),
+                            sqlResult.getInt("Steigung")));
                 }
             }
             sqlResult.close();
             stmt.close();
-        } catch (Exception e)
+        }
+        catch (Exception e)
         {
             System.out.println("StreckenHolen: Fehler bei SQL Abfrage\n" + e);
         }

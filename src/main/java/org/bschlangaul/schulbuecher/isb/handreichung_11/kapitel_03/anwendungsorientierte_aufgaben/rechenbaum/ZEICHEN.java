@@ -16,13 +16,16 @@ class ZEICHEN implements DATENELEMENT
     }
 
     /**
-     * Vergleicht das vorhandene Datenelement mit dem übergebenen. Die Methode wurde auf einen
-     * Rückgabewert boolean angepasst.
+     * Vergleicht das vorhandene Datenelement mit dem übergebenen. Die Methode
+     * wurde auf einen Rückgabewert boolean angepasst.
      *
      * @param wert Referenzauf den Vergleichswert
-     * @return -1: das aktuelle Element ist kleiner als das Vergleichselement<br>
-     *         0: das aktuelle Elelemt hat den gleichen Wert wie das Vergleichselement<br>
-     *         1: das aktuelle Element ist grö&szlig;er als das Vergleichselement
+     * @return -1: das aktuelle Element ist kleiner als das
+     *         Vergleichselement<br>
+     *         0: das aktuelle Elelemt hat den gleichen Wert wie das
+     *         Vergleichselement<br>
+     *         1: das aktuelle Element ist grö&szlig;er als das
+     *         Vergleichselement
      */
     public boolean Vergleichen(DATENELEMENT wert)
     {

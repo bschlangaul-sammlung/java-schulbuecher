@@ -6,7 +6,6 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapi
  * @author Albert Wiedemann
  * @version 1.0
  */
-
 interface MELDUNGSBEOBACHTER
 {
     /**
@@ -18,5 +17,4 @@ interface MELDUNGSBEOBACHTER
      * Aktionslog für den Ablauf
      */
     void LogeintragEmpfangen(String text);
-
 }

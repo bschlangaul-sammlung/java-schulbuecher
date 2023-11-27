@@ -42,5 +42,4 @@ class TastaturTurtle extends Turtle
             }
         }
     }
-
 }

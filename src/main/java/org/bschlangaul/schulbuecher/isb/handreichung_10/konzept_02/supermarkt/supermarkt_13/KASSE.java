@@ -14,11 +14,17 @@ class KASSE implements TAKTKLIENT
     };
 
     private RECHTECK darstellung;
+
     private KUNDE kunde;
+
     private WARTESCHLANGE warteschlange;
+
     private int x;
+
     private int y;
+
     private Zustaende zustand;
+
     private int wartezeit;
 
     /**
@@ -164,6 +170,4 @@ class KASSE implements TAKTKLIENT
             wartezeit = wartezeit - 1;
         }
     }
-
-
 }

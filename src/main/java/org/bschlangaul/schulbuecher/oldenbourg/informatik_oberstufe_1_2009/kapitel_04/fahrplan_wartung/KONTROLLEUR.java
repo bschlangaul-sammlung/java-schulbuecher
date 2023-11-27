@@ -6,16 +6,20 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapi
  * @author Albert Wiedemann
  * @version 1.0
  */
-
 import java.util.*;
 
 class KONTROLLEUR
 {
     private OBERFLAECHE oberflaeche;
+
     private BAHNHOFSLISTE bahnhoefe;
+
     private ABSCHNITTSLISTE abschnitte;
+
     private UMSTEIGELISTE umsteigen;
+
     private PLANANZEIGE plan;
+
     private DATENBANKVERBINDUNG verb;
 
     /**
@@ -26,7 +30,8 @@ class KONTROLLEUR
      * @param u Umsteigeinformationsliste
      * @param p Plananzeigecomponente
      */
-    KONTROLLEUR(BAHNHOFSLISTE b, ABSCHNITTSLISTE a, UMSTEIGELISTE u, PLANANZEIGE p)
+    KONTROLLEUR(BAHNHOFSLISTE b, ABSCHNITTSLISTE a, UMSTEIGELISTE u,
+            PLANANZEIGE p)
     {
         bahnhoefe = b;
         abschnitte = a;
@@ -54,18 +59,19 @@ class KONTROLLEUR
     {
         BAHNHOF akt;
         akt = plan.AktBahnhofGeben();
-        oberflaeche.BahnhofsdatenSetzen("" + akt.XGeben(), "" + akt.YGeben(), akt.NameGeben());
+        oberflaeche.BahnhofsdatenSetzen("" + akt.XGeben(), "" + akt.YGeben(),
+                akt.NameGeben());
         oberflaeche.LinienauswahlUmsteigenSetzen(
-                        abschnitte.LinienFuerBahnhofGeben(akt.NummerGeben()),
-                        umsteigen.UmsteigenFuerBahnhofGeben(akt.NummerGeben()));
+                abschnitte.LinienFuerBahnhofGeben(akt.NummerGeben()),
+                umsteigen.UmsteigenFuerBahnhofGeben(akt.NummerGeben()));
     }
 
     /**
      * Fügt einen neuen Bahnhof ein.
      *
      * @param name Name des Bahnhofs
-     * @param x x-Koordinate des Bahnhofs
-     * @param y y-Koordinate des Bahnhofs
+     * @param x    x-Koordinate des Bahnhofs
+     * @param y    y-Koordinate des Bahnhofs
      */
     void NeuenBahnhofEinfuegen(String name, int x, int y)
     {
@@ -84,8 +90,8 @@ class KONTROLLEUR
      * ändert die Daten eines Bahnhofs.
      *
      * @param name Name des Bahnhofs
-     * @param x x-Koordinate des Bahnhofs
-     * @param y y-Koordinate des Bahnhofs
+     * @param x    x-Koordinate des Bahnhofs
+     * @param y    y-Koordinate des Bahnhofs
      */
     void BahnhofAendern(String name, int x, int y)
     {
@@ -115,12 +121,13 @@ class KONTROLLEUR
     }
 
     /**
-     * Testet, ob der aktuelle Bahnhof gelöscht werden kann. Es dürfen keine Abschnitte dort
-     * beginnen oder enden
+     * Testet, ob der aktuelle Bahnhof gelöscht werden kann. Es dürfen keine
+     * Abschnitte dort beginnen oder enden
      */
     boolean KannAktbahnhofGeloeschtWerden()
     {
-        return !abschnitte.BahnhofWirdErreicht(plan.AktBahnhofGeben().NummerGeben());
+        return !abschnitte
+                .BahnhofWirdErreicht(plan.AktBahnhofGeben().NummerGeben());
     }
 
     /**
@@ -170,7 +177,7 @@ class KONTROLLEUR
     /**
      * Legt einen neuen Abschnitt an.
      *
-     * @param linie Nummer der Linie
+     * @param linie  Nummer der Linie
      * @param laenge Länge des Abschnitts
      */
     void NeuenAbschnittAnlegen(int linie, float laenge)
@@ -180,7 +187,7 @@ class KONTROLLEUR
         nummer1 = plan.AktBahnhofGeben().NummerGeben();
         nummer2 = plan.ZielbahnhofGeben().NummerGeben();
         if ((abschnitte.Suchen(linie, nummer1, nummer2) == null)
-                        && (abschnitte.Suchen(linie, nummer2, nummer1) == null))
+                && (abschnitte.Suchen(linie, nummer2, nummer1) == null))
         {
             neu = new ABSCHNITT(linie, nummer1, nummer2, laenge);
             abschnitte.Einfuegen(neu);
@@ -192,7 +199,7 @@ class KONTROLLEUR
     /**
      * ändert die Länge eines Abschnitts.
      *
-     * @param linie Nummer der Linie
+     * @param linie  Nummer der Linie
      * @param laenge Länge des Abschnitts
      */
     void AbschnittAendern(int linie, float laenge)
@@ -229,7 +236,7 @@ class KONTROLLEUR
     /**
      * Fügt eine neue Umsteugemöglichkeit ein.
      *
-     * @param von von welcher Linie
+     * @param von  von welcher Linie
      * @param nach nach welcher Linie
      */
     void UmsteigenEinfuegen(int von, int nach)
@@ -237,34 +244,38 @@ class KONTROLLEUR
         UMSTEIGEINFO neu;
         if (von != nach)
         {
-            neu = new UMSTEIGEINFO(plan.AktBahnhofGeben().NummerGeben(), von, nach);
+            neu = new UMSTEIGEINFO(plan.AktBahnhofGeben().NummerGeben(), von,
+                    nach);
             if (umsteigen.Suchen(neu) == null)
             {
                 umsteigen.Einfuegen(neu);
                 verb.UmsteigenEinfuegen(neu);
                 oberflaeche.LinienauswahlUmsteigenSetzen(
-                                abschnitte.LinienFuerBahnhofGeben(neu.BahnhofGeben()),
-                                umsteigen.UmsteigenFuerBahnhofGeben(neu.BahnhofGeben()));
+                        abschnitte.LinienFuerBahnhofGeben(neu.BahnhofGeben()),
+                        umsteigen
+                                .UmsteigenFuerBahnhofGeben(neu.BahnhofGeben()));
             }
         }
     }
 
     /**
-     * Löscht die angegebene Umsteigeinformation aus der Liste und der Datenbank.
+     * Löscht die angegebene Umsteigeinformation aus der Liste und der
+     * Datenbank.
      *
      * @param index Index des zo löschenden Eintrags
      */
     void UmsteigenLoeschen(int index)
     {
         UMSTEIGEINFO alt;
-        alt = umsteigen.UmsteigeinfoMitIndexGeben(index, plan.AktBahnhofGeben().NummerGeben());
+        alt = umsteigen.UmsteigeinfoMitIndexGeben(index,
+                plan.AktBahnhofGeben().NummerGeben());
         if (alt != null)
         {
             umsteigen.Loeschen(alt);
             verb.UmsteigenLoeschen(alt);
             oberflaeche.LinienauswahlUmsteigenSetzen(
-                            abschnitte.LinienFuerBahnhofGeben(alt.BahnhofGeben()),
-                            umsteigen.UmsteigenFuerBahnhofGeben(alt.BahnhofGeben()));
+                    abschnitte.LinienFuerBahnhofGeben(alt.BahnhofGeben()),
+                    umsteigen.UmsteigenFuerBahnhofGeben(alt.BahnhofGeben()));
         }
     }
 

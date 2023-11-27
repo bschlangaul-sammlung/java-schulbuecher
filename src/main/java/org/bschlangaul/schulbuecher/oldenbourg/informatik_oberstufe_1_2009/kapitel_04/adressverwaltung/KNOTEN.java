@@ -9,12 +9,13 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapi
 class KNOTEN extends LISTENELEMENT
 {
     private DATENELEMENT daten;
+
     private LISTENELEMENT nachfolger;
 
     /**
      * Baut die Referenzen auf
      *
-     * @param d Daten
+     * @param d  Daten
      * @param nf Nachfolgeelement der Liste
      */
     KNOTEN(DATENELEMENT d, LISTENELEMENT nf)
@@ -100,7 +101,7 @@ class KNOTEN extends LISTENELEMENT
     /**
      * überträgt die Datenreferenz in das Feld.
      *
-     * @param feld Das Feld zur Aufnahme der Referenzen
+     * @param feld  Das Feld zur Aufnahme der Referenzen
      * @param index Feldindex für das Element dieses Listenelements
      */
     void Eintragen(DATENELEMENT[] feld, int index)

@@ -37,11 +37,10 @@ class KNOTEN extends LISTENELEMENT
         return this;
     }
 
-
     /**
      * Fügt ein Datenelement vor einem bestimmten anderen Datenelement ein
      *
-     * @param dneu neues Datenelement
+     * @param dneu        neues Datenelement
      * @param d_vergleich gesuchtes Datenelement, vor dem eingefügt werden soll
      * @return Weitergabe des künftigen Nachfolgers
      */
@@ -82,7 +81,8 @@ class KNOTEN extends LISTENELEMENT
     }
 
     /**
-     * Entfernt einen Knoten, der über sein Datenelement identifiziert wird, aus der Liste
+     * Entfernt einen Knoten, der über sein Datenelement identifiziert wird, aus
+     * der Liste
      *
      * @param dvergleich gesuchtes Datenelement
      * @return Weitergabe des künftigen Nachfolgers
@@ -111,7 +111,6 @@ class KNOTEN extends LISTENELEMENT
         return nachfolger.EndeGeben(daten);
     }
 
-
     /**
      * Gibt den letzten Knoten aus und entfernt ihn aus der Liste
      *
@@ -128,11 +127,11 @@ class KNOTEN extends LISTENELEMENT
             nachfolger = nachfolger.EndeEntfernen(d);
             return this;
         }
-
     }
 
     /**
-     * Gibt Information über das Datenelement und den Nachfolger des Knotens aus.
+     * Gibt Information über das Datenelement und den Nachfolger des Knotens
+     * aus.
      */
     void InformationAusgeben()
     {
@@ -141,7 +140,8 @@ class KNOTEN extends LISTENELEMENT
     }
 
     /**
-     * Sucht ein Datenelement, das über seinen Schlüssel identifiziert wird, und gibt es aus.
+     * Sucht ein Datenelement, das über seinen Schlüssel identifiziert wird, und
+     * gibt es aus.
      *
      * @param vergleichswert Schlüssel vom Typ String
      * @return gesuchtes Datenelement
@@ -188,12 +188,12 @@ class KNOTEN extends LISTENELEMENT
         return nachfolger;
     }
 
-
     /**
-     * Sorgt für das NeuPositionieren der Darstellungssymbole des Datenelements und der Nachfolger
+     * Sorgt für das NeuPositionieren der Darstellungssymbole des Datenelements
+     * und der Nachfolger
      *
      * @param knummer Nummer der Kasse
-     * @param pos Position vor der Kasse
+     * @param pos     Position vor der Kasse
      */
     void NeuPositionieren(int knummer, int pos)
     {
@@ -213,5 +213,4 @@ class KNOTEN extends LISTENELEMENT
         azahl = azahl + nachfolger.ArtikelzahlGeben();
         return azahl;
     }
-
 }

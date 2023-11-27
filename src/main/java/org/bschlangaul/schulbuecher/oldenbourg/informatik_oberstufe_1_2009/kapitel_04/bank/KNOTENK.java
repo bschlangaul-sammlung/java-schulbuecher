@@ -9,13 +9,14 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapi
 class KNOTENK extends LISTENELEMENTK
 {
     private LISTENELEMENTK nachfolger;
+
     private KONTO konto;
 
     /**
      * Belegt die Attribute.
      *
      * @param nr Referenz auf den Nachfolger dieses Konotens
-     * @param d Referenz auf das zu verwaltende Datenobjekt
+     * @param d  Referenz auf das zu verwaltende Datenobjekt
      */
     KNOTENK(LISTENELEMENTK nf, KONTO k)
     {
@@ -44,7 +45,8 @@ class KNOTENK extends LISTENELEMENTK
     }
 
     /**
-     * Löscht das angegebene KONTO aus der Liste. Nutzt die Sortierung der Liste aus.
+     * Löscht das angegebene KONTO aus der Liste. Nutzt die Sortierung der Liste
+     * aus.
      *
      * @param k Referenz auf das einzufügende Konto.
      * @return (neues) Nachfolgeelement des Aufrufers.
@@ -90,7 +92,8 @@ class KNOTENK extends LISTENELEMENTK
     /**
      * Zählt die Konten, die der angegebene Kunde besitzt.
      *
-     * @param kunde Referenz auf den Kunde, für den die Konten gezählt werden sollen.
+     * @param kunde Referenz auf den Kunde, für den die Konten gezählt werden
+     *              sollen.
      * @return Anzahl der Mitglieder der Menge.
      */
     int KontosFuerKundeZaehlen(KUNDE kunde)
@@ -108,9 +111,10 @@ class KNOTENK extends LISTENELEMENTK
     /**
      * Trägt die Kontonummern der Konten des angegebenen Kunden in das Feld ein.
      *
-     * @param kunde Referenz auf den Kunden.
+     * @param kunde    Referenz auf den Kunden.
      * @param ergebnis Referenz auf das Feld mit den gefundenen Daten.
-     * @param pos Index, auf dem das nächste Element eingetragen werden soll.
+     * @param pos      Index, auf dem das nächste Element eingetragen werden
+     *                 soll.
      */
     void KontonummernFuerKundeEintragen(KUNDE kunde, int[] ergebnis, int pos)
     {

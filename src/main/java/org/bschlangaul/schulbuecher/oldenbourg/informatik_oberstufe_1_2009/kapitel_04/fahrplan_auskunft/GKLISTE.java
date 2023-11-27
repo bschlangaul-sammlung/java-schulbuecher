@@ -8,7 +8,6 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapi
  */
 class GKLISTE extends LISTE
 {
-
     /**
      * Legt eine leere Liste an.
      */
@@ -18,10 +17,11 @@ class GKLISTE extends LISTE
     }
 
     /**
-     * Sucht den Knoten mit den angegebenen Daten. Nutzt die Sortierung der Liste aus.
+     * Sucht den Knoten mit den angegebenen Daten. Nutzt die Sortierung der
+     * Liste aus.
      *
      * @param bahnhof der zu suchenden Bahnhof
-     * @param linie Nummer der relevanten Linie
+     * @param linie   Nummer der relevanten Linie
      * @return Referenz auf den Knoten oder null
      */
     GKNOTEN Suchen(BAHNHOF bahnhof, int linie)

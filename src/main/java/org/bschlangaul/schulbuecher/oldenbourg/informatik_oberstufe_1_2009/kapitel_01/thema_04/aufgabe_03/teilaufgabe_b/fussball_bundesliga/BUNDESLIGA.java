@@ -59,9 +59,11 @@ class BUNDESLIGA
      *
      * @param mannschaft1_String Name der 1. Mannschaft
      * @param mannschaft2_String Name der 2. Mannschaft
-     * @param sieger hat Wert 1/2, falls Mannschaft 1/2 gewonnen hat, sonst unentschieden.
+     * @param sieger             hat Wert 1/2, falls Mannschaft 1/2 gewonnen
+     *                           hat, sonst unentschieden.
      */
-    void SpielergebnisAufnehmen(String mannschaft1_String, String mannschaft2_String, int sieger)
+    void SpielergebnisAufnehmen(String mannschaft1_String,
+            String mannschaft2_String, int sieger)
     {
         int punkte1, punkte2;
         if (sieger == 1)
@@ -82,20 +84,15 @@ class BUNDESLIGA
                 punkte2 = 1;
             }
         }
-
         MANNSCHAFT mannschaft1, mannschaft2;
         mannschaft1 = (MANNSCHAFT) l.Suchen(mannschaft1_String);
         l.KnotenEntfernen(mannschaft1);
         mannschaft1.SpielergebnisAufnehmen(punkte1);
         l.SortiertEinfuegen(mannschaft1);
-
         mannschaft2 = (MANNSCHAFT) l.Suchen(mannschaft2_String);
         l.KnotenEntfernen(mannschaft2);
         mannschaft2.SpielergebnisAufnehmen(punkte2);
         l.SortiertEinfuegen(mannschaft2);
-
-
-
     }
 
     /**
@@ -103,12 +100,8 @@ class BUNDESLIGA
      *
      * @return Liste als String
      */
-
     String ListeAusgeben()
     {
         return l.InformationAusgeben();
     }
-
-
-
 }

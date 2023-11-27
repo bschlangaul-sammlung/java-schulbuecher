@@ -9,7 +9,9 @@ package org.bschlangaul.schulbuecher.cornelsen.informatik_3_2017.kapitel_04.them
 public class Lauflicht extends SPIEL
 {
     private RECHTECK box;
+
     private KREIS[] lichter;
+
     private String farbe;
 
     /**
@@ -23,7 +25,6 @@ public class Lauflicht extends SPIEL
         this.box.setzeMittelpunkt(0, 0);
         this.box.setzeFarbe("hellgrau");
         this.box.setzeEbenenposition(1);
-
         this.lichter = new KREIS[8];
         for (int i = 0; i < 8; i++)
         {
@@ -32,14 +33,13 @@ public class Lauflicht extends SPIEL
             this.lichter[i].setzeMittelpunkt(-14 + 4 * i, 0);
             this.lichter[i].setzeEbenenposition(2);
         }
-
         this.farbe = "gelb";
     }
 
     /**
      * Schaltet einzelne Lichter des Lauflichts ein oder aus.
      *
-     * @param i Nummer des Lauflichts (0-7)
+     * @param i  Nummer des Lauflichts (0-7)
      * @param an true = an ; false = aus
      */
     public void licht(int i, boolean an)
@@ -65,7 +65,8 @@ public class Lauflicht extends SPIEL
     }
 
     /**
-     * Wartet die angegebene Zeit, bis der naechste Methodenaufruf ausgefuehrt wird.
+     * Wartet die angegebene Zeit, bis der naechste Methodenaufruf ausgefuehrt
+     * wird.
      *
      * @param sekunden Dauer in Sekunden (z.B. 0.05 fuer 5 Hunderstel Sekunden)
      */

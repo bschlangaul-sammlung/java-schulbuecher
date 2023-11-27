@@ -9,13 +9,15 @@ package org.bschlangaul.schulbuecher.isb.handreichung_11.kapitel_02.softwaretech
 class KURSINFO
 {
     private int aktienID;
+
     private double kurs;
+
     private String datum;
 
     /**
      * Initialisiert die Attribute.
      *
-     * @param kurs Kurs der Aktie
+     * @param kurs  Kurs der Aktie
      * @param datum Datum, zu dem der Kurs bestimmt wurde
      */
     KURSINFO(int aktienID, double kurs, String datum)

@@ -12,6 +12,7 @@ public class Hagelkorn extends Niederschlag
 
     public void zeichne()
     {
-        ZeichenFenster.gibFenster().fuelleRechteck((int) x - 5, (int) y - 5, 10, 10, 7);
+        ZeichenFenster.gibFenster().fuelleRechteck((int) x - 5, (int) y - 5, 10,
+                10, 7);
     }
 }

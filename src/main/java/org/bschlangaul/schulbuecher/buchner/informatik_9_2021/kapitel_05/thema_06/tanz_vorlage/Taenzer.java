@@ -5,6 +5,7 @@ import greenfoot.Actor;
 public class Taenzer extends Actor
 {
     int id; // Nummer des Taenzers
+
     int zähler; // zählt die Tanzschritte
 
     void rufeMethode1Auf() // Arbeitsauftrag 1b)
@@ -26,7 +27,8 @@ public class Taenzer extends Actor
         setRotation(mitte); // Methodenaufruf mit diesem Wert
     }
 
-    int berechneMitte(int a, int b) // S109: Methoden mit Rückgabewert deklarieren
+    int berechneMitte(int a, int b) // S109: Methoden mit Rückgabewert
+                                    // deklarieren
     {
         int mittelwert; // Deklaration der lokalen Variablen mittelwert
         mittelwert = (a + b) / 2; // mittelwert bekommt einen Wert zugewiesen
@@ -44,21 +46,18 @@ public class Taenzer extends Actor
     {
         int dx;
         dx = objektX - getX(); // x(anderer) - x(ich)
-
         int dy;
         dy = objektY - getY(); // y(anderer) - y(ich)
-
         int c2;
         c2 = dx * dx + dy * dy; // Pythagoras: c^2 = a^2 + b^2
-
         double distanz;
         distanz = Math.sqrt(c2); // Umformung: c = Wurzel(c^2)
         return distanz;
     }
 
     /**
-     * Der Programmtext ab hier braucht für die Bearbeitung der Arbeitsaufträge und Aufgaben weder
-     * gelesen noch verstanden zu werden.
+     * Der Programmtext ab hier braucht für die Bearbeitung der Arbeitsaufträge
+     * und Aufgaben weder gelesen noch verstanden zu werden.
      */
     Taenzer(int startId)
     {
@@ -69,7 +68,6 @@ public class Taenzer extends Actor
     public void act()
     {
         zähler = zähler + 1;
-
         if (zähler < 5)
         {
             bewegeNachUnten(20);
@@ -87,7 +85,6 @@ public class Taenzer extends Actor
                 bewegeNachUnten(20);
             }
         }
-
         if (zähler >= 20)
         {
             zähler = 0;

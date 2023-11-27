@@ -13,12 +13,19 @@ import java.util.*;
 class PLANANZEIGE extends Canvas
 {
     static final int breite = 400;
+
     static final int hoehe = 500;
+
     private BAHNHOFSLISTE b;
+
     private ArrayList<PLANABSCHNITT> abschnitte;
+
     private int faktorx, faktory;
+
     private int offsetx, offsety;
+
     private BAHNHOF aktBahnhof, altBahnhof, zielBahnhof;
+
     private PLANABSCHNITT aktAbschnitt, altAbschnitt;
 
     /**
@@ -40,7 +47,8 @@ class PLANANZEIGE extends Canvas
         UmrechnungErmittlen();
         setSize(breite, hoehe);
         PlanabschnitteErstellen(a);
-        addMouseListener(new MouseAdapter() {
+        addMouseListener(new MouseAdapter()
+        {
             public void mousePressed(MouseEvent e)
             {
                 PlanMousePressed(e);
@@ -85,18 +93,22 @@ class PLANANZEIGE extends Canvas
      */
     private void PlanMouseReleased(MouseEvent e)
     {
-        if ((aktBahnhof != null) && (aktBahnhof == PointToBahnhof(e.getPoint())))
+        if ((aktBahnhof != null)
+                && (aktBahnhof == PointToBahnhof(e.getPoint())))
         {
             aktAbschnitt = null;
-            // kom. KommandoEintragen (new Kommando (KommandoTyp. gehen, raeume [lastDown].
+            // kom. KommandoEintragen (new Kommando (KommandoTyp. gehen, raeume
+            // [lastDown].
             // nummer));
         }
         else
         {
             aktBahnhof = null;
-            if ((aktAbschnitt != null) && (aktAbschnitt == PointToAbschnitt(e.getPoint())))
+            if ((aktAbschnitt != null)
+                    && (aktAbschnitt == PointToAbschnitt(e.getPoint())))
             {
-                // kom. KommandoEintragen (new Kommando (KommandoTyp. gehen, raeume [lastDown].
+                // kom. KommandoEintragen (new Kommando (KommandoTyp. gehen,
+                // raeume [lastDown].
                 // nummer));
             }
             else

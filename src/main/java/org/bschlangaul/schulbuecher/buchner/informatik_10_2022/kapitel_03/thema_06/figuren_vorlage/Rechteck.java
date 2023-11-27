@@ -11,8 +11,8 @@ import greenfoot.*; // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Rechteck extends Figur
 {
     int laengeA, laengeB;
-    GreenfootImage n;
 
+    GreenfootImage n;
 
     public void act()
     {
@@ -49,5 +49,4 @@ public class Rechteck extends Figur
     {
         return laengeA * laengeB;
     }
-
 }

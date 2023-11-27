@@ -1,8 +1,8 @@
 package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapitel_03.thema_11.aufgabe_04.teilaufgabe_b.graph_matrix;
 
 /**
- * Klasse GRAPH_MATRIX Klasse für einen ungerichteten, gewichteten Graphen Als Datenstruktur wird
- * eine Adjazenzmatrix verwendet
+ * Klasse GRAPH_MATRIX Klasse für einen ungerichteten, gewichteten Graphen Als
+ * Datenstruktur wird eine Adjazenzmatrix verwendet
  *
  * Schulbuch Informatik 1 Oberstufe Oldenbourg Verlag
  *
@@ -10,7 +10,6 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapi
  * @version 1.0
  *
  */
-
 public class GRAPH_MATRIX
 {
     // aktuelle Knotenanzahl
@@ -23,8 +22,8 @@ public class GRAPH_MATRIX
     private int[][] matrix;
 
     /**
-     * Konstruktor für Objekte der Klasse GRAPH_MATRIX Die maximale Anzahl der Knoten wird dabei
-     * festgelegt
+     * Konstruktor für Objekte der Klasse GRAPH_MATRIX Die maximale Anzahl der
+     * Knoten wird dabei festgelegt
      *
      * @param maximaleKnoten Anzahl der maximal möglichen Knoten
      *
@@ -37,10 +36,11 @@ public class GRAPH_MATRIX
     }
 
     /**
-     * Einfügen eines neuen Knoten in den Graphen Wenn die maximale Anzahl an Knoten erreicht wird,
-     * dann erfolgt kein Einfügen
+     * Einfügen eines neuen Knoten in den Graphen Wenn die maximale Anzahl an
+     * Knoten erreicht wird, dann erfolgt kein Einfügen
      *
-     * @param bezeichner Bezeichner des neuen Knotens, der dem Graphen hinzugefügt wird.
+     * @param bezeichner Bezeichner des neuen Knotens, der dem Graphen
+     *                   hinzugefügt wird.
      *
      */
     public void KnotenEinfuegen(String bezeichner)
@@ -60,8 +60,8 @@ public class GRAPH_MATRIX
     }
 
     /**
-     * Gibt die interne Nummer des Knoten Wenn ein Knoten mit diesem Bezeichner nicht bekannt ist
-     * wird -1 zurückgegeben
+     * Gibt die interne Nummer des Knoten Wenn ein Knoten mit diesem Bezeichner
+     * nicht bekannt ist wird -1 zurückgegeben
      *
      * @param bezeichner Bezeichner des Knoten der gesucht wird
      * @return Indexnummer des Knotens im Knotenarray; 0<= x <= anzahl-1 bzw. -1
@@ -70,12 +70,10 @@ public class GRAPH_MATRIX
     private int KnotenNummer(String bezeichner)
     {
         int i, ergeb;
-
         ergeb = -1;
         for (i = 0; (i < anzahlKnoten) && (ergeb == -1); i++)
             if (knoten[i].BezeichnungGeben().equals(bezeichner))
                 ergeb = i;
-
         return ergeb;
     }
 
@@ -95,21 +93,21 @@ public class GRAPH_MATRIX
     }
 
     /**
-     * Einfügen einer Kante in den Graphen Eine Kante ist durch einen Anfangsknoten und einen
-     * Endknoten festgelegt und hat eine Gewichtung
+     * Einfügen einer Kante in den Graphen Eine Kante ist durch einen
+     * Anfangsknoten und einen Endknoten festgelegt und hat eine Gewichtung
      *
-     * @param von Bezeichner des Anfangsknotens
-     * @param nach Bezeichner des Endknotens
+     * @param von        Bezeichner des Anfangsknotens
+     * @param nach       Bezeichner des Endknotens
      * @param gewichtung Gewichtung der Kante als Ganzzahl
      *
      */
     public void KanteEinfuegen(String von, String nach, int gewichtung)
     {
         int vonNummer, nachNummer;
-
         vonNummer = KnotenNummer(von);
         nachNummer = KnotenNummer(nach);
-        if ((vonNummer != -1) && (nachNummer != -1) && (vonNummer != nachNummer))
+        if ((vonNummer != -1) && (nachNummer != -1)
+                && (vonNummer != nachNummer))
         {
             matrix[vonNummer][nachNummer] = gewichtung;
             matrix[nachNummer][vonNummer] = gewichtung;
@@ -117,8 +115,8 @@ public class GRAPH_MATRIX
     }
 
     /**
-     * Gibt die Adjazenzmatrix des Graphen in der Konsole aus Nach Zeilen und Spalten formatiert Als
-     * Spaltenbreite wurde hier 4 Zeichen gewählt.
+     * Gibt die Adjazenzmatrix des Graphen in der Konsole aus Nach Zeilen und
+     * Spalten formatiert Als Spaltenbreite wurde hier 4 Zeichen gewählt.
      *
      */
     public void Ausgeben()
@@ -129,13 +127,13 @@ public class GRAPH_MATRIX
         for (int i = 0; i < anzahlKnoten; i++)
             System.out.print(knoten[i].BezFormatGeben(breite));
         System.out.println();
-
         for (int i = 0; i < anzahlKnoten; i++)
         {
             System.out.print(knoten[i].BezFormatGeben(breite));
             for (int j = 0; j < anzahlKnoten; j++)
                 if (matrix[i][j] != -1)
-                    System.out.print((matrix[i][j] + "   ").substring(0, breite));
+                    System.out
+                            .print((matrix[i][j] + "   ").substring(0, breite));
                 else
                     System.out.print("    ");
             System.out.println();
@@ -154,10 +152,10 @@ public class GRAPH_MATRIX
     }
 
     /**
-     * Gibt die Gewichtung einer Kante Die Kante ist durch einen Anfangsknoten und einen Endknoten
-     * festgelegt
+     * Gibt die Gewichtung einer Kante Die Kante ist durch einen Anfangsknoten
+     * und einen Endknoten festgelegt
      *
-     * @param von Bezeichner des Anfangsknotens
+     * @param von  Bezeichner des Anfangsknotens
      * @param nach Bezeichner des Endknotens
      * @return Gewichtung der Kante
      *
@@ -165,7 +163,6 @@ public class GRAPH_MATRIX
     int KanteGewichtGeben(String von, String nach)
     {
         int vonNummer, nachNummer;
-
         vonNummer = KnotenNummer(von);
         nachNummer = KnotenNummer(nach);
         if ((vonNummer != -1) && (nachNummer != -1))
@@ -173,5 +170,4 @@ public class GRAPH_MATRIX
         else
             return -1;
     }
-
 }

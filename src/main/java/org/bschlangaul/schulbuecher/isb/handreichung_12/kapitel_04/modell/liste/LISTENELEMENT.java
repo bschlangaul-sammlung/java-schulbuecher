@@ -10,13 +10,11 @@ import org.bschlangaul.schulbuecher.isb.handreichung_12.kapitel_04.modell.DATENE
  */
 abstract class LISTENELEMENT
 {
-
     /**
      * Keine Aufgabe, nur zur Dokumentation aufgeführt.
      */
     LISTENELEMENT()
     {
-
     }
 
     /**
@@ -30,7 +28,8 @@ abstract class LISTENELEMENT
     /**
      * Sucht ein Datenelement mit dem in der Referenz angegebenen Schlüssel.
      *
-     * @param schluessel Referenz auf ein Datenelement mit dem zu suchenden Schlüsselwert
+     * @param schluessel Referenz auf ein Datenelement mit dem zu suchenden
+     *                   Schlüsselwert
      * @return das gefundene Datenelement oder null
      */
     abstract DATENELEMENT Suchen(DATENELEMENT schluessel);

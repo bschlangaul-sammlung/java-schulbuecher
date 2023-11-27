@@ -8,24 +8,26 @@ import java.util.Iterator;
  * Eine Art "Universalbehaelter", der Objekte eines Typs halten kann.<BR>
  * <BR>
  *
- * Beim Erzeugen eines Behaelterobjekts muss man angeben, von welchem Typ die aufzubewahrenden
- * Objekte sein werden.<BR>
+ * Beim Erzeugen eines Behaelterobjekts muss man angeben, von welchem Typ die
+ * aufzubewahrenden Objekte sein werden.<BR>
  *
- * Ein Objekt kann nur dann in diesen Behaelter eingefuegt werden, wenn es noch kein gleiches Objekt
- * im Behaelter gibt.<BR>
- * Wann sind zwei Objekte gleich? Diese Frage wird mit Hilfe des Dienstes "equals" beantwortet, den
- * jedes Objekt anbietet.<BR>
+ * Ein Objekt kann nur dann in diesen Behaelter eingefuegt werden, wenn es noch
+ * kein gleiches Objekt im Behaelter gibt.<BR>
+ * Wann sind zwei Objekte gleich? Diese Frage wird mit Hilfe des Dienstes
+ * "equals" beantwortet, den jedes Objekt anbietet.<BR>
  * <BR>
  *
- * Diese Behaelter merkt sich nicht, ob ein Objekt "frueher oder spaeter" als ein anderes eingefuegt
- * wurde. Man kann als Nutzer auch nicht sagen, "wo" man das Objekt nun gerne einfuegen moechte.
+ * Diese Behaelter merkt sich nicht, ob ein Objekt "frueher oder spaeter" als
+ * ein anderes eingefuegt wurde. Man kann als Nutzer auch nicht sagen, "wo" man
+ * das Objekt nun gerne einfuegen moechte.
  *
- * Anmerkung: Das Attribut speicher soll und braucht von Schuelern in der 10.Klasse nicht inspiziert
- * zu werden.
+ * Anmerkung: Das Attribut speicher soll und braucht von Schuelern in der
+ * 10.Klasse nicht inspiziert zu werden.
  *
- * Hinweis: Komplexitaet von Diensten wird in der 10.Klasse nicht thematisiert. Entsprechend war
- * dies bei der Umsetzung der Klasse Behaelter auch kein wichtiges Thema. Diese Klasse soll
- * Interessierten nur prinzipiell zeigen, wie Objekte "bequem" gehalten werden koennten.
+ * Hinweis: Komplexitaet von Diensten wird in der 10.Klasse nicht thematisiert.
+ * Entsprechend war dies bei der Umsetzung der Klasse Behaelter auch kein
+ * wichtiges Thema. Diese Klasse soll Interessierten nur prinzipiell zeigen, wie
+ * Objekte "bequem" gehalten werden koennten.
  *
  * @author Ute Heuer
  * @version 05.08
@@ -36,20 +38,23 @@ public class Behaelter<Typ> implements Iterable<Typ>
 
     /* -----------------------------------Konstruktoren- */
     /**
-     * Ein leerer Behaelter wird erzeugt. Wollen Sie einen Behaelter fuer Worte erzeugen, dann geben
-     * Sie als Wert des Typ-Parameters ein: String . Wollen Sie einen Behaelter fuer ganze Zahlen
-     * erzeugen, dann geben Sie als Wert des Typ-Parameters ein: Integer . Wollen Sie einen
-     * Behaelter fuer Dreiecke erzeugen, dann geben Sie als Wert des Typ-Parameters ein:
-     * org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.einfache_grafik.Dreieck .
+     * Ein leerer Behaelter wird erzeugt. Wollen Sie einen Behaelter fuer Worte
+     * erzeugen, dann geben Sie als Wert des Typ-Parameters ein: String . Wollen
+     * Sie einen Behaelter fuer ganze Zahlen erzeugen, dann geben Sie als Wert
+     * des Typ-Parameters ein: Integer . Wollen Sie einen Behaelter fuer
+     * Dreiecke erzeugen, dann geben Sie als Wert des Typ-Parameters ein:
+     * org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.einfache_grafik.Dreieck
+     * .
      */
     public Behaelter()
-    {}
+    {
+    }
 
     /**
      * nach Kapitel 3 <BR>
-     * Konstruktor zum Umfuellen eines Feldes in einen Behaelter, dabei werden gleiche Objekte nur
-     * einmal in den Behaelter eingefuellt. Es wird ein Behaelter erzeugt, der Elemente eines Typs
-     * enthaelt.
+     * Konstruktor zum Umfuellen eines Feldes in einen Behaelter, dabei werden
+     * gleiche Objekte nur einmal in den Behaelter eingefuellt. Es wird ein
+     * Behaelter erzeugt, der Elemente eines Typs enthaelt.
      *
      * @param elemente ein Feld mit Elementen eines Typs
      */
@@ -63,24 +68,25 @@ public class Behaelter<Typ> implements Iterable<Typ>
 
     /**
      * nach Kapitel 4 <BR>
-     * Erzeugt einen Behaelter, der die Elemente der angegebenen Collection enthaelt. (Einzige in
-     * der 10.Klasse manchmal verwendete Collection ist: ArrayList.) Dabei werden gleiche Objekte
-     * nur einmal in den Behaelter eingefuellt. Die Elemente der Collection muessen alle den
-     * festgelegten Typ haben.
+     * Erzeugt einen Behaelter, der die Elemente der angegebenen Collection
+     * enthaelt. (Einzige in der 10.Klasse manchmal verwendete Collection ist:
+     * ArrayList.) Dabei werden gleiche Objekte nur einmal in den Behaelter
+     * eingefuellt. Die Elemente der Collection muessen alle den festgelegten
+     * Typ haben.
      */
     public Behaelter(Collection<Typ> elemente)
     {
         speicher.addAll(elemente);
     }
-
     /* -----------------------------------Methoden---- */
 
     /**
      * nach Kapitel 4<BR>
      *
-     * @return Liefert eine Kopie des aktuellen Behaelters, die zum Durchlauf verwendet werden kann.
-     *         Dann kann waehrend des Durchlaufs in den aktuellen Behaelter (nicht in die Kopie!)
-     *         etwas hineingesteckt oder herausgenommen werden. So vermeidet man Laufzeitfehler
+     * @return Liefert eine Kopie des aktuellen Behaelters, die zum Durchlauf
+     *         verwendet werden kann. Dann kann waehrend des Durchlaufs in den
+     *         aktuellen Behaelter (nicht in die Kopie!) etwas hineingesteckt
+     *         oder herausgenommen werden. So vermeidet man Laufzeitfehler
      *         (Concurrent Modification Exception)
      */
     public Behaelter<Typ> kopieGeben()
@@ -89,8 +95,8 @@ public class Behaelter<Typ> implements Iterable<Typ>
     }
 
     /**
-     * Dieser Dienst steckt ein Element in den Behaelter hinein, sofern noch kein gleiches darinnen
-     * ist. Engl.: add .
+     * Dieser Dienst steckt ein Element in den Behaelter hinein, sofern noch
+     * kein gleiches darinnen ist. Engl.: add .
      */
     public void hineinstecken(Typ element)
     {
@@ -98,11 +104,12 @@ public class Behaelter<Typ> implements Iterable<Typ>
     }
 
     /**
-     * Dieser Dienst ermoeglicht das "Anschauen" eines Elements aus dem Behaelter. Das "angeschaute"
-     * Element bleibt im Behaelter, es wird nicht entfernt.
+     * Dieser Dienst ermoeglicht das "Anschauen" eines Elements aus dem
+     * Behaelter. Das "angeschaute" Element bleibt im Behaelter, es wird nicht
+     * entfernt.
      *
-     * Wird versucht, ein Element aus einem leeren Behaelter anzuschauen, dann gibt dieser Dienst
-     * einfach null aus.
+     * Wird versucht, ein Element aus einem leeren Behaelter anzuschauen, dann
+     * gibt dieser Dienst einfach null aus.
      */
     public Typ schauen()
     {
@@ -117,8 +124,8 @@ public class Behaelter<Typ> implements Iterable<Typ>
     /**
      * Entnimmt ein Element aus dem Behaelter. Engl.: remove
      *
-     * Aus einem leeren Behaelter kann kein Element entnommen werden, dieser Dienst gibt dann
-     * einfach null aus.
+     * Aus einem leeren Behaelter kann kein Element entnommen werden, dieser
+     * Dienst gibt dann einfach null aus.
      */
     public Typ herausholen()
     {
@@ -133,9 +140,10 @@ public class Behaelter<Typ> implements Iterable<Typ>
     }
 
     /**
-     * Versucht ein Element aus dem Behaelter zu entfernen, welches dem eingegebenen gleicht. Engl.:
-     * remove. Ausgabe: true, wenn das Element drin war und also entfernt werden konnte, ansonsten
-     * false. Anmerkung: Wenn die Kopie eines Behaelters durchlaufen wird, dann kann aus dem
+     * Versucht ein Element aus dem Behaelter zu entfernen, welches dem
+     * eingegebenen gleicht. Engl.: remove. Ausgabe: true, wenn das Element drin
+     * war und also entfernt werden konnte, ansonsten false. Anmerkung: Wenn die
+     * Kopie eines Behaelters durchlaufen wird, dann kann aus dem
      * "Orginalbehaelter" mit diesem Dienst etwas entfernt werden.
      */
     public boolean entfernen(Typ element)
@@ -151,7 +159,8 @@ public class Behaelter<Typ> implements Iterable<Typ>
     }
 
     /**
-     * Berechnet die Anzahl der Elemente im Behaelter. Ausgabe: die Anzahl der Elemente
+     * Berechnet die Anzahl der Elemente im Behaelter. Ausgabe: die Anzahl der
+     * Elemente
      */
     public int anzahlGeben()
     {
@@ -167,9 +176,10 @@ public class Behaelter<Typ> implements Iterable<Typ>
     }
 
     /**
-     * Dieser Dienst liefert Informationen ueber den Inhalt des Behaelters. Experiment: "Holen" Sie
-     * sich die Ausgabe dieses Dienstes auf die Arbeitsleiste Ihrer Umgebung. Vergeben Sie einen
-     * Namen fuer die Ausgabe, sagen wir: string1. Schicken Sie sodann die Anweisung
+     * Dieser Dienst liefert Informationen ueber den Inhalt des Behaelters.
+     * Experiment: "Holen" Sie sich die Ausgabe dieses Dienstes auf die
+     * Arbeitsleiste Ihrer Umgebung. Vergeben Sie einen Namen fuer die Ausgabe,
+     * sagen wir: string1. Schicken Sie sodann die Anweisung
      * System.out.println(string1) via Direkteingabe-Fenster ab.
      */
     public String inhaltsuebersichtGeben()
@@ -178,10 +188,11 @@ public class Behaelter<Typ> implements Iterable<Typ>
     }
 
     /**
-     * Dieser Dienst liefert Informationen ueber den Inhalt des Behaelters. Er traegt den Namen, der
-     * in Java "vorgesehen ist" und nicht "inhaltsuebersichtGeben". Experiment: "Holen" Sie sich die
-     * Ausgabe dieses Dienstes auf die Arbeitsleiste Ihrer Umgebung. Vergeben Sie einen Namen fuer
-     * die Ausgabe, sagen wir: string1. Schicken Sie sodann die Anweisung
+     * Dieser Dienst liefert Informationen ueber den Inhalt des Behaelters. Er
+     * traegt den Namen, der in Java "vorgesehen ist" und nicht
+     * "inhaltsuebersichtGeben". Experiment: "Holen" Sie sich die Ausgabe dieses
+     * Dienstes auf die Arbeitsleiste Ihrer Umgebung. Vergeben Sie einen Namen
+     * fuer die Ausgabe, sagen wir: string1. Schicken Sie sodann die Anweisung
      * System.out.println(string1) via Direkteingabe-Fenster ab.
      */
     public String toString()
@@ -191,8 +202,9 @@ public class Behaelter<Typ> implements Iterable<Typ>
 
     /**
      * Nur fuer Interessierte <BR>
-     * Dieser Dienst fuellt die Elemente aus einem anderen Behaelter in diesen Behaelter hinein,
-     * sofern jeweils noch kein gleiches darinnen ist. Engl.: addAll
+     * Dieser Dienst fuellt die Elemente aus einem anderen Behaelter in diesen
+     * Behaelter hinein, sofern jeweils noch kein gleiches darinnen ist. Engl.:
+     * addAll
      */
     public void hineinstecken(Behaelter<Typ> einzufuellendes)
     {
@@ -203,8 +215,9 @@ public class Behaelter<Typ> implements Iterable<Typ>
     }
 
     /**
-     * Dieser Dienst steckt eine beliebig lange Aufzaehlung von Elementen gleichen Typs in den
-     * Behaelter hinein, sofern jeweils noch kein gleiches darinnen ist.
+     * Dieser Dienst steckt eine beliebig lange Aufzaehlung von Elementen
+     * gleichen Typs in den Behaelter hinein, sofern jeweils noch kein gleiches
+     * darinnen ist.
      */
     public void hineinstecken(Typ... elemente)
     {
@@ -223,12 +236,14 @@ public class Behaelter<Typ> implements Iterable<Typ>
     }
 
     /**
-     * Kann nach Kapitel 2 verwendet werden. Motivation: Es ist sinnvoll festzulegen, wann zwei
-     * Behaelter gleich sind. Hier ist Gleichheit als Inhaltsgleichheit definiert. Zwei Behaelter
-     * sind gleich, wenn sie in ihren Elementen uebereinstimmen.
+     * Kann nach Kapitel 2 verwendet werden. Motivation: Es ist sinnvoll
+     * festzulegen, wann zwei Behaelter gleich sind. Hier ist Gleichheit als
+     * Inhaltsgleichheit definiert. Zwei Behaelter sind gleich, wenn sie in
+     * ihren Elementen uebereinstimmen.
      *
-     * Der Name des Dienstes ist von Java festgelegt. Ab Kapitel 5 kann angesprochen werden, dass
-     * equals der Oberklasse Object ueberschrieben wird.
+     * Der Name des Dienstes ist von Java festgelegt. Ab Kapitel 5 kann
+     * angesprochen werden, dass equals der Oberklasse Object ueberschrieben
+     * wird.
      */
     public boolean equals(Behaelter<Typ> behaelterRechts)
     {

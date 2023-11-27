@@ -8,11 +8,10 @@ import greenfoot.*;
  * @author Wolfgang Riffelmacher
  * @version 2022-09-12
  */
-
 public class Gast extends Actor
 {
-
     private String name;
+
     private boolean zufrieden;
 
     public Gast(String name, boolean zufrieden)
@@ -40,5 +39,4 @@ public class Gast extends Actor
     {
         zufrieden = true;
     }
-
 }

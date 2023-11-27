@@ -3,6 +3,7 @@ package org.bschlangaul.schulbuecher.buchner.informatik_10_2022.kapitel_05.thema
 class Raum
 {
     int nummer;
+
     double groesse;
 
     Raum(int nummer, double groesse)

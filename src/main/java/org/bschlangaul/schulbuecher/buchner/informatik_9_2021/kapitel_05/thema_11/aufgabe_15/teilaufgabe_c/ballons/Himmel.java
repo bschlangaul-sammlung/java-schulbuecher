@@ -7,24 +7,27 @@ import greenfoot.World;
  * Projekt zu Kap. 5.11 Aufgabe 15 <br>
  * Teilaufgaben a), b), c)
  */
-
 public class Himmel extends World
 {
     int anzahl = 0;
 
     public Himmel()
     {
-        super(900, 600, 1); // erzeugt eine Welt aus 900x600 Zellen mit der Kantenlänge 1 Pixel
-        Fadenkreuz fadenkreuz = new Fadenkreuz(this); // erzeugt das Fadenkreuz ...
+        super(900, 600, 1); // erzeugt eine Welt aus 900x600 Zellen mit der
+                            // Kantenlänge 1 Pixel
+        Fadenkreuz fadenkreuz = new Fadenkreuz(this); // erzeugt das Fadenkreuz
+                                                      // ...
         addObject(fadenkreuz, 450, 520); // ... und fügt es ein
         setPaintOrder(Fadenkreuz.class); // Fadenkreuz immer im Vordergrund
         zeigeAnzahl(); // NEU in Aufgabe 15 c)
-        Greenfoot.setSpeed(50); // stellt die Ablaufgeschwindigkeit ein (möglich: 1 ...100)
+        Greenfoot.setSpeed(50); // stellt die Ablaufgeschwindigkeit ein
+                                // (möglich: 1 ...100)
     }
 
     public void act() // wird regelmäßig automatisch aufgerufen
     {
-        erzeugeBallon(); // erzeugt einen neuen Ballon an der Stelle, wo die Maus geklickt wurde
+        erzeugeBallon(); // erzeugt einen neuen Ballon an der Stelle, wo die
+                         // Maus geklickt wurde
     }
 
     void zaehleBallons() // zählt die erzeugten Ballons und zeigt die Anzahl an
@@ -50,15 +53,16 @@ public class Himmel extends World
     }
 
     /*
-     * Der Programmtext ab hier braucht für die Bearbeitung der Arbeitsaufträge und Aufgaben weder
-     * gelesen noch verstanden zu werden.
+     * Der Programmtext ab hier braucht für die Bearbeitung der Arbeitsaufträge
+     * und Aufgaben weder gelesen noch verstanden zu werden.
      */
     void erzeugeBallon()
     {
         if (Greenfoot.mouseClicked(null) == true)
         {
             Ballon meinBallon = new Ballon();
-            addObject(meinBallon, Greenfoot.getMouseInfo().getX(), Greenfoot.getMouseInfo().getY());
+            addObject(meinBallon, Greenfoot.getMouseInfo().getX(),
+                    Greenfoot.getMouseInfo().getY());
             zaehleBallons();
         }
     }

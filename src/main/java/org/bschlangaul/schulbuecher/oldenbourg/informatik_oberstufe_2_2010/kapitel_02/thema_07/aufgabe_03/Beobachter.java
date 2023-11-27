@@ -6,7 +6,6 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_2_2010.kapi
  * @author Albert Wiedeman
  * @version 1.0
  */
-
 interface Beobachter
 {
     /**

@@ -10,10 +10,13 @@ class SPIEL
 {
     /** Stapel, von dem die Mäuse losgelaufen sind */
     private STAPEL ursprungsstapel;
+
     /** Stapel, an dem die Mäuse angekommen sind */
     private STAPEL zielstapel;
+
     /** Stapel für die Mäuse in der Sackgasse */
     private STAPEL sackgassenstapel;
+
     /** Spiel beendet oder nicht */
     private boolean beendet;
 
@@ -43,7 +46,8 @@ class SPIEL
      */
     void Schritt()
     {
-        if ((zielstapel.LaengeGeben() != 0) && (sackgassenstapel.LaengeGeben() != 0))
+        if ((zielstapel.LaengeGeben() != 0)
+                && (sackgassenstapel.LaengeGeben() != 0))
         {
             MAUS mausZiel = (MAUS) zielstapel.AnfangEntfernen();
             MAUS mausSackgasse = (MAUS) sackgassenstapel.AnfangEntfernen();
@@ -66,23 +70,25 @@ class SPIEL
                 if (ursprungsstapel.LaengeGeben() != 0)
                 {
                     mausZiel.SiegeszahlErhoehen();
-                    MAUS mausUrsprung = (MAUS) ursprungsstapel.AnfangEntfernen();
+                    MAUS mausUrsprung = (MAUS) ursprungsstapel
+                            .AnfangEntfernen();
                     mausUrsprung.NiederlagenzahlErhoehen();
                     ursprungsstapel.VorneEinfuegen(mausUrsprung);
                 }
-
             }
         }
         else
         {
-            if ((zielstapel.LaengeGeben() != 0) && (sackgassenstapel.LaengeGeben() == 0))
+            if ((zielstapel.LaengeGeben() != 0)
+                    && (sackgassenstapel.LaengeGeben() == 0))
             {
                 MAUS mausZiel = (MAUS) zielstapel.AnfangEntfernen();
                 sackgassenstapel.VorneEinfuegen(mausZiel);
                 if (ursprungsstapel.LaengeGeben() != 0)
                 {
                     mausZiel.SiegeszahlErhoehen();
-                    MAUS mausUrsprung = (MAUS) ursprungsstapel.AnfangEntfernen();
+                    MAUS mausUrsprung = (MAUS) ursprungsstapel
+                            .AnfangEntfernen();
                     mausUrsprung.NiederlagenzahlErhoehen();
                     ursprungsstapel.VorneEinfuegen(mausUrsprung);
                 }
@@ -91,23 +97,25 @@ class SPIEL
             {
                 if (sackgassenstapel.LaengeGeben() != 0)
                 {
-                    MAUS mausSackgasse = (MAUS) sackgassenstapel.AnfangEntfernen();
+                    MAUS mausSackgasse = (MAUS) sackgassenstapel
+                            .AnfangEntfernen();
                     ursprungsstapel.VorneEinfuegen(mausSackgasse);
                     if (sackgassenstapel.LaengeGeben() != 0)
                     {
                         mausSackgasse.SiegeszahlErhoehen();
-                        mausSackgasse = (MAUS) sackgassenstapel.AnfangEntfernen();
+                        mausSackgasse = (MAUS) sackgassenstapel
+                                .AnfangEntfernen();
                         mausSackgasse.NiederlagenzahlErhoehen();
                         sackgassenstapel.VorneEinfuegen(mausSackgasse);
                     }
                 }
             }
         }
-        if ((zielstapel.LaengeGeben() == 0) && (sackgassenstapel.LaengeGeben() == 0))
+        if ((zielstapel.LaengeGeben() == 0)
+                && (sackgassenstapel.LaengeGeben() == 0))
         {
             beendet = true;
         }
-
     }
 
     /*
@@ -135,10 +143,10 @@ class SPIEL
     }
 
     /**
-     * Prüft, ob der Ursprungsstapel sortiert ist und gibt das Ergebnis aus. Ein unsortierter Stapel
-     * sagt aus, dass es sich um keine gültige Eingangsreihenfolge handelt.
+     * Prüft, ob der Ursprungsstapel sortiert ist und gibt das Ergebnis aus. Ein
+     * unsortierter Stapel sagt aus, dass es sich um keine gültige
+     * Eingangsreihenfolge handelt.
      */
-
     boolean UrsprungsstapelSortiert()
     {
         MAUS oben;
@@ -170,5 +178,4 @@ class SPIEL
     {
         return beendet;
     }
-
 }

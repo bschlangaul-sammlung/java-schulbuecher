@@ -7,7 +7,6 @@ import greenfoot.World;
  *
  * Teilaufgaben a), b), c), d) und e)
  */
-
 public class Grafik extends World
 {
     public Grafik()
@@ -16,24 +15,21 @@ public class Grafik extends World
         erstelleGrafik();
     }
 
-    void erstelleGrafik() // ruft eine Methode auf, die die gewüschten Pixel zeichnet
+    void erstelleGrafik() // ruft eine Methode auf, die die gewüschten Pixel
+                          // zeichnet
     {
         zeichneDiagonale();
-
         // weitere Grafiken
-
         // 9a
         // zeichneLinie(5, 3, 7, false);
-
         // 9b
         // zeichneRechteck(2,1,5,8);
-
         // 9c
         // zeichneSchlangenlinie(7, 4, 15);
-
     }
 
-    void zeichneDiagonale() // färbt einige Pixel so, dass die zu Beginn des Aufgabentextes
+    void zeichneDiagonale() // färbt einige Pixel so, dass die zu Beginn des
+                            // Aufgabentextes
                             // abgedruckte Diagonale sichtbar wird
     {
         int i = 0;
@@ -77,7 +73,6 @@ public class Grafik extends World
             zeichnePixel(x + i, y + hoehe);
             i = i + 1;
         }
-
         while (j <= hoehe)
         {
             zeichnePixel(x, y + j);

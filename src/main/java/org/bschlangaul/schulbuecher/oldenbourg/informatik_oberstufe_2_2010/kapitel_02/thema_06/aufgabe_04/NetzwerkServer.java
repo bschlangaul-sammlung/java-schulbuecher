@@ -6,12 +6,12 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_2_2010.kapi
  * @author Albert Wiedemann
  * @version 1.0
  */
-
 import java.net.*;
 
 class NetzwerkServer
 {
     boolean ende;
+
     ServerAutomat automat;
 
     /**
@@ -36,14 +36,16 @@ class NetzwerkServer
             do
             {
                 Socket anruf = server.accept();
-                System.out.println(
-                                "Neuer Anruf von " + anruf + " auf Port: " + anruf.getLocalPort());
+                System.out.println("Neuer Anruf von " + anruf + " auf Port: "
+                        + anruf.getLocalPort());
                 automat = new ServerAutomat(new Verbindung(anruf));
                 ende = automat.Uebertragen();
                 anruf.close();
-            } while (!ende);
+            }
+            while (!ende);
             server.close();
-        } catch (Exception e)
+        }
+        catch (Exception e)
         {
             System.out.println("Allgemeiner Fehler: " + e);
             e.printStackTrace();

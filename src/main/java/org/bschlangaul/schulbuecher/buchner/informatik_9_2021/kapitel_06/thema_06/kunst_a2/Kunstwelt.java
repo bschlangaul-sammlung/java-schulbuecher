@@ -14,7 +14,6 @@ import java.io.File;
  */
 public class Kunstwelt extends World
 {
-
     public Kunstwelt()
     {
         super(9, 9, 50);
@@ -28,17 +27,14 @@ public class Kunstwelt extends World
         {
             erstelleQuadratAn(i, 0);
         }
-
         for (int j = 1; j < 8; j = j + 1)
         {
             erstelleQuadratAn(8, j);
         }
-
         for (int i = 7; i > 0; i = i - 1)
         {
             erstelleQuadratAn(i, 8);
         }
-
         for (int j = 7; j > 0; j = j - 1)
         {
             erstelleQuadratAn(0, j);
@@ -65,20 +61,21 @@ public class Kunstwelt extends World
             img.setColor(zelle.berechneFarbe());
             int x = zelle.getX();
             int y = zelle.getY();
-            System.out.println("pos: (" + x + "|" + y + "), color: " + zelle.berechneFarbe());
-            img.fillRect(x * getCellSize(), y * getCellSize(), getCellSize(), getCellSize());
+            System.out.println("pos: (" + x + "|" + y + "), color: "
+                    + zelle.berechneFarbe());
+            img.fillRect(x * getCellSize(), y * getCellSize(), getCellSize(),
+                    getCellSize());
         }
-
         try
         {
-            ImageIO.write(img.getAwtImage(), "PNG", new File(dateiname + ".png"));
-        } catch (Exception e)
-        {
-            System.err.println("Bildname '" + dateiname + ".png ist nicht gültig!");
+            ImageIO.write(img.getAwtImage(), "PNG",
+                    new File(dateiname + ".png"));
         }
-
+        catch (Exception e)
+        {
+            System.err.println(
+                    "Bildname '" + dateiname + ".png ist nicht gültig!");
+        }
         // img.getAwtImage()
-
     }
-
 }

@@ -9,8 +9,11 @@ package org.bschlangaul.schulbuecher.isb.handreichung_10.konzept_02.supermarkt.s
 class WARTESCHLANGE
 {
     KUNDE kunde1;
+
     KUNDE kunde2;
+
     int x;
+
     int y;
 
     /**
@@ -72,7 +75,6 @@ class WARTESCHLANGE
      */
     void SchlangeAnordnen()
     {
-
         if (kunde1 != null)
         {
             kunde1.PositionSetzen(x, y);

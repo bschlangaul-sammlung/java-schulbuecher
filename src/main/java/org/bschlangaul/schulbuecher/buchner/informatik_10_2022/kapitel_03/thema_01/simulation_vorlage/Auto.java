@@ -8,12 +8,12 @@ import greenfoot.*;
  * @author Wolfgang Riffelmacher
  * @version 2022-09-12
  */
-
 public class Auto extends Actor
 {
-
     private int gang;
+
     private int ps;
+
     private String farbe;
 
     public Auto(String farbe, int ps)

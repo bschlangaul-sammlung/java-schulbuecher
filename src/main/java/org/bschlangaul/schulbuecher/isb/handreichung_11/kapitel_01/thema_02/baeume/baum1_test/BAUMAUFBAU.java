@@ -1,6 +1,5 @@
 package org.bschlangaul.schulbuecher.isb.handreichung_11.kapitel_01.thema_02.baeume.baum1_test;
 
-
 /**
  * The test class BAUMAUFBAU.
  *
@@ -10,19 +9,27 @@ package org.bschlangaul.schulbuecher.isb.handreichung_11.kapitel_01.thema_02.bae
 public class BAUMAUFBAU extends junit.framework.TestCase
 {
     private KNOTEN knoten4;
+
     private KNOTEN knoten12;
+
     private KNOTEN knoten23;
+
     private KNOTEN knoten33;
+
     private KNOTEN knoten7;
+
     private KNOTEN knoten28;
+
     private KNOTEN knoten18;
+
     private BAUM baum;
 
     /**
      * Default constructor for test class BAUMAUFBAU
      */
     public BAUMAUFBAU()
-    {}
+    {
+    }
 
     /**
      * Sets up the test fixture.
@@ -49,8 +56,8 @@ public class BAUMAUFBAU extends junit.framework.TestCase
      * Called after every test case method.
      */
     protected void tearDown()
-    {}
-
+    {
+    }
 
     public void testTestSuchen()
     {

@@ -14,15 +14,15 @@ public class WOERTERBUCH
     private LISTE woerterbuch;
 
     /**
-     * Konstruktor für Objekte der Klasse WOERTERBUCH, erzeugt ein englischen Wörterbuch mit 15
-     * Einträgen.
+     * Konstruktor für Objekte der Klasse WOERTERBUCH, erzeugt ein englischen
+     * Wörterbuch mit 15 Einträgen.
      */
     public WOERTERBUCH()
     {
         woerterbuch = new LISTE();
         SortiertEinfuegen("cup", "Tasse, Becher");
         SortiertEinfuegen("cube",
-                        "Wuerfel, dritte Potenz, in die dritte Potenz heben, in Wuerfel schneiden");
+                "Wuerfel, dritte Potenz, in die dritte Potenz heben, in Wuerfel schneiden");
         SortiertEinfuegen("crow", "Kraehe, Freudenschrei, frohlocken, kraehen");
         SortiertEinfuegen("crab", "Krabbe, Krebs, Griesgram");
         SortiertEinfuegen("cook", "Koch, kochen");
@@ -36,15 +36,15 @@ public class WOERTERBUCH
         SortiertEinfuegen("can", "Becher, Dose, koennen");
         SortiertEinfuegen("call", "Anruf, Ernennung, anrufen, bezeichnen");
         SortiertEinfuegen("cake", "Kuchen, Platte, backen");
-
     }
 
     /**
-     * SortiertEinfuegen erzeugt ein ein Objekt der Klasse WOERTERBUCHEINTRAG mit den Eingabewerten
-     * und fügt diesen Wörterbucheintrag sortiert in die Liste woerterbuch ein. Es wird verhindert,
-     * dass ein englisches Wort mehrfach im Wörterbuch abgespeichert werden kann.
+     * SortiertEinfuegen erzeugt ein ein Objekt der Klasse WOERTERBUCHEINTRAG
+     * mit den Eingabewerten und fügt diesen Wörterbucheintrag sortiert in die
+     * Liste woerterbuch ein. Es wird verhindert, dass ein englisches Wort
+     * mehrfach im Wörterbuch abgespeichert werden kann.
      *
-     * @param wort englisches Wort
+     * @param wort      englisches Wort
      * @param bedeutung die deutsche(n) Bedeutung(en).
      */
     public void SortiertEinfuegen(String wort, String bedeutung)
@@ -82,11 +82,12 @@ public class WOERTERBUCH
     }
 
     /**
-     * Die Methode BedeutungSetzen ermöglicht es, bei einem englischen Wort die deutsche Bedeutung
-     * zu verändern.
+     * Die Methode BedeutungSetzen ermöglicht es, bei einem englischen Wort die
+     * deutsche Bedeutung zu verändern.
      *
-     * @param gesuchtesWort englisches Wort, dessen Bedeutung verändert werden soll
-     * @param bedeutungNeu neue Bedeutung
+     * @param gesuchtesWort englisches Wort, dessen Bedeutung verändert werden
+     *                      soll
+     * @param bedeutungNeu  neue Bedeutung
      */
     public void BedeutungSetzen(String gesuchtesWort, String bedeutungNeu)
     {
@@ -98,9 +99,7 @@ public class WOERTERBUCH
         }
         else
         {
-
             woerterbucheintrag.BedeutungSetzen(bedeutungNeu);
         }
-
     }
 }

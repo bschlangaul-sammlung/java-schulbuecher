@@ -9,12 +9,13 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapi
 class KNOTEN extends LISTENELEMENT
 {
     private OBJEKTINFO daten;
+
     private LISTENELEMENT nachfolger;
 
     /**
      * Baut die Referenzen auf
      *
-     * @param d Datenelement
+     * @param d  Datenelement
      * @param nf Nachfolgeelement der Liste
      */
     KNOTEN(OBJEKTINFO d, LISTENELEMENT nf)
@@ -64,17 +65,17 @@ class KNOTEN extends LISTENELEMENT
     /**
      * Sucht alle Objekte mit den angegebenen Daten
      *
-     * @param res in deiser Liste werden die Ergebnisse eingetragen
-     * @param land Land, in dem das Objekt liegt
-     * @param art Art des Objekts
+     * @param res     in deiser Liste werden die Ergebnisse eingetragen
+     * @param land    Land, in dem das Objekt liegt
+     * @param art     Art des Objekts
      * @param persmin Platz für mindestens persmin Personen
      * @param persmax Platz für maximal persmax Personen
-     * @param zimmin minimale Zimmeranzahl
-     * @param zimmax maximale Zimmeranzahl
-     * @param aus geforderte Ausstattung
+     * @param zimmin  minimale Zimmeranzahl
+     * @param zimmax  maximale Zimmeranzahl
+     * @param aus     geforderte Ausstattung
      */
-    void ObjekteSuchen(OBJEKTLISTE res, LANDINFO land, String art, int persmin, int persmax,
-                    int zimmin, int zimmax, boolean[] aus)
+    void ObjekteSuchen(OBJEKTLISTE res, LANDINFO land, String art, int persmin,
+            int persmax, int zimmin, int zimmax, boolean[] aus)
     {
         boolean[] ausstattung;
         boolean ok;
@@ -85,16 +86,17 @@ class KNOTEN extends LISTENELEMENT
             ok = ok && (!aus[i] || ausstattung[i]);
         }
         if (((land == null) || (land.IDGeben() == daten.LandNummerGeben()))
-                        && ((art == null) || (art.equals(daten.ArtGeben())))
-                        && ((persmin <= daten.PersonenAnzahlGeben())
-                                        && (daten.PersonenAnzahlGeben() <= persmax))
-                        && ((zimmin <= daten.ZimmerAnzahlGeben())
-                                        && (daten.ZimmerAnzahlGeben() <= zimmax))
-                        && ok)
+                && ((art == null) || (art.equals(daten.ArtGeben())))
+                && ((persmin <= daten.PersonenAnzahlGeben())
+                        && (daten.PersonenAnzahlGeben() <= persmax))
+                && ((zimmin <= daten.ZimmerAnzahlGeben())
+                        && (daten.ZimmerAnzahlGeben() <= zimmax))
+                && ok)
         {
             res.Einfuegen(daten);
         }
-        nachfolger.ObjekteSuchen(res, land, art, persmin, persmax, zimmin, zimmax, aus);
+        nachfolger.ObjekteSuchen(res, land, art, persmin, persmax, zimmin,
+                zimmax, aus);
     }
 
     /**

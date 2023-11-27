@@ -1,6 +1,5 @@
 package org.bschlangaul.schulbuecher.isb.handreichung_12.kapitel_04.modell.dijkstra;
 
-
 /**
  * Allgemeines Element der Knoteninfoliste.
  *
@@ -9,7 +8,6 @@ package org.bschlangaul.schulbuecher.isb.handreichung_12.kapitel_04.modell.dijks
  */
 abstract class LISTENELEMENT
 {
-
     /**
      * Gibt die Knoteninformation des ersten Elements der Liste.
      *
@@ -40,5 +38,4 @@ abstract class LISTENELEMENT
      * @return (neuer) Nachfolger des Vorgängers
      */
     abstract LISTENELEMENT KnotenEntfernen(KNOTENINFO daten);
-
 }

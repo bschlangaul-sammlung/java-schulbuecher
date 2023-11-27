@@ -1,21 +1,22 @@
 package org.bschlangaul.schulbuecher.cornelsen.informatik_3_2017.kapitel_04.thema_03.aufgabe_09.spielwelt_2d;
 
 /**
- * Zellen als Bestandteile der Welt, in der sich die Figuren bewegen können. Jede Zelle hat die
- * Größe 46x46 Pixel. Beachte Ränder um die Zellen, bei der Anordnung in der Welt!
+ * Zellen als Bestandteile der Welt, in der sich die Figuren bewegen können.
+ * Jede Zelle hat die Größe 46x46 Pixel. Beachte Ränder um die Zellen, bei der
+ * Anordnung in der Welt!
  *
  * @author Peter Brichzin
  * @version 1.0
  */
 class Zelle extends Rechteck
 {
-
     /**
-     * Platziert eine Zelle Erzeugt und platziert eine Zelle in der gewünschten Farbe.
+     * Platziert eine Zelle Erzeugt und platziert eine Zelle in der gewünschten
+     * Farbe.
      *
      * @param xLinksOben x-Wert der Ecke links oben der Zelle
      * @param yLinksOben y-Wert der Ecke links oben der Zelle
-     * @param farbeNeu Farbe der Zelle
+     * @param farbeNeu   Farbe der Zelle
      */
     Zelle(int xLinksOben, int yLinksOben, String farbeNeu)
     {

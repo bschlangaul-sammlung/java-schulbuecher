@@ -6,7 +6,6 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapi
  * @author Albert Wiedemann
  * @version 1.0
  */
-
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
@@ -16,20 +15,38 @@ import javax.swing.border.*;
 class OBERFLAECHE implements OBERFLACHENINTERFACE, MELDUNGSBEOBACHTER
 {
     private JFrame fenster;
+
     private JTabbedPane auswahl;
-    private JPanel laenderverwaltung, objektverwaltung, kundenverwaltung, buchungsverwaltung;
+
+    private JPanel laenderverwaltung, objektverwaltung, kundenverwaltung,
+            buchungsverwaltung;
+
     private JLabel status;
+
     private JList laenderListe, buchungsListe;
+
     private JTextField laendername;
-    private JComboBox objektmenu, kundenmenu, objektmenubuchungen, kundenmenubuchungen;
+
+    private JComboBox objektmenu, kundenmenu, objektmenubuchungen,
+            kundenmenubuchungen;
+
     private JLabel objektnummer, kundenbenutzer;
-    private JTextField objektname, objektgroesse, zimmeranzahl, personenanzahl, preis;
+
+    private JTextField objektname, objektgroesse, zimmeranzahl, personenanzahl,
+            preis;
+
     private JTextField kundenname, kundenvorname;
+
     private JPasswordField pass1, pass2;
+
     private JComboBox land, art;
+
     private JCheckBox sperre;
+
     private JCheckBox[] ausstattung;
+
     private JButton buchungLoeschen, reservierungBuchen;
+
     private KONTROLLEURINTERFACE kontrolleur;
 
     /**
@@ -40,21 +57,19 @@ class OBERFLAECHE implements OBERFLACHENINTERFACE, MELDUNGSBEOBACHTER
         JPanel content;
         JPanel panel, panel2;
         JButton button;
-
         kontrolleur = k;
-
         fenster = new JFrame("Objektverwaltung");
         content = (JPanel) fenster.getContentPane();
         content.setLayout(new BorderLayout());
         auswahl = new JTabbedPane();
         content.add(auswahl, BorderLayout.CENTER);
-
         objektverwaltung = new JPanel();
         auswahl.addTab("Objekte bearbeiten", objektverwaltung);
         objektverwaltung.setLayout(new BorderLayout());
         objektmenu = new JComboBox();
         objektverwaltung.add(objektmenu, BorderLayout.NORTH);
-        objektmenu.addActionListener(new ActionListener() {
+        objektmenu.addActionListener(new ActionListener()
+        {
             public void actionPerformed(ActionEvent e)
             {
                 kontrolleur.ObjektAuswaehlen(objektmenu.getSelectedItem());
@@ -85,7 +100,7 @@ class OBERFLAECHE implements OBERFLACHENINTERFACE, MELDUNGSBEOBACHTER
         land = new JComboBox();
         panel.add(land);
         panel.add(new JLabel("Art"));
-        String[] items = {"Haus", "Wohnung"};
+        String[] items = { "Haus", "Wohnung" };
         art = new JComboBox(items);
         panel.add(art);
         panel.add(new JLabel("Preis"));
@@ -115,7 +130,8 @@ class OBERFLAECHE implements OBERFLACHENINTERFACE, MELDUNGSBEOBACHTER
         panel.setLayout(new FlowLayout());
         button = new JButton("Neu");
         panel.add(button);
-        button.addActionListener(new ActionListener() {
+        button.addActionListener(new ActionListener()
+        {
             public void actionPerformed(ActionEvent e)
             {
                 boolean[] aus;
@@ -125,16 +141,18 @@ class OBERFLAECHE implements OBERFLACHENINTERFACE, MELDUNGSBEOBACHTER
                     aus[i] = ausstattung[i].isSelected();
                 }
                 kontrolleur.NeuesObjektAnlegen(objektname.getText(),
-                                Integer.parseInt(objektgroesse.getText()),
-                                Integer.parseInt(zimmeranzahl.getText()),
-                                Integer.parseInt(personenanzahl.getText()), land.getSelectedItem(),
-                                (String) art.getSelectedItem(), Double.parseDouble(preis.getText()),
-                                sperre.isSelected(), aus);
+                        Integer.parseInt(objektgroesse.getText()),
+                        Integer.parseInt(zimmeranzahl.getText()),
+                        Integer.parseInt(personenanzahl.getText()),
+                        land.getSelectedItem(), (String) art.getSelectedItem(),
+                        Double.parseDouble(preis.getText()),
+                        sperre.isSelected(), aus);
             }
         });
         button = new JButton("\u00C4ndern");
         panel.add(button);
-        button.addActionListener(new ActionListener() {
+        button.addActionListener(new ActionListener()
+        {
             public void actionPerformed(ActionEvent e)
             {
                 boolean[] aus;
@@ -143,23 +161,27 @@ class OBERFLAECHE implements OBERFLACHENINTERFACE, MELDUNGSBEOBACHTER
                 {
                     aus[i] = ausstattung[i].isSelected();
                 }
-                kontrolleur.ObjektAendern(Integer.parseInt(objektnummer.getText()),
-                                objektname.getText(), Integer.parseInt(objektgroesse.getText()),
-                                Integer.parseInt(zimmeranzahl.getText()),
-                                Integer.parseInt(personenanzahl.getText()), land.getSelectedItem(),
-                                (String) art.getSelectedItem(), Double.parseDouble(preis.getText()),
-                                sperre.isSelected(), aus);
+                kontrolleur.ObjektAendern(
+                        Integer.parseInt(objektnummer.getText()),
+                        objektname.getText(),
+                        Integer.parseInt(objektgroesse.getText()),
+                        Integer.parseInt(zimmeranzahl.getText()),
+                        Integer.parseInt(personenanzahl.getText()),
+                        land.getSelectedItem(), (String) art.getSelectedItem(),
+                        Double.parseDouble(preis.getText()),
+                        sperre.isSelected(), aus);
             }
         });
         button = new JButton("L\u00F6schen");
         panel.add(button);
-        button.addActionListener(new ActionListener() {
+        button.addActionListener(new ActionListener()
+        {
             public void actionPerformed(ActionEvent e)
             {
-                kontrolleur.ObjektLoeschen(Integer.parseInt(objektnummer.getText()));
+                kontrolleur.ObjektLoeschen(
+                        Integer.parseInt(objektnummer.getText()));
             }
         });
-
         laenderverwaltung = new JPanel();
         auswahl.addTab("L\u00E4nder eintragen", laenderverwaltung);
         laenderverwaltung.setLayout(new GridLayout(1, 2, 10, 10));
@@ -172,19 +194,20 @@ class OBERFLAECHE implements OBERFLACHENINTERFACE, MELDUNGSBEOBACHTER
         panel.add(laendername, BorderLayout.NORTH);
         button = new JButton("Eintragen");
         panel.add(button, BorderLayout.SOUTH);
-        button.addActionListener(new ActionListener() {
+        button.addActionListener(new ActionListener()
+        {
             public void actionPerformed(ActionEvent e)
             {
                 kontrolleur.LandEintragen(laendername.getText());
             }
         });
-
         kundenverwaltung = new JPanel();
         auswahl.addTab("Kunden bearbeiten", kundenverwaltung);
         kundenverwaltung.setLayout(new BorderLayout(1, 10));
         kundenmenu = new JComboBox();
         kundenverwaltung.add(kundenmenu, BorderLayout.NORTH);
-        kundenmenu.addActionListener(new ActionListener() {
+        kundenmenu.addActionListener(new ActionListener()
+        {
             public void actionPerformed(ActionEvent e)
             {
                 kontrolleur.KundeAuswaehlen(kundenmenu.getSelectedItem());
@@ -211,24 +234,28 @@ class OBERFLAECHE implements OBERFLACHENINTERFACE, MELDUNGSBEOBACHTER
         panel.setLayout(new FlowLayout());
         button = new JButton("Neu");
         panel.add(button);
-        button.addActionListener(new ActionListener() {
+        button.addActionListener(new ActionListener()
+        {
             public void actionPerformed(ActionEvent e)
             {
-                kontrolleur.NeuenKundenAnlegen(kundenname.getText(), kundenvorname.getText());
+                kontrolleur.NeuenKundenAnlegen(kundenname.getText(),
+                        kundenvorname.getText());
             }
         });
         button = new JButton("\u00C4ndern");
         panel.add(button);
-        button.addActionListener(new ActionListener() {
+        button.addActionListener(new ActionListener()
+        {
             public void actionPerformed(ActionEvent e)
             {
-                kontrolleur.KundenAendern(kundenbenutzer.getText(), kundenname.getText(),
-                                kundenvorname.getText());
+                kontrolleur.KundenAendern(kundenbenutzer.getText(),
+                        kundenname.getText(), kundenvorname.getText());
             }
         });
         button = new JButton("L\u00F6schen");
         panel.add(button);
-        button.addActionListener(new ActionListener() {
+        button.addActionListener(new ActionListener()
+        {
             public void actionPerformed(ActionEvent e)
             {
                 kontrolleur.KundenLoeschen(kundenbenutzer.getText());
@@ -252,7 +279,8 @@ class OBERFLAECHE implements OBERFLACHENINTERFACE, MELDUNGSBEOBACHTER
         panel.setLayout(new FlowLayout());
         button = new JButton("Passwort setzen");
         panel.add(button);
-        button.addActionListener(new ActionListener() {
+        button.addActionListener(new ActionListener()
+        {
             public void actionPerformed(ActionEvent e)
             {
                 String p = new String(pass1.getPassword());
@@ -262,7 +290,6 @@ class OBERFLAECHE implements OBERFLACHENINTERFACE, MELDUNGSBEOBACHTER
                 }
             }
         });
-
         buchungsverwaltung = new JPanel();
         auswahl.addTab("Buchungen bearbeiten", buchungsverwaltung);
         buchungsverwaltung.setLayout(new BorderLayout());
@@ -271,24 +298,29 @@ class OBERFLAECHE implements OBERFLACHENINTERFACE, MELDUNGSBEOBACHTER
         buchungsverwaltung.add(panel, BorderLayout.NORTH);
         objektmenubuchungen = new JComboBox();
         panel.add(objektmenubuchungen);
-        objektmenubuchungen.addActionListener(new ActionListener() {
+        objektmenubuchungen.addActionListener(new ActionListener()
+        {
             public void actionPerformed(ActionEvent e)
             {
-                kontrolleur.BuchungenFuerObjektHolen(objektmenubuchungen.getSelectedItem());
+                kontrolleur.BuchungenFuerObjektHolen(
+                        objektmenubuchungen.getSelectedItem());
             }
         });
         kundenmenubuchungen = new JComboBox();
         panel.add(kundenmenubuchungen);
-        kundenmenubuchungen.addActionListener(new ActionListener() {
+        kundenmenubuchungen.addActionListener(new ActionListener()
+        {
             public void actionPerformed(ActionEvent e)
             {
-                kontrolleur.BuchungenFuerKundeHolen(kundenmenubuchungen.getSelectedItem());
+                kontrolleur.BuchungenFuerKundeHolen(
+                        kundenmenubuchungen.getSelectedItem());
             }
         });
         buchungsListe = new JList();
         buchungsverwaltung.add(buchungsListe, BorderLayout.CENTER);
         buchungsListe.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-        buchungsListe.addListSelectionListener(new ListSelectionListener() {
+        buchungsListe.addListSelectionListener(new ListSelectionListener()
+        {
             public void valueChanged(ListSelectionEvent e)
             {
                 int index;
@@ -310,23 +342,24 @@ class OBERFLAECHE implements OBERFLACHENINTERFACE, MELDUNGSBEOBACHTER
         buchungsverwaltung.add(panel, BorderLayout.SOUTH);
         buchungLoeschen = new JButton("Buchung l\u00F6schen");
         panel.add(buchungLoeschen);
-        buchungLoeschen.addActionListener(new ActionListener() {
+        buchungLoeschen.addActionListener(new ActionListener()
+        {
             public void actionPerformed(ActionEvent e)
             {
                 kontrolleur.BuchungLoeschen(buchungsListe.getModel()
-                                .getElementAt(buchungsListe.getSelectedIndex()));
+                        .getElementAt(buchungsListe.getSelectedIndex()));
             }
         });
         reservierungBuchen = new JButton("Reservierung buchen");
         panel.add(reservierungBuchen);
-        reservierungBuchen.addActionListener(new ActionListener() {
+        reservierungBuchen.addActionListener(new ActionListener()
+        {
             public void actionPerformed(ActionEvent e)
             {
                 kontrolleur.ReservierungBuchen(buchungsListe.getModel()
-                                .getElementAt(buchungsListe.getSelectedIndex()));
+                        .getElementAt(buchungsListe.getSelectedIndex()));
             }
         });
-
         panel = new JPanel();
         panel.setLayout(new BorderLayout());
         content.add(panel, BorderLayout.SOUTH);
@@ -335,16 +368,19 @@ class OBERFLAECHE implements OBERFLACHENINTERFACE, MELDUNGSBEOBACHTER
         panel.add(status, BorderLayout.CENTER);
         button = new JButton("Benden");
         panel.add(button, BorderLayout.EAST);
-        button.addActionListener(new ActionListener() {
+        button.addActionListener(new ActionListener()
+        {
             public void actionPerformed(ActionEvent e)
             {
                 kontrolleur.Beenden();
             }
         });
-        auswahl.addChangeListener(new ChangeListener() {
+        auswahl.addChangeListener(new ChangeListener()
+        {
             public void stateChanged(ChangeEvent e)
             {
-                kontrolleur.TabAuswaehlen(auswahl.getTitleAt(auswahl.getSelectedIndex()));
+                kontrolleur.TabAuswaehlen(
+                        auswahl.getTitleAt(auswahl.getSelectedIndex()));
             }
         });
         fenster.setSize(600, 500);
@@ -400,19 +436,20 @@ class OBERFLAECHE implements OBERFLACHENINTERFACE, MELDUNGSBEOBACHTER
     /**
      * Besetzt die Anzeigeelemente für ein bestimmtes Objekt.
      *
-     * @param nummer die Objektnummer
-     * @param name Name des Objekts
-     * @param groesse Objektgrö&szlig;e in qm
-     * @param zimmer Anzahl der Zimmer
+     * @param nummer   die Objektnummer
+     * @param name     Name des Objekts
+     * @param groesse  Objektgrö&szlig;e in qm
+     * @param zimmer   Anzahl der Zimmer
      * @param personen Anzahl der Personen
      * @param landinfo Infoobjekt für das Land des Objekts
-     * @param a Art des Objekts
-     * @param p Preis des Objekts
-     * @param sperr Sperrinformation für dieses Objekt
-     * @param aus Feld mit der Ausstattunsinformation
+     * @param a        Art des Objekts
+     * @param p        Preis des Objekts
+     * @param sperr    Sperrinformation für dieses Objekt
+     * @param aus      Feld mit der Ausstattunsinformation
      */
-    public void ObjektInfoSetzen(int nummer, String name, int groesse, int zimmer, int personen,
-                    Object landinfo, String a, double p, boolean sperr, boolean[] aus)
+    public void ObjektInfoSetzen(int nummer, String name, int groesse,
+            int zimmer, int personen, Object landinfo, String a, double p,
+            boolean sperr, boolean[] aus)
     {
         objektnummer.setText("" + nummer);
         objektname.setText(name);
@@ -452,10 +489,11 @@ class OBERFLAECHE implements OBERFLACHENINTERFACE, MELDUNGSBEOBACHTER
      * Besetzt die Anzeigeelemente für einen bestimmten Kunden.
      *
      * @param benutzername der Benutzername des Kunden
-     * @param name Name
-     * @param vorname Vorname
+     * @param name         Name
+     * @param vorname      Vorname
      */
-    public void KundenInfoSetzen(String benutzername, String name, String vorname)
+    public void KundenInfoSetzen(String benutzername, String name,
+            String vorname)
     {
         kundenbenutzer.setText(benutzername);
         kundenname.setText(name);
@@ -487,7 +525,8 @@ class OBERFLAECHE implements OBERFLACHENINTERFACE, MELDUNGSBEOBACHTER
      */
     public void FehlermeldungEmpfangen(String text)
     {
-        JOptionPane.showMessageDialog(null, text, "Fehlermeldung", JOptionPane.ERROR_MESSAGE);
+        JOptionPane.showMessageDialog(null, text, "Fehlermeldung",
+                JOptionPane.ERROR_MESSAGE);
     }
 
     /**

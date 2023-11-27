@@ -6,17 +6,15 @@ import org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.fortge
 import org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.fortgeschrittene_grafik.Text;
 import org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.fortgeschrittene_grafik.interna.Zeichenfenster;
 
-
 /**
- * Die Klasse Kugel definiert eine Kugel mit Beschriftung, die sich auf dem Fliessband befindet, und
- * vom Roboterarm bewegt werden kann.
+ * Die Klasse Kugel definiert eine Kugel mit Beschriftung, die sich auf dem
+ * Fliessband befindet, und vom Roboterarm bewegt werden kann.
  *
  * @author Florian Prager, Ute Heuer, Universität Passau
  * @version 02.2008
  */
 public class Kugel
 {
-
     /**
      * x-Koordinate des Punktes, um den die Kugel gedreht ist.
      */
@@ -38,26 +36,27 @@ public class Kugel
     private int nummer;
 
     /**
-     * Das Attribut kreis haelt die Ellipse, die die Kugel mit Hilfe der einfachenGrafik darstellen
-     * soll.
+     * Das Attribut kreis haelt die Ellipse, die die Kugel mit Hilfe der
+     * einfachenGrafik darstellen soll.
      */
     private Ellipse kreis;
 
     /**
-     * Das Attribt kugelbeschriftung haelt das Text-Objekt, die die Beschriftung mit Hilfe der
-     * einfachen Grafik darstellen soll.
+     * Das Attribt kugelbeschriftung haelt das Text-Objekt, die die Beschriftung
+     * mit Hilfe der einfachen Grafik darstellen soll.
      */
     private Text kugelbeschriftung;
 
     /**
-     * Zeigt an, ob die Repraesentation der Kugel (Kreis mit Text) beim Zeichenfenster angemeldet
-     * ist.
+     * Zeigt an, ob die Repraesentation der Kugel (Kreis mit Text) beim
+     * Zeichenfenster angemeldet ist.
      */
     boolean angemeldet;
 
     /**
-     * Dieser Konstruktor erzeugt eine neue Kugel mit der uebergebenen Nummer an der uebergebenen
-     * x-Koordinate mit einer zufaelligen Farbe. Die Kugel wird angezeigt.
+     * Dieser Konstruktor erzeugt eine neue Kugel mit der uebergebenen Nummer an
+     * der uebergebenen x-Koordinate mit einer zufaelligen Farbe. Die Kugel wird
+     * angezeigt.
      */
     public Kugel(Zeichenfenster fenster, int neueNummer, int neueXPosition)
     {
@@ -66,41 +65,52 @@ public class Kugel
         int zufallszahl = zufall.nextInt(11);
         switch (zufallszahl)
         {
-            case (0):
-                zufallsFarbe = "gelb";
-                break;
-            case (1):
-                zufallsFarbe = "orange";
-                break;
-            case (2):
-                zufallsFarbe = "rot";
-                break;
-            case (3):
-                zufallsFarbe = "pink";
-                break;
-            case (4):
-                zufallsFarbe = "magenta";
-                break;
-            case (5):
-                zufallsFarbe = "cyan";
-                break;
-            case (6):
-                zufallsFarbe = "gruen";
-                break;
-            case (7):
-                zufallsFarbe = "blau";
-                break;
-            case (8):
-                zufallsFarbe = "grau";
-                break;
-            case (9):
-                zufallsFarbe = "schwarz";
-                break;
-            case (10):
-                zufallsFarbe = "weiss";
-                break;
-            default:
-                zufallsFarbe = "grau";
+        case (0):
+            zufallsFarbe = "gelb";
+            break;
+
+        case (1):
+            zufallsFarbe = "orange";
+            break;
+
+        case (2):
+            zufallsFarbe = "rot";
+            break;
+
+        case (3):
+            zufallsFarbe = "pink";
+            break;
+
+        case (4):
+            zufallsFarbe = "magenta";
+            break;
+
+        case (5):
+            zufallsFarbe = "cyan";
+            break;
+
+        case (6):
+            zufallsFarbe = "gruen";
+            break;
+
+        case (7):
+            zufallsFarbe = "blau";
+            break;
+
+        case (8):
+            zufallsFarbe = "grau";
+            break;
+
+        case (9):
+            zufallsFarbe = "schwarz";
+            break;
+
+        case (10):
+            zufallsFarbe = "weiss";
+            break;
+
+        default:
+            zufallsFarbe = "grau";
         }
         nummer = neueNummer;
         farbe = zufallsFarbe;
@@ -108,10 +118,12 @@ public class Kugel
     }
 
     /**
-     * Der Konstruktor erzeugt eine neue Kugel mit der uebergebenen Nummer an der uebergebenen
-     * x-Koordinate und mit der uebergebenen Farbe. Die Kugel wird angezeigt.
+     * Der Konstruktor erzeugt eine neue Kugel mit der uebergebenen Nummer an
+     * der uebergebenen x-Koordinate und mit der uebergebenen Farbe. Die Kugel
+     * wird angezeigt.
      */
-    public Kugel(Zeichenfenster fenster, int neueNummer, int neueXPosition, String neueFarbe)
+    public Kugel(Zeichenfenster fenster, int neueNummer, int neueXPosition,
+            String neueFarbe)
     {
         nummer = neueNummer;
         farbe = neueFarbe;
@@ -119,7 +131,8 @@ public class Kugel
     }
 
     /**
-     * Die Methode positionSetzen setzt die Position der Kugel an die uebergebene Stelle.
+     * Die Methode positionSetzen setzt die Position der Kugel an die
+     * uebergebene Stelle.
      */
     public void positionSetzen(int xPosition, int yPosition)
     {
@@ -217,10 +230,11 @@ public class Kugel
     }
 
     /**
-     * Die Methode repraesentationErzeugen erzeugt die Repraesentation der Kugel, indem sie die
-     * Ellipse und den Text fuer die Beschriftung erzeugt
+     * Die Methode repraesentationErzeugen erzeugt die Repraesentation der
+     * Kugel, indem sie die Ellipse und den Text fuer die Beschriftung erzeugt
      */
-    private void repraesentationErzeugen(Zeichenfenster fenster, int xPos, int yPos)
+    private void repraesentationErzeugen(Zeichenfenster fenster, int xPos,
+            int yPos)
     {
         kreis = new Ellipse(false, fenster);
         kreis.groesseSetzen(30, 30);

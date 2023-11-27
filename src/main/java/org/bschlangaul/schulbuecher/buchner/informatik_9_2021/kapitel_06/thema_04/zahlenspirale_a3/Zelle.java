@@ -9,11 +9,12 @@ import greenfoot.GreenfootImage;
  *
  * Kap. 6.4 Arbeitsauftrag 3 und 4, Aufgabe 1
  */
-
 public class Zelle extends Actor
 {
     int x; // x-Koordinate der Zelle
+
     int y; // y-Koordi1nate der Zelle
+
     int nummer; // Nummer in der Zelle
 
     Zelle(int xNeu, int yNeu, int nummerNeu)
@@ -58,30 +59,26 @@ public class Zelle extends Actor
     {
         return nummer;
     }
-
     // Aufgabe 1
 
-
-    boolean istTeilbarDurch(int a, int b) // liefert true, wenn a durch b teilbar ist
+    boolean istTeilbarDurch(int a, int b) // liefert true, wenn a durch b
+                                          // teilbar ist
     {
         return a % b == 0;
-
     }
 
     /*
-     * Der Programmtext ab hier braucht für die Bearbeitung der Arbeitsaufträge und Aufgaben weder
-     * gelesen noch verstanden zu werden.
+     * Der Programmtext ab hier braucht für die Bearbeitung der Arbeitsaufträge
+     * und Aufgaben weder gelesen noch verstanden zu werden.
      */
     void erstelleBild()
     {
         int cellSize;
         cellSize = getWorld().getCellSize();
-
         GreenfootImage img;
         img = new GreenfootImage(cellSize, cellSize);
         img.setColor(berechneFarbe());
         img.fillRect(0, 0, cellSize, cellSize);
-
         if (cellSize >= 20)
         {
             img.setColor(Color.WHITE);

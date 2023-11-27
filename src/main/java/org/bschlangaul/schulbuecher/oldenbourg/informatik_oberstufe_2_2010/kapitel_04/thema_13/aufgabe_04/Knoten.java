@@ -39,7 +39,6 @@ class Knoten
             Knoten kneu;
             kneu = new Knoten(dneu, this);
             return kneu;
-
         }
         else
         {
@@ -58,7 +57,8 @@ class Knoten
     }
 
     /**
-     * Sucht ein Datenelement, das über seinen Schlüssel identifiziert wird, und gibt es aus.
+     * Sucht ein Datenelement, das über seinen Schlüssel identifiziert wird, und
+     * gibt es aus.
      *
      * @param vergleichswert Schlüssel vom Typ String
      * @return gesuchtes Datenelement
@@ -86,5 +86,4 @@ class Knoten
             }
         }
     }
-
 }

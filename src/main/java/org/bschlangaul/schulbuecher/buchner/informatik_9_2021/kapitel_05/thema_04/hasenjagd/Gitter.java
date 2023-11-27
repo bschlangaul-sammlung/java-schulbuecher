@@ -5,14 +5,12 @@ import greenfoot.Actor;
 /**
  * Klasse Gitter <br>
  * Zeichnet das Gittermuster. <br>
- * Der Programmtext dieser Klasse braucht für die Bearbeitung der Arbeitsaufträge und Aufgaben weder
- * gelesen noch verstanden zu werden.
+ * Der Programmtext dieser Klasse braucht für die Bearbeitung der
+ * Arbeitsaufträge und Aufgaben weder gelesen noch verstanden zu werden.
  */
-
 public class Gitter extends Actor
 {
     public void act()
     {
-
     }
 }

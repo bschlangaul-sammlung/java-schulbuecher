@@ -9,31 +9,34 @@ package org.bschlangaul.schulbuecher.cornelsen.informatik_3_2017.klassen.spielwe
 public class Ereignisbehandlung
 {
     /**
-     * Der Konstruktor meldet den Taktgeber und die Eventlistener bei der Zeichenfläche an.
+     * Der Konstruktor meldet den Taktgeber und die Eventlistener bei der
+     * Zeichenfläche an.
      */
     Ereignisbehandlung()
     {
-        Zeichenfenster.AktionsEmpfängerEintragen(new Zeichenfenster.AktionsEmpfaenger() {
-            public void Ausführen()
-            {
-                TaktImpulsAusführen();
-            }
+        Zeichenfenster.AktionsEmpfängerEintragen(
+                new Zeichenfenster.AktionsEmpfaenger()
+                {
+                    public void Ausführen()
+                    {
+                        TaktImpulsAusführen();
+                    }
 
-            public void Taste(char taste)
-            {
-                TasteGedrückt(taste);
-            }
+                    public void Taste(char taste)
+                    {
+                        TasteGedrückt(taste);
+                    }
 
-            public void SonderTaste(int taste)
-            {
-                SonderTasteGedrückt(taste);
-            }
+                    public void SonderTaste(int taste)
+                    {
+                        SonderTasteGedrückt(taste);
+                    }
 
-            public void Geklickt(int x, int y, int anzahl)
-            {
-                MausGeklickt(x, y, anzahl);
-            }
-        });
+                    public void Geklickt(int x, int y, int anzahl)
+                    {
+                        MausGeklickt(x, y, anzahl);
+                    }
+                });
     }
 
     /**
@@ -97,8 +100,8 @@ public class Ereignisbehandlung
      * Die eigentliche Aktionsmethode für einen Mausklick. <br>
      * Muss bei Bedarf von einer Unterklasse überschrieben werden.
      *
-     * @param x x-Position des Mausklicks
-     * @param y y-Position des Mausklicks
+     * @param x      x-Position des Mausklicks
+     * @param y      y-Position des Mausklicks
      * @param anzahl Anzahl der aufeinanderfolgenden Mausklicks
      */
     void MausGeklickt(int x, int y, int anzahl)

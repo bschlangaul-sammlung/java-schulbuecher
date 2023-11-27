@@ -12,11 +12,17 @@ import java.text.*;
 class KONTROLLEUR implements KONTROLLEURINTERFACE
 {
     private OBERFLACHENINTERFACE oberflaeche;
+
     private DATENBANKVERBINDUNG verb;
+
     private KUNDENINFO kunde;
+
     private OBJEKTLISTE alleObjekte;
+
     private LANDINFO keines;
+
     private LANDINFO[] laender;
+
     private SimpleDateFormat ausgabeKonvertierung;
 
     /**
@@ -56,8 +62,9 @@ class KONTROLLEUR implements KONTROLLEURINTERFACE
             if (pass.equals(kunde.PasswortGeben()))
             {
                 oberflaeche.ReservierungslisteSetzen(
-                                verb.ReservierungenFuerBenutzerHolen(kunde.IDGeben()));
-                oberflaeche.StatusSetzen(OBERFLACHENINTERFACE.Status.auswaehlen);
+                        verb.ReservierungenFuerBenutzerHolen(kunde.IDGeben()));
+                oberflaeche
+                        .StatusSetzen(OBERFLACHENINTERFACE.Status.auswaehlen);
             }
             else
             {
@@ -74,18 +81,18 @@ class KONTROLLEUR implements KONTROLLEURINTERFACE
     /**
      * Sucht alle Objekte mit den angegebenen Daten
      *
-     * @param land Land, in dem das Objekt liegt
-     * @param art Art des Objekts
+     * @param land    Land, in dem das Objekt liegt
+     * @param art     Art des Objekts
      * @param persmin Platz für mindestens persmin Personen
      * @param persmax Platz für maximal persmax Personen
-     * @param zimmin minimale Zimmeranzahl
-     * @param zimmax maximale Zimmeranzahl
-     * @param aus geforderte Ausstattung
-     * @param start Beginn des Anzeigezeitraums
-     * @param ende Ende des Anzeigezeitraums
+     * @param zimmin  minimale Zimmeranzahl
+     * @param zimmax  maximale Zimmeranzahl
+     * @param aus     geforderte Ausstattung
+     * @param start   Beginn des Anzeigezeitraums
+     * @param ende    Ende des Anzeigezeitraums
      */
-    public void ObjekteSuchen(Object land, String art, int persmin, int persmax, int zimmin,
-                    int zimmax, boolean[] aus, Date start, Date ende)
+    public void ObjekteSuchen(Object land, String art, int persmin, int persmax,
+            int zimmin, int zimmax, boolean[] aus, Date start, Date ende)
     {
         OBJEKTLISTE res;
         res = new OBJEKTLISTE();
@@ -97,7 +104,8 @@ class KONTROLLEUR implements KONTROLLEURINTERFACE
         {
             art = null;
         }
-        alleObjekte.ObjekteSuchen(res, (LANDINFO) land, art, persmin, persmax, zimmin, zimmax, aus);
+        alleObjekte.ObjekteSuchen(res, (LANDINFO) land, art, persmin, persmax,
+                zimmin, zimmax, aus);
         oberflaeche.AuswahllisteSetzen(res.AlsFeldAusgeben());
     }
 
@@ -123,8 +131,8 @@ class KONTROLLEUR implements KONTROLLEURINTERFACE
      * Meldet die Selektion eines Objekts aus der Auswahlliste
      *
      * @param objekt das gewählte Objekt
-     * @param start Startdatum des Interessezeitraums
-     * @param ende Endedatum des Interessezeitraums
+     * @param start  Startdatum des Interessezeitraums
+     * @param ende   Endedatum des Interessezeitraums
      */
     public void ObjektAnzeigen(Object objekt, Date start, Date ende)
     {
@@ -135,7 +143,8 @@ class KONTROLLEUR implements KONTROLLEURINTERFACE
         o = (OBJEKTINFO) objekt;
         if (o != null)
         {
-            reservierungen = verb.ReservierungenHolen(o.NummerGeben(), start, ende);
+            reservierungen = verb.ReservierungenHolen(o.NummerGeben(), start,
+                    ende);
             reserviert = "keine Reservierungen";
             erster = true;
             for (RESERVIERUNGSINFO r : reservierungen)
@@ -149,17 +158,21 @@ class KONTROLLEUR implements KONTROLLEURINTERFACE
                 {
                     reserviert = reserviert + "; ";
                 }
-                reserviert = reserviert + ausgabeKonvertierung.format(r.StartDatumGeben()) + " bis "
-                                + ausgabeKonvertierung.format(r.EndeDatumGeben());
+                reserviert = reserviert
+                        + ausgabeKonvertierung.format(r.StartDatumGeben())
+                        + " bis "
+                        + ausgabeKonvertierung.format(r.EndeDatumGeben());
             }
             oberflaeche.ObjektinfoSetzen(
-                            o.NameGeben() + " (" + o.ArtGeben() + ") in "
-                                            + LandSuchen(o.LandNummerGeben()) + " Wochenpreis: "
-                                            + o.PreisGeben() + "Û",
-                            "" + o.GroesseGeben() + "qm verteilt auf " + o.ZimmerAnzahlGeben()
-                                            + " Zimmer f\u00FCr maximal " + o.PersonenAnzahlGeben()
-                                            + " Personen",
-                            "Ausstattung: " + o.AusstattungenAlsTextGeben(), reserviert);
+                    o.NameGeben() + " (" + o.ArtGeben() + ") in "
+                            + LandSuchen(o.LandNummerGeben()) + " Wochenpreis: "
+                            + o.PreisGeben() + "Û",
+                    "" + o.GroesseGeben() + "qm verteilt auf "
+                            + o.ZimmerAnzahlGeben()
+                            + " Zimmer f\u00FCr maximal "
+                            + o.PersonenAnzahlGeben() + " Personen",
+                    "Ausstattung: " + o.AusstattungenAlsTextGeben(),
+                    reserviert);
         }
     }
 
@@ -167,21 +180,22 @@ class KONTROLLEUR implements KONTROLLEURINTERFACE
      * Reserviert das angegebene Objekt im angegebenen Zeitraum (wenn frei);
      *
      * @param objekt das gewählte Objekt
-     * @param start Startdatum des Interessezeitraums
-     * @param ende Endedatum des Interessezeitraums
+     * @param start  Startdatum des Interessezeitraums
+     * @param ende   Endedatum des Interessezeitraums
      */
     public void ObjektReservieren(Object objekt, Date start, Date ende)
     {
-        if (verb.Reservieren(((OBJEKTINFO) objekt).NummerGeben(), kunde.IDGeben(), start, ende))
+        if (verb.Reservieren(((OBJEKTINFO) objekt).NummerGeben(),
+                kunde.IDGeben(), start, ende))
         {
             oberflaeche.StatuszeileSetzen("Objekt erfolgreich reserviert");
         }
         else
         {
-            oberflaeche.StatuszeileSetzen("Das Objekt konnte nicht reserviert werden");
+            oberflaeche.StatuszeileSetzen(
+                    "Das Objekt konnte nicht reserviert werden");
         }
     }
-
 
     /**
      * Bucht die angegebene Reservierung fest
@@ -190,8 +204,10 @@ class KONTROLLEUR implements KONTROLLEURINTERFACE
      */
     public void ObjektBuchen(Object reservierung)
     {
-        verb.ReservierungBuchen(((RESERVIERUNGSINFO) reservierung).NummerGeben());
-        oberflaeche.ReservierungslisteSetzen(verb.ReservierungenFuerBenutzerHolen(kunde.IDGeben()));
+        verb.ReservierungBuchen(
+                ((RESERVIERUNGSINFO) reservierung).NummerGeben());
+        oberflaeche.ReservierungslisteSetzen(
+                verb.ReservierungenFuerBenutzerHolen(kunde.IDGeben()));
     }
 
     /**
@@ -201,8 +217,10 @@ class KONTROLLEUR implements KONTROLLEURINTERFACE
      */
     public void ReservierungLoeschen(Object reservierung)
     {
-        verb.ReservierungLoeschen(((RESERVIERUNGSINFO) reservierung).NummerGeben());
-        oberflaeche.ReservierungslisteSetzen(verb.ReservierungenFuerBenutzerHolen(kunde.IDGeben()));
+        verb.ReservierungLoeschen(
+                ((RESERVIERUNGSINFO) reservierung).NummerGeben());
+        oberflaeche.ReservierungslisteSetzen(
+                verb.ReservierungenFuerBenutzerHolen(kunde.IDGeben()));
     }
 
     /**

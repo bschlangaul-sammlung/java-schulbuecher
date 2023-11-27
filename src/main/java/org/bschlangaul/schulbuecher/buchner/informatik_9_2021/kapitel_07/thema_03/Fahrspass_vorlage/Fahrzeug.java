@@ -7,12 +7,10 @@ import greenfoot.Actor;
  *
  * Kap. 7.3 Arbeitsauftrag 3, Aufgabe 1
  */
-
 public class Fahrzeug extends Actor
 {
     Fahrzeug()
     {
-
     }
 
     public void act()
@@ -22,6 +20,5 @@ public class Fahrzeug extends Actor
 
     void fahre()
     {
-
     }
 }

@@ -10,33 +10,43 @@ import java.awt.event.*;
  * @version 1.0 vom 17.01.2009
  * @author
  */
-
 class FENSTER extends Frame
 {
     // Anfang Attribute
     private Choice choice1 = new Choice();
+
     private Label label1 = new Label();
+
     private Label label2 = new Label();
+
     private Button button1 = new Button();
+
     private Canvas canvas1 = new Canvas();
+
     private Canvas canvas2 = new Canvas();
+
     private Canvas canvas3 = new Canvas();
+
     private Canvas canvas4 = new Canvas();
+
     private Canvas canvas5 = new Canvas();
+
     private static FENSTER f = null;
+
     private static Panel cp = new Panel(null);
+
     private SPIEL s;
 
-
-
     /**
-     * Konstruktor Initialisiert und positioniert die Komponenten. Legt Ereignisbehandlung fest.
+     * Konstruktor Initialisiert und positioniert die Komponenten. Legt
+     * Ereignisbehandlung fest.
      */
     private FENSTER()
     {
         // Frame-Initialisierung
         super("T\u00FCrme von Hanoi");
-        addWindowListener(new WindowAdapter() {
+        addWindowListener(new WindowAdapter()
+        {
             public void windowClosing(WindowEvent evt)
             {
                 System.exit(0);
@@ -71,7 +81,8 @@ class FENSTER extends Frame
         cp.add(label2);
         button1.setBounds(256, 248, 89, 25);
         button1.setLabel("Starten");
-        button1.addActionListener(new ActionListener() {
+        button1.addActionListener(new ActionListener()
+        {
             public void actionPerformed(ActionEvent evt)
             {
                 if (s != null)
@@ -82,7 +93,6 @@ class FENSTER extends Frame
             }
         });
         cp.add(button1);
-
         canvas1.setBounds(40, 200, 300, 10);
         canvas1.setBackground(Color.GRAY);
         cp.add(canvas1);
@@ -98,7 +108,6 @@ class FENSTER extends Frame
         canvas5.setBackground(Color.GRAY);
         cp.add(canvas5);
         // Ende Komponenten
-
         setResizable(false);
         setVisible(true);
     }
@@ -116,7 +125,4 @@ class FENSTER extends Frame
         }
         return cp;
     }
-
-
-
 }

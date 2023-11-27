@@ -12,6 +12,7 @@ import org.bschlangaul.schulbuecher.isb.handreichung_10.karol.KarolWelt;
 class Arbeit
 {
     KarolWelt welt;
+
     Karol karol;
 
     /**

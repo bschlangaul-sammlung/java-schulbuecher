@@ -1,23 +1,28 @@
 package org.bschlangaul.schulbuecher.isb.handreichung_12.kapitel_02.projekt_06.platzbuchung;
 
-
 import java.net.*;
 import java.io.*;
 
 /**
  * Serverimplementierung, Auslagerung der Clientprozesse in einen Thread<br/>
  * Lösung für die Aufgabe 2 des Kapitels 2.3.3<br/>
- * Der Zugriff auf die Ressource plaetzevorhanden ist <b>nicht synchronisiert</b>!
+ * Der Zugriff auf die Ressource plaetzevorhanden ist <b>nicht
+ * synchronisiert</b>!
  *
  * @author ISB-Arbeitskreis, Umsetzungshilfen Informatik 12
  * @version 1.0
  */
 public class SERVER4
 {
-    /** bidirektionale Schnittstelle zur Netzwerkprotokoll-Implementierung des Servers */
+    /**
+     * bidirektionale Schnittstelle zur Netzwerkprotokoll-Implementierung des
+     * Servers
+     */
     private ServerSocket serverSocket = null;
+
     /** Portnummer des Ports, auf dem die Verbindungen etabliert sind */
     private int port;
+
     /** speichert die aktuelle Anzahl der noch vorhandenen Plätze */
     private int plaetzevorhanden = 3;
 
@@ -25,13 +30,13 @@ public class SERVER4
      * Konstruktor des Servers
      *
      * @exception IOException eine Ausnahme tritt auf falls:<br/>
-     *            - der Server nicht gestartet werden kann (weil beispielsweise der Port nicht frei
-     *            ist)<br/>
-     *            - die Clientverbindung gestört bzw. unterbrochen wurde.
+     *                        - der Server nicht gestartet werden kann (weil
+     *                        beispielsweise der Port nicht frei ist)<br/>
+     *                        - die Clientverbindung gestört bzw. unterbrochen
+     *                        wurde.
      */
     public SERVER4() throws IOException
     {
-
         ServerStarten();
         while (true)
         {// wartet immer auf neue Clientverbindungen
@@ -45,7 +50,8 @@ public class SERVER4
     private void AufNeuenClientWarten() throws IOException
     {
         System.out.println("warte auf Client, hoere auf Port " + port);
-        Socket clientSocket = serverSocket.accept(); // warten auf die Verbindung
+        Socket clientSocket = serverSocket.accept(); // warten auf die
+                                                     // Verbindung
         CLIENTPROZESS2 clientprozess = new CLIENTPROZESS2(clientSocket, this);
         clientprozess.start();
         System.out.println("Clientprozess gestartet...");
@@ -65,7 +71,8 @@ public class SERVER4
      * die angegebene Anzahl an Plätzen buchen
      *
      * @param anzahl, die Anzahl der zu buchenden Plätze
-     * @return gibt false zurück, falls die Buchung aus Platzmangel nicht durchgeführt werden konnte
+     * @return gibt false zurück, falls die Buchung aus Platzmangel nicht
+     *         durchgeführt werden konnte
      */
     public boolean PlaetzeBuchen(int anzahl)
     {
@@ -86,9 +93,9 @@ public class SERVER4
      */
     private void ServerStarten() throws IOException
     {
-
         System.out.println("Port eingeben: ");
-        BufferedReader tastatur = new BufferedReader(new InputStreamReader(System.in));
+        BufferedReader tastatur = new BufferedReader(
+                new InputStreamReader(System.in));
         // Server Socket erzeugen
         port = Integer.parseInt(tastatur.readLine());
         serverSocket = new ServerSocket(port);
@@ -105,7 +112,8 @@ public class SERVER4
         try
         {
             new SERVER4();
-        } catch (Exception e)
+        }
+        catch (Exception e)
         {
             System.err.println("Fehler in der Serververabeitung.");
             System.exit(1);

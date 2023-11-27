@@ -8,7 +8,6 @@ package org.bschlangaul.schulbuecher.isb.handreichung_11.kapitel_03.anwendungsor
  */
 abstract class BAUMELEMENT
 {
-
     /**
      * Der Konstruktor ist aus Dokumentationsgründen vorhanden
      */
@@ -27,7 +26,8 @@ abstract class BAUMELEMENT
     abstract DATENELEMENT Suchen(DATENELEMENT wert);
 
     /**
-     * Fügt ein neues Datenelement in den Baum ein. Der Wert darf noch nicht vorkommen
+     * Fügt ein neues Datenelement in den Baum ein. Der Wert darf noch nicht
+     * vorkommen
      *
      * @param wert Referenz auf das einzufügende Datenelement
      */

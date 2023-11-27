@@ -2,9 +2,9 @@ package org.bschlangaul.schulbuecher.isb.handreichung_11.kapitel_03.anwendungsor
 
 abstract class LISTENELEMENT
 {
-
     LISTENELEMENT()
-    {}
+    {
+    }
 
     abstract LISTENELEMENT NachfolgerGeben();
 
@@ -19,5 +19,4 @@ abstract class LISTENELEMENT
     abstract int AnzahlGeben();
 
     abstract void AlleAusgeben();
-
 }

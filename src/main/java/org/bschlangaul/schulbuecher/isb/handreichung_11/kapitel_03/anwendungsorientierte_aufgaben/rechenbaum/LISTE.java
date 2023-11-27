@@ -20,10 +20,8 @@ class LISTE
     BAUM AnfangEntfernen()
     {
         BAUM entfernt;
-
         entfernt = anfang.DatenGeben();
         anfang = anfang.NachfolgerGeben();
-
         return entfernt;
     }
 }

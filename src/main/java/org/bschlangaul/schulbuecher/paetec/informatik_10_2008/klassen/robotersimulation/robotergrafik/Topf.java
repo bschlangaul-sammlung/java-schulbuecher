@@ -5,14 +5,14 @@ import org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.fortge
 import org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.fortgeschrittene_grafik.interna.Zeichenfenster;
 
 /**
- * Die Klasse Topf definiert die Funktion und Repraesentation eines Topfes dieser Simulation.
+ * Die Klasse Topf definiert die Funktion und Repraesentation eines Topfes
+ * dieser Simulation.
  *
  * @author Florian Prager, Ute Heuer, Universität Passau
  * @version 02.2008
  */
 public class Topf
 {
-
     /**
      * haelt die xKoordinate des Topfes.
      */
@@ -24,13 +24,14 @@ public class Topf
     private double breite;
 
     /**
-     * Das Attribut anzahlKugeln haelt die Anzahl der Kugeln, die sich in dem Topf befinden und die
-     * angezeigt werden.
+     * Das Attribut anzahlKugeln haelt die Anzahl der Kugeln, die sich in dem
+     * Topf befinden und die angezeigt werden.
      */
     private int anzahlKugeln;
 
     /**
-     * Das Attribut beschriftung haelt das Text-Objekt, das die Anzahl der Kugeln im Topf anzeigt.
+     * Das Attribut beschriftung haelt das Text-Objekt, das die Anzahl der
+     * Kugeln im Topf anzeigt.
      */
     Text beschriftung;
 
@@ -40,8 +41,9 @@ public class Topf
     Zeichenfenster zeichenfenster;
 
     /**
-     * Der Konstruktor der Klasse Topf erzeugt einen neuen Topf an der uebergebenen xKoordiante und
-     * mit der durch die topfnummer definierten Farbe.
+     * Der Konstruktor der Klasse Topf erzeugt einen neuen Topf an der
+     * uebergebenen xKoordiante und mit der durch die topfnummer definierten
+     * Farbe.
      */
     public Topf(Zeichenfenster fenster, int neueXPosition, String topfID)
     {
@@ -54,10 +56,11 @@ public class Topf
     }
 
     /**
-     * Die Methode hineinfallen wird aufgerufen, wenn eine Kugel von einer Position mit der
-     * x-Koordinate xKomponente losgelassen wird. Die Methode prueft, ob xKomponente innerhalb des
-     * linken und des rechten Randes des Topfes liegt, und erhoeht in diesem Fall den Wert des
-     * Attributs anzahlKugeln um 1.
+     * Die Methode hineinfallen wird aufgerufen, wenn eine Kugel von einer
+     * Position mit der x-Koordinate xKomponente losgelassen wird. Die Methode
+     * prueft, ob xKomponente innerhalb des linken und des rechten Randes des
+     * Topfes liegt, und erhoeht in diesem Fall den Wert des Attributs
+     * anzahlKugeln um 1.
      */
     public void hineinfallen(int xKomponente)
     {
@@ -70,8 +73,8 @@ public class Topf
     }
 
     /**
-     * Die Methode topfInitialisieren initialisiert den Topf mit einem passenden Bild, an passender
-     * Stelle. Dies wird durch den Parameter topfID bestimmt.
+     * Die Methode topfInitialisieren initialisiert den Topf mit einem passenden
+     * Bild, an passender Stelle. Dies wird durch den Parameter topfID bestimmt.
      */
     private void topfInitialisieren(String topfID)
     {
@@ -90,8 +93,8 @@ public class Topf
     }
 
     /**
-     * Initialisiert die Beschriftung des Topfes. Es ist eine Zahl, die ueber die Anzahl der Kugeln
-     * im Topf informiert.
+     * Initialisiert die Beschriftung des Topfes. Es ist eine Zahl, die ueber
+     * die Anzahl der Kugeln im Topf informiert.
      */
     private void beschriftungErzeugen()
     {

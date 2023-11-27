@@ -2,10 +2,10 @@ package org.bschlangaul.schulbuecher.buchner.informatik_10_2022.kapitel_03.thema
 
 import greenfoot.*; // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
-
 public class Figuren2 extends Actor
 {
     Figur f1;
+
     int ecken;
 
     public void act()

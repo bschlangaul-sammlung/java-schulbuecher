@@ -16,7 +16,8 @@ public class Entnahmesensor extends Sensor
     private Kaffeeautomat automat;
 
     /**
-     * Erzeugt ein neues Entnahmesensor. Wird beim Klick auf "Muenze einwerfen" aufgerufen
+     * Erzeugt ein neues Entnahmesensor. Wird beim Klick auf "Muenze einwerfen"
+     * aufgerufen
      */
     public Entnahmesensor(Kaffeeautomat aktuellerAutomat)
     {

@@ -5,7 +5,6 @@ package org.bschlangaul.schulbuecher.buchner.informatik_9_2021.kapitel_07.thema_
  *
  * Kap. 7.1 Arbeitsauftrag 2
  */
-
 class Eisbaer extends Tier
 {
     Eisbaer()

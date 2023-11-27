@@ -11,7 +11,6 @@ import java.io.*;
  */
 class HttpLeser
 {
-
     /**
      * Fordert die Seite an und gibt sie ins Terminalfenster aus.
      *
@@ -24,11 +23,11 @@ class HttpLeser
         BufferedReader in;
         PrintWriter out;
         String zeile;
-
         try
         {
             socket = new Socket(host, 80);
-            in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+            in = new BufferedReader(
+                    new InputStreamReader(socket.getInputStream()));
             out = new PrintWriter(socket.getOutputStream(), false);
             out.println("GET " + pfad + " HTTP/1.1");
             out.println("Host: " + host);
@@ -40,11 +39,13 @@ class HttpLeser
                 if (zeile == null)
                     break;
                 System.out.println(zeile);
-            } while (true);
+            }
+            while (true);
             in.close();
             out.close();
             socket.close();
-        } catch (Exception e)
+        }
+        catch (Exception e)
         {
             e.printStackTrace();
         }
@@ -54,5 +55,4 @@ class HttpLeser
     {
         new HttpLeser().fordereAn("example.com", "/");
     }
-
 }

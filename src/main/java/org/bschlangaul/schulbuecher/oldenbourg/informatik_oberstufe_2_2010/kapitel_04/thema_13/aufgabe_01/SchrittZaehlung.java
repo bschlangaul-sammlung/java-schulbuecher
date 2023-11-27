@@ -8,7 +8,6 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_2_2010.kapi
  */
 public class SchrittZaehlung
 {
-
     /**
      * Methode zur Berechnung des ggT
      *
@@ -35,6 +34,7 @@ public class SchrittZaehlung
         }
         i++;
         System.out.println("Der ggT ist " + zahl_1);
-        System.out.println("Zur Berechnung waren " + i + " Schritte erforderlich");
+        System.out.println(
+                "Zur Berechnung waren " + i + " Schritte erforderlich");
     }
 }

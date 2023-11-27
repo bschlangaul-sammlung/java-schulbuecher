@@ -33,7 +33,7 @@ interface OBERFLACHENINTERFACE
     /**
      * Besetzt das Auswahlmenü mit den Länderdaten
      *
-     * @param daten Feld mit den Länderinformationen
+     * @param daten  Feld mit den Länderinformationen
      * @param keines Symbol für "keine Angabe"
      */
     void LaenderSetzen(Object[] daten, Object keines);
@@ -48,12 +48,13 @@ interface OBERFLACHENINTERFACE
     /**
      * Setzt die Information für das ausgewählte Objekt
      *
-     * @param name Name und Land des Objekts
-     * @param info Grö&szlig;eninformation
+     * @param name          Name und Land des Objekts
+     * @param info          Grö&szlig;eninformation
      * @param ausstattungen Ausstattungsinformation
-     * @param belegt Buchungen im angegebenen Zeitraum
+     * @param belegt        Buchungen im angegebenen Zeitraum
      */
-    void ObjektinfoSetzen(String name, String info, String ausstattungen, String belegt);
+    void ObjektinfoSetzen(String name, String info, String ausstattungen,
+            String belegt);
 
     /**
      * Besetzt die Liste der reservierten Objekte

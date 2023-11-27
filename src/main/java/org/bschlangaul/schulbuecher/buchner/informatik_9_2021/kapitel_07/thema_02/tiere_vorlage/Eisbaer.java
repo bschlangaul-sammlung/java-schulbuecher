@@ -5,7 +5,6 @@ package org.bschlangaul.schulbuecher.buchner.informatik_9_2021.kapitel_07.thema_
  *
  * Kap. 7.2 Arbeitsauftrag 1
  */
-
 class Eisbaer extends Tier
 {
     Eisbaer()
@@ -19,8 +18,5 @@ class Eisbaer extends Tier
         String text = "Ich bin ein " + art + " und jage Robben.";
         DrawingUtil.showText(this, text, 300);
     }
-
     // A3 c)
-
-
 }

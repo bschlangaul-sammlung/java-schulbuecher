@@ -3,13 +3,16 @@ package org.bschlangaul.schulbuecher.isb.handreichung_10.konzept_01.automat_08;
 public class SpielWalze
 {
     private VollKreis lampe;
+
     private Kasten rahmen;
+
     private int farbnummer;
 
-    public SpielWalze(int linksStart, int obenStart, int breite, int farbnrStart)
+    public SpielWalze(int linksStart, int obenStart, int breite,
+            int farbnrStart)
     {
-        lampe = new VollKreis(linksStart + breite / 2, obenStart + breite / 2, breite / 3,
-                        farbnrStart);
+        lampe = new VollKreis(linksStart + breite / 2, obenStart + breite / 2,
+                breite / 3, farbnrStart);
         rahmen = new Kasten(linksStart, obenStart, breite, breite);
         farbnummer = farbnrStart;
     }
@@ -26,5 +29,4 @@ public class SpielWalze
         lampe.setzeFarbe(farbnummer);
         zeichne();
     }
-
 }

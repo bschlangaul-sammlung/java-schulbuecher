@@ -8,7 +8,6 @@ package org.bschlangaul.schulbuecher.isb.handreichung_11.kapitel_02.softwaretech
  */
 class ABSCHLUSS extends LISTENELEMENT
 {
-
     /**
      * Belegt die Attribute.
      */
@@ -72,8 +71,9 @@ class ABSCHLUSS extends LISTENELEMENT
     }
 
     /**
-     * Erzeugt eine Kopie des Listenelements und der Liste ab hier. Die Datenelemente werden nicht
-     * kopiert. Auf Verwendung von Object. clone wurde bewusst verzichtet.
+     * Erzeugt eine Kopie des Listenelements und der Liste ab hier. Die
+     * Datenelemente werden nicht kopiert. Auf Verwendung von Object. clone
+     * wurde bewusst verzichtet.
      *
      * @return Kopie des Listenelements mit Referenz auf kopierte Nachfolger
      */

@@ -13,6 +13,7 @@ class DATENBANKVERBINDUNG implements MELDUNGSERZEUGER
 {
     /** Speichert die Verbindung zur Datenbank. */
     private Connection conn;
+
     /** Die Meldungsbeobachter */
     private ArrayList<MELDUNGSBEOBACHTER> allebeobachter;
 
@@ -26,11 +27,12 @@ class DATENBANKVERBINDUNG implements MELDUNGSERZEUGER
         {
             Class.forName("com.mysql.jdbc.Driver").newInstance();
             conn = DriverManager.getConnection(
-                            "jdbc:mysql://localhost/bankverwaltung?user=bank&password=verwaltung");
+                    "jdbc:mysql://localhost/bankverwaltung?user=bank&password=verwaltung");
             // conn = DriverManager.
             // getConnection("jdbc:mysql://126.0.0.2/bankverwaltung?user=bank&password=verwaltung");
             LogeintragMelden("Verbindung aufgebaut.");
-        } catch (Exception e)
+        }
+        catch (Exception e)
         {
             e.printStackTrace();
         }
@@ -111,7 +113,8 @@ class DATENBANKVERBINDUNG implements MELDUNGSERZEUGER
         {
             conn.close();
             LogeintragMelden("Verbindung beendet.");
-        } catch (Exception e)
+        }
+        catch (Exception e)
         {
             ExceptionMelden(e);
         }
@@ -127,15 +130,18 @@ class DATENBANKVERBINDUNG implements MELDUNGSERZEUGER
         try
         {
             Statement st = conn.createStatement();
-            ResultSet rs = st.executeQuery("SELECT name, pin FROM person WHERE klasse='k'");
+            ResultSet rs = st.executeQuery(
+                    "SELECT name, pin FROM person WHERE klasse='k'");
             while (rs.next())
             {
-                kunden.Einfuegen(new KUNDE(rs.getString("name"), rs.getInt("pin")));
+                kunden.Einfuegen(
+                        new KUNDE(rs.getString("name"), rs.getInt("pin")));
             }
             rs.close();
             st.close();
             LogeintragMelden("Kundenliste angefordert.");
-        } catch (Exception e)
+        }
+        catch (Exception e)
         {
             ExceptionMelden(e);
         }
@@ -145,23 +151,25 @@ class DATENBANKVERBINDUNG implements MELDUNGSERZEUGER
      * Holt die Liste der Kunden aus der Datenbank.
      *
      * @param angestellte Liste zur Verwaltung der Angestellten.
-     * @param bank Bank, für die der Angestellte arbeitet.
+     * @param bank        Bank, für die der Angestellte arbeitet.
      */
     void AngestellteHolen(PERSONENLISTE angestellte, BANK bank)
     {
         try
         {
             Statement st = conn.createStatement();
-            ResultSet rs = st.executeQuery("SELECT name, pin FROM person WHERE klasse='a'");
+            ResultSet rs = st.executeQuery(
+                    "SELECT name, pin FROM person WHERE klasse='a'");
             while (rs.next())
             {
-                angestellte.Einfuegen(
-                                new ANGESTELLTER(rs.getString("name"), rs.getInt("pin"), bank));
+                angestellte.Einfuegen(new ANGESTELLTER(rs.getString("name"),
+                        rs.getInt("pin"), bank));
             }
             rs.close();
             st.close();
             LogeintragMelden("Angestelltenliste angefordert.");
-        } catch (Exception e)
+        }
+        catch (Exception e)
         {
             ExceptionMelden(e);
         }
@@ -183,38 +191,41 @@ class DATENBANKVERBINDUNG implements MELDUNGSERZEUGER
             KONTO k;
             st = conn.createStatement();
             rs = st.executeQuery(
-                            "SELECT konto.kontonummer, kontostand, eigentuemer, zinssatz FROM konto, sparkonto WHERE konto.kontonummer=sparkonto.kontonummer");
+                    "SELECT konto.kontonummer, kontostand, eigentuemer, zinssatz FROM konto, sparkonto WHERE konto.kontonummer=sparkonto.kontonummer");
             while (rs.next())
             {
                 eigentuemer = rs.getString("eigentuemer");
                 akt = (KUNDE) kunden.Suchen(eigentuemer);
-                k = new SPARKONTO(rs.getInt("kontonummer"), rs.getFloat("kontostand"),
-                                rs.getFloat("zinssatz"), akt, this);
+                k = new SPARKONTO(rs.getInt("kontonummer"),
+                        rs.getFloat("kontostand"), rs.getFloat("zinssatz"), akt,
+                        this);
                 konten.Einfuegen(k);
             }
             rs.close();
             rs = st.executeQuery(
-                            "SELECT konto.kontonummer, kontostand, eigentuemer, ueberziehungsrahmen FROM konto, girokonto WHERE konto.kontonummer=girokonto.kontonummer");
+                    "SELECT konto.kontonummer, kontostand, eigentuemer, ueberziehungsrahmen FROM konto, girokonto WHERE konto.kontonummer=girokonto.kontonummer");
             while (rs.next())
             {
                 eigentuemer = rs.getString("eigentuemer");
                 akt = (KUNDE) kunden.Suchen(eigentuemer);
-                k = new SPARKONTO(rs.getInt("kontonummer"), rs.getFloat("kontostand"),
-                                rs.getFloat("ueberziehungsrahmen"), akt, this);
+                k = new SPARKONTO(rs.getInt("kontonummer"),
+                        rs.getFloat("kontostand"),
+                        rs.getFloat("ueberziehungsrahmen"), akt, this);
                 konten.Einfuegen(k);
             }
             rs.close();
             st.close();
             LogeintragMelden("Kontenliste angefordert.");
-        } catch (Exception e)
+        }
+        catch (Exception e)
         {
             ExceptionMelden(e);
         }
     }
 
     /**
-     * Speichert den neuen Angestellten in der Datenbank. Die Eindeutigkeit des Namens muss
-     * überprüft sein.
+     * Speichert den neuen Angestellten in der Datenbank. Die Eindeutigkeit des
+     * Namens muss überprüft sein.
      *
      * @param a der zu speichernde Angestellte
      */
@@ -223,19 +234,21 @@ class DATENBANKVERBINDUNG implements MELDUNGSERZEUGER
         try
         {
             Statement st = conn.createStatement();
-            st.executeUpdate("INSERT INTO person (name, pin, klasse) VALUES ('" + a.NameGeben()
-                            + "', '" + a.PinGeben() + "', 'a')");
+            st.executeUpdate("INSERT INTO person (name, pin, klasse) VALUES ('"
+                    + a.NameGeben() + "', '" + a.PinGeben() + "', 'a')");
             st.close();
-            LogeintragMelden("Neuer Angestellter eingef\u00FCgt: " + a.NameGeben() + ".");
-        } catch (Exception e)
+            LogeintragMelden("Neuer Angestellter eingef\u00FCgt: "
+                    + a.NameGeben() + ".");
+        }
+        catch (Exception e)
         {
             ExceptionMelden(e);
         }
     }
 
     /**
-     * Speichert den neuen Kunden in der Datenbank. Die Eindeutigkeit des Namens muss überprüft
-     * sein.
+     * Speichert den neuen Kunden in der Datenbank. Die Eindeutigkeit des Namens
+     * muss überprüft sein.
      *
      * @param k der zu speichernde Kunde
      */
@@ -244,11 +257,13 @@ class DATENBANKVERBINDUNG implements MELDUNGSERZEUGER
         try
         {
             Statement st = conn.createStatement();
-            st.executeUpdate("INSERT INTO person (name, pin, klasse) VALUES ('" + k.NameGeben()
-                            + "', '" + k.PinGeben() + "', 'k')");
+            st.executeUpdate("INSERT INTO person (name, pin, klasse) VALUES ('"
+                    + k.NameGeben() + "', '" + k.PinGeben() + "', 'k')");
             st.close();
-            LogeintragMelden("Neuer Kunde eingef\u00FCgt: " + k.NameGeben() + ".");
-        } catch (Exception e)
+            LogeintragMelden(
+                    "Neuer Kunde eingef\u00FCgt: " + k.NameGeben() + ".");
+        }
+        catch (Exception e)
         {
             ExceptionMelden(e);
         }
@@ -257,7 +272,7 @@ class DATENBANKVERBINDUNG implements MELDUNGSERZEUGER
     /**
      * Setzt eine neue PIN für den Kunden.
      *
-     * @param name Name des Kunden
+     * @param name   Name des Kunden
      * @param nummer die neue PIN
      */
     void PinSetzen(String name, int nummer)
@@ -265,10 +280,12 @@ class DATENBANKVERBINDUNG implements MELDUNGSERZEUGER
         try
         {
             Statement st = conn.createStatement();
-            st.executeUpdate("UPDATE person SET pin=" + nummer + " WHERE name='" + name + "'");
+            st.executeUpdate("UPDATE person SET pin=" + nummer + " WHERE name='"
+                    + name + "'");
             st.close();
             LogeintragMelden("PIN gesetzt f\u00FCr Person: " + name + ".");
-        } catch (Exception e)
+        }
+        catch (Exception e)
         {
             ExceptionMelden(e);
         }
@@ -284,15 +301,20 @@ class DATENBANKVERBINDUNG implements MELDUNGSERZEUGER
         try
         {
             Statement st = conn.createStatement();
-            st.executeUpdate("INSERT INTO konto (kontonummer, kontostand, eigentuemer) VALUES ("
-                            + konto.KontonummerGeben() + ", " + konto.KontostandGeben() + ", '"
+            st.executeUpdate(
+                    "INSERT INTO konto (kontonummer, kontostand, eigentuemer) VALUES ("
+                            + konto.KontonummerGeben() + ", "
+                            + konto.KontostandGeben() + ", '"
                             + konto.EigentuemerGeben().NameGeben() + "')");
-            st.executeUpdate("INSERT INTO sparkonto (kontonummer, zinssatz) VALUES ("
-                            + konto.KontonummerGeben() + ", " + konto.ZinssatzGeben() + ")");
+            st.executeUpdate(
+                    "INSERT INTO sparkonto (kontonummer, zinssatz) VALUES ("
+                            + konto.KontonummerGeben() + ", "
+                            + konto.ZinssatzGeben() + ")");
             st.close();
             LogeintragMelden("Neues Sparkonto eingef\u00FCgt mit Nummer: "
-                            + konto.KontonummerGeben() + ".");
-        } catch (Exception e)
+                    + konto.KontonummerGeben() + ".");
+        }
+        catch (Exception e)
         {
             ExceptionMelden(e);
         }
@@ -308,23 +330,28 @@ class DATENBANKVERBINDUNG implements MELDUNGSERZEUGER
         try
         {
             Statement st = conn.createStatement();
-            st.executeUpdate("INSERT INTO konto (kontonummer, kontostand, eigentuemer) VALUES ("
-                            + konto.KontonummerGeben() + ", " + konto.KontostandGeben() + ", '"
+            st.executeUpdate(
+                    "INSERT INTO konto (kontonummer, kontostand, eigentuemer) VALUES ("
+                            + konto.KontonummerGeben() + ", "
+                            + konto.KontostandGeben() + ", '"
                             + konto.EigentuemerGeben().NameGeben() + "')");
-            st.executeUpdate("INSERT INTO girokonto (kontonummer, ueberziehungsrahmen) VALUES ("
-                            + konto.KontonummerGeben() + ", " + konto.UeberziehungsrahmenGeben()
-                            + ")");
+            st.executeUpdate(
+                    "INSERT INTO girokonto (kontonummer, ueberziehungsrahmen) VALUES ("
+                            + konto.KontonummerGeben() + ", "
+                            + konto.UeberziehungsrahmenGeben() + ")");
             st.close();
             LogeintragMelden("Neues Girokonto eingef\u00FCgt mit Nummer: "
-                            + konto.KontonummerGeben() + ".");
-        } catch (Exception e)
+                    + konto.KontonummerGeben() + ".");
+        }
+        catch (Exception e)
         {
             ExceptionMelden(e);
         }
     }
 
     /**
-     * Löscht das angegebene Konto aus der Datenbank. Der Kontostand wird als "0" erwartet.
+     * Löscht das angegebene Konto aus der Datenbank. Der Kontostand wird als
+     * "0" erwartet.
      *
      * @param konto das zu löschende Konto
      */
@@ -333,18 +360,21 @@ class DATENBANKVERBINDUNG implements MELDUNGSERZEUGER
         try
         {
             Statement st = conn.createStatement();
-            st.executeUpdate("DELETE FROM konto WHERE kontonummer=" + konto.KontonummerGeben());
+            st.executeUpdate("DELETE FROM konto WHERE kontonummer="
+                    + konto.KontonummerGeben());
             st.close();
-            LogeintragMelden("Konto gel\u00F6scht mit Nummer: " + konto.KontonummerGeben() + ".");
-        } catch (Exception e)
+            LogeintragMelden("Konto gel\u00F6scht mit Nummer: "
+                    + konto.KontonummerGeben() + ".");
+        }
+        catch (Exception e)
         {
             ExceptionMelden(e);
         }
     }
 
     /**
-     * Löscht die angegebene Person aus der Datenbank. Bei Kunden muss überprüft sein, dass der
-     * Kunde keine Konten mehr hat.
+     * Löscht die angegebene Person aus der Datenbank. Bei Kunden muss überprüft
+     * sein, dass der Kunde keine Konten mehr hat.
      *
      * @param p die zu löschende Person
      */
@@ -353,19 +383,23 @@ class DATENBANKVERBINDUNG implements MELDUNGSERZEUGER
         try
         {
             Statement st = conn.createStatement();
-            st.executeUpdate("DELETE FROM person WHERE name='" + p.NameGeben() + "'");
+            st.executeUpdate(
+                    "DELETE FROM person WHERE name='" + p.NameGeben() + "'");
             st.close();
-            LogeintragMelden("Person gel\u00F6scht mit Name: " + p.NameGeben() + ".");
-        } catch (Exception e)
+            LogeintragMelden(
+                    "Person gel\u00F6scht mit Name: " + p.NameGeben() + ".");
+        }
+        catch (Exception e)
         {
             ExceptionMelden(e);
         }
     }
 
     /**
-     * Setzt den Kontostand für das angegebene Konto. Ist bei jeder Kontobewegung aufzurufen.
+     * Setzt den Kontostand für das angegebene Konto. Ist bei jeder
+     * Kontobewegung aufzurufen.
      *
-     * @param konto das zu ändernde Konto
+     * @param konto     das zu ändernde Konto
      * @param differenz die Kontoänderung
      */
     void KontostandSetzen(KONTO konto, double differenz, String beschreibung)
@@ -376,9 +410,11 @@ class DATENBANKVERBINDUNG implements MELDUNGSERZEUGER
         try
         {
             st = conn.createStatement();
-            st.executeUpdate("UPDATE konto SET kontostand=kontostand+(" + differenz
-                            + ") WHERE kontonummer=" + konto.KontonummerGeben());
-            rs = st.executeQuery("SELECT MAX(auszugsnummer) FROM auszugseintrag WHERE kontonummer="
+            st.executeUpdate("UPDATE konto SET kontostand=kontostand+("
+                    + differenz + ") WHERE kontonummer="
+                    + konto.KontonummerGeben());
+            rs = st.executeQuery(
+                    "SELECT MAX(auszugsnummer) FROM auszugseintrag WHERE kontonummer="
                             + konto.KontonummerGeben());
             if (rs.next())
             {
@@ -390,23 +426,27 @@ class DATENBANKVERBINDUNG implements MELDUNGSERZEUGER
             }
             rs.close();
             st.executeUpdate(
-                            "INSERT INTO auszugseintrag (kontonummer, auszugsnummer, datum, beschreibung, betrag) VALUES ("
-                                            + konto.KontonummerGeben() + ", " + nummer
-                                            + ", NOW(), '" + beschreibung + "', " + differenz
-                                            + ")");
-            rs = st.executeQuery("SELECT kontostand FROM konto WHERE kontonummer="
+                    "INSERT INTO auszugseintrag (kontonummer, auszugsnummer, datum, beschreibung, betrag) VALUES ("
+                            + konto.KontonummerGeben() + ", " + nummer
+                            + ", NOW(), '" + beschreibung + "', " + differenz
+                            + ")");
+            rs = st.executeQuery(
+                    "SELECT kontostand FROM konto WHERE kontonummer="
                             + konto.KontonummerGeben());
-            if ((!rs.next()) || (konto.KontostandGeben() != rs.getDouble("kontostand")))
+            if ((!rs.next())
+                    || (konto.KontostandGeben() != rs.getDouble("kontostand")))
             {
                 FehlerMelden("Inkonsistez bei Kontostandsetzen f\u00FCr Konto: "
-                                + konto.KontonummerGeben() + ", interner Stand: "
-                                + konto.KontostandGeben() + ", gespeicherter Stand: "
-                                + rs.getDouble("kontostand") + ".");
+                        + konto.KontonummerGeben() + ", interner Stand: "
+                        + konto.KontostandGeben() + ", gespeicherter Stand: "
+                        + rs.getDouble("kontostand") + ".");
             }
             st.close();
-            LogeintragMelden("Kontostand ge\u00E4ndert, Konto: " + konto.KontonummerGeben()
-                            + ", Stand: " + konto.KontostandGeben() + ".");
-        } catch (Exception e)
+            LogeintragMelden("Kontostand ge\u00E4ndert, Konto: "
+                    + konto.KontonummerGeben() + ", Stand: "
+                    + konto.KontostandGeben() + ".");
+        }
+        catch (Exception e)
         {
             ExceptionMelden(e);
         }
@@ -428,7 +468,8 @@ class DATENBANKVERBINDUNG implements MELDUNGSERZEUGER
         try
         {
             st = conn.createStatement();
-            rs = st.executeQuery("SELECT COUNT(*) FROM auszugseintrag WHERE kontonummer="
+            rs = st.executeQuery(
+                    "SELECT COUNT(*) FROM auszugseintrag WHERE kontonummer="
                             + konto.KontonummerGeben());
             if (rs.next())
             {
@@ -445,20 +486,23 @@ class DATENBANKVERBINDUNG implements MELDUNGSERZEUGER
                 return null;
             }
             resultat = new AUSZUGSEINTRAG[anzahl];
-            rs = st.executeQuery("SELECT * FROM auszugseintrag WHERE kontonummer="
-                            + konto.KontonummerGeben() + " ORDER BY auszugsnummer");
+            rs = st.executeQuery(
+                    "SELECT * FROM auszugseintrag WHERE kontonummer="
+                            + konto.KontonummerGeben()
+                            + " ORDER BY auszugsnummer");
             for (pos = 0; rs.next(); pos++)
             {
                 resultat[pos] = new AUSZUGSEINTRAG(rs.getInt("auszugsnummer"),
-                                rs.getString("datum"), rs.getString("beschreibung"),
-                                rs.getDouble("betrag"));
+                        rs.getString("datum"), rs.getString("beschreibung"),
+                        rs.getDouble("betrag"));
             }
             rs.close();
             st.close();
-            LogeintragMelden("Ausz\u00FCge angefordert f\u00FCr Konto: " + konto.KontonummerGeben()
-                            + ".");
+            LogeintragMelden("Ausz\u00FCge angefordert f\u00FCr Konto: "
+                    + konto.KontonummerGeben() + ".");
             return resultat;
-        } catch (Exception e)
+        }
+        catch (Exception e)
         {
             ExceptionMelden(e);
         }
@@ -490,11 +534,11 @@ class DATENBANKVERBINDUNG implements MELDUNGSERZEUGER
             rs.close();
             st.close();
             return max;
-        } catch (Exception e)
+        }
+        catch (Exception e)
         {
             ExceptionMelden(e);
         }
         return 0;
     }
-
 }

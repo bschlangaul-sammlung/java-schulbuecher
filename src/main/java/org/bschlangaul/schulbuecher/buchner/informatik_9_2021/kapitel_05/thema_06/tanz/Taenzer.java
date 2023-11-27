@@ -5,6 +5,7 @@ import greenfoot.Actor;
 public class Taenzer extends Actor
 {
     int id; // Nummer des Taenzers
+
     int zähler; // zählt die Tanzschritte
 
     void rufeMethode1Auf(int winkel) // Arbeitsauftrag 1b)
@@ -23,14 +24,16 @@ public class Taenzer extends Actor
     void rufeMethode2Auf() // S109: Methoden mit Rückgabewert deklarieren
     {
         int mitte; // Deklaration der lokalen Variablen mitte
-        mitte = (int) berechneMitte(0, 180); // mitte bekommt einen Wert zugewiesen
+        mitte = (int) berechneMitte(0, 180); // mitte bekommt einen Wert
+                                             // zugewiesen
         setRotation(mitte); // Methodenaufruf mit diesem Wert
     }
 
     /**
      * Aufgabe 2b
      */
-    double berechneMitte(int a, int b) // S109: Methoden mit Rückgabewert deklarieren
+    double berechneMitte(int a, int b) // S109: Methoden mit Rückgabewert
+                                       // deklarieren
     {
         double mittelwert; // Deklaration der lokalen Variablen mittelwert
         mittelwert = (a + b) / 2; // mittelwert bekommt einen Wert zugewiesen
@@ -58,22 +61,18 @@ public class Taenzer extends Actor
     {
         int diffX;
         diffX = objektX - getX(); // x(anderer) - x(ich)
-
         int diffY;
         diffY = objektY - getY(); // y(anderer) - y(ich)
-
         int c2;
         c2 = diffX * diffX + diffY * diffY; // Pythagoras: c^2 = a^2 + b^2
-
         double distanz;
         distanz = Math.sqrt(c2); // Umformung: c = Wurzel(c^2)
         return distanz;
     }
 
-
     /**
-     * Der Programmtext ab hier braucht für die Bearbeitung der Arbeitsaufträge und Aufgaben weder
-     * gelesen noch verstanden zu werden.
+     * Der Programmtext ab hier braucht für die Bearbeitung der Arbeitsaufträge
+     * und Aufgaben weder gelesen noch verstanden zu werden.
      */
     Taenzer(int startId)
     {
@@ -84,7 +83,6 @@ public class Taenzer extends Actor
     public void act()
     {
         zähler = zähler + 1;
-
         if (zähler < 5)
         {
             bewegeNachUnten(20);
@@ -102,7 +100,6 @@ public class Taenzer extends Actor
                 bewegeNachUnten(20);
             }
         }
-
         if (zähler >= 20)
         {
             zähler = 0;

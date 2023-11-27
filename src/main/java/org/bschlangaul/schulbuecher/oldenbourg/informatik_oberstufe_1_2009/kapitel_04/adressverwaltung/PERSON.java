@@ -6,35 +6,42 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapi
  * @author Albert Wiedemann
  * @version 1.0
  */
-
 import java.text.*;
 
 class PERSON implements DATENELEMENT
 {
     private int personennummer;
+
     private String name;
+
     private String vorname;
+
     private int adressnummer;
+
     private String strasse;
+
     private String hausnummer;
+
     private String plz;
+
     private String ort;
+
     static private Collator collator = Collator.getInstance();
 
     /**
      * Legt die Daten der Person an.
      *
      * @param personennummer Schlüssel der Person
-     * @param name Name der Person
-     * @param vorname Vorname der Person
-     * @param adressnummer Schlüssel der Adresse
-     * @param strasse Stra&szlig;e
-     * @param hausnummer Hausnummer
-     * @param plz Postleitzahl
-     * @param ort Wohnort
+     * @param name           Name der Person
+     * @param vorname        Vorname der Person
+     * @param adressnummer   Schlüssel der Adresse
+     * @param strasse        Stra&szlig;e
+     * @param hausnummer     Hausnummer
+     * @param plz            Postleitzahl
+     * @param ort            Wohnort
      */
-    PERSON(int personennummer, String name, String vorname, int adressnummer, String strasse,
-                    String hausnummer, String plz, String ort)
+    PERSON(int personennummer, String name, String vorname, int adressnummer,
+            String strasse, String hausnummer, String plz, String ort)
     {
         this.personennummer = personennummer;
         this.name = name;
@@ -54,14 +61,18 @@ class PERSON implements DATENELEMENT
      */
     public boolean IstGleich(DATENELEMENT test)
     {
-        return ((name == ((PERSON) test).name) && (vorname == ((PERSON) test).vorname));
+        return ((name == ((PERSON) test).name)
+                && (vorname == ((PERSON) test).vorname));
     }
 
     /**
      * Vergleicht das Datemelement mit dem Parameter. <br>
-     * Hat das Datenelement einen kleineren Schlüssel als test, ist das Ergebnis -1. <br>
-     * Hat das Datenelement den gleichen Schlüssel wie test, ist das Ergebnis 0. <br>
-     * Hat das Datenelement einen grö&szlig;eren Schlüssel als test, ist das Ergebnis 1.
+     * Hat das Datenelement einen kleineren Schlüssel als test, ist das Ergebnis
+     * -1. <br>
+     * Hat das Datenelement den gleichen Schlüssel wie test, ist das Ergebnis 0.
+     * <br>
+     * Hat das Datenelement einen grö&szlig;eren Schlüssel als test, ist das
+     * Ergebnis 1.
      *
      * @param test Datenelement mit dem Testschlüssel
      * @return Vergleichsergebnis
@@ -69,13 +80,14 @@ class PERSON implements DATENELEMENT
     public int Vergleichen(DATENELEMENT test)
     {
         PERSON p = (PERSON) test;
-        if ((collator.compare(name, p.name) < 0) || (collator.compare(name, p.name) == 0)
+        if ((collator.compare(name, p.name) < 0)
+                || (collator.compare(name, p.name) == 0)
                         && (collator.compare(vorname, p.vorname) < 0))
         {
             return -1;
         }
         else if ((collator.compare(name, p.name) == 0)
-                        && (collator.compare(vorname, p.vorname) == 0))
+                && (collator.compare(vorname, p.vorname) == 0))
         {
             return 0;
         }
@@ -98,7 +110,7 @@ class PERSON implements DATENELEMENT
     /**
      * ändert die Adressdaten der Person
      *
-     * @param name Name der Person
+     * @param name    Name der Person
      * @param vorname Vorname der Person
      */
     void PersonendatenSetzen(String name, String vorname)
@@ -111,12 +123,13 @@ class PERSON implements DATENELEMENT
      * ändert die Adressdaten der Person
      *
      * @param adressnummer Schlüssel der Adresse
-     * @param strasse Stra&szlig;e
-     * @param hausnummer Hausnummer
-     * @param plz Postleitzahl
-     * @param ort Wohnort
+     * @param strasse      Stra&szlig;e
+     * @param hausnummer   Hausnummer
+     * @param plz          Postleitzahl
+     * @param ort          Wohnort
      */
-    void AdresseSetzen(int adressnummer, String strasse, String hausnummer, String plz, String ort)
+    void AdresseSetzen(int adressnummer, String strasse, String hausnummer,
+            String plz, String ort)
     {
         this.adressnummer = adressnummer;
         this.strasse = strasse;

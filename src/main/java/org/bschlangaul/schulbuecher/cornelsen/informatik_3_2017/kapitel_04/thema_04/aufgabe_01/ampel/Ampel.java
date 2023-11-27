@@ -10,10 +10,13 @@ class Ampel
 {
     /** obere Lampe */
     Kreis lampeOben;
+
     /** mittlere Lampe */
     Kreis lampeMitte;
+
     /** untere Lampe */
     Kreis lampeUnten;
+
     /** Ampelphase */
     String ampelphase;
 
@@ -50,7 +53,6 @@ class Ampel
         lampeUnten.PositionSetzen(125, 175);
         lampeUnten.RadiusSetzen(20);
         lampeUnten.FarbeSetzen("schwarz");
-
         ampelphase = "rot";
     }
 

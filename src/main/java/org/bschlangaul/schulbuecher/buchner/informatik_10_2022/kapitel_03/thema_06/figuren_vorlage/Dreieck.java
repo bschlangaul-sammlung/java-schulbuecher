@@ -3,7 +3,6 @@ package org.bschlangaul.schulbuecher.buchner.informatik_10_2022.kapitel_03.thema
 import greenfoot.*; // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.lang.Math.*;
 
-
 /**
  * Write a description of class Dreieck here.
  *
@@ -13,6 +12,7 @@ import java.lang.Math.*;
 public class Dreieck extends Figur
 {
     int laengeA, laengeB, laengeC;
+
     GreenfootImage n;
 
     public void act()
@@ -55,7 +55,6 @@ public class Dreieck extends Figur
     {
         return 0.5 * laengeA * hoeheBerechnen();
     }
-
     // Der Programmtext ab hier muss weder gelesen noch verstanden werden.
 
     private double hoeheBerechnen()
@@ -63,5 +62,4 @@ public class Dreieck extends Figur
         double s = 0.5 * (laengeA + laengeB + laengeC);
         return Math.sqrt(s * (s - laengeA) * (s - laengeB) * (s - laengeC));
     }
-
 }

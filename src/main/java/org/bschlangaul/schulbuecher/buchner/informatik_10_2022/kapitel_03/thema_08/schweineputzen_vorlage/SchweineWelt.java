@@ -9,10 +9,8 @@ import java.util.*;
  * @author Ulrich Schneider
  * @version 2022-09-12
  */
-
 public class SchweineWelt extends World
 {
-
     private int GrasAnzahl;
 
     public SchweineWelt()
@@ -24,7 +22,6 @@ public class SchweineWelt extends World
         String msg2 = "Gras: 0";
         showText(msg2, 50, 20);
     }
-
     // der Programmtext ab hier muss nicht gelesen werden
 
     public void removeObject(Actor actor)
@@ -37,7 +34,6 @@ public class SchweineWelt extends World
     {
         // Alle Schwein-Objekte der Klasse holen
         List<Schwein> schweine = getObjects(Schwein.class);
-
         // Prüfen, ob ein Schwein dreckig ist
         for (Schwein schwein : schweine)
         {
@@ -57,27 +53,22 @@ public class SchweineWelt extends World
     public void bodenWaessern()
     {
         // Aufgabe h: Auf 10 Grasbüschel auffüllen
-
         // Aufgabe h Ende
     }
 
     private void prepare()
     {
         neuesObjektZufaelligPositionieren(new Bauer());
-
         neuesObjektZufaelligPositionieren(new Brunnen());
-
         neuesObjektZufaelligPositionieren(new Matsch());
         neuesObjektZufaelligPositionieren(new Matsch());
         neuesObjektZufaelligPositionieren(new Matsch());
         neuesObjektZufaelligPositionieren(new Matsch());
         neuesObjektZufaelligPositionieren(new Matsch());
-
         neuesObjektZufaelligPositionieren(new Schwein());
         neuesObjektZufaelligPositionieren(new Schwein());
         neuesObjektZufaelligPositionieren(new Schwein());
         neuesObjektZufaelligPositionieren(new Schwein());
-
         neuesObjektZufaelligPositionieren(new Gras());
         neuesObjektZufaelligPositionieren(new Gras());
         neuesObjektZufaelligPositionieren(new Gras());
@@ -94,7 +85,6 @@ public class SchweineWelt extends World
     public void neuesObjektZufaelligPositionieren(Actor actor)
     {
         addObject(actor, Greenfoot.getRandomNumber(getWidth()),
-                        Greenfoot.getRandomNumber(getHeight() - 50));
+                Greenfoot.getRandomNumber(getHeight() - 50));
     }
-
 }

@@ -11,7 +11,9 @@ import java.util.ArrayList;
 class WARTESCHLANGE
 {
     ArrayList<KUNDE> kunden;
+
     int x;
+
     int y;
 
     /**

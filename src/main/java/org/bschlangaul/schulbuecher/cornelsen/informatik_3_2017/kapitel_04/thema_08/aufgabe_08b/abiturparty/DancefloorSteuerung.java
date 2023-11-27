@@ -11,6 +11,7 @@ import java.util.Random;
 class DancefloorSteuerung extends Figur
 {
     Dancefloor d;
+
     Random zufallszahlgenerator;
 
     /**
@@ -28,9 +29,11 @@ class DancefloorSteuerung extends Figur
     @Override
     void AktionAusführen()
     {
-        for (int spalte = 0; spalte < d.SpaltenanzahlGeben(); spalte = spalte + 1)
+        for (int spalte = 0; spalte < d.SpaltenanzahlGeben(); spalte = spalte
+                + 1)
         {
-            for (int zeile = 0; zeile < d.ZeilenanzahlGeben(); zeile = zeile + 1)
+            for (int zeile = 0; zeile < d.ZeilenanzahlGeben(); zeile = zeile
+                    + 1)
             {
                 d.FarbeSetzen(spalte, zeile, ZufälligeFarbeGeben());
             }
@@ -47,32 +50,44 @@ class DancefloorSteuerung extends Figur
         int zufallszahl = zufallszahlgenerator.nextInt(12);
         switch (zufallszahl)
         {
-            case 1:
-                return "weiß";
-            case 2:
-                return "rot";
-            case 3:
-                return "grün";
-            case 4:
-                return "blau";
-            case 5:
-                return "gelb";
-            case 6:
-                return "magenta";
-            case 7:
-                return "cyan";
-            case 8:
-                return "hellgelb";
-            case 9:
-                return "hellgrün";
-            case 10:
-                return "orange";
-            case 11:
-                return "braun";
-            case 12:
-                return "grau";
-            default:
-                return "schwarz";
+        case 1:
+            return "weiß";
+
+        case 2:
+            return "rot";
+
+        case 3:
+            return "grün";
+
+        case 4:
+            return "blau";
+
+        case 5:
+            return "gelb";
+
+        case 6:
+            return "magenta";
+
+        case 7:
+            return "cyan";
+
+        case 8:
+            return "hellgelb";
+
+        case 9:
+            return "hellgrün";
+
+        case 10:
+            return "orange";
+
+        case 11:
+            return "braun";
+
+        case 12:
+            return "grau";
+
+        default:
+            return "schwarz";
         }
     }
 }

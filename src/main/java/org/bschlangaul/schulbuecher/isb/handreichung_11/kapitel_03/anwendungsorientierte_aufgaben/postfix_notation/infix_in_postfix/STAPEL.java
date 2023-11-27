@@ -10,7 +10,6 @@ class STAPEL
         liste = new LISTE();
     }
 
-
     // Methoden
     void Einfuegen(DATENELEMENT neueDaten)
     {
@@ -31,5 +30,4 @@ class STAPEL
     {
         return liste.AnzahlGeben();
     }
-
 }

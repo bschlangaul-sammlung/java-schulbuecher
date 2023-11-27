@@ -5,10 +5,10 @@ import greenfoot.GreenfootImage;
 import greenfoot.World;
 
 /**
- * Projekt zu Kap. 5.4 Der Programmtext in dieser Klasse braucht für die Bearbeitung der
- * Arbeitsaufträge und Aufgaben weder gelesen noch verstanden zu werden.
+ * Projekt zu Kap. 5.4 Der Programmtext in dieser Klasse braucht für die
+ * Bearbeitung der Arbeitsaufträge und Aufgaben weder gelesen noch verstanden zu
+ * werden.
  */
-
 public class SpielWelt extends World
 {
     public SpielWelt()
@@ -17,7 +17,6 @@ public class SpielWelt extends World
         GreenfootImage back = getBackground();
         back.setColor(Color.GREEN.darker());
         back.fill();
-
         for (int i = 0; i < 20; i++)
         {
             for (int j = 0; j < 10; j++)

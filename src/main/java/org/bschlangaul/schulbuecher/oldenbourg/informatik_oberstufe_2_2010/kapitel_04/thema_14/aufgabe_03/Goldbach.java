@@ -1,7 +1,8 @@
 package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_2_2010.kapitel_04.thema_14.aufgabe_03;
 
 /**
- * Klasse zur Realisierung des Goldbach-Tests Oldenbourg Schulbuchverlag Informatik Oberstufe 2
+ * Klasse zur Realisierung des Goldbach-Tests Oldenbourg Schulbuchverlag
+ * Informatik Oberstufe 2
  *
  * @author Klaus Reinold
  * @version 1.0
@@ -9,7 +10,8 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_2_2010.kapi
 class Goldbach
 {
     Goldbach()
-    {}
+    {
+    }
 
     /**
      * Ermittelt, ob eine Zahl prim ist
@@ -58,7 +60,8 @@ class Goldbach
         boolean goldbachErfuellt = false;
         if (n <= 1 || n % 2 == 1)
         {
-            System.out.println("Wertebereich-Fehler: n <= 1 oder ungerade Zahl");
+            System.out
+                    .println("Wertebereich-Fehler: n <= 1 oder ungerade Zahl");
         }
         else
         {
@@ -69,7 +72,8 @@ class Goldbach
                 {
                     goldbachErfuellt = true;
                     int j = n - i;
-                    System.out.println(n + " ist die Summe der Primzahlen " + i + " und " + j);
+                    System.out.println(n + " ist die Summe der Primzahlen " + i
+                            + " und " + j);
                 }
                 i = i + 1;
             }

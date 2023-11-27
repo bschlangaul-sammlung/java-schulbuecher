@@ -8,7 +8,6 @@ package org.bschlangaul.schulbuecher.cornelsen.informatik_3_2017.kapitel_04.them
  */
 class Monster extends Figur
 {
-
     /**
      * Stellt das Monster mit geschlossenem Mund dar.
      */

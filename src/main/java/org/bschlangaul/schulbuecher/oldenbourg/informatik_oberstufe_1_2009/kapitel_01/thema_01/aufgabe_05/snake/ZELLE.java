@@ -22,7 +22,7 @@ class ZELLE
      *
      * @param xneu x-Koordinate
      * @param yneu y-Koordinate
-     * @param nf Referenz auf die Nachfolger-Zelle.
+     * @param nf   Referenz auf die Nachfolger-Zelle.
      */
     ZELLE(int xneu, int yneu, ZELLE nf)
     {
@@ -90,5 +90,4 @@ class ZELLE
     {
         return y;
     }
-
 }

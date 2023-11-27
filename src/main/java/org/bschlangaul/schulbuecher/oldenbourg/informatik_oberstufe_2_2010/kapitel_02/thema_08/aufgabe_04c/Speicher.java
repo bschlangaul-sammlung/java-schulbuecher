@@ -10,6 +10,7 @@ class Speicher
 {
     /** Gibt an, wie viele Plätze belegt sind */
     private int anzahlbelegt;
+
     /** Die eventuell vorhandene Kiste */
     private Kiste[] plaetze;
 
@@ -38,7 +39,8 @@ class Speicher
             try
             {
                 wait();
-            } catch (Exception e)
+            }
+            catch (Exception e)
             {
             }
         }
@@ -60,7 +62,8 @@ class Speicher
             try
             {
                 wait();
-            } catch (Exception e)
+            }
+            catch (Exception e)
             {
             }
         }

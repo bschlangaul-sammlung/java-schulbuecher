@@ -6,13 +6,12 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapi
  * @author (Peter Brichzin)
  * @version (1.8.08)
  */
-
 public class ADRESSBUCHEINTRAG implements DATENELEMENT
 {
     /**
-     * Name der Person, bewusst wird nicht unterschieden zwischen Nach- und Vornamen, da vertraute
-     * Personen nur mit dem Vornamen, nicht vertraute mit dem Nachnamen gespeichert werden Schlüssel
-     * dieses Datenelements
+     * Name der Person, bewusst wird nicht unterschieden zwischen Nach- und
+     * Vornamen, da vertraute Personen nur mit dem Vornamen, nicht vertraute mit
+     * dem Nachnamen gespeichert werden Schlüssel dieses Datenelements
      */
     private String name;
 
@@ -44,7 +43,7 @@ public class ADRESSBUCHEINTRAG implements DATENELEMENT
     /**
      * Konstruktor für Objekte der Klasse ADRESSBUCHEINTRAG
      *
-     * @param nameNeu der Name.
+     * @param nameNeu          der Name.
      * @param telefonnummerNeu Telefonnummer.
      */
     public ADRESSBUCHEINTRAG(String nameNeu, String telefonnummerNeu)
@@ -60,11 +59,12 @@ public class ADRESSBUCHEINTRAG implements DATENELEMENT
     /**
      * Konstruktor für Objekte der Klasse ADRESSBUCHEINTRAG
      *
-     * @param nameNeu der Name.
+     * @param nameNeu          der Name.
      * @param telefonnummerNeu Telefonnummer.
-     * @param eMailNeu E-Mail Adresse.
+     * @param eMailNeu         E-Mail Adresse.
      */
-    public ADRESSBUCHEINTRAG(String nameNeu, String telefonnummerNeu, String eMailNeu)
+    public ADRESSBUCHEINTRAG(String nameNeu, String telefonnummerNeu,
+            String eMailNeu)
     {
         name = nameNeu;
         telefonnummer = telefonnummerNeu;
@@ -72,18 +72,17 @@ public class ADRESSBUCHEINTRAG implements DATENELEMENT
         strasse = "";
         plz = "";
         ort = "";
-
     }
 
     /**
      * Konstruktor für Objekte der Klasse ADRESSBUCHEINTRAG
      *
-     * @param nameNeu der Name.
+     * @param nameNeu          der Name.
      * @param telefonnummerNeu Telefonnummer.
-     * @param eMailNeu E-Mail Adresse.
+     * @param eMailNeu         E-Mail Adresse.
      */
-    public ADRESSBUCHEINTRAG(String nameNeu, String telefonnummerNeu, String eMailNeu,
-                    String strasseNeu, String plzNeu, String ortNeu)
+    public ADRESSBUCHEINTRAG(String nameNeu, String telefonnummerNeu,
+            String eMailNeu, String strasseNeu, String plzNeu, String ortNeu)
     {
         name = nameNeu;
         telefonnummer = telefonnummerNeu;
@@ -91,31 +90,30 @@ public class ADRESSBUCHEINTRAG implements DATENELEMENT
         strasse = strasseNeu;
         plz = plzNeu;
         ort = ortNeu;
-
     }
 
     /**
-     * Gibt Information über das Datenelement zu Kontrollzwecken auf das Terminalfenster aus.
+     * Gibt Information über das Datenelement zu Kontrollzwecken auf das
+     * Terminalfenster aus.
      */
     public void InformationAusgeben()
     {
-        System.out.println(name + ": " + telefonnummer + "; " + eMail + "; " + strasse + "; " + plz
-                        + " " + ort);
+        System.out.println(name + ": " + telefonnummer + "; " + eMail + "; "
+                + strasse + "; " + plz + " " + ort);
     }
 
     /**
      * Vergleicht zwei Datenelemente bezüglich der Ordnungsrelation.
      *
      * @param vergleichselement Datenelement mit dem das Objekt verglichen wird.
-     * @return true, wenn das aktuelle Element einen kleineren Schlüssel hat, als das angegebene
-     *         Vergleichselement.
+     * @return true, wenn das aktuelle Element einen kleineren Schlüssel hat,
+     *         als das angegebene Vergleichselement.
      */
     public boolean IstKleinerAls(DATENELEMENT dvergleich)
     {
         // überprüfung, ob der Eingabewert vom Typ ADRESSBUCHEINTRAG (ABE) ist
         ADRESSBUCHEINTRAG vergleichsABE;
         vergleichsABE = (ADRESSBUCHEINTRAG) dvergleich;
-
         if (name.compareTo(vergleichsABE.NameGeben()) < 0)
         {
             return true;
@@ -137,8 +135,8 @@ public class ADRESSBUCHEINTRAG implements DATENELEMENT
         // überprüfung, ob der Eingabewert vom Typ ADRESSBUCHEINTRAG (ABE) ist
         ADRESSBUCHEINTRAG vergleichsABE;
         vergleichsABE = (ADRESSBUCHEINTRAG) dvergleich;
-
-        // Vergleich der beiden Schlüssel und R&uum;ckgabe des Ergebnisses als boolean
+        // Vergleich der beiden Schlüssel und R&uum;ckgabe des Ergebnisses als
+        // boolean
         return name == vergleichsABE.name;
     }
 
@@ -146,15 +144,14 @@ public class ADRESSBUCHEINTRAG implements DATENELEMENT
      * /** Vergleicht zwei Datenelemente bezüglich der Ordnungsrelation.
      *
      * @param vergleichselement Datenelement mit dem das Objekt verglichen wird.
-     * @return true, wenn das aktuelle Element einen grö&szlig;eren Schlüssel hat, als das
-     *         angegebene Vergleichselement.
+     * @return true, wenn das aktuelle Element einen grö&szlig;eren Schlüssel
+     *         hat, als das angegebene Vergleichselement.
      */
     public boolean IstGroesserAls(DATENELEMENT dvergleich)
     {
         // überprüfung, ob der Eingabewert vom Typ ADRESSBUCHEINTRAG (WBE) ist
         ADRESSBUCHEINTRAG vergleichsABE;
         vergleichsABE = (ADRESSBUCHEINTRAG) dvergleich;
-
         // Um die Ordnungsrelation herzustellen, wird eine Referenz auf ein
         // auf ein Objekt der Javabibliothek Collator benötigt
         if (name.compareTo(vergleichsABE.NameGeben()) > 0)
@@ -168,9 +165,11 @@ public class ADRESSBUCHEINTRAG implements DATENELEMENT
     }
 
     /**
-     * Vergleicht zwei Schlüssel, die als Zeichenketten vorliegen, auf Gleichheit.
+     * Vergleicht zwei Schlüssel, die als Zeichenketten vorliegen, auf
+     * Gleichheit.
      *
-     * @param vergleichsSchluessel Schlüssel mit dem der Schlüssel des Objekt verglichen wird.
+     * @param vergleichsSchluessel Schlüssel mit dem der Schlüssel des Objekt
+     *                             verglichen wird.
      * @return true, wenn die beiden Schlüssel gleich sind.
      */
     public boolean SchluesselIstGleich(String vergleichsSchluessel)
@@ -179,11 +178,13 @@ public class ADRESSBUCHEINTRAG implements DATENELEMENT
     }
 
     /**
-     * Vergleicht zwei Schlüssel, die als Zeichenketten vorliegen, bezüglich der Ordnungsrelation.
+     * Vergleicht zwei Schlüssel, die als Zeichenketten vorliegen, bezüglich der
+     * Ordnungsrelation.
      *
-     * @param vergleichsSchluessel Schlüssel mit dem der Schlüssel des Objekt verglichen wird.
-     * @return true, wenn das aktuelle Element einen grö&szlig;eren Schlüssel hat, als das
-     *         angegebene Vergleichselement.
+     * @param vergleichsSchluessel Schlüssel mit dem der Schlüssel des Objekt
+     *                             verglichen wird.
+     * @return true, wenn das aktuelle Element einen grö&szlig;eren Schlüssel
+     *         hat, als das angegebene Vergleichselement.
      */
     public boolean SchluesselIstGroesserAls(String vergleichsSchluessel)
     {
@@ -198,11 +199,13 @@ public class ADRESSBUCHEINTRAG implements DATENELEMENT
     }
 
     /**
-     * Vergleicht zwei Schlüssel, die als Zeichenketten vorliegen, bezüglich der Ordnungsrelation.
+     * Vergleicht zwei Schlüssel, die als Zeichenketten vorliegen, bezüglich der
+     * Ordnungsrelation.
      *
-     * @param vergleichsSchluessel Schlüssel mit dem der Schlüssel des Objekt verglichen wird.
-     * @return true, wenn das aktuelle Element einen kleineren Schlüssel hat, als das angegebene
-     *         Vergleichselement.
+     * @param vergleichsSchluessel Schlüssel mit dem der Schlüssel des Objekt
+     *                             verglichen wird.
+     * @return true, wenn das aktuelle Element einen kleineren Schlüssel hat,
+     *         als das angegebene Vergleichselement.
      */
     public boolean SchluesselIstKleinerAls(String vergleichsSchluessel)
     {
@@ -217,8 +220,8 @@ public class ADRESSBUCHEINTRAG implements DATENELEMENT
     }
 
     /**
-     * Gibt den Schlüssel des Datenelements zu Kontrollzwecken als String aus, auch wenn der
-     * Datentyp vom String abweicht.
+     * Gibt den Schlüssel des Datenelements zu Kontrollzwecken als String aus,
+     * auch wenn der Datentyp vom String abweicht.
      *
      * @return Schlüssel als String.
      */
@@ -232,7 +235,6 @@ public class ADRESSBUCHEINTRAG implements DATENELEMENT
      *
      * @return den Namen
      */
-
     public String NameGeben()
     {
         return name;
@@ -244,15 +246,13 @@ public class ADRESSBUCHEINTRAG implements DATENELEMENT
      * @param bedeutungNeu neue Bedeutung für das englische Wort
      *
      */
-    public void EintragSetzen(String telefonnummerNeu, String eMailNeu, String strasseNeu,
-                    String plzNeu, String ortNeu)
+    public void EintragSetzen(String telefonnummerNeu, String eMailNeu,
+            String strasseNeu, String plzNeu, String ortNeu)
     {
         telefonnummer = telefonnummerNeu;
         eMail = eMailNeu;
         strasse = strasseNeu;
         plz = plzNeu;
         ort = ortNeu;
-
     }
-
 }

@@ -11,7 +11,6 @@ import java.net.*;
  */
 class Server
 {
-
     /**
      * Führt die eigentliche Arbeit aus.
      */
@@ -79,12 +78,15 @@ class Server
                             beendenEmpfangen = true;
                         }
                     }
-                } while ((!abmeldenEmpfangen) && (!beendenEmpfangen));
+                }
+                while ((!abmeldenEmpfangen) && (!beendenEmpfangen));
                 anruf.close();
-            } while (!beendenEmpfangen);
+            }
+            while (!beendenEmpfangen);
             server.close();
             System.exit(0);
-        } catch (Exception e)
+        }
+        catch (Exception e)
         {
             System.out.println("Allgemeiner Fehler: " + e);
             e.printStackTrace();

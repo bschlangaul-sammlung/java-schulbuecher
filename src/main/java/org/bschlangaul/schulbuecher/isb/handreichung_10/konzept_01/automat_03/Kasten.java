@@ -5,8 +5,11 @@ import org.bschlangaul.schulbuecher.isb.handreichung_10.konzept_01.ZeichenFenste
 public class Kasten
 {
     private int links;
+
     private int oben;
+
     private int breite;
+
     private int hoehe;
 
     public Kasten()
@@ -26,5 +29,4 @@ public class Kasten
     {
         links = linksNeu;
     }
-
 }

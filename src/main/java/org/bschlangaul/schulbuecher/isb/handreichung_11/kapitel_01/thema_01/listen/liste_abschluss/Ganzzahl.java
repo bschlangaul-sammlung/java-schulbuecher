@@ -13,5 +13,4 @@ class Ganzzahl extends DatenElement
     {
         System.out.println("Zahl: " + zahl);
     }
-
 }

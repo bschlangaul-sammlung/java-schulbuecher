@@ -8,13 +8,13 @@ import greenfoot.*;
  * @author Ulrich Schneider
  * @version 2022-09-12
  */
-
 public class Schwein extends Actor
 {
     private boolean dreckig;
 
     // Zwei Greenfoot-Bilder des Schweins in sauber und dreckig
     private GreenfootImage Schweindreckig;
+
     private GreenfootImage Schweinsauber;
 
     public Schwein()
@@ -28,7 +28,6 @@ public class Schwein extends Actor
     public void act()
     {
         // Aufgabe c: Schweine rennen gerne herum und wälzen sich im Matsch
-
     }
 
     public void herumRennen()
@@ -56,7 +55,6 @@ public class Schwein extends Actor
         // Image wechseln von dreckig auf sauber
         setImage(Schweinsauber);
     }
-
 
     public boolean gibDreckig()
     {

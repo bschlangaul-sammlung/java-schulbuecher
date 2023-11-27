@@ -8,7 +8,6 @@ package org.bschlangaul.schulbuecher.cornelsen.informatik_3_2017.kapitel_04.them
  */
 class Dach extends Dreieck
 {
-
     /**
      * Legt Position, Größe und Farbe fest
      */

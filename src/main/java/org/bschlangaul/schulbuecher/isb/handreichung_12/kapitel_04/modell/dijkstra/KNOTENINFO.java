@@ -10,8 +10,10 @@ class KNOTENINFO
 {
     /* Knotennummer */
     int nummer;
+
     /* Vorgängerknoten für Wegangabe */
     private int vorgaenger;
+
     /* Weglänge bis zu diesem Knoten */
     private int laenge;
 
@@ -91,7 +93,8 @@ class KNOTENINFO
     /**
      * Vergleicht die Länge mit einem anderen Knoten.
      *
-     * @return true, wenn die eigene L&aumml;nge kleiner ist als die des Vergleichsknotens
+     * @return true, wenn die eigene L&aumml;nge kleiner ist als die des
+     *         Vergleichsknotens
      */
     boolean IstKleiner(KNOTENINFO k)
     {

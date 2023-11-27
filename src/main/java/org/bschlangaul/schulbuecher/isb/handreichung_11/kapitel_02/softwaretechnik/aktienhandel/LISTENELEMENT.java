@@ -43,7 +43,8 @@ abstract class LISTENELEMENT
      * Trägt die Kontonummern der Konten des angegebenen Kunden in das Feld ein.
      *
      * @param ergebnis Referenz auf das Feld mit den gefundenen Daten.
-     * @param pos Index, auf dem das nächste Element eingetragen werden soll.
+     * @param pos      Index, auf dem das nächste Element eingetragen werden
+     *                 soll.
      */
     abstract void KontonummernEintragen(int[] ergebnis, int pos);
 }

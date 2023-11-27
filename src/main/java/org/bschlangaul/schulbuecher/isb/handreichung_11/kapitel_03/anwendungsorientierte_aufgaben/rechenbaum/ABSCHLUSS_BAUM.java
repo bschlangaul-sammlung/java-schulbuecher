@@ -8,7 +8,6 @@ package org.bschlangaul.schulbuecher.isb.handreichung_11.kapitel_03.anwendungsor
  */
 class ABSCHLUSS_BAUM extends BAUMELEMENT
 {
-
     /**
      * In der Klasse ABSCHLUSS fallen keine speziellen Initialisierungen an.
      */
@@ -17,43 +16,45 @@ class ABSCHLUSS_BAUM extends BAUMELEMENT
         super();
     }
 
-
     /**
-     * Fügt ein neues Datenelement in den Baum ein. Der Wert darf noch nicht vorkommen
+     * Fügt ein neues Datenelement in den Baum ein. Der Wert darf noch nicht
+     * vorkommen
      *
      * @param wert Referenz auf das einzufügende Datenelement
      * @return der (neue) Nachfolger des Aufrufers
      */
     void LinksEinfuegen(BAUM b)
     {
-
     }
 
     void RechtsEinfuegen(BAUM b)
     {
-
     }
 
     /**
      * Durchläft den Baum in Preorder
      */
     void PreOrder()
-    {}
+    {
+    }
 
     /**
      * Durchläft den Baum in Inorder
      */
     void InOrder()
-    {}
+    {
+    }
 
     /**
      * Durchläft den Baum in Postorder
      */
     void PostOrder()
-    {}
+    {
+    }
 
     /**
-     * Entfernt den Knoten mit der Referenz auf das Datenelement mit dem gegebenen Schlüssel.
+     * Entfernt den Knoten mit der Referenz auf das Datenelement mit dem
+     * gegebenen Schlüssel.
      *
      * @param wert Referenz auf ein Datenelement mit dem Schlüsselwert
      * @return der (neue) Nachfolger des Aufrufers
@@ -66,7 +67,8 @@ class ABSCHLUSS_BAUM extends BAUMELEMENT
     }
 
     /**
-     * Fügt den angegebenen Teilbaum an der am weitesten rechts stehenden Stelle ein.
+     * Fügt den angegebenen Teilbaum an der am weitesten rechts stehenden Stelle
+     * ein.
      *
      * @param teil der Anzufügende Teilbaum
      * @return der (neue) Nachfolger des Aufrufers

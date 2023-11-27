@@ -9,7 +9,6 @@ package org.bschlangaul.schulbuecher.isb.handreichung_12.kapitel_02.projekt_12.p
  */
 public class Verbraucher extends Thread
 {
-
     /** Referenz auf den Abstellplatz */
     AbstellPlatz abstellplatz;
 
@@ -33,19 +32,20 @@ public class Verbraucher extends Thread
         {
             // produzieren braucht Zeit
             sleep((int) (Math.random() * 100));
-        } catch (InterruptedException e)
+        }
+        catch (InterruptedException e)
         {
         }
     }
 
     /**
      * simuliert die Arbeit des Verbrauchers<br/>
-     * falls keine Produkt abgeholt werden konnte, wird der Thread in den Wartezustand versetzt.
+     * falls keine Produkt abgeholt werden konnte, wird der Thread in den
+     * Wartezustand versetzt.
      */
     @Override
     public void run()
     {
-
         while (true)
         {
             System.out.println("Hole ab");

@@ -3,6 +3,7 @@ package org.bschlangaul.schulbuecher.isb.handreichung_11.kapitel_03.anwendungsor
 class KNOTEN_LISTE extends LISTENELEMENT
 {
     private LISTENELEMENT nachfolger;
+
     private BAUM daten;
 
     // Konstruktoren
@@ -23,7 +24,4 @@ class KNOTEN_LISTE extends LISTENELEMENT
     {
         return daten;
     }
-
-
-
 }

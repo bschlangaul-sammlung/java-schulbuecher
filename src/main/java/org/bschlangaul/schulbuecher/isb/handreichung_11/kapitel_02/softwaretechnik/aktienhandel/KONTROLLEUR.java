@@ -6,24 +6,29 @@ package org.bschlangaul.schulbuecher.isb.handreichung_11.kapitel_02.softwaretech
  * @author
  * @version 1.0
  */
-
 import java.util.*;
 
 class KONTROLLEUR implements KONTROLLEURINTERFACE
 {
     private BOERSE boerse;
+
     private KONTENLISTE konten;
+
     private KONTO konto;
+
     private KURSANZEIGE kursAnzeige;
+
     private DATENBANKVERBINDUNG verbindung;
+
     private OBERFLAECHENINTERFACE oberflaeche;
 
     /**
      * Besetzt die Attribute
      *
-     * @param boerse die Boerse, an der der Handel stattfindet.
-     * @param konto das Konto, für das die Geschäfte abgewickelt werden.
-     * @param kursAnzeige Fenster für die Anzeige der Kursentwicklung einer Aktie.
+     * @param boerse      die Boerse, an der der Handel stattfindet.
+     * @param konto       das Konto, für das die Geschäfte abgewickelt werden.
+     * @param kursAnzeige Fenster für die Anzeige der Kursentwicklung einer
+     *                    Aktie.
      */
     KONTROLLEUR(BOERSE boerse, KONTENLISTE konten, KURSANZEIGE kursAnzeige)
     {
@@ -94,7 +99,7 @@ class KONTROLLEUR implements KONTROLLEURINTERFACE
      * Ereignis "Aktien einkaufen"
      *
      * @param aktienID Schlüssel der Aktie
-     * @param anzahl gewünschte Anzahl der Aktie
+     * @param anzahl   gewünschte Anzahl der Aktie
      */
     public void AktienKaufen(int aktienID, int anzahl)
     {
@@ -110,7 +115,7 @@ class KONTROLLEUR implements KONTROLLEURINTERFACE
      * Ereignis "Aktien verkaufen"
      *
      * @param aktienID Schlüssel der Aktie
-     * @param anzahl gewünschte Anzahl der Aktie
+     * @param anzahl   gewünschte Anzahl der Aktie
      */
     public void AktienVerkaufen(int aktienID, int anzahl)
     {
@@ -129,8 +134,9 @@ class KONTROLLEUR implements KONTROLLEURINTERFACE
      */
     public void KursverlaufAnzeigen(int aktienID)
     {
-        kursAnzeige.Anzeigen(verbindung.KurseHolen(KURSANZEIGE.kursAnzahl, aktienID),
-                        verbindung.AktienNameHolen(aktienID));
+        kursAnzeige.Anzeigen(
+                verbindung.KurseHolen(KURSANZEIGE.kursAnzahl, aktienID),
+                verbindung.AktienNameHolen(aktienID));
     }
 
     /**

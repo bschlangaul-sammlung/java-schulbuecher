@@ -9,11 +9,16 @@ package org.bschlangaul.schulbuecher.buchner.informatik_11_2023.kapitel_03.thema
 public class GRAPH
 {
     private KNOTEN[] knotennamen;
+
     private boolean[][] adja;
+
     private int aktAnzahl, maxAnzahl;
 
-    boolean[] besucht; // Feld, um zu markieren, ob der Knoten schon besucht wurde
+    boolean[] besucht; // Feld, um zu markieren, ob der Knoten schon besucht
+                       // wurde
+
     int[] warteschlange; // abzuarbeitende Warteschlange
+
     int[] reihenfolge; // Feld für die Ausgabe der Reihenfolge
 
     public GRAPH(int anzKnoten)
@@ -28,7 +33,8 @@ public class GRAPH
 
     private void warteschlangeVorbereiten()
     {
-        // Alle Plätze der Warteschlange werden mit -1 initalisiert, um zu kennzeichnen, dass sie
+        // Alle Plätze der Warteschlange werden mit -1 initalisiert, um zu
+        // kennzeichnen, dass sie
         // nicht benutzt werden.
         for (int i = 0; i < warteschlange.length; i++)
         {
@@ -40,12 +46,13 @@ public class GRAPH
     {
         warteschlangeVorbereiten();
         besucht[start] = true; // Der Startknoten wird als besucht markiert.
-        warteschlange[0] = start; // Der Start-Knoten wird als 1. abzuarbeitender Knoten
+        warteschlange[0] = start; // Der Start-Knoten wird als 1.
+                                  // abzuarbeitender Knoten
                                   // abgespeichert.
-
-        int wartePos = 1; // Variable gibt die Anzahl der Elemente in der Warteschlange an.
-        int besKnoten = 0; // Variable, die die Anzahl der besuchten Knoten angibt.
-
+        int wartePos = 1; // Variable gibt die Anzahl der Elemente in der
+                          // Warteschlange an.
+        int besKnoten = 0; // Variable, die die Anzahl der besuchten Knoten
+                           // angibt.
         // Schleife überprüft, ob noch mind. ein Element in der Schlange ist.
         while (wartePos != 0)
         {
@@ -64,7 +71,6 @@ public class GRAPH
             entfernen(warteschlange);
             wartePos--;
         }
-
         reihenfolgeAusgeben(reihenfolge);
     }
 
@@ -77,12 +83,12 @@ public class GRAPH
         feld[feld.length - 1] = -1;
         return feld;
     }
-
     // Die folgenden Methoden sind für dich nicht relevant.
 
     private void reihenfolgeAusgeben(int[] feld)
     {
-        System.out.println("Der Durchlauf der Breitensuche ergibt die Reihenfolge: ");
+        System.out.println(
+                "Der Durchlauf der Breitensuche ergibt die Reihenfolge: ");
         System.out.print(knotennamen[feld[0]].bezeichnerGeben()); // feld[0]
         for (int i = 1; i < feld.length; i++)
         {
@@ -155,7 +161,6 @@ public class GRAPH
                 position = i;
             }
         }
-
         return position;
     }
 
@@ -169,5 +174,4 @@ public class GRAPH
             }
         }
     }
-
 }

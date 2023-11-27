@@ -1,60 +1,66 @@
 package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapitel_01.thema_04.aufgabe_03.teilaufgabe_b.kreuzung;
 
 /**
- * Eine Ampel verwendet zur Anzeige drei Lampen. Die Ampel verwaltet ihre Position als Ganzes, ihre
- * Ausrichtung und auch die nach den Verkehrsregeln möglichen Ampelphasen.
+ * Eine Ampel verwendet zur Anzeige drei Lampen. Die Ampel verwaltet ihre
+ * Position als Ganzes, ihre Ausrichtung und auch die nach den Verkehrsregeln
+ * möglichen Ampelphasen.
  *
  * @author Peter Cody
  * @version 1.0
  */
 class AMPEL
 {
-    /** Der Bezugspunkt für die Position ist die obere linke Ecke der lampeOben. */
+    /**
+     * Der Bezugspunkt für die Position ist die obere linke Ecke der lampeOben.
+     */
     private int positionX;
 
-    /** Der Bezugspunkt für die Position ist die obere linke Ecke der lampeOben. */
+    /**
+     * Der Bezugspunkt für die Position ist die obere linke Ecke der lampeOben.
+     */
     private int positionY;
 
     /**
-     * Mögliche Werte sind die in Deutschland erlaubten Ampelphasen grün, gelb, rot und rotgelb.
+     * Mögliche Werte sind die in Deutschland erlaubten Ampelphasen grün, gelb,
+     * rot und rotgelb.
      */
     private String ampelphase;
 
-    /** Eine Ausrichtung ist in die vier Himmelsrichtungen N, W, S, O möglich. */
+    /**
+     * Eine Ausrichtung ist in die vier Himmelsrichtungen N, W, S, O möglich.
+     */
     private char ausrichtung;
 
     // Referenzattribute
     private LAMPE lampeOben;
-    private LAMPE lampeMitte;
-    private LAMPE lampeUnten;
 
+    private LAMPE lampeMitte;
+
+    private LAMPE lampeUnten;
 
     /**
      * Konstruktor für Objekte der Klasse AMPEL.
      */
-
     public AMPEL()
     {
         positionX = 1;
         positionY = 1;
         ampelphase = "rot";
         ausrichtung = 'S';
-
         lampeOben = new LAMPE();
         lampeMitte = new LAMPE();
         lampeUnten = new LAMPE();
         lampeOben.FarbeSetzen("rot");
         lampeMitte.FarbeSetzen("schwarz");
         lampeUnten.FarbeSetzen("schwarz");
-
         AmpelAnordnen();
     }
 
     /**
      * Konstruktor für Objekte der Klasse AMPEL mit folgenden Eingabewerten.
      *
-     * @param xNeu - neue x-Position
-     * @param yNeu - neue y-Position
+     * @param xNeu           - neue x-Position
+     * @param yNeu           - neue y-Position
      * @param ausrichtungNeu - neue Ausrichtung
      */
     public AMPEL(int xNeu, int yNeu, char ausrichtungNeu)
@@ -65,12 +71,10 @@ class AMPEL
         lampeOben.FarbeSetzen("rot");
         lampeMitte.FarbeSetzen("schwarz");
         lampeUnten.FarbeSetzen("schwarz");
-
         PositionSetzen(xNeu, yNeu);
         ampelphase = "rot";
         AusrichtungSetzen(ausrichtungNeu);
     }
-
 
     /**
      * Setzt die Ampel auf grün.
@@ -149,7 +153,6 @@ class AMPEL
         }
     }
 
-
     /**
      * Setzt die Ausrichtung der Ampel auf die möglichen Werte S, W, N, O.
      *
@@ -157,18 +160,18 @@ class AMPEL
      */
     public void AusrichtungSetzen(char ausrichtungNeu)
     {
-        if ((ausrichtungNeu == 'S') || (ausrichtungNeu == 'W') || (ausrichtungNeu == 'N')
-                        || (ausrichtungNeu == 'O'))
+        if ((ausrichtungNeu == 'S') || (ausrichtungNeu == 'W')
+                || (ausrichtungNeu == 'N') || (ausrichtungNeu == 'O'))
         {
             ausrichtung = ausrichtungNeu;
             AmpelAnordnen();
         }
     }
 
-
     /**
-     * Setzt die Position der Ampel. Der Ursprung liegt in der Mitte des Fensters, die y-Achse zeigt
-     * nach unten. (x /y) bedeutet das Kästchen rechts unterhalb der Gitterlinien.
+     * Setzt die Position der Ampel. Der Ursprung liegt in der Mitte des
+     * Fensters, die y-Achse zeigt nach unten. (x /y) bedeutet das Kästchen
+     * rechts unterhalb der Gitterlinien.
      *
      * @param x xNeu-Position
      * @param y yNeu-Position
@@ -190,27 +193,29 @@ class AMPEL
     {
         switch (ausrichtung)
         {
-            case 'S':
-                lampeOben.PositionSetzen(positionX, positionY);
-                lampeMitte.PositionSetzen(positionX, positionY + 1);
-                lampeUnten.PositionSetzen(positionX, positionY + 2);
+        case 'S':
+            lampeOben.PositionSetzen(positionX, positionY);
+            lampeMitte.PositionSetzen(positionX, positionY + 1);
+            lampeUnten.PositionSetzen(positionX, positionY + 2);
+            break;
 
-                break;
-            case 'W':
-                lampeOben.PositionSetzen(positionX, positionY);
-                lampeMitte.PositionSetzen(positionX - 1, positionY);
-                lampeUnten.PositionSetzen(positionX - 2, positionY);
-                break;
-            case 'N':
-                lampeOben.PositionSetzen(positionX, positionY);
-                lampeMitte.PositionSetzen(positionX, positionY - 1);
-                lampeUnten.PositionSetzen(positionX, positionY - 2);
-                break;
-            case 'O':
-                lampeOben.PositionSetzen(positionX, positionY);
-                lampeMitte.PositionSetzen(positionX + 1, positionY);
-                lampeUnten.PositionSetzen(positionX + 2, positionY);
-                break;
+        case 'W':
+            lampeOben.PositionSetzen(positionX, positionY);
+            lampeMitte.PositionSetzen(positionX - 1, positionY);
+            lampeUnten.PositionSetzen(positionX - 2, positionY);
+            break;
+
+        case 'N':
+            lampeOben.PositionSetzen(positionX, positionY);
+            lampeMitte.PositionSetzen(positionX, positionY - 1);
+            lampeUnten.PositionSetzen(positionX, positionY - 2);
+            break;
+
+        case 'O':
+            lampeOben.PositionSetzen(positionX, positionY);
+            lampeMitte.PositionSetzen(positionX + 1, positionY);
+            lampeUnten.PositionSetzen(positionX + 2, positionY);
+            break;
         }
     }
 

@@ -8,10 +8,9 @@ import java.net.URL;
 
 import org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.fortgeschrittenes_formular.Bild;
 
-
 /**
- * Diese Klasse dient als Zwischenspeicher fuer die dargestellten Bilder. So muessen Bilder nicht
- * mehrfach geladen werden.
+ * Diese Klasse dient als Zwischenspeicher fuer die dargestellten Bilder. So
+ * muessen Bilder nicht mehrfach geladen werden.
  *
  * @author Florian Prager, Universität Passau
  * @version 02.2008
@@ -58,19 +57,21 @@ public class BildSpeicher
         if (!istDateiVorhanden(bilddatei))
         {
             System.err.println("Die gewuenschte Datei " + bilddatei
-                            + " steht nicht zur Verfuegung. \n"
-                            + "Nutzen Sie den Dienst bilderGeben eines Bildobjekts, um herauszufinden, \n"
-                            + "welche Bilddateien zur Zeit in Ihrem Projekt gewaehlt werden koennen.");
+                    + " steht nicht zur Verfuegung. \n"
+                    + "Nutzen Sie den Dienst bilderGeben eines Bildobjekts, um herauszufinden, \n"
+                    + "welche Bilddateien zur Zeit in Ihrem Projekt gewaehlt werden koennen.");
             return null;
         }
         if (!istDateiDarstellbar(bilddatei))
         {
-            System.err.println("Es koennen die Bildformate gif, jpg und png dargestellt werden.\n"
+            System.err.println(
+                    "Es koennen die Bildformate gif, jpg und png dargestellt werden.\n"
                             + "Die Datei\n    " + bilddatei
                             + "\nhat wahrscheinlich ein nicht darstellbares Format.");
             return null;
         }
-        bild = new ImageIcon(Bild.class.getResource(ordnerpfad + bilddatei)).getImage();
+        bild = new ImageIcon(Bild.class.getResource(ordnerpfad + bilddatei))
+                .getImage();
         bildSpeichern(bild, bilddatei);
         return bild;
     }

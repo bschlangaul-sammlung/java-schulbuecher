@@ -20,14 +20,14 @@ public class MeinBall extends Ball
     {
         if (super.nenneMittelpunktX() < -12 || super.nenneMittelpunktX() > 12)
         {
-            super.setzeSchrittweite(-super.nenneSchrittweiteX(), super.nenneSchrittweiteY());
+            super.setzeSchrittweite(-super.nenneSchrittweiteX(),
+                    super.nenneSchrittweiteY());
         }
         if (super.nenneMittelpunktY() < -9 || super.nenneMittelpunktY() > 9)
         {
-            super.setzeSchrittweite(super.nenneSchrittweiteX(), -super.nenneSchrittweiteY());
+            super.setzeSchrittweite(super.nenneSchrittweiteX(),
+                    -super.nenneSchrittweiteY());
         }
         super.bewegen();
-
     }
-
 }

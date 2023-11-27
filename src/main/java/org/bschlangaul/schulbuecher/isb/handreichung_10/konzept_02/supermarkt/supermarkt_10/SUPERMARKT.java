@@ -6,10 +6,10 @@ package org.bschlangaul.schulbuecher.isb.handreichung_10.konzept_02.supermarkt.s
  * @author Albert Wiedemann
  * @version 1.0
  */
-
 class SUPERMARKT
 {
     KASSE[] kassen;
+
     int wartezeit;
 
     /**
@@ -56,7 +56,6 @@ class SUPERMARKT
             wartezeit = wartezeit - 1;
         }
     }
-
 
     /**
      *ffnet die angegebene Kasse.

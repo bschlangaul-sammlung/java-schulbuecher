@@ -7,10 +7,10 @@ import greenfoot.Actor;
  *
  * Kap. 7.1 Arbeitsauftrag 1, 2 und 3
  */
-
 public class Tier extends Actor
 {
     String art;
+
     String futter;
 
     Tier()
@@ -43,42 +43,44 @@ public class Tier extends Actor
     }
 
     /*
-     * Diese Methoden können zur Lösung der Arbeitsaufträge und Aufgaben verwendet werden.
+     * Diese Methoden können zur Lösung der Arbeitsaufträge und Aufgaben
+     * verwendet werden.
      */
-    boolean istZelleRechtsFrei() // liefert true, wenn sich in der Zelle rechts neben dem Objekt
+    boolean istZelleRechtsFrei() // liefert true, wenn sich in der Zelle rechts
+                                 // neben dem Objekt
                                  // kein weiteres Objekt befindet
     {
         return !(istRechtsWasser() || istRechtsGras() || istRechtsStein());
     }
 
-    boolean istRechtsWasser() // liefert true, wenn sich in der Zelle rechts neben dem Objekt ein
+    boolean istRechtsWasser() // liefert true, wenn sich in der Zelle rechts
+                              // neben dem Objekt ein
                               // Wasser-Objekt befindet
     {
         return istRechtsObject(Wasser.class);
     }
 
-    boolean istRechtsGras() // liefert true, wenn sich in der Zelle rechts neben dem Objekt ein
+    boolean istRechtsGras() // liefert true, wenn sich in der Zelle rechts neben
+                            // dem Objekt ein
                             // Gras-Objekt befindet
     {
         return istRechtsObject(Gras.class);
     }
 
-    boolean istRechtsStein() // liefert true, wenn sich in der Zelle rechts neben dem Objekt ein
+    boolean istRechtsStein() // liefert true, wenn sich in der Zelle rechts
+                             // neben dem Objekt ein
                              // Stein-Objekt befindet
     {
         return istRechtsObject(Stein.class);
     }
 
-
     /*
-     * Der Programmtext ab hier braucht für die Bearbeitung der Arbeitsaufträge und Aufgaben weder
-     * gelesen noch verstanden zu werden.
+     * Der Programmtext ab hier braucht für die Bearbeitung der Arbeitsaufträge
+     * und Aufgaben weder gelesen noch verstanden zu werden.
      */
     private <T> boolean istRechtsObject(Class<T> objectClass)
     {
-        return getWorld().getObjectsAt(getX() + 1, getY(), objectClass).size() > 0;
+        return getWorld().getObjectsAt(getX() + 1, getY(), objectClass)
+                .size() > 0;
     }
-
-
-
 }

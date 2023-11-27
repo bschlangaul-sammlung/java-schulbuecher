@@ -8,11 +8,12 @@ import greenfoot.*; // (World, Actor, GreenfootImage, Greenfoot und MouseInfo)
  * @author Wolfgang Riffelmacher
  * @version 2022-09-12
  */
-
 public class Fisch extends Actor
 {
     private String name;
+
     private String art;
+
     private boolean tarnung;
 
     public Fisch(String name, String art)
@@ -44,7 +45,5 @@ public class Fisch extends Actor
 
     public void act()
     {
-
     }
-
 }

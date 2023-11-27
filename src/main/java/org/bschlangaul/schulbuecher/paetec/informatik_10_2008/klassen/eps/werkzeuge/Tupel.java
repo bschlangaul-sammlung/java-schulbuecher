@@ -4,7 +4,6 @@ package org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.werkz
 // Tuple library using type argument inference.
 // aus dem Buch B. Eckel: Thinking in Java
 // Uebersetzung und Auswahl: U. Heuer
-
 /**
  * Ein Tupel
  *

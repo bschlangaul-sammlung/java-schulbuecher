@@ -8,7 +8,6 @@ package org.bschlangaul.schulbuecher.cornelsen.informatik_3_2017.kapitel_04.them
  */
 class Ball extends Kreis
 {
-
     /**
      * Bewegt den Ball um 10 Einheiten nach oben
      */

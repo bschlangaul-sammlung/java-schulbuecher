@@ -16,12 +16,13 @@ class GeistDirekt extends Figur
     /**
      * Positioniert den Roboter in seiner Welt.
      *
-     * @param startX X-Koordinate der Startposition
-     * @param startY Y-Koordinate der Startposition
+     * @param startX             X-Koordinate der Startposition
+     * @param startY             Y-Koordinate der Startposition
      * @param startBlickrichtung Blickrichtung beim Start
-     * @param inWelt Welt, in der der Roboter lebt
+     * @param inWelt             Welt, in der der Roboter lebt
      */
-    GeistDirekt(int startX, int startY, char startBlickrichtung, KarolWelt inWelt, Spieler pac)
+    GeistDirekt(int startX, int startY, char startBlickrichtung,
+            KarolWelt inWelt, Spieler pac)
     {
         super(startX, startY, startBlickrichtung, inWelt);
         this.pac = pac;

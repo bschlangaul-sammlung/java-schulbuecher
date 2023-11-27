@@ -5,7 +5,6 @@ import greenfoot.Color;
 /**
  * Ein Dauerlicht wird durch Mausklick ein- und wieder ausgeschaltet.
  */
-
 public class Dauerlicht extends Licht
 {
     Dauerlicht(Color neueFarbe)

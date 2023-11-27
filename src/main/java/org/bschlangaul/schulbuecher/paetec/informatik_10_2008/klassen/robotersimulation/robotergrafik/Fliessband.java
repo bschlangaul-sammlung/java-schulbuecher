@@ -4,8 +4,8 @@ import org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.fortge
 import org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.fortgeschrittene_grafik.interna.Zeichenfenster;
 
 /**
- * Die Klasse Fliessband definiert ein Fliessband, auf dem sich Kugeln befinden, die wiederum von
- * einem Roboterarm erntfernt werden koennen.
+ * Die Klasse Fliessband definiert ein Fliessband, auf dem sich Kugeln befinden,
+ * die wiederum von einem Roboterarm erntfernt werden koennen.
  *
  * @author Florian Prager, Ute Heuer, Universität Passau
  * @version 02.2008
@@ -18,12 +18,14 @@ public class Fliessband
     private Zeichenfenster zeichenfenster;
 
     /**
-     * Das Attribut xFliessbandEnde speichert die x-Koordinate, an der des Fliessband zuende ist.
+     * Das Attribut xFliessbandEnde speichert die x-Koordinate, an der des
+     * Fliessband zuende ist.
      */
     private int xFliessbandEnde = 400;
 
     /**
-     * Das Attribut fliessband speichert des Rechteck-Objekt, das das Fliessband darstellen soll.
+     * Das Attribut fliessband speichert des Rechteck-Objekt, das das Fliessband
+     * darstellen soll.
      */
     private Rechteck fliessband;
 
@@ -33,13 +35,14 @@ public class Fliessband
     private Kugel[] kugeln;
 
     /**
-     * Das Attribut anzahlKugeln speichert die aktuelle Anzahl an Kugeln auf dem Fliessband.
+     * Das Attribut anzahlKugeln speichert die aktuelle Anzahl an Kugeln auf dem
+     * Fliessband.
      */
     private int anzahlKugeln;
 
     /**
-     * Der Konstruktor der Klasse Fliessband erzeugt ein neues Fliessband mit der uebergebenen
-     * Anzahl an Kugeln darauf.
+     * Der Konstruktor der Klasse Fliessband erzeugt ein neues Fliessband mit
+     * der uebergebenen Anzahl an Kugeln darauf.
      */
     public Fliessband(Zeichenfenster aktuellesZeichenfenster, int anzahl)
     {
@@ -51,8 +54,8 @@ public class Fliessband
     }
 
     /**
-     * Via Methode kugelEntfernen wird die Kugel aus der Darstelllung im Zeichenfenster entfernt,
-     * die sich ganz vorne auf dem Fliessband befindet.
+     * Via Methode kugelEntfernen wird die Kugel aus der Darstelllung im
+     * Zeichenfenster entfernt, die sich ganz vorne auf dem Fliessband befindet.
      */
     public Kugel kugelEntfernen()
     {
@@ -67,9 +70,9 @@ public class Fliessband
     }
 
     /**
-     * Die Methode nachruecken laesst alle Kugeln im Array un eine Position nach vorne wandern und
-     * passt die Position der Kugel-Objekte entsprechend an. Dabei "verschwindet" die erste Kugel
-     * "ins Nichts".
+     * Die Methode nachruecken laesst alle Kugeln im Array un eine Position nach
+     * vorne wandern und passt die Position der Kugel-Objekte entsprechend an.
+     * Dabei "verschwindet" die erste Kugel "ins Nichts".
      */
     public void nachruecken()
     {
@@ -89,8 +92,8 @@ public class Fliessband
     }
 
     /**
-     * Via Methode aufErsterKugel kann geprueft werden, ob die Position ganz vorne am Fliessband
-     * angefordert (uebergeben) wird.
+     * Via Methode aufErsterKugel kann geprueft werden, ob die Position ganz
+     * vorne am Fliessband angefordert (uebergeben) wird.
      */
     public boolean aufErsterKugel(int xPosition, int yPosition)
     {
@@ -102,15 +105,15 @@ public class Fliessband
             return false;
         int toleranz = 20;
         return xPosition <= kugeln[0].xPositionGeben() + toleranz
-                        && xPosition >= kugeln[0].xPositionGeben() - toleranz
-                        && yPosition <= kugeln[0].yPositionGeben() + toleranz
-                        && yPosition >= kugeln[0].yPositionGeben() - toleranz
-                        && kugeln[0].wirdAngezeigt();
+                && xPosition >= kugeln[0].xPositionGeben() - toleranz
+                && yPosition <= kugeln[0].yPositionGeben() + toleranz
+                && yPosition >= kugeln[0].yPositionGeben() - toleranz
+                && kugeln[0].wirdAngezeigt();
     }
 
     /**
-     * Die Methode fliessbandZeichnen zeichnet das Rechteck, dass das Fliessband repraesentieren
-     * soll.
+     * Die Methode fliessbandZeichnen zeichnet das Rechteck, dass das Fliessband
+     * repraesentieren soll.
      */
     private void fliessbandErzeugen()
     {
@@ -128,7 +131,8 @@ public class Fliessband
     {
         for (int i = 0; i < kugeln.length; i++)
         {
-            kugeln[i] = new Kugel(zeichenfenster, i + 1, xFliessbandEnde - ((i + 1) * 35));
+            kugeln[i] = new Kugel(zeichenfenster, i + 1,
+                    xFliessbandEnde - ((i + 1) * 35));
         }
     }
 }

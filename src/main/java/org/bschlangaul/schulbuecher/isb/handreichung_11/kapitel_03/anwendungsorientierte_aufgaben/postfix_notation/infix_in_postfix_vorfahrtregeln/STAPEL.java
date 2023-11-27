@@ -35,5 +35,4 @@ class STAPEL
     {
         return liste.AnzahlGeben();
     }
-
 }

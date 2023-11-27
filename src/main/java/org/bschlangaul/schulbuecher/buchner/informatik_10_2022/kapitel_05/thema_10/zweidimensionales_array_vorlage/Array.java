@@ -8,7 +8,6 @@ package org.bschlangaul.schulbuecher.buchner.informatik_10_2022.kapitel_05.thema
  */
 public class Array
 {
-
     private int[][] tabelle;
 
     public Array(int laenge, int breite)
@@ -29,8 +28,9 @@ public class Array
     }
 
     /**
-     * Die Methode gibt die Werte der eingegebenen Zeile aus. Achtung: Hier wird davon ausgegangen,
-     * dass der Benutzer Werte zwischen 1 und der maximalen Anzahl an Zeilen angibt.
+     * Die Methode gibt die Werte der eingegebenen Zeile aus. Achtung: Hier wird
+     * davon ausgegangen, dass der Benutzer Werte zwischen 1 und der maximalen
+     * Anzahl an Zeilen angibt.
      */
     public void zeileAusgeben(int zeilennummer)
     {

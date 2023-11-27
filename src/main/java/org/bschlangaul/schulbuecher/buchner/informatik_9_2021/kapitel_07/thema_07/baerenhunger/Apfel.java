@@ -2,5 +2,4 @@ package org.bschlangaul.schulbuecher.buchner.informatik_9_2021.kapitel_07.thema_
 
 public class Apfel extends Essen
 {
-
 }

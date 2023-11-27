@@ -5,6 +5,7 @@ import greenfoot.Actor;
 public class Schueler extends Actor
 {
     char geschlecht;
+
     int alter;
 
     Schueler(int alter)
@@ -17,8 +18,8 @@ public class Schueler extends Actor
     }
 
     /**
-     * Der Programmtext ab hier Klasse braucht für die Bearbeitung der Arbeitsaufträge und Aufgaben
-     * weder gelesen noch verstanden zu werden.
+     * Der Programmtext ab hier Klasse braucht für die Bearbeitung der
+     * Arbeitsaufträge und Aufgaben weder gelesen noch verstanden zu werden.
      */
     void aktualisiereBild()
     {

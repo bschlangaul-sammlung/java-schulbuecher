@@ -9,7 +9,6 @@ package org.bschlangaul.schulbuecher.isb.handreichung_12.kapitel_02.projekt_11.a
  */
 public class Verbraucher extends Thread
 {
-
     /** Referenz auf den Abstellplatz */
     AbstellPlatz abstellplatz;
 
@@ -33,15 +32,17 @@ public class Verbraucher extends Thread
         {
             // produzieren braucht Zeit
             sleep((int) (Math.random() * 100));
-        } catch (InterruptedException e)
+        }
+        catch (InterruptedException e)
         {
         }
     }
 
     /**
      * simuliert die Arbeit des Verbrauchers:<br/>
-     * falls das Abholen des produzierten Produkt gelingt, wird weiterverarbeitet, andernfalls wird
-     * weiter versucht einen Produkt abzuholen.
+     * falls das Abholen des produzierten Produkt gelingt, wird
+     * weiterverarbeitet, andernfalls wird weiter versucht einen Produkt
+     * abzuholen.
      */
     @Override
     public void run()

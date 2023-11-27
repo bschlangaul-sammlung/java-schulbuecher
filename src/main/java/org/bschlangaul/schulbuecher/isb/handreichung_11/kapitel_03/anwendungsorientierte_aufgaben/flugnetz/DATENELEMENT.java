@@ -4,7 +4,9 @@ public class DATENELEMENT
 {
     // Attribute
     private String flughafenname;
+
     private String stadt;
+
     private boolean zuganbindung;
 
     // Konstruktor
@@ -18,7 +20,8 @@ public class DATENELEMENT
     // Methoden
     public void Ausgeben()
     {
-        System.out.println("Flughafen der Stadt " + stadt + ": " + flughafenname);
+        System.out
+                .println("Flughafen der Stadt " + stadt + ": " + flughafenname);
     }
 
     public void FlughafennameAusgeben()
@@ -40,7 +43,4 @@ public class DATENELEMENT
     {
         return (flughafenname == name);
     }
-
-
-
 }

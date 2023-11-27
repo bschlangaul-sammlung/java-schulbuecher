@@ -9,12 +9,13 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_2_2010.kapi
 class Arbeit
 {
     RoboterThread[] threads;
+
     TanzWelt w;
 
     /**
      * Legt die Roboterthreads an.
      *
-     * @param anzahl Anzahl der Roboter
+     * @param anzahl   Anzahl der Roboter
      * @param schritte Anzahl der Tanzschritte
      */
     Arbeit(int anzahl, int schritte)
@@ -23,7 +24,8 @@ class Arbeit
         w = new TanzWelt(anzahl, anzahl, 5);
         for (int i = 0; i < anzahl; i++)
         {
-            threads[i] = new RoboterThread(new TanzRoboter(i + 1, i + 1, 'S', w), schritte);
+            threads[i] = new RoboterThread(
+                    new TanzRoboter(i + 1, i + 1, 'S', w), schritte);
         }
     }
 
@@ -41,9 +43,7 @@ class Arbeit
     public static void main(String[] args)
     {
         TanzWelt welt = new TanzWelt(10, 10, 5);
-
         Karol karol = new Karol(3, 3, 'N', welt);
-
         karol.LinksDrehen();
         karol.Schritt();
         karol.Schritt();

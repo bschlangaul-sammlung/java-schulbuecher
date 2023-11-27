@@ -14,14 +14,16 @@ import java.util.Iterator;
 import org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.fortgeschrittenes_formular.interna.BildSpeicher;
 
 /**
- * Diese Klasse implementiert ein Bild, das auf einem einfachen Formular dargestellt werden kann.
- * Objekte der Klasse Bild stellen einige einfache Dienste zum Darstellen von Dateien des Typs jpg,
- * png, gif... auf dem Zeichenfenster bereit. Die Bilder muessen im Unterordner "bilder" liegen.
+ * Diese Klasse implementiert ein Bild, das auf einem einfachen Formular
+ * dargestellt werden kann. Objekte der Klasse Bild stellen einige einfache
+ * Dienste zum Darstellen von Dateien des Typs jpg, png, gif... auf dem
+ * Zeichenfenster bereit. Die Bilder muessen im Unterordner "bilder" liegen.
  * Dieser muss sich im Verzeichnis befinden, indem auch die Datei
- * eps.fortgeschrittenesFormular.Bild.class liegt. Es muss dort mindestens das Standardbild mit
- * Namen "Pirateninsel.jpg" vorhanden sein. Versucht der Nutzer eines erfolgreich erzeugten
- * Bildobjekts, einen dateinamen zu setzen, der im Unterordner nicht vorhanden ist, dann gibt es
- * eine kurze freundliche Fehlermeldung auf der Konsole und der Zustand des Bildobjekts aendert sich
+ * eps.fortgeschrittenesFormular.Bild.class liegt. Es muss dort mindestens das
+ * Standardbild mit Namen "Pirateninsel.jpg" vorhanden sein. Versucht der Nutzer
+ * eines erfolgreich erzeugten Bildobjekts, einen dateinamen zu setzen, der im
+ * Unterordner nicht vorhanden ist, dann gibt es eine kurze freundliche
+ * Fehlermeldung auf der Konsole und der Zustand des Bildobjekts aendert sich
  * nicht.
  *
  * @author Florian Prager, Universität Passau
@@ -84,7 +86,8 @@ public class Bild extends Formulargrafik
 
     // /**
     // * Aendert das dargestellte Bild.
-    // * toDo: Refactoring -> Rechtschreibfehler entfernen in allen Nutzerklassen!
+    // * toDo: Refactoring -> Rechtschreibfehler entfernen in allen
+    // Nutzerklassen!
     // * Dann dateinamenSetzen loeschen und nur noch dateinameSetzen behalten!
     // * @param neuerDateiname
     // * der relative Pfad des neuen Bildes
@@ -96,8 +99,8 @@ public class Bild extends Formulargrafik
     }
 
     /**
-     * Aendert das dargestellte Bild, sofern die angegebene Datei vorhanden ist. Ansonsten wird
-     * nichts geaendert.
+     * Aendert das dargestellte Bild, sofern die angegebene Datei vorhanden ist.
+     * Ansonsten wird nichts geaendert.
      *
      * @param neuerDateiname der relative Pfad des neuen Bildes
      */
@@ -136,16 +139,17 @@ public class Bild extends Formulargrafik
 
     private static String pfadFormatieren(String pfad)
     {
-        return pfad.replace("%20", " ").replace("%25", "%").replace("%c3%84", "\u00C4")
-                        .replace("%c3%96", "\u00D6").replace("%c3%9c", "\u00DC")
-                        .replace("%c3%a4", "\u00E4").replace("%c3%b6", "\u00F6")
-                        .replace("%c3%bc", "\u00FC").replace("%3d", "=").replace("%5b", "[")
-                        .replace("%5d", "]").replace("%7b", "{").replace("%7d", "}")
-                        .replace("%60", "`").replace("%C3%84", "\u00C4").replace("%C3%96", "\u00D6")
-                        .replace("%C3%9C", "\u00DC").replace("%C3%A4", "\u00E4")
-                        .replace("%C3%C6", "\u00F6").replace("%C3%BC", "\u00FC").replace("%3D", "=")
-                        .replace("%5B", "[").replace("%5D", "]").replace("%7B", "{")
-                        .replace("%7D", "}");
+        return pfad.replace("%20", " ").replace("%25", "%")
+                .replace("%c3%84", "\u00C4").replace("%c3%96", "\u00D6")
+                .replace("%c3%9c", "\u00DC").replace("%c3%a4", "\u00E4")
+                .replace("%c3%b6", "\u00F6").replace("%c3%bc", "\u00FC")
+                .replace("%3d", "=").replace("%5b", "[").replace("%5d", "]")
+                .replace("%7b", "{").replace("%7d", "}").replace("%60", "`")
+                .replace("%C3%84", "\u00C4").replace("%C3%96", "\u00D6")
+                .replace("%C3%9C", "\u00DC").replace("%C3%A4", "\u00E4")
+                .replace("%C3%C6", "\u00F6").replace("%C3%BC", "\u00FC")
+                .replace("%3D", "=").replace("%5B", "[").replace("%5D", "]")
+                .replace("%7B", "{").replace("%7D", "}");
     }
 
     private class BildLeinwand extends JPanel
@@ -157,16 +161,19 @@ public class Bild extends Formulargrafik
         public BildLeinwand(Image bild)
         {
             Image bildKorrigiert = bild;
-            setBounds(0, 0, bildKorrigiert.getWidth(this), bildKorrigiert.getHeight(this));
+            setBounds(0, 0, bildKorrigiert.getWidth(this),
+                    bildKorrigiert.getHeight(this));
             if (bildKorrigiert.getWidth(this) > formularGeben().breiteGeben())
             {
                 double verhaeltnis = (double) bildKorrigiert.getWidth(this)
-                                / (double) bildKorrigiert.getHeight(this);
+                        / (double) bildKorrigiert.getHeight(this);
                 double doubleBreite = (double) formularGeben().breiteGeben();
-                bildKorrigiert = bildKorrigiert.getScaledInstance(formularGeben().breiteGeben(),
-                                (int) Math.round(doubleBreite / verhaeltnis), Image.SCALE_SMOOTH);
+                bildKorrigiert = bildKorrigiert.getScaledInstance(
+                        formularGeben().breiteGeben(),
+                        (int) Math.round(doubleBreite / verhaeltnis),
+                        Image.SCALE_SMOOTH);
                 setBounds(0, 0, formularGeben().breiteGeben(),
-                                (int) Math.round(doubleBreite / verhaeltnis));
+                        (int) Math.round(doubleBreite / verhaeltnis));
             }
             setBackground(Color.white);
             this.bild = bildKorrigiert;

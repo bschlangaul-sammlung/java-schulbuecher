@@ -10,14 +10,15 @@ class Zickezacke extends Hindernis
 {
     /** Zählt die grmachten Zacks */
     int zackenzähler;
+
     /** Der Drehwinkel */
     int winkel;
 
     /**
      * Legt das Aussehen und die Startposition fest
      *
-     * @param x x-Koordinate des Hindernisses
-     * @param y y-Koordinate des Hindernisses
+     * @param x           x-Koordinate des Hindernisses
+     * @param y           y-Koordinate des Hindernisses
      * @param richtungNeu Blickrichtung des Hindernisses
      */
     Zickezacke(int x, int y, char richtungNeu)

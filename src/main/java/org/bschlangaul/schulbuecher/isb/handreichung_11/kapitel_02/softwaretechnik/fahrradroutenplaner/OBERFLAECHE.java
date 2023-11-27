@@ -6,7 +6,6 @@ package org.bschlangaul.schulbuecher.isb.handreichung_11.kapitel_02.softwaretech
  * @author
  * @version 1.0
  */
-
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
@@ -14,47 +13,55 @@ import javax.swing.*;
 class OBERFLAECHE implements STATUSBEOBACHTER
 {
     private JComponent karte;
+
     private JFrame fenster;
+
     private JComboBox startOrt;
+
     private JComboBox zielOrt;
+
     private JLabel status;
+
     private JList ortInfos;
+
     private JList wegInfos;
+
     private KONTROLLEUR kontrolleur;
 
     /**
      * Legt die Oberflächenelemente an.
      *
-     * @param karte Die Komponente zur Darstellung der Karte.
-     * @param orte Feld mit den Orten, nutzt ort. toString ()
+     * @param karte   Die Komponente zur Darstellung der Karte.
+     * @param orte    Feld mit den Orten, nutzt ort. toString ()
      * @param ortInfo Feld mit den Ortsinformationen
      * @param wegInfo Feld mit den Weginformationen
      */
-    OBERFLAECHE(JComponent karte, Object[] orte, String[] ortInfo, String[] wegInfo, KONTROLLEUR k)
+    OBERFLAECHE(JComponent karte, Object[] orte, String[] ortInfo,
+            String[] wegInfo, KONTROLLEUR k)
     {
         this.karte = karte;
         kontrolleur = k;
         KomponentenAnlegen(orte, ortInfo, wegInfo);
-
     }
 
     /**
      * Vereinbarung der Oberflächenkomponenten.
      *
-     * @param orte Feld mit den Orten, nutzt ort. toString ()
+     * @param orte    Feld mit den Orten, nutzt ort. toString ()
      * @param ortInfo Feld mit den Ortsinformationen
      * @param wegInfo Feld mit den Weginformationen
      */
-    private void KomponentenAnlegen(Object[] orte, String[] ortInfo, String[] wegInfo)
+    private void KomponentenAnlegen(Object[] orte, String[] ortInfo,
+            String[] wegInfo)
     {
         JPanel content;
         JButton button;
         JLabel l;
         JScrollPane scroll;
-
         fenster = new JFrame("Fahrradroutenplaner");
         fenster.setResizable(false);
-        fenster.addWindowListener(new WindowAdapter() {
+        fenster.addWindowListener(new WindowAdapter()
+        {
             public void windowClosing(WindowEvent evt)
             {
                 kontrolleur.Beenden();
@@ -62,26 +69,27 @@ class OBERFLAECHE implements STATUSBEOBACHTER
         });
         content = (JPanel) fenster.getContentPane();
         content.setLayout(null);
-
         button = new JButton("Route berechnen");
         content.add(button);
         button.setBounds(300, 35, 160, 30);
-        button.addActionListener(new ActionListener() {
+        button.addActionListener(new ActionListener()
+        {
             public void actionPerformed(ActionEvent e)
             {
-                kontrolleur.WegBerechnen(startOrt.getSelectedItem(), zielOrt.getSelectedItem());
+                kontrolleur.WegBerechnen(startOrt.getSelectedItem(),
+                        zielOrt.getSelectedItem());
             }
         });
         button = new JButton("Beenden");
         content.add(button);
         button.setBounds(650, 35, 160, 30);
-        button.addActionListener(new ActionListener() {
+        button.addActionListener(new ActionListener()
+        {
             public void actionPerformed(ActionEvent e)
             {
                 kontrolleur.Beenden();
             }
         });
-
         l = new JLabel("Startort:");
         content.add(l);
         l.setBounds(20, 20, 90, 20);
@@ -109,10 +117,8 @@ class OBERFLAECHE implements STATUSBEOBACHTER
         status = new JLabel("");
         content.add(status);
         status.setBounds(20, 540, 790, 20);
-
         content.add(karte);
         karte.setBounds(10, 100, 400, 410);
-
         fenster.setSize(830, 600);
         fenster.setVisible(true);
     }
@@ -131,8 +137,8 @@ class OBERFLAECHE implements STATUSBEOBACHTER
      * Empfängt die Vorgängerinformation, Start und Ziel
      *
      * @param vorgaenger Liste mit der Vorgängerinformation
-     * @param start Name des Startortes
-     * @param ziel Name des Zielortes
+     * @param start      Name des Startortes
+     * @param ziel       Name des Zielortes
      */
     public void WegSetzen(LISTE vorgaenger, String start, String ziel)
     {

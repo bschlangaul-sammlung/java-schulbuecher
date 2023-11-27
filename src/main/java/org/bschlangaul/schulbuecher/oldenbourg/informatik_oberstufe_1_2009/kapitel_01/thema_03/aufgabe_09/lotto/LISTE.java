@@ -11,7 +11,6 @@ class LISTE
     /** Verwaltung des ersten Knotens in der Warteschlange. */
     private KNOTEN anfang;
 
-
     /**
      * Konstruktor der Liste
      *
@@ -20,7 +19,6 @@ class LISTE
     {
         anfang = null;
     }
-
 
     /**
      * Fügt ein neues Datenelement am Anfang der Liste ein.
@@ -33,8 +31,6 @@ class LISTE
         kneu = new KNOTEN(dneu, anfang);
         anfang = kneu;
     }
-
-
 
     /**
      * Fügt ein neues Datenelement sortiert in die Liste ein.
@@ -63,7 +59,4 @@ class LISTE
             anfang.InformationAusgeben();
         }
     }
-
-
-
 }

@@ -1,12 +1,15 @@
 package org.bschlangaul.schulbuecher.buchner.informatik_10_2022.kapitel_05.thema_01.stadtbibliothek_vorlage;
 
 /**
- * Klasse zur Darstellung einer Stadtbibliothek mit Name, Adresse und einer Auflistung der Bücher
+ * Klasse zur Darstellung einer Stadtbibliothek mit Name, Adresse und einer
+ * Auflistung der Bücher
  */
 public class Bibliothek
 {
     private String name;
+
     private String adresse;
+
     private Buch[] buecher;
 
     public Bibliothek()

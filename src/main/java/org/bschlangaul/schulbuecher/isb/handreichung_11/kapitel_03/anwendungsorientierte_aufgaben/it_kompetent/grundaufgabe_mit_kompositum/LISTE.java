@@ -30,10 +30,8 @@ class LISTE
     DATENELEMENT AnfangEntfernen()
     {
         DATENELEMENT entfernt;
-
         entfernt = anfang.DatenGeben();
         anfang = anfang.NachfolgerGeben();
-
         return entfernt;
     }
 
@@ -42,11 +40,8 @@ class LISTE
         return anfang.DatenGeben();
     }
 
-
-
     int AnzahlGeben()
     {
         return anfang.AnzahlAbHierGeben();
     }
-
 }

@@ -8,9 +8,9 @@ package org.bschlangaul.schulbuecher.isb.handreichung_12.kapitel_04.sortieren;
  */
 class SORTIERENTESTEN
 {
-
     /**
-     * Legt die Ausgangsobjekte an. Kann nur über die Startmethode verwendet werden.
+     * Legt die Ausgangsobjekte an. Kann nur über die Startmethode verwendet
+     * werden.
      */
     private SORTIERENTESTEN()
     {

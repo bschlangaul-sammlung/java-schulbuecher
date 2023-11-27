@@ -6,17 +6,15 @@ import java.awt.geom.Rectangle2D;
 import org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.fortgeschrittene_grafik.interna.Form;
 import org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.fortgeschrittene_grafik.interna.Zeichenfenster;
 
-
 /**
- * Objekte der Klasse Rechteck stellen einige einfache Dienste zum Darstellen von Rechtecken auf dem
- * Zeichenfenster bereit.
+ * Objekte der Klasse Rechteck stellen einige einfache Dienste zum Darstellen
+ * von Rechtecken auf dem Zeichenfenster bereit.
  *
  * @author Florian Prager, Universität Passau
  * @version 02.2008
  */
 public class Rechteck extends Form
 {
-
     /**
      * Erzeugt ein Rechteck mit Standardwerten auf dem Standardfenster
      */
@@ -31,9 +29,9 @@ public class Rechteck extends Form
     }
 
     /**
-     * Es wird ein neues Rechteck mit den Standardeinstellungen erzeugt. Dieses kann mit einem
-     * Zeichenfenster verbunden werden. Wird null eingegeben, wird das Standardfenster verwendet.
-     * Das Rechteck ist gefuellt.
+     * Es wird ein neues Rechteck mit den Standardeinstellungen erzeugt. Dieses
+     * kann mit einem Zeichenfenster verbunden werden. Wird null eingegeben,
+     * wird das Standardfenster verwendet. Das Rechteck ist gefuellt.
      */
     public Rechteck(Zeichenfenster fenster)
     {

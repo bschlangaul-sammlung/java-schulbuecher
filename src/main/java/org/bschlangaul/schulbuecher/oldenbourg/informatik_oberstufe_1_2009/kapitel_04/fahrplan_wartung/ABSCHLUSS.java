@@ -28,8 +28,8 @@ class ABSCHLUSS extends LISTENELEMENT
     }
 
     /**
-     * Löscht das angegebene Element aus der Liste. Wenn wir hier ankommen, wurde das Element nicht
-     * gefunden.
+     * Löscht das angegebene Element aus der Liste. Wenn wir hier ankommen,
+     * wurde das Element nicht gefunden.
      *
      * @param welches Referenz auf das zu löschende Element.
      * @return (neues) Nachfolgeelement des Aufrufers.
@@ -40,8 +40,8 @@ class ABSCHLUSS extends LISTENELEMENT
     }
 
     /**
-     * Sucht das Datenelement mit dem in test angegebenen Schlüssel. Nutzt die Sortierung der Liste
-     * aus.
+     * Sucht das Datenelement mit dem in test angegebenen Schlüssel. Nutzt die
+     * Sortierung der Liste aus.
      *
      * @param test Schlüssel des zu suchenden Datenelements.
      * @return Referenz auf das gefundene Datenelement oder null.
@@ -52,8 +52,8 @@ class ABSCHLUSS extends LISTENELEMENT
     }
 
     /**
-     * Meldet das nächste Datenelement für den Listendurchlauf. Am Ende der Liste wird hier
-     * &quot;angehalten&quot;.
+     * Meldet das nächste Datenelement für den Listendurchlauf. Am Ende der
+     * Liste wird hier &quot;angehalten&quot;.
      *
      * @return nächstes Element
      */

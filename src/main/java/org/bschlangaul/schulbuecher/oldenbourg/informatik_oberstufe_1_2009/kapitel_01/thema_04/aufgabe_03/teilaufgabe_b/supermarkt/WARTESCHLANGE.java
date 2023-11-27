@@ -72,8 +72,6 @@ class WARTESCHLANGE
         kassennummer = kassennummerNeu;
     }
 
-
-
     /**
      * Ausgabe der Kundenanzahl
      */
@@ -116,6 +114,5 @@ class WARTESCHLANGE
     void KundenNeuPositionieren()
     {
         liste.NeuPositionieren(kassennummer);
-
     }
 }

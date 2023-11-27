@@ -33,10 +33,11 @@ class RoboterThread extends Thread
             try
             {
                 Thread.sleep(100);
-            } catch (Exception e)
+            }
+            catch (Exception e)
             {
             }
-
-        } while (!Karol2.IstEnde());
+        }
+        while (!Karol2.IstEnde());
     }
 }

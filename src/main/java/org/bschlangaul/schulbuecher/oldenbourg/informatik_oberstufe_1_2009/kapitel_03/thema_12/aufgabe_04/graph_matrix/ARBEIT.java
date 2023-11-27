@@ -1,31 +1,29 @@
 package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapitel_03.thema_12.aufgabe_04.graph_matrix;
 
 /**
- * Baut eine Adjazenzmatrix entsprechend der Aufgabe 4 in Kapitel 11 im Buch Informatik Oberstufe 1
- * Oldenbourg Verlag auf
+ * Baut eine Adjazenzmatrix entsprechend der Aufgabe 4 in Kapitel 11 im Buch
+ * Informatik Oberstufe 1 Oldenbourg Verlag auf
  *
  * @author U.Freiberger
  * @version 1.0
  */
-
 public class ARBEIT
 {
-
     GRAPH_MATRIX g;
 
     /**
      * Konstruktor der Klasse ARBEIT
      */
     public ARBEIT()
-    {}
-
+    {
+    }
 
     /**
      * Methode AusfuehrenAutobahn()
      *
-     * führt sämtliche Arbeiten zur Implementierung des Graphen entsprechend der Vorgabe in der
-     * Teilaufgabe Autobahn aus Instanzieren des Graphenobjekts; Einfügen der Knoten und Einfügen
-     * der Kanten
+     * führt sämtliche Arbeiten zur Implementierung des Graphen entsprechend der
+     * Vorgabe in der Teilaufgabe Autobahn aus Instanzieren des Graphenobjekts;
+     * Einfügen der Knoten und Einfügen der Kanten
      *
      * Am Ende Ausgabe der Adjazenzmatrix zur Kontrolle
      *
@@ -34,7 +32,6 @@ public class ARBEIT
     {
         // Erzeugen eines Graphenobjekts g für 14 Knoten
         GRAPH_MATRIX g = new GRAPH_MATRIX(14);
-
         // Anlegen der Knoten
         g.KnotenEinfuegen("A");
         g.KnotenEinfuegen("F");
@@ -50,7 +47,6 @@ public class ARBEIT
         g.KnotenEinfuegen("S");
         g.KnotenEinfuegen("UL");
         g.KnotenEinfuegen("WÜ");
-
         // Anlegen der Kanten
         g.KanteEinfuegen("KA", "F", 127);
         g.KanteEinfuegen("F", "WÜ", 131);
@@ -71,20 +67,17 @@ public class ARBEIT
         g.KanteEinfuegen("UL", "S", 103);
         g.KanteEinfuegen("S", "KA", 53);
         g.KanteEinfuegen("S", "WÜ", 155);
-
         // Formatiertes Ausgeben der Adjazenzmatrix in der Konsole
         g.Ausgeben();
         g.TiefenSuche("M");
-
     }
-
 
     /**
      * Methode AusfuehrenFlug()
      *
-     * führt sämtliche Arbeiten zur Implementierung des Graphen entsprechend der Vorgabe in der
-     * Teilaufgabe Flugroute aus Instanzieren des Graphenobjekts; Einfügen der Knoten und Einfügen
-     * der Kanten
+     * führt sämtliche Arbeiten zur Implementierung des Graphen entsprechend der
+     * Vorgabe in der Teilaufgabe Flugroute aus Instanzieren des Graphenobjekts;
+     * Einfügen der Knoten und Einfügen der Kanten
      *
      * Am Ende Ausgabe der Adjazenzmatrix zur Kontrolle
      *
@@ -93,7 +86,6 @@ public class ARBEIT
     {
         // Erzeugen eines Graphenobjekts g für 21 Knoten
         GRAPH_MATRIX g = new GRAPH_MATRIX(21);
-
         // Anlegen der Knoten
         g.KnotenEinfuegen("AMS");
         g.KnotenEinfuegen("ARN");
@@ -116,7 +108,6 @@ public class ARBEIT
         g.KnotenEinfuegen("SFO");
         g.KnotenEinfuegen("SIN");
         g.KnotenEinfuegen("TXL");
-
         // Anlegen der Kanten mit der Gewichtung Flugzeit in Minuten
         g.KanteEinfuegen("FRA", "AMS", 70);
         g.KanteEinfuegen("FRA", "ARN", 125);
@@ -138,7 +129,6 @@ public class ARBEIT
         g.KanteEinfuegen("FRA", "SFO", 684);
         g.KanteEinfuegen("FRA", "SIN", 720);
         g.KanteEinfuegen("FRA", "TXL", 65);
-
         g.KanteEinfuegen("MUC", "AMS", 95);
         g.KanteEinfuegen("MUC", "ARN", 130);
         g.KanteEinfuegen("MUC", "BKK", 620);
@@ -157,11 +147,9 @@ public class ARBEIT
         g.KanteEinfuegen("MUC", "SFO", 730);
         g.KanteEinfuegen("MUC", "SIN", 725);
         g.KanteEinfuegen("MUC", "TXL", 70);
-
         g.KanteEinfuegen("TXL", "ARN", 90);
         g.KanteEinfuegen("TXL", "CDG", 105);
         g.KanteEinfuegen("TXL", "DME", 165);
-
         // Formatiertes Ausgeben der Adjazenzmatrix in der Konsole
         g.Ausgeben();
         g.TiefenSuche("MUC");
@@ -170,9 +158,9 @@ public class ARBEIT
     /**
      * Methode AusfuehrenICE()
      *
-     * führt sämtliche Arbeiten zur Implementierung des Graphen entsprechend der Vorgabe in der
-     * Teilaufgabe ICE-Verbindungen aus Instanzieren des Graphenobjekts; Einfügen der Knoten und
-     * Einfügen der Kanten
+     * führt sämtliche Arbeiten zur Implementierung des Graphen entsprechend der
+     * Vorgabe in der Teilaufgabe ICE-Verbindungen aus Instanzieren des
+     * Graphenobjekts; Einfügen der Knoten und Einfügen der Kanten
      *
      * Am Ende Ausgabe der Adjazenzmatrix zur Kontrolle
      *
@@ -181,7 +169,6 @@ public class ARBEIT
     {
         // Erzeugen eines Graphenobjekts g für 16 Knoten
         GRAPH_MATRIX g = new GRAPH_MATRIX(16);
-
         // Anlegen der Knoten
         g.KnotenEinfuegen("A");
         g.KnotenEinfuegen("B");
@@ -199,7 +186,6 @@ public class ARBEIT
         g.KnotenEinfuegen("N");
         g.KnotenEinfuegen("S");
         g.KnotenEinfuegen("WÜ");
-
         // Anlegen der Kanten mit der Gewichtung Fahrzeit in Minuten
         g.KanteEinfuegen("F2", "F", 10);
         g.KanteEinfuegen("FD", "F", 52);
@@ -224,7 +210,6 @@ public class ARBEIT
         g.KanteEinfuegen("WÜ", "F", 70);
         g.KanteEinfuegen("WÜ", "FD", 34);
         g.KanteEinfuegen("WÜ", "N", 58);
-
         // Formatiertes Ausgeben der Adjazenzmatrix in der Konsole
         g.Ausgeben();
         g.TiefenSuche("M");
@@ -233,9 +218,9 @@ public class ARBEIT
     /**
      * Methode AusfuehrenAusschnitt()
      *
-     * führt sämtliche Arbeiten zur Implementierung des Graphen entsprechend der Vorgabe in der
-     * Teilaufgabe Autobahnkartenausschnitt aus: Instanzieren des Graphenobjekts; Einfügen der
-     * Knoten und Einfügen der Kanten
+     * führt sämtliche Arbeiten zur Implementierung des Graphen entsprechend der
+     * Vorgabe in der Teilaufgabe Autobahnkartenausschnitt aus: Instanzieren des
+     * Graphenobjekts; Einfügen der Knoten und Einfügen der Kanten
      *
      * Am Ende Ausgabe der Adjazenzmatrix zur Kontrolle
      *
@@ -244,7 +229,6 @@ public class ARBEIT
     {
         // Erzeugen eines Graphenobjekts g für 14 Knoten
         GRAPH_MATRIX g = new GRAPH_MATRIX(14);
-
         // Anlegen der Knoten
         g.KnotenEinfuegen("A");
         g.KnotenEinfuegen("F");
@@ -260,7 +244,6 @@ public class ARBEIT
         g.KnotenEinfuegen("S");
         g.KnotenEinfuegen("UL");
         g.KnotenEinfuegen("WÜ");
-
         // Anlegen der Kanten mit der Gewichtung AutobahnKilometer
         g.KanteEinfuegen("KA", "F", 127);
         g.KanteEinfuegen("F", "WÜ", 131);
@@ -280,7 +263,6 @@ public class ARBEIT
         g.KanteEinfuegen("UL", "LI", 126);
         g.KanteEinfuegen("UL", "S", 103);
         g.KanteEinfuegen("S", "KA", 53);
-
         // Formatiertes Ausgeben der Adjazenzmatrix in der Konsole
         g.Ausgeben();
         g.TiefenSuche("M");
@@ -289,9 +271,9 @@ public class ARBEIT
     /**
      * Methode AusfuehrenSUBahn()
      *
-     * führt sämtliche Arbeiten zur Implementierung des Graphen entsprechend der Vorgabe in der
-     * Teilaufgabe S- und U-Bahn-Verbindungen aus: Instanzieren des Graphenobjekts; Einfügen der
-     * Knoten und Einfügen der Kanten
+     * führt sämtliche Arbeiten zur Implementierung des Graphen entsprechend der
+     * Vorgabe in der Teilaufgabe S- und U-Bahn-Verbindungen aus: Instanzieren
+     * des Graphenobjekts; Einfügen der Knoten und Einfügen der Kanten
      *
      * Am Ende Ausgabe der Adjazenzmatrix zur Kontrolle
      *
@@ -300,7 +282,6 @@ public class ARBEIT
     {
         // Erzeugen eines Graphenobjekts g für 41 Knoten
         GRAPH_MATRIX g = new GRAPH_MATRIX(41);
-
         // Anlegen der Knoten
         g.KnotenEinfuegen("A");
         g.KnotenEinfuegen("Altomünster");
@@ -343,7 +324,6 @@ public class ARBEIT
         g.KnotenEinfuegen("Trudering");
         g.KnotenEinfuegen("Tutzing");
         g.KnotenEinfuegen("Wolfratshausen");
-
         // Anlegen der Kanten mit der Gewichtung "ist verbunden"
         g.KanteEinfuegen("Dachau", "Altomünster", 1);
         g.KanteEinfuegen("Harras", "Großhadern", 1);
@@ -395,28 +375,26 @@ public class ARBEIT
         g.KanteEinfuegen("Trudering", "Ostbahnhof", 1);
         g.KanteEinfuegen("Tutzing", "Pasing", 1);
         g.KanteEinfuegen("Wolfratshausen", "Harras", 1);
-
         // Formatiertes Ausgeben der Adjazenzmatrix in der Konsole
         g.Ausgeben();
         g.TiefenSuche("Pasing");
     }
 
-
     /**
      * Methode AusfuehrenIrrgarten()
      *
-     * führt sämtliche Arbeiten zur Implementierung des Graphen entsprechend der Vorgabe in der
-     * Aufgabe Irrgarten aus: Instanzieren des Graphenobjekts; Einfügen der Knoten und Einfügen der
-     * Kanten
+     * führt sämtliche Arbeiten zur Implementierung des Graphen entsprechend der
+     * Vorgabe in der Aufgabe Irrgarten aus: Instanzieren des Graphenobjekts;
+     * Einfügen der Knoten und Einfügen der Kanten
      *
-     * Am Ende Ausgabe der Adjazenzmatrix zur Kontrolle sowie Aufruf der Tiefensuche
+     * Am Ende Ausgabe der Adjazenzmatrix zur Kontrolle sowie Aufruf der
+     * Tiefensuche
      *
      */
     public void AusfuehrenIrrgarten()
     {
         // Erzeugen eines Graphenobjekts g für 18 Knoten
         GRAPH_MATRIX g = new GRAPH_MATRIX(18);
-
         // Anlegen der Knoten
         g.KnotenEinfuegen("St");
         g.KnotenEinfuegen("Zi");
@@ -436,7 +414,6 @@ public class ARBEIT
         g.KnotenEinfuegen("N");
         g.KnotenEinfuegen("O");
         g.KnotenEinfuegen("P");
-
         // Anlegen der Kanten mit der Gewichtung AutobahnKilometer
         g.KanteEinfuegen("St", "A", 1);
         g.KanteEinfuegen("A", "D", 1);
@@ -456,12 +433,8 @@ public class ARBEIT
         g.KanteEinfuegen("M", "N", 1);
         g.KanteEinfuegen("N", "P", 1);
         g.KanteEinfuegen("P", "O", 1);
-
         // Formatiertes Ausgeben der Adjazenzmatrix in der Konsole
         g.Ausgeben();
         g.TiefenSuche("St");
     }
-
-
-
 }

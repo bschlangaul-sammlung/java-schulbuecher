@@ -8,22 +8,26 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapi
  * @author U.Freiberger
  * @version 1.0
  */
-
 public class KNOTEN
 {
     private String bezeichnung;
+
     private KANTE anfang;
+
     private KNOTEN nachfolger;
+
     // Attribut zur temporäre Speicherung ob ein Knoten besucht wurde oder nicht
     private boolean besucht;
+
     // Hilfsattribute für die Suche des kürzesten Wegs nach Dijkstra
     private int distanz;
+
     private KNOTEN kommtVon;
 
     /**
      * Konstruktor für Objekte der Klasse KNOTEN
      *
-     * @param neuerWert Bezeichnung des neuen Knotenobjekts
+     * @param neuerWert       Bezeichnung des neuen Knotenobjekts
      * @param neuerNachfolger Referenz auf den Nachfolgeknoten
      *
      */
@@ -82,8 +86,8 @@ public class KNOTEN
     }
 
     /**
-     * Setzt den Status des Attributs besucht für diesen und alle nachfolgenden Knoten in der
-     * Knotenliste
+     * Setzt den Status des Attributs besucht für diesen und alle nachfolgenden
+     * Knoten in der Knotenliste
      *
      * @param neuerWert neuer Wert für besucht
      *
@@ -118,8 +122,8 @@ public class KNOTEN
     }
 
     /**
-     * Setzt den Status des Attributs distanz für diesen und alle nachfolgenden Knoten in der
-     * Knotenliste
+     * Setzt den Status des Attributs distanz für diesen und alle nachfolgenden
+     * Knoten in der Knotenliste
      *
      * @param neuerWert neuer Wert für distanz
      *
@@ -165,8 +169,9 @@ public class KNOTEN
     }
 
     /**
-     * Sucht in der Knotenliste nach einem Knoten mit dem übergebenen Bezeichner; die Suche beginnt
-     * ab dem aufgerufenen Knoten; ruft rekursiv das Suchen des Nachfolgers auf
+     * Sucht in der Knotenliste nach einem Knoten mit dem übergebenen
+     * Bezeichner; die Suche beginnt ab dem aufgerufenen Knoten; ruft rekursiv
+     * das Suchen des Nachfolgers auf
      *
      * @return Referenz auf den gefundenen Knoten, null wenn nicht gefunden
      *
@@ -182,8 +187,9 @@ public class KNOTEN
     }
 
     /**
-     * Einfügen einer Kante in die Adjazenzliste des Knotens Eine Kante ist durch einen
-     * Anfangsknoten (=dieser Knoten) und einen Endknoten festgelegt und hat eine Gewichtung.
+     * Einfügen einer Kante in die Adjazenzliste des Knotens Eine Kante ist
+     * durch einen Anfangsknoten (=dieser Knoten) und einen Endknoten festgelegt
+     * und hat eine Gewichtung.
      *
      * @param nachKnoten Referenz auf den Endknoten der Kante
      * @param gewichtung Gewichtung der Kante als Ganzzahl
@@ -192,15 +198,14 @@ public class KNOTEN
     public void KanteEinfuegen(KNOTEN nachKnoten, int gewichtung)
     {
         KANTE alterAnfang;
-
         alterAnfang = anfang;
         anfang = new KANTE(nachKnoten, alterAnfang, gewichtung);
     }
 
     /**
-     * Gibt den Bezeichner des Knotenobjekts zusammen mit der Adjazenzliste, die zu diesem Knoten
-     * gehört in der Konsole aus ruft, sofern nicht letzter Knoten in der Liste, die Ausgabe des
-     * Nachfolgers auf
+     * Gibt den Bezeichner des Knotenobjekts zusammen mit der Adjazenzliste, die
+     * zu diesem Knoten gehört in der Konsole aus ruft, sofern nicht letzter
+     * Knoten in der Liste, die Ausgabe des Nachfolgers auf
      *
      */
     public void Ausgeben()
@@ -212,5 +217,4 @@ public class KNOTEN
         if (nachfolger != null)
             nachfolger.Ausgeben();
     }
-
 }

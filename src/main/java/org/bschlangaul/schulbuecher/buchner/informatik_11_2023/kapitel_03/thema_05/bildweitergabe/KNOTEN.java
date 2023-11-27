@@ -2,10 +2,9 @@ package org.bschlangaul.schulbuecher.buchner.informatik_11_2023.kapitel_03.thema
 
 public class KNOTEN
 {
-
     private String bezeichner;
-    private String kuerzel;
 
+    private String kuerzel;
 
     public KNOTEN(String eNeu, String ekurz)
     {

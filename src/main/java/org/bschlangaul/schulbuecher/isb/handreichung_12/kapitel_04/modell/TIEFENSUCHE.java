@@ -1,7 +1,8 @@
 package org.bschlangaul.schulbuecher.isb.handreichung_12.kapitel_04.modell;
 
 /**
- * Sucht im gegeben Graph mittels wiederholter Tiefensuche nach dem kürzersten Weg..
+ * Sucht im gegeben Graph mittels wiederholter Tiefensuche nach dem kürzersten
+ * Weg..
  *
  * @author ISB-Arbeitskreis, Umsetzungshilfen Informatik 12
  * @version 1.0
@@ -10,8 +11,10 @@ class TIEFENSUCHE
 {
     /* Adjazenzmatrix des Graphen */
     int[][] matrix;
+
     /* Merker für die besuchten Knoten */
     boolean[] besucht;
+
     /* Länge des (bisher gefundenen) kürzesten Wegs */
     int laenge;
 
@@ -34,7 +37,7 @@ class TIEFENSUCHE
     /**
      * Führ die Suche aus.
      *
-     * @param von Startknoten
+     * @param von  Startknoten
      * @param nach Zielknoten
      * @return Weglänge
      */
@@ -47,8 +50,8 @@ class TIEFENSUCHE
     /**
      * Rekursive Durchführung der Suche.
      *
-     * @param akt aktueller Knoten
-     * @param nach Zielknoten
+     * @param akt    aktueller Knoten
+     * @param nach   Zielknoten
      * @param laenge Länge des aktuellen Wegs
      */
     private void Suchen(int akt, int nach, int laenge)

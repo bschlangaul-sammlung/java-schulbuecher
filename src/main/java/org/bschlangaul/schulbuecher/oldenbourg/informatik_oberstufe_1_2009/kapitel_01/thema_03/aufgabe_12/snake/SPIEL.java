@@ -34,8 +34,6 @@ class SPIEL
     /** Verwaltung des Auto-Objekts */
     private AUTO auto;
 
-
-
     /**
      * Konstruktor der Klasse SPIEL <br>
      * Spiel wird als nicht beendet gesetzt. <br>
@@ -50,7 +48,6 @@ class SPIEL
         beendet = false;
         kaestchenzahl_rechts = 20;
         kaestchenzahl_unten = 20;
-
         spielfeld = new char[kaestchenzahl_rechts][kaestchenzahl_unten];
         for (int i = 0; i < kaestchenzahl_rechts; i++)
         {
@@ -59,19 +56,16 @@ class SPIEL
                 spielfeld[i][j] = 'l'; // leeres Spielfeldelement
             }
         }
-
         snake = new SNAKE(this);
         auto = new AUTO();
         maus = new MAUS();
-        darstellung = new DARSTELLUNG(this, kaestchenzahl_rechts, kaestchenzahl_unten);
-
+        darstellung = new DARSTELLUNG(this, kaestchenzahl_rechts,
+                kaestchenzahl_unten);
     }
 
-
-
     /**
-     * Falls das Spiel nicht beendet ist, rücken Schlange, Maus und Auto ein Feld vor und die
-     * Darstellung wird neu gezeichnet.
+     * Falls das Spiel nicht beendet ist, rücken Schlange, Maus und Auto ein
+     * Feld vor und die Darstellung wird neu gezeichnet.
      */
     void SpielSchritt()
     {
@@ -84,16 +78,15 @@ class SPIEL
         }
     }
 
-
-
     /**
-     * Berechnung der x-Koordinate der Zelle, die vor dem Kopf der Schlange liegt, abhängig von der
-     * Ausrichtung der Schlange. Am Rand des Spielfeldes wird über den gegenüberliegenden Rand
-     * geblickt.
+     * Berechnung der x-Koordinate der Zelle, die vor dem Kopf der Schlange
+     * liegt, abhängig von der Ausrichtung der Schlange. Am Rand des Spielfeldes
+     * wird über den gegenüberliegenden Rand geblickt.
      *
-     * @param x x-Koordinate des Schlangenkopfes
+     * @param x           x-Koordinate des Schlangenkopfes
      * @param ausrichtung Ausrichtung der Schlange
-     * @return x-Koordinate des Spielfeldelements, das vor dem Schlangenkopf liegt.
+     * @return x-Koordinate des Spielfeldelements, das vor dem Schlangenkopf
+     *         liegt.
      */
     int Nachbarzelle_XBerechnen(int x, char ausrichtung)
     {
@@ -108,7 +101,6 @@ class SPIEL
                 x = 0;
             }
         }
-
         if (ausrichtung == 'W')
         {
             if (x - 1 >= 0)
@@ -120,18 +112,18 @@ class SPIEL
                 x = kaestchenzahl_rechts - 1;
             }
         }
-
         return x;
     }
 
     /**
-     * Berechnung der y-Koordinate der Zelle, die vor dem Kopf der Schlange liegt, abhängig von der
-     * Ausrichtung der Schlange. Am Rand des Spielfeldes wird über den gegenüberliegenden Rand
-     * geblickt.
+     * Berechnung der y-Koordinate der Zelle, die vor dem Kopf der Schlange
+     * liegt, abhängig von der Ausrichtung der Schlange. Am Rand des Spielfeldes
+     * wird über den gegenüberliegenden Rand geblickt.
      *
-     * @param y y-Koordinate des Schlangenkopfes
+     * @param y           y-Koordinate des Schlangenkopfes
      * @param ausrichtung Ausrichtung der Schlange
-     * @return y-Koordinate des Spielfeldelements, das vor dem Schlangenkopf liegt.
+     * @return y-Koordinate des Spielfeldelements, das vor dem Schlangenkopf
+     *         liegt.
      */
     int Nachbarzelle_YBerechnen(int y, char ausrichtung)
     {
@@ -146,7 +138,6 @@ class SPIEL
                 y = 0;
             }
         }
-
         if (ausrichtung == 'N')
         {
             if (y - 1 >= 0)
@@ -158,10 +149,8 @@ class SPIEL
                 y = kaestchenzahl_unten - 1;
             }
         }
-
         return y;
     }
-
 
     /**
      * Prüft, ob auf einem bestimmten Feld eine Maus liegt.
@@ -182,7 +171,6 @@ class SPIEL
         }
     }
 
-
     /**
      * Prüft, ob auf einem bestimmten Feld ein Auto liegt.
      *
@@ -202,12 +190,11 @@ class SPIEL
         }
     }
 
-
     /**
      * Belegt ein Feld als Teil der Schlange, bzw. als Auto oder Maus.
      *
-     * @param x x-Koordinate des Feldes
-     * @param x x-Koordinate des Feldes
+     * @param x   x-Koordinate des Feldes
+     * @param x   x-Koordinate des Feldes
      * @param art Art der Belegung ('s', 'm' oder 'a')
      */
     void FeldBelegen(int x, int y, char art)
@@ -236,7 +223,6 @@ class SPIEL
         return spielfeld;
     }
 
-
     /**
      * Meldet an die Snake eine Richtungsänderung weiter.
      *
@@ -256,9 +242,9 @@ class SPIEL
      */
     boolean IstInSpielfeld(int x, int y)
     {
-        return ((x >= 0) && (x < kaestchenzahl_rechts) && (y >= 0) && (y < kaestchenzahl_unten));
+        return ((x >= 0) && (x < kaestchenzahl_rechts) && (y >= 0)
+                && (y < kaestchenzahl_unten));
     }
-
 
     /**
      * Liefert die Anzahl der Kästchen nach rechts
@@ -270,7 +256,6 @@ class SPIEL
         return kaestchenzahl_rechts;
     }
 
-
     /**
      * Liefert die Anzahl der Kästchen nach unten
      *
@@ -281,7 +266,6 @@ class SPIEL
         return kaestchenzahl_unten;
     }
 
-
     /**
      * Liefert die Snake
      *
@@ -291,7 +275,6 @@ class SPIEL
     {
         return snake;
     }
-
 
     /**
      * Setzt das Spiel auf beendet
@@ -310,5 +293,4 @@ class SPIEL
     {
         maus.RichtungUndOrtBestimmen(this);
     }
-
 }

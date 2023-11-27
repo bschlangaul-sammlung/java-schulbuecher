@@ -6,11 +6,11 @@ package org.bschlangaul.schulbuecher.isb.handreichung_10.konzept_02.supermarkt.s
  * @author Albert Wiedemann
  * @version 1.0
  */
-
 class KUNDEKURZ extends KUNDE
 {
     /**
-     * Konstruktor des Kunden. Alle notwenigen Arbeiten werden vom Oberklassenkonstruktor erledigt.
+     * Konstruktor des Kunden. Alle notwenigen Arbeiten werden vom
+     * Oberklassenkonstruktor erledigt.
      *
      * @param artikel Anzahl der Artikel im Warenkorb
      */
@@ -20,8 +20,8 @@ class KUNDEKURZ extends KUNDE
     }
 
     /**
-     * Entscheidet, an welche Schlange sich der Kunde anstellt. Hier ist die Strategie: kürzeste
-     * Schlange pre: es gibt mindestens eine offene Kasse
+     * Entscheidet, an welche Schlange sich der Kunde anstellt. Hier ist die
+     * Strategie: kürzeste Schlange pre: es gibt mindestens eine offene Kasse
      *
      * @param kassen Feld der im Markt vorhandenen Kassen
      */
@@ -33,8 +33,8 @@ class KUNDEKURZ extends KUNDE
         for (int i = 0; i < kassen.length; i++)
         {
             w = kassen[i].WarteschlangeHolen();
-            if ((kassen[i].IstOffen())
-                            && ((beste == null) || (w.LaengeHolen() < beste.LaengeHolen())))
+            if ((kassen[i].IstOffen()) && ((beste == null)
+                    || (w.LaengeHolen() < beste.LaengeHolen())))
             {
                 beste = w;
             }

@@ -10,8 +10,10 @@ class MAUS implements DATENELEMENT
 {
     /** nummer der Maus */
     private int nummer;
+
     /** Anzahl der Siege */
     private int siegeszahl;
+
     /** Anzahl der Niederlagen */
     private int niederlagenzahl;
 
@@ -34,7 +36,6 @@ class MAUS implements DATENELEMENT
     {
         siegeszahl = siegeszahl + 1;
     }
-
 
     /**
      * Erhöht die Niederlagenzahl um 1.

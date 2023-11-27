@@ -12,6 +12,7 @@ import java.util.*;
 public class Person
 {
     String name;
+
     Einkauf[] einkaeufe;
 
     public Person()
@@ -19,7 +20,8 @@ public class Person
         this.name = "Tochter Geizig";
         this.einkaeufe = new Einkauf[10];
         einkaeufe[0] = new Einkauf();
-        // TODO: Hier für Tochter sämtliche Einkäufe reinpacken einkaeufe[1] = new Einkauf({new
+        // TODO: Hier für Tochter sämtliche Einkäufe reinpacken einkaeufe[1] =
+        // new Einkauf({new
         // Artikel("
     }
 
@@ -33,7 +35,7 @@ public class Person
     {
         // 24j
         return "In dem Geschaeft " + "xxx" + " wurde insgesamt " + 5
-                        + " mal eingekauft und insgesamt " + 3 + " € ausgegeben ";
+                + " mal eingekauft und insgesamt " + 3 + " € ausgegeben ";
     }
 
     public double berechneAusgaben(String kategorie)
@@ -45,17 +47,15 @@ public class Person
     public String berechneTeuersterTag()
     {
         LocalDate datum = einkaeufe[0].nenneDatum();
-
         // 24l
-
-        return "Am " + datum + " wurde der höchste Geldbetrag, nämlich " + 5 + " Euro ausgegeben.";
+        return "Am " + datum + " wurde der höchste Geldbetrag, nämlich " + 5
+                + " Euro ausgegeben.";
     }
 
     public String berechneUnbeliebtesteKategorie(int index)
     {
-
         // 24m
-        return "In der unbeliebtesten Kategorie " + "xxx" + " wurden insgesamt " + 5
-                        + " Euro ausgegeben.";
+        return "In der unbeliebtesten Kategorie " + "xxx" + " wurden insgesamt "
+                + 5 + " Euro ausgegeben.";
     }
 }

@@ -8,7 +8,6 @@ package org.bschlangaul.schulbuecher.isb.handreichung_11.kapitel_01.thema_02.bae
  */
 abstract class BAUMELEMENT
 {
-
     /**
      * Der Konstruktor ist aus Dokumentationsgründen vorhanden
      */
@@ -27,7 +26,8 @@ abstract class BAUMELEMENT
     abstract DATENELEMENT Suchen(DATENELEMENT wert);
 
     /**
-     * Fügt ein neues Datenelement in den Baum ein. Der Wert darf noch nicht vorkommen
+     * Fügt ein neues Datenelement in den Baum ein. Der Wert darf noch nicht
+     * vorkommen
      *
      * @param wert Referenz auf das einzufügende Datenelement
      * @return der (neue) Nachfolger des Aufrufers
@@ -50,7 +50,8 @@ abstract class BAUMELEMENT
     abstract void PostOrder();
 
     /**
-     * Entfernt den Knoten mit der Referenz auf das Datenelement mit dem gegebenen Schlüssel.
+     * Entfernt den Knoten mit der Referenz auf das Datenelement mit dem
+     * gegebenen Schlüssel.
      *
      * @param wert Referenz auf ein Datenelement mit dem Schlüsselwert
      * @return der (neue) Nachfolger des Aufrufers
@@ -58,7 +59,8 @@ abstract class BAUMELEMENT
     abstract BAUMELEMENT Entfernen(DATENELEMENT wert);
 
     /**
-     * Fügt den angegebenen Teilbaum an der am weitesten rechts stehenden Stelle ein.
+     * Fügt den angegebenen Teilbaum an der am weitesten rechts stehenden Stelle
+     * ein.
      *
      * @param teil der Anzufügende Teilbaum
      * @return der (neue) Nachfolger des Aufrufers

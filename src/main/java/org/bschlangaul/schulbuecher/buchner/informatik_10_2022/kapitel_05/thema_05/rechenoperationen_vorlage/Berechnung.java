@@ -8,7 +8,6 @@ package org.bschlangaul.schulbuecher.buchner.informatik_10_2022.kapitel_05.thema
  */
 public class Berechnung
 {
-
     public static double berechneDurchschnitt(int[] array)
     {
         // Kapitel 5-5, Aufgabe A1a

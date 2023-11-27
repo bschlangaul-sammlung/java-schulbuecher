@@ -9,6 +9,7 @@ package org.bschlangaul.schulbuecher.cornelsen.informatik_3_2017.kapitel_04.them
 public class Ampel extends SPIEL
 {
     private RECHTECK box;
+
     private KREIS rot, gelb, gruen;
 
     /**
@@ -22,17 +23,14 @@ public class Ampel extends SPIEL
         this.box.setzeMittelpunkt(0, 0);
         this.box.setzeFarbe("hellgrau");
         this.box.setzeEbenenposition(1);
-
         this.rot = new KREIS(1.8);
         this.rot.setzeMittelpunkt(0, 4);
         this.rot.setzeFarbe("rot");
         this.rot.setzeEbenenposition(2);
-
         this.gelb = new KREIS(1.8);
         this.gelb.setzeMittelpunkt(0, 0);
         this.gelb.setzeFarbe("gelb");
         this.gelb.setzeEbenenposition(2);
-
         this.gruen = new KREIS(1.8);
         this.gruen.setzeMittelpunkt(0, -4);
         this.gruen.setzeFarbe("gruen");
@@ -91,9 +89,11 @@ public class Ampel extends SPIEL
     }
 
     /**
-     * Wartet eine bestimmte Zeit, bis der naechste Methodenaufruf ausgeführt wird.
+     * Wartet eine bestimmte Zeit, bis der naechste Methodenaufruf ausgeführt
+     * wird.
      *
-     * @param sekunden Die zu wartende Zeit in Sekunden (z.B. 0.05 fuer 5 Hundertstel Sekunden)
+     * @param sekunden Die zu wartende Zeit in Sekunden (z.B. 0.05 fuer 5
+     *                 Hundertstel Sekunden)
      */
     @Override
     public void warte(double sekunden)
@@ -102,10 +102,11 @@ public class Ampel extends SPIEL
     }
 
     /**
-     * Methode zu Ueberschreiben in einer Unterklasse. Wird beim Druecken einer Taste am Keyboard
-     * des Computers automatisch aufgerufen. Ihr wird automatisch eine Nummer uebergeben. Fuer die
-     * Nummern gibt es sprechende Konstanten wie TASTE.A , Taste._1, Taste.LEERTASTE, ... siehe
-     * Klasse TASTE !!!
+     * Methode zu Ueberschreiben in einer Unterklasse. Wird beim Druecken einer
+     * Taste am Keyboard des Computers automatisch aufgerufen. Ihr wird
+     * automatisch eine Nummer uebergeben. Fuer die Nummern gibt es sprechende
+     * Konstanten wie TASTE.A , Taste._1, Taste.LEERTASTE, ... siehe Klasse
+     * TASTE !!!
      *
      * @param tastenCode Ein Parameter
      */
@@ -114,23 +115,20 @@ public class Ampel extends SPIEL
     {
         super.tasteReagieren(tastenCode);
     }
-
     // ----------------------------------------------------------------------------------
-    // In Verbindung mit der Methode warte(...) sollte tick() NIE aufgerufen werden !!!
+    // In Verbindung mit der Methode warte(...) sollte tick() NIE aufgerufen
+    // werden !!!
     // ----------------------------------------------------------------------------------
-
     // @Override
     // public void tick()
     // {
     // super.tick();
     // }
-
     // @Override
     // public void stoppeTicker()
     // {
     // super.stoppeTicker();
     // }
-
     // @Override
     // public void starteTickerNeu( double sekunden )
     // {

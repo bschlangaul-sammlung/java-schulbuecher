@@ -23,7 +23,6 @@ class PATIENT implements DATENELEMENT
         name = s;
     }
 
-
     /**
      * Gibt Information über den Patienten aus.
      */
@@ -31,7 +30,6 @@ class PATIENT implements DATENELEMENT
     {
         System.out.println(name);
     }
-
 
     /**
      * Gibt den Namen aus
@@ -77,7 +75,4 @@ class PATIENT implements DATENELEMENT
             return false;
         }
     }
-
-
-
 }

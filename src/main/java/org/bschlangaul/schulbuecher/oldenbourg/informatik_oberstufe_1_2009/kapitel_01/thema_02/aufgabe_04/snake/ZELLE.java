@@ -14,20 +14,18 @@ class ZELLE implements DATENELEMENT
     /** y-Koordinate der Zelle */
     private int y;
 
-
     /**
      * Konstruktor für die Objekte der Klasse ZELLE
      *
      * @param xneu x-Koordinate
      * @param yneu y-Koordinate
-     * @param nf Referenz auf die Nachfolger-Zelle.
+     * @param nf   Referenz auf die Nachfolger-Zelle.
      */
     ZELLE(int xneu, int yneu)
     {
         x = xneu;
         y = yneu;
     }
-
 
     /**
      * Belegt beim übergebenen Spiel das Feld mit den Koordinaten x und y
@@ -39,7 +37,6 @@ class ZELLE implements DATENELEMENT
         s.FeldBelegen(x, y);
     }
 
-
     /**
      * Gibt beim übergebenen Spiel das Feld mit den Koordinaten x und y frei
      *
@@ -50,7 +47,6 @@ class ZELLE implements DATENELEMENT
         s.FeldFreigeben(x, y);
     }
 
-
     /**
      * Gibt die x-Koordinate aus
      *
@@ -60,7 +56,6 @@ class ZELLE implements DATENELEMENT
     {
         return x;
     }
-
 
     /**
      * Gibt die y-Koordinate aus
@@ -76,7 +71,6 @@ class ZELLE implements DATENELEMENT
      * Ohne Funktion in diesem Projekt
      */
     public void InformationAusgeben()
-    {}
-
-
+    {
+    }
 }

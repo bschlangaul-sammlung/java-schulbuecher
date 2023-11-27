@@ -32,19 +32,22 @@ class Rahmen extends Ereignisbehandlung
      */
     @Override
     void SonderTasteGedrückt(int taste)
-    {}
+    {
+    }
 
     /**
      * nichts
      */
     @Override
     void TasteGedrückt(char taste)
-    {}
+    {
+    }
 
     /**
      * nichts
      */
     @Override
     void TaktImpulsAusführen()
-    {}
+    {
+    }
 }

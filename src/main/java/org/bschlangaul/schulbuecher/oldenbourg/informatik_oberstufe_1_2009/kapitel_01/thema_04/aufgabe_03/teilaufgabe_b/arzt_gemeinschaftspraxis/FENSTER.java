@@ -10,13 +10,15 @@ import java.awt.event.*;
  * @version 1.0 vom 07.01.2009
  * @author Klaus van Dijkstran
  */
-
 class FENSTER extends Frame
 {
     // Anfang Attribute
     private Label label1 = new Label();
+
     private Label label2 = new Label();
+
     private Label label3 = new Label();
+
     private Label label4 = new Label();
 
     /** Textfeld zum Eintrag eines neuen Patienten */
@@ -33,6 +35,7 @@ class FENSTER extends Frame
 
     /** Knopf zur Aufnahme des Patienten im Textfeld bei Dr. Buche */
     private Button aufnahmeknopfEgal = new Button();
+
     private Label label5 = new Label();
 
     /** Knopf zur Ausgabe des nächste Patienten f&umml;r Dr. Linde */
@@ -68,7 +71,8 @@ class FENSTER extends Frame
         // Frame-Initialisierung
         super("Praxisverwaltung");
         praxis = g;
-        addWindowListener(new WindowAdapter() {
+        addWindowListener(new WindowAdapter()
+        {
             public void windowClosing(WindowEvent evt)
             {
                 System.exit(0);
@@ -84,7 +88,6 @@ class FENSTER extends Frame
         Panel cp = new Panel(null);
         add(cp);
         // Anfang Komponenten
-
         label1.setBounds(8, 8, 223, 29);
         label1.setText("Gemeinschaftspraxis");
         label1.setFont(new Font("MS Sans Serif", Font.PLAIN, 21));
@@ -106,7 +109,8 @@ class FENSTER extends Frame
         cp.add(label4);
         aufnahmeknopfLinde.setBounds(8, 144, 73, 33);
         aufnahmeknopfLinde.setLabel("Linde");
-        aufnahmeknopfLinde.addActionListener(new ActionListener() {
+        aufnahmeknopfLinde.addActionListener(new ActionListener()
+        {
             public void actionPerformed(ActionEvent evt)
             {
                 PATIENT p;
@@ -117,7 +121,8 @@ class FENSTER extends Frame
         cp.add(aufnahmeknopfLinde);
         aufnahmeknopfEiche.setBounds(88, 144, 73, 33);
         aufnahmeknopfEiche.setLabel("Eiche");
-        aufnahmeknopfEiche.addActionListener(new ActionListener() {
+        aufnahmeknopfEiche.addActionListener(new ActionListener()
+        {
             public void actionPerformed(ActionEvent evt)
             {
                 PATIENT p;
@@ -128,7 +133,8 @@ class FENSTER extends Frame
         cp.add(aufnahmeknopfEiche);
         aufnahmeknopfBuche.setBounds(168, 144, 73, 33);
         aufnahmeknopfBuche.setLabel("Buche");
-        aufnahmeknopfBuche.addActionListener(new ActionListener() {
+        aufnahmeknopfBuche.addActionListener(new ActionListener()
+        {
             public void actionPerformed(ActionEvent evt)
             {
                 PATIENT p;
@@ -139,7 +145,8 @@ class FENSTER extends Frame
         cp.add(aufnahmeknopfBuche);
         aufnahmeknopfEgal.setBounds(248, 144, 73, 33);
         aufnahmeknopfEgal.setLabel("egal");
-        aufnahmeknopfEgal.addActionListener(new ActionListener() {
+        aufnahmeknopfEgal.addActionListener(new ActionListener()
+        {
             public void actionPerformed(ActionEvent evt)
             {
                 PATIENT p;
@@ -154,7 +161,8 @@ class FENSTER extends Frame
         cp.add(label5);
         ausgabeknopfLinde.setBounds(8, 224, 73, 33);
         ausgabeknopfLinde.setLabel("Linde");
-        ausgabeknopfLinde.addActionListener(new ActionListener() {
+        ausgabeknopfLinde.addActionListener(new ActionListener()
+        {
             public void actionPerformed(ActionEvent evt)
             {
                 ausgabeLinde.setText(praxis.Ausgeben("Linde"));
@@ -163,7 +171,8 @@ class FENSTER extends Frame
         cp.add(ausgabeknopfLinde);
         ausgabeknopfEiche.setBounds(8, 264, 73, 33);
         ausgabeknopfEiche.setLabel("Eiche");
-        ausgabeknopfEiche.addActionListener(new ActionListener() {
+        ausgabeknopfEiche.addActionListener(new ActionListener()
+        {
             public void actionPerformed(ActionEvent evt)
             {
                 ausgabeEiche.setText(praxis.Ausgeben("Eiche"));
@@ -172,7 +181,8 @@ class FENSTER extends Frame
         cp.add(ausgabeknopfEiche);
         ausgabeknopfBuche.setBounds(8, 304, 73, 33);
         ausgabeknopfBuche.setLabel("Buche");
-        ausgabeknopfBuche.addActionListener(new ActionListener() {
+        ausgabeknopfBuche.addActionListener(new ActionListener()
+        {
             public void actionPerformed(ActionEvent evt)
             {
                 ausgabeBuche.setText(praxis.Ausgeben("Buche"));
@@ -192,11 +202,7 @@ class FENSTER extends Frame
         ausgabeBuche.setFont(new Font("MS Sans Serif", Font.PLAIN, 13));
         cp.add(ausgabeBuche);
         // Ende Komponenten
-
         setResizable(false);
         setVisible(true);
     }
-
-
-
 }

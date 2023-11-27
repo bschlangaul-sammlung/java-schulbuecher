@@ -6,7 +6,6 @@ package org.bschlangaul.schulbuecher.isb.handreichung_10.konzept_02.supermarkt.s
  * @author Albert Wiedemann
  * @version 1.0
  */
-
 class SUPERMARKT
 {
     KASSE[] kassen;
@@ -24,7 +23,6 @@ class SUPERMARKT
             kassen[i] = new KASSE(schlange);
             kassen[i].PositionSetzen(400, 50 + i * 100);
         }
-
     }
 
     /**

@@ -1,12 +1,12 @@
 package org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.einfaches_formular;
 
-
 /**
- * Diese Klasse definiert einen einfachen Text, der auf dem Standard-Formular angezeigt werden kann.
- * Dort wird automatisch zentriert und umgebrochen, je nach aktueller Groesse des Formularfensters.
- * Die Schriftart und die Farbe des Textes koennen veraendert werden.<BR>
- * Technische Details werden verborgen. Das einzige Attribut internerText eignet sich (wie der Name
- * intern andeuten soll) nicht zum Inspizieren.
+ * Diese Klasse definiert einen einfachen Text, der auf dem Standard-Formular
+ * angezeigt werden kann. Dort wird automatisch zentriert und umgebrochen, je
+ * nach aktueller Groesse des Formularfensters. Die Schriftart und die Farbe des
+ * Textes koennen veraendert werden.<BR>
+ * Technische Details werden verborgen. Das einzige Attribut internerText eignet
+ * sich (wie der Name intern andeuten soll) nicht zum Inspizieren.
  *
  * @author Ute Heuer
  * @version 0.1
@@ -16,7 +16,8 @@ public class Text
     private org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.fortgeschrittenes_formular.Text internerText;
 
     /**
-     * Ein Standard-Text wird erzeugt. Dieser wird jedoch noch nicht im Formularfenster angezeigt.
+     * Ein Standard-Text wird erzeugt. Dieser wird jedoch noch nicht im
+     * Formularfenster angezeigt.
      */
     public Text()
     {
@@ -24,7 +25,8 @@ public class Text
     }
 
     /**
-     * Legt den Text ans Ende des Formularfensters, wenn er vorher nicht angezeigt wurde.
+     * Legt den Text ans Ende des Formularfensters, wenn er vorher nicht
+     * angezeigt wurde.
      */
     public void anzeigen()
     {
@@ -48,9 +50,10 @@ public class Text
     }
 
     /**
-     * Die Schriftgroesse des Textes kann geaendert werden. Es koennen nur Schriftgroessen im
-     * Bereich 1 bis 35 angezeigt werden. Bei Bereichsueberschreitung wird 35, bei -unterschreitung
-     * wird 1 gesetzt und entsprechendes angezeigt.
+     * Die Schriftgroesse des Textes kann geaendert werden. Es koennen nur
+     * Schriftgroessen im Bereich 1 bis 35 angezeigt werden. Bei
+     * Bereichsueberschreitung wird 35, bei -unterschreitung wird 1 gesetzt und
+     * entsprechendes angezeigt.
      */
     public void groesseSetzen(int neueSchriftgroesse)
     {
@@ -74,13 +77,13 @@ public class Text
     }
 
     /**
-     * Die Farbe des Textes kann gewaehlt werden. Mögliche Farben sind: "weiss", "gelb", "orange",
-     * "rot", "pink", "magenta", "cyan", "gruen", "blau", "grau", "schwarz" Achtung: Die
-     * Anfuehrungsstriche sind noetig! Alle anderen Eingabewerte werden ignoriert.
+     * Die Farbe des Textes kann gewaehlt werden. Mögliche Farben sind: "weiss",
+     * "gelb", "orange", "rot", "pink", "magenta", "cyan", "gruen", "blau",
+     * "grau", "schwarz" Achtung: Die Anfuehrungsstriche sind noetig! Alle
+     * anderen Eingabewerte werden ignoriert.
      */
     public void farbeSetzen(String neueFarbe)
     {
         internerText.farbeSetzen(neueFarbe);
     }
-
 }

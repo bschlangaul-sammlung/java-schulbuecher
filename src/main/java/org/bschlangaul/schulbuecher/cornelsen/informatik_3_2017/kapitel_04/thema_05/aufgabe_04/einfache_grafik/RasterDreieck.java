@@ -24,7 +24,7 @@ class RasterDreieck extends Dreieck
      * Setzt die Größe des Dreiecks.
      *
      * @param breite (neue) Breite
-     * @param höhe (neue) Höhe
+     * @param höhe   (neue) Höhe
      */
     @Override
     void GrößeSetzen(int breite, int höhe)

@@ -44,7 +44,6 @@ class PATIENT
         return nachfolger;
     }
 
-
     /**
      * Gibt Information über den Patienten aus.
      */

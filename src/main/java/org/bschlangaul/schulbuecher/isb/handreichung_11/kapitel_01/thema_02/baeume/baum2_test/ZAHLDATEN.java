@@ -25,9 +25,12 @@ class ZAHLDATEN implements DATENELEMENT
      * Vergleicht das vorhandene Datenelement mit dem übergebenen.
      *
      * @param wert Referenzauf den Vergleichswert
-     * @return -1: das aktuelle Element ist kleiner als das Vergleichselement<br>
-     *         0: das aktuelle Elelemt hat den gleichen Wert wie das Vergleichselement<br>
-     *         1: das aktuelle Element ist grö&szlig;er als das Vergleichselement
+     * @return -1: das aktuelle Element ist kleiner als das
+     *         Vergleichselement<br>
+     *         0: das aktuelle Elelemt hat den gleichen Wert wie das
+     *         Vergleichselement<br>
+     *         1: das aktuelle Element ist grö&szlig;er als das
+     *         Vergleichselement
      */
     public int Vergleichen(DATENELEMENT wert)
     {

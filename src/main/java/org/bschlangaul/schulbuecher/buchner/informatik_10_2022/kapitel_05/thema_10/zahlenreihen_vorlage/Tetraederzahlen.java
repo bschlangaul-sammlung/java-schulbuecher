@@ -12,7 +12,6 @@ public class Tetraederzahlen extends Zahlenreihe
     {
         super(laenge);
         Dreieckszahlen dreieckszahlen = new Dreieckszahlen(laenge);
-
         zahlenfolge[0] = 1;
         int i = 1;
         while (i < zahlenfolge.length)

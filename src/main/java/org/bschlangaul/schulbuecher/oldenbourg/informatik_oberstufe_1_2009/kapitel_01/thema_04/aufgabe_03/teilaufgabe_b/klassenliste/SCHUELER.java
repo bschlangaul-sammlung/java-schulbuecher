@@ -10,6 +10,7 @@ class SCHUELER implements DATENELEMENT
 {
     /** Nachname */
     private String nachname;
+
     /** Vorname */
     private String vorname;
 
@@ -51,7 +52,6 @@ class SCHUELER implements DATENELEMENT
     public void InformationAusgeben()
     {
         System.out.println(nachname + "   " + vorname);
-
     }
 
     /**
@@ -63,8 +63,8 @@ class SCHUELER implements DATENELEMENT
     {
         SCHUELER svergleich = (SCHUELER) dvergleich;
         if ((nachname.compareTo(svergleich.nachname) < 0)
-                        || ((nachname.compareTo(svergleich.nachname) == 0)
-                                        && (vorname.compareTo(svergleich.vorname) < 0)))
+                || ((nachname.compareTo(svergleich.nachname) == 0)
+                        && (vorname.compareTo(svergleich.vorname) < 0)))
         {
             return true;
         }
@@ -72,8 +72,6 @@ class SCHUELER implements DATENELEMENT
         {
             return false;
         }
-
-
     }
 
     /**
@@ -85,6 +83,5 @@ class SCHUELER implements DATENELEMENT
     public boolean SchluesselIstGleich(String n)
     {
         return (n.compareTo(nachname + " " + vorname) == 0);
-
     }
 }

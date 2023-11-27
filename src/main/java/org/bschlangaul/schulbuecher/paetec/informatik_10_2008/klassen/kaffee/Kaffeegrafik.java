@@ -7,9 +7,10 @@ import org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.einfac
 import org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.einfache_grafik.Zeichenfenster;
 
 /**
- * Objekte der Klasse Espressografik koennen das ("dumme") Gehaeuse eines einfachen deutschen
- * Kaffeeautomaten darstellen. Objekte der Klasse Espressografik bieten folgende Dienste an: Zahlen
- * und Texte auf dem Display anzeigen und ein beliebiges Getraenk ausgeben.
+ * Objekte der Klasse Espressografik koennen das ("dumme") Gehaeuse eines
+ * einfachen deutschen Kaffeeautomaten darstellen. Objekte der Klasse
+ * Espressografik bieten folgende Dienste an: Zahlen und Texte auf dem Display
+ * anzeigen und ein beliebiges Getraenk ausgeben.
  *
  * @author Florian Prager, Ute Heuer, Universität Passau
  * @version 05.2008
@@ -47,8 +48,8 @@ public class Kaffeegrafik
     private Ellipse kaffee;
 
     /**
-     * Das Attribut angezeigterInhalt haelt die Zeichenkette, die im Display des Kaffeautomaten
-     * angezeigt werden soll.
+     * Das Attribut angezeigterInhalt haelt die Zeichenkette, die im Display des
+     * Kaffeautomaten angezeigt werden soll.
      */
     private String angezeigterInhalt;
 
@@ -58,11 +59,11 @@ public class Kaffeegrafik
     private Zeichenfenster fenster;
 
     /**
-     * Die Display-Anzeige kann initialisiert werden. Ein moeglicher Eingabewert ist: "Willkommen!"
-     * . Die Anfuehrungsstriche sind noetig.
+     * Die Display-Anzeige kann initialisiert werden. Ein moeglicher Eingabewert
+     * ist: "Willkommen!" . Die Anfuehrungsstriche sind noetig.
      *
-     * Das Display hat 12 Stellen fuer Buchstaben. Werden mehr als 12 Zeichen eingegeben, dann
-     * werden nur die ersten 12 angezeigt.
+     * Das Display hat 12 Stellen fuer Buchstaben. Werden mehr als 12 Zeichen
+     * eingegeben, dann werden nur die ersten 12 angezeigt.
      */
     public Kaffeegrafik(String begruessung)
     {
@@ -73,10 +74,11 @@ public class Kaffeegrafik
     }
 
     /**
-     * Zeigt den vom Nutzer uebergebenen Hinweis im Display an, falls dieses sichtbar ist. Das
-     * Display hat 12 Stellen fuer Buchstaben. Werden mehr als 12 Zeichen eingegeben, dann werden
-     * nur die ersten 12 angezeigt. Ein moeglicher Eingabewert ist: "waehlen" . Die
-     * Anfuehrungsstriche sind noetig.
+     * Zeigt den vom Nutzer uebergebenen Hinweis im Display an, falls dieses
+     * sichtbar ist. Das Display hat 12 Stellen fuer Buchstaben. Werden mehr als
+     * 12 Zeichen eingegeben, dann werden nur die ersten 12 angezeigt. Ein
+     * moeglicher Eingabewert ist: "waehlen" . Die Anfuehrungsstriche sind
+     * noetig.
      */
     public void anzeigen(String hinweis)
     {
@@ -90,9 +92,10 @@ public class Kaffeegrafik
     }
 
     /**
-     * Zeigt den vom Nutzer uebergebenen Geldbetrag in Cent im Display an, falls dieses sichtbar
-     * ist. Das Display hat nur 4 Stellen fuer Ziffern. Wird ein groesserer Geldbetrag angegeben,
-     * werden nur die letzten 4 Stellen angezeigt. Ein moeglicher Eingabewert ist: 80
+     * Zeigt den vom Nutzer uebergebenen Geldbetrag in Cent im Display an, falls
+     * dieses sichtbar ist. Das Display hat nur 4 Stellen fuer Ziffern. Wird ein
+     * groesserer Geldbetrag angegeben, werden nur die letzten 4 Stellen
+     * angezeigt. Ein moeglicher Eingabewert ist: 80
      */
     public void centAnzeigen(int neuerBetrag)
     {
@@ -103,9 +106,10 @@ public class Kaffeegrafik
     }
 
     /**
-     * Zeichnet ein Becherbild in das Ausgabefach und fuellt eine graue Fluessigkeit ein und zeigt
-     * das vom Nutzer gewuenschte Getraenk im Display an. Ein moeglicher Eingabewert ist: "Espresso"
-     * . Die Anfuehrungsstriche sind noetig.
+     * Zeichnet ein Becherbild in das Ausgabefach und fuellt eine graue
+     * Fluessigkeit ein und zeigt das vom Nutzer gewuenschte Getraenk im Display
+     * an. Ein moeglicher Eingabewert ist: "Espresso" . Die Anfuehrungsstriche
+     * sind noetig.
      */
     public void becherFuellen(String neuesGetraenk)
     {
@@ -123,7 +127,6 @@ public class Kaffeegrafik
         kaffee.verstecken();
         kaffeeZeichnen();
     }
-
     // /**
     // * Der Dienst zeigen malt die Grafik erneut ins Zeichenfenster
     // */
@@ -202,6 +205,5 @@ public class Kaffeegrafik
             kaffee.verschieben(-i % 2, -((i % 10) / 9));
             kaffee.anzeigen();
         }
-
     }
 }

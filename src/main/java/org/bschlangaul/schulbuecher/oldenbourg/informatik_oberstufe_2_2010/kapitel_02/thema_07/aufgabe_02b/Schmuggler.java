@@ -15,12 +15,13 @@ class Schmuggler extends Karol2
     /**
      * Positioniert den Roboter in seiner Welt.
      *
-     * @param startX X-Koordinate der Startposition
-     * @param startY Y-Koordinate der Startposition
+     * @param startX             X-Koordinate der Startposition
+     * @param startY             Y-Koordinate der Startposition
      * @param startBlickrichtung Blickrichtung beim Start
-     * @param inWelt Welt, in der der Roboter lebt
+     * @param inWelt             Welt, in der der Roboter lebt
      */
-    Schmuggler(int startX, int startY, char startBlickrichtung, KarolWelt inWelt)
+    Schmuggler(int startX, int startY, char startBlickrichtung,
+            KarolWelt inWelt)
     {
         super(startX, startY, startBlickrichtung, inWelt);
         zufall = new Random();
@@ -33,45 +34,47 @@ class Schmuggler extends Karol2
     {
         switch (zufall.nextInt(3))
         {
-            case 0:
-                if (IstRoboter())
+        case 0:
+            if (IstRoboter())
+            {
+                if (RoboterVorneKennungGeben() <= 2)
                 {
-                    if (RoboterVorneKennungGeben() <= 2)
-                    {
-                        ende = true;
-                    }
+                    ende = true;
                 }
-                else if (IstWand())
+            }
+            else if (IstWand())
+            {
+                if (IstBlickSueden())
                 {
-                    if (IstBlickSueden())
-                    {
-                        RechtsDrehen();
-                    }
-                    else if (IstBlickNorden())
-                    {
-                        LinksDrehen();
-                    }
-                    else
-                    {
-                        LinksDrehen();
-                        LinksDrehen();
-                    }
+                    RechtsDrehen();
+                }
+                else if (IstBlickNorden())
+                {
+                    LinksDrehen();
                 }
                 else
                 {
-                    Schritt();
-                    if (PositionXGeben() == 1)
-                    {
-                        ende = true;
-                    }
+                    LinksDrehen();
+                    LinksDrehen();
                 }
-                break;
-            case 1:
-                LinksDrehen();
-                break;
-            case 2:
-                RechtsDrehen();
-                break;
+            }
+            else
+            {
+                Schritt();
+                if (PositionXGeben() == 1)
+                {
+                    ende = true;
+                }
+            }
+            break;
+
+        case 1:
+            LinksDrehen();
+            break;
+
+        case 2:
+            RechtsDrehen();
+            break;
         }
     }
 }

@@ -7,18 +7,16 @@ import java.util.LinkedList;
 import org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.einfache_grafik.*;
 import org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.fortgeschrittene_grafik.interna.Zeichenfenster;
 
-
 /**
- * Ein Huhnobjekt kann grafisch dargestellt werden. Es kann bewegt und verkleinert werden. Es kann
- * ein Ei legen, und aus dem zuletzt gelegten Ei kann ein Huhn schluepfen. Das Ei bzw. das Kueken
- * koennen nicht bewegt werden.
+ * Ein Huhnobjekt kann grafisch dargestellt werden. Es kann bewegt und
+ * verkleinert werden. Es kann ein Ei legen, und aus dem zuletzt gelegten Ei
+ * kann ein Huhn schluepfen. Das Ei bzw. das Kueken koennen nicht bewegt werden.
  *
  * @author Florian Prager, Ute Heuer, Universität Passau
  * @version 02.2008
  */
 public class Huhn
 {
-
     /**
      * x-Koordinate der linken oberen Ecke
      */
@@ -77,81 +75,66 @@ public class Huhn
         koerper.positionSetzen(300, 280);
         koerper.groesseSetzen(100, 50);
         koerper.farbeSetzen("orange");
-
         hals.positionSetzen(320, 245);
         hals.groesseSetzen(10, 50);
         hals.farbeSetzen("grau");
-
         kopf.positionSetzen(300, 200);
         kopf.groesseSetzen(50, 50);
         kopf.farbeSetzen("rot");
-
         auge.positionSetzen(315, 215);
         auge.groesseSetzen(10, 10);
         auge.farbeSetzen("schwarz");
-
         schnabel.positionSetzen(280, 225);
         schnabel.groesseSetzen(40, 20);
         schnabel.farbeSetzen("gelb");
-
         fluegel.positionSetzen(335, 290);
         fluegel.groesseSetzen(50, 30);
         fluegel.farbeSetzen("cyan");
-
         schwanz.positionSetzen(382, 300);
         schwanz.groesseSetzen(30, 12);
         schwanz.farbeSetzen("orange");
-
         linkesBein.positionSetzen(340, 323);
         linkesBein.groesseSetzen(5, 30);
         linkesBein.farbeSetzen("grau");
-
         linkerFuss.positionSetzen(330, 350);
         linkerFuss.groesseSetzen(10, 3);
         linkerFuss.farbeSetzen("orange");
-
         rechtesBein.positionSetzen(370, 323);
         rechtesBein.groesseSetzen(5, 30);
         rechtesBein.farbeSetzen("grau");
-
         rechterFuss.positionSetzen(360, 350);
         rechterFuss.groesseSetzen(10, 3);
         rechterFuss.farbeSetzen("orange");
-
         /*
          * Position des Huhns setzen
          */
         xPosition = 280;
         yPosition = 200;
-
         /*
          * Groesse des Huhns festlegen
          */
         breite = 100;
         hoehe = 150;
-
         verschieben(0, -50);
-
         Rechteck r = new Rechteck();
         r.groesseSetzen(1600, 10);// Zeichenfenster.zeichenfensterGeben().breiteGeben()
         r.positionSetzen(0, 300);
         r.farbeSetzen("schwarz");
         r.anzeigen();
-
-        int anzahl = 80;// Zeichenfenster.zeichenfensterGeben().breiteGeben() / 20;
+        int anzahl = 80;// Zeichenfenster.zeichenfensterGeben().breiteGeben() /
+                        // 20;
         LinkedList<Dreieck> strohListe = new LinkedList<Dreieck>();
         for (int i = 0; i < anzahl; i++)
         {
             Dreieck stroh = new Dreieck();
-            stroh.positionSetzen(i * 20, Zeichenfenster.zeichenfensterGeben().hoeheGeben() - 40);
+            stroh.positionSetzen(i * 20,
+                    Zeichenfenster.zeichenfensterGeben().hoeheGeben() - 40);
             stroh.groesseSetzen(20, 40);
             stroh.farbeSetzen("gelb");
             strohListe.add(stroh);
             stroh.anzeigen();
         }
-
         fliegt = false;
-
         anzeigen();
     }
 
@@ -192,8 +175,9 @@ public class Huhn
     }
 
     /**
-     * Diese Methode veraendert die Position des Huhns im Zeichenfenster um die angegebenen Werte.
-     * Es wird um deltaX auf der x-Achse und um deltaY auf der y-Achse verschoben.
+     * Diese Methode veraendert die Position des Huhns im Zeichenfenster um die
+     * angegebenen Werte. Es wird um deltaX auf der x-Achse und um deltaY auf
+     * der y-Achse verschoben.
      */
     public void verschieben(int deltaX, int deltaY)
     {
@@ -212,10 +196,8 @@ public class Huhn
         linkerFuss.verschieben(deltaX, deltaY);
         rechtesBein.verschieben(deltaX, deltaY);
         rechterFuss.verschieben(deltaX, deltaY);
-
         xPosition = xPosition + deltaX;
         yPosition = yPosition + deltaY;
-
         if (yPosition < 150 && !fliegt)
         {
             fliegt = true;
@@ -236,13 +218,11 @@ public class Huhn
         if (yPosition != 150)
             return;
         Bild ei = new Bild();
-
         ei.dateinameSetzen("ei.jpg");
         ei.positionSetzen(xPosition + breite,
-                        Zeichenfenster.zeichenfensterGeben().hoeheGeben() - 50);
+                Zeichenfenster.zeichenfensterGeben().hoeheGeben() - 50);
         ei.groesseSetzen(breite / 3, hoehe / 3);
         ei.anzeigen();
-
         tonDateiAbspielen("huhn.wav");
     }
 }

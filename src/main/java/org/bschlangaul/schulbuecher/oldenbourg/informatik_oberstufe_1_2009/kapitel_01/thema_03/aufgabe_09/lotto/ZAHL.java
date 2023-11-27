@@ -19,7 +19,6 @@ class ZAHL implements DATENELEMENT
         z = zahlNeu;
     }
 
-
     /**
      * Ausgabe der Zahl auf der Konsole
      */
@@ -57,5 +56,4 @@ class ZAHL implements DATENELEMENT
     {
         return z;
     }
-
 }

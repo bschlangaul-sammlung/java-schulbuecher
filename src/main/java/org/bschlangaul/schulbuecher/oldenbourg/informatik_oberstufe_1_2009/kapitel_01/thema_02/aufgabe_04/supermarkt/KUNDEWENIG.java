@@ -19,8 +19,9 @@ class KUNDEWENIG extends KUNDE
     }
 
     /**
-     * Setzt den Anstellmechanismus in Gang. Hier ist die Strategie: Schlange mit der geringsten
-     * Gesamtanzahl der Artikel Vorbedingung: es gibt mindestens eine offene Kasse
+     * Setzt den Anstellmechanismus in Gang. Hier ist die Strategie: Schlange
+     * mit der geringsten Gesamtanzahl der Artikel Vorbedingung: es gibt
+     * mindestens eine offene Kasse
      *
      * @param schlange Warteschlange, an der sich der Kunde anstellt
      */
@@ -38,7 +39,8 @@ class KUNDEWENIG extends KUNDE
         {
             if (schlangen[i].IstAnstellenMoeglich())
             {
-                if (schlangen[i].ArtikelanzahlGeben() < beste.ArtikelanzahlGeben())
+                if (schlangen[i].ArtikelanzahlGeben() < beste
+                        .ArtikelanzahlGeben())
                 {
                     beste = schlangen[i];
                 }

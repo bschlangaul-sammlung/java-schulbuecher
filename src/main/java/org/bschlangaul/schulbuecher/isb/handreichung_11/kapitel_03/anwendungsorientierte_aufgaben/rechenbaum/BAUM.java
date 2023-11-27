@@ -33,9 +33,11 @@ class BAUM
     }
 
     /**
-     * Fügt einen Baum als linken Nachfolger der Wurzel ein Der Wert darf noch nicht vorkommen
+     * Fügt einen Baum als linken Nachfolger der Wurzel ein Der Wert darf noch
+     * nicht vorkommen
      *
-     * @param Referenz auf einen Baum b, eigentlich Referenz auf die Wurzel des Baumes
+     * @param Referenz auf einen Baum b, eigentlich Referenz auf die Wurzel des
+     *                 Baumes
      */
     void LinksEinfuegen(BAUM b)
     {
@@ -43,9 +45,11 @@ class BAUM
     }
 
     /**
-     * Fügt einen Baum als rechter Nachfolger der Wurzel ein Der Wert darf noch nicht vorkommen
+     * Fügt einen Baum als rechter Nachfolger der Wurzel ein Der Wert darf noch
+     * nicht vorkommen
      *
-     * @param Referenz auf einen Baum b, eigentlich Referenz auf die Wurzel des Baumes
+     * @param Referenz auf einen Baum b, eigentlich Referenz auf die Wurzel des
+     *                 Baumes
      */
     void RechtsEinfuegen(BAUM b)
     {

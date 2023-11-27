@@ -8,15 +8,14 @@ package org.bschlangaul.schulbuecher.cornelsen.informatik_3_2017.kapitel_04.them
  */
 class RechteckBesser extends Rechteck
 {
-
     /**
      * Legt das Rechteck nach den gegebenen Daten an.
      *
-     * @param x x-Position der linken oberen Ecke
-     * @param y y-Position der linken oberen Ecke
+     * @param x      x-Position der linken oberen Ecke
+     * @param y      y-Position der linken oberen Ecke
      * @param breite Breite des Rechtecks
-     * @param höhe Höhe des Rechtecks
-     * @param farbe Farbe des Rechtecks
+     * @param höhe   Höhe des Rechtecks
+     * @param farbe  Farbe des Rechtecks
      */
     RechteckBesser(int x, int y, int breite, int höhe, String farbe)
     {

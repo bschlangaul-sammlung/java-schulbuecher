@@ -16,7 +16,8 @@ public class Skalierung extends Transformation
 
     private double yFaktor;
 
-    public Skalierung(double xFaktor, double yFaktor, double xZentrum, double yZentrum)
+    public Skalierung(double xFaktor, double yFaktor, double xZentrum,
+            double yZentrum)
     {
         this.xZentrum = xZentrum;
         this.yZentrum = yZentrum;

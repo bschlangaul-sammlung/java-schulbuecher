@@ -9,12 +9,13 @@ import greenfoot.GreenfootImage;
  *
  * Der Boden ist am unteren Rad dewr Welt.
  */
-
 public class Boden extends Actor
 {
     Boden()
     {
-        /* Der Boden besteht aus einer blauen Leiste am unteren Rand de3r Welt. */
+        /*
+         * Der Boden besteht aus einer blauen Leiste am unteren Rand de3r Welt.
+         */
         GreenfootImage leiste = new GreenfootImage(800, 20);
         leiste.setColor(Color.BLUE);
         leiste.fill();
@@ -23,7 +24,8 @@ public class Boden extends Actor
 
     public void act()
     {
-        removeTouching(Gegenstand.class); // Wenn ein Objekt der Klasse Gegenstand den Boden
+        removeTouching(Gegenstand.class); // Wenn ein Objekt der Klasse
+                                          // Gegenstand den Boden
                                           // beruehrt, entferne es.
     }
 }

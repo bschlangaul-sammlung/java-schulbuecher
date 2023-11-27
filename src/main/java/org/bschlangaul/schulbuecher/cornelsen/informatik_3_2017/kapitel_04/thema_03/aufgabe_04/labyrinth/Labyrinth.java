@@ -8,7 +8,6 @@ package org.bschlangaul.schulbuecher.cornelsen.informatik_3_2017.kapitel_04.them
  */
 class Labyrinth
 {
-
     /**
      * Legt die Mauern an und positioniert den Ausgang
      */
@@ -31,7 +30,6 @@ class Labyrinth
         new MauerHorizontal(0, 7, 10);
         new MauerHorizontal(1, 8, 10);
         new MauerHorizontal(0, 9, 15);
-
         new MauerVertikal(0, 0, 9);
         new MauerVertikal(1, 1, 5);
         new MauerVertikal(2, 0, 5);
@@ -51,7 +49,6 @@ class Labyrinth
         new MauerVertikal(14, 1, 3);
         new MauerVertikal(14, 6, 3);
         new MauerVertikal(15, 0, 8);
-
         new Ausgang();
     }
 }

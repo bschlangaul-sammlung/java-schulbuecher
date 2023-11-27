@@ -11,7 +11,6 @@ public class Berechnung
     // 1c)
     public static double berechneDurchschnitt(int[] array)
     {
-
         int summe = 0;
         int i = 0;
         while (i < array.length)
@@ -20,7 +19,6 @@ public class Berechnung
             i = i + 1;
         }
         return summe / array.length;
-
     }
 
     // 1b)

@@ -9,6 +9,7 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapi
 class ADAPTER
 {
     KREUZUNG k;
+
     TAKTGEBER t;
 
     /**

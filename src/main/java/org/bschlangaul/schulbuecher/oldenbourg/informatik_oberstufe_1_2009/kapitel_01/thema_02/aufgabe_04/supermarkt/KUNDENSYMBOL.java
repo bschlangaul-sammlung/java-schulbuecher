@@ -1,4 +1,5 @@
 package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapitel_01.thema_02.aufgabe_04.supermarkt;
+
 /**
  * Ein Kundensymbol (Kreis) auf einem Fenster. Das Fenster wird bei Bedarf generiert.
  *
@@ -20,12 +21,14 @@ class KUNDENSYMBOL
     private OBERFLAECHE.FARBE aktFarbe;
 
     /**
-     * Standardkonstruktor für Objekte der Klasse KUNDENSYMBOL. Er erzeugt einen scharzen Kreis in
-     * der linken oberen Ecke des Fensters. Das Fenster wird bei Bedarf angelegt.
+     * Standardkonstruktor für Objekte der Klasse KUNDENSYMBOL. Er erzeugt einen
+     * scharzen Kreis in der linken oberen Ecke des Fensters. Das Fenster wird
+     * bei Bedarf angelegt.
      */
     KUNDENSYMBOL()
     {
-        anzeige = new Canvas() {
+        anzeige = new Canvas()
+        {
             /**
              * Stellt die Figur auf dem Fenster dar.
              */
@@ -36,7 +39,6 @@ class KUNDENSYMBOL
                 g.setColor(Color.black);
                 g.drawOval(0, 0, groesse - 1, groesse - 1);
             }
-
         };
         aktFarbe = OBERFLAECHE.FARBE.schwarz;
         anzeige.setVisible(true);
@@ -69,8 +71,10 @@ class KUNDENSYMBOL
         {
             try
             {
-                aktFarbe = OBERFLAECHE.FARBE.valueOf(aktFarbe.getDeclaringClass(), neueFarbe);
-            } catch (Exception e)
+                aktFarbe = OBERFLAECHE.FARBE
+                        .valueOf(aktFarbe.getDeclaringClass(), neueFarbe);
+            }
+            catch (Exception e)
             {
                 aktFarbe = OBERFLAECHE.FARBE.weiss;
             }

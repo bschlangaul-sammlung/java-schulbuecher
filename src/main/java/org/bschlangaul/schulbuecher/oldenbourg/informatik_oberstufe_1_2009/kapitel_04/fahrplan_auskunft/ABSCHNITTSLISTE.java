@@ -17,11 +17,12 @@ class ABSCHNITTSLISTE extends LISTE
     }
 
     /**
-     * Sucht den Abschnitt mit den angegebenen Daten. Nutzt die Sortierung der Liste aus.
+     * Sucht den Abschnitt mit den angegebenen Daten. Nutzt die Sortierung der
+     * Liste aus.
      *
      * @param linie Nummer der Linie des Abschnitts
-     * @param b1 Nummer des ersten Bahnhofs des Abschnitts
-     * @param b2 Nummer des zweiten Bahnhofs des Abschnitts
+     * @param b1    Nummer des ersten Bahnhofs des Abschnitts
+     * @param b2    Nummer des zweiten Bahnhofs des Abschnitts
      * @return Referenz auf den Bahnhof oder null
      */
     ABSCHNITT Suchen(int linie, int b1, int b2)

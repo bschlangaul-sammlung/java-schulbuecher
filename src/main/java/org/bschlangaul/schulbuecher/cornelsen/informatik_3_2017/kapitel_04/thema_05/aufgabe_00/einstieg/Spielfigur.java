@@ -10,6 +10,7 @@ class Spielfigur extends Figur
 {
     /** Länge der Bewegung */
     int delta;
+
     /** Anzeigetext */
     Text t;
 
@@ -31,7 +32,8 @@ class Spielfigur extends Figur
      */
     @Override
     void TasteGedrückt(char taste)
-    {}
+    {
+    }
 
     /**
      * Sondertasten werden ausgewertet
@@ -69,7 +71,6 @@ class Spielfigur extends Figur
                 PositionSetzen(XPositionGeben() + delta, YPositionGeben());
             }
         }
-
     }
 
     /**
@@ -78,7 +79,6 @@ class Spielfigur extends Figur
     @Override
     void AktionAusführen()
     {
-
         if (Berührt())
         {
             if (t != null)
@@ -87,7 +87,6 @@ class Spielfigur extends Figur
             }
             t = new Text();
             t.TextSetzen("Don't touch");
-
         }
         if (t != null)
         {
@@ -95,5 +94,4 @@ class Spielfigur extends Figur
             t.Verschieben(5, 5);
         }
     }
-
 }

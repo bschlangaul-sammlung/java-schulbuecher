@@ -5,7 +5,6 @@ package org.bschlangaul.schulbuecher.buchner.informatik_9_2021.kapitel_07.thema_
  *
  * Kap. 7.3 Arbeitsauftrag 3, Aufgabe 1
  */
-
 public class Fahrrad extends Fahrzeug
 {
     double reifendruck;
@@ -18,8 +17,9 @@ public class Fahrrad extends Fahrzeug
     }
 
     /*
-     * Das Fahrrad bewegt sich, jedoch lässt der Reifendruck (unverhältnismäßig stark) nach. Ist der
-     * Reifendruck auf 1.5 gesunken, bewegt es sich nicht mehr.
+     * Das Fahrrad bewegt sich, jedoch lässt der Reifendruck (unverhältnismäßig
+     * stark) nach. Ist der Reifendruck auf 1.5 gesunken, bewegt es sich nicht
+     * mehr.
      */
     void fahre()
     {
@@ -31,8 +31,8 @@ public class Fahrrad extends Fahrzeug
     }
 
     /*
-     * Vor Beginn der Fahrt kann der Reifendruck erhöht werden. Damit ist eine längere Fahrt
-     * möglich.
+     * Vor Beginn der Fahrt kann der Reifendruck erhöht werden. Damit ist eine
+     * längere Fahrt möglich.
      */
     void pumpeAuf()
     {

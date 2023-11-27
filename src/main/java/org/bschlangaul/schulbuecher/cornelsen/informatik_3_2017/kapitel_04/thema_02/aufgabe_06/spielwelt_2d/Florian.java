@@ -8,7 +8,6 @@ package org.bschlangaul.schulbuecher.cornelsen.informatik_3_2017.kapitel_04.them
  */
 class Florian extends Figur
 {
-
     /**
      * Legt die Form und die Startposition fest.
      */
@@ -55,8 +54,9 @@ class Florian extends Figur
     }
 
     /**
-     * Dreht sich um 90 Grad nach links Tipp: Teste vorab (an einem Objekt der Klasse Florian) die
-     * Methoden Drehen, WinkelGeben, WinkelSetzen der Oberklasse
+     * Dreht sich um 90 Grad nach links Tipp: Teste vorab (an einem Objekt der
+     * Klasse Florian) die Methoden Drehen, WinkelGeben, WinkelSetzen der
+     * Oberklasse
      */
     void LinksDrehen()
     {
@@ -64,14 +64,12 @@ class Florian extends Figur
     }
 
     /**
-     * Dreht sich um 90 Grad nach rechts Tipp: Teste vorab (an einem Objekt der Klasse Florian) die
-     * Methoden Drehen, WinkelGeben, WinkelSetzen der Oberklasse
+     * Dreht sich um 90 Grad nach rechts Tipp: Teste vorab (an einem Objekt der
+     * Klasse Florian) die Methoden Drehen, WinkelGeben, WinkelSetzen der
+     * Oberklasse
      */
     void RechtsDrehen()
     {
         this.WinkelSetzen(this.WinkelGeben() - 90);
     }
-
-
-
 }

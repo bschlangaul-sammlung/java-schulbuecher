@@ -3,7 +3,9 @@ package org.bschlangaul.schulbuecher.isb.handreichung_11.kapitel_01.thema_01.lis
 class Karte extends DatenElement
 {
     private String rang;
+
     private int anzahl;
+
     private float preis;
 
     Karte(String neuerRang, int neueAnzahl, float neuerPreis)
@@ -17,5 +19,4 @@ class Karte extends DatenElement
     {
         System.out.println("Karte: " + rang + ", " + anzahl + ", " + preis);
     }
-
 }

@@ -14,12 +14,9 @@ class PROGRAMM
     /** Referenz auf einen verwalteten Taktgeber */
     private static TAKTGEBER t;
 
-
-
     /**
      * Konstruktor der Klasse PROGRAMM Erzeugt ein neues Spiel und startet es.
      */
-
     PROGRAMM()
     {
         s = new SPIEL();

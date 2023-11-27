@@ -40,7 +40,8 @@ class Liste
     }
 
     /**
-     * Sucht ein Datenelement, das über seinen Schlüssel identifiziert wird, und gibt es aus.
+     * Sucht ein Datenelement, das über seinen Schlüssel identifiziert wird, und
+     * gibt es aus.
      *
      * @param vergleichswert gesuchter Schlüssel
      * @return gesuchtes Datenelement
@@ -59,5 +60,4 @@ class Liste
             return anfang.Suchen(vergleichswert);
         }
     }
-
 }

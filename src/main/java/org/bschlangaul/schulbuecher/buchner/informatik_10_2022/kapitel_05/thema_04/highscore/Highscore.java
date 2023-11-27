@@ -3,6 +3,7 @@ package org.bschlangaul.schulbuecher.buchner.informatik_10_2022.kapitel_05.thema
 public class Highscore
 {
     private String spielname;
+
     private int[] punktestaende;
 
     public Highscore(String spielname, int anzahlPunktestaende)
@@ -20,5 +21,4 @@ public class Highscore
             i = i + 1;
         }
     }
-
 }

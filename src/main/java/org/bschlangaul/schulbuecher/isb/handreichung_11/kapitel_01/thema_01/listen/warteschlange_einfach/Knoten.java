@@ -3,7 +3,9 @@ package org.bschlangaul.schulbuecher.isb.handreichung_11.kapitel_01.thema_01.lis
 class Knoten
 {
     private Knoten nachfolger;
+
     private String name;
+
     private String vorname;
 
     // Konstruktoren
@@ -88,5 +90,4 @@ class Knoten
         if (nachfolger != null)
             nachfolger.AlleAusgeben();
     }
-
 }

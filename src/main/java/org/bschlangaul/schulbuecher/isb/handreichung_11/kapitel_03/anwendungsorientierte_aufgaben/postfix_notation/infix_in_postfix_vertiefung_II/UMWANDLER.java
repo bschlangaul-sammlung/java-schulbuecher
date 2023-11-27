@@ -1,12 +1,14 @@
 package org.bschlangaul.schulbuecher.isb.handreichung_11.kapitel_03.anwendungsorientierte_aufgaben.postfix_notation.infix_in_postfix_vertiefung_II;
 // Grundaufgabe: Rechenterm-Umwandlung Infix-Notation --> Postfix-Notation
-// Vertiefungsaufgabe: Ausrechnen eines Terms in Postfix-Notation
 
+// Vertiefungsaufgabe: Ausrechnen eines Terms in Postfix-Notation
 class UMWANDLER
 {
     // Attribute
     private String termInInfixnotation;
+
     private String termInPostfixnotation;
+
     private STAPEL stapel;
 
     // Konstruktor
@@ -17,8 +19,8 @@ class UMWANDLER
 
     // Methoden
     /**
-     * Eingabe eines Terms als String in Infix-Notation Aus Einfachheitsgründen sind nur die Zahlen
-     * 0 bis 9 bzw. einbuchstabige Variablen zulässig!
+     * Eingabe eines Terms als String in Infix-Notation Aus Einfachheitsgründen
+     * sind nur die Zahlen 0 bis 9 bzw. einbuchstabige Variablen zulässig!
      *
      * @param Term in Infix-Notation
      *
@@ -29,9 +31,9 @@ class UMWANDLER
     }
 
     /**
-     * Eingabe eines Terms als String in Postfix-Notation Aus Einfachheitsgründen sind nur die
-     * Zahlen 0 bis 9 bzw. einbuchstabige Variablen zulässig! Methode ist nützlich bei
-     * Vertiefungsaufgabe 2
+     * Eingabe eines Terms als String in Postfix-Notation Aus
+     * Einfachheitsgründen sind nur die Zahlen 0 bis 9 bzw. einbuchstabige
+     * Variablen zulässig! Methode ist nützlich bei Vertiefungsaufgabe 2
      *
      * @param Term in Postfix-Notation
      */
@@ -41,87 +43,98 @@ class UMWANDLER
     }
 
     /**
-     * Umwandlung des in termInInfixnotation abgespeicherten Terms in die Postfix-Notation und
-     * Abspeicherung des Ergebnisses in termInPostfixnotation Berüsichtigt ist nun der Rang des
-     * Rechenzeichens, d.h. Punkt vor Strich und gleichwertige Rechenzeichen von links nach rechts
+     * Umwandlung des in termInInfixnotation abgespeicherten Terms in die
+     * Postfix-Notation und Abspeicherung des Ergebnisses in
+     * termInPostfixnotation Berüsichtigt ist nun der Rang des Rechenzeichens,
+     * d.h. Punkt vor Strich und gleichwertige Rechenzeichen von links nach
+     * rechts
      */
     void InInfixnotationUmwandeln()
     {
         String term = termInInfixnotation;
         termInPostfixnotation = "";
         ZEICHEN z, oberstesZeichen;
-        // Lokale Hilfsvariable für die Abspeicherung des Indexes des momentan betrachteten Zeichens
+        // Lokale Hilfsvariable für die Abspeicherung des Indexes des momentan
+        // betrachteten Zeichens
         // von termInInfixnotation
         int zeichenposition = 0;
         while (zeichenposition < term.length())
         {
-            // Momentan untersuchtes Zeichen der Zeichenkette term_in_infixnotation
+            // Momentan untersuchtes Zeichen der Zeichenkette
+            // term_in_infixnotation
             char zeichen = term.charAt(zeichenposition);
             zeichenposition = zeichenposition + 1;
-
             switch (zeichen)
             {
-                // Ist das Zeichen eine öffnende Klammer, lege es auf den Stack
-                case '(':
+            // Ist das Zeichen eine öffnende Klammer, lege es auf den Stack
+            case '(':
+                z = new ZEICHEN(zeichen);
+                stapel.Einfuegen(z);
+                break;
+
+            case '+':
+            case '-':
+            case '/':
+            case '*':
+                // Falls der Stapel leer ist...
+                if (stapel.IstLeer())
+                {
                     z = new ZEICHEN(zeichen);
                     stapel.Einfuegen(z);
-                    break;
-                case '+':
-                case '-':
-                case '/':
-                case '*':
-                    // Falls der Stapel leer ist...
-                    if (stapel.IstLeer())
+                }
+                else
+                {
+                    // Falls der Rang von zeichen hoeher ist ...
+                    if (RechenzeichenrangIstHoeher(zeichen))
                     {
                         z = new ZEICHEN(zeichen);
                         stapel.Einfuegen(z);
                     }
                     else
                     {
-                        // Falls der Rang von zeichen hoeher ist ...
-                        if (RechenzeichenrangIstHoeher(zeichen))
+                        // Falls das oberste Zeichen ein Rechenzeichen ist ...
+                        if (OberstesZeichenIstRechenzeichen())
                         {
-                            z = new ZEICHEN(zeichen);
-                            stapel.Einfuegen(z);
+                            oberstesZeichen = (ZEICHEN) stapel.Entfernen();
+                            termInPostfixnotation = termInPostfixnotation
+                                    + oberstesZeichen.WertGeben();
                         }
-                        else
+                        // Solange das oberste Zeichen ein hoeherrangiges
+                        // Rechenzeichen ist ...
+                        while (!stapel.IstLeer()
+                                && !RechenzeichenrangIstHoeher(zeichen)
+                                && OberstesZeichenIstRechenzeichen())
                         {
-                            // Falls das oberste Zeichen ein Rechenzeichen ist ...
-                            if (OberstesZeichenIstRechenzeichen())
-                            {
-                                oberstesZeichen = (ZEICHEN) stapel.Entfernen();
-                                termInPostfixnotation =
-                                                termInPostfixnotation + oberstesZeichen.WertGeben();
-                            }
-                            // Solange das oberste Zeichen ein hoeherrangiges Rechenzeichen ist ...
-                            while (!stapel.IstLeer() && !RechenzeichenrangIstHoeher(zeichen)
-                                            && OberstesZeichenIstRechenzeichen())
-                            {
-                                oberstesZeichen = (ZEICHEN) stapel.Entfernen();
-                                termInPostfixnotation =
-                                                termInPostfixnotation + oberstesZeichen.WertGeben();
-                            }
-                            // Rang von zeichen ist nun hoeher
-                            z = new ZEICHEN(zeichen);
-                            stapel.Einfuegen(z);
+                            oberstesZeichen = (ZEICHEN) stapel.Entfernen();
+                            termInPostfixnotation = termInPostfixnotation
+                                    + oberstesZeichen.WertGeben();
                         }
+                        // Rang von zeichen ist nun hoeher
+                        z = new ZEICHEN(zeichen);
+                        stapel.Einfuegen(z);
                     }
-                    break;
-                // Ist das Zeichen eine schließende Klammer, so nimm solange Zeichen vom Stack und
-                // hänge sie an die Zeichenkette term_in_postfixnotation, bis eine öffende Klammer
-                // oben auf dem Stack liegt
-                case ')':
+                }
+                break;
+
+            // Ist das Zeichen eine schließende Klammer, so nimm solange Zeichen
+            // vom Stack und
+            // hänge sie an die Zeichenkette term_in_postfixnotation, bis eine
+            // öffende Klammer
+            // oben auf dem Stack liegt
+            case ')':
+                z = (ZEICHEN) stapel.Entfernen();
+                while (z.WertGeben() != '(')
+                {
+                    termInPostfixnotation = termInPostfixnotation
+                            + z.WertGeben();
                     z = (ZEICHEN) stapel.Entfernen();
-                    while (z.WertGeben() != '(')
-                    {
-                        termInPostfixnotation = termInPostfixnotation + z.WertGeben();
-                        z = (ZEICHEN) stapel.Entfernen();
-                    }
-                    break;
-                // Ansonsten muss das Zeichen eine Zahl oder eine Variable sein...
-                default:
-                    termInPostfixnotation = termInPostfixnotation + zeichen;
-                    break;
+                }
+                break;
+
+            // Ansonsten muss das Zeichen eine Zahl oder eine Variable sein...
+            default:
+                termInPostfixnotation = termInPostfixnotation + zeichen;
+                break;
             }
         }
         // Leeren des Stapels
@@ -134,39 +147,44 @@ class UMWANDLER
     }
 
     /**
-     * prüft, ob das übergebene Rechenzeichen einen höheren Rang hat als das Zeichen, das ganz oben
-     * auf dem Stapel liegt Es handelt sich um eine interne Hilfsmethode Es wird ebenfalls true
-     * zurückgegeben, wenn der Stapel leer ist, weil das auch als Höherrangigkeit des übergebenen
-     * Rechenzeichens interpretiert werden kann Die Methode ist private gesetzt, da sie nur zur
-     * interne Prüfung notwendig ist
+     * prüft, ob das übergebene Rechenzeichen einen höheren Rang hat als das
+     * Zeichen, das ganz oben auf dem Stapel liegt Es handelt sich um eine
+     * interne Hilfsmethode Es wird ebenfalls true zurückgegeben, wenn der
+     * Stapel leer ist, weil das auch als Höherrangigkeit des übergebenen
+     * Rechenzeichens interpretiert werden kann Die Methode ist private gesetzt,
+     * da sie nur zur interne Prüfung notwendig ist
      *
      * @param das eingelesene Rechenzeichen
      */
     private boolean RechenzeichenrangIstHoeher(char zeichen)
     {
         ZEICHEN oberstesElement = (ZEICHEN) stapel.OberstesDatenelementGeben();
-        // falls zeichen * oder / und das oberste Element + und -, liegt Hoeherrangigkeit vor,
+        // falls zeichen * oder / und das oberste Element + und -, liegt
+        // Hoeherrangigkeit vor,
         // ansonsten nicht
-        return ((zeichen == '*' || zeichen == '/') && (oberstesElement.WertGeben() == '+'
+        return ((zeichen == '*' || zeichen == '/')
+                && (oberstesElement.WertGeben() == '+'
                         || oberstesElement.WertGeben() == '-'));
     }
 
     /**
-     * prüft, ob das oberste Zeichen des Stapels ein Rechenzeichen oder nicht (d.h. es muss sich
-     * dann um eine Klammer handeln) ist Es handelt sich um eine interne Hilfsmethode
+     * prüft, ob das oberste Zeichen des Stapels ein Rechenzeichen oder nicht
+     * (d.h. es muss sich dann um eine Klammer handeln) ist Es handelt sich um
+     * eine interne Hilfsmethode
      */
     private boolean OberstesZeichenIstRechenzeichen()
     {
         ZEICHEN oberstesElement = (ZEICHEN) stapel.OberstesDatenelementGeben();
         switch (oberstesElement.WertGeben())
         {
-            case '+':
-            case '-':
-            case '/':
-            case '*':
-                return true;
-            default:
-                return false;
+        case '+':
+        case '-':
+        case '/':
+        case '*':
+            return true;
+
+        default:
+            return false;
         }
     }
 
@@ -175,12 +193,13 @@ class UMWANDLER
      */
     private void ErgebnisAusgeben()
     {
-        System.out.println(termInInfixnotation + " --> " + termInPostfixnotation);
+        System.out
+                .println(termInInfixnotation + " --> " + termInPostfixnotation);
     }
 
     /**
-     * Ausrechnen eines (variablenfreien) Terms, der in Postfix-Notation vorliegt!
-     * Vertiefungsaufgabe 2
+     * Ausrechnen eines (variablenfreien) Terms, der in Postfix-Notation
+     * vorliegt! Vertiefungsaufgabe 2
      */
     void TermAusrechnen()
     {
@@ -190,57 +209,57 @@ class UMWANDLER
         ZAHL z, operand1, operand2;
         while (zeichenposition < term.length())
         {
-            // Momentan untersuchtes Zeichen der Zeichenkette term_in_postfixnotation
+            // Momentan untersuchtes Zeichen der Zeichenkette
+            // term_in_postfixnotation
             char zeichen = term.charAt(zeichenposition);
             zeichenposition = zeichenposition + 1;
             switch (zeichen)
             {
-                // Das Zeichen ist ein Operationszeichen
-                case '+':
-                case '-':
-                case '/':
-                case '*':
-                    operand2 = (ZAHL) stapel.Entfernen();
-                    operand1 = (ZAHL) stapel.Entfernen();
-                    // Berechnung des Ergebnisses mit dem richtigen Operanden
-                    // Operand ist als Charakter abgespeichert und muss deshalb richtig
-                    // "konvertiert" werden.
-                    if (zeichen == '+')
-                    {
-                        ergebnis = operand1.WertGeben() + operand2.WertGeben();
-                    }
-                    if (zeichen == '*')
-                    {
-                        ergebnis = operand1.WertGeben() * operand2.WertGeben();
-                    }
-                    if (zeichen == '/')
-                    {
-                        ergebnis = operand1.WertGeben() / operand2.WertGeben();
-                    }
-                    if (zeichen == '-')
-                    {
-                        ergebnis = operand1.WertGeben() - operand2.WertGeben();
-                    }
-                    z = new ZAHL(ergebnis);
-                    stapel.Einfuegen(z);
-                    break;
-                // sonst muss das Zeichen eine Zahl sein
-                default:
-                    // Konvertierung char --> int liefert ASCII-Code; Subtraktion des ASCII-Codes
-                    // des Zeichens '0' liefert die "richtige" Konvertierung
-                    z = new ZAHL(zeichen - '0');
-                    System.out.println(z.WertGeben());
-                    stapel.Einfuegen(z);
-                    // }
-                    break;
-            }
+            // Das Zeichen ist ein Operationszeichen
+            case '+':
+            case '-':
+            case '/':
+            case '*':
+                operand2 = (ZAHL) stapel.Entfernen();
+                operand1 = (ZAHL) stapel.Entfernen();
+                // Berechnung des Ergebnisses mit dem richtigen Operanden
+                // Operand ist als Charakter abgespeichert und muss deshalb
+                // richtig
+                // "konvertiert" werden.
+                if (zeichen == '+')
+                {
+                    ergebnis = operand1.WertGeben() + operand2.WertGeben();
+                }
+                if (zeichen == '*')
+                {
+                    ergebnis = operand1.WertGeben() * operand2.WertGeben();
+                }
+                if (zeichen == '/')
+                {
+                    ergebnis = operand1.WertGeben() / operand2.WertGeben();
+                }
+                if (zeichen == '-')
+                {
+                    ergebnis = operand1.WertGeben() - operand2.WertGeben();
+                }
+                z = new ZAHL(ergebnis);
+                stapel.Einfuegen(z);
+                break;
 
+            // sonst muss das Zeichen eine Zahl sein
+            default:
+                // Konvertierung char --> int liefert ASCII-Code; Subtraktion
+                // des ASCII-Codes
+                // des Zeichens '0' liefert die "richtige" Konvertierung
+                z = new ZAHL(zeichen - '0');
+                System.out.println(z.WertGeben());
+                stapel.Einfuegen(z);
+                // }
+                break;
+            }
         }
         // Holen des Endergebnisses vom Stapel
         z = (ZAHL) stapel.Entfernen();
         System.out.println(termInPostfixnotation + " = " + z.WertGeben());
     }
-
-
-
 }

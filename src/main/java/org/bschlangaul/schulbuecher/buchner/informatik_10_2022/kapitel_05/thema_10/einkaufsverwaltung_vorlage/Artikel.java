@@ -9,7 +9,9 @@ package org.bschlangaul.schulbuecher.buchner.informatik_10_2022.kapitel_05.thema
 public class Artikel
 {
     private String name;
+
     private String kategorie;
+
     private double betrag;
 
     public Artikel(String name, String kategorie, double betrag)
@@ -33,5 +35,4 @@ public class Artikel
     {
         return this.betrag;
     }
-
 }

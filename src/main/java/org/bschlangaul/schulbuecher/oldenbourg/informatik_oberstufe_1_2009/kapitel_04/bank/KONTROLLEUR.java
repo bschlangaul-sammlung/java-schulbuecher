@@ -6,15 +6,18 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapi
  * @author Albert Wiedemann
  * @version 1.0
  */
-
 import java.util.ArrayList;
 
 class KONTROLLEUR implements KONTROLLEURINTERFACE
 {
     private OBERFLAECHENINTERFACE oberflaeche;
+
     private BANK bank;
+
     private KUNDE aktkunde;
+
     private ANGESTELLTER aktAngestellter;
+
     private int kontonummer;
 
     /**
@@ -50,7 +53,6 @@ class KONTROLLEUR implements KONTROLLEURINTERFACE
         System.exit(1);
     }
 
-
     /**
      * Abmelden des Kunden oder Angestellten.
      */
@@ -66,7 +68,7 @@ class KONTROLLEUR implements KONTROLLEURINTERFACE
      * Versucht, den angegebenen Namen als Kunden anzumelden.
      *
      * @param name Name des Kunden
-     * @param pin PIN des Kunden
+     * @param pin  PIN des Kunden
      * @return true, vbei erfolgreicher Anmeldung
      */
     public void KundeAnmelden(String name, int pin)
@@ -84,15 +86,16 @@ class KONTROLLEUR implements KONTROLLEURINTERFACE
             if (k.PinGeben() == pin)
             {
                 aktkunde = k;
-                oberflaeche.StatusSetzen(OBERFLAECHENINTERFACE.Status.kundenkontowahl);
+                oberflaeche.StatusSetzen(
+                        OBERFLAECHENINTERFACE.Status.kundenkontowahl);
             }
             else
             {
-                FehlermeldungAbsetzen("Falsche PIN f\u00FCr den Kunden '" + name + "'.");
+                FehlermeldungAbsetzen(
+                        "Falsche PIN f\u00FCr den Kunden '" + name + "'.");
             }
         }
     }
-
 
     /**
      * Setzt eine neue PIN für den Kunden.
@@ -115,12 +118,13 @@ class KONTROLLEUR implements KONTROLLEURINTERFACE
         {
             StatusmeldungAbsetzen("Sie arbeiten mit Konto Nummer: " + nummer);
             kontonummer = nummer;
-            oberflaeche.StatusSetzen(OBERFLAECHENINTERFACE.Status.kundenkontoarbeit);
+            oberflaeche.StatusSetzen(
+                    OBERFLAECHENINTERFACE.Status.kundenkontoarbeit);
         }
         else
         {
-            FehlermeldungAbsetzen("Der Kunde '" + aktkunde.NameGeben() + "' besitzt das Konto "
-                            + nummer + " nicht.");
+            FehlermeldungAbsetzen("Der Kunde '" + aktkunde.NameGeben()
+                    + "' besitzt das Konto " + nummer + " nicht.");
             kontonummer = -1;
         }
     }
@@ -164,7 +168,8 @@ class KONTROLLEUR implements KONTROLLEURINTERFACE
     {
         if (!aktkunde.Abheben(betrag))
         {
-            FehlermeldungAbsetzen("Der Betrag von " + betrag + " kann nicht abgehoben werden.");
+            FehlermeldungAbsetzen("Der Betrag von " + betrag
+                    + " kann nicht abgehoben werden.");
         }
     }
 
@@ -188,9 +193,10 @@ class KONTROLLEUR implements KONTROLLEURINTERFACE
             resultat = new String[daten.length];
             for (int i = 0; i < daten.length; i++)
             {
-                resultat[i] = "Nr " + daten[i].AuszugsnummerGeben() + " am " + daten[i].DatumGeben()
-                                + " Zweck: " + daten[i].BeschreibungGeben() + " Betrag: "
-                                + daten[i].BetragGeben();
+                resultat[i] = "Nr " + daten[i].AuszugsnummerGeben() + " am "
+                        + daten[i].DatumGeben() + " Zweck: "
+                        + daten[i].BeschreibungGeben() + " Betrag: "
+                        + daten[i].BetragGeben();
             }
         }
         return resultat;
@@ -208,7 +214,7 @@ class KONTROLLEUR implements KONTROLLEURINTERFACE
      * Versucht, den angegebenen Namen als Angestellten anzumelden.
      *
      * @param name Name des Angestellten
-     * @param pin PIN des Angestellten
+     * @param pin  PIN des Angestellten
      */
     public void AngestellterAnmelden(String name, int pin)
     {
@@ -218,18 +224,21 @@ class KONTROLLEUR implements KONTROLLEURINTERFACE
         a = bank.AngestelltenSuchen(name);
         if (a == null)
         {
-            FehlermeldungAbsetzen("Der Angestellte '" + name + "' existiert nicht.");
+            FehlermeldungAbsetzen(
+                    "Der Angestellte '" + name + "' existiert nicht.");
         }
         else
         {
             if (a.PinGeben() == pin)
             {
                 aktAngestellter = a;
-                oberflaeche.StatusSetzen(OBERFLAECHENINTERFACE.Status.angestelltensicht);
+                oberflaeche.StatusSetzen(
+                        OBERFLAECHENINTERFACE.Status.angestelltensicht);
             }
             else
             {
-                FehlermeldungAbsetzen("Falsche PIN f\u00FCr den Angestellten '" + name + "'.");
+                FehlermeldungAbsetzen("Falsche PIN f\u00FCr den Angestellten '"
+                        + name + "'.");
             }
         }
     }
@@ -245,8 +254,8 @@ class KONTROLLEUR implements KONTROLLEURINTERFACE
     }
 
     /**
-     * Meldet die Namen aller Angestellten au&szlig;er "Chef" und dem aktuell angemeldeten
-     * Angestellten.
+     * Meldet die Namen aller Angestellten au&szlig;er "Chef" und dem aktuell
+     * angemeldeten Angestellten.
      *
      * @return Stringfeld mit den vorhandenen Angestelltennamen oder null
      */
@@ -264,12 +273,15 @@ class KONTROLLEUR implements KONTROLLEURINTERFACE
     {
         if (aktAngestellter.KundeWaehlen(name))
         {
-            oberflaeche.StatusSetzen(OBERFLAECHENINTERFACE.Status.angestelltensicht_kunde);
+            oberflaeche.StatusSetzen(
+                    OBERFLAECHENINTERFACE.Status.angestelltensicht_kunde);
         }
         else
         {
-            FehlermeldungAbsetzen("Der Kunde " + name + " konnte nicht gew\u00E4hlt werden.");
-            oberflaeche.StatusSetzen(OBERFLAECHENINTERFACE.Status.angestelltensicht);
+            FehlermeldungAbsetzen(
+                    "Der Kunde " + name + " konnte nicht gew\u00E4hlt werden.");
+            oberflaeche.StatusSetzen(
+                    OBERFLAECHENINTERFACE.Status.angestelltensicht);
         }
     }
 
@@ -277,7 +289,7 @@ class KONTROLLEUR implements KONTROLLEURINTERFACE
      * Erzeugt einen Kunden und setzt ihn als aktuellen Kunden des Angestellten.
      *
      * @param name Name des Kunden
-     * @param pin PIN des Kunden
+     * @param pin  PIN des Kunden
      */
     public void KundeErzeugen(String name, int pin)
     {
@@ -289,16 +301,19 @@ class KONTROLLEUR implements KONTROLLEURINTERFACE
         {
             if (bank.KundenSuchen(name) != null)
             {
-                FehlermeldungAbsetzen("Der Kunde mit dem Namen " + name + " existiert schon.");
+                FehlermeldungAbsetzen("Der Kunde mit dem Namen " + name
+                        + " existiert schon.");
             }
             else if (bank.AngestelltenSuchen(name) != null)
             {
                 FehlermeldungAbsetzen(
-                                "Es existiert schon ein Angestellter mit dem Namen " + name + ".");
+                        "Es existiert schon ein Angestellter mit dem Namen "
+                                + name + ".");
             }
             else
             {
-                FehlermeldungAbsetzen("Der Kunde konnte nicht eingerichtet werden.");
+                FehlermeldungAbsetzen(
+                        "Der Kunde konnte nicht eingerichtet werden.");
             }
         }
     }
@@ -314,11 +329,13 @@ class KONTROLLEUR implements KONTROLLEURINTERFACE
     }
 
     /**
-     * Holt die Nummern der verfügbaren Konten des aktuelle bearbeiteten Kunden eines Angestellten.
+     * Holt die Nummern der verfügbaren Konten des aktuelle bearbeiteten Kunden
+     * eines Angestellten.
      */
     public int[] NummerFuerAktKundenGeben()
     {
-        return bank.KontonummernFuerKundenGeben(aktAngestellter.AktkundeGeben());
+        return bank
+                .KontonummernFuerKundenGeben(aktAngestellter.AktkundeGeben());
     }
 
     /**
@@ -330,7 +347,8 @@ class KONTROLLEUR implements KONTROLLEURINTERFACE
     {
         int nummer = aktAngestellter.SparkontoEinrichten(zins);
         StatusmeldungAbsetzen("Das neue Konto hat die Nummmer " + nummer);
-        oberflaeche.StatusSetzen(OBERFLAECHENINTERFACE.Status.angestelltensicht_kunde);
+        oberflaeche.StatusSetzen(
+                OBERFLAECHENINTERFACE.Status.angestelltensicht_kunde);
     }
 
     /**
@@ -342,7 +360,8 @@ class KONTROLLEUR implements KONTROLLEURINTERFACE
     {
         int nummer = aktAngestellter.GirokontoEinrichten(kredit);
         StatusmeldungAbsetzen("Das neue Konto hat die Nummmer " + nummer);
-        oberflaeche.StatusSetzen(OBERFLAECHENINTERFACE.Status.angestelltensicht_kunde);
+        oberflaeche.StatusSetzen(
+                OBERFLAECHENINTERFACE.Status.angestelltensicht_kunde);
     }
 
     /**
@@ -353,7 +372,8 @@ class KONTROLLEUR implements KONTROLLEURINTERFACE
     public void KontoFuerAngestelltenSetzen(int nummer)
     {
         aktAngestellter.KontoSetzen(nummer);
-        oberflaeche.StatusSetzen(OBERFLAECHENINTERFACE.Status.angestelltensicht_kundeundkonto);
+        oberflaeche.StatusSetzen(
+                OBERFLAECHENINTERFACE.Status.angestelltensicht_kundeundkonto);
         StatusmeldungAbsetzen("Aktuelles Konto: " + nummer);
     }
 
@@ -364,14 +384,18 @@ class KONTROLLEUR implements KONTROLLEURINTERFACE
     {
         if (!aktAngestellter.KontoLoeschen())
         {
-            FehlermeldungAbsetzen("Das Konto konnte nicht gel\u00F6scht werden.");
+            FehlermeldungAbsetzen(
+                    "Das Konto konnte nicht gel\u00F6scht werden.");
         }
-        oberflaeche.StatusSetzen(OBERFLAECHENINTERFACE.Status.angestelltensicht_kunde);
-        StatusmeldungAbsetzen("Aktueller Kunde: " + aktAngestellter.AktkundeGeben().NameGeben());
+        oberflaeche.StatusSetzen(
+                OBERFLAECHENINTERFACE.Status.angestelltensicht_kunde);
+        StatusmeldungAbsetzen("Aktueller Kunde: "
+                + aktAngestellter.AktkundeGeben().NameGeben());
     }
 
     /**
-     * Holt die Kontoauszüge des aktuellen Kontos des aktuellen Kunden für den Angestellten.
+     * Holt die Kontoauszüge des aktuellen Kontos des aktuellen Kunden für den
+     * Angestellten.
      *
      * @return Feld von Texten mit einem Kontoauszug pro Element
      */
@@ -390,9 +414,10 @@ class KONTROLLEUR implements KONTROLLEURINTERFACE
             resultat = new String[daten.length];
             for (int i = 0; i < daten.length; i++)
             {
-                resultat[i] = "Nr " + daten[i].AuszugsnummerGeben() + " am " + daten[i].DatumGeben()
-                                + " Zweck: " + daten[i].BeschreibungGeben() + " Betrag: "
-                                + daten[i].BetragGeben();
+                resultat[i] = "Nr " + daten[i].AuszugsnummerGeben() + " am "
+                        + daten[i].DatumGeben() + " Zweck: "
+                        + daten[i].BeschreibungGeben() + " Betrag: "
+                        + daten[i].BetragGeben();
             }
         }
         return resultat;
@@ -406,12 +431,14 @@ class KONTROLLEUR implements KONTROLLEURINTERFACE
         String meldung = aktAngestellter.KundenLoeschen();
         if (meldung == null)
         {
-            oberflaeche.StatusSetzen(OBERFLAECHENINTERFACE.Status.angestelltensicht);
+            oberflaeche.StatusSetzen(
+                    OBERFLAECHENINTERFACE.Status.angestelltensicht);
             StatusmeldungAbsetzen("Der aktuelle Kunde wurde gel\u00F6scht.");
         }
         else
         {
-            oberflaeche.StatusSetzen(OBERFLAECHENINTERFACE.Status.angestelltensicht_kunde);
+            oberflaeche.StatusSetzen(
+                    OBERFLAECHENINTERFACE.Status.angestelltensicht_kunde);
             StatusmeldungAbsetzen(meldung);
         }
     }
@@ -420,7 +447,7 @@ class KONTROLLEUR implements KONTROLLEURINTERFACE
      * Erzeugt einen Angestellten.
      *
      * @param name Name des Angestellten
-     * @param pin PIN des Angestellten
+     * @param pin  PIN des Angestellten
      */
     public void AngestellterErzeugen(String name, int pin)
     {
@@ -428,19 +455,23 @@ class KONTROLLEUR implements KONTROLLEURINTERFACE
         {
             if (bank.AngestelltenSuchen(name) != null)
             {
-                FehlermeldungAbsetzen(
-                                "Der Angestellte mit dem Namen " + name + " existiert schon.");
+                FehlermeldungAbsetzen("Der Angestellte mit dem Namen " + name
+                        + " existiert schon.");
             }
             else if (bank.KundenSuchen(name) != null)
             {
-                FehlermeldungAbsetzen("Es existiert schon ein Kunde mit dem Namen " + name + ".");
+                FehlermeldungAbsetzen(
+                        "Es existiert schon ein Kunde mit dem Namen " + name
+                                + ".");
             }
             else
             {
-                FehlermeldungAbsetzen("Der Angestellte konnte nicht eingerichtet werden.");
+                FehlermeldungAbsetzen(
+                        "Der Angestellte konnte nicht eingerichtet werden.");
             }
         }
-        oberflaeche.StatusSetzen(OBERFLAECHENINTERFACE.Status.angestelltensicht);
+        oberflaeche
+                .StatusSetzen(OBERFLAECHENINTERFACE.Status.angestelltensicht);
     }
 
     /**
@@ -452,14 +483,16 @@ class KONTROLLEUR implements KONTROLLEURINTERFACE
     {
         if (aktAngestellter.AngestelltenLoeschen(name))
         {
-            StatusmeldungAbsetzen("Der Angestellte: " + name + " wurde gel\u00F6scht.");
+            StatusmeldungAbsetzen(
+                    "Der Angestellte: " + name + " wurde gel\u00F6scht.");
         }
         else
         {
-            FehlermeldungAbsetzen(
-                            "Der Angestellte: " + name + " konnte nicht gel\u00F6scht werden.");
+            FehlermeldungAbsetzen("Der Angestellte: " + name
+                    + " konnte nicht gel\u00F6scht werden.");
         }
-        oberflaeche.StatusSetzen(OBERFLAECHENINTERFACE.Status.angestelltensicht);
+        oberflaeche
+                .StatusSetzen(OBERFLAECHENINTERFACE.Status.angestelltensicht);
     }
 
     /**

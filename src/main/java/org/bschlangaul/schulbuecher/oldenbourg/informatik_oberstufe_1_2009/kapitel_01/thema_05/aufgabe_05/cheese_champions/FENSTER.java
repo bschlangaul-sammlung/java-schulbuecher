@@ -12,35 +12,50 @@ import java.awt.event.*;
  *
  *         Komponenten wurden mit JavaEditor erstellt.
  */
-
 class FENSTER extends Frame
 {
     // Anfang Attribute
     private Label titel = new Label();
+
     private Label beschreibung = new Label();
+
     private TextField mausnummer = new TextField();
+
     private Button buttonMausAufnehmen = new Button();
-    private TextArea textfeldUrsprung = new TextArea("", 1, 1, TextArea.SCROLLBARS_NONE);
+
+    private TextArea textfeldUrsprung = new TextArea("", 1, 1,
+            TextArea.SCROLLBARS_NONE);
+
     private Label labelUrsprung = new Label();
-    private TextArea textfeldSackgasse = new TextArea("", 1, 1, TextArea.SCROLLBARS_NONE);
+
+    private TextArea textfeldSackgasse = new TextArea("", 1, 1,
+            TextArea.SCROLLBARS_NONE);
+
     private Label labelSackgasse = new Label();
-    private TextArea texfeldZiel = new TextArea("", 1, 1, TextArea.SCROLLBARS_NONE);
+
+    private TextArea texfeldZiel = new TextArea("", 1, 1,
+            TextArea.SCROLLBARS_NONE);
+
     private Label labelZiel = new Label();
+
     private Button buttonMausBewegen = new Button();
+
     private Label labelUnzulaessigeReihenfolge = new Label();
+
     private Label labelInfo = new Label();
+
     private SPIEL spiel;
 
-
     /**
-     * Erzeugt ein Spiel in einem Fenster und die zur Anzeige erforderlichen Komponenten
+     * Erzeugt ein Spiel in einem Fenster und die zur Anzeige erforderlichen
+     * Komponenten
      */
-
     FENSTER()
     {
         // Frame-Initialisierung
         super("Cheese Champions");
-        addWindowListener(new WindowAdapter() {
+        addWindowListener(new WindowAdapter()
+        {
             public void windowClosing(WindowEvent evt)
             {
                 System.exit(0);
@@ -57,13 +72,13 @@ class FENSTER extends Frame
         add(cp);
         spiel = new SPIEL();
         // Anfang Komponenten
-
         titel.setBounds(88, 8, 212, 29);
         titel.setText("Cheese Champions");
         titel.setFont(new Font("MS Sans Serif", Font.PLAIN, 21));
         cp.add(titel);
         beschreibung.setBounds(16, 48, 322, 16);
-        beschreibung.setText("Geben Sie die Reihenfolge der Ankunft beim Käse ein:");
+        beschreibung.setText(
+                "Geben Sie die Reihenfolge der Ankunft beim Käse ein:");
         beschreibung.setFont(new Font("MS Sans Serif", Font.PLAIN, 13));
         cp.add(beschreibung);
         mausnummer.setBounds(16, 80, 145, 24);
@@ -71,10 +86,12 @@ class FENSTER extends Frame
         cp.add(mausnummer);
         buttonMausAufnehmen.setBounds(192, 80, 113, 25);
         buttonMausAufnehmen.setLabel("Maus aufnehmen");
-        buttonMausAufnehmen.addActionListener(new ActionListener() {
+        buttonMausAufnehmen.addActionListener(new ActionListener()
+        {
             public void actionPerformed(ActionEvent evt)
             {
-                spiel.Einfuegen(new MAUS(Integer.parseInt(mausnummer.getText())));
+                spiel.Einfuegen(
+                        new MAUS(Integer.parseInt(mausnummer.getText())));
                 texfeldZiel.setText(spiel.StapelAusgeben('z'));
             }
         });
@@ -102,12 +119,12 @@ class FENSTER extends Frame
         cp.add(labelZiel);
         buttonMausBewegen.setBounds(16, 120, 145, 25);
         buttonMausBewegen.setLabel("Maus bewegen");
-        buttonMausBewegen.addActionListener(new ActionListener() {
+        buttonMausBewegen.addActionListener(new ActionListener()
+        {
             public void actionPerformed(ActionEvent evt)
             {
                 buttonMausAufnehmen.setVisible(false);
                 mausnummer.setVisible(false);
-
                 spiel.Schritt();
                 texfeldZiel.setText(spiel.StapelAusgeben('z'));
                 textfeldUrsprung.setText(spiel.StapelAusgeben('u'));
@@ -121,19 +138,19 @@ class FENSTER extends Frame
                     buttonMausBewegen.setVisible(false);
                 }
             }
-
         });
         cp.add(buttonMausBewegen);
         labelUnzulaessigeReihenfolge.setBounds(16, 448, 300, 16);
         labelUnzulaessigeReihenfolge.setText("");
-        labelUnzulaessigeReihenfolge.setFont(new Font("MS Sans Serif", Font.PLAIN, 13));
+        labelUnzulaessigeReihenfolge
+                .setFont(new Font("MS Sans Serif", Font.PLAIN, 13));
         cp.add(labelUnzulaessigeReihenfolge);
         labelInfo.setBounds(16, 168, 338, 16);
-        labelInfo.setText("Ausgabe in der Form Mausnummer | gewonnen | verloren");
+        labelInfo.setText(
+                "Ausgabe in der Form Mausnummer | gewonnen | verloren");
         labelInfo.setFont(new Font("MS Sans Serif", Font.PLAIN, 13));
         cp.add(labelInfo);
         // Ende Komponenten
-
         setResizable(false);
         setVisible(true);
     }
@@ -142,7 +159,4 @@ class FENSTER extends Frame
     {
         new FENSTER();
     }
-
-
-
 }

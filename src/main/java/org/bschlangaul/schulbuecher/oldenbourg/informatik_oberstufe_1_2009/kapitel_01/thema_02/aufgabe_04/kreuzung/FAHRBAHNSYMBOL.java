@@ -6,19 +6,23 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapi
  * @author Albert Wiedemann
  * @version 1.0
  */
-
 import java.awt.*;
 
 class FAHRBAHNSYMBOL
 {
     /** Das Anzeigefenster. */
     private Frame fenster;
+
     /** Breite der Richtungsfahrbahn */
     private static final int breite = OBERFLAECHE.RasterGroesseGeben();
+
     /** Interna */
     private int x;
+
     private int y;
+
     private char ausrichtung;
+
     private Canvas anzeige;
 
     /**
@@ -30,7 +34,8 @@ class FAHRBAHNSYMBOL
         x = 0;
         y = 0;
         ausrichtung = 'O';
-        anzeige = new Canvas() {
+        anzeige = new Canvas()
+        {
             public void paint(Graphics g)
             {
                 g.setColor(Color.lightGray);
@@ -38,22 +43,31 @@ class FAHRBAHNSYMBOL
                 g.setColor(Color.white);
                 switch (ausrichtung)
                 {
-                    case 'N':
-                        g.fillRect(2, OBERFLAECHE.FensterHoeheGeben() / 2 + (y + 2) * breite,
-                                        breite - 4, breite / 5);
-                        break;
-                    case 'S':
-                        g.fillRect(2, OBERFLAECHE.FensterHoeheGeben() / 2 + (y - 2) * breite
-                                        - breite / 5, breite - 4, breite / 5);
-                        break;
-                    case 'O':
-                        g.fillRect(OBERFLAECHE.FensterBreiteGeben() / 2 + (x - 2) * breite
-                                        - breite / 5, 2, breite / 5, breite - 4);
-                        break;
-                    case 'W':
-                        g.fillRect(OBERFLAECHE.FensterBreiteGeben() / 2 + (x + 2) * breite, 2,
-                                        breite / 5, breite - 4);
-                        break;
+                case 'N':
+                    g.fillRect(2, OBERFLAECHE.FensterHoeheGeben() / 2
+                            + (y + 2) * breite, breite - 4, breite / 5);
+                    break;
+
+                case 'S':
+                    g.fillRect(2,
+                            OBERFLAECHE.FensterHoeheGeben() / 2
+                                    + (y - 2) * breite - breite / 5,
+                            breite - 4, breite / 5);
+                    break;
+
+                case 'O':
+                    g.fillRect(
+                            OBERFLAECHE.FensterBreiteGeben() / 2
+                                    + (x - 2) * breite - breite / 5,
+                            2, breite / 5, breite - 4);
+                    break;
+
+                case 'W':
+                    g.fillRect(
+                            OBERFLAECHE.FensterBreiteGeben() / 2
+                                    + (x + 2) * breite,
+                            2, breite / 5, breite - 4);
+                    break;
                 }
             }
         };
@@ -75,30 +89,37 @@ class FAHRBAHNSYMBOL
     {
         switch (ausrichtung)
         {
-            case 'N':
-                anzeige.setSize(breite, OBERFLAECHE.FensterHoeheGeben());
-                anzeige.setLocation(OBERFLAECHE.FensterBreiteGeben() / 2 + x * breite, 0);
-                break;
-            case 'S':
-                anzeige.setSize(breite, OBERFLAECHE.FensterHoeheGeben());
-                anzeige.setLocation(OBERFLAECHE.FensterBreiteGeben() / 2 + (x - 1) * breite, 0);
-                break;
-            case 'O':
-                anzeige.setSize(OBERFLAECHE.FensterBreiteGeben(), breite);
-                anzeige.setLocation(0, OBERFLAECHE.FensterHoeheGeben() / 2 + y * breite);
-                break;
-            case 'W':
-                anzeige.setSize(OBERFLAECHE.FensterBreiteGeben(), breite);
-                anzeige.setLocation(0, OBERFLAECHE.FensterHoeheGeben() / 2 + (y - 1) * breite);
-                break;
+        case 'N':
+            anzeige.setSize(breite, OBERFLAECHE.FensterHoeheGeben());
+            anzeige.setLocation(
+                    OBERFLAECHE.FensterBreiteGeben() / 2 + x * breite, 0);
+            break;
+
+        case 'S':
+            anzeige.setSize(breite, OBERFLAECHE.FensterHoeheGeben());
+            anzeige.setLocation(
+                    OBERFLAECHE.FensterBreiteGeben() / 2 + (x - 1) * breite, 0);
+            break;
+
+        case 'O':
+            anzeige.setSize(OBERFLAECHE.FensterBreiteGeben(), breite);
+            anzeige.setLocation(0,
+                    OBERFLAECHE.FensterHoeheGeben() / 2 + y * breite);
+            break;
+
+        case 'W':
+            anzeige.setSize(OBERFLAECHE.FensterBreiteGeben(), breite);
+            anzeige.setLocation(0,
+                    OBERFLAECHE.FensterHoeheGeben() / 2 + (y - 1) * breite);
+            break;
         }
         Zeichne();
     }
 
     /**
-     * Setzt die Position der Fahrbahn. Der Ursprung liegt in der Mitte des Fensters, die y-Achse
-     * zeigt nach unten. (x /y) bedeutet den Mittelpunkt der Kreuzung, um den sich die Fahrbahn je
-     * nach Ausrichtung dreht.
+     * Setzt die Position der Fahrbahn. Der Ursprung liegt in der Mitte des
+     * Fensters, die y-Achse zeigt nach unten. (x /y) bedeutet den Mittelpunkt
+     * der Kreuzung, um den sich die Fahrbahn je nach Ausrichtung dreht.
      *
      * @param x x-Position des Kreuzungsmittelpunkts
      * @param y y-Position des Kreuzungsmittelpunkts
@@ -138,16 +159,24 @@ class FAHRBAHNSYMBOL
     {
         switch (ausrichtung)
         {
-            case 'N':
-                return (OBERFLAECHE.FensterHoeheGeben() / 2) / OBERFLAECHE.MeterAlsPixelGeben();
-            case 'S':
-                return -(OBERFLAECHE.FensterHoeheGeben() / 2) / OBERFLAECHE.MeterAlsPixelGeben();
-            case 'O':
-                return -(OBERFLAECHE.FensterBreiteGeben() / 2) / OBERFLAECHE.MeterAlsPixelGeben();
-            case 'W':
-                return (OBERFLAECHE.FensterBreiteGeben() / 2) / OBERFLAECHE.MeterAlsPixelGeben();
-            default:
-                return 0;
+        case 'N':
+            return (OBERFLAECHE.FensterHoeheGeben() / 2)
+                    / OBERFLAECHE.MeterAlsPixelGeben();
+
+        case 'S':
+            return -(OBERFLAECHE.FensterHoeheGeben() / 2)
+                    / OBERFLAECHE.MeterAlsPixelGeben();
+
+        case 'O':
+            return -(OBERFLAECHE.FensterBreiteGeben() / 2)
+                    / OBERFLAECHE.MeterAlsPixelGeben();
+
+        case 'W':
+            return (OBERFLAECHE.FensterBreiteGeben() / 2)
+                    / OBERFLAECHE.MeterAlsPixelGeben();
+
+        default:
+            return 0;
         }
     }
 
@@ -160,16 +189,24 @@ class FAHRBAHNSYMBOL
     {
         switch (ausrichtung)
         {
-            case 'N':
-                return -(OBERFLAECHE.FensterHoeheGeben() / 2) / OBERFLAECHE.MeterAlsPixelGeben();
-            case 'S':
-                return (OBERFLAECHE.FensterHoeheGeben() / 2) / OBERFLAECHE.MeterAlsPixelGeben();
-            case 'O':
-                return (OBERFLAECHE.FensterBreiteGeben() / 2) / OBERFLAECHE.MeterAlsPixelGeben();
-            case 'W':
-                return -(OBERFLAECHE.FensterBreiteGeben() / 2) / OBERFLAECHE.MeterAlsPixelGeben();
-            default:
-                return 0;
+        case 'N':
+            return -(OBERFLAECHE.FensterHoeheGeben() / 2)
+                    / OBERFLAECHE.MeterAlsPixelGeben();
+
+        case 'S':
+            return (OBERFLAECHE.FensterHoeheGeben() / 2)
+                    / OBERFLAECHE.MeterAlsPixelGeben();
+
+        case 'O':
+            return (OBERFLAECHE.FensterBreiteGeben() / 2)
+                    / OBERFLAECHE.MeterAlsPixelGeben();
+
+        case 'W':
+            return -(OBERFLAECHE.FensterBreiteGeben() / 2)
+                    / OBERFLAECHE.MeterAlsPixelGeben();
+
+        default:
+            return 0;
         }
     }
 
@@ -182,16 +219,20 @@ class FAHRBAHNSYMBOL
     {
         switch (ausrichtung)
         {
-            case 'N':
-                return x * OBERFLAECHE.MeterAlsPixelGeben() + 1.5f;
-            case 'S':
-                return (x - 1) * OBERFLAECHE.MeterAlsPixelGeben() + 1.5f;
-            case 'O':
-                return y * OBERFLAECHE.MeterAlsPixelGeben() + 1.5f;
-            case 'W':
-                return (y - 1) * OBERFLAECHE.MeterAlsPixelGeben() + 1.5f;
-            default:
-                return 0;
+        case 'N':
+            return x * OBERFLAECHE.MeterAlsPixelGeben() + 1.5f;
+
+        case 'S':
+            return (x - 1) * OBERFLAECHE.MeterAlsPixelGeben() + 1.5f;
+
+        case 'O':
+            return y * OBERFLAECHE.MeterAlsPixelGeben() + 1.5f;
+
+        case 'W':
+            return (y - 1) * OBERFLAECHE.MeterAlsPixelGeben() + 1.5f;
+
+        default:
+            return 0;
         }
     }
 
@@ -204,16 +245,20 @@ class FAHRBAHNSYMBOL
     {
         switch (ausrichtung)
         {
-            case 'N':
-                return (y + 2) * OBERFLAECHE.MeterAlsPixelGeben();
-            case 'S':
-                return (y - 2) * OBERFLAECHE.MeterAlsPixelGeben();
-            case 'O':
-                return (x - 2) * OBERFLAECHE.MeterAlsPixelGeben();
-            case 'W':
-                return (x + 2) * OBERFLAECHE.MeterAlsPixelGeben();
-            default:
-                return 0;
+        case 'N':
+            return (y + 2) * OBERFLAECHE.MeterAlsPixelGeben();
+
+        case 'S':
+            return (y - 2) * OBERFLAECHE.MeterAlsPixelGeben();
+
+        case 'O':
+            return (x - 2) * OBERFLAECHE.MeterAlsPixelGeben();
+
+        case 'W':
+            return (x + 2) * OBERFLAECHE.MeterAlsPixelGeben();
+
+        default:
+            return 0;
         }
     }
 }

@@ -3,6 +3,7 @@ package org.bschlangaul.schulbuecher.isb.handreichung_10.konzept_01.petrus_16_mi
 public abstract class Niederschlag
 {
     protected double x, y, vx, vy;
+
     private static int boden = 480;
 
     public Niederschlag(double xStart, double yStart)
@@ -26,5 +27,4 @@ public abstract class Niederschlag
     {
         return boden;
     }
-
 }

@@ -12,16 +12,13 @@ public class Zahlenreihe
 
     public Zahlenreihe(int laenge)
     {
-
     }
 
     public void arrayAusgeben()
     {
-
     }
 
     public void summe()
     {
-
     }
 }

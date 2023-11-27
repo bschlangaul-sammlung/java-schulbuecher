@@ -9,13 +9,14 @@ package org.bschlangaul.schulbuecher.isb.handreichung_11.kapitel_02.softwaretech
 class KNOTEN extends LISTENELEMENT
 {
     private LISTENELEMENT nachfolger;
+
     private KONTO konto;
 
     /**
      * Belegt die Attribute.
      *
      * @param nr Referenz auf den Nachfolger dieses Konotens
-     * @param d Referenz auf das zu verwaltende Datenobjekt
+     * @param d  Referenz auf das zu verwaltende Datenobjekt
      */
     KNOTEN(LISTENELEMENT nf, KONTO k)
     {
@@ -79,7 +80,8 @@ class KNOTEN extends LISTENELEMENT
      * Trägt die Kontonummern der Konten des angegebenen Kunden in das Feld ein.
      *
      * @param ergebnis Referenz auf das Feld mit den gefundenen Daten.
-     * @param pos Index, auf dem das nächste Element eingetragen werden soll.
+     * @param pos      Index, auf dem das nächste Element eingetragen werden
+     *                 soll.
      */
     void KontonummernEintragen(int[] ergebnis, int pos)
     {

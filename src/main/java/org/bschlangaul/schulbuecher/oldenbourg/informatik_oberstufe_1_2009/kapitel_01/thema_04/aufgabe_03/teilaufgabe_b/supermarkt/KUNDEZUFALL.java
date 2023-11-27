@@ -24,8 +24,8 @@ class KUNDEZUFALL extends KUNDE
     }
 
     /**
-     * Setzt den Anstellmechanismus in Gang. Hier ist die Strategie: zufällige Schlange
-     * Vorbedingung: es gibt mindestens eine offene Kasse
+     * Setzt den Anstellmechanismus in Gang. Hier ist die Strategie: zufällige
+     * Schlange Vorbedingung: es gibt mindestens eine offene Kasse
      *
      * @param schlange Warteschlange, an der sich der Kunde anstellt
      */

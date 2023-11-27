@@ -8,11 +8,12 @@ import greenfoot.Greenfoot;
  *
  * Teilaufgaben b), c), e), f), g) und h)
  */
-
 public class Pirat extends Actor
 {
     int anzahlGoldstuecke = 0;
+
     Anzeige anzeige = new Anzeige();
+
     Spielwelt spielwelt;
 
     Pirat(Spielwelt welt)
@@ -39,25 +40,21 @@ public class Pirat extends Actor
         {
             bewege(0, 1);
         }
-
         // Aufgabe e): Grasbüschel entfernen
         if (Greenfoot.isKeyDown("e"))
         {
             entferneGras();
         }
-
         // Aufgabe f): Schatztruhen öffnen
         if (Greenfoot.isKeyDown("space"))
         {
             öffneSchatztruhe();
         }
-
         // Aufgabe g): Schiff besteigen
         if (Greenfoot.isKeyDown("s"))
         {
             besteigeSchiff();
         }
-
         // Aufgabe c)
         Greenfoot.delay(5);
     }
@@ -65,21 +62,18 @@ public class Pirat extends Actor
     void erhalteLob()
     {
         // Aufgabe h)
-
         if (gibAnzahlGoldstuecke() <= 20)
         {
             String lob1 = "So wenige! Ist";
             String lob2 = "das dein Ernst?";
             spielwelt.getAnzeige().zeigeLob(lob1, lob2);
         }
-
         if (gibAnzahlGoldstuecke() > 20 && gibAnzahlGoldstuecke() < 40)
         {
             String lob1 = "Gut gemacht!";
             String lob2 = "Sammle mehr!";
             spielwelt.getAnzeige().zeigeLob(lob1, lob2);
         }
-
         if (gibAnzahlGoldstuecke() >= 40)
         {
             String lob1 = "Respekt! Nun";
@@ -91,12 +85,14 @@ public class Pirat extends Actor
     /*
      * Die Methoden ab hier können zur Lösung der Aufgaben verwendet werden.
      */
-    boolean beruehrtSchiff() // liefert true, wenn der Pirat in einer Zelle neben dem Schiff ist
+    boolean beruehrtSchiff() // liefert true, wenn der Pirat in einer Zelle
+                             // neben dem Schiff ist
     {
         return getObjectsInRange(1, Piratenschiff.class).isEmpty() == false;
     }
 
-    void bewege(int dx, int dy) // bewegt den Piraten um dx Zellen nach rechts/links und dy Zellen
+    void bewege(int dx, int dy) // bewegt den Piraten um dx Zellen nach
+                                // rechts/links und dy Zellen
                                 // nach oben/unten
     {
         if (istFeldFrei(dx, dy) && getX() < 16)
@@ -105,15 +101,17 @@ public class Pirat extends Actor
         }
     }
 
-    boolean istFeldFrei(int dx, int dy) // liefert true, wenn das Feld mit den Korrdinaten (x|y)
+    boolean istFeldFrei(int dx, int dy) // liefert true, wenn das Feld mit den
+                                        // Korrdinaten (x|y)
                                         // frei ist
     {
         return getOneObjectAtOffset(dx, dy, Fels.class) == null
-                        && getOneObjectAtOffset(dx, dy, Schatztruhe.class) == null
-                        && getOneObjectAtOffset(dx, dy, Gras.class) == null;
+                && getOneObjectAtOffset(dx, dy, Schatztruhe.class) == null
+                && getOneObjectAtOffset(dx, dy, Gras.class) == null;
     }
 
-    void entferneGras() // entfernt Grasbüschel, die sich in einer Zelle neben dem Píraten befinden
+    void entferneGras() // entfernt Grasbüschel, die sich in einer Zelle neben
+                        // dem Píraten befinden
     {
         for (Gras gras : getObjectsInRange(1, Gras.class))
         {
@@ -121,13 +119,15 @@ public class Pirat extends Actor
         }
     }
 
-    void öffneSchatztruhe() // entfernt Schatztruhen, die sich in einer Zelle neben dem Píraten
+    void öffneSchatztruhe() // entfernt Schatztruhen, die sich in einer Zelle
+                            // neben dem Píraten
                             // befinden
     // entnimmt ihnen eine zufällige Anzahl an Goldmünzen
     {
         for (Schatztruhe truhe : getObjectsInRange(1, Schatztruhe.class))
         {
-            anzahlGoldstuecke = anzahlGoldstuecke + Greenfoot.getRandomNumber(10);
+            anzahlGoldstuecke = anzahlGoldstuecke
+                    + Greenfoot.getRandomNumber(10);
             getWorld().removeObject(truhe);
             anzeige.setzeGoldstuecke(anzahlGoldstuecke);
         }
@@ -138,7 +138,8 @@ public class Pirat extends Actor
         return anzahlGoldstuecke;
     }
 
-    void besteigeSchiff() // Pirat wird entfernt, erhält Lob oder Tadel, das Programm stoppt
+    void besteigeSchiff() // Pirat wird entfernt, erhält Lob oder Tadel, das
+                          // Programm stoppt
     {
         if (getObjectsInRange(1, Piratenschiff.class).isEmpty() == false)
         {
@@ -147,5 +148,4 @@ public class Pirat extends Actor
             Greenfoot.stop();
         }
     }
-
 }

@@ -6,7 +6,6 @@ package org.bschlangaul.schulbuecher.isb.handreichung_11.kapitel_02.softwaretech
  * @author
  * @version 1.0
  */
-
 import java.util.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -17,10 +16,15 @@ import java.text.*;
 class OBERFLAECHE implements OBERFLAECHENINTERFACE, STATUSBEOBACHTER
 {
     private JFrame fenster;
+
     private JTextField anzahl, kontostand;
+
     private JList paketListe, aktienListe;
+
     private JTextArea status;
+
     private JComboBox konten;
+
     private KONTROLLEURINTERFACE kontrolleur;
 
     /**
@@ -35,7 +39,6 @@ class OBERFLAECHE implements OBERFLAECHENINTERFACE, STATUSBEOBACHTER
         KontenSetzen();
         AktienlisteSetzen();
     }
-
 
     /**
      * Empfängt Fehlermeldungen
@@ -87,7 +90,6 @@ class OBERFLAECHE implements OBERFLAECHENINTERFACE, STATUSBEOBACHTER
         JPanel panel;
         JPanel hauptPanel, aktienPanel, einkaufPanel, anzahlPanel, kontoPanel;
         fenster = new JFrame("Aktienhandel");
-
         // In dem Panel hauptPanel findet die gesamte Darstellung statt.
         // Die Unterelemente (wieder eigene Panele mit Borderlayout)
         // des Hauptpanels werden in ein Raster
@@ -96,22 +98,20 @@ class OBERFLAECHE implements OBERFLAECHENINTERFACE, STATUSBEOBACHTER
         hauptPanel = new JPanel();
         hauptPanel.setBackground(new Color(140, 140, 140));
         hauptPanel.setLayout(new GridLayout(2, 2, 10, 10));
-
         // Panel zur Anzeige der Aktien auf dem Markt aufbauen
         aktienPanel = new JPanel();
         aktienPanel.setLayout(new BorderLayout());
         aktienPanel.setBorder(new TitledBorder("Aktien auf dem Markt"));
-
         aktienListe = new JList();
         aktienListe.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         aktienListe.setSelectedIndex(1);
         aktienPanel.add(new JScrollPane(aktienListe));
-
         panel = new JPanel();
         panel.setBackground(new Color(180, 180, 255));
         panel.setLayout(new FlowLayout());
         button = new JButton("Neue Kurse");
-        button.addActionListener(new ActionListener() {
+        button.addActionListener(new ActionListener()
+        {
             public void actionPerformed(ActionEvent event)
             {
                 kontrolleur.NeueKurswerteBerechnen();
@@ -120,21 +120,21 @@ class OBERFLAECHE implements OBERFLAECHENINTERFACE, STATUSBEOBACHTER
         panel.add(button);
         button = new JButton("Kursverlauf anzeigen");
         panel.add(button);
-        button.addActionListener(new ActionListener() {
+        button.addActionListener(new ActionListener()
+        {
             public void actionPerformed(ActionEvent event)
             {
-                kontrolleur.KursverlaufAnzeigen(aktienListe.getSelectedIndex() + 1);
+                kontrolleur.KursverlaufAnzeigen(
+                        aktienListe.getSelectedIndex() + 1);
             }
         });
         aktienPanel.add(panel, BorderLayout.SOUTH);
         hauptPanel.add(aktienPanel);
-
         // Panel zum Ein- und Verkaufen der Aktien aufbauen
         einkaufPanel = new JPanel();
         einkaufPanel.setBackground(new Color(220, 220, 255));
         einkaufPanel.setLayout(new BorderLayout(10, 10));
         einkaufPanel.setBorder(new TitledBorder("Aktienhandel"));
-
         // Bereich für Eingabe der Stückzahl
         panel = new JPanel();
         panel.setBackground(new Color(180, 180, 255));
@@ -148,38 +148,37 @@ class OBERFLAECHE implements OBERFLAECHENINTERFACE, STATUSBEOBACHTER
         panel.setLayout(new FlowLayout());
         button = new JButton("Aktie kaufen");
         panel.add(button);
-        button.addActionListener(new ActionListener() {
+        button.addActionListener(new ActionListener()
+        {
             public void actionPerformed(ActionEvent event)
             {
                 kontrolleur.AktienKaufen(aktienListe.getSelectedIndex() + 1,
-                                Integer.parseInt(anzahl.getText()));
+                        Integer.parseInt(anzahl.getText()));
             }
         });
         button = new JButton("Aktie verkaufen");
         panel.add(button);
-        button.addActionListener(new ActionListener() {
+        button.addActionListener(new ActionListener()
+        {
             public void actionPerformed(ActionEvent event)
             {
                 kontrolleur.AktienVerkaufen(aktienListe.getSelectedIndex() + 1,
-                                Integer.parseInt(anzahl.getText()));
+                        Integer.parseInt(anzahl.getText()));
             }
         });
         einkaufPanel.add(panel, BorderLayout.SOUTH);
         hauptPanel.add(einkaufPanel);
-
         // Bereich zum Anzeigen des Aktiendepots als Liste
         paketListe = new JList();
         paketListe.setBorder(new TitledBorder("Aktien im Depot"));
         paketListe.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         paketListe.setSelectedIndex(1);
         hauptPanel.add(new JScrollPane(paketListe));
-
         // Bereich zum Anzeigen des Kontostandes des Girokontos
         kontoPanel = new JPanel();
         kontoPanel.setBackground(new Color(220, 220, 255));
         kontoPanel.setLayout(new BorderLayout(10, 10));
         kontoPanel.setBorder(new TitledBorder("Konto"));
-
         panel = new JPanel();
         panel.setLayout(new GridLayout(1, 2, 10, 10));
         panel.setBackground(new Color(180, 180, 255));
@@ -195,11 +194,11 @@ class OBERFLAECHE implements OBERFLAECHENINTERFACE, STATUSBEOBACHTER
         panel.add(konten);
         kontoPanel.add(panel, BorderLayout.SOUTH);
         hauptPanel.add(kontoPanel);
-
         fenster.getContentPane().setLayout(new BorderLayout());
         fenster.getContentPane().add(hauptPanel, BorderLayout.NORTH);
         button = new JButton("Ende");
-        button.addActionListener(new ActionListener() {
+        button.addActionListener(new ActionListener()
+        {
             public void actionPerformed(ActionEvent event)
             {
                 kontrolleur.Beenden();
@@ -207,8 +206,10 @@ class OBERFLAECHE implements OBERFLAECHENINTERFACE, STATUSBEOBACHTER
         });
         fenster.getContentPane().add(button, BorderLayout.SOUTH);
         status = new JTextArea("");
-        fenster.getContentPane().add(new JScrollPane(status), BorderLayout.CENTER);
-        fenster.addWindowListener(new WindowAdapter() {
+        fenster.getContentPane().add(new JScrollPane(status),
+                BorderLayout.CENTER);
+        fenster.addWindowListener(new WindowAdapter()
+        {
             public void windowClosing(WindowEvent e)
             {
                 kontrolleur.Beenden();
@@ -237,10 +238,12 @@ class OBERFLAECHE implements OBERFLAECHENINTERFACE, STATUSBEOBACHTER
         {
             konten.addItem("" + nummern[i]);
         }
-        konten.addActionListener(new ActionListener() {
+        konten.addActionListener(new ActionListener()
+        {
             public void actionPerformed(ActionEvent event)
             {
-                kontrolleur.KontoSetzen(Integer.parseInt((String) konten.getSelectedItem()));
+                kontrolleur.KontoSetzen(
+                        Integer.parseInt((String) konten.getSelectedItem()));
             }
         });
     }

@@ -10,16 +10,19 @@ class Jaeger extends Figur
 {
     /** Breite des Spielfeldes. */
     int breite;
+
     /** Höhe des Spielfeldes. */
     int höhe;
+
     /** Zähler für dei Berührungen. */
     int zähler;
 
     /**
-     * Legt die Anzeigesymbole an und positioniert den Verfolger in der Mitte des Feldes.
+     * Legt die Anzeigesymbole an und positioniert den Verfolger in der Mitte
+     * des Feldes.
      *
      * @param breite Breite des Spielfelds
-     * @param höhe Höhe des Spielfelds
+     * @param höhe   Höhe des Spielfelds
      */
     Jaeger(int breite, int höhe)
     {
@@ -33,8 +36,8 @@ class Jaeger extends Figur
     }
 
     /**
-     * Bewegt den Verfolger um 10 Einheiten in der eingestellten Richtung. Wird der Rand erreicht,
-     * wird die Bewegung gestoppt.
+     * Bewegt den Verfolger um 10 Einheiten in der eingestellten Richtung. Wird
+     * der Rand erreicht, wird die Bewegung gestoppt.
      */
     @Override
     void AktionAusführen()
@@ -43,9 +46,9 @@ class Jaeger extends Figur
         int yalt = YPositionGeben();
         Gehen(10);
         if ((XPositionGeben() < 0) && (XPositionGeben() < xalt)
-                        || (XPositionGeben() > breite) && (XPositionGeben() > xalt)
-                        || (YPositionGeben() < 0) && (YPositionGeben() < yalt)
-                        || (YPositionGeben() > höhe) && (YPositionGeben() > yalt))
+                || (XPositionGeben() > breite) && (XPositionGeben() > xalt)
+                || (YPositionGeben() < 0) && (YPositionGeben() < yalt)
+                || (YPositionGeben() > höhe) && (YPositionGeben() > yalt))
         {
             PositionSetzen(xalt, yalt);
         }
@@ -59,8 +62,8 @@ class Jaeger extends Figur
      * Die eigentliche Aktionsmethode für einen Mausklick. <br>
      * Muss bei Bedarf von einer Unterklasse überschrieben werden.
      *
-     * @param x x-Position des Mausklicks
-     * @param y y-Position des Mausklicks
+     * @param x      x-Position des Mausklicks
+     * @param y      y-Position des Mausklicks
      * @param anzahl Anzahl der aufeinanderfolgenden Mausklicks
      */
     @Override
@@ -72,7 +75,8 @@ class Jaeger extends Figur
     }
 
     /**
-     * Wird bei Mausklick aufgerufen, um die Bewegungsrichtung des Verfolgers zu ermitteln.
+     * Wird bei Mausklick aufgerufen, um die Bewegungsrichtung des Verfolgers zu
+     * ermitteln.
      *
      * @param xMaus x-Koordinate der Maus
      * @param yMaus y-Koordinate der Maus
@@ -96,11 +100,13 @@ class Jaeger extends Figur
         }
         else if (dx > 0)
         {
-            richtung = -((int) Math.round(Math.atan(dy / dx) * 180.0 / Math.PI));
+            richtung = -((int) Math
+                    .round(Math.atan(dy / dx) * 180.0 / Math.PI));
         }
         else
         {
-            richtung = 180 - ((int) Math.round(Math.atan(dy / dx) * 180.0 / Math.PI));
+            richtung = 180
+                    - ((int) Math.round(Math.atan(dy / dx) * 180.0 / Math.PI));
         }
         return richtung;
     }

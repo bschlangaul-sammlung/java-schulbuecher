@@ -14,8 +14,6 @@ class PROGRAMM
     /** Referenz auf einen verwalteten Taktgeber */
     private static TAKTGEBER t;
 
-
-
     /**
      * Konstruktor der Klasse PROGRAMM Ruft die main-Methode auf.
      */
@@ -27,7 +25,8 @@ class PROGRAMM
     }
 
     /**
-     * main-Methode Erzeugt ein Spiel und einen Taktgeber. Der Taktgeber wird gestartet.
+     * main-Methode Erzeugt ein Spiel und einen Taktgeber. Der Taktgeber wird
+     * gestartet.
      */
     static void main(String args[])
     {

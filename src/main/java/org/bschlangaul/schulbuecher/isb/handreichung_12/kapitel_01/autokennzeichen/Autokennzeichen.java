@@ -16,14 +16,17 @@ class Autokennzeichen
         {
             zustandWechseln(kennzeichen.charAt(i));
         }
-        if ((zustand == 8) || (zustand == 9) || (zustand == 10) || (zustand == 11))
+        if ((zustand == 8) || (zustand == 9) || (zustand == 10)
+                || (zustand == 11))
         {
             kennzeichenIstKorrekt = true;
-            System.out.println("Das Wort ''" + kennzeichen + "'' ist ein gültiges KFZ-Zeichen!");
+            System.out.println("Das Wort ''" + kennzeichen
+                    + "'' ist ein gültiges KFZ-Zeichen!");
         }
         else
         {
-            System.out.println("Das Wort ''" + kennzeichen + "'' ist kein gültiges KFZ-Zeichen!");
+            System.out.println("Das Wort ''" + kennzeichen
+                    + "'' ist kein gültiges KFZ-Zeichen!");
         }
         System.out.println("ZUSTAND: " + zustand);
         zustand = 0; // Anfangszustand z0
@@ -34,409 +37,422 @@ class Autokennzeichen
     {
         switch (zustand)
         {
-            case 0:
+        case 0:
+        {
+            switch (eingabezeichen)
             {
-                switch (eingabezeichen)
-                {
-                    case 'A':
-                    case 'B':
-                    case 'C':
-                    case 'D':
-                    case 'E':
-                    case 'F':
-                    case 'G':
-                    case 'H':
-                    case 'I':
-                    case 'J':
-                    case 'K':
-                    case 'L':
-                    case 'M':
-                    case 'N':
-                    case 'O':
-                    case 'P':
-                    case 'Q':
-                    case 'R':
-                    case 'S':
-                    case 'T':
-                    case 'U':
-                    case 'V':
-                    case 'W':
-                    case 'X':
-                    case 'Y':
-                    case 'Z':
-                    case 'Ä':
-                    case 'Ö':
-                    case 'Ü':
-                    {
-                        zustand = 1;
-                    }
-                        break;
-                    default:
-                    {
-                        zustand = 12;
-                    }
-                        break;
-                }
-            }
-                break; // ende case 0
-
-            case 1:
+            case 'A':
+            case 'B':
+            case 'C':
+            case 'D':
+            case 'E':
+            case 'F':
+            case 'G':
+            case 'H':
+            case 'I':
+            case 'J':
+            case 'K':
+            case 'L':
+            case 'M':
+            case 'N':
+            case 'O':
+            case 'P':
+            case 'Q':
+            case 'R':
+            case 'S':
+            case 'T':
+            case 'U':
+            case 'V':
+            case 'W':
+            case 'X':
+            case 'Y':
+            case 'Z':
+            case 'Ä':
+            case 'Ö':
+            case 'Ü':
             {
-                switch (eingabezeichen)
-                {
-                    case 'A':
-                    case 'B':
-                    case 'C':
-                    case 'D':
-                    case 'E':
-                    case 'F':
-                    case 'G':
-                    case 'H':
-                    case 'I':
-                    case 'J':
-                    case 'K':
-                    case 'L':
-                    case 'M':
-                    case 'N':
-                    case 'O':
-                    case 'P':
-                    case 'Q':
-                    case 'R':
-                    case 'S':
-                    case 'T':
-                    case 'U':
-                    case 'V':
-                    case 'W':
-                    case 'X':
-                    case 'Y':
-                    case 'Z':
-                    case 'Ä':
-                    case 'Ö':
-                    case 'Ü':
-                    {
-                        zustand = 2;
-                    }
-                        break;
-                    case ' ':
-                    {
-                        zustand = 4;
-                    }
-                        break;
-                    default:
-                    {
-                        zustand = 12;
-                    }
-                        break;
-                }
+                zustand = 1;
             }
-                break; // ende case 1
+                break;
 
-            case 2:
+            default:
             {
-                switch (eingabezeichen)
-                {
-                    case 'A':
-                    case 'B':
-                    case 'C':
-                    case 'D':
-                    case 'E':
-                    case 'F':
-                    case 'G':
-                    case 'H':
-                    case 'I':
-                    case 'J':
-                    case 'K':
-                    case 'L':
-                    case 'M':
-                    case 'N':
-                    case 'O':
-                    case 'P':
-                    case 'Q':
-                    case 'R':
-                    case 'S':
-                    case 'T':
-                    case 'U':
-                    case 'V':
-                    case 'W':
-                    case 'X':
-                    case 'Y':
-                    case 'Z':
-                    case 'Ä':
-                    case 'Ö':
-                    case 'Ü':
-                    {
-                        zustand = 3;
-                    }
-                        break;
-                    case ' ':
-                    {
-                        zustand = 4;
-                    }
-                        break;
-                    default:
-                    {
-                        zustand = 12;
-                    }
-                        break;
-                }
+                zustand = 12;
             }
-                break; // ende case 2
+                break;
+            }
+        }
+            break; // ende case 0
 
-            case 3:
+        case 1:
+        {
+            switch (eingabezeichen)
             {
-                switch (eingabezeichen)
-                {
-                    case ' ':
-                    {
-                        zustand = 4;
-                    }
-                        break;
-                    default:
-                    {
-                        zustand = 12;
-                    }
-                        break;
-                }
-            }
-                break; // ende case 3
-
-            case 4:
+            case 'A':
+            case 'B':
+            case 'C':
+            case 'D':
+            case 'E':
+            case 'F':
+            case 'G':
+            case 'H':
+            case 'I':
+            case 'J':
+            case 'K':
+            case 'L':
+            case 'M':
+            case 'N':
+            case 'O':
+            case 'P':
+            case 'Q':
+            case 'R':
+            case 'S':
+            case 'T':
+            case 'U':
+            case 'V':
+            case 'W':
+            case 'X':
+            case 'Y':
+            case 'Z':
+            case 'Ä':
+            case 'Ö':
+            case 'Ü':
             {
-                switch (eingabezeichen)
-                {
-                    case 'A':
-                    case 'B':
-                    case 'C':
-                    case 'D':
-                    case 'E':
-                    case 'F':
-                    case 'G':
-                    case 'H':
-                    case 'I':
-                    case 'J':
-                    case 'K':
-                    case 'L':
-                    case 'M':
-                    case 'N':
-                    case 'O':
-                    case 'P':
-                    case 'Q':
-                    case 'R':
-                    case 'S':
-                    case 'T':
-                    case 'U':
-                    case 'V':
-                    case 'W':
-                    case 'X':
-                    case 'Y':
-                    case 'Z':
-                    case 'Ä':
-                    case 'Ö':
-                    case 'Ü':
-                    {
-                        zustand = 5;
-                    }
-                        break;
-                    default:
-                    {
-                        zustand = 12;
-                    }
-                        break;
-                }
+                zustand = 2;
             }
-                break; // ende case 4
+                break;
 
-            case 5:
+            case ' ':
             {
-                switch (eingabezeichen)
-                {
-                    case 'A':
-                    case 'B':
-                    case 'C':
-                    case 'D':
-                    case 'E':
-                    case 'F':
-                    case 'G':
-                    case 'H':
-                    case 'I':
-                    case 'J':
-                    case 'K':
-                    case 'L':
-                    case 'M':
-                    case 'N':
-                    case 'O':
-                    case 'P':
-                    case 'Q':
-                    case 'R':
-                    case 'S':
-                    case 'T':
-                    case 'U':
-                    case 'V':
-                    case 'W':
-                    case 'X':
-                    case 'Y':
-                    case 'Z':
-                    case 'Ä':
-                    case 'Ö':
-                    case 'Ü':
-                    {
-                        zustand = 6;
-                    }
-                        break;
-                    case ' ':
-                    {
-                        zustand = 7;
-                    }
-                        break;
-                    default:
-                    {
-                        zustand = 12;
-                    }
-                        break;
-                }
+                zustand = 4;
             }
-                break; // ende case 5
+                break;
 
-            case 6:
+            default:
             {
-                switch (eingabezeichen)
-                {
-                    case ' ':
-                    {
-                        zustand = 7;
-                    }
-                        break;
-                    default:
-                    {
-                        zustand = 12;
-                    }
-                        break;
-                }
+                zustand = 12;
             }
-                break; // ende case 6
+                break;
+            }
+        }
+            break; // ende case 1
 
-            case 7:
+        case 2:
+        {
+            switch (eingabezeichen)
             {
-                switch (eingabezeichen)
-                {
-                    case '0':
-                    case '1':
-                    case '2':
-                    case '3':
-                    case '4':
-                    case '5':
-                    case '6':
-                    case '7':
-                    case '8':
-                    case '9':
-                    {
-                        zustand = 8;
-                    }
-                        break;
-                    default:
-                    {
-                        zustand = 12;
-                    }
-                        break;
-                }
-            }
-                break; // ende case 7
-
-            case 8:
+            case 'A':
+            case 'B':
+            case 'C':
+            case 'D':
+            case 'E':
+            case 'F':
+            case 'G':
+            case 'H':
+            case 'I':
+            case 'J':
+            case 'K':
+            case 'L':
+            case 'M':
+            case 'N':
+            case 'O':
+            case 'P':
+            case 'Q':
+            case 'R':
+            case 'S':
+            case 'T':
+            case 'U':
+            case 'V':
+            case 'W':
+            case 'X':
+            case 'Y':
+            case 'Z':
+            case 'Ä':
+            case 'Ö':
+            case 'Ü':
             {
-                switch (eingabezeichen)
-                {
-                    case '0':
-                    case '1':
-                    case '2':
-                    case '3':
-                    case '4':
-                    case '5':
-                    case '6':
-                    case '7':
-                    case '8':
-                    case '9':
-                    {
-                        zustand = 9;
-                    }
-                        break;
-                    default:
-                    {
-                        zustand = 12;
-                    }
-                        break;
-                }
+                zustand = 3;
             }
-                break; // ende case 8
+                break;
 
-            case 9:
+            case ' ':
             {
-                switch (eingabezeichen)
-                {
-                    case '0':
-                    case '1':
-                    case '2':
-                    case '3':
-                    case '4':
-                    case '5':
-                    case '6':
-                    case '7':
-                    case '8':
-                    case '9':
-                    {
-                        zustand = 10;
-                    }
-                        break;
-                    default:
-                    {
-                        zustand = 12;
-                    }
-                        break;
-                }
+                zustand = 4;
             }
-                break; // ende case 9
+                break;
 
-            case 10:
+            default:
             {
-                switch (eingabezeichen)
-                {
-                    case '0':
-                    case '1':
-                    case '2':
-                    case '3':
-                    case '4':
-                    case '5':
-                    case '6':
-                    case '7':
-                    case '8':
-                    case '9':
-                    {
-                        zustand = 11;
-                    }
-                        break;
-                    default:
-                    {
-                        zustand = 12;
-                    }
-                        break;
-                }
+                zustand = 12;
             }
-                break; // ende case 10
+                break;
+            }
+        }
+            break; // ende case 2
 
-            case 11:
+        case 3:
+        {
+            switch (eingabezeichen)
             {
-                switch (eingabezeichen)
-                {
-                    // case '': {zustand = 11;}
-                    default:
-                    {
-                        zustand = 12;
-                    }
-                        break;
-                }
+            case ' ':
+            {
+                zustand = 4;
             }
-                break; // ende case 11
+                break;
 
+            default:
+            {
+                zustand = 12;
+            }
+                break;
+            }
+        }
+            break; // ende case 3
+
+        case 4:
+        {
+            switch (eingabezeichen)
+            {
+            case 'A':
+            case 'B':
+            case 'C':
+            case 'D':
+            case 'E':
+            case 'F':
+            case 'G':
+            case 'H':
+            case 'I':
+            case 'J':
+            case 'K':
+            case 'L':
+            case 'M':
+            case 'N':
+            case 'O':
+            case 'P':
+            case 'Q':
+            case 'R':
+            case 'S':
+            case 'T':
+            case 'U':
+            case 'V':
+            case 'W':
+            case 'X':
+            case 'Y':
+            case 'Z':
+            case 'Ä':
+            case 'Ö':
+            case 'Ü':
+            {
+                zustand = 5;
+            }
+                break;
+
+            default:
+            {
+                zustand = 12;
+            }
+                break;
+            }
+        }
+            break; // ende case 4
+
+        case 5:
+        {
+            switch (eingabezeichen)
+            {
+            case 'A':
+            case 'B':
+            case 'C':
+            case 'D':
+            case 'E':
+            case 'F':
+            case 'G':
+            case 'H':
+            case 'I':
+            case 'J':
+            case 'K':
+            case 'L':
+            case 'M':
+            case 'N':
+            case 'O':
+            case 'P':
+            case 'Q':
+            case 'R':
+            case 'S':
+            case 'T':
+            case 'U':
+            case 'V':
+            case 'W':
+            case 'X':
+            case 'Y':
+            case 'Z':
+            case 'Ä':
+            case 'Ö':
+            case 'Ü':
+            {
+                zustand = 6;
+            }
+                break;
+
+            case ' ':
+            {
+                zustand = 7;
+            }
+                break;
+
+            default:
+            {
+                zustand = 12;
+            }
+                break;
+            }
+        }
+            break; // ende case 5
+
+        case 6:
+        {
+            switch (eingabezeichen)
+            {
+            case ' ':
+            {
+                zustand = 7;
+            }
+                break;
+
+            default:
+            {
+                zustand = 12;
+            }
+                break;
+            }
+        }
+            break; // ende case 6
+
+        case 7:
+        {
+            switch (eingabezeichen)
+            {
+            case '0':
+            case '1':
+            case '2':
+            case '3':
+            case '4':
+            case '5':
+            case '6':
+            case '7':
+            case '8':
+            case '9':
+            {
+                zustand = 8;
+            }
+                break;
+
+            default:
+            {
+                zustand = 12;
+            }
+                break;
+            }
+        }
+            break; // ende case 7
+
+        case 8:
+        {
+            switch (eingabezeichen)
+            {
+            case '0':
+            case '1':
+            case '2':
+            case '3':
+            case '4':
+            case '5':
+            case '6':
+            case '7':
+            case '8':
+            case '9':
+            {
+                zustand = 9;
+            }
+                break;
+
+            default:
+            {
+                zustand = 12;
+            }
+                break;
+            }
+        }
+            break; // ende case 8
+
+        case 9:
+        {
+            switch (eingabezeichen)
+            {
+            case '0':
+            case '1':
+            case '2':
+            case '3':
+            case '4':
+            case '5':
+            case '6':
+            case '7':
+            case '8':
+            case '9':
+            {
+                zustand = 10;
+            }
+                break;
+
+            default:
+            {
+                zustand = 12;
+            }
+                break;
+            }
+        }
+            break; // ende case 9
+
+        case 10:
+        {
+            switch (eingabezeichen)
+            {
+            case '0':
+            case '1':
+            case '2':
+            case '3':
+            case '4':
+            case '5':
+            case '6':
+            case '7':
+            case '8':
+            case '9':
+            {
+                zustand = 11;
+            }
+                break;
+
+            default:
+            {
+                zustand = 12;
+            }
+                break;
+            }
+        }
+            break; // ende case 10
+
+        case 11:
+        {
+            switch (eingabezeichen)
+            {
+            // case '': {zustand = 11;}
+            default:
+            {
+                zustand = 12;
+            }
+                break;
+            }
+        }
+            break; // ende case 11
         } // ende switch zustand
     } // ende void zustandWechseln
 }

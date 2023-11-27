@@ -4,28 +4,28 @@ import java.awt.Shape;
 import java.awt.Graphics2D;
 
 /**
- * Abstrakte Klasse Form Rechtecke, Dreiecke und Ellipsen sind Formen. Formen stellen die
- * zusaetzlichen Dienste gefuelltSetzen, groesseSetzen u. ae. bereit. Weiter wird Technisches
- * festgelegt, um Formen drehen zu koennen.
+ * Abstrakte Klasse Form Rechtecke, Dreiecke und Ellipsen sind Formen. Formen
+ * stellen die zusaetzlichen Dienste gefuelltSetzen, groesseSetzen u. ae.
+ * bereit. Weiter wird Technisches festgelegt, um Formen drehen zu koennen.
  *
  * @author Florian Prager, Universität Passau
  * @version 02.2008
  */
 public abstract class Form extends Vektorgrafik
 {
-
     /**
-     * Der Wert des Attributs istGefuellt zeigt an, ob die Form gefuellt gezeichnet wird, oder ob
-     * nur eine Kontur gezeichnet wird.
+     * Der Wert des Attributs istGefuellt zeigt an, ob die Form gefuellt
+     * gezeichnet wird, oder ob nur eine Kontur gezeichnet wird.
      */
     private boolean istGefuellt;
 
     /**
-     * Es wird eine neue Form mit den Standardeinstellungen erzeugt, diese kann mit einem
-     * Zeichenfenster verbunden werden. Wird null eingegeben, wird das Standardfenster verwendet.
-     * Die Form ist gefuellt. Sie kann sogleich beim Zeichenfenster angemeldet werden (true
-     * eingeben) oder nicht (false eingeben). Nur angemeldete Grafiken koennen vom Zeichenfenster
-     * gezeichnet werden.
+     * Es wird eine neue Form mit den Standardeinstellungen erzeugt, diese kann
+     * mit einem Zeichenfenster verbunden werden. Wird null eingegeben, wird das
+     * Standardfenster verwendet. Die Form ist gefuellt. Sie kann sogleich beim
+     * Zeichenfenster angemeldet werden (true eingeben) oder nicht (false
+     * eingeben). Nur angemeldete Grafiken koennen vom Zeichenfenster gezeichnet
+     * werden.
      */
     public Form(boolean anmelden, Zeichenfenster fenster)
     {
@@ -37,8 +37,9 @@ public abstract class Form extends Vektorgrafik
     }
 
     /**
-     * Mit dem Dienst gefuelltSetzen kann bestimmt werden, ob die Form gefuellt zu zeichnen ist
-     * (true), oder ob nur die Kontur der Form zu zeichnen ist (false).
+     * Mit dem Dienst gefuelltSetzen kann bestimmt werden, ob die Form gefuellt
+     * zu zeichnen ist (true), oder ob nur die Kontur der Form zu zeichnen ist
+     * (false).
      */
     public void gefuelltSetzen(boolean fuellen)
     {
@@ -63,8 +64,9 @@ public abstract class Form extends Vektorgrafik
     }
 
     /**
-     * Konkrete Unterklassen bieten diesen Dienst an. Er gibt eine interne Repraesentation der
-     * konkreten Form zurueck. Diese wird letztlich vom Zeichenfenster gezeichnet.
+     * Konkrete Unterklassen bieten diesen Dienst an. Er gibt eine interne
+     * Repraesentation der konkreten Form zurueck. Diese wird letztlich vom
+     * Zeichenfenster gezeichnet.
      */
     protected abstract Shape formFuerFensterErzeugen();
 }

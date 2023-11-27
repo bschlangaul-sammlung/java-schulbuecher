@@ -6,13 +6,14 @@ package org.bschlangaul.schulbuecher.isb.handreichung_11.kapitel_02.softwaretech
  * @author
  * @version 1.0
  */
-
 import java.util.*;
 
 class DIJKSTRA implements STATUSERZEUGER
 {
     private LISTE orte;
+
     private LISTE strecken;
+
     private ArrayList<STATUSBEOBACHTER> beobachter;
 
     /**
@@ -41,12 +42,13 @@ class DIJKSTRA implements STATUSERZEUGER
     /**
      * Meldet den Status an alle Beobachter.
      *
-     * @param text Statustext
+     * @param text                  Statustext
      * @param vorgaengerinformation Weginformation
-     * @param start Name des Startortes
-     * @param ziel Name des Zielortes
+     * @param start                 Name des Startortes
+     * @param ziel                  Name des Zielortes
      */
-    private void StatusMelden(String text, LISTE vorgaengerinformation, String start, String ziel)
+    private void StatusMelden(String text, LISTE vorgaengerinformation,
+            String start, String ziel)
     {
         for (STATUSBEOBACHTER b : beobachter)
         {
@@ -59,7 +61,7 @@ class DIJKSTRA implements STATUSERZEUGER
      * Die eigentliche Wegesuche.
      *
      * @param start Startort
-     * @param ziel Zielort
+     * @param ziel  Zielort
      */
     void StreckeSuchen(ORT start, ORT ziel)
     {
@@ -86,9 +88,11 @@ class DIJKSTRA implements STATUSERZEUGER
             fertig.Anfuegen(aktOrt);
             if (aktOrt.OrtGeben() == ziel)
             {
-                StatusMelden("Der Weg von " + start.NameGeben() + " nach " + ziel.NameGeben()
-                                + " ist " + aktOrt.LaengeGeben() + "km lang.", fertig,
-                                start.NameGeben(), ziel.NameGeben());
+                StatusMelden(
+                        "Der Weg von " + start.NameGeben() + " nach "
+                                + ziel.NameGeben() + " ist "
+                                + aktOrt.LaengeGeben() + "km lang.",
+                        fertig, start.NameGeben(), ziel.NameGeben());
                 break;
             }
             while (true)
@@ -113,14 +117,16 @@ class DIJKSTRA implements STATUSERZEUGER
                 {
                     restOrte.Loeschen(neu);
                     inArbeit.Anfuegen(new VORGAENGERINFO(neu, aktOrt.OrtGeben(),
-                                    aktOrt.LaengeGeben() + aktStrecke.LaengeGeben()));
+                            aktOrt.LaengeGeben() + aktStrecke.LaengeGeben()));
                 }
                 else
                 {
                     alt = (VORGAENGERINFO) inArbeit.Suchen(name);
-                    if (alt.LaengeGeben() > aktOrt.LaengeGeben() + aktStrecke.LaengeGeben())
+                    if (alt.LaengeGeben() > aktOrt.LaengeGeben()
+                            + aktStrecke.LaengeGeben())
                     {
-                        alt.LaengeSetzen(aktOrt.LaengeGeben() + aktStrecke.LaengeGeben());
+                        alt.LaengeSetzen(aktOrt.LaengeGeben()
+                                + aktStrecke.LaengeGeben());
                         alt.VorgaengerSetzen(aktOrt.OrtGeben());
                     }
                 }

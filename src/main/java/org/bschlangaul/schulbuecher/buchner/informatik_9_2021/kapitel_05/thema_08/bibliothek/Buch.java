@@ -5,11 +5,12 @@ import greenfoot.Actor;
 /**
  * Klasse zum Setzen der Eigenschaften der Buch-Objekte. Kap. 5.6, Aufgabe 1
  */
-
 public class Buch extends Actor
 {
     String name;
+
     String autor;
+
     // double preisInEuro;
     int preisInCent;
 
@@ -25,8 +26,8 @@ public class Buch extends Actor
     {
         return preisInCent / 100;
     }
-
-    // void setzePreisInEuro(double neuerPreisInEuro) // Setter für double preisInEuro
+    // void setzePreisInEuro(double neuerPreisInEuro) // Setter für double
+    // preisInEuro
     // {
     // preisInEuro = neuerPreisInEuro;
     // aktualisiereBild();
@@ -44,8 +45,8 @@ public class Buch extends Actor
     }
 
     /*
-     * Der Programmtext ab hier braucht für die Bearbeitung der Arbeitsaufträge und Aufgaben weder
-     * gelesen noch verstanden zu werden.
+     * Der Programmtext ab hier braucht für die Bearbeitung der Arbeitsaufträge
+     * und Aufgaben weder gelesen noch verstanden zu werden.
      */
     void aktualisiereBild()
     {

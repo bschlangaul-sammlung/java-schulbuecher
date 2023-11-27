@@ -10,13 +10,11 @@ import org.bschlangaul.schulbuecher.isb.handreichung_12.kapitel_04.modell.DATENE
  */
 class ABSCHLUSS extends BAUMELEMENT
 {
-
     /**
      * Für das Anlegen des Abschlusses brauchts nichts getan zu werden.
      */
     ABSCHLUSS()
     {
-
     }
 
     /**
@@ -31,10 +29,11 @@ class ABSCHLUSS extends BAUMELEMENT
     }
 
     /**
-     * Sucht ein Datenelement mit dem in der Referenz angegebenen Schlüssel. Das Datenelement ist in
-     * diesem Fall sicher nicht im Baum vorhanden.
+     * Sucht ein Datenelement mit dem in der Referenz angegebenen Schlüssel. Das
+     * Datenelement ist in diesem Fall sicher nicht im Baum vorhanden.
      *
-     * @param schluessel Referenz auf ein Datenelement mit dem zu suchenden Schlüsselwert
+     * @param schluessel Referenz auf ein Datenelement mit dem zu suchenden
+     *                   Schlüsselwert
      * @return null
      */
     DATENELEMENT Suchen(DATENELEMENT schluessel)

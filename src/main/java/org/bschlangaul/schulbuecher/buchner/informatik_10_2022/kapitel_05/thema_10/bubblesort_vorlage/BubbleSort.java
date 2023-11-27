@@ -3,8 +3,8 @@ package org.bschlangaul.schulbuecher.buchner.informatik_10_2022.kapitel_05.thema
 /**
  * Projekt 5-10_Bubblesort (ÜuV Aufgabe 21)
  *
- * Die Klasse beschreibt ein Zahlen-Array, das mithilfe des BubbleSort-Algorithmus sortiert werden
- * kann.
+ * Die Klasse beschreibt ein Zahlen-Array, das mithilfe des
+ * BubbleSort-Algorithmus sortiert werden kann.
  *
  * @author Julia Kronawitter
  * @version 2022-09-12
@@ -16,7 +16,6 @@ public class BubbleSort
     public BubbleSort()
     {
         zahlen = new int[6];
-
         zahlen[0] = 12;
         zahlen[1] = 4;
         zahlen[2] = 2;
@@ -52,10 +51,8 @@ public class BubbleSort
 
     public void sortiereOptimiert()
     {
-
         // Hier kannst du eine optimierte Variante programmieren
         // Alternativ kannst du auch oben stehende Methode abändern
-
     }
 
     public void tausche(int i, int j)

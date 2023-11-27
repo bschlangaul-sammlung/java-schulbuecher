@@ -10,15 +10,15 @@ import org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.fortge
  */
 public class Sensortest extends Tastatursensor
 {
-
     public Sensortest()
     {
         super();
     }
 
     /**
-     * @param fenster wenn das uebergebene Zeichenfenster angewaehlt ist (den Fokus hat), dann wird
-     *        die Methode ausloesen bei Tastendruck gefeuert.
+     * @param fenster wenn das uebergebene Zeichenfenster angewaehlt ist (den
+     *                Fokus hat), dann wird die Methode ausloesen bei
+     *                Tastendruck gefeuert.
      */
     public Sensortest(Zeichenfenster fenster)
     {

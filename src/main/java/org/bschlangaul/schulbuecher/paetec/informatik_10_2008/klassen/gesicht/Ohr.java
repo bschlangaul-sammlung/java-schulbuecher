@@ -25,25 +25,22 @@ public class Ohr implements Schauspieler
         ohrAussen.farbeSetzen("gelb");
         ohrAussen.groesseSetzen(50, 150);
         ohrAussen.positionSetzen(xPosition, yPosition);
-
         ohrInnen = new Ellipse();
         ohrInnen.farbeSetzen("orange");
         ohrInnen.groesseSetzen(30, 80);
         ohrInnen.positionSetzen(xPosition + 10, yPosition + 20);
-
         ohrAussen.anzeigen();
         ohrInnen.anzeigen();
     }
 
     /**
-     * Die Methode agieren fuehrt eine fuer das Schauspielerobjekt typische Bewegung aus.
+     * Die Methode agieren fuehrt eine fuer das Schauspielerobjekt typische
+     * Bewegung aus.
      */
     public void agieren()
     {
         ohrInnen.groesseSetzen(35, 100);
-
         warten(1);
-
         ohrInnen.groesseSetzen(30, 80);
     }
 }

@@ -4,8 +4,8 @@ import javax.swing.*;
 import java.awt.*;
 
 /**
- * Die Klasse FARBAUSWAHL dient zur Auswahl einer vordefinierten Farbe aus dem Farbraum der Klasse
- * Zeichenfenster.
+ * Die Klasse FARBAUSWAHL dient zur Auswahl einer vordefinierten Farbe aus dem
+ * Farbraum der Klasse Zeichenfenster.
  *
  * @author Heidrich
  * @version 9.9.07
@@ -13,8 +13,11 @@ import java.awt.*;
 public class FarbeAuswahl extends JPanel
 {
     private int anzahl;
+
     private ButtonGroup gruppe;
+
     private JRadioButton[] schalter;
+
     private String[] farben;
 
     /**

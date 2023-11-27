@@ -1,7 +1,8 @@
 package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_2_2010.kapitel_04.thema_14.aufgabe_03;
 
 /**
- * Klasse zur Realisierung des Goldbach-Tests Oldenbourg Schulbuchverlag Informatik Oberstufe 2
+ * Klasse zur Realisierung des Goldbach-Tests Oldenbourg Schulbuchverlag
+ * Informatik Oberstufe 2
  *
  * @author Klaus Reinold
  * @version 1.0
@@ -81,7 +82,8 @@ class GoldbachMitLaufzeitMessung
         if (n <= 1 || n % 2 == 1)
         {
             schrittzaehler++;
-            System.out.println("Wertebereich-Fehler: n <= 1 oder ungerade Zahl");
+            System.out
+                    .println("Wertebereich-Fehler: n <= 1 oder ungerade Zahl");
         }
         else
         {
@@ -96,8 +98,10 @@ class GoldbachMitLaufzeitMessung
                     schrittzaehler++;
                     goldbachErfuellt = true;
                     schrittzaehler++;
-                    schrittzaehler++; // System.out.println(n+" ist die Summe der Primzahlen "+i+"
-                                      // und "+j); //Wegen Messreihe erfolgt keine Ausgabe der
+                    schrittzaehler++; // System.out.println(n+" ist die Summe
+                                      // der Primzahlen "+i+"
+                                      // und "+j); //Wegen Messreihe erfolgt
+                                      // keine Ausgabe der
                                       // Einzelergebnisse
                 }
                 schrittzaehler++;
@@ -106,12 +110,13 @@ class GoldbachMitLaufzeitMessung
         }
         schrittzaehler++;
         System.out.println(schrittzaehler);
-        return goldbachErfuellt; // Wegen Messreihe erfolgt keine Ausgabe der Einzelergebnisse
-
+        return goldbachErfuellt; // Wegen Messreihe erfolgt keine Ausgabe der
+                                 // Einzelergebnisse
     }
 
     /**
-     * Führt eine Messreihe bzgl. Goldbach-Eigenschaft für die geraden Zahlen von 4 bis 1000 durch.
+     * Führt eine Messreihe bzgl. Goldbach-Eigenschaft für die geraden Zahlen
+     * von 4 bis 1000 durch.
      */
     void GoldbachMessreihe()
     {

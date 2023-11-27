@@ -6,10 +6,8 @@ package org.bschlangaul.schulbuecher.isb.handreichung_12.kapitel_04.sortieren_za
  * @author ISB-Arbeitskreis, Umsetzungshilfen Informatik 12
  * @version 1.0
  */
-
 interface OBERFLAECHENINTERFACE
 {
-
     /**
      * Trägt die Vergleichsanzahl für Sortieren durch Auswählen ein.
      *

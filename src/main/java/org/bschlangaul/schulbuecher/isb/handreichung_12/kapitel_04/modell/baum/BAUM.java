@@ -12,6 +12,7 @@ public class BAUM
 {
     /* Referenz auf die Wurzel des Baums. */
     private BAUMELEMENT anfang;
+
     /* Zauml;hler für die Anzahl der Vergleiche */
     private static int zaehler;
 
@@ -36,7 +37,8 @@ public class BAUM
     /**
      * Sucht ein Datenelement mit dem in der Referenz angegebenen Schlüssel.
      *
-     * @param schluessel Referenz auf ein Datenelement mit dem zu suchenden Schlüsselwert
+     * @param schluessel Referenz auf ein Datenelement mit dem zu suchenden
+     *                   Schlüsselwert
      * @return das gefundene Datenelement oder null
      */
     public DATENELEMENT Suchen(DATENELEMENT schluessel)

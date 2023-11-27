@@ -5,7 +5,6 @@ package org.bschlangaul.schulbuecher.buchner.informatik_9_2021.kapitel_07.thema_
  *
  * Kap. 7.3 Arbeitsauftrag 3, Aufgabe 1
  */
-
 public class PKW extends Fahrzeug
 {
     double ladestand;
@@ -17,10 +16,10 @@ public class PKW extends Fahrzeug
         ladestand = 80; // in Prozent der Gesamtladung
     }
 
-
     /*
-     * Das Auto bewegt sich, solange noch Energie vorhanden ist. Ist der Ladestand unter 30%, fährt
-     * es langsamer, verbraucht aber auch weniger Energie.
+     * Das Auto bewegt sich, solange noch Energie vorhanden ist. Ist der
+     * Ladestand unter 30%, fährt es langsamer, verbraucht aber auch weniger
+     * Energie.
      */
     void fahre()
     {
@@ -40,7 +39,8 @@ public class PKW extends Fahrzeug
     }
 
     /*
-     * Vor Beginn der Fahrt kann die Batterie (bis maximmal 100) nochmals geladen werden.
+     * Vor Beginn der Fahrt kann die Batterie (bis maximmal 100) nochmals
+     * geladen werden.
      */
     void lade(int menge)
     {

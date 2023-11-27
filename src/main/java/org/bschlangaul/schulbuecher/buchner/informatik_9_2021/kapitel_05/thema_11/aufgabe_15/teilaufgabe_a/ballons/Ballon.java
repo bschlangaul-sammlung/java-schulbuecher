@@ -6,7 +6,6 @@ import greenfoot.Actor;
  * Projekt zu Kap. 5.10 Aufgabe 9 <br>
  * Teilaufgaben d), e)
  */
-
 public class Ballon extends Actor
 {
     public void act() // wird regelmäßig automatisch aufgerufen
@@ -16,10 +15,10 @@ public class Ballon extends Actor
 
     void steige() // sorgt für die Bewegung der Ballons
     {
-
         if (getY() > 0) // wenn oberer Bildrand noch nicht erreicht ...
         {
-            setLocation(this.getX(), this.getY() - 1); // ... dann bewege den Ballon um eine Zelle
+            setLocation(this.getX(), this.getY() - 1); // ... dann bewege den
+                                                       // Ballon um eine Zelle
                                                        // nach oben
         }
         else

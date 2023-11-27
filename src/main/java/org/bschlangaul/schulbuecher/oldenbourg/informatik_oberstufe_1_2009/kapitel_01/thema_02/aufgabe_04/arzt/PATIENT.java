@@ -21,7 +21,6 @@ class PATIENT implements DATENELEMENT
         name = s;
     }
 
-
     /**
      * Gibt Information über den Patienten aus.
      */

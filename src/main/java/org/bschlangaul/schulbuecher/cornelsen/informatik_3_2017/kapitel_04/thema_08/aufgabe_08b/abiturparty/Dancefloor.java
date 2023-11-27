@@ -10,12 +10,16 @@ class Dancefloor
 {
     /** Die Leuchten */
     Rechteck[][] leuchten;
+
     /** Die zur Verfügung stehenden Farben */
     String[][] farben;
+
     /** Größe einer Leuchte */
     final int breite = 40;
+
     /** Anzahl der Leuchten pro Spalte */
     final int spaltenanzahl = 19;
+
     /** Anzahl der Leuchten pro Zeile */
     final int zeilenanzahl = 19;
 
@@ -34,8 +38,8 @@ class Dancefloor
             {
                 leuchten[spalte][zeile] = new Rechteck();
                 leuchten[spalte][zeile].GrößeSetzen(breite, breite);
-                leuchten[spalte][zeile].PositionSetzen(spalte * breite, zeile * breite);
-
+                leuchten[spalte][zeile].PositionSetzen(spalte * breite,
+                        zeile * breite);
                 if (farbe == "blau")
                 {
                     farbe = "rot";
@@ -54,8 +58,8 @@ class Dancefloor
      * Setzt die angegebene Leuchte auf die gewünschte Farbe
      *
      * @param spalte die Spaltennummer der Leuchte
-     * @param zeile die Zeilennummer der Leuchte
-     * @param farbe die gewünschte Farbe
+     * @param zeile  die Zeilennummer der Leuchte
+     * @param farbe  die gewünschte Farbe
      */
     void FarbeSetzen(int spalte, int zeile, String farbe)
     {
@@ -67,7 +71,7 @@ class Dancefloor
      * Gibt die Farbe der angegebene Leuchte
      *
      * @param spalte die Spaltennummer der Leuchte
-     * @param zeile die Zeilennummer der Leuchte
+     * @param zeile  die Zeilennummer der Leuchte
      * @return die Farbe der gewünschten Leuchte
      */
     String FarbeGeben(int spalte, int zeile)

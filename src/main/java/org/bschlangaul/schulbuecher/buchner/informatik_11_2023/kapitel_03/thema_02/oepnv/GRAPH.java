@@ -10,7 +10,9 @@ public class GRAPH
 {
     // TO-DO: Deklarieren der Adjazenzmatrix und des Knotenfeldes.
     private KNOTEN[] knotennamen;
+
     private boolean[][] adja;
+
     private int aktAnzahl, maxAnzahl;
 
     public GRAPH(int anzKnoten)
@@ -56,9 +58,9 @@ public class GRAPH
         {
             System.out.print(knotennamen[i].bezeichnerGeben() + "     ");
         }
-
         System.out.println(" ");
-        // Ausgabe der Knotenbezeichnung je Zeile und Darstellung der Adjezenzmatrix.
+        // Ausgabe der Knotenbezeichnung je Zeile und Darstellung der
+        // Adjezenzmatrix.
         for (int i = 0; i < maxAnzahl; i++)
         {
             System.out.print(knotennamen[i].bezeichnerGeben() + "     ");
@@ -89,7 +91,6 @@ public class GRAPH
                 position = i;
             }
         }
-
         return position;
     }
 
@@ -102,11 +103,8 @@ public class GRAPH
         {
             adja[tmpStart][tmpEnde] = false;
         }
-
     }
-
     // Die folgenden Methoden sind für dich nicht relevant.
-
 
     public void alleKantenEntfernen()
     {
@@ -118,5 +116,4 @@ public class GRAPH
             }
         }
     }
-
 }

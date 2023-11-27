@@ -8,6 +8,7 @@ public class Ampel
     };
 
     private SpielWalze oben, mitte, unten;
+
     private Zustand z;
 
     public Ampel()
@@ -109,5 +110,4 @@ public class Ampel
         ampel.schalteWeiter();
         ampel.schalteWeiter();
     }
-
 }

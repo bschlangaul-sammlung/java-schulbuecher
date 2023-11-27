@@ -6,7 +6,6 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapi
  * @author Albert Wiedemann
  * @version 1.0
  */
-
 import java.awt.*;
 
 class FAHRZEUGSYMBOL
@@ -16,18 +15,23 @@ class FAHRZEUGSYMBOL
 
     /** Anzeigegrö&szlig;e für ein Fahrzeug */
     protected int laenge;
+
     protected static final int breite = OBERFLAECHE.RasterGroesseGeben() / 2;
 
     /** Interna */
     protected String aktFarbe;
+
     protected float x;
+
     protected float y;
+
     protected Canvas anzeige;
+
     protected char ausrichtung;
 
     /**
-     * Standardkonstruktor für Objekte der Klasse FAHRZEUGSYMBOL. Keine Anzeige, Fahrtrichtung
-     * Osten. Das Fenster wird bei Bedarf angelegt.
+     * Standardkonstruktor für Objekte der Klasse FAHRZEUGSYMBOL. Keine Anzeige,
+     * Fahrtrichtung Osten. Das Fenster wird bei Bedarf angelegt.
      */
     FAHRZEUGSYMBOL()
     {
@@ -103,9 +107,10 @@ class FAHRZEUGSYMBOL
     }
 
     /**
-     * Setzt die Position des Fahrzeugsymbols. Das Koordinatensystem rechnet in Metern; der Ursprung
-     * ist in der Mitte des Fensters. Das Fahrzeugsymbol repräsentiert eine Länge von 5,0m. Die
-     * Koordinaten bezeichnen die linke, obere Ecke des Fahrzeugsymbols.
+     * Setzt die Position des Fahrzeugsymbols. Das Koordinatensystem rechnet in
+     * Metern; der Ursprung ist in der Mitte des Fensters. Das Fahrzeugsymbol
+     * repräsentiert eine Länge von 5,0m. Die Koordinaten bezeichnen die linke,
+     * obere Ecke des Fahrzeugsymbols.
      *
      * @param x x-Position
      * @param y y-Position
@@ -115,10 +120,10 @@ class FAHRZEUGSYMBOL
         this.x = x;
         this.y = y;
         anzeige.setLocation(
-                        OBERFLAECHE.FensterBreiteGeben() / 2
-                                        + (int) (x * OBERFLAECHE.MeterAlsPixelGeben()),
-                        OBERFLAECHE.FensterHoeheGeben() / 2
-                                        + (int) (y * OBERFLAECHE.MeterAlsPixelGeben()));
+                OBERFLAECHE.FensterBreiteGeben() / 2
+                        + (int) (x * OBERFLAECHE.MeterAlsPixelGeben()),
+                OBERFLAECHE.FensterHoeheGeben() / 2
+                        + (int) (y * OBERFLAECHE.MeterAlsPixelGeben()));
     }
 
     /**
@@ -131,18 +136,21 @@ class FAHRZEUGSYMBOL
         this.ausrichtung = ausrichtung;
         switch (ausrichtung)
         {
-            case 'N':
-                anzeige.setSize(breite, laenge);
-                break;
-            case 'S':
-                anzeige.setSize(breite, laenge);
-                break;
-            case 'O':
-                anzeige.setSize(laenge, breite);
-                break;
-            case 'W':
-                anzeige.setSize(laenge, breite);
-                break;
+        case 'N':
+            anzeige.setSize(breite, laenge);
+            break;
+
+        case 'S':
+            anzeige.setSize(breite, laenge);
+            break;
+
+        case 'O':
+            anzeige.setSize(laenge, breite);
+            break;
+
+        case 'W':
+            anzeige.setSize(laenge, breite);
+            break;
         }
         Zeichne();
     }

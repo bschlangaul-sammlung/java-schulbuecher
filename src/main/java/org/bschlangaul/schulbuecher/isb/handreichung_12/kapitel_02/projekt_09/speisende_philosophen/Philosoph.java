@@ -8,7 +8,6 @@ package org.bschlangaul.schulbuecher.isb.handreichung_12.kapitel_02.projekt_09.s
  */
 public class Philosoph extends Thread
 {
-
     /**
      * der Name des Philosphen
      */
@@ -37,8 +36,8 @@ public class Philosoph extends Thread
     /**
      * Konstruktor
      *
-     * @param Name Name des Philosphen
-     * @param linkerStab Referenz auf den linken Stab
+     * @param Name        Name des Philosphen
+     * @param linkerStab  Referenz auf den linken Stab
      * @param rechterStab Referenz auf den rechten Stab
      */
     public Philosoph(String Name, Stab linkerStab, Stab rechterStab)
@@ -53,7 +52,6 @@ public class Philosoph extends Thread
      */
     private void denken()
     {
-
         String prefix = "[";
         if (halteLinkenStab)
         {
@@ -64,23 +62,23 @@ public class Philosoph extends Thread
             prefix += "R";
         }
         prefix += "] ";
-
         System.out.println(prefix + "Philosoph " + Name + " denkt");
         try
         {
             // denkt eine gewisse Zeit
             sleep((int) (Math.random() * 1000));
-        } catch (InterruptedException e)
+        }
+        catch (InterruptedException e)
         {
         }
     }
 
     /**
-     * zur Simulation des Essens wird eine zufällige Zeitspanne lang gewartet, anschlie&szlig;end
-     * werden die Stäbchen zurückgelegt.
+     * zur Simulation des Essens wird eine zufällige Zeitspanne lang gewartet,
+     * anschlie&szlig;end werden die Stäbchen zurückgelegt.
      *
-     * Beim Aufruf dieser Methode muss bereits sichergestellt sein, dass der Philosoph beide
-     * Stäbchen in den Händen hält.
+     * Beim Aufruf dieser Methode muss bereits sichergestellt sein, dass der
+     * Philosoph beide Stäbchen in den Händen hält.
      */
     private void essen()
     {
@@ -89,7 +87,8 @@ public class Philosoph extends Thread
         {
             // denkt eine gewisse Zeit
             sleep((int) (Math.random() * 1000));
-        } catch (InterruptedException e)
+        }
+        catch (InterruptedException e)
         {
         }
         linkerStab.loslassen();
@@ -111,7 +110,6 @@ public class Philosoph extends Thread
                 System.out.println("Philosoph " + Name + " nimmt rechten Stab");
             }
         }
-
         if (!halteLinkenStab)
         {
             halteLinkenStab = linkerStab.nehmen();
@@ -123,13 +121,12 @@ public class Philosoph extends Thread
     }
 
     /**
-     * versucht immer wieder abwechselnd zu essen, oder falls nicht bei Stäbe in den Händen sind,
-     * nach den Stäben zu greifen.
+     * versucht immer wieder abwechselnd zu essen, oder falls nicht bei Stäbe in
+     * den Händen sind, nach den Stäben zu greifen.
      */
     @Override
     public void run()
     {
-
         while (true)
         {
             denken();

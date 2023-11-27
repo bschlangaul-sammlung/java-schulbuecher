@@ -11,14 +11,16 @@ import java.text.Collator;
 class KNOTENP extends LISTENELEMENTP
 {
     private LISTENELEMENTP nachfolger;
+
     private PERSON person;
+
     private Collator myCollator;
 
     /**
      * Belegt die Attribute.
      *
      * @param nr Referenz auf den Nachfolger dieses Konotens
-     * @param p Referenz auf die zu verwaltende Person
+     * @param p  Referenz auf die zu verwaltende Person
      */
     KNOTENP(LISTENELEMENTP nf, PERSON p)
     {
@@ -48,7 +50,8 @@ class KNOTENP extends LISTENELEMENTP
     }
 
     /**
-     * Löscht das angegebene Datenlement aus der Liste. Nutzt die Sortierung der Liste aus.
+     * Löscht das angegebene Datenlement aus der Liste. Nutzt die Sortierung der
+     * Liste aus.
      *
      * @param p Referenz auf die zu löschende Person.
      * @return (neues) Nachfolgeelement des Aufrufers.
@@ -116,7 +119,8 @@ class KNOTENP extends LISTENELEMENTP
      *
      * @param derNicht wird beim Eintrag übergangen.
      * @param ergebnis Referenz auf das Feld mit den gefundenen Daten.
-     * @param pos Index, auf dem das nächste Element eingetragen werden soll.
+     * @param pos      Index, auf dem das nächste Element eingetragen werden
+     *                 soll.
      */
     void NamenEintragen(String derNicht, String[] ergebnis, int pos)
     {

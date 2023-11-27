@@ -24,8 +24,9 @@ class KUNDEZUFALL2 extends KUNDE
     }
 
     /**
-     * Setzt den Anstellmechanismus in Gang. Hier ist die Strategie: zufällig die kürzeste Schlange
-     * oder die mit den wenigsten Artikeln Vorbedingung: es gibt mindestens eine offene Kasse
+     * Setzt den Anstellmechanismus in Gang. Hier ist die Strategie: zufällig
+     * die kürzeste Schlange oder die mit den wenigsten Artikeln Vorbedingung:
+     * es gibt mindestens eine offene Kasse
      *
      * @param schlange Warteschlange, an der sich der Kunde anstellt
      */
@@ -45,7 +46,8 @@ class KUNDEZUFALL2 extends KUNDE
             {
                 if (schlangen[i].IstAnstellenMoeglich())
                 {
-                    if (schlangen[i].ArtikelanzahlGeben() < beste.ArtikelanzahlGeben())
+                    if (schlangen[i].ArtikelanzahlGeben() < beste
+                            .ArtikelanzahlGeben())
                     {
                         beste = schlangen[i];
                     }
@@ -58,7 +60,8 @@ class KUNDEZUFALL2 extends KUNDE
             {
                 if (schlangen[i].IstAnstellenMoeglich())
                 {
-                    if (schlangen[i].KundenanzahlGeben() < beste.KundenanzahlGeben())
+                    if (schlangen[i].KundenanzahlGeben() < beste
+                            .KundenanzahlGeben())
                     {
                         beste = schlangen[i];
                     }

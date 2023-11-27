@@ -24,5 +24,4 @@ public class Niederschlag
         x = x + vx * zeit;
         y = y + vy * zeit;
     }
-
 }

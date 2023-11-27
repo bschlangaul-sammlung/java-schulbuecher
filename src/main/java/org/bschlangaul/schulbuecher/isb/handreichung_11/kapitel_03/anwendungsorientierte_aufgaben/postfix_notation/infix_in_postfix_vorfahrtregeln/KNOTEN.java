@@ -3,6 +3,7 @@ package org.bschlangaul.schulbuecher.isb.handreichung_11.kapitel_03.anwendungsor
 class KNOTEN extends LISTENELEMENT
 {
     private LISTENELEMENT nachfolger;
+
     private DATENELEMENT daten;
 
     // Konstruktoren
@@ -41,12 +42,10 @@ class KNOTEN extends LISTENELEMENT
         return daten;
     }
 
-
     // weitere Methoden
     DATENELEMENT EndeGeben()
     {
         DATENELEMENT wert;
-
         wert = nachfolger.EndeGeben();
         if (wert == null)
             return daten;
@@ -59,8 +58,6 @@ class KNOTEN extends LISTENELEMENT
         nachfolger = nachfolger.EndeEinfuegen(datenObjekt);
         return this;
     }
-
-
 
     LISTENELEMENT Entfernen(DATENELEMENT datenObjekt)
     {
@@ -83,5 +80,4 @@ class KNOTEN extends LISTENELEMENT
         daten.Ausgeben();
         nachfolger.AlleAusgeben();
     }
-
 }

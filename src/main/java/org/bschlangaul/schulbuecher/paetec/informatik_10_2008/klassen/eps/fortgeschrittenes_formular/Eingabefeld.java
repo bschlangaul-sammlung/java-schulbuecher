@@ -7,7 +7,8 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 /**
- * Diese Klasse implementiert ein simples Eingabefeld, das Benutzereingaben entgegennehmen kann.
+ * Diese Klasse implementiert ein simples Eingabefeld, das Benutzereingaben
+ * entgegennehmen kann.
  *
  * @author Florian Prager, Universität Passau
  * @version 02.2008
@@ -44,7 +45,8 @@ public class Eingabefeld extends Formulargrafik
         initialisieren(beschriftung, vorgabetext);
     }
 
-    public Eingabefeld(String beschriftung, String vorgabetext, Formular formular)
+    public Eingabefeld(String beschriftung, String vorgabetext,
+            Formular formular)
     {
         super(formular);
         if (beschriftung == null)
@@ -58,18 +60,20 @@ public class Eingabefeld extends Formulargrafik
     {
         Component awtKomponente = new JPanel();
         ((JPanel) awtKomponente).setLayout(null);
-        ((JPanel) awtKomponente).setBounds(0, 0, formularGeben().breiteGeben(), feldhoehe);// 0, 0
+        ((JPanel) awtKomponente).setBounds(0, 0, formularGeben().breiteGeben(),
+                feldhoehe);// 0, 0
         ((JPanel) awtKomponente).setBackground(Color.white);
         feld = new JTextField(vorgabetext, maximaleEingabelaenge);
         if (istGesperrt)
         {
             feld.setEditable(false);
         }
-        feld.setBounds(formularGeben().breiteGeben() / 2, 0, formularGeben().breiteGeben() / 2 - 10,
-                        feldhoehe);
+        feld.setBounds(formularGeben().breiteGeben() / 2, 0,
+                formularGeben().breiteGeben() / 2 - 10, feldhoehe);
         beschriftungslabel = new JLabel(beschriftung);
-        beschriftungslabel.setBounds(6, 0, formularGeben().breiteGeben() / 2 - 10, feldhoehe);// 0,
-                                                                                              // 0
+        beschriftungslabel.setBounds(6, 0,
+                formularGeben().breiteGeben() / 2 - 10, feldhoehe);// 0,
+                                                                   // 0
         ((JPanel) awtKomponente).add(beschriftungslabel);
         ((JPanel) awtKomponente).add(feld);
         awtKomponenteSetzen(awtKomponente);
@@ -106,7 +110,8 @@ public class Eingabefeld extends Formulargrafik
         {
             Integer i = Integer.parseInt(feld.getText());
             return i;
-        } catch (NumberFormatException e)
+        }
+        catch (NumberFormatException e)
         {
             return null;
         }
@@ -123,7 +128,8 @@ public class Eingabefeld extends Formulargrafik
         {
             Double d = Double.parseDouble(feld.getText());
             return d;
-        } catch (NumberFormatException e)
+        }
+        catch (NumberFormatException e)
         {
             return null;
         }

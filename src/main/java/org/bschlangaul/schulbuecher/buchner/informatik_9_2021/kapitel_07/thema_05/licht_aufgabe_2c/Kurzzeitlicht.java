@@ -3,13 +3,13 @@ package org.bschlangaul.schulbuecher.buchner.informatik_9_2021.kapitel_07.thema_
 import greenfoot.Greenfoot;
 
 /**
- * Ein Kurzzeitlicht wird durch Mausklick eingeschaltet. Es geht nach einer bestimmten Zeit von
- * selbst wieder aus.
+ * Ein Kurzzeitlicht wird durch Mausklick eingeschaltet. Es geht nach einer
+ * bestimmten Zeit von selbst wieder aus.
  */
-
 class Kurzzeitlicht extends Licht
 {
     int leuchtdauer = 200;
+
     int zaehler = 0;
 
     Kurzzeitlicht()

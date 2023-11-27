@@ -5,6 +5,7 @@ import org.bschlangaul.schulbuecher.isb.handreichung_10.konzept_01.ZeichenFenste
 public class Tropfen extends Niederschlag
 {
     private int radius;
+
     private Wolke meineWolke;
 
     public Tropfen(double xStart, double yStart, int rStart, Wolke w)

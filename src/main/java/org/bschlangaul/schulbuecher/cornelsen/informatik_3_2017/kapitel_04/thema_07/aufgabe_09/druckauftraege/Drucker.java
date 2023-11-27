@@ -1,15 +1,14 @@
 package org.bschlangaul.schulbuecher.cornelsen.informatik_3_2017.kapitel_04.thema_07.aufgabe_09.druckauftraege;
 
 /**
- * Klasse DRUCKER ermöglicht das mehrfache "Drucken" von ASCII-Bilder auf der Standardausgabe. Gerne
- * kannst du weitere Standardmotive ergänzen.
+ * Klasse DRUCKER ermöglicht das mehrfache "Drucken" von ASCII-Bilder auf der
+ * Standardausgabe. Gerne kannst du weitere Standardmotive ergänzen.
  *
  * @author Peter Brichzin
  * @version Version 1.0
  */
 class Drucker
 {
-
     /**
      * Mehrfaches Drucken eines Motivs.
      */
@@ -19,20 +18,23 @@ class Drucker
         {
             switch (motiv)
             {
-                case 'F':
-                    FahrradfahrerDrucken();
-                    break;
-                case 'K':
-                    KatzeDrucken();
-                    break;
-                case 'T':
-                    TorteDrucken();
-                    break;
-                default:
-                    System.out.println("Falsche Auswahl! Nur möglich");
-                    System.out.println("F für Fahrradfahrer");
-                    System.out.println("K für Katze");
-                    System.out.println("T für Torte");
+            case 'F':
+                FahrradfahrerDrucken();
+                break;
+
+            case 'K':
+                KatzeDrucken();
+                break;
+
+            case 'T':
+                TorteDrucken();
+                break;
+
+            default:
+                System.out.println("Falsche Auswahl! Nur möglich");
+                System.out.println("F für Fahrradfahrer");
+                System.out.println("K für Katze");
+                System.out.println("T für Torte");
             }
         }
     }
@@ -63,7 +65,6 @@ class Drucker
         System.out.println(" {~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~**~} ");
         System.out.println("       ");
     }
-
 
     /**
      * Drucken eines Fahrradfahrers auf der Standardausgabe.

@@ -8,7 +8,6 @@ import greenfoot.*;
  * @author Wolfgang Riffelmacher
  * @version 2022-09-12
  */
-
 public class MyWorld extends World
 {
     public MyWorld()

@@ -9,7 +9,9 @@ package org.bschlangaul.schulbuecher.buchner.informatik_10_2022.kapitel_07.bank2
 public class Berater
 {
     private String vorname;
+
     private String nachname;
+
     private String sachgebiet;
 
     public Berater(String einVorname, String einNachname, String einSachgebiet)
@@ -18,7 +20,6 @@ public class Berater
         nachname = einNachname;
         sachgebiet = einSachgebiet;
     }
-
 
     public void zeigeBeraterInformationen()
     {

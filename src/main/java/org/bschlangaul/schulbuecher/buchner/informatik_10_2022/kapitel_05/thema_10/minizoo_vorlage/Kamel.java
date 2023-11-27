@@ -6,11 +6,12 @@ package org.bschlangaul.schulbuecher.buchner.informatik_10_2022.kapitel_05.thema
 public class Kamel
 {
     private String name;
+
     private char geschlecht;
+
     private double groesse;
 
     public Kamel(String n, char g, double gr)
-
     {
         name = n;
         geschlecht = g;

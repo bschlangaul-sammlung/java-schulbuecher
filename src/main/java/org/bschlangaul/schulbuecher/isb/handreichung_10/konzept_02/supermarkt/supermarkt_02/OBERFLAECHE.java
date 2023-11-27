@@ -6,20 +6,17 @@ package org.bschlangaul.schulbuecher.isb.handreichung_10.konzept_02.supermarkt.s
  * @author Albert Wiedemann
  * @version 1.0
  */
-
 import java.awt.*;
 import java.awt.event.*;
 
 class OBERFLAECHE
 {
-
     /**
      * Vereinbart die für die Simulation nötigen Standardfarben.
      *
      * @author Albert Wiedemann
      * @version 1.0
      */
-
     enum FARBE
     {
         weiss, schwarz, rot, gruen, blau, gelb, magenta, cyan, grau;
@@ -34,35 +31,44 @@ class OBERFLAECHE
             java.awt.Color farbe;
             switch (this)
             {
-                case weiss:
-                    farbe = java.awt.Color.white;
-                    break;
-                case schwarz:
-                    farbe = java.awt.Color.black;
-                    break;
-                case rot:
-                    farbe = java.awt.Color.red;
-                    break;
-                case gruen:
-                    farbe = java.awt.Color.green;
-                    break;
-                case blau:
-                    farbe = java.awt.Color.blue;
-                    break;
-                case gelb:
-                    farbe = java.awt.Color.yellow;
-                    break;
-                case magenta:
-                    farbe = java.awt.Color.magenta;
-                    break;
-                case cyan:
-                    farbe = java.awt.Color.cyan;
-                    break;
-                case grau:
-                    farbe = java.awt.Color.gray;
-                    break;
-                default:
-                    farbe = java.awt.Color.white;
+            case weiss:
+                farbe = java.awt.Color.white;
+                break;
+
+            case schwarz:
+                farbe = java.awt.Color.black;
+                break;
+
+            case rot:
+                farbe = java.awt.Color.red;
+                break;
+
+            case gruen:
+                farbe = java.awt.Color.green;
+                break;
+
+            case blau:
+                farbe = java.awt.Color.blue;
+                break;
+
+            case gelb:
+                farbe = java.awt.Color.yellow;
+                break;
+
+            case magenta:
+                farbe = java.awt.Color.magenta;
+                break;
+
+            case cyan:
+                farbe = java.awt.Color.cyan;
+                break;
+
+            case grau:
+                farbe = java.awt.Color.gray;
+                break;
+
+            default:
+                farbe = java.awt.Color.white;
             }
             return farbe;
         }
@@ -82,6 +88,7 @@ class OBERFLAECHE
     }
 
     private static OBERFLAECHE o = null;
+
     private Frame fenster = null;
 
     /**
@@ -100,7 +107,6 @@ class OBERFLAECHE
         fenster.setSize(breite, hoehe);
     }
 
-
     /**
      * Gibt das Ausgabefenster zurück und erzeugt es gegebenenfalls.
      *
@@ -114,6 +120,4 @@ class OBERFLAECHE
         }
         return o.fenster;
     }
-
-
 }

@@ -9,7 +9,6 @@ package org.bschlangaul.schulbuecher.isb.handreichung_12.kapitel_02.projekt_11.a
  */
 public class AbstellPlatz
 {
-
     /**
      * wahr, wenn der Platz belegt ist
      */
@@ -22,7 +21,6 @@ public class AbstellPlatz
      */
     public synchronized boolean ablegen()
     {
-
         if (!platzbelegt)
         {
             platzbelegt = true;
@@ -40,7 +38,6 @@ public class AbstellPlatz
      */
     public synchronized boolean abholen()
     {
-
         if (platzbelegt)
         {
             platzbelegt = false;

@@ -4,6 +4,7 @@ class ANRUFER extends DATENELEMENT
 {
     // Attribute
     private int kundennummer;
+
     private String problembeschreibung;
 
     // Konstruktor
@@ -15,12 +16,14 @@ class ANRUFER extends DATENELEMENT
 
     // Methoden
     /**
-     * gibt Information über Kundennummer des Anrufers und Problembeschreibung aus.
+     * gibt Information über Kundennummer des Anrufers und Problembeschreibung
+     * aus.
      */
     void Ausgeben()
     {
         System.out.println("Kundennummer: " + kundennummer);
         System.out.println("Problembeschreibung: " + problembeschreibung);
-        System.out.println("----------------------------------------------------");
+        System.out.println(
+                "----------------------------------------------------");
     }
 }

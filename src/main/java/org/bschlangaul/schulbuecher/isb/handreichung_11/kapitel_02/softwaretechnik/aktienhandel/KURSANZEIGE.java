@@ -6,7 +6,6 @@ package org.bschlangaul.schulbuecher.isb.handreichung_11.kapitel_02.softwaretech
  * @author
  * @version 1.0
  */
-
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
@@ -18,6 +17,7 @@ class KURSANZEIGE
     static final int kursAnzahl = 20;
 
     private JFrame fenster;
+
     private ANZEIGEKOMPONENTE anzeige;
 
     /**
@@ -28,7 +28,8 @@ class KURSANZEIGE
         fenster = new JFrame("Kursverlauf");
         fenster.setSize(600, 400);
         fenster.setVisible(false);
-        fenster.addWindowListener(new WindowAdapter() {
+        fenster.addWindowListener(new WindowAdapter()
+        {
             public void windowClosing(WindowEvent e)
             {
                 fenster.setVisible(false);
@@ -42,7 +43,7 @@ class KURSANZEIGE
      * Macht das Anzeigefenster sichtbar
      *
      * @param kurse die Kursdaten für die Anzeige.
-     * @param name Name der Aktie
+     * @param name  Name der Aktie
      */
     void Anzeigen(double[] kurse, String name)
     {

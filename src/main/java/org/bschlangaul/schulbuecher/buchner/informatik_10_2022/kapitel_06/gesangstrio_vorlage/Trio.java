@@ -9,8 +9,11 @@ package org.bschlangaul.schulbuecher.buchner.informatik_10_2022.kapitel_06.gesan
 class Trio
 {
     private String name;
+
     private Saenger saenger1;
+
     private Saenger saenger2;
+
     private Saenger saenger3;
 
     public Trio(String einName, Saenger einS1, Saenger einS2, Saenger einS3)
@@ -33,5 +36,4 @@ class Trio
         System.out.println("Sänger 2: " + saenger2.gibName());
         System.out.println("Sänger 3: " + saenger3.gibName());
     }
-
 }

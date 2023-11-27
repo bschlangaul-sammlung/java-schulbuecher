@@ -6,15 +6,17 @@ import greenfoot.Actor;
  * Klasse Hund <br>
  * Arbeitsaufträge 1, 2 und 3, Aufgabe 1
  */
-
 public class Hund extends Actor
 {
     String rasse;
+
     int geschwindigkeit;
+
     char geschlecht;
 
     // Füge hier neue Attribute ein
     boolean haartBeimRennen;
+
     int gewicht;
 
     void setzeWerteObererHund() // initialisiert Attribute für den oberen Hund
@@ -26,7 +28,8 @@ public class Hund extends Actor
         gewicht = 35;
     }
 
-    void setzeWerteMittlererHund() // initialisiert Attribute für den mittleren Hund
+    void setzeWerteMittlererHund() // initialisiert Attribute für den mittleren
+                                   // Hund
     {
         rasse = "Dackel";
         geschwindigkeit = 25;
@@ -44,11 +47,11 @@ public class Hund extends Actor
         gewicht = 18;
     }
 
-
     public void act() // sorgt für die Bewegung der Hunde
     {
         setRotation(0); // alle Hunde schauen nach rechts
-        move(geschwindigkeit); // bewegt einen Hund so schnell nach rechts, wie geschwindigkeit
+        move(geschwindigkeit); // bewegt einen Hund so schnell nach rechts, wie
+                               // geschwindigkeit
                                // angibt
     }
 }

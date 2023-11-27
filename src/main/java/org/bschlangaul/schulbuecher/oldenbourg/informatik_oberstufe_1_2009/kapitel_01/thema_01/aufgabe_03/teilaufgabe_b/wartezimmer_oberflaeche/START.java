@@ -8,9 +8,9 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapi
  */
 class START
 {
-
     /**
-     * Konstruktor der Klasse START Erzeugt ein neues Fenster zur Patientenverwaltung
+     * Konstruktor der Klasse START Erzeugt ein neues Fenster zur
+     * Patientenverwaltung
      */
     START()
     {

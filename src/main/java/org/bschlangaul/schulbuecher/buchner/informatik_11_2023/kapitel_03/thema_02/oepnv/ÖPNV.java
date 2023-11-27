@@ -11,7 +11,6 @@ public class ÖPNV
     public void ablaufen()
     {
         GRAPH graph = new GRAPH(9);
-
         KNOTEN k1 = new KNOTEN("P"); // Prinzregentenstr.
         KNOTEN k2 = new KNOTEN("S"); // Staatstheater
         KNOTEN k3 = new KNOTEN("A"); // Augsburg Hbf.
@@ -21,7 +20,6 @@ public class ÖPNV
         KNOTEN k7 = new KNOTEN("F"); // Frohsinnstr.
         KNOTEN k8 = new KNOTEN("T"); // Th.-Heuss-Platz/IHK
         KNOTEN k9 = new KNOTEN("U"); // Ulrichsplatz
-
         graph.knotenHinzufuegen(k1);
         graph.knotenHinzufuegen(k2);
         graph.knotenHinzufuegen(k3);
@@ -31,7 +29,6 @@ public class ÖPNV
         graph.knotenHinzufuegen(k7);
         graph.knotenHinzufuegen(k8);
         graph.knotenHinzufuegen(k9);
-
         graph.kanteHinzufuegen(0, 1);
         graph.kanteHinzufuegen(1, 0);
         graph.kanteHinzufuegen(1, 2);
@@ -51,7 +48,5 @@ public class ÖPNV
         graph.kanteHinzufuegen(7, 3);
         graph.kanteHinzufuegen(8, 5);
         graph.adjaAusgeben();
-
     }
-
 }

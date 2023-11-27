@@ -2,13 +2,11 @@ package org.bschlangaul.schulbuecher.isb.handreichung_11.kapitel_03.anwendungsor
 
 class ABSCHLUSS_LISTE extends LISTENELEMENT
 {
-
     // KONSTRUKTOR
     ABSCHLUSS_LISTE()
     {
         super();
     }
-
 
     // Getter- und Setter-Methoden
     LISTENELEMENT NachfolgerGeben()
@@ -20,7 +18,6 @@ class ABSCHLUSS_LISTE extends LISTENELEMENT
     {
         return null;
     }
-
 
     // weitere Methoden
     DATENELEMENT EndeGeben()
@@ -54,13 +51,12 @@ class ABSCHLUSS_LISTE extends LISTENELEMENT
     }
 
     void AlleAusgeben()
-    {}
-
+    {
+    }
 
     // Erweiterung der Klasse um notwendige Suchmethoden
     DATENELEMENT DatenAbHierSuchen(DATENELEMENT vergleichsdaten)
     {
         return null;
     }
-
 }

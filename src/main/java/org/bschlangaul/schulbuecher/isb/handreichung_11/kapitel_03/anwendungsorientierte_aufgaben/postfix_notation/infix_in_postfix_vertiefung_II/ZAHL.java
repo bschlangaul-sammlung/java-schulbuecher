@@ -24,5 +24,4 @@ class ZAHL extends DATENELEMENT
     {
         return zahl;
     }
-
 }

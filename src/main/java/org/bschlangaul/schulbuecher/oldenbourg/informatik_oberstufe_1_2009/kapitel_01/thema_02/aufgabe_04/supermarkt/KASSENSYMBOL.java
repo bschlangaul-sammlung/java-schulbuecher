@@ -1,4 +1,5 @@
 package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapitel_01.thema_02.aufgabe_04.supermarkt;
+
 /**
  * Ein Kassensymbol auf einem Fenster. Das Fenster wird bei Bedarf generiert.
  *
@@ -15,18 +16,21 @@ class KASSENSYMBOL
 
     /** Anzeigegrö&szlig;e für das Rechteck */
     private int hoehe = 50;
+
     private int breite = 100;
 
     /** Interna */
     private OBERFLAECHE.FARBE aktFarbe;
 
     /**
-     * Standardkonstruktor für Objekte der Klasse KASSENSYMBOL. Er erzeugt ein scharzes Rechteck in
-     * der linken oberen Ecke des Fensters. Das Fenster wird bei Bedarf angelegt.
+     * Standardkonstruktor für Objekte der Klasse KASSENSYMBOL. Er erzeugt ein
+     * scharzes Rechteck in der linken oberen Ecke des Fensters. Das Fenster
+     * wird bei Bedarf angelegt.
      */
     KASSENSYMBOL()
     {
-        anzeige = new Canvas() {
+        anzeige = new Canvas()
+        {
             /**
              * Stellt die Figur auf dem Fenster dar.
              */
@@ -38,7 +42,6 @@ class KASSENSYMBOL
                 g.setColor(aktFarbe.AWTFarbe());
                 g.fillRect(1, 1, breite - 2, hoehe - 2);
             }
-
         };
         aktFarbe = OBERFLAECHE.FARBE.gruen;
         anzeige.setVisible(true);
@@ -71,8 +74,10 @@ class KASSENSYMBOL
         {
             try
             {
-                aktFarbe = OBERFLAECHE.FARBE.valueOf(aktFarbe.getDeclaringClass(), neueFarbe);
-            } catch (Exception e)
+                aktFarbe = OBERFLAECHE.FARBE
+                        .valueOf(aktFarbe.getDeclaringClass(), neueFarbe);
+            }
+            catch (Exception e)
             {
                 aktFarbe = OBERFLAECHE.FARBE.weiss;
             }

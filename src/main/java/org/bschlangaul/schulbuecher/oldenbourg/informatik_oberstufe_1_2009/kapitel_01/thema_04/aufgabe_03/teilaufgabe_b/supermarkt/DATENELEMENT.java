@@ -6,7 +6,6 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapi
  * @author Klaus Reinold
  * @version 1.0
  */
-
 public interface DATENELEMENT
 {
     /**
@@ -29,10 +28,11 @@ public interface DATENELEMENT
     public boolean SchluesselIstGleich(String s);
 
     /**
-     * Sorgt für das NeuPositionieren der Darstellungssymbole des Datenelements und der Nachfolger
+     * Sorgt für das NeuPositionieren der Darstellungssymbole des Datenelements
+     * und der Nachfolger
      *
      * @param knummer Nummer der Kasse
-     * @param pos Position vor der Kasse
+     * @param pos     Position vor der Kasse
      */
     public void NeuPositionieren(int i, int j);
 

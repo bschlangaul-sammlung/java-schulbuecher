@@ -9,11 +9,15 @@ package org.bschlangaul.schulbuecher.buchner.informatik_10_2022.kapitel_05.thema
 public class Schueler
 {
     String name;
+
     int alter;
+
     Instrument instrument;
+
     Lehrer lehrer;
 
-    public Schueler(String name, int alter, Instrument instrument, Lehrer lehrer)
+    public Schueler(String name, int alter, Instrument instrument,
+            Lehrer lehrer)
     {
         this.name = name;
         this.alter = alter;
@@ -24,7 +28,8 @@ public class Schueler
     public String nenneSchueler()
     {
         return this.name + ", ist " + this.alter + " alt und spielt "
-                        + this.instrument.nenneInstrument() + " bei " + this.lehrer.nenneLehrer();
+                + this.instrument.nenneInstrument() + " bei "
+                + this.lehrer.nenneLehrer();
     }
 
     public int nenneAlter()

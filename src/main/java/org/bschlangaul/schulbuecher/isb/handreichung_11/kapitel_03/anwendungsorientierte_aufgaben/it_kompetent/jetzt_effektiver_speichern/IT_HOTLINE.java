@@ -4,6 +4,7 @@ class IT_HOTLINE
 {
     // Referenzattribut
     private LISTE anruferschlange;
+
     private BAUM kundendaten;
 
     // Konstruktor
@@ -19,11 +20,13 @@ class IT_HOTLINE
     }
 
     /**
-     * nimmt die Daten der anrufenden Kunden auf und reiht den Kunden in die Warteschlange ein
+     * nimmt die Daten der anrufenden Kunden auf und reiht den Kunden in die
+     * Warteschlange ein
      *
-     * @param Kundennummer und Problemschilderung 'Wir begrü&szig;en Sie bei der Hotline von
-     *        IT-Kompetent. Geben Sie bitte Ihre Kundennummer sowie eine Kurzbeschreibung Ihres
-     *        Problems an.'
+     * @param Kundennummer und Problemschilderung 'Wir begrü&szig;en Sie bei der
+     *                     Hotline von IT-Kompetent. Geben Sie bitte Ihre
+     *                     Kundennummer sowie eine Kurzbeschreibung Ihres
+     *                     Problems an.'
      */
     void DatenAufnehmen(int kundennummer, String problem)
     {
@@ -32,9 +35,10 @@ class IT_HOTLINE
     }
 
     /**
-     * holt nächsten Anrufer aus der Warteschlange und zeigt Informationen auf der Konsole an Zu den
-     * Informationen gehören (im Vergleich zu Aufgabenvorschlag 1) nicht nur die Anruferdaten,
-     * sondern auch die Kundendaten!
+     * holt nächsten Anrufer aus der Warteschlange und zeigt Informationen auf
+     * der Konsole an Zu den Informationen gehören (im Vergleich zu
+     * Aufgabenvorschlag 1) nicht nur die Anruferdaten, sondern auch die
+     * Kundendaten!
      */
     void NaechstenAnruferHolen()
     {
@@ -48,21 +52,23 @@ class IT_HOTLINE
         }
         else
         {
-            System.out.println("Derzeit sind keine Anrufer in der Warteschleife");
-            System.out.println("----------------------------------------------------");
+            System.out
+                    .println("Derzeit sind keine Anrufer in der Warteschleife");
+            System.out.println(
+                    "----------------------------------------------------");
         }
-
     }
 
     /**
-     * bestimmt die Anzahl der Anrufer, die sich momentan in der Warteschlange befinden und zeigt
-     * diese auf der Konsole an
+     * bestimmt die Anzahl der Anrufer, die sich momentan in der Warteschlange
+     * befinden und zeigt diese auf der Konsole an
      */
     void AnzahlDerAnruferHolen()
     {
         System.out.println("Momentane Anzahl der Anrufer in der Warteschleife: "
-                        + anruferschlange.AnzahlGeben());
-        System.out.println("----------------------------------------------------");
+                + anruferschlange.AnzahlGeben());
+        System.out.println(
+                "----------------------------------------------------");
     }
 
     // Aufgabe 2: Plege der Kundendaten
@@ -71,16 +77,16 @@ class IT_HOTLINE
      *
      * @param Kundennummer, Scbhulname und eingesetzte Software
      */
-    void NeuenKundenAufnehmen(int kundennummer, String schulname, String software)
+    void NeuenKundenAufnehmen(int kundennummer, String schulname,
+            String software)
     {
         DATENELEMENT kunde = new KUNDE(kundennummer, schulname, software);
         kundendaten.Einfuegen(kunde);
     }
 
-
     /**
-     * dient zum Suchen eines Kunden (-Objekts) über die Kundennummer Der Kunde muss dabei nicht
-     * unbedingt vorhanden sein
+     * dient zum Suchen eines Kunden (-Objekts) über die Kundennummer Der Kunde
+     * muss dabei nicht unbedingt vorhanden sein
      *
      * @param Kundennummer
      * @return Referenz auf das Kunden-Objekt
@@ -101,9 +107,9 @@ class IT_HOTLINE
     }
 
     /**
-     * dient zum ändern des Schulnamen eines Kunden mit bestimmter Kundennummer Aus
-     * Einfachheitsgründen wird davon ausgegangen, dass der durch die übergebene Kundennummer
-     * festgelegte Kunde existiert
+     * dient zum ändern des Schulnamen eines Kunden mit bestimmter Kundennummer
+     * Aus Einfachheitsgründen wird davon ausgegangen, dass der durch die
+     * übergebene Kundennummer festgelegte Kunde existiert
      *
      * @param Kundennummer
      */
@@ -115,17 +121,13 @@ class IT_HOTLINE
     }
 
     /**
-     * gibt die Kundendaten nach der Kundennummer geordnet aus es muss nur der inorder-Durchlauf
-     * genutzt werden.
+     * gibt die Kundendaten nach der Kundennummer geordnet aus es muss nur der
+     * inorder-Durchlauf genutzt werden.
      *
      * @param Kundennummer
      */
     void GesamteKundendatenGeordnetAusgeben()
     {
         kundendaten.InOrder();
-
     }
-
-
-
 }

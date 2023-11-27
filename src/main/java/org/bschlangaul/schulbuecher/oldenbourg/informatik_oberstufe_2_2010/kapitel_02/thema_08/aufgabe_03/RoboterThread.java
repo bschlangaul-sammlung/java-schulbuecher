@@ -9,12 +9,13 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_2_2010.kapi
 class RoboterThread extends Thread
 {
     int schritte;
+
     TanzRoboter robi;
 
     /**
      * Legt die Anzahl der Tanzschritte fest.
      *
-     * @param robi Referenz auf den auszuführenden Roboter
+     * @param robi     Referenz auf den auszuführenden Roboter
      * @param schritte Anzahl der Tanzschritte
      *
      */
@@ -36,15 +37,16 @@ class RoboterThread extends Thread
             try
             {
                 Thread.sleep(10);
-            } catch (Exception e)
+            }
+            catch (Exception e)
             {
             }
         }
     }
 
     /**
-     * Synchronisiert die Tanzaufrufe. Synchronisiert die Aufrufe von allen Threads aus, da sie zur
-     * Klasse und nicht zu einem Objekt gehört.
+     * Synchronisiert die Tanzaufrufe. Synchronisiert die Aufrufe von allen
+     * Threads aus, da sie zur Klasse und nicht zu einem Objekt gehört.
      *
      * @param robi Referenz auf den auszuführenden Roboter
      */

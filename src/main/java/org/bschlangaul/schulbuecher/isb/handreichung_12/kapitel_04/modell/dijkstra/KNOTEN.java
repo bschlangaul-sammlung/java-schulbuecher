@@ -10,13 +10,14 @@ class KNOTEN extends LISTENELEMENT
 {
     /* der Nachfolger des Knoten */
     private LISTENELEMENT nachfolger;
+
     /* das Datenelement des Knoten */
     private KNOTENINFO daten;
 
     /**
      * Belegt Nachfolger und Datenelement.
      *
-     * @param daten das zu verwaltende Datenelement
+     * @param daten      das zu verwaltende Datenelement
      * @param nachfolger der Nachfolgerknoten
      */
     KNOTEN(KNOTENINFO daten, LISTENELEMENT nachfolger)

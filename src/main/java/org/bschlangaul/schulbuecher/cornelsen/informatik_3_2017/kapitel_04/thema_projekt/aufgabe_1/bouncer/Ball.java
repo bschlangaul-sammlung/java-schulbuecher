@@ -8,6 +8,7 @@ package org.bschlangaul.schulbuecher.cornelsen.informatik_3_2017.kapitel_04.them
 public class Ball
 {
     private KREIS k;
+
     private boolean aktiv;
 
     /**
@@ -24,8 +25,8 @@ public class Ball
     }
 
     /**
-     * Unterwirft das Objekt den Gesetzen der Schwerkraft. Aktive Objekt können außerdem keine
-     * passiven Objekte durchdringen.
+     * Unterwirft das Objekt den Gesetzen der Schwerkraft. Aktive Objekt können
+     * außerdem keine passiven Objekte durchdringen.
      *
      */
     public void macheAktiv()
@@ -37,7 +38,8 @@ public class Ball
     /**
      * Beeinflusst das "Bremsen" beim "Rutschen" auf einem anderen Objekt.
      *
-     * @param Reibungsköffizient 0 = perfektes Glatteis ; hoehere Werte bremsen besser
+     * @param Reibungsköffizient 0 = perfektes Glatteis ; hoehere Werte bremsen
+     *                           besser
      */
     public void setzeReibung(double Reibungsköffizient)
     {

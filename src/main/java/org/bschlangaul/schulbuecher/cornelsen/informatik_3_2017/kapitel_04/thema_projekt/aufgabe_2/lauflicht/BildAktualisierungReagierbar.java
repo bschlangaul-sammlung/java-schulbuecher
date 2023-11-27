@@ -7,8 +7,7 @@ package org.bschlangaul.schulbuecher.cornelsen.informatik_3_2017.kapitel_04.them
  *
  * @version 4.0
  */
-
-public interface BildAktualisierungReagierbar extends ea.edu.event.BildAktualisierungReagierbar
+public interface BildAktualisierungReagierbar
+        extends ea.edu.event.BildAktualisierungReagierbar
 {
-
 }

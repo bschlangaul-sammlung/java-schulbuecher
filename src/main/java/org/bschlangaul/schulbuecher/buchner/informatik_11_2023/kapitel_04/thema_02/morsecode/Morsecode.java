@@ -3,17 +3,19 @@ package org.bschlangaul.schulbuecher.buchner.informatik_11_2023.kapitel_04.thema
 class Morsecode
 {
     String eingabe;
+
     int anzahl;
+
     String ausgabe = "";
 
     Morsecode()
-    {}
+    {
+    }
 
     String textZuMorsecode(String _eingabe)
     {
         eingabe = _eingabe;
         anzahl = eingabe.length();
-
         String ausgabe = "";
         for (int i = 0; i < anzahl; i++)
         {
@@ -86,15 +88,9 @@ class Morsecode
             //
             // weiter Sonderzeichen und Zahlen können noch ergänzt werden
             //
-
-
         }
-
-
         return ausgabe;
     }
-
-
 
     // Hilsmethoden
     // gibZeichen gibt das n-te Zeichen beginnend mit 0 der Eingabe zurück
@@ -109,5 +105,4 @@ class Morsecode
         String[] out = eingabe.split(" ");
         return out[n];
     }
-
 }

@@ -3,7 +3,8 @@ package org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.fortg
 import java.awt.Component;
 
 /**
- * Diese Klasse stellt die Schnittstelle fuer alle Formulargrafiken dar (Text, Bild, Eingabefeld).
+ * Diese Klasse stellt die Schnittstelle fuer alle Formulargrafiken dar (Text,
+ * Bild, Eingabefeld).
  *
  * @author Florian Prager, Universität Passau
  * @version 06.2008

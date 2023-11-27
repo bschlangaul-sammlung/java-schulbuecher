@@ -18,5 +18,4 @@ class TastaturTurtle extends Turtle
     {
         System.out.println("Sondertaste: " + taste);
     }
-
 }

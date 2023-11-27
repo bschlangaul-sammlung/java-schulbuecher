@@ -26,8 +26,9 @@ class Blume extends Figur
     }
 
     /**
-     * Dieser Konstruktor erzeugt eine Blume bei der die Position wählbar ist. Die Position ist
-     * KEINE Pixelangabe, sondern die Koordinaten in einer 10x10 Zellen großen Welt.
+     * Dieser Konstruktor erzeugt eine Blume bei der die Position wählbar ist.
+     * Die Position ist KEINE Pixelangabe, sondern die Koordinaten in einer
+     * 10x10 Zellen großen Welt.
      *
      * @param xNeu x-Position der Blume
      * @param yNeu y-Position der Blume
@@ -43,7 +44,6 @@ class Blume extends Figur
         FigurteilFestlegenEllipse(-20, -10, 20, 20, "blau");
         FigurteilFestlegenEllipse(-20, 10, 20, 20, "blau");
         GanzNachVornBringen();
-
         if (xNeu < 10 && xNeu >= 0 && yNeu < 10 && yNeu >= 0)
         {
             PositionSetzen(xNeu * 50 + 25, yNeu * 50 + 25);
@@ -51,7 +51,7 @@ class Blume extends Figur
         else
         {
             System.out.println(
-                            "Die Koordinaten liegen außerhalb der Welt. Bitte Positionen im Bereichs [0;10] eingeben!");
+                    "Die Koordinaten liegen außerhalb der Welt. Bitte Positionen im Bereichs [0;10] eingeben!");
         }
     }
 }

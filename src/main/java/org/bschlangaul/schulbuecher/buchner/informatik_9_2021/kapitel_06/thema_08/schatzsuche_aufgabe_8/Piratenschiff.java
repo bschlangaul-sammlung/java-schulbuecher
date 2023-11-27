@@ -7,8 +7,6 @@ import greenfoot.Actor;
  *
  * Diese Klasse enthält weder Attribute noch Methoden.
  */
-
 public class Piratenschiff extends Actor
 {
-
 }

@@ -9,10 +9,8 @@ import java.util.*;
  * @author André Greubel, Anja Stube
  * @version 2022-09-21
  */
-
 class Verschluesselung
 {
-
     static int zaehleBuchstabeImWort(String wort)
     {
         return 0;
@@ -26,15 +24,11 @@ class Verschluesselung
 
     static char gibHaeufigsterBuchstabe(String wort)
     {
-
-
         int[] zaehler = new int[52];
-
         int i = 0;
         while (i < wort.length())
         {
             int zahl = gibBuchstabenEinerBestimmtenStelle(wort, i);
-
             if (zahl >= 65 && zahl <= 90)
             {
                 zaehler[zahl - 65]++;
@@ -45,25 +39,18 @@ class Verschluesselung
             }
             i++;
         }
-
-
         int maxWert = zaehler[0];
         int maxPos = 0;
         int aktPos = 0;
-
         while (aktPos < zaehler.length)
         {
-
             if (zaehler[aktPos] > maxWert)
             {
                 maxWert = zaehler[aktPos];
                 maxPos = aktPos;
             }
-
             aktPos++;
         }
-
-
         char res = '?';
         if (maxPos < 26)
         {
@@ -73,9 +60,7 @@ class Verschluesselung
         {
             res = (char) (maxPos - 26 + 97);
         }
-
         return res;
-
     }
 
     static char codiereBuchstabe(char buchstabe, int schluessel)
@@ -98,12 +83,9 @@ class Verschluesselung
         String geheimesWort = "";
         // ToDo 3a !
         char ersterBuchstabe = gibBuchstabenEinerBestimmtenStelle(wort, 0);
-
         textAusgeben(geheimesWort);
         return geheimesWort;
     }
-
-
     /* Der Programmtext ab hier muss weder gelesen noch verstanden werden. */
 
     private static String allesInGroßbuchstabenUmwandeln(String wort)
@@ -111,7 +93,8 @@ class Verschluesselung
         return wort.toUpperCase();
     }
 
-    private static char gibBuchstabenEinerBestimmtenStelle(String wort, int stelle)
+    private static char gibBuchstabenEinerBestimmtenStelle(String wort,
+            int stelle)
     {
         return wort.charAt(stelle);
     }
@@ -120,5 +103,4 @@ class Verschluesselung
     {
         System.out.println("Das verschlüsselte Wort lautet: " + wort);
     }
-
 }

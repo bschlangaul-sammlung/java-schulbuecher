@@ -9,12 +9,14 @@ package org.bschlangaul.schulbuecher.isb.handreichung_10.konzept_02.supermarkt.s
 class KUNDE
 {
     KREIS darstellung;
+
     int artikelmenge;
+
     int groesse;
 
     /**
-     * Konstruktor des Kunden. Setzt eine zufällige Farbe und die Grö&szlig;e gemä&szlig; der
-     * Artikelanzahl
+     * Konstruktor des Kunden. Setzt eine zufällige Farbe und die Grö&szlig;e
+     * gemä&szlig; der Artikelanzahl
      *
      * @param artikel Anzahl der Artikel im Warenkorb
      */

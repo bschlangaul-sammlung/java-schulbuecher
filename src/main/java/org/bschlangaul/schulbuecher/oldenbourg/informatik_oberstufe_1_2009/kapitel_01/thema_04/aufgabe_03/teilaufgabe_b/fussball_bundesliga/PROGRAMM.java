@@ -8,9 +8,7 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapi
  */
 class PROGRAMM
 {
-
     FENSTER f;
-
 
     PROGRAMM()
     {

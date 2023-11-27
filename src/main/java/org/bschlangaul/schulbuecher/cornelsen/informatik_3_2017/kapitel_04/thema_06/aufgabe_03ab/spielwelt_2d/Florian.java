@@ -12,6 +12,7 @@ class Florian extends Figur
 {
     /** Zähler für die Schritte */
     int schritte;
+
     /** Zähler für die gesammelten Blumen */
     int gesammelteBlumen;
 
@@ -27,7 +28,6 @@ class Florian extends Figur
         PositionSetzen(75, 125);
         WinkelSetzen(0);
         GanzNachVornBringen();
-
         schritte = 0;
         gesammelteBlumen = 0;
     }
@@ -62,13 +62,12 @@ class Florian extends Figur
                 }
             }
         }
-
         schritte = schritte + 1;
     }
 
     /**
-     * Florian geht einen Schritt nach Osten. Ist Florian am Rand der Welt, bewegt er sich nicht
-     * weiter.
+     * Florian geht einen Schritt nach Osten. Ist Florian am Rand der Welt,
+     * bewegt er sich nicht weiter.
      */
     void NachOstenGehen()
     {
@@ -79,8 +78,8 @@ class Florian extends Figur
     }
 
     /**
-     * Florian geht einen Schritt nach Süden. Ist Florian am Rand der Welt, bewegt er sich nicht
-     * weiter.
+     * Florian geht einen Schritt nach Süden. Ist Florian am Rand der Welt,
+     * bewegt er sich nicht weiter.
      */
     void NachSüdenGehen()
     {
@@ -88,12 +87,11 @@ class Florian extends Figur
         {
             PositionSetzen(XPositionGeben(), YPositionGeben() + 50);
         }
-
     }
 
     /**
-     * Florian geht einen Schritt nach Westen. Ist Florian am Rand der Welt, bewegt er sich nicht
-     * weiter.
+     * Florian geht einen Schritt nach Westen. Ist Florian am Rand der Welt,
+     * bewegt er sich nicht weiter.
      */
     void NachWestenGehen()
     {
@@ -104,8 +102,8 @@ class Florian extends Figur
     }
 
     /**
-     * Florian geht einen Schritt nach Westen. Ist Florian am Rand der Welt, bewegt er sich nicht
-     * weiter.
+     * Florian geht einen Schritt nach Westen. Ist Florian am Rand der Welt,
+     * bewegt er sich nicht weiter.
      */
     void NachNordenGehen()
     {
@@ -116,8 +114,9 @@ class Florian extends Figur
     }
 
     /**
-     * Dreht sich um 90 Grad nach links Tipp: Teste vorab (an einem Objekt der Klasse Florian) die
-     * Methoden Drehen, WinkelGeben, WinkelSetzen der Oberklasse
+     * Dreht sich um 90 Grad nach links Tipp: Teste vorab (an einem Objekt der
+     * Klasse Florian) die Methoden Drehen, WinkelGeben, WinkelSetzen der
+     * Oberklasse
      */
     void LinksDrehen()
     {

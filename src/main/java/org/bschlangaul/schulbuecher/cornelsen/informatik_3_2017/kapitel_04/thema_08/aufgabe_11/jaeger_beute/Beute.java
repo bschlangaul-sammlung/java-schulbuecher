@@ -3,8 +3,9 @@ package org.bschlangaul.schulbuecher.cornelsen.informatik_3_2017.kapitel_04.them
 import java.util.Random;
 
 /**
- * Die Beute wandert zufällig über das Spielfeld. Sie wechselt ihre Richtung immer wahrscheinlicher,
- * je länger sie gerade aus läuft. Als Darstellungssymbol hat sie einen Kreis
+ * Die Beute wandert zufällig über das Spielfeld. Sie wechselt ihre Richtung
+ * immer wahrscheinlicher, je länger sie gerade aus läuft. Als
+ * Darstellungssymbol hat sie einen Kreis
  *
  * @author Albert Wiedemann
  * @version 1.0
@@ -13,12 +14,16 @@ class Beute extends Figur
 {
     /** Zähler für die Bewegungsschritte geradeaus. */
     int zähler;
+
     /** Der Zufallsgenerator. */
     Random zufall;
+
     /** Breite des Spielfeldes. */
     int breite;
+
     /** Höhe des Spielfeldes. */
     int höhe;
+
     /** Zähler für die Zeit nach der Berührung. */
     int berührtZähler;
 
@@ -26,7 +31,7 @@ class Beute extends Figur
      * Legt das Anzeigesymbol an und wählt eine zufällige Startposition.
      *
      * @param breite Breite des Spielfelds
-     * @param höhe Höhe des Spielfelds
+     * @param höhe   Höhe des Spielfelds
      */
     Beute(int breite, int höhe)
     {
@@ -41,10 +46,11 @@ class Beute extends Figur
     }
 
     /**
-     * Bewegt die Beute um 10 Einheiten in der eingestellten Richtung. Wir der Rand erreicht, wird
-     * die Richtung nach dem Reflexionsgesetzt gedreht. Außerdem wird sie spätestens nach 100
-     * Schritten zufällig neu bestimmt; je länger die Geradesausbewegung, desto wahrscheinlicher ist
-     * die zufällige Änderung.
+     * Bewegt die Beute um 10 Einheiten in der eingestellten Richtung. Wir der
+     * Rand erreicht, wird die Richtung nach dem Reflexionsgesetzt gedreht.
+     * Außerdem wird sie spätestens nach 100 Schritten zufällig neu bestimmt; je
+     * länger die Geradesausbewegung, desto wahrscheinlicher ist die zufällige
+     * Änderung.
      */
     @Override
     void AktionAusführen()
@@ -56,27 +62,33 @@ class Beute extends Figur
         }
         Gehen(10);
         zähler = zähler + 1;
-        if ((XPositionGeben() > breite) && (0 <= WinkelGeben()) && (WinkelGeben() < 90))
+        if ((XPositionGeben() > breite) && (0 <= WinkelGeben())
+                && (WinkelGeben() < 90))
         {
             WinkelSetzen(180 - WinkelGeben());
         }
-        else if ((XPositionGeben() > breite) && (270 < WinkelGeben()) && (WinkelGeben() < 360))
+        else if ((XPositionGeben() > breite) && (270 < WinkelGeben())
+                && (WinkelGeben() < 360))
         {
             WinkelSetzen(540 - WinkelGeben());
         }
-        else if ((XPositionGeben() < 0) && (90 < WinkelGeben()) && (WinkelGeben() <= 180))
+        else if ((XPositionGeben() < 0) && (90 < WinkelGeben())
+                && (WinkelGeben() <= 180))
         {
             WinkelSetzen(180 - WinkelGeben());
         }
-        else if ((XPositionGeben() < 0) && (180 < WinkelGeben()) && (WinkelGeben() < 270))
+        else if ((XPositionGeben() < 0) && (180 < WinkelGeben())
+                && (WinkelGeben() < 270))
         {
             WinkelSetzen(540 - WinkelGeben());
         }
-        if ((YPositionGeben() < 0) && ((0 < WinkelGeben()) || (WinkelGeben() < 180)))
+        if ((YPositionGeben() < 0)
+                && ((0 < WinkelGeben()) || (WinkelGeben() < 180)))
         {
             WinkelSetzen(360 - WinkelGeben());
         }
-        else if ((YPositionGeben() > höhe) && (180 < WinkelGeben()) && (WinkelGeben() < 360))
+        else if ((YPositionGeben() > höhe) && (180 < WinkelGeben())
+                && (WinkelGeben() < 360))
         {
             WinkelSetzen(360 - WinkelGeben());
         }

@@ -2,9 +2,10 @@ package org.bschlangaul.schulbuecher.isb.handreichung_11.kapitel_03.anwendungsor
 
 class WAGGON extends DATENELEMENT
 {
-
     private int waggonnummer;
+
     private char waggontyp;
+
     private int zielgleis;
 
     WAGGON(int waggonnummer, char waggontyp, int zielgleis)
@@ -30,14 +31,12 @@ class WAGGON extends DATENELEMENT
 
     void Ausgeben()
     {
-        System.out.print(waggonnummer + " (Zielgl." + zielgleis + ", Typ: " + waggontyp + ")  ");
+        System.out.print(waggonnummer + " (Zielgl." + zielgleis + ", Typ: "
+                + waggontyp + ")  ");
     }
 
     int ZielgleisGeben()
     {
         return zielgleis;
     }
-
-
-
 }

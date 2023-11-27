@@ -8,7 +8,6 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_2_2010.kapi
  */
 public class Test extends junit.framework.TestCase
 {
-
     public void testenPositivBB_BBZZZZ()
     {
         AutomatKfzkennzeichen a = new AutomatKfzkennzeichen();
@@ -62,5 +61,4 @@ public class Test extends junit.framework.TestCase
         AutomatKfzkennzeichen a = new AutomatKfzkennzeichen();
         assertEquals(false, a.IstEingabeAkzeptiert("AA-B12345"));
     }
-
 }

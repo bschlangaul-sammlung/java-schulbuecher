@@ -9,6 +9,7 @@ package org.bschlangaul.schulbuecher.buchner.informatik_10_2022.kapitel_07.bank3
 class Filiale
 {
     private String name;
+
     private Leiter leiter;
 
     public Filiale(String einName)
@@ -19,6 +20,7 @@ class Filiale
     public void setzeLeiter(Leiter einLeiter)
     {
         leiter = einLeiter;
-        System.out.println("Erfolgreich Filialleiter in Klasse Filiale gesetzt");
+        System.out
+                .println("Erfolgreich Filialleiter in Klasse Filiale gesetzt");
     }
 }

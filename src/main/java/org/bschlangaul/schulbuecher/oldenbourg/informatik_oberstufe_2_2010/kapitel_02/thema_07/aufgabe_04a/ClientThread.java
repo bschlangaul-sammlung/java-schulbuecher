@@ -9,13 +9,14 @@ import java.net.*;
  * @author Albert Wiedemann
  * @version 1.0
  */
-
 class ClientThread extends Thread
 {
     /** Das Verbindungsobjekt */
     private Socket socket;
+
     /** Serverobjekt */
     private Server server;
+
     /** Ausgabeobjekt */
     OutputStream out;
 
@@ -92,14 +93,16 @@ class ClientThread extends Thread
                         beendenEmpfangen = true;
                     }
                 }
-            } while ((!abmeldenEmpfangen) && (!beendenEmpfangen));
+            }
+            while ((!abmeldenEmpfangen) && (!beendenEmpfangen));
             server.Abmelden(this);
             if (beendenEmpfangen)
             {
                 server.BeendenSetzen();
             }
             socket.close();
-        } catch (Exception e)
+        }
+        catch (Exception e)
         {
             System.out.println("Allgemeiner Fehler: " + e);
             e.printStackTrace();
@@ -117,7 +120,8 @@ class ClientThread extends Thread
         {
             out.write(zeichen);
             out.flush();
-        } catch (Exception e)
+        }
+        catch (Exception e)
         {
             System.out.println("Allgemeiner Fehler: " + e);
             e.printStackTrace();

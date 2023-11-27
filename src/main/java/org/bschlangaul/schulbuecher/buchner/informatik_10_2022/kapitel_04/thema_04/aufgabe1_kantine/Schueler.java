@@ -9,6 +9,7 @@ package org.bschlangaul.schulbuecher.buchner.informatik_10_2022.kapitel_04.thema
 class Schueler
 {
     String vorname;
+
     String name;
 
     /**

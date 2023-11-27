@@ -9,8 +9,11 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapi
 class AUSZUGSEINTRAG
 {
     int nummer;
+
     String datum;
+
     double betrag;
+
     String beschreibung;
 
     /**

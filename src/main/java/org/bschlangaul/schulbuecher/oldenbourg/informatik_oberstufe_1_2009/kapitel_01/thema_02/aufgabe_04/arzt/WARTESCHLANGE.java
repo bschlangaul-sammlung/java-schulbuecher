@@ -24,7 +24,6 @@ class WARTESCHLANGE
         ende = null;
     }
 
-
     /**
      * Fügt ein neues Datenelement am Ende der Warteschlange ein.
      *
@@ -46,7 +45,8 @@ class WARTESCHLANGE
     }
 
     /**
-     * Entfernt den ersten Knoten aus der Warteschlange und gibt sein Datenelement aus.
+     * Entfernt den ersten Knoten aus der Warteschlange und gibt sein
+     * Datenelement aus.
      *
      * @return Datenelement des bisherigen ersten Knotens
      */
@@ -63,9 +63,6 @@ class WARTESCHLANGE
                 ende = null;
             }
         }
-
-
-
         return ausgabe;
     }
 

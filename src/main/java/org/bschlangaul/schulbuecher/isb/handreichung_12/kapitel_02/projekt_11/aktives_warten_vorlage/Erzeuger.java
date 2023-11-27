@@ -10,7 +10,6 @@ package org.bschlangaul.schulbuecher.isb.handreichung_12.kapitel_02.projekt_11.a
  */
 public class Erzeuger extends Thread
 {
-
     /**
      * Referenz auf den Abstellplatz
      */
@@ -36,7 +35,8 @@ public class Erzeuger extends Thread
         try
         {
             sleep((int) (Math.random() * 100));
-        } catch (InterruptedException e)
+        }
+        catch (InterruptedException e)
         {
         }
     }
@@ -44,8 +44,9 @@ public class Erzeuger extends Thread
     /**
      * simuliert die Arbeit des Erzeugers:<br/>
      *
-     * falls das Ablegen des produzierten Produkt gelingt, wird erneut produziert, andernfalls
-     * versucht der Erzeuger erneut den Produkt abzulegen.
+     * falls das Ablegen des produzierten Produkt gelingt, wird erneut
+     * produziert, andernfalls versucht der Erzeuger erneut den Produkt
+     * abzulegen.
      */
     @Override
     public void run()

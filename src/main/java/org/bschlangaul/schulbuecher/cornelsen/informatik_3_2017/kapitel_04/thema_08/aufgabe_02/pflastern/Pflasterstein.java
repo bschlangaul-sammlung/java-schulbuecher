@@ -8,14 +8,13 @@ package org.bschlangaul.schulbuecher.cornelsen.informatik_3_2017.kapitel_04.them
  */
 class Pflasterstein extends Rechteck
 {
-
     /**
      * Der Konstruktor sorgt für Größe und Position des Steins
      *
-     * @param zeile Zeilennummer ab 0
+     * @param zeile  Zeilennummer ab 0
      * @param spalte Spaltennummer ab 0
-     * @param größe die Größe der Pflastersteine
-     * @param farbe die Farbe der Pflastersteine
+     * @param größe  die Größe der Pflastersteine
+     * @param farbe  die Farbe der Pflastersteine
      */
     Pflasterstein(int zeile, int spalte, int größe, String farbe)
     {

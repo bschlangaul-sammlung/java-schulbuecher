@@ -14,13 +14,14 @@ class TAKTGEBER implements ActionListener
 {
     /** Timerobjekt für die zentrale Zeitverwaltung */
     private Timer timer;
+
     /** zu steuernde Objekte, müssen von jedem Takt benachrichtigt werden. */
     // Hierher kommen die Attribute für die zu benachrichtigenden Objekte
     private TAKTKLIENT klient;
 
     /**
-     * Standardkonstruktor für Objekte der Klasse Taktgeber. Erzeugt den Taktgeber und trägt den
-     * Superklient als Klient ein.
+     * Standardkonstruktor für Objekte der Klasse Taktgeber. Erzeugt den
+     * Taktgeber und trägt den Superklient als Klient ein.
      *
      * @param klient der zu bedienende Superklient
      */
@@ -31,7 +32,8 @@ class TAKTGEBER implements ActionListener
     }
 
     /**
-     * vom Timer aufgerufen erhöht die Simulationszeit und benachrichtigt alle eingetragenen Objekte
+     * vom Timer aufgerufen erhöht die Simulationszeit und benachrichtigt alle
+     * eingetragenen Objekte
      *
      * @param evt der Timerevent
      */

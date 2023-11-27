@@ -32,8 +32,6 @@ class SPIEL
     /** Verwaltung des Snake-Objekts */
     private SNAKE snake;
 
-
-
     /**
      * Konstruktor der Klasse SPIEL <br>
      * Spiel wird als nicht beendet gesetzt. <br>
@@ -48,7 +46,8 @@ class SPIEL
         beendet = false;
         kaestchenzahl_rechts = 20;
         kaestchenzahl_unten = 20;
-        darstellung = new DARSTELLUNG(this, kaestchenzahl_rechts, kaestchenzahl_unten);
+        darstellung = new DARSTELLUNG(this, kaestchenzahl_rechts,
+                kaestchenzahl_unten);
         spielfeld = new char[kaestchenzahl_rechts][kaestchenzahl_unten];
         for (int i = 0; i < kaestchenzahl_rechts; i++)
         {
@@ -57,21 +56,17 @@ class SPIEL
                 spielfeld[i][j] = 'l'; // leeres Spielfeldelement
             }
         }
-
-        // Erstes Futter (nicht als Teil der Schlange, deshalb erst ab zweiter Zeile)
+        // Erstes Futter (nicht als Teil der Schlange, deshalb erst ab zweiter
+        // Zeile)
         zgenerator = new Random();
         spielfeld[zgenerator.nextInt(kaestchenzahl_rechts)][zgenerator
-                        .nextInt(kaestchenzahl_unten - 1) + 1] = 'f'; // f wie Futter
-
+                .nextInt(kaestchenzahl_unten - 1) + 1] = 'f'; // f wie Futter
         snake = new SNAKE(this);
-
     }
 
-
-
     /**
-     * Falls das Spiel nicht beendet ist, rückt die Schlange ein Feld vor und die Darstellung wird
-     * neu gezeichnet.
+     * Falls das Spiel nicht beendet ist, rückt die Schlange ein Feld vor und
+     * die Darstellung wird neu gezeichnet.
      */
     void SpielSchritt()
     {
@@ -82,16 +77,15 @@ class SPIEL
         }
     }
 
-
-
     /**
-     * Berechnung der x-Koordinate der Zelle, die vor dem Kopf der Schlange liegt, abhängig von der
-     * Ausrichtung der Schlange. Am Rand des Spielfeldes wird über den gegenüberliegenden Rand
-     * geblickt.
+     * Berechnung der x-Koordinate der Zelle, die vor dem Kopf der Schlange
+     * liegt, abhängig von der Ausrichtung der Schlange. Am Rand des Spielfeldes
+     * wird über den gegenüberliegenden Rand geblickt.
      *
-     * @param x x-Koordinate des Schlangenkopfes
+     * @param x           x-Koordinate des Schlangenkopfes
      * @param ausrichtung Ausrichtung der Schlange
-     * @return x-Koordinate des Spielfeldelements, das vor dem Schlangenkopf liegt.
+     * @return x-Koordinate des Spielfeldelements, das vor dem Schlangenkopf
+     *         liegt.
      */
     int Nachbarzelle_XBerechnen(int x, char ausrichtung)
     {
@@ -106,7 +100,6 @@ class SPIEL
                 x = 0;
             }
         }
-
         if (ausrichtung == 'W')
         {
             if (x - 1 >= 0)
@@ -118,18 +111,18 @@ class SPIEL
                 x = kaestchenzahl_rechts - 1;
             }
         }
-
         return x;
     }
 
     /**
-     * Berechnung der y-Koordinate der Zelle, die vor dem Kopf der Schlange liegt, abhängig von der
-     * Ausrichtung der Schlange. Am Rand des Spielfeldes wird über den gegenüberliegenden Rand
-     * geblickt.
+     * Berechnung der y-Koordinate der Zelle, die vor dem Kopf der Schlange
+     * liegt, abhängig von der Ausrichtung der Schlange. Am Rand des Spielfeldes
+     * wird über den gegenüberliegenden Rand geblickt.
      *
-     * @param y y-Koordinate des Schlangenkopfes
+     * @param y           y-Koordinate des Schlangenkopfes
      * @param ausrichtung Ausrichtung der Schlange
-     * @return y-Koordinate des Spielfeldelements, das vor dem Schlangenkopf liegt.
+     * @return y-Koordinate des Spielfeldelements, das vor dem Schlangenkopf
+     *         liegt.
      */
     int Nachbarzelle_YBerechnen(int y, char ausrichtung)
     {
@@ -144,7 +137,6 @@ class SPIEL
                 y = 0;
             }
         }
-
         if (ausrichtung == 'N')
         {
             if (y - 1 >= 0)
@@ -156,10 +148,8 @@ class SPIEL
                 y = kaestchenzahl_unten - 1;
             }
         }
-
         return y;
     }
-
 
     /**
      * Prüft, ob auf einem bestimmten Feld Futter liegt.
@@ -182,9 +172,10 @@ class SPIEL
 
     /**
      * Belegt ein Feld als Teil der Schlange. <br>
-     * Falls auf dem Feld Futter liegt, wird es gefressen und ein neues Futter in einem Feld
-     * erzeugt, in dem sich keine Schlange befindet. <br>
-     * Falls sich auf diesem Feld eine Schlange befindet, wird das Spiel beendet.
+     * Falls auf dem Feld Futter liegt, wird es gefressen und ein neues Futter
+     * in einem Feld erzeugt, in dem sich keine Schlange befindet. <br>
+     * Falls sich auf diesem Feld eine Schlange befindet, wird das Spiel
+     * beendet.
      *
      * @param x x-Koordinate des Feldes
      * @param x x-Koordinate des Feldes
@@ -197,7 +188,6 @@ class SPIEL
         }
         else
         {
-
             if (spielfeld[x][y] == 'f')
             {
                 boolean neuesFutterFeldGefunden;
@@ -207,7 +197,8 @@ class SPIEL
                     int xneu, yneu;
                     xneu = zgenerator.nextInt(kaestchenzahl_rechts);
                     yneu = zgenerator.nextInt(kaestchenzahl_unten);
-                    if (!(spielfeld[xneu][yneu] == 's' || spielfeld[xneu][yneu] == 'f'))
+                    if (!(spielfeld[xneu][yneu] == 's'
+                            || spielfeld[xneu][yneu] == 'f'))
                     {
                         spielfeld[xneu][yneu] = 'f';
                         neuesFutterFeldGefunden = true;
@@ -239,7 +230,6 @@ class SPIEL
         return spielfeld;
     }
 
-
     /**
      * Meldet an die Snake eine Richtungsänderung weiter.
      *
@@ -249,6 +239,4 @@ class SPIEL
     {
         snake.RichtungAendern(w);
     }
-
-
 }

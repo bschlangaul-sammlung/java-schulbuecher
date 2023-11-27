@@ -6,10 +6,9 @@ import greenfoot.GreenfootImage;
 
 /**
  * Klasse Zelle <br>
- * Der Programmtext in dieser Klasse braucht für die Bearbeitung der Aufgaben weder gelesen noch
- * verstanden zu werden.
+ * Der Programmtext in dieser Klasse braucht für die Bearbeitung der Aufgaben
+ * weder gelesen noch verstanden zu werden.
  */
-
 public class Zelle extends Actor
 {
     void erstelleBild()

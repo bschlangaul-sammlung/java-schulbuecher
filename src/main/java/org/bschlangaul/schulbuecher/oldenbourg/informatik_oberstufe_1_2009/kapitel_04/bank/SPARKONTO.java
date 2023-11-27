@@ -14,9 +14,9 @@ class SPARKONTO extends KONTO
      * Belegt die Attribute vor.
      *
      * @param nummer die Nummer des neuen Kontos
-     * @param zins Zinssatz
-     * @param bes Besitzer des Kontos
-     * @param ver Verbindungsobjekt zur Datenbank
+     * @param zins   Zinssatz
+     * @param bes    Besitzer des Kontos
+     * @param ver    Verbindungsobjekt zur Datenbank
      */
     SPARKONTO(int nummer, double zins, KUNDE bes, DATENBANKVERBINDUNG ver)
     {
@@ -28,12 +28,13 @@ class SPARKONTO extends KONTO
      * Besetzt die Attribute
      *
      * @param nummer die Nummer des neuen Kontos
-     * @param stand der aktuelle Kontostand
-     * @param zins Zinssatz
-     * @param bes Besitzer des Kontos
-     * @param ver Verbindungsobjekt zur Datenbank
+     * @param stand  der aktuelle Kontostand
+     * @param zins   Zinssatz
+     * @param bes    Besitzer des Kontos
+     * @param ver    Verbindungsobjekt zur Datenbank
      */
-    SPARKONTO(int nummer, double stand, double zins, KUNDE bes, DATENBANKVERBINDUNG ver)
+    SPARKONTO(int nummer, double stand, double zins, KUNDE bes,
+            DATENBANKVERBINDUNG ver)
     {
         super(nummer, stand, bes, ver);
         zinssatz = zins;
@@ -50,8 +51,9 @@ class SPARKONTO extends KONTO
     }
 
     /**
-     * Abheben vom Konto. Voraussetzung: betrag grö&szlig;er 0. Die änderung wird auch persistent in
-     * der Datenbank ausgeführt. Es wird geprüft, dass der Betrag den Kontostand nicht übersteigt.
+     * Abheben vom Konto. Voraussetzung: betrag grö&szlig;er 0. Die änderung
+     * wird auch persistent in der Datenbank ausgeführt. Es wird geprüft, dass
+     * der Betrag den Kontostand nicht übersteigt.
      *
      * @param betrag abzuhebender Betrag
      * @return true, wenn die Aktion ausgeführt werden konnte.

@@ -27,5 +27,4 @@ public class Luftblase extends Tropfen
             meineWolke.entferne(this);
         }
     }
-
 }

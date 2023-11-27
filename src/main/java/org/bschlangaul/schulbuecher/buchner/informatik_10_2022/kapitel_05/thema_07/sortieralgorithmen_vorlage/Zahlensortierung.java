@@ -32,8 +32,8 @@ public class Zahlensortierung
             i = i + 1;
         }
     }
-
-    // Für Schnelle: Analysiere die Bubble-Methode und vergleiche sie mit dem Code im Schulbuch.
+    // Für Schnelle: Analysiere die Bubble-Methode und vergleiche sie mit dem
+    // Code im Schulbuch.
     // Beschreibe dabei die Unterschiede und erkläre diese.
 
     public void bubble()
@@ -46,7 +46,6 @@ public class Zahlensortierung
                 int h = zahlen[i];
                 zahlen[i] = zahlen[i - 1];
                 zahlen[i - 1] = h;
-
             }
             i = i + 1;
         }

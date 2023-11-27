@@ -8,13 +8,14 @@ package org.bschlangaul.schulbuecher.cornelsen.informatik_3_2017.kapitel_04.them
  */
 class ROBOTERBESSER extends ROBOTER
 {
-
     /**
-     * Erzeugen eines neuen Roboters aufgrund der Einstellungen in einer Karolwelt-Datei
+     * Erzeugen eines neuen Roboters aufgrund der Einstellungen in einer
+     * Karolwelt-Datei
      *
-     * Vorher muss ein Objekt der Klasse WELT angelegt werden, in der der Roboter leben soll. Wenn
-     * dieses Weltobjekt aus einer Karolwelt-Datei geladen wurde, dann werden die dortigen
-     * Robotereinstellungen verwendet, sonst ein Default-Roboter mit (1,1) und Blickrichtung 'S'
+     * Vorher muss ein Objekt der Klasse WELT angelegt werden, in der der
+     * Roboter leben soll. Wenn dieses Weltobjekt aus einer Karolwelt-Datei
+     * geladen wurde, dann werden die dortigen Robotereinstellungen verwendet,
+     * sonst ein Default-Roboter mit (1,1) und Blickrichtung 'S'
      *
      * @param Referenz auf die Welt in der der Roboter leben soll
      *

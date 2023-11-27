@@ -1,16 +1,17 @@
 package org.bschlangaul.schulbuecher.isb.handreichung_11.kapitel_02.softwaretechnik.aktienhandel;
 
 /**
- * Beschreibt die Struktur eines Girokontos eines Kunden Momentan hat ein Kunde nur genau ein Konto,
- * "kontoId" wird daher nicht genutzt. Abprüfungen wegen überziehung werden nicht gemacht.
+ * Beschreibt die Struktur eines Girokontos eines Kunden Momentan hat ein Kunde
+ * nur genau ein Konto, "kontoId" wird daher nicht genutzt. Abprüfungen wegen
+ * überziehung werden nicht gemacht.
  *
  * @author
  * @version 1.0
  */
-
 class KONTO
 {
     private int kontoID;
+
     private double kontoStand;
 
     /**

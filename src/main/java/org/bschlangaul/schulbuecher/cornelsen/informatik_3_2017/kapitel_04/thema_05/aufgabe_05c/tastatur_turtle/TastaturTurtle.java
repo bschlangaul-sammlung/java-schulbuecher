@@ -47,8 +47,8 @@ class TastaturTurtle extends Turtle
      * Die Aktionsmethode für einen Mausklick. <br>
      * Setz die Turtle an die Position der Maus.
      *
-     * @param x x-Position des Mausklicks
-     * @param y y-Position des Mausklicks
+     * @param x      x-Position des Mausklicks
+     * @param y      y-Position des Mausklicks
      * @param anzahl Anzahl der aufeinanderfolgenden Mausklicks
      */
     @Override

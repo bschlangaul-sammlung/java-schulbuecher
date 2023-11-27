@@ -10,11 +10,15 @@ class PacMan
 {
     /** Die Welt */
     private KarolWelt welt;
+
     /** Der Spieler */
     private Spieler pac;
+
     /** Die Geister */
     private GeistZufall geist1;
+
     private GeistDirekt geist2;
+
     /** Die Figurenthreads */
     private FigurenThread[] threads;
 
@@ -49,10 +53,11 @@ class PacMan
     private int WeltAufbauen()
     {
         int anzahl;
-        String[] schema = {"....%........%....", ".%%.%.%%%%%%.%.%%.", ".%..............%.",
-                        ".%.%%.%%  %%.%%.%.", "......%    %......", ".%.%%.%%%%%%.%%.%.",
-                        ".%..............%.", ".%%.%.%%%%%%.%.%%.", "....%........%...."};
-
+        String[] schema = { "....%........%....", ".%%.%.%%%%%%.%.%%.",
+                ".%..............%.", ".%.%%.%%  %%.%%.%.",
+                "......%    %......", ".%.%%.%%%%%%.%%.%.",
+                ".%..............%.", ".%%.%.%%%%%%.%.%%.",
+                "....%........%...." };
         anzahl = 0;
         pac.UnsichtbarMachen();
         pac.VerzoegerungSetzen(0);
@@ -111,38 +116,39 @@ class PacMan
             {
                 switch (schema[y].charAt(x))
                 {
-                    case '%':
-                        pac.Schritt();
-                        pac.LinksDrehen();
-                        pac.LinksDrehen();
-                        pac.Hinlegen();
-                        pac.LinksDrehen();
-                        pac.LinksDrehen();
-                        break;
-                    case '.':
-                        pac.MarkeSetzen();
-                        anzahl += 1;
-                    case ' ':
-                        if (pac.IstZiegel())
-                        {
-                            pac.RechtsDrehen();
-                            if (!pac.IstZiegel())
-                            {
-                                pac.Schritt();
-                                pac.RechtsDrehen();
-                                while (!pac.IstZiegel())
-                                {
-                                    pac.Schritt();
-                                }
-                                pac.LinksDrehen();
-                                pac.LinksDrehen();
-                            }
-                        }
-                        else
+                case '%':
+                    pac.Schritt();
+                    pac.LinksDrehen();
+                    pac.LinksDrehen();
+                    pac.Hinlegen();
+                    pac.LinksDrehen();
+                    pac.LinksDrehen();
+                    break;
+
+                case '.':
+                    pac.MarkeSetzen();
+                    anzahl += 1;
+                case ' ':
+                    if (pac.IstZiegel())
+                    {
+                        pac.RechtsDrehen();
+                        if (!pac.IstZiegel())
                         {
                             pac.Schritt();
+                            pac.RechtsDrehen();
+                            while (!pac.IstZiegel())
+                            {
+                                pac.Schritt();
+                            }
+                            pac.LinksDrehen();
+                            pac.LinksDrehen();
                         }
-                        break;
+                    }
+                    else
+                    {
+                        pac.Schritt();
+                    }
+                    break;
                 }
             }
         }

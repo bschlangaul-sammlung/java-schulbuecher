@@ -25,13 +25,12 @@ public class WOERTERBUCHTEST
         woerterbuch.Einfuegen("cable", "Kabel");
         woerterbuch.Einfuegen("can", "Dose, k\u00f6nnen");
         woerterbuch.Einfuegen("canvas", "Leinwand");
-
     }
 
     /**
-     * Methode zum Testen der Methode Entfernen: Knoten werden für unterschiedliche Fälle entfernt
-     * und jeweils die Baumstruktur ausgegeben. So ist ein überprüfen der Korrektheit über die
-     * Konsole möglich.
+     * Methode zum Testen der Methode Entfernen: Knoten werden für
+     * unterschiedliche Fälle entfernt und jeweils die Baumstruktur ausgegeben.
+     * So ist ein überprüfen der Korrektheit über die Konsole möglich.
      *
      */
     public void EntfernenTesten()
@@ -39,17 +38,19 @@ public class WOERTERBUCHTEST
         System.out.println("Startsituation:");
         woerterbuch.InformationAusgeben();
         System.out.println(
-                        "Entfernen eines Knotens mit nur einem linken, keinen rechten Nachfolger: coin");
+                "Entfernen eines Knotens mit nur einem linken, keinen rechten Nachfolger: coin");
         woerterbuch.KnotenEntfernen("coin");
         woerterbuch.InformationAusgeben();
-        System.out.println("Entfernen eines Knotens mit rechten, keinen linken Nachfolger: cable");
+        System.out.println(
+                "Entfernen eines Knotens mit rechten, keinen linken Nachfolger: cable");
         woerterbuch.KnotenEntfernen("cable");
         woerterbuch.InformationAusgeben();
         System.out.println("Entfernen eines Knotens mit zwei Nachfolger: crab");
         System.out.println("(Rechter Nachfolger ist verzweigt)");
         woerterbuch.KnotenEntfernen("crab");
         woerterbuch.InformationAusgeben();
-        System.out.println("Entfernen eines Knotens mit zwei Nachfolger: creek");
+        System.out
+                .println("Entfernen eines Knotens mit zwei Nachfolger: creek");
         System.out.println("(Rechter Nachfolger ist eine entartete Liste)");
         woerterbuch.KnotenEntfernen("creek");
         woerterbuch.InformationAusgeben();
@@ -65,12 +66,11 @@ public class WOERTERBUCHTEST
         System.out.println("(Das Blatt ist ein rechter Nachfolger)");
         woerterbuch.KnotenEntfernen("canvas");
         woerterbuch.InformationAusgeben();
-        System.out.println("Versuch einen Schluessel zu entfernen, der nicht existiert: city");
+        System.out.println(
+                "Versuch einen Schluessel zu entfernen, der nicht existiert: city");
         woerterbuch.KnotenEntfernen("city");
         woerterbuch.InformationAusgeben();
-
     }
-
 
     /**
      * Geben-Methode für das Wörterbuch zum Testen
@@ -79,7 +79,6 @@ public class WOERTERBUCHTEST
      */
     public WOERTERBUCH WoerterbuchGeben()
     {
-
         return woerterbuch;
     }
 }

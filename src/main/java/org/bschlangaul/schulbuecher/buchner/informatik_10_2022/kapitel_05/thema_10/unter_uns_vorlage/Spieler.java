@@ -5,19 +5,21 @@ import java.util.Random;
 /**
  * Projekt 5-10_UnterUns (ÜüV Aufgabe 17)
  *
- * Klasse zur Darstellung eines Spielers, der entweder Besatzungsmitglied, oder Verräter ist
+ * Klasse zur Darstellung eines Spielers, der entweder Besatzungsmitglied, oder
+ * Verräter ist
  *
  * @author Verena Haller
  * @version 2022-09-12
  */
-
 // Diese Klasse übersetzt nach Download nicht. Das ist gewollt, vgl. Aufgabe 17a!
-
 public class Spieler
 {
     private String name;
+
     private String farbe;
+
     private boolean verraeter;
+
     private Aufgabe[] aufgaben;
 
     public Spieler(String name, String farbe)
@@ -46,5 +48,4 @@ public class Spieler
         Random zufall = new Random();
         return zufall.nextInt(max);
     }
-
 }

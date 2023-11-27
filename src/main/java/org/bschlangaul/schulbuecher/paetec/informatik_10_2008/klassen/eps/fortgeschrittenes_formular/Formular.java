@@ -29,14 +29,16 @@ import org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.werkze
 import org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.werkzeuge.Fenster;
 
 /**
- * Diese Klasse implementiert ein simples Formular, das die Positionierung, die Skalierung und den
- * Zeilenumbruch seiner Elemente vollautomatisch übernimmt. Das Formular kann verschoben und
- * skaliert werden. Durch Betaetigen der Pfeiltasten kann alternativ zur Maus der Scrollbalken
- * bedient werden. Mögliche Elemente sind: Texte, Bilder, Eingabefelder. Die Elemente bekommen
- * entweder in ihrem Konstruktor ein selbst erzeugtes Formular uebergeben, oder erhalten automatisch
- * ein Objekt nach der Singleton-Idee geliefert. Alle Elemente implementieren das Interface
- * Formulargrafik und können mit der Methode anzeigen() bzw. verstecken() auf das Formular gelegt
- * bzw. davon entfernt werden.
+ * Diese Klasse implementiert ein simples Formular, das die Positionierung, die
+ * Skalierung und den Zeilenumbruch seiner Elemente vollautomatisch übernimmt.
+ * Das Formular kann verschoben und skaliert werden. Durch Betaetigen der
+ * Pfeiltasten kann alternativ zur Maus der Scrollbalken bedient werden.
+ * Mögliche Elemente sind: Texte, Bilder, Eingabefelder. Die Elemente bekommen
+ * entweder in ihrem Konstruktor ein selbst erzeugtes Formular uebergeben, oder
+ * erhalten automatisch ein Objekt nach der Singleton-Idee geliefert. Alle
+ * Elemente implementieren das Interface Formulargrafik und können mit der
+ * Methode anzeigen() bzw. verstecken() auf das Formular gelegt bzw. davon
+ * entfernt werden.
  *
  * @author Florian Prager, Ute Heuer, Universität Passau
  * @version 05.2008
@@ -48,9 +50,11 @@ public class Formular implements Fenster
     private int breite = 300;// 300
 
     private static int offset = 0;
+
     /**
-     * Hier wird gehalten, wieviele Formularfenster bisher erzeugt wurden. Es wird nicht nach
-     * Standardfenster (Singleton) und Fenster unterschieden sondern einfach durchgezaehlt.
+     * Hier wird gehalten, wieviele Formularfenster bisher erzeugt wurden. Es
+     * wird nicht nach Standardfenster (Singleton) und Fenster unterschieden
+     * sondern einfach durchgezaehlt.
      */
     private static int formularanzahl = 0;
 
@@ -107,7 +111,8 @@ public class Formular implements Fenster
         formularErzeugen(neueBreite, neueHoehe, false);
     }
 
-    private void formularErzeugen(int neueBreite, int neueHoehe, boolean singleton)
+    private void formularErzeugen(int neueBreite, int neueHoehe,
+            boolean singleton)
     {
         komponentenliste = new LinkedList<Formulargrafik>();
         sensoren = new LinkedList<Sensor>();
@@ -133,19 +138,18 @@ public class Formular implements Fenster
         menueleiste.add(optionsmenue);
         frame.setJMenuBar(menueleiste);
         frame.getRootPane().setBackground(Color.red);
-
         panel = new JPanel();
         panel.setLayout(null);
         panel.setBounds(0, 0, frame.getWidth(), frame.getHeight());
         panel.setBackground(Color.white);
         frame.add(panel);
-
         scrollleiste = new JScrollBar(JScrollBar.VERTICAL, 0, 1, 0, 1);
         scrollleiste.addAdjustmentListener(new MeinJustierungsHorcher());
-        scrollleiste.setBounds(panel.getWidth() - 35, 0, 20, panel.getHeight() - 58);
-
+        scrollleiste.setBounds(panel.getWidth() - 35, 0, 20,
+                panel.getHeight() - 58);
         frame.addWindowListener(new MeinSchliessHorcher());
-        frame.getRootPane().addComponentListener(new MeinKomponentenHorcher(false));
+        frame.getRootPane()
+                .addComponentListener(new MeinKomponentenHorcher(false));
         frame.addComponentListener(new MeinKomponentenHorcher(true));
         frame.addKeyListener(new MeinTastenHorcher());
         panel.setVisible(true);
@@ -168,7 +172,8 @@ public class Formular implements Fenster
     }
 
     /**
-     * Liefert die Formulargrafik mit der gegebenen ID, falls moeglich. Null sonst.
+     * Liefert die Formulargrafik mit der gegebenen ID, falls moeglich. Null
+     * sonst.
      *
      * @param id die zu suchende ID
      * @return die Formulargrafik
@@ -265,7 +270,8 @@ public class Formular implements Fenster
     /**
      * Wird vom Formular aufgerufen.
      */
-    synchronized void formulargrafikHinzufuegen(Formulargrafik k, boolean aktualisieren)
+    synchronized void formulargrafikHinzufuegen(Formulargrafik k,
+            boolean aktualisieren)
     {
         if (k == null)
             return;
@@ -276,8 +282,8 @@ public class Formular implements Fenster
         Component c = k.awtKomponenteGeben();
         if (c == null)
             return;
-        c.setBounds(breite / 2 - (c.getWidth() / 2), aktuelleKomponentenhoehe, c.getWidth(),
-                        c.getHeight());
+        c.setBounds(breite / 2 - (c.getWidth() / 2), aktuelleKomponentenhoehe,
+                c.getWidth(), c.getHeight());
         k.urspruenglichePositionSichern();
         komponentenliste.addLast(k);
         aktuelleKomponentenhoehe += c.getHeight() + komponentenabstand;
@@ -290,7 +296,8 @@ public class Formular implements Fenster
      */
     void formularAktualisieren()
     {
-        SwingUtilities.invokeLater(new Runnable() {
+        SwingUtilities.invokeLater(new Runnable()
+        {
             public void run()
             {
                 aktualisieren();
@@ -315,7 +322,8 @@ public class Formular implements Fenster
         {
             breite = frame.getWidth() - 40;
             komponentenErneuern();
-            scrollleiste.setBounds(panel.getWidth() - 35, 0, 20, panel.getHeight() - 58);
+            scrollleiste.setBounds(panel.getWidth() - 35, 0, 20,
+                    panel.getHeight() - 58);
             scrollleiste.setMaximum(aktuelleKomponentenhoehe - hoehe + 50);
             scrollleiste.setVisible(true);
         }
@@ -347,7 +355,8 @@ public class Formular implements Fenster
             else
             {
                 Font f = ((Text) letzte).awtKomponenteGeben().getFont();
-                return ((Text) letzte).awtKomponenteGeben().getFontMetrics(f).getHeight();
+                return ((Text) letzte).awtKomponenteGeben().getFontMetrics(f)
+                        .getHeight();
             }
         }
         return 0;
@@ -371,7 +380,8 @@ public class Formular implements Fenster
         for (Formulargrafik k : komponentenliste)
         {
             int yPos = k.urspruenglicheYPosGeben() - wert;
-            k.rahmenSetzen(k.xPositionGeben(), yPos, k.breiteGeben(), k.hoeheGeben());
+            k.rahmenSetzen(k.xPositionGeben(), yPos, k.breiteGeben(),
+                    k.hoeheGeben());
         }
     }
 
@@ -380,7 +390,8 @@ public class Formular implements Fenster
      */
     void menueleisteAktualisieren()
     {
-        SwingUtilities.invokeLater(new Runnable() {
+        SwingUtilities.invokeLater(new Runnable()
+        {
             public void run()
             {
                 leisteAktualisieren();
@@ -411,7 +422,8 @@ public class Formular implements Fenster
         }
 
         void formatieren()
-        {}
+        {
+        }
     }
 
     private class AktualisierungsThread extends Thread
@@ -455,7 +467,6 @@ public class Formular implements Fenster
 
     private class MeinTastenHorcher implements KeyListener
     {
-
         public void keyPressed(KeyEvent arg0)
         {
             if (arg0.getKeyCode() == 40 && scrollleiste.isVisible())
@@ -469,24 +480,29 @@ public class Formular implements Fenster
         }
 
         public void keyReleased(KeyEvent arg0)
-        {}
+        {
+        }
 
         public void keyTyped(KeyEvent arg0)
-        {}
+        {
+        }
     }
 
     private class MeinSchliessHorcher implements WindowListener
     {
         public void windowActivated(WindowEvent arg0)
-        {}
+        {
+        }
 
         public void windowClosed(WindowEvent arg0)
-        {}
+        {
+        }
 
         public void windowClosing(WindowEvent arg0)
         {
             Notiz meldung = new Notiz();// UH
-            if (meldung.jaNeinAntwortLesen("Wenn Sie schliessen werden ALLE erzeugten "
+            if (meldung.jaNeinAntwortLesen(
+                    "Wenn Sie schliessen werden ALLE erzeugten "
                             + "Objekte entfernt.\n Beabsichtigen Sie dies?"))
             {
                 System.exit(0);
@@ -494,16 +510,20 @@ public class Formular implements Fenster
         }
 
         public void windowDeactivated(WindowEvent arg0)
-        {}
+        {
+        }
 
         public void windowDeiconified(WindowEvent arg0)
-        {}
+        {
+        }
 
         public void windowIconified(WindowEvent arg0)
-        {}
+        {
+        }
 
         public void windowOpened(WindowEvent arg0)
-        {}
+        {
+        }
     }
 
     private class MeinKomponentenHorcher implements ComponentListener
@@ -515,11 +535,12 @@ public class Formular implements Fenster
             this.istFrameListener = istFrameListener;
             hintergrundebene = new JPanel();
             hintergrundebene.setBackground(Color.white);
-            hintergrundebene.setBounds(0, 0, Toolkit.getDefaultToolkit().getScreenSize().width,
-                            Toolkit.getDefaultToolkit().getScreenSize().height);
+            hintergrundebene.setBounds(0, 0,
+                    Toolkit.getDefaultToolkit().getScreenSize().width,
+                    Toolkit.getDefaultToolkit().getScreenSize().height);
             hintergrundebene.setLayout(null);
-            JLabel groesseAendern =
-                            new JLabel("Fenster wird " + "beim Loslassen neu gezeichnet...");
+            JLabel groesseAendern = new JLabel(
+                    "Fenster wird " + "beim Loslassen neu gezeichnet...");
             groesseAendern.setBounds(0, 0, hintergrundebene.getWidth(), 20);
             hintergrundebene.add(groesseAendern);
             hintergrundebene.setVisible(false);
@@ -527,10 +548,12 @@ public class Formular implements Fenster
         }
 
         public void componentHidden(ComponentEvent arg0)
-        {}
+        {
+        }
 
         public void componentMoved(ComponentEvent arg0)
-        {}
+        {
+        }
 
         public void componentResized(ComponentEvent arg0)
         {
@@ -541,9 +564,12 @@ public class Formular implements Fenster
             }
             else
             {
-                int bildschirmbreite = Toolkit.getDefaultToolkit().getScreenSize().width;
-                int bildschirmhoehe = Toolkit.getDefaultToolkit().getScreenSize().height;
-                if (frame.getWidth() >= bildschirmbreite && frame.getHeight() >= bildschirmhoehe)
+                int bildschirmbreite = Toolkit.getDefaultToolkit()
+                        .getScreenSize().width;
+                int bildschirmhoehe = Toolkit.getDefaultToolkit()
+                        .getScreenSize().height;
+                if (frame.getWidth() >= bildschirmbreite
+                        && frame.getHeight() >= bildschirmhoehe)
                 {
                     hintergrundebene.setVisible(false);
                     new AktualisierungsThread().start();
@@ -557,7 +583,8 @@ public class Formular implements Fenster
         }
 
         public void componentShown(ComponentEvent arg0)
-        {}
+        {
+        }
     }
 
     private class MeinJustierungsHorcher implements AdjustmentListener
@@ -592,7 +619,8 @@ public class Formular implements Fenster
             try
             {
                 Thread.sleep(2000);
-            } catch (InterruptedException e)
+            }
+            catch (InterruptedException e)
             {
             }
             frame.setAlwaysOnTop(false);

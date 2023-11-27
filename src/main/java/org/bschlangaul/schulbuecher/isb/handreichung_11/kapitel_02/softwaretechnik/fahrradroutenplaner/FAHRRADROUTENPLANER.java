@@ -9,10 +9,15 @@ package org.bschlangaul.schulbuecher.isb.handreichung_11.kapitel_02.softwaretech
 class FAHRRADROUTENPLANER
 {
     private LISTE orte;
+
     private LISTE strecken;
+
     private DATENBANKVERBINDUNG verbindung;
+
     private KARTE k;
+
     private OBERFLAECHE o;
+
     private DIJKSTRA d;
 
     /**

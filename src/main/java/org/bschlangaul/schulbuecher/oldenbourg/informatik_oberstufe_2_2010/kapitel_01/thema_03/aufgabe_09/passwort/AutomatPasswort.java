@@ -2,8 +2,9 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_2_2010.kapi
 
 /**
  *
- * Der Automat prüft Passwörter nach folgender Vorgabe: Das Passwort enthält mindestens einen
- * Buchstaben und ein Sonderzeichen (aber keine Ziffer). Alphabet A = { B; S}
+ * Der Automat prüft Passwörter nach folgender Vorgabe: Das Passwort enthält
+ * mindestens einen Buchstaben und ein Sonderzeichen (aber keine Ziffer).
+ * Alphabet A = { B; S}
  *
  * @author (Peter Brichzin)
  * @version (10.9.2009)
@@ -11,14 +12,15 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_2_2010.kapi
 public class AutomatPasswort
 {
     /**
-     * Die Zustände sind nummeriert. Mögliche Werte sind 1 (Startzustand), 2, 3, 4, 5, 6, 7, 8, 9,
-     * 10,(Endzustand) 11 (Fangzustand). (vgl. Zustandsdiagramm zu Aufgabe 3a, ii
+     * Die Zustände sind nummeriert. Mögliche Werte sind 1 (Startzustand), 2, 3,
+     * 4, 5, 6, 7, 8, 9, 10,(Endzustand) 11 (Fangzustand). (vgl.
+     * Zustandsdiagramm zu Aufgabe 3a, ii
      */
     private int aktuellerZustand;
 
-
     /**
-     * Konstruktor für Objekte der Klasse AUTOMAT_PASSWORT: Der Startzustand wird gesetzt.
+     * Konstruktor für Objekte der Klasse AUTOMAT_PASSWORT: Der Startzustand
+     * wird gesetzt.
      */
     public AutomatPasswort()
     {
@@ -26,8 +28,9 @@ public class AutomatPasswort
     }
 
     /**
-     * Abhängig vom aktuellen Zustand wird eine jeweils darauf spezialisierte Methode beauftragt das
-     * Zeichen zu verarbeiten und damit den Zustandsübergang durchzuführen
+     * Abhängig vom aktuellen Zustand wird eine jeweils darauf spezialisierte
+     * Methode beauftragt das Zeichen zu verarbeiten und damit den
+     * Zustandsübergang durchzuführen
      *
      * @param zeichen das aktuell zu verarbeitende Zeichen.
      *
@@ -36,39 +39,49 @@ public class AutomatPasswort
     {
         switch (aktuellerZustand)
         {
-            case 1:
-                Z1ZeicheneingabeBearbeiten(zeichen);
-                break;
-            case 2:
-                Z2ZeicheneingabeBearbeiten(zeichen);
-                break;
-            case 3:
-                Z3ZeicheneingabeBearbeiten(zeichen);
-                break;
-            case 4:
-                Z4ZeicheneingabeBearbeiten(zeichen);
-                break;
-            case 5:
-                Z5ZeicheneingabeBearbeiten(zeichen);
-                break;
-            case 6:
-                Z6ZeicheneingabeBearbeiten(zeichen);
-                break;
-            case 7:
-                Z7ZeicheneingabeBearbeiten(zeichen);
-                break;
-            case 8:
-                Z8ZeicheneingabeBearbeiten(zeichen);
-                break;
-            case 9:
-                Z9ZeicheneingabeBearbeiten(zeichen);
-                break;
-            case 10:
-                Z10ZeicheneingabeBearbeiten(zeichen);
-                break;
-            case 11:
-                Z11ZeicheneingabeBearbeiten(zeichen);
-                break;
+        case 1:
+            Z1ZeicheneingabeBearbeiten(zeichen);
+            break;
+
+        case 2:
+            Z2ZeicheneingabeBearbeiten(zeichen);
+            break;
+
+        case 3:
+            Z3ZeicheneingabeBearbeiten(zeichen);
+            break;
+
+        case 4:
+            Z4ZeicheneingabeBearbeiten(zeichen);
+            break;
+
+        case 5:
+            Z5ZeicheneingabeBearbeiten(zeichen);
+            break;
+
+        case 6:
+            Z6ZeicheneingabeBearbeiten(zeichen);
+            break;
+
+        case 7:
+            Z7ZeicheneingabeBearbeiten(zeichen);
+            break;
+
+        case 8:
+            Z8ZeicheneingabeBearbeiten(zeichen);
+            break;
+
+        case 9:
+            Z9ZeicheneingabeBearbeiten(zeichen);
+            break;
+
+        case 10:
+            Z10ZeicheneingabeBearbeiten(zeichen);
+            break;
+
+        case 11:
+            Z11ZeicheneingabeBearbeiten(zeichen);
+            break;
         }
     }
 
@@ -82,14 +95,16 @@ public class AutomatPasswort
     {
         switch (zeichen)
         {
-            case 'B':
-                aktuellerZustand = 2;
-                break;
-            case 'S':
-                aktuellerZustand = 5;
-                break;
-            default:
-                aktuellerZustand = 11;
+        case 'B':
+            aktuellerZustand = 2;
+            break;
+
+        case 'S':
+            aktuellerZustand = 5;
+            break;
+
+        default:
+            aktuellerZustand = 11;
         }
     }
 
@@ -103,19 +118,18 @@ public class AutomatPasswort
     {
         switch (zeichen)
         {
-            case 'B':
-                aktuellerZustand = 3;
-                break;
-            case 'S':
-                aktuellerZustand = 8;
-                break;
-            default:
-                aktuellerZustand = 11;
+        case 'B':
+            aktuellerZustand = 3;
+            break;
 
+        case 'S':
+            aktuellerZustand = 8;
+            break;
+
+        default:
+            aktuellerZustand = 11;
         }
     }
-
-
 
     /**
      * Führt den Zustandsübergang von Z3 abhängig vom aktuellen Zustand durch.
@@ -127,14 +141,16 @@ public class AutomatPasswort
     {
         switch (zeichen)
         {
-            case 'B':
-                aktuellerZustand = 4;
-                break;
-            case 'S':
-                aktuellerZustand = 9;
-                break;
-            default:
-                aktuellerZustand = 11;
+        case 'B':
+            aktuellerZustand = 4;
+            break;
+
+        case 'S':
+            aktuellerZustand = 9;
+            break;
+
+        default:
+            aktuellerZustand = 11;
         }
     }
 
@@ -148,14 +164,16 @@ public class AutomatPasswort
     {
         switch (zeichen)
         {
-            case 'B':
-                aktuellerZustand = 4;
-                break;
-            case 'S':
-                aktuellerZustand = 10;
-                break;
-            default:
-                aktuellerZustand = 11;
+        case 'B':
+            aktuellerZustand = 4;
+            break;
+
+        case 'S':
+            aktuellerZustand = 10;
+            break;
+
+        default:
+            aktuellerZustand = 11;
         }
     }
 
@@ -169,18 +187,18 @@ public class AutomatPasswort
     {
         switch (zeichen)
         {
-            case 'B':
-                aktuellerZustand = 8;
-                break;
-            case 'S':
-                aktuellerZustand = 6;
-                break;
-            default:
-                aktuellerZustand = 11;
+        case 'B':
+            aktuellerZustand = 8;
+            break;
+
+        case 'S':
+            aktuellerZustand = 6;
+            break;
+
+        default:
+            aktuellerZustand = 11;
         }
     }
-
-
 
     /**
      * Führt den Zustandsübergang von Z6 abhängig vom aktuellen Zustand durch.
@@ -192,14 +210,16 @@ public class AutomatPasswort
     {
         switch (zeichen)
         {
-            case 'B':
-                aktuellerZustand = 9;
-                break;
-            case 'S':
-                aktuellerZustand = 7;
-                break;
-            default:
-                aktuellerZustand = 11;
+        case 'B':
+            aktuellerZustand = 9;
+            break;
+
+        case 'S':
+            aktuellerZustand = 7;
+            break;
+
+        default:
+            aktuellerZustand = 11;
         }
     }
 
@@ -213,18 +233,18 @@ public class AutomatPasswort
     {
         switch (zeichen)
         {
-            case 'B':
-                aktuellerZustand = 10;
-                break;
-            case 'S':
-                aktuellerZustand = 7;
-                break;
-            default:
-                aktuellerZustand = 11;
+        case 'B':
+            aktuellerZustand = 10;
+            break;
+
+        case 'S':
+            aktuellerZustand = 7;
+            break;
+
+        default:
+            aktuellerZustand = 11;
         }
     }
-
-
 
     /**
      * Führt den Zustandsübergang von Z8 abhängig vom aktuellen Zustand durch.
@@ -236,18 +256,18 @@ public class AutomatPasswort
     {
         switch (zeichen)
         {
-            case 'B':
-                aktuellerZustand = 9;
-                break;
-            case 'S':
-                aktuellerZustand = 9;
-                break;
-            default:
-                aktuellerZustand = 11;
+        case 'B':
+            aktuellerZustand = 9;
+            break;
+
+        case 'S':
+            aktuellerZustand = 9;
+            break;
+
+        default:
+            aktuellerZustand = 11;
         }
     }
-
-
 
     /**
      * Führt den Zustandsübergang von Z9 abhängig vom aktuellen Zustand durch.
@@ -259,14 +279,16 @@ public class AutomatPasswort
     {
         switch (zeichen)
         {
-            case 'B':
-                aktuellerZustand = 10;
-                break;
-            case 'S':
-                aktuellerZustand = 10;
-                break;
-            default:
-                aktuellerZustand = 11;
+        case 'B':
+            aktuellerZustand = 10;
+            break;
+
+        case 'S':
+            aktuellerZustand = 10;
+            break;
+
+        default:
+            aktuellerZustand = 11;
         }
     }
 
@@ -280,14 +302,16 @@ public class AutomatPasswort
     {
         switch (zeichen)
         {
-            case 'B':
-                aktuellerZustand = 10;
-                break;
-            case 'S':
-                aktuellerZustand = 10;
-                break;
-            default:
-                aktuellerZustand = 11;
+        case 'B':
+            aktuellerZustand = 10;
+            break;
+
+        case 'S':
+            aktuellerZustand = 10;
+            break;
+
+        default:
+            aktuellerZustand = 11;
         }
     }
 
@@ -302,22 +326,21 @@ public class AutomatPasswort
         aktuellerZustand = 11;
     }
 
-
-
     /**
-     * Zerlegt die eingegebene Zeichenkette in einzelne Zeichen und ruft pro Zeichen die Methode
-     * ZeicheneingabeWeiterleiten auf.
+     * Zerlegt die eingegebene Zeichenkette in einzelne Zeichen und ruft pro
+     * Zeichen die Methode ZeicheneingabeWeiterleiten auf.
      *
      * @param wort die durch den Automaten zu überprüfende Zeichenkette
      * @return true bei Akzeptanz der Eingabe, false bei Ablehnung
      *
      */
-
     public boolean IstEingabeAkzeptiert(String zeichenkette)
     {
         aktuellerZustand = 1; // zuruecksetzen auf den Anfangszustand
-        String zeichenketteRest = zeichenkette; // noch zu verarbeitende Restzeichenkette
-        for (int zaehler = 1; zaehler <= zeichenkette.length(); zaehler = zaehler + 1)
+        String zeichenketteRest = zeichenkette; // noch zu verarbeitende
+                                                // Restzeichenkette
+        for (int zaehler = 1; zaehler <= zeichenkette
+                .length(); zaehler = zaehler + 1)
         {
             ZeicheneingabeWeiterleiten(zeichenketteRest.charAt(0));
             zeichenketteRest = zeichenketteRest.substring(1);
@@ -332,5 +355,4 @@ public class AutomatPasswort
             return false;
         }
     }
-
 }

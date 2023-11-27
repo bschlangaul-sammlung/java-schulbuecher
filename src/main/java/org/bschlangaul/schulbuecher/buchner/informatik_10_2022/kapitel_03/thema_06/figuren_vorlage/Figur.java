@@ -10,10 +10,8 @@ import greenfoot.*; // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 class Figur extends Actor
 {
-
     public void act()
     {
-
     }
 
     int UmfangBerechnen()

@@ -38,5 +38,4 @@ class ABSTELLGLEIS
     {
         return ((WAGGON) stapel.AnfangEntfernen());
     }
-
 }

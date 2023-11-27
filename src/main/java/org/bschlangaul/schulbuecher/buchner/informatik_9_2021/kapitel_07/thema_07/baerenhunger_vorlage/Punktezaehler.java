@@ -9,11 +9,12 @@ import greenfoot.GreenfootImage;
 public class Punktezaehler
 {
     private int punktzahl;
+
     private String ueberschrift;
 
     /**
-     * Erzeuge einen Punktezaehler mit der angegebenen Ueberschrift. Seine Punktzahl ist am Anfang
-     * 0.
+     * Erzeuge einen Punktezaehler mit der angegebenen Ueberschrift. Seine
+     * Punktzahl ist am Anfang 0.
      */
     public Punktezaehler(String titel)
     {
@@ -38,22 +39,22 @@ public class Punktezaehler
     }
 
     /**
-     * Zeichne den Punktezaehler auf das Bild, so dass seine linke obere Ecke bei (x|y) liegt.
+     * Zeichne den Punktezaehler auf das Bild, so dass seine linke obere Ecke
+     * bei (x|y) liegt.
      */
     public void zeichneAuf(GreenfootImage bild, int x, int y)
     {
         /*
-         * Der Text auf dem Punktezaehler besteht aus der Ueberschrift, einem Doppelpunkt, einem
-         * Leerzeichen und der Punktzahl.
+         * Der Text auf dem Punktezaehler besteht aus der Ueberschrift, einem
+         * Doppelpunkt, einem Leerzeichen und der Punktzahl.
          */
         String text = "   " + ueberschrift + ": " + punktzahl + "   ";
-
         /*
-         * Die Zaehlergrafik enthaelt den Text, der schwarz auf gelb in Schriftgroesse 20
-         * geschrieben ist.
+         * Die Zaehlergrafik enthaelt den Text, der schwarz auf gelb in
+         * Schriftgroesse 20 geschrieben ist.
          */
-        GreenfootImage zaehlerGrafik = new GreenfootImage(text, 20, Color.BLACK, Color.YELLOW);
-
+        GreenfootImage zaehlerGrafik = new GreenfootImage(text, 20, Color.BLACK,
+                Color.YELLOW);
         /*
          * Zeichne die Zaehlergraphik auf das Bild an Position (x|y).
          */

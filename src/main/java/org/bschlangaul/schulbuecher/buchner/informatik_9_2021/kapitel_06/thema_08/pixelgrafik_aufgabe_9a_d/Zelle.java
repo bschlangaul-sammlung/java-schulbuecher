@@ -10,29 +10,27 @@ import greenfoot.GreenfootImage;
  * Klasse Zelle <br>
  * Teilaufgaben e) und f)
  */
-
 public class Zelle extends Actor
 {
     Color farbe; // Attribut farbe, Datentyp Color
+
     int farbNr;
 
     Zelle()
     {
         if (farbNr == 0)
         {
-            farbe = Color.BLACK; // weist dem Attribut farbe den Wert BLACK (schwarz) zu
+            farbe = Color.BLACK; // weist dem Attribut farbe den Wert BLACK
+                                 // (schwarz) zu
         }
-
         if (farbNr == 1)
         {
             farbe = Color.BLUE;
         }
-
         if (farbNr == 2)
         {
             farbe = Color.CYAN;
         }
-
         if (farbNr == 3)
         {
             farbe = Color.GREEN;
@@ -40,8 +38,8 @@ public class Zelle extends Actor
     }
 
     /*
-     * Der Programmtext ab hier braucht für die Bearbeitung der Aufgaben weder gelesen noch
-     * verstanden zu werden.
+     * Der Programmtext ab hier braucht für die Bearbeitung der Aufgaben weder
+     * gelesen noch verstanden zu werden.
      */
     void erstelleBild()
     {

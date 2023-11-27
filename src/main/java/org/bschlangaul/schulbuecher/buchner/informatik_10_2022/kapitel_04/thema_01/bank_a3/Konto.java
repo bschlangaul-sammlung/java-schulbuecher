@@ -10,7 +10,9 @@ class Konto
 {
     // Instanzvariablen
     double kontostand;
+
     int kontonummer;
+
     int pin;
 
     /**

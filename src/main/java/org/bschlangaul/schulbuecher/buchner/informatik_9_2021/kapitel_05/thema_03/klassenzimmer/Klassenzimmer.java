@@ -5,7 +5,6 @@ import greenfoot.World;
 /**
  * Projekt zu Kap. 5.1
  */
-
 public class Klassenzimmer extends World
 {
     public Klassenzimmer()

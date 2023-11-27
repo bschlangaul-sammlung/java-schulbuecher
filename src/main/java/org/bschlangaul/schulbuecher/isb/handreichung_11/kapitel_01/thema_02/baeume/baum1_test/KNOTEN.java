@@ -10,8 +10,10 @@ class KNOTEN
 {
     /** Referenz auf den linken Nachfolger */
     private KNOTEN linkerNachfolger;
+
     /** Referenz auf den rechten Nachfolger */
     private KNOTEN rechterNachfolger;
+
     /** Referenz auf das Datenelement */
     private DATENELEMENT daten;
 
@@ -28,10 +30,11 @@ class KNOTEN
     }
 
     /**
-     * Erzeugt einen Knoten mit den dem angegebenen Datenelement und den gegebenen Nachfolgern.
-     * Dieser Konstruktor ist nur zu Testzwecken vorhanden.
+     * Erzeugt einen Knoten mit den dem angegebenen Datenelement und den
+     * gegebenen Nachfolgern. Dieser Konstruktor ist nur zu Testzwecken
+     * vorhanden.
      *
-     * @param d Referenz auf das verwaltete Datenelement
+     * @param d   Referenz auf das verwaltete Datenelement
      * @param lnf linker Nachfolger
      * @param rnf rechter Nachfolger
      */

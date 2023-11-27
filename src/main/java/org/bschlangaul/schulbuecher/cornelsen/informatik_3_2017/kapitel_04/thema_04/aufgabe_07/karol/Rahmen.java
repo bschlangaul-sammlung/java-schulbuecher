@@ -9,6 +9,7 @@ package org.bschlangaul.schulbuecher.cornelsen.informatik_3_2017.kapitel_04.them
 class Rahmen
 {
     WELT welt;
+
     MEINROBOTER karol;
 
     /**

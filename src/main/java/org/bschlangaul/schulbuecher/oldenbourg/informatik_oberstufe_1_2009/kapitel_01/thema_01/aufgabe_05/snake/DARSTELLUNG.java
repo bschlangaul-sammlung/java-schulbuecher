@@ -6,9 +6,6 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapi
  * @author Klaus van Dijkstran
  * @version 1.0
  */
-
-
-
 class DARSTELLUNG
 {
     /** Fenster f&uul;r die Darstellung */
@@ -30,13 +27,13 @@ class DARSTELLUNG
     private SPIEL spiel;
 
     /**
-     * Konstruktor für Objekte der Klasse DARSTELLUNG. Legt zunächst kaestchengroesse fest und
-     * speichert die Kästchenzahl. <br>
+     * Konstruktor für Objekte der Klasse DARSTELLUNG. Legt zunächst
+     * kaestchengroesse fest und speichert die Kästchenzahl. <br>
      * Danach wird oberflaeche (Fenster) und Leinwand erzeugt.
      *
-     * @param sp logische Verwaltung des Spiels
+     * @param sp               logische Verwaltung des Spiels
      * @param kaestchen_rechts Kästchenzahl nach rechts.
-     * @param kaestchen_unten Kästchenzahl nach unten.
+     * @param kaestchen_unten  Kästchenzahl nach unten.
      */
     DARSTELLUNG(SPIEL sp, int kaestchen_rechts, int kaestchen_unten)
     {
@@ -45,11 +42,12 @@ class DARSTELLUNG
         kaestchenzahl_nach_rechts = kaestchen_rechts;
         kaestchenzahl_nach_unten = kaestchen_unten;
         oberflaeche = new FENSTER(kaestchengroesse * kaestchenzahl_nach_rechts,
-                        kaestchengroesse * kaestchenzahl_nach_unten, this);
-        anzeige = new LEINWAND(this, kaestchengroesse, kaestchenzahl_nach_rechts,
-                        kaestchenzahl_nach_unten);
+                kaestchengroesse * kaestchenzahl_nach_unten, this);
+        anzeige = new LEINWAND(this, kaestchengroesse,
+                kaestchenzahl_nach_rechts, kaestchenzahl_nach_unten);
         oberflaeche.add(anzeige, 0);
-        anzeige.setLocation(oberflaeche.RandLinksGeben(), oberflaeche.RandObenGeben());
+        anzeige.setLocation(oberflaeche.RandLinksGeben(),
+                oberflaeche.RandObenGeben());
         Zeichnen();
     }
 

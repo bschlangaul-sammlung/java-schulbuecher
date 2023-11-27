@@ -1,35 +1,45 @@
 package org.bschlangaul.schulbuecher.isb.handreichung_12.kapitel_02.zusaetzliches_projekt_03.platzbuchung_mit_maxclientanzahl;
 
-
 import java.net.*;
 import java.io.*;
 
 /**
- * serverseitig laufender Prozess pro Clientverbindung zur Bearbeitung der Kommunikation bei der
- * PLATZBUCHUNG2<br/>
+ * serverseitig laufender Prozess pro Clientverbindung zur Bearbeitung der
+ * Kommunikation bei der PLATZBUCHUNG2<br/>
  *
  * @author ISB-Arbeitskreis, Umsetzungshilfen Informatik 12
  * @version 1.0
  */
 class CLIENTPROZESSZ2 extends Thread
 {
-
-    /** bidirektionale Schnittstelle zur Netzwerkprotokoll-Implementierung des Clients */
+    /**
+     * bidirektionale Schnittstelle zur Netzwerkprotokoll-Implementierung des
+     * Clients
+     */
     private Socket clientSocket = null;
+
     /** Schreibkanal zum Client */
     private PrintWriter zumClient = null;
+
     /** Lesekanal vom Client */
     private BufferedReader vomClient = null;
-    /** Referenz auf die Klasse, die das Zustandsdiagramm des Servers implementiert */
+
+    /**
+     * Referenz auf die Klasse, die das Zustandsdiagramm des Servers
+     * implementiert
+     */
     private PLATZBUCHUNG2 serververhalten;
+
     /** Botschaft von Client zum Server */
     private String clientBotschaft = null;
+
     /** Botschaft vom Server zum Client */
     private String serverAntwort = null;
+
     /**
      * Referenz auf den Server,<br/>
-     * wird in der Methode ClientVerbindungStarten() gebraucht weil das Serververhalten eine
-     * Referenz auf den Server benötigt.
+     * wird in der Methode ClientVerbindungStarten() gebraucht weil das
+     * Serververhalten eine Referenz auf den Server benötigt.
      */
     SERVERZ5 server;
 
@@ -37,16 +47,19 @@ class CLIENTPROZESSZ2 extends Thread
      * Konstruktor des Clientprozesses
      *
      * @exception IOException eine Ausnahme tritt auf falls:<br />
-     *            - der Server nicht gestartet werden kann (weil beispielsweise der Port nicht frei
-     *            ist)<br />
-     *            - die Clientverbindung gestört bzw. unterbrochen wurde.
-     * @param clientSocket die Socketverbindung, über die die Kommunikation stattfindet.
-     * @param server Referenz auf den Server, wird beim Beenden des Prozesses benötigt.
-     * @param startbotschaft ist die Startbotschaft gleich "toomuchclients" so wird das
-     *        Clientstopsignal gesendet.
+     *                        - der Server nicht gestartet werden kann (weil
+     *                        beispielsweise der Port nicht frei ist)<br />
+     *                        - die Clientverbindung gestört bzw. unterbrochen
+     *                        wurde.
+     * @param clientSocket   die Socketverbindung, über die die Kommunikation
+     *                       stattfindet.
+     * @param server         Referenz auf den Server, wird beim Beenden des
+     *                       Prozesses benötigt.
+     * @param startbotschaft ist die Startbotschaft gleich "toomuchclients" so
+     *                       wird das Clientstopsignal gesendet.
      */
-    public CLIENTPROZESSZ2(Socket clientSocket, SERVERZ5 server, String startbotschaft)
-                    throws IOException
+    public CLIENTPROZESSZ2(Socket clientSocket, SERVERZ5 server,
+            String startbotschaft) throws IOException
     {
         this.clientSocket = clientSocket;
         this.server = server;
@@ -54,14 +67,15 @@ class CLIENTPROZESSZ2 extends Thread
     }
 
     /**
-     * wartet auf eine Clientverbindung und erzeugt die nötigen Lese- und Schreibobjekte nach dem
-     * eine Verbindung hergestellt wurde
+     * wartet auf eine Clientverbindung und erzeugt die nötigen Lese- und
+     * Schreibobjekte nach dem eine Verbindung hergestellt wurde
      */
-    private void ClientVerbindungStarten(String startbotschaft) throws IOException
+    private void ClientVerbindungStarten(String startbotschaft)
+            throws IOException
     {
-
         zumClient = new PrintWriter(clientSocket.getOutputStream(), true);
-        vomClient = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
+        vomClient = new BufferedReader(
+                new InputStreamReader(clientSocket.getInputStream()));
         // Protokoll-Klasse zur Ermittlung der Serverantworten
         serververhalten = new PLATZBUCHUNG2(this.server);
         // Begrü&szlig;ung
@@ -75,7 +89,6 @@ class CLIENTPROZESSZ2 extends Thread
      */
     private void ClientVerbindungBeenden() throws IOException
     {
-
         zumClient.close();
         vomClient.close();
         clientSocket.close();
@@ -83,27 +96,24 @@ class CLIENTPROZESSZ2 extends Thread
     }
 
     /**
-     * liest die Nachrichten vom Client, ermittelt die Antwort unter Verwendung der Klasse
-     * PLATZBUCHUNG2 und schickt die Anwort zum Client.
+     * liest die Nachrichten vom Client, ermittelt die Antwort unter Verwendung
+     * der Klasse PLATZBUCHUNG2 und schickt die Anwort zum Client.
      */
     @Override
     public void run()
     {
-
         try
         {
             do
             {// lesen und antworten
-
                 clientBotschaft = vomClient.readLine();
                 serverAntwort = serververhalten.HoleAntwort(clientBotschaft);
                 zumClient.println(serverAntwort);
-
-            } while (!serverAntwort.startsWith("Server[stopClient]:"));
-
+            }
+            while (!serverAntwort.startsWith("Server[stopClient]:"));
             ClientVerbindungBeenden();
-
-        } catch (IOException e)
+        }
+        catch (IOException e)
         {
             System.out.println("Fehler im Clientprozess");
         }

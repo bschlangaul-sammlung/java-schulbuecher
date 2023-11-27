@@ -8,11 +8,9 @@ import greenfoot.*;
  * @author Ulrich Schneider
  * @version 2022-09-12
  */
-
 public class Matsch extends Actor
 {
     public void act()
     {
-
     }
 }

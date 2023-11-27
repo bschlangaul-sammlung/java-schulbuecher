@@ -8,7 +8,6 @@ package org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.werkz
  */
 public class Pause
 {
-
     /**
      * Wartet die angegebene Anzahl an Sekunden
      */
@@ -25,7 +24,8 @@ public class Pause
         try
         {
             Thread.sleep(ms);
-        } catch (InterruptedException e)
+        }
+        catch (InterruptedException e)
         {
         }
     }

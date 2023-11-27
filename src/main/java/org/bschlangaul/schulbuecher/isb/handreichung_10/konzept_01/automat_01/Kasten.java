@@ -5,6 +5,7 @@ import org.bschlangaul.schulbuecher.isb.handreichung_10.konzept_01.ZeichenFenste
 public class Kasten
 {
     private int links;
+
     private int oben;
 
     public Kasten()
@@ -27,5 +28,4 @@ public class Kasten
     {
         new Kasten().zeichne();
     }
-
 }

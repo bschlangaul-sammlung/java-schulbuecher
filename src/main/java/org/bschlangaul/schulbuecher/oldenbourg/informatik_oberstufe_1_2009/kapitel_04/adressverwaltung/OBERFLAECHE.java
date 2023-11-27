@@ -6,7 +6,6 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapi
  * @author Albert Wiedemann
  * @version 1.0
  */
-
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
@@ -16,18 +15,28 @@ import javax.swing.border.*;
 class OBERFLAECHE implements OBERFLACHENINTERFACE, MELDUNGSBEOBACHTER
 {
     private JFrame fenster;
+
     private JTabbedPane auswahl;
+
     private JPanel adressanzeige, beabeitung, neuanlegen, suchen;
-    private JComboBox personenMenue1, personenMenue2, personenMenue3, personenMenue4, nummernMenue,
-                    mailMenue, nummernArten, art3;
+
+    private JComboBox personenMenue1, personenMenue2, personenMenue3,
+            personenMenue4, nummernMenue, mailMenue, nummernArten, art3;
+
     private JLabel status;
+
     private JLabel name1, vorname1, strasse1, ort1, name5, adresse5;
+
     private JList telefonliste, emailliste, telefonliste5, emailliste5;
-    private JTextField name2, vorname2, strasse2, hausnummer2, plz2, ort2, nummer, notiz1, email,
-                    notiz2;
-    private JTextField name3, vorname3, strasse3, hausnummer3, plz3, ort3, nummer3, notiz3, email3,
-                    notiz4;
+
+    private JTextField name2, vorname2, strasse2, hausnummer2, plz2, ort2,
+            nummer, notiz1, email, notiz2;
+
+    private JTextField name3, vorname3, strasse3, hausnummer3, plz3, ort3,
+            nummer3, notiz3, email3, notiz4;
+
     private JTextField vorname4, strasse4, ort4, nummer4, email4;
+
     private KONTROLLEURINTERFACE kontrolleur;
 
     /**
@@ -37,26 +46,24 @@ class OBERFLAECHE implements OBERFLACHENINTERFACE, MELDUNGSBEOBACHTER
      */
     OBERFLAECHE(KONTROLLEURINTERFACE k)
     {
-        String[] arten = {"Festnetz", "Mobilfunk", "VoIP", "Fax", "Sonstige"};
+        String[] arten = { "Festnetz", "Mobilfunk", "VoIP", "Fax", "Sonstige" };
         JPanel content;
         JPanel panel, panel2, panel3;
         JButton button;
         JLabel l;
-
         kontrolleur = k;
-
         fenster = new JFrame("Adressverwaltung");
         content = (JPanel) fenster.getContentPane();
         content.setLayout(new BorderLayout());
         auswahl = new JTabbedPane();
         content.add(auswahl, BorderLayout.CENTER);
-
         adressanzeige = new JPanel();
         auswahl.addTab("Adressen anzeigen", adressanzeige);
         adressanzeige.setLayout(new BorderLayout());
         personenMenue1 = new JComboBox();
         adressanzeige.add(personenMenue1, BorderLayout.NORTH);
-        personenMenue1.addActionListener(new ActionListener() {
+        personenMenue1.addActionListener(new ActionListener()
+        {
             public void actionPerformed(ActionEvent e)
             {
                 kontrolleur.EintragAuswaehlen(personenMenue1.getSelectedItem());
@@ -68,7 +75,8 @@ class OBERFLAECHE implements OBERFLACHENINTERFACE, MELDUNGSBEOBACHTER
         panel = new JPanel();
         panel2.add(panel);
         panel.setLayout(new FlowLayout(FlowLayout.LEFT));
-        panel.setBorder(new TitledBorder(LineBorder.createGrayLineBorder(), "Name"));
+        panel.setBorder(
+                new TitledBorder(LineBorder.createGrayLineBorder(), "Name"));
         name1 = new JLabel();
         panel.add(name1);
         vorname1 = new JLabel();
@@ -76,7 +84,8 @@ class OBERFLAECHE implements OBERFLACHENINTERFACE, MELDUNGSBEOBACHTER
         panel = new JPanel();
         panel2.add(panel);
         panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
-        panel.setBorder(new TitledBorder(LineBorder.createGrayLineBorder(), "Adresse"));
+        panel.setBorder(
+                new TitledBorder(LineBorder.createGrayLineBorder(), "Adresse"));
         panel.setMinimumSize(new Dimension(100, 20));
         strasse1 = new JLabel();
         strasse1.setMinimumSize(new Dimension(100, 20));
@@ -86,27 +95,28 @@ class OBERFLAECHE implements OBERFLACHENINTERFACE, MELDUNGSBEOBACHTER
         panel = new JPanel();
         panel2.add(panel);
         panel.setLayout(new BorderLayout());
-        panel.setBorder(new TitledBorder(LineBorder.createGrayLineBorder(), "Telefonnummern"));
+        panel.setBorder(new TitledBorder(LineBorder.createGrayLineBorder(),
+                "Telefonnummern"));
         telefonliste = new JList();
         panel.add(new JScrollPane(telefonliste), BorderLayout.CENTER);
         panel = new JPanel();
         panel2.add(panel);
         panel.setLayout(new BorderLayout());
-        panel.setBorder(new TitledBorder(LineBorder.createGrayLineBorder(), "E-Mail-Adressen"));
+        panel.setBorder(new TitledBorder(LineBorder.createGrayLineBorder(),
+                "E-Mail-Adressen"));
         emailliste = new JList();
         panel.add(new JScrollPane(emailliste), BorderLayout.CENTER);
-
-
-
         beabeitung = new JPanel();
         auswahl.addTab("Daten bearbeiten", beabeitung);
         beabeitung.setLayout(new BorderLayout());
         personenMenue2 = new JComboBox();
         beabeitung.add(personenMenue2, BorderLayout.NORTH);
-        personenMenue2.addActionListener(new ActionListener() {
+        personenMenue2.addActionListener(new ActionListener()
+        {
             public void actionPerformed(ActionEvent e)
             {
-                kontrolleur.EintragAuswaehlenBearbeiten(personenMenue2.getSelectedItem());
+                kontrolleur.EintragAuswaehlenBearbeiten(
+                        personenMenue2.getSelectedItem());
             }
         });
         panel2 = new JPanel();
@@ -115,7 +125,8 @@ class OBERFLAECHE implements OBERFLACHENINTERFACE, MELDUNGSBEOBACHTER
         panel = new JPanel();
         panel2.add(panel);
         panel.setLayout(new FlowLayout(FlowLayout.LEFT));
-        panel.setBorder(new TitledBorder(LineBorder.createGrayLineBorder(), "Name"));
+        panel.setBorder(
+                new TitledBorder(LineBorder.createGrayLineBorder(), "Name"));
         l = new JLabel("Name ");
         panel.add(l);
         name2 = new JTextField();
@@ -127,15 +138,18 @@ class OBERFLAECHE implements OBERFLACHENINTERFACE, MELDUNGSBEOBACHTER
         vorname2.setPreferredSize(new Dimension(100, 20));
         panel.add(vorname2);
         button = new JButton("\u00C4ndern");
-        button.addActionListener(new ActionListener() {
+        button.addActionListener(new ActionListener()
+        {
             public void actionPerformed(ActionEvent e)
             {
-                kontrolleur.PersonendatenAendern(name2.getText(), vorname2.getText());
+                kontrolleur.PersonendatenAendern(name2.getText(),
+                        vorname2.getText());
             }
         });
         panel.add(button);
         button = new JButton("L\u00F6schen");
-        button.addActionListener(new ActionListener() {
+        button.addActionListener(new ActionListener()
+        {
             public void actionPerformed(ActionEvent e)
             {
                 kontrolleur.PersonLoeschen();
@@ -145,7 +159,8 @@ class OBERFLAECHE implements OBERFLACHENINTERFACE, MELDUNGSBEOBACHTER
         panel = new JPanel();
         panel2.add(panel);
         panel.setLayout(new GridLayout(3, 2));
-        panel.setBorder(new TitledBorder(LineBorder.createGrayLineBorder(), "Adresse"));
+        panel.setBorder(
+                new TitledBorder(LineBorder.createGrayLineBorder(), "Adresse"));
         panel3 = new JPanel();
         panel3.setLayout(new FlowLayout(FlowLayout.LEFT));
         panel.add(panel3);
@@ -186,20 +201,22 @@ class OBERFLAECHE implements OBERFLACHENINTERFACE, MELDUNGSBEOBACHTER
         panel3.setLayout(new FlowLayout(FlowLayout.CENTER));
         panel.add(panel3);
         button = new JButton("Neu");
-        button.addActionListener(new ActionListener() {
+        button.addActionListener(new ActionListener()
+        {
             public void actionPerformed(ActionEvent e)
             {
-                kontrolleur.AdressdatenAnlegen(strasse2.getText(), hausnummer2.getText(),
-                                plz2.getText(), ort2.getText());
+                kontrolleur.AdressdatenAnlegen(strasse2.getText(),
+                        hausnummer2.getText(), plz2.getText(), ort2.getText());
             }
         });
         panel3.add(button);
         button = new JButton("\u00C4ndern");
-        button.addActionListener(new ActionListener() {
+        button.addActionListener(new ActionListener()
+        {
             public void actionPerformed(ActionEvent e)
             {
-                kontrolleur.AdressdatenAendern(strasse2.getText(), hausnummer2.getText(),
-                                plz2.getText(), ort2.getText());
+                kontrolleur.AdressdatenAendern(strasse2.getText(),
+                        hausnummer2.getText(), plz2.getText(), ort2.getText());
             }
         });
         panel3.add(button);
@@ -209,25 +226,30 @@ class OBERFLAECHE implements OBERFLACHENINTERFACE, MELDUNGSBEOBACHTER
         personenMenue3 = new JComboBox();
         panel3.add(personenMenue3);
         button = new JButton("\u00DCbernehmen");
-        button.addActionListener(new ActionListener() {
+        button.addActionListener(new ActionListener()
+        {
             public void actionPerformed(ActionEvent e)
             {
-                kontrolleur.AdressdatenUebernehmen(personenMenue3.getSelectedItem());
+                kontrolleur.AdressdatenUebernehmen(
+                        personenMenue3.getSelectedItem());
             }
         });
         panel3.add(button);
         panel = new JPanel();
         panel2.add(panel);
         panel.setLayout(new BorderLayout());
-        panel.setBorder(new TitledBorder(LineBorder.createGrayLineBorder(), "Telefonnummern"));
+        panel.setBorder(new TitledBorder(LineBorder.createGrayLineBorder(),
+                "Telefonnummern"));
         nummernMenue = new JComboBox();
         panel.add(nummernMenue, BorderLayout.NORTH);
-        nummernMenue.addActionListener(new ActionListener() {
+        nummernMenue.addActionListener(new ActionListener()
+        {
             public void actionPerformed(ActionEvent e)
             {
                 if (nummernMenue.getSelectedIndex() >= 0)
                 {
-                    kontrolleur.TelefonnummerAuswaehlen(nummernMenue.getSelectedItem());
+                    kontrolleur.TelefonnummerAuswaehlen(
+                            nummernMenue.getSelectedItem());
                 }
             }
         });
@@ -250,25 +272,31 @@ class OBERFLAECHE implements OBERFLACHENINTERFACE, MELDUNGSBEOBACHTER
         panel3.setLayout(new FlowLayout(FlowLayout.LEFT));
         panel.add(panel3, BorderLayout.SOUTH);
         button = new JButton("Neu");
-        button.addActionListener(new ActionListener() {
+        button.addActionListener(new ActionListener()
+        {
             public void actionPerformed(ActionEvent e)
             {
                 kontrolleur.TelefonAnlegen(nummer.getText(),
-                                (String) nummernArten.getSelectedItem(), notiz1.getText());
+                        (String) nummernArten.getSelectedItem(),
+                        notiz1.getText());
             }
         });
         panel3.add(button);
         button = new JButton("\u00C4ndern");
-        button.addActionListener(new ActionListener() {
+        button.addActionListener(new ActionListener()
+        {
             public void actionPerformed(ActionEvent e)
             {
-                kontrolleur.TelefonAendern(nummernMenue.getSelectedItem(), nummer.getText(),
-                                (String) nummernArten.getSelectedItem(), notiz1.getText());
+                kontrolleur.TelefonAendern(nummernMenue.getSelectedItem(),
+                        nummer.getText(),
+                        (String) nummernArten.getSelectedItem(),
+                        notiz1.getText());
             }
         });
         panel3.add(button);
         button = new JButton("L\u00F6schen");
-        button.addActionListener(new ActionListener() {
+        button.addActionListener(new ActionListener()
+        {
             public void actionPerformed(ActionEvent e)
             {
                 kontrolleur.TelefonLoeschen(nummernMenue.getSelectedItem());
@@ -278,10 +306,12 @@ class OBERFLAECHE implements OBERFLACHENINTERFACE, MELDUNGSBEOBACHTER
         panel = new JPanel();
         panel2.add(panel);
         panel.setLayout(new BorderLayout());
-        panel.setBorder(new TitledBorder(LineBorder.createGrayLineBorder(), "EMailadressen"));
+        panel.setBorder(new TitledBorder(LineBorder.createGrayLineBorder(),
+                "EMailadressen"));
         mailMenue = new JComboBox();
         panel.add(mailMenue, BorderLayout.NORTH);
-        mailMenue.addActionListener(new ActionListener() {
+        mailMenue.addActionListener(new ActionListener()
+        {
             public void actionPerformed(ActionEvent e)
             {
                 kontrolleur.EmailAuswaehlen(mailMenue.getSelectedItem());
@@ -304,7 +334,8 @@ class OBERFLAECHE implements OBERFLACHENINTERFACE, MELDUNGSBEOBACHTER
         panel3.setLayout(new FlowLayout(FlowLayout.LEFT));
         panel.add(panel3, BorderLayout.SOUTH);
         button = new JButton("Neu");
-        button.addActionListener(new ActionListener() {
+        button.addActionListener(new ActionListener()
+        {
             public void actionPerformed(ActionEvent e)
             {
                 kontrolleur.EmailAnlegen(email.getText(), notiz2.getText());
@@ -312,24 +343,24 @@ class OBERFLAECHE implements OBERFLACHENINTERFACE, MELDUNGSBEOBACHTER
         });
         panel3.add(button);
         button = new JButton("\u00C4ndern");
-        button.addActionListener(new ActionListener() {
+        button.addActionListener(new ActionListener()
+        {
             public void actionPerformed(ActionEvent e)
             {
-                kontrolleur.EmailAendern(mailMenue.getSelectedItem(), email.getText(),
-                                notiz2.getText());
+                kontrolleur.EmailAendern(mailMenue.getSelectedItem(),
+                        email.getText(), notiz2.getText());
             }
         });
         panel3.add(button);
         button = new JButton("L\u00F6schen");
-        button.addActionListener(new ActionListener() {
+        button.addActionListener(new ActionListener()
+        {
             public void actionPerformed(ActionEvent e)
             {
                 kontrolleur.EmailLoeschen(mailMenue.getSelectedItem());
             }
         });
         panel3.add(button);
-
-
         neuanlegen = new JPanel();
         auswahl.addTab("Person neu anlegen", neuanlegen);
         neuanlegen.setLayout(new BorderLayout());
@@ -339,7 +370,8 @@ class OBERFLAECHE implements OBERFLACHENINTERFACE, MELDUNGSBEOBACHTER
         panel = new JPanel();
         panel2.add(panel);
         panel.setLayout(new GridLayout(2, 1));
-        panel.setBorder(new TitledBorder(LineBorder.createGrayLineBorder(), "Name"));
+        panel.setBorder(
+                new TitledBorder(LineBorder.createGrayLineBorder(), "Name"));
         panel3 = new JPanel();
         panel3.setLayout(new FlowLayout(FlowLayout.LEFT));
         panel.add(panel3);
@@ -361,7 +393,8 @@ class OBERFLAECHE implements OBERFLACHENINTERFACE, MELDUNGSBEOBACHTER
         panel = new JPanel();
         panel2.add(panel);
         panel.setLayout(new GridLayout(2, 2));
-        panel.setBorder(new TitledBorder(LineBorder.createGrayLineBorder(), "Adresse"));
+        panel.setBorder(
+                new TitledBorder(LineBorder.createGrayLineBorder(), "Adresse"));
         panel3 = new JPanel();
         panel3.setLayout(new FlowLayout(FlowLayout.LEFT));
         panel.add(panel3);
@@ -401,7 +434,8 @@ class OBERFLAECHE implements OBERFLACHENINTERFACE, MELDUNGSBEOBACHTER
         panel = new JPanel();
         panel2.add(panel);
         panel.setLayout(new GridLayout(2, 1));
-        panel.setBorder(new TitledBorder(LineBorder.createGrayLineBorder(), "Telefonnummer"));
+        panel.setBorder(new TitledBorder(LineBorder.createGrayLineBorder(),
+                "Telefonnummer"));
         panel3 = new JPanel();
         panel3.setLayout(new FlowLayout(FlowLayout.LEFT));
         panel.add(panel3);
@@ -425,7 +459,8 @@ class OBERFLAECHE implements OBERFLACHENINTERFACE, MELDUNGSBEOBACHTER
         panel = new JPanel();
         panel2.add(panel);
         panel.setLayout(new GridLayout(2, 1));
-        panel.setBorder(new TitledBorder(LineBorder.createGrayLineBorder(), "Emailadresse"));
+        panel.setBorder(new TitledBorder(LineBorder.createGrayLineBorder(),
+                "Emailadresse"));
         panel3 = new JPanel();
         panel3.setLayout(new FlowLayout(FlowLayout.LEFT));
         panel.add(panel3);
@@ -448,24 +483,26 @@ class OBERFLAECHE implements OBERFLACHENINTERFACE, MELDUNGSBEOBACHTER
         neuanlegen.add(panel, BorderLayout.SOUTH);
         panel.setLayout(new FlowLayout(FlowLayout.CENTER));
         button = new JButton("Anlegen");
-        button.addActionListener(new ActionListener() {
+        button.addActionListener(new ActionListener()
+        {
             public void actionPerformed(ActionEvent e)
             {
-                kontrolleur.PersonAnlegen(name3.getText(), vorname3.getText(), strasse3.getText(),
-                                hausnummer3.getText(), plz3.getText(), ort3.getText(),
-                                nummer3.getText(), (String) art3.getSelectedItem(),
-                                notiz3.getText(), email3.getText(), notiz4.getText());
+                kontrolleur.PersonAnlegen(name3.getText(), vorname3.getText(),
+                        strasse3.getText(), hausnummer3.getText(),
+                        plz3.getText(), ort3.getText(), nummer3.getText(),
+                        (String) art3.getSelectedItem(), notiz3.getText(),
+                        email3.getText(), notiz4.getText());
             }
         });
         panel.add(button);
-
         suchen = new JPanel();
         auswahl.addTab("Personen suchen", suchen);
         suchen.setLayout(new GridLayout(2, 1));
         panel = new JPanel();
         suchen.add(panel);
         panel.setLayout(new GridLayout(4, 1));
-        panel.setBorder(new TitledBorder(LineBorder.createGrayLineBorder(), "Suchkriterien"));
+        panel.setBorder(new TitledBorder(LineBorder.createGrayLineBorder(),
+                "Suchkriterien"));
         panel3 = new JPanel();
         panel3.setLayout(new FlowLayout(FlowLayout.LEFT));
         panel.add(panel3);
@@ -482,7 +519,8 @@ class OBERFLAECHE implements OBERFLACHENINTERFACE, MELDUNGSBEOBACHTER
         l.setPreferredSize(new Dimension(300, 20));
         panel3.add(l);
         button = new JButton("Suchen");
-        button.addActionListener(new ActionListener() {
+        button.addActionListener(new ActionListener()
+        {
             public void actionPerformed(ActionEvent e)
             {
                 kontrolleur.VornamenSuchen(vorname4.getText());
@@ -505,7 +543,8 @@ class OBERFLAECHE implements OBERFLACHENINTERFACE, MELDUNGSBEOBACHTER
         strasse4.setPreferredSize(new Dimension(300, 20));
         panel3.add(strasse4);
         button = new JButton("Suchen");
-        button.addActionListener(new ActionListener() {
+        button.addActionListener(new ActionListener()
+        {
             public void actionPerformed(ActionEvent e)
             {
                 kontrolleur.AdresseSuchen(strasse4.getText(), ort4.getText());
@@ -528,7 +567,8 @@ class OBERFLAECHE implements OBERFLACHENINTERFACE, MELDUNGSBEOBACHTER
         l.setPreferredSize(new Dimension(300, 20));
         panel3.add(l);
         button = new JButton("Suchen");
-        button.addActionListener(new ActionListener() {
+        button.addActionListener(new ActionListener()
+        {
             public void actionPerformed(ActionEvent e)
             {
                 kontrolleur.NummerSuchen(nummer4.getText());
@@ -551,24 +591,27 @@ class OBERFLAECHE implements OBERFLACHENINTERFACE, MELDUNGSBEOBACHTER
         l.setPreferredSize(new Dimension(300, 20));
         panel3.add(l);
         button = new JButton("Suchen");
-        button.addActionListener(new ActionListener() {
+        button.addActionListener(new ActionListener()
+        {
             public void actionPerformed(ActionEvent e)
             {
                 kontrolleur.EmailSuchen(email4.getText());
             }
         });
         panel3.add(button);
-
         panel2 = new JPanel();
         suchen.add(panel2);
         panel2.setLayout(new BorderLayout());
-        panel2.setBorder(new TitledBorder(LineBorder.createGrayLineBorder(), "Ergebnisse"));
+        panel2.setBorder(new TitledBorder(LineBorder.createGrayLineBorder(),
+                "Ergebnisse"));
         personenMenue4 = new JComboBox();
         panel2.add(personenMenue4, BorderLayout.NORTH);
-        personenMenue4.addActionListener(new ActionListener() {
+        personenMenue4.addActionListener(new ActionListener()
+        {
             public void actionPerformed(ActionEvent e)
             {
-                kontrolleur.EintragAuswaehlenSuche(personenMenue4.getSelectedItem());
+                kontrolleur.EintragAuswaehlenSuche(
+                        personenMenue4.getSelectedItem());
             }
         });
         panel = new JPanel();
@@ -585,9 +628,6 @@ class OBERFLAECHE implements OBERFLACHENINTERFACE, MELDUNGSBEOBACHTER
         panel.add(new JScrollPane(telefonliste5));
         emailliste5 = new JList();
         panel.add(new JScrollPane(emailliste5));
-
-
-
         panel = new JPanel();
         panel.setLayout(new BorderLayout());
         content.add(panel, BorderLayout.SOUTH);
@@ -596,16 +636,19 @@ class OBERFLAECHE implements OBERFLACHENINTERFACE, MELDUNGSBEOBACHTER
         panel.add(status, BorderLayout.CENTER);
         button = new JButton("Benden");
         panel.add(button, BorderLayout.EAST);
-        button.addActionListener(new ActionListener() {
+        button.addActionListener(new ActionListener()
+        {
             public void actionPerformed(ActionEvent e)
             {
                 kontrolleur.Beenden();
             }
         });
-        auswahl.addChangeListener(new ChangeListener() {
+        auswahl.addChangeListener(new ChangeListener()
+        {
             public void stateChanged(ChangeEvent e)
             {
-                kontrolleur.TabAuswaehlen(auswahl.getTitleAt(auswahl.getSelectedIndex()));
+                kontrolleur.TabAuswaehlen(
+                        auswahl.getTitleAt(auswahl.getSelectedIndex()));
             }
         });
         fenster.setSize(1000, 700);
@@ -664,17 +707,18 @@ class OBERFLAECHE implements OBERFLACHENINTERFACE, MELDUNGSBEOBACHTER
     /**
      * Besetzt die Anzeigeelemente für eine bestimmte Person.
      *
-     * @param name Name der Person
-     * @param vorname Vorname der Person
-     * @param strasse Stra&szlig;e
+     * @param name       Name der Person
+     * @param vorname    Vorname der Person
+     * @param strasse    Stra&szlig;e
      * @param hausnummer Hausnummer
-     * @param plz Postleitzahl
-     * @param ort Wohnort
-     * @param nummern Feld mit den Telefonnummern
-     * @param emails Feld mit den Emiladressen
+     * @param plz        Postleitzahl
+     * @param ort        Wohnort
+     * @param nummern    Feld mit den Telefonnummern
+     * @param emails     Feld mit den Emiladressen
      */
-    public void PersonenInfoSetzen(String name, String vorname, String strasse, String hausnummer,
-                    String plz, String ort, Object[] nummern, Object[] emails)
+    public void PersonenInfoSetzen(String name, String vorname, String strasse,
+            String hausnummer, String plz, String ort, Object[] nummern,
+            Object[] emails)
     {
         name1.setText(name);
         vorname1.setText(vorname);
@@ -687,17 +731,18 @@ class OBERFLAECHE implements OBERFLACHENINTERFACE, MELDUNGSBEOBACHTER
     /**
      * Besetzt die Anzeigeelemente für eine bestimmte Person.
      *
-     * @param name Name der Person
-     * @param vorname Vorname der Person
-     * @param strasse Stra&szlig;e
+     * @param name       Name der Person
+     * @param vorname    Vorname der Person
+     * @param strasse    Stra&szlig;e
      * @param hausnummer Hausnummer
-     * @param plz Postleitzahl
-     * @param ort Wohnort
-     * @param nummern Feld mit den Telefonnummern
-     * @param emails Feld mit den Emiladressen
+     * @param plz        Postleitzahl
+     * @param ort        Wohnort
+     * @param nummern    Feld mit den Telefonnummern
+     * @param emails     Feld mit den Emiladressen
      */
-    public void PersonenInfoSetzenBearbeiten(String name, String vorname, String strasse,
-                    String hausnummer, String plz, String ort, Object[] nummern, Object[] emails)
+    public void PersonenInfoSetzenBearbeiten(String name, String vorname,
+            String strasse, String hausnummer, String plz, String ort,
+            Object[] nummern, Object[] emails)
     {
         name2.setText(name);
         vorname2.setText(vorname);
@@ -720,17 +765,18 @@ class OBERFLAECHE implements OBERFLACHENINTERFACE, MELDUNGSBEOBACHTER
     /**
      * Besetzt die Anzeigeelemente der Suche für eine bestimmte Person.
      *
-     * @param name Name der Person
-     * @param vorname Vorname der Person
-     * @param strasse Stra&szlig;e
+     * @param name       Name der Person
+     * @param vorname    Vorname der Person
+     * @param strasse    Stra&szlig;e
      * @param hausnummer Hausnummer
-     * @param plz Postleitzahl
-     * @param ort Wohnort
-     * @param nummern Feld mit den Telefonnummern
-     * @param emails Feld mit den Emiladressen
+     * @param plz        Postleitzahl
+     * @param ort        Wohnort
+     * @param nummern    Feld mit den Telefonnummern
+     * @param emails     Feld mit den Emiladressen
      */
-    public void PersonenInfoSetzenSuche(String name, String vorname, String strasse,
-                    String hausnummer, String plz, String ort, Object[] nummern, Object[] emails)
+    public void PersonenInfoSetzenSuche(String name, String vorname,
+            String strasse, String hausnummer, String plz, String ort,
+            Object[] nummern, Object[] emails)
     {
         name5.setText(vorname + " " + name);
         adresse5.setText(strasse + " " + hausnummer + ", " + plz + " " + ort);
@@ -742,10 +788,11 @@ class OBERFLAECHE implements OBERFLACHENINTERFACE, MELDUNGSBEOBACHTER
      * Besetzt die Anzeigeelemente für eine Telefonnummer.
      *
      * @param nummer die Telefonnummer
-     * @param notiz Notiz zur Nummer
-     * @param art Art der Nummer
+     * @param notiz  Notiz zur Nummer
+     * @param art    Art der Nummer
      */
-    public void NummernInfoSetzenBearbeiten(String nummer, String notiz, String art)
+    public void NummernInfoSetzenBearbeiten(String nummer, String notiz,
+            String art)
     {
         this.nummer.setText(nummer);
         notiz1.setText(notiz);
@@ -756,7 +803,7 @@ class OBERFLAECHE implements OBERFLACHENINTERFACE, MELDUNGSBEOBACHTER
      * Besetzt die Anzeigeelemente für eine EMailadresse.
      *
      * @param adresse die Emailadresse
-     * @param notiz Notiz zur Adresse
+     * @param notiz   Notiz zur Adresse
      */
     public void EmailInfoSetzenBearbeiten(String adresse, String notiz)
     {
@@ -781,6 +828,7 @@ class OBERFLAECHE implements OBERFLACHENINTERFACE, MELDUNGSBEOBACHTER
      */
     public void FehlermeldungEmpfangen(String text)
     {
-        JOptionPane.showMessageDialog(null, text, "Fehlermeldung", JOptionPane.ERROR_MESSAGE);
+        JOptionPane.showMessageDialog(null, text, "Fehlermeldung",
+                JOptionPane.ERROR_MESSAGE);
     }
 }

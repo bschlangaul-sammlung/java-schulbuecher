@@ -14,16 +14,19 @@ class TAKTGEBER
 {
     /** Timerobjekt für die zentrale Zeitverwaltung */
     private Timer timer;
+
     /** zu steuernde Objekte, mssen von jedem Takt benachrichtigt werden. */
     private ArrayList<TAKTKLIENT> klienten;
 
     /**
-     * Legt den eigentlichen Zeitgeber an. Der Impulsabstand betrgt eine Sekunde
+     * Legt den eigentlichen Zeitgeber an. Der Impulsabstand betrgt eine
+     * Sekunde
      */
     TAKTGEBER()
     {
         klienten = new ArrayList<TAKTKLIENT>();
-        timer = new Timer(1000, new ActionListener() {
+        timer = new Timer(1000, new ActionListener()
+        {
             /**
              * vom Timer aufgerufen benachrichtigt alle eingetragenen Objekte
              *

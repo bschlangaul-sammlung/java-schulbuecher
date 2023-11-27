@@ -72,8 +72,6 @@ public class WARTESCHLANGE
         kassennummer = kassennummerNeu;
     }
 
-
-
     /**
      * Ausgabe der Kundenanzahl
      */
@@ -140,6 +138,5 @@ public class WARTESCHLANGE
             i = i + 1;
             k = k.NachfolgerGeben();
         }
-
     }
 }

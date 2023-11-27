@@ -9,8 +9,11 @@ package org.bschlangaul.schulbuecher.isb.handreichung_10.konzept_02.supermarkt.s
 class KASSE
 {
     RECHTECK darstellung;
+
     KUNDE kunde;
+
     int x;
+
     int y;
 
     /**

@@ -6,8 +6,6 @@ import greenfoot.Actor;
  * Klasse Busch <br>
  * Diese Klasse enthält weder Attribute noch Methoden.
  */
-
 public class Busch extends Actor
 {
-
 }

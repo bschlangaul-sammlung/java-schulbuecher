@@ -6,13 +6,14 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_2_2010.kapi
  * @author Albert Wiedemann
  * @version 1.0
  */
-
 class Erzeuger extends Thread
 {
     /** Die Produktionszeit pro Kiste */
     private int zeit;
+
     /** Der Zwischenspeicher */
     private Speicher speicher;
+
     /** Laufende Nummer der produzierten Kisten */
     private static int nummer = 0;
 
@@ -53,7 +54,8 @@ class Erzeuger extends Thread
             try
             {
                 wait(ende - akt);
-            } catch (Exception e)
+            }
+            catch (Exception e)
             {
             }
             akt = System.currentTimeMillis();

@@ -10,7 +10,9 @@ public class GRAPH_ungerichtet
 {
     // TO-DO: Deklarieren der Adjazenzmatrix und des Knotenfeldes.
     private KNOTEN[] knotennamen;
+
     private int[][] adja;
+
     private int aktAnzahl, maxAnzahl;
 
     public GRAPH_ungerichtet(int anzKnoten)
@@ -46,7 +48,6 @@ public class GRAPH_ungerichtet
             adja[ende][start] = gewicht;
         }
     }
-
     // Die folgenden Methoden sind für dich nicht relevant.
 
     public void adjaAusgeben()
@@ -86,7 +87,6 @@ public class GRAPH_ungerichtet
                 position = i;
             }
         }
-
         return position;
     }
 
@@ -100,5 +100,4 @@ public class GRAPH_ungerichtet
             }
         }
     }
-
 }

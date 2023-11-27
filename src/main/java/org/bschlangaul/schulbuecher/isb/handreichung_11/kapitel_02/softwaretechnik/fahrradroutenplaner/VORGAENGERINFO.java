@@ -9,14 +9,16 @@ package org.bschlangaul.schulbuecher.isb.handreichung_11.kapitel_02.softwaretech
 class VORGAENGERINFO implements DATENELEMENT
 {
     private ORT ort;
+
     private ORT vorgaenger;
+
     private int gesamtLaenge;
 
     /**
      * Besetzt die Attribute.
      *
-     * @param o aktueller Ort
-     * @param v Vorgäner
+     * @param o      aktueller Ort
+     * @param v      Vorgäner
      * @param laenge Weglänge bis hierher
      */
     VORGAENGERINFO(ORT o, ORT v, int laenge)
@@ -91,11 +93,12 @@ class VORGAENGERINFO implements DATENELEMENT
      * Implementiert die Kleiner-Relation für die Minimumsuche.
      *
      * @param d Datenelement mit dem Vergleichswert.
-     * @return true, wenn das Element eine kleinere Gesamtlaenge hat als der Vergleichswert.
+     * @return true, wenn das Element eine kleinere Gesamtlaenge hat als der
+     *         Vergleichswert.
      */
     public boolean IstKleiner(DATENELEMENT d)
     {
         return (d == null) || (d instanceof VORGAENGERINFO)
-                        && (gesamtLaenge < ((VORGAENGERINFO) d).gesamtLaenge);
+                && (gesamtLaenge < ((VORGAENGERINFO) d).gesamtLaenge);
     }
 }

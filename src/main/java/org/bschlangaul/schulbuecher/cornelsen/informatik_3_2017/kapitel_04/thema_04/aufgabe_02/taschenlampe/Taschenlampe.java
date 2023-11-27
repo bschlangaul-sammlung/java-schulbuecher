@@ -10,6 +10,7 @@ class Taschenlampe
 {
     /** Lampe */
     Dreieck lampe;
+
     /** Zustand */
     String zustand;
 
@@ -22,34 +23,28 @@ class Taschenlampe
         hintergrund.GrößeSetzen(800, 600);
         hintergrund.PositionSetzen(0, 0);
         hintergrund.FarbeSetzen("weiß");
-
         lampe = new Dreieck();
         lampe.GrößeSetzen(200, 200);
         lampe.PositionSetzen(100, 200);
         lampe.Drehen(-90);
         lampe.FarbeSetzen("weiß");
-
         Rechteck schirmVorne = new Rechteck();
         schirmVorne.GrößeSetzen(50, 200);
         schirmVorne.PositionSetzen(100, 200);
         schirmVorne.FarbeSetzen("grau");
-
         Dreieck schirmHinten = new Dreieck();
         schirmHinten.GrößeSetzen(200, 200);
         schirmHinten.PositionSetzen(250, 200);
         schirmHinten.Drehen(-90);
         schirmHinten.FarbeSetzen("grau");
-
         Rechteck korpus = new Rechteck();
         korpus.GrößeSetzen(300, 100);
         korpus.PositionSetzen(200, 250);
         korpus.FarbeSetzen("grau");
-
         Rechteck schalter = new Rechteck();
         schalter.GrößeSetzen(75, 25);
         schalter.PositionSetzen(300, 225);
         schalter.FarbeSetzen("schwarz");
-
         zustand = "aus";
     }
 

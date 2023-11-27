@@ -20,5 +20,6 @@ public class Speicher extends junit.framework.TestCase
     }
 
     protected void tearDown()
-    {}
+    {
+    }
 }

@@ -9,39 +9,38 @@ package org.bschlangaul.schulbuecher.cornelsen.informatik_3_2017.kapitel_04.them
 public class Pong extends SPIEL
 {
     private RECHTECK spielerLinks;
+
     private RECHTECK spielerRechts;
+
     private KREIS ball;
+
     private RECHTECK boden;
+
     private TEXT punkteLinks, punkteRechts;
+
     private int trefferLinks, trefferRechts;
 
     public Pong()
     {
         super(800, 600);
         super.zeigeKoordinatensystem(true);
-
         this.spielerLinks = new RECHTECK(0.3, 3);
         this.spielerLinks.setzeFarbe("gelb");
         this.spielerLinks.setzeMittelpunkt(-12, 0);
-
         this.spielerRechts = new RECHTECK(0.3, 3);
         this.spielerRechts.setzeFarbe("gelb");
         this.spielerRechts.setzeMittelpunkt(12, 0);
-
         this.ball = new KREIS(0.5f);
         this.ball.setzeFarbe("blau");
         this.ball.setzeMittelpunkt(0, 0);
-
         this.boden = new RECHTECK(30, 0.1);
         this.boden.setzeFarbe("rot");
         this.boden.setzeMittelpunkt(0, -9.9);
-
         this.trefferLinks = 0;
         this.trefferRechts = 0;
         this.punkteLinks = new TEXT(-7.5, 9, 1, this.trefferLinks);
         this.punkteRechts = new TEXT(7.5, 9, 1, this.trefferRechts);
     }
-
 
     public void linkenSpielerVerschiebenUm(double x, double y)
     {
@@ -53,12 +52,10 @@ public class Pong extends SPIEL
         this.spielerRechts.verschiebenUm(x, y);
     }
 
-
     public void ballSetzeMittelpunkt(double x, double y)
     {
         this.ball.setzeMittelpunkt(x, y);
     }
-
 
     public void ballMacheAktiv()
     {
@@ -80,7 +77,6 @@ public class Pong extends SPIEL
         this.boden.machePassiv();
     }
 
-
     public void ballSetzeElastizitaet(double prozent)
     {
         this.ball.setzeElastizitaet(prozent);
@@ -101,7 +97,6 @@ public class Pong extends SPIEL
         this.spielerRechts.setzeElastizitaet(prozent);
     }
 
-
     public void ballWirkeImpuls(double x, double y)
     {
         this.ball.wirkeImpuls(x, y);
@@ -111,7 +106,6 @@ public class Pong extends SPIEL
     {
         this.ball.setzeGeschwindigkeit(0, 0);
     }
-
 
     public boolean ballBeruehrtSpielerLinks()
     {
@@ -123,7 +117,6 @@ public class Pong extends SPIEL
         return this.ball.beruehrt(this.spielerRechts);
     }
 
-
     public double ballNenneMittelpunktX()
     {
         return this.ball.nenneMittelpunktX();
@@ -133,7 +126,6 @@ public class Pong extends SPIEL
     {
         return this.ball.nenneMittelpunktY();
     }
-
 
     public double linkerSpielerNenneMittelpunktX()
     {
@@ -155,12 +147,10 @@ public class Pong extends SPIEL
         return this.spielerRechts.nenneMittelpunktY();
     }
 
-
     public int zufallszahlVonBis(int kleinsterWert, int groessterWert)
     {
         return super.zufallszahlVonBis(kleinsterWert, groessterWert);
     }
-
 
     public void erhoehePunktestandLinks()
     {
@@ -174,12 +164,10 @@ public class Pong extends SPIEL
         this.punkteRechts.setzeInhalt("" + this.trefferRechts);
     }
 
-
     public void zeigeKoordinaten(boolean zeigen)
     {
         SPIEL.zeigeKoordinatensystem(zeigen);
     }
-
 
     public void starteTickerNeu(double sekunden)
     {
@@ -190,7 +178,6 @@ public class Pong extends SPIEL
     {
         super.stoppeTicker();
     }
-
 
     @Override
     public void tick()

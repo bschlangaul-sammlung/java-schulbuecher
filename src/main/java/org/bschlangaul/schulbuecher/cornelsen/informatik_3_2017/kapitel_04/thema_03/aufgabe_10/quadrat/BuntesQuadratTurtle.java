@@ -8,14 +8,12 @@ package org.bschlangaul.schulbuecher.cornelsen.informatik_3_2017.kapitel_04.them
  */
 class BuntesQuadratTurtle extends Turtle
 {
-
     /**
      * Lässt die Turtle das bunte Quadrat zeichnen.
      */
     void FigurBuntZeichnen()
     {
         PositionSetzen(100, 200);
-
         while (XPositionGeben() < 400)
         {
             FarbeSetzen("schwarz");
@@ -23,9 +21,7 @@ class BuntesQuadratTurtle extends Turtle
             FarbeSetzen("rot");
             Gehen(5);
         }
-
         Drehen(-90);
-
         while (YPositionGeben() < 500)
         {
             FarbeSetzen("schwarz");
@@ -33,9 +29,7 @@ class BuntesQuadratTurtle extends Turtle
             FarbeSetzen("rot");
             Gehen(5);
         }
-
         Drehen(-90);
-
         while (XPositionGeben() > 100)
         {
             FarbeSetzen("schwarz");
@@ -43,9 +37,7 @@ class BuntesQuadratTurtle extends Turtle
             FarbeSetzen("rot");
             Gehen(5);
         }
-
         Drehen(-90);
-
         while (YPositionGeben() > 200)
         {
             FarbeSetzen("schwarz");

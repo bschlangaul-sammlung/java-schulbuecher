@@ -9,12 +9,14 @@ package org.bschlangaul.schulbuecher.isb.handreichung_10.konzept_02.supermarkt.s
 abstract class KUNDE
 {
     protected KREIS darstellung;
+
     protected int artikelmenge;
+
     protected int groesse;
 
     /**
-     * Konstruktor des Kunden. Setzt eine zufällige Farbe und die Grö&szlig;e gemä&szlig; der
-     * Artikelanzahl
+     * Konstruktor des Kunden. Setzt eine zufällige Farbe und die Grö&szlig;e
+     * gemä&szlig; der Artikelanzahl
      *
      * @param artikel Anzahl der Artikel im Warenkorb
      */
@@ -48,8 +50,9 @@ abstract class KUNDE
     }
 
     /**
-     * Entscheidet, an welche Schlange sich der Kunde anstellt. Hier ist die Strategie: noch nicht
-     * implementiert pre: es gibt mindestens eine offene Kasse
+     * Entscheidet, an welche Schlange sich der Kunde anstellt. Hier ist die
+     * Strategie: noch nicht implementiert pre: es gibt mindestens eine offene
+     * Kasse
      *
      * @param kassen Feld der im Markt vorhandenen Kassen
      */

@@ -8,7 +8,6 @@ import greenfoot.World;
  *
  * Aufgaben 1-3
  */
-
 public class Zufallsweg extends World
 {
     public Zufallsweg()
@@ -22,7 +21,6 @@ public class Zufallsweg extends World
         int x = 0;
         int y = 10;
         int zz; // für die Zufallszahl
-
         while (x < 300)
         {
             faerbeZelle(x, y);
@@ -37,12 +35,11 @@ public class Zufallsweg extends World
                 y = y + 1;
             }
         }
-
     }
 
     /*
-     * Die folgenden Methoden können zur Lösung der Aufgaben verwendet werden. Dazu ist es nicht
-     * nötig ihre genaue Arbeitsweise zu verstehen.
+     * Die folgenden Methoden können zur Lösung der Aufgaben verwendet werden.
+     * Dazu ist es nicht nötig ihre genaue Arbeitsweise zu verstehen.
      */
     int gibZufallszahl() // liefert eine Zufallszahl zwischen 1 und 100
     {

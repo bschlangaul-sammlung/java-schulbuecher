@@ -82,5 +82,4 @@ class KUNDE extends PERSON
     {
         return aktKonto.AuszugsdatenErstellen();
     }
-
 }

@@ -10,17 +10,21 @@ class SPIEL
 {
     /** Erster Hanoiturm */
     HANOITURM hanoiturm1;
+
     /** Zweiter Hanoiturm */
     HANOITURM hanoiturm2;
+
     /** Dritter Hanoiturm */
     HANOITURM hanoiturm3;
+
     /** Sorgt für die Verzögerung bei der Anzeige */
     int taktdauer;
 
     /**
-     * Konstruktor Erzeugt die Türme. Legt die Taktdauer abhängig von der Scheibenzahl fest. Erzeugt
-     * die Scheiben und legt sie auf den ersten Turm. Startet den rekursiven Algorithmus; die
-     * Scheiben werden zum zweiten Turm transportiert.
+     * Konstruktor Erzeugt die Türme. Legt die Taktdauer abhängig von der
+     * Scheibenzahl fest. Erzeugt die Scheiben und legt sie auf den ersten Turm.
+     * Startet den rekursiven Algorithmus; die Scheiben werden zum zweiten Turm
+     * transportiert.
      *
      * @param scheibenzahl Anzahl der Scheiben
      */
@@ -44,24 +48,23 @@ class SPIEL
                 taktdauer = 100;
             }
         }
-
         for (int i = 0; i < scheibenzahl; i++)
         {
             hanoiturm1.Einfuegen(new SCHEIBE(100 - 10 * i));
         }
         SchiebeTurm(scheibenzahl, hanoiturm1, hanoiturm2, hanoiturm3);
-
     }
 
     /**
      * Rekursiver Algorithmus zur Lösung des Problems
      *
-     * @param hoehe Anzahl der zu entfernenden Scheiben
-     * @param vonTurm Hanoiturm, von dem die Scheiben entfernt werden
-     * @param nachTurm Ziel-Hanoiturm
+     * @param hoehe      Anzahl der zu entfernenden Scheiben
+     * @param vonTurm    Hanoiturm, von dem die Scheiben entfernt werden
+     * @param nachTurm   Ziel-Hanoiturm
      * @param freierTurm freier Hanoiturm
      */
-    void SchiebeTurm(int hoehe, HANOITURM vonTurm, HANOITURM nachTurm, HANOITURM freierTurm)
+    void SchiebeTurm(int hoehe, HANOITURM vonTurm, HANOITURM nachTurm,
+            HANOITURM freierTurm)
     {
         if (hoehe > 0)
         {
@@ -81,7 +84,8 @@ class SPIEL
         try
         {
             Thread.sleep(taktdauer);
-        } catch (Exception ex)
+        }
+        catch (Exception ex)
         {
             System.out.println(ex);
         }

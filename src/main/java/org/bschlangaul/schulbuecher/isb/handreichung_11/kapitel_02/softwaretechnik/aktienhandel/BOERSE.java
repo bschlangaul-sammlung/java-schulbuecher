@@ -11,7 +11,9 @@ import java.util.*;
 class BOERSE implements STATUSERZEUGER
 {
     private DATENBANKVERBINDUNG verbindung;
+
     private Random zufallsgenerator;
+
     private STATUSBEOBACHTER beobachter;
 
     /**
@@ -51,8 +53,8 @@ class BOERSE implements STATUSERZEUGER
      * Kaufen mehrerer Aktien einer bestimmten Art
      *
      * @param aktienID Schlüssel der Aktie
-     * @param anzahl Anzahl der zu kaufenden Aktien
-     * @param konto Konto, von dem die Aktien bezahlt werden sollen.
+     * @param anzahl   Anzahl der zu kaufenden Aktien
+     * @param konto    Konto, von dem die Aktien bezahlt werden sollen.
      */
     void Kaufen(int aktienID, int anzahl, KONTO konto)
     {
@@ -67,7 +69,8 @@ class BOERSE implements STATUSERZEUGER
         else
         {
             konto.Abheben(gesamtbetrag);
-            verbindung.KaufEintragen(anzahl, aktienID, info.DatumGeben(), info.KursGeben());
+            verbindung.KaufEintragen(anzahl, aktienID, info.DatumGeben(),
+                    info.KursGeben());
         }
     }
 
@@ -75,8 +78,8 @@ class BOERSE implements STATUSERZEUGER
      * Verkaufen mehrerer Aktien einer bestimmten Art
      *
      * @param aktienID Schlüssel der Aktie
-     * @param anzahl Anzahl der zu verkaufenden Aktien
-     * @param konto Konto, auf das der Erlös flie&szlig;en soll.
+     * @param anzahl   Anzahl der zu verkaufenden Aktien
+     * @param konto    Konto, auf das der Erlös flie&szlig;en soll.
      */
     void Verkaufen(int aktienID, int anzahl, KONTO konto)
     {
@@ -97,17 +100,19 @@ class BOERSE implements STATUSERZEUGER
                     paket = verbindung.GroesstesAktienpaketGeben(aktienID);
                     int anz = paket.AnzahlGeben();
                     konto.Einzahlen(anz * info.KursGeben());
-                    verbindung.VerkaufEintragen(paket.PaketNummerGeben(), aktienID, anz, 0,
-                                    paket.KaufDatumGeben(), paket.KaufKursGeben(),
-                                    info.DatumGeben(), info.KursGeben());
+                    verbindung.VerkaufEintragen(paket.PaketNummerGeben(),
+                            aktienID, anz, 0, paket.KaufDatumGeben(),
+                            paket.KaufKursGeben(), info.DatumGeben(),
+                            info.KursGeben());
                     anzahl -= anz;
                 }
                 else
                 {
                     konto.Einzahlen(anzahl * info.KursGeben());
-                    verbindung.VerkaufEintragen(paket.PaketNummerGeben(), aktienID, anzahl,
-                                    paket.AnzahlGeben() - anzahl, paket.KaufDatumGeben(),
-                                    paket.KaufKursGeben(), info.DatumGeben(), info.KursGeben());
+                    verbindung.VerkaufEintragen(paket.PaketNummerGeben(),
+                            aktienID, anzahl, paket.AnzahlGeben() - anzahl,
+                            paket.KaufDatumGeben(), paket.KaufKursGeben(),
+                            info.DatumGeben(), info.KursGeben());
                     anzahl = 0;
                 }
             }

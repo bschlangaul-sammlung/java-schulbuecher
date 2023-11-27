@@ -56,8 +56,9 @@ abstract class LISTENELEMENT
     abstract DATENELEMENT[] Kopieren(int anzahl);
 
     /**
-     * Erzeugt eine Kopie des Listenelements und der Liste ab hier. Die Datenelemente werden nicht
-     * kopiert. Auf Verwendung von Object. clone wurde bewusst verzichtet.
+     * Erzeugt eine Kopie des Listenelements und der Liste ab hier. Die
+     * Datenelemente werden nicht kopiert. Auf Verwendung von Object. clone
+     * wurde bewusst verzichtet.
      *
      * @return Kopie des Listenelements mit Referenz auf kopierte Nachfolger
      */

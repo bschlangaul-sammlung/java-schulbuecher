@@ -9,8 +9,11 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapi
 class KONTROLLEUR
 {
     private OBERFLAECHE oberflaeche;
+
     private GRAPH g;
+
     private BAHNHOFSLISTE bahnhoefe;
+
     private PLANANZEIGE plan;
 
     /**
@@ -67,7 +70,7 @@ class KONTROLLEUR
     void RouteBerechnen(int nummer1, int nummer2)
     {
         g.WegeSuche(bahnhoefe.BahnhofMitIndexGeben(nummer1),
-                        bahnhoefe.BahnhofMitIndexGeben(nummer2));
+                bahnhoefe.BahnhofMitIndexGeben(nummer2));
         oberflaeche.FahrtstreckeSetzen(g.RoutenbeschreibungErstellen());
     }
 

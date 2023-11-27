@@ -1,41 +1,51 @@
 package org.bschlangaul.schulbuecher.isb.handreichung_12.kapitel_02.projekt_07.buchungssimulation;
 
-
 import java.net.*;
 import java.io.*;
 
 /**
  * Serverimplementierung, Auslagerung der Clientprozesse in einen Thread<br/>
- * Der Zugriff auf die Ressource plaetzevorhanden ist <b>nicht synchronisiert</b>! Zur Simulation
- * wird ein Platzkontigent immer wieder aufgefüllt.
+ * Der Zugriff auf die Ressource plaetzevorhanden ist <b>nicht
+ * synchronisiert</b>! Zur Simulation wird ein Platzkontigent immer wieder
+ * aufgefüllt.
  *
  * @author ISB-Arbeitskreis, Umsetzungshilfen Informatik 12
  * @version 1.0
  */
 public class SERVER5
 {
-    /** bidirektionale Schnittstelle zur Netzwerkprotokoll-Implementierung des Servers */
+    /**
+     * bidirektionale Schnittstelle zur Netzwerkprotokoll-Implementierung des
+     * Servers
+     */
     private ServerSocket serverSocket = null;
+
     /** Portnummer des Ports, auf dem die Verbindungen etabliert sind */
     private int port;
+
     /** speichert die aktuelle Anzahl der noch vorhandenen Plätze */
     private int plaetzevorhanden = 3;
+
     /** dieses Platzkontignent wird immer wieder aufgefüllt */
     private static int platzkontingent = 10;
-    /** Beim Abbruch der Simulation durch überbuchung wird Tastatureingabe erwartet */
+
+    /**
+     * Beim Abbruch der Simulation durch überbuchung wird Tastatureingabe
+     * erwartet
+     */
     private BufferedReader tastatur;
 
     /**
      * Konstruktor des Servers
      *
      * @exception IOException eine Ausnahme tritt auf falls:<br/>
-     *            - der Server nicht gestartet werden kann (weil beispielsweise der Port nicht frei
-     *            ist)<br/>
-     *            - die Clientverbindung gestört bzw. unterbrochen wurde.
+     *                        - der Server nicht gestartet werden kann (weil
+     *                        beispielsweise der Port nicht frei ist)<br/>
+     *                        - die Clientverbindung gestört bzw. unterbrochen
+     *                        wurde.
      */
     public SERVER5() throws IOException
     {
-
         ServerStarten();
         while (true)
         {// wartet immer auf neue Clientverbindungen
@@ -49,7 +59,8 @@ public class SERVER5
     private void AufNeuenClientWarten() throws IOException
     {
         System.out.println("warte auf Client, hoere auf Port " + port);
-        Socket clientSocket = serverSocket.accept(); // warten auf die Verbindung
+        Socket clientSocket = serverSocket.accept(); // warten auf die
+                                                     // Verbindung
         CLIENTPROZESS2 clientprozess = new CLIENTPROZESS2(clientSocket, this);
         clientprozess.start();
         System.out.println("Clientprozess gestartet...");
@@ -69,26 +80,24 @@ public class SERVER5
      * die angegebene Anzahl an Plätzen buchen
      *
      * @param anzahl, die Anzahl der zu buchenden Plätze
-     * @return gibt false zurück, falls die Buchung aus Platzmangel nicht durchgeführt werden konnte
+     * @return gibt false zurück, falls die Buchung aus Platzmangel nicht
+     *         durchgeführt werden konnte
      */
     public boolean PlaetzeBuchen(int anzahl)
     {
-
         boolean plaetzebuchbar = (anzahl <= plaetzevorhanden);
-
         try
         {// das Ermitteln, ob Plaetze buchbar sind brauche etwas Zeit ...
             Thread.sleep((int) (Math.random() * 100));
-        } catch (InterruptedException e)
+        }
+        catch (InterruptedException e)
         {
             System.err.println("Fehler in der Serververabeitung.");
         }
-
         if (plaetzebuchbar)
         {
             plaetzevorhanden = plaetzevorhanden - anzahl;
             System.out.println(plaetzevorhanden + " Plaetze vorhanden.");
-
             if (plaetzevorhanden < 0)
             {
                 System.out.println("\u00DCberbuchung ! Beenden mit Return...");
@@ -96,11 +105,11 @@ public class SERVER5
                 {
                     tastatur.read();
                     System.exit(0);
-                } catch (Exception e)
+                }
+                catch (Exception e)
                 {
                     System.err.println("Fehler in der Serververabeitung.");
                 }
-
             }
             if (plaetzevorhanden == 0)
             {
@@ -119,7 +128,6 @@ public class SERVER5
      */
     private void ServerStarten() throws IOException
     {
-
         System.out.println("Port eingeben: ");
         tastatur = new BufferedReader(new InputStreamReader(System.in));
         // Server Socket erzeugen
@@ -138,7 +146,8 @@ public class SERVER5
         try
         {
             new SERVER5();
-        } catch (Exception e)
+        }
+        catch (Exception e)
         {
             System.err.println("Fehler in der Serververabeitung.");
             System.exit(1);

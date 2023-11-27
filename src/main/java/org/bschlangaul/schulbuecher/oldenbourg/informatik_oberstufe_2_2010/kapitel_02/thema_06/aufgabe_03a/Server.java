@@ -11,7 +11,6 @@ import java.net.*;
  */
 class Server
 {
-
     /**
      * Führt die eigentliche Arbeit aus.
      */
@@ -29,11 +28,13 @@ class Server
                 if (zeichen < 0)
                     break;
                 out.write(zeichen);
-            } while (true);
+            }
+            while (true);
             anruf.close();
             server.close();
             System.exit(0);
-        } catch (Exception e)
+        }
+        catch (Exception e)
         {
             System.out.println("Allgemeiner Fehler: " + e);
             e.printStackTrace();

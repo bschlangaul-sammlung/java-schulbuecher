@@ -11,6 +11,7 @@ import greenfoot.*; // (World, Actor, GreenfootImage, Greenfoot und MouseInfo)
 public class Raum extends Actor
 {
     private int raumnr;
+
     private boolean sauber;
 
     public Raum(int raumnr, boolean sauber)
@@ -23,5 +24,4 @@ public class Raum extends Actor
     {
         return sauber;
     }
-
 }

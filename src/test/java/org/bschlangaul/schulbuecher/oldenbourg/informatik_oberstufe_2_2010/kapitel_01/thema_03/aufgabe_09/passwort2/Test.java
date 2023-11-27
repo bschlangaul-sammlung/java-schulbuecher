@@ -8,7 +8,6 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_2_2010.kapi
  */
 public class Test extends junit.framework.TestCase
 {
-
     public void testenPositivBBBS()
     {
         AutomatPasswort2 a = new AutomatPasswort2();
@@ -80,5 +79,4 @@ public class Test extends junit.framework.TestCase
         AutomatPasswort2 a = new AutomatPasswort2();
         assertEquals(false, a.IstEingabeAkzeptiert("keine5isterlaubt"));
     }
-
 }

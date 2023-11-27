@@ -1,7 +1,8 @@
 package org.bschlangaul.schulbuecher.isb.handreichung_12.kapitel_04.modell;
 
 /**
- * Beschreibt ein Datenelement, das nur aus einem als String beschriebenen Schüssel besteht..
+ * Beschreibt ein Datenelement, das nur aus einem als String beschriebenen
+ * Schüssel besteht..
  *
  * @author ISB-Arbeitskreis, Umsetzungshilfen Informatik 12
  * @version 1.0
@@ -22,10 +23,12 @@ public class STRINGDATEN implements DATENELEMENT
     }
 
     /**
-     * Vergleicht den Schlüssel des Datenelements mit dem in der Referenz angegebenen Schüssel.
-     * &lt;0: Der eigene Schlüssel ist kleiner als der referenzierte Schlüssel<br>
+     * Vergleicht den Schlüssel des Datenelements mit dem in der Referenz
+     * angegebenen Schüssel. &lt;0: Der eigene Schlüssel ist kleiner als der
+     * referenzierte Schlüssel<br>
      * =0: Der eigene Schlüssel ist gleich dem referenzierten Schlüssel<br>
-     * &gt;0: Der eigene Schlüssel ist grö&szlig;er als der referenzierte Schlüssel
+     * &gt;0: Der eigene Schlüssel ist grö&szlig;er als der referenzierte
+     * Schlüssel
      *
      * @return das Vergleichsergebnis
      */

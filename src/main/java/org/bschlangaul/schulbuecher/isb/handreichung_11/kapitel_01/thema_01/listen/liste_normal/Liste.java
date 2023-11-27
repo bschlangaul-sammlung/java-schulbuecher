@@ -10,7 +10,6 @@ class Liste
         anfang = null;
     }
 
-
     // weitere Methoden
     boolean IstLeer()
     {
@@ -34,7 +33,6 @@ class Liste
     DatenElement AnfangEntfernen()
     {
         DatenElement entfernt;
-
         if (!IstLeer())
         {
             entfernt = anfang.DatenGeben();
@@ -42,7 +40,6 @@ class Liste
         }
         else
             entfernt = null;
-
         return entfernt;
     }
 
@@ -53,7 +50,6 @@ class Liste
         else
             return null;
     }
-
 
     void AlleAusgeben()
     {
@@ -68,5 +64,4 @@ class Liste
         else
             return 0;
     }
-
 }

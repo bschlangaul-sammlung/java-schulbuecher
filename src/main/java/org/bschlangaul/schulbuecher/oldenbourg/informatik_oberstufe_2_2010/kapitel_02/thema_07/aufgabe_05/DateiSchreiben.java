@@ -6,7 +6,6 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_2_2010.kapi
  * @author Albert Wiedemann
  * @version 1.0
  */
-
 import java.io.*;
 
 class DateiSchreiben
@@ -33,9 +32,11 @@ class DateiSchreiben
         {
             out = new FileOutputStream(name);
             return true;
-        } catch (FileNotFoundException e)
+        }
+        catch (FileNotFoundException e)
         {
-            System.out.println("Fehler beimffnen der Datei: " + e.getMessage());
+            System.out
+                    .println("Fehler beimffnen der Datei: " + e.getMessage());
             return false;
         }
     }
@@ -55,7 +56,7 @@ class DateiSchreiben
             for (int index = 0; index < paket.length; index++)
             {
                 b = Character.digit(text.charAt(index * 2), 16) * 16
-                                + Character.digit(text.charAt(index * 2 + 1), 16);
+                        + Character.digit(text.charAt(index * 2 + 1), 16);
                 if (b > 127)
                 {
                     b -= 256;
@@ -63,7 +64,8 @@ class DateiSchreiben
                 paket[index] = (byte) b;
             }
             out.write(paket);
-        } catch (IOException e)
+        }
+        catch (IOException e)
         {
             System.out.println("Fehler beim Schreiben: " + e.getMessage());
         }
@@ -78,7 +80,8 @@ class DateiSchreiben
         {
             out.close();
             out = null;
-        } catch (IOException e)
+        }
+        catch (IOException e)
         {
         }
     }

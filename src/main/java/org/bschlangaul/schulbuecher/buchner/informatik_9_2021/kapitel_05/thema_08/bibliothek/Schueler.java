@@ -6,17 +6,18 @@ import greenfoot.Actor;
  * Klasse Schueler <br>
  * Kap. 5.6, Arbeitsaufträge 1 und 2
  */
-
 public class Schueler extends Actor
 {
     char geschlecht;
+
     int alter;
 
     Schueler(int startAlter)
     {
         alter = startAlter;
         initialisiereGeschlecht(); // wählt zufällig ein Geschlecht aus
-        aktualisiereBild(); // zeigt ein Bild an, dessen Größe an das Alter angepasst ist
+        aktualisiereBild(); // zeigt ein Bild an, dessen Größe an das Alter
+                            // angepasst ist
     }
 
     // A1
@@ -32,8 +33,8 @@ public class Schueler extends Actor
     }
 
     /*
-     * Der Programmtext ab hier Klasse braucht für die Bearbeitung der Arbeitsaufträge und Aufgaben
-     * weder gelesen noch verstanden zu werden.
+     * Der Programmtext ab hier Klasse braucht für die Bearbeitung der
+     * Arbeitsaufträge und Aufgaben weder gelesen noch verstanden zu werden.
      */
     void aktualisiereBild()
     {

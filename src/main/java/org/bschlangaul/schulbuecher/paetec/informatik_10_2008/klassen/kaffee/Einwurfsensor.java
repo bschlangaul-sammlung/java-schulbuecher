@@ -22,9 +22,11 @@ public class Einwurfsensor extends Sensor
     private Eingabefeld feld;
 
     /**
-     * Erzeugt ein neues Einwurfsensor. Wird beim Klick auf "Muenze einwerfen" aufgerufen
+     * Erzeugt ein neues Einwurfsensor. Wird beim Klick auf "Muenze einwerfen"
+     * aufgerufen
      */
-    public Einwurfsensor(Kaffeeautomat aktuellerAutomat, Eingabefeld relevantesFeld)
+    public Einwurfsensor(Kaffeeautomat aktuellerAutomat,
+            Eingabefeld relevantesFeld)
     {
         feld = relevantesFeld;
         automat = aktuellerAutomat;
@@ -39,7 +41,8 @@ public class Einwurfsensor extends Sensor
         Integer muenzwert = feld.ganzeZahlGeben();
         if (muenzwert == null)
         {
-            System.err.println("Bitte als Muenzwert eine ganze Zahl eingeben und nicht: \""
+            System.err.println(
+                    "Bitte als Muenzwert eine ganze Zahl eingeben und nicht: \""
                             + feld.inhaltGeben() + "\"");
             return;
         }

@@ -8,7 +8,6 @@ package org.bschlangaul.schulbuecher.cornelsen.informatik_3_2017.kapitel_04.them
  */
 class Verfolgung extends Ereignisbehandlung
 {
-
     /**
      * Legt die Objekte an.
      */
@@ -33,8 +32,8 @@ class Verfolgung extends Ereignisbehandlung
      * Die eigentliche Aktionsmethode für einen Mausklick. <br>
      * Muss bei Bedarf von einer Unterklasse überschrieben werden.
      *
-     * @param x x-Position des Mausklicks
-     * @param y y-Position des Mausklicks
+     * @param x      x-Position des Mausklicks
+     * @param y      y-Position des Mausklicks
      * @param anzahl Anzahl der aufeinanderfolgenden Mausklicks
      */
     @Override

@@ -12,16 +12,19 @@ import java.awt.event.*;
 class OBERFLAECHE
 {
     private Frame fenster;
+
     private Choice startWahl, zielWahl;
+
     private List routenAnzeige;
+
     private KONTROLLEUR kontrolleur;
 
     /**
      * Baut das Anzeigefenster auf.
      *
-     * @param k Kontrolleur
+     * @param k     Kontrolleur
      * @param namen Namen der Bahnhöfe
-     * @param plan Linienplananzeige
+     * @param plan  Linienplananzeige
      */
     OBERFLAECHE(KONTROLLEUR k, String[] namen, Canvas plan)
     {
@@ -39,7 +42,8 @@ class OBERFLAECHE
         startWahl = new Choice();
         startWahl.setSize(190, 30);
         startWahl.setLocation(600, 100);
-        startWahl.addItemListener(new ItemListener() {
+        startWahl.addItemListener(new ItemListener()
+        {
             public void itemStateChanged(ItemEvent e)
             {
                 kontrolleur.StartbahnhofSetzen(startWahl.getSelectedIndex());
@@ -54,7 +58,8 @@ class OBERFLAECHE
         zielWahl = new Choice();
         zielWahl.setSize(190, 30);
         zielWahl.setLocation(600, 140);
-        zielWahl.addItemListener(new ItemListener() {
+        zielWahl.addItemListener(new ItemListener()
+        {
             public void itemStateChanged(ItemEvent e)
             {
                 kontrolleur.ZielbahnhofSetzen(zielWahl.getSelectedIndex());
@@ -65,11 +70,12 @@ class OBERFLAECHE
         b.setLabel("Route berechnen");
         b.setSize(280, 30);
         b.setLocation(510, 170);
-        b.addActionListener(new ActionListener() {
+        b.addActionListener(new ActionListener()
+        {
             public void actionPerformed(ActionEvent e)
             {
                 kontrolleur.RouteBerechnen(startWahl.getSelectedIndex(),
-                                zielWahl.getSelectedIndex());
+                        zielWahl.getSelectedIndex());
             }
         });
         fenster.add(b);
@@ -87,7 +93,8 @@ class OBERFLAECHE
         b.setLabel("Beenden");
         b.setSize(280, 30);
         b.setLocation(510, 550);
-        b.addActionListener(new ActionListener() {
+        b.addActionListener(new ActionListener()
+        {
             public void actionPerformed(ActionEvent e)
             {
                 kontrolleur.Beenden();

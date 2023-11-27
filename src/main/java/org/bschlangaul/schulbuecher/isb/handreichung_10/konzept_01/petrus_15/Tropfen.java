@@ -16,5 +16,4 @@ public class Tropfen extends Niederschlag
     {
         ZeichenFenster.gibFenster().fuelleKreis((int) x, (int) y, radius, 1);
     }
-
 }

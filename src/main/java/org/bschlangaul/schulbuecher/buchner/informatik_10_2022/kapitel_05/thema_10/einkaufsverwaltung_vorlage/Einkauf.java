@@ -12,7 +12,9 @@ import java.util.*;
 public class Einkauf
 {
     private Artikel[] artikelfeld;
+
     private LocalDate datum;
+
     private String geschaeft;
 
     public Einkauf()
@@ -33,7 +35,6 @@ public class Einkauf
         this.artikelfeld = einkaufsliste;
         this.datum = datum;
         this.geschaeft = geschaeft;
-
     }
 
     public String nenneGeschaeft()

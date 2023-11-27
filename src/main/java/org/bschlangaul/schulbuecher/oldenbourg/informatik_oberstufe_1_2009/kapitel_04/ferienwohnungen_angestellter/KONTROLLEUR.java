@@ -9,10 +9,15 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapi
 class KONTROLLEUR implements KONTROLLEURINTERFACE
 {
     private OBERFLACHENINTERFACE oberflaeche;
+
     private LANDINFO[] laender;
+
     private DATENBANKVERBINDUNG verb;
+
     private OBJEKTINFO aktObjekt;
+
     private KUNDENINFO aktKunde;
+
     private String tabName;
 
     /**
@@ -94,10 +99,11 @@ class KONTROLLEUR implements KONTROLLEURINTERFACE
                     break;
                 }
             }
-            oberflaeche.ObjektInfoSetzen(info.NummerGeben(), info.NameGeben(), info.GroesseGeben(),
-                            info.ZimmerAnzahlGeben(), info.PersonenAnzahlGeben(), land,
-                            info.ArtGeben(), info.PreisGeben(), info.SperreGeben(),
-                            info.AusstattungenGeben());
+            oberflaeche.ObjektInfoSetzen(info.NummerGeben(), info.NameGeben(),
+                    info.GroesseGeben(), info.ZimmerAnzahlGeben(),
+                    info.PersonenAnzahlGeben(), land, info.ArtGeben(),
+                    info.PreisGeben(), info.SperreGeben(),
+                    info.AusstattungenGeben());
         }
     }
 
@@ -143,21 +149,22 @@ class KONTROLLEUR implements KONTROLLEURINTERFACE
     /**
      * Veranlasst das Anlegen eines neuen Objekts mit den gegebenen Daten.
      *
-     * @param name Name des Objekts
-     * @param groesse Wohnfläche des Objekts
-     * @param zimmer Anzahl der Zimmer
-     * @param personen Maximale Anzahl der Personen
-     * @param land Beschreibung des Landes
-     * @param art "Wohnung" oder "Haus"
-     * @param preis Wochenpreis
-     * @param gesperrt Buchungssperre
+     * @param name          Name des Objekts
+     * @param groesse       Wohnfläche des Objekts
+     * @param zimmer        Anzahl der Zimmer
+     * @param personen      Maximale Anzahl der Personen
+     * @param land          Beschreibung des Landes
+     * @param art           "Wohnung" oder "Haus"
+     * @param preis         Wochenpreis
+     * @param gesperrt      Buchungssperre
      * @param ausstattungen Zusatzausstattungen
      */
-    public void NeuesObjektAnlegen(String name, int groesse, int zimmer, int personen, Object land,
-                    String art, double preis, boolean gesperrt, boolean[] ausstattungen)
+    public void NeuesObjektAnlegen(String name, int groesse, int zimmer,
+            int personen, Object land, String art, double preis,
+            boolean gesperrt, boolean[] ausstattungen)
     {
-        String[] aus = {"Fernseher", "Waschmaschine", "Trockner", "Kuehlschrank", "Gefrierschrank",
-                        "Swimmingpool"};
+        String[] aus = { "Fernseher", "Waschmaschine", "Trockner",
+                "Kuehlschrank", "Gefrierschrank", "Swimmingpool" };
         boolean erster;
         String res;
         erster = true;
@@ -178,32 +185,33 @@ class KONTROLLEUR implements KONTROLLEURINTERFACE
             }
         }
         int nummer = verb.NeuesObjektAnlegen(name, groesse, zimmer, personen,
-                        ((LANDINFO) land).IDGeben(), art, preis, gesperrt, res);
+                ((LANDINFO) land).IDGeben(), art, preis, gesperrt, res);
         ObjektdatenSetzen();
-        oberflaeche.ObjektWaehlen(new OBJEKTINFO(nummer, name, groesse, zimmer, personen,
-                        ((LANDINFO) land).IDGeben(), art, preis, res, gesperrt));
+        oberflaeche.ObjektWaehlen(new OBJEKTINFO(nummer, name, groesse, zimmer,
+                personen, ((LANDINFO) land).IDGeben(), art, preis, res,
+                gesperrt));
     }
 
     /**
      * Veranlasst das ändern eines Objekts mit den gegebenen Daten.
      *
-     * @param nummer Schlüssel des Objekts
-     * @param name Name des Objekts
-     * @param groesse Wohnfläche des Objekts
-     * @param zimmer Anzahl der Zimmer
-     * @param personen Maximale Anzahl der Personen
-     * @param land Beschreibung des Landes
-     * @param art "Wohnung" oder "Haus"
-     * @param preis Wochenpreis
-     * @param gesperrt Buchungssperre
+     * @param nummer        Schlüssel des Objekts
+     * @param name          Name des Objekts
+     * @param groesse       Wohnfläche des Objekts
+     * @param zimmer        Anzahl der Zimmer
+     * @param personen      Maximale Anzahl der Personen
+     * @param land          Beschreibung des Landes
+     * @param art           "Wohnung" oder "Haus"
+     * @param preis         Wochenpreis
+     * @param gesperrt      Buchungssperre
      * @param ausstattungen Zusatzausstattungen
      */
-    public void ObjektAendern(int nummer, String name, int groesse, int zimmer, int personen,
-                    Object land, String art, double preis, boolean gesperrt,
-                    boolean[] ausstattungen)
+    public void ObjektAendern(int nummer, String name, int groesse, int zimmer,
+            int personen, Object land, String art, double preis,
+            boolean gesperrt, boolean[] ausstattungen)
     {
-        String[] aus = {"Fernseher", "Waschmaschine", "Trockner", "Kuehlschrank", "Gefrierschrank",
-                        "Swimmingpool"};
+        String[] aus = { "Fernseher", "Waschmaschine", "Trockner",
+                "Kuehlschrank", "Gefrierschrank", "Swimmingpool" };
         boolean erster;
         String res;
         erster = true;
@@ -223,11 +231,12 @@ class KONTROLLEUR implements KONTROLLEURINTERFACE
                 }
             }
         }
-        verb.ObjektAendern(nummer, name, groesse, zimmer, personen, ((LANDINFO) land).IDGeben(),
-                        art, preis, gesperrt, res);
+        verb.ObjektAendern(nummer, name, groesse, zimmer, personen,
+                ((LANDINFO) land).IDGeben(), art, preis, gesperrt, res);
         ObjektdatenSetzen();
-        oberflaeche.ObjektWaehlen(new OBJEKTINFO(nummer, name, groesse, zimmer, personen,
-                        ((LANDINFO) land).IDGeben(), art, preis, res, gesperrt));
+        oberflaeche.ObjektWaehlen(new OBJEKTINFO(nummer, name, groesse, zimmer,
+                personen, ((LANDINFO) land).IDGeben(), art, preis, res,
+                gesperrt));
     }
 
     /**
@@ -271,7 +280,8 @@ class KONTROLLEUR implements KONTROLLEURINTERFACE
     {
         if (info != null)
         {
-            oberflaeche.KundenInfoSetzen(info.IDGeben(), info.NameGeben(), info.VornameGeben());
+            oberflaeche.KundenInfoSetzen(info.IDGeben(), info.NameGeben(),
+                    info.VornameGeben());
         }
     }
 
@@ -279,8 +289,8 @@ class KONTROLLEUR implements KONTROLLEURINTERFACE
      * Veranlasst das Anlegen eines neuen Kunden mit den gegebenen Daten.
      *
      * @param benutzername Schlüssel des Kunden
-     * @param name Name des Kunden
-     * @param vorname Vorname des Kunden
+     * @param name         Name des Kunden
+     * @param vorname      Vorname des Kunden
      */
     public void NeuenKundenAnlegen(String name, String vorname)
     {
@@ -288,21 +298,23 @@ class KONTROLLEUR implements KONTROLLEURINTERFACE
         benutzername = verb.BenutzernamenErzeugen(name, vorname);
         verb.NeuenKundenAnlegen(benutzername, name, vorname);
         KundendatenSetzen();
-        oberflaeche.KundeWaehlen(new KUNDENINFO(benutzername, name, vorname, ""));
+        oberflaeche
+                .KundeWaehlen(new KUNDENINFO(benutzername, name, vorname, ""));
     }
 
     /**
      * Veranlasst das ändern eines Kunden mit den gegebenen Daten.
      *
      * @param benutzername Schlüssel des Kunden
-     * @param name Name des Kunden
-     * @param vorname Vorname des Kunden
+     * @param name         Name des Kunden
+     * @param vorname      Vorname des Kunden
      */
     public void KundenAendern(String benutzername, String name, String vorname)
     {
         verb.KundenAendern(benutzername, name, vorname);
         KundendatenSetzen();
-        oberflaeche.KundeWaehlen(new KUNDENINFO(benutzername, name, vorname, ""));
+        oberflaeche
+                .KundeWaehlen(new KUNDENINFO(benutzername, name, vorname, ""));
     }
 
     /**
@@ -320,7 +332,7 @@ class KONTROLLEUR implements KONTROLLEURINTERFACE
      * Veranlasst das Setzen des Passworts für den angegebenen Kunden.
      *
      * @param benutzername Schlüssel des Kunden
-     * @param pass das Passwort des Kunden
+     * @param pass         das Passwort des Kunden
      */
     public void PasswortSetzen(String benutzername, String pass)
     {
@@ -335,8 +347,8 @@ class KONTROLLEUR implements KONTROLLEURINTERFACE
      */
     public void BuchungenFuerObjektHolen(Object objekt)
     {
-        oberflaeche.BuchungenSetzen(
-                        verb.BuchungenFuerObjektHolen(((OBJEKTINFO) objekt).NummerGeben()));
+        oberflaeche.BuchungenSetzen(verb
+                .BuchungenFuerObjektHolen(((OBJEKTINFO) objekt).NummerGeben()));
     }
 
     /**
@@ -346,7 +358,8 @@ class KONTROLLEUR implements KONTROLLEURINTERFACE
      */
     public void BuchungenFuerKundeHolen(Object kunde)
     {
-        oberflaeche.BuchungenSetzen(verb.BuchungenFuerKundenHolen(((KUNDENINFO) kunde).IDGeben()));
+        oberflaeche.BuchungenSetzen(
+                verb.BuchungenFuerKundenHolen(((KUNDENINFO) kunde).IDGeben()));
     }
 
     /**

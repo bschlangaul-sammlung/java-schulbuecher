@@ -8,24 +8,21 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_2_2010.kapi
  */
 class LaufzeitMessung
 {
-
     int i = 0;
 
     /**
-     * Methode zum Testen der Laufzeit einer anderen Methode, die unterhalb des Kommentars
-     * aufgerufen werden muss.
+     * Methode zum Testen der Laufzeit einer anderen Methode, die unterhalb des
+     * Kommentars aufgerufen werden muss.
      *
      * @return Ausführungsdauer
      */
     public long LaufzeitTesten()
     {
-
         long startNanoTime;
         startNanoTime = System.nanoTime();
-
-        // Hier muss die zu testende Methode notiert werden. Als Beispiel hier ObjektErzeugen().
+        // Hier muss die zu testende Methode notiert werden. Als Beispiel hier
+        // ObjektErzeugen().
         ObjektErzeugen();
-
         return System.nanoTime() - startNanoTime;
     }
 

@@ -8,14 +8,13 @@ package org.bschlangaul.schulbuecher.cornelsen.informatik_3_2017.kapitel_04.them
  */
 class KreisBesser extends Kreis
 {
-
     /**
      * Legt den Kreis nach den gegebenen Daten an.
      *
-     * @param x x-Position des Mittelpunkts
-     * @param y y-Position des Mittelpunkts
+     * @param x      x-Position des Mittelpunkts
+     * @param y      y-Position des Mittelpunkts
      * @param radius Radius des Kreises
-     * @param farbe Farbe des Kreises
+     * @param farbe  Farbe des Kreises
      */
     KreisBesser(int x, int y, int radius, String farbe)
     {

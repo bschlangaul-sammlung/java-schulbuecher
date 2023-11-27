@@ -8,12 +8,11 @@ package org.bschlangaul.schulbuecher.cornelsen.informatik_3_2017.kapitel_04.them
  */
 class MauerHorizontal extends Rechteck
 {
-
     /**
      * Konstruktor
      *
-     * @param x 0<=x<=15
-     * @param y 0<=y<=9
+     * @param x      0<=x<=15
+     * @param y      0<=y<=9
      * @param breite x+breite <=15
      */
     MauerHorizontal(int x, int y, int breite)
@@ -23,5 +22,4 @@ class MauerHorizontal extends Rechteck
         GrößeSetzen(breite * 50 + 2, 2);
         FarbeSetzen("schwarz");
     }
-
 }

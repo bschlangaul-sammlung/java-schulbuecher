@@ -8,7 +8,6 @@ package org.bschlangaul.schulbuecher.isb.handreichung_11.kapitel_02.softwaretech
  */
 class KONTENLISTE
 {
-
     private LISTENELEMENT start;
 
     /**

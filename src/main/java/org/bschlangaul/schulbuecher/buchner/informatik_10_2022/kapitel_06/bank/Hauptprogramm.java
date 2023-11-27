@@ -14,5 +14,4 @@ public class Hauptprogramm
         Kunde kunde1 = new Kunde("Zariah", "Huber", konto1);
         kunde1.zeigeEigenenKontostand(1234);
     }
-
 }

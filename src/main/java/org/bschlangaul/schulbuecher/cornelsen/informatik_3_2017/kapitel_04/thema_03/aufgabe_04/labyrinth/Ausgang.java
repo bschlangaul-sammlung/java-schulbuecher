@@ -8,7 +8,6 @@ package org.bschlangaul.schulbuecher.cornelsen.informatik_3_2017.kapitel_04.them
  */
 class Ausgang extends Rechteck
 {
-
     /**
      * Konstruktor
      */
@@ -19,5 +18,4 @@ class Ausgang extends Rechteck
         GrößeSetzen(48, 48);
         FarbeSetzen("grün");
     }
-
 }

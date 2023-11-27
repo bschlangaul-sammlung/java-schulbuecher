@@ -43,7 +43,6 @@ public class Zahlensortierung
                 int h = zahlen[i];
                 zahlen[i] = zahlen[i + 1];
                 zahlen[i + 1] = h;
-
             }
             i = i + 1;
         }
@@ -56,8 +55,9 @@ public class Zahlensortierung
         {
             bubble();
             // System.out.println("Schreibe Array auf Konsole:");
-            System.out.println(zahlen[0] + " " + zahlen[1] + " " + zahlen[2] + " " + zahlen[3] + " "
-                            + zahlen[4] + " " + zahlen[5] + " " + zahlen[6]);
+            System.out.println(zahlen[0] + " " + zahlen[1] + " " + zahlen[2]
+                    + " " + zahlen[3] + " " + zahlen[4] + " " + zahlen[5] + " "
+                    + zahlen[6]);
             i = i + 1;
         }
     }

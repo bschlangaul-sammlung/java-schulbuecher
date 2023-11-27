@@ -9,7 +9,9 @@ package org.bschlangaul.schulbuecher.buchner.informatik_10_2022.kapitel_06.gesan
 public class Saenger
 {
     private String vorname;
+
     private String nachname;
+
     private String stimmlage;
 
     public Saenger(String einVorname, String einNachname, String eineStimmlage)
@@ -28,5 +30,4 @@ public class Saenger
     {
         return stimmlage;
     }
-
 }

@@ -10,7 +10,6 @@ class STAPEL
         liste = new LISTE();
     }
 
-
     // Methoden
     void Einfuegen(BAUM baum)
     {
@@ -21,6 +20,4 @@ class STAPEL
     {
         return liste.AnfangEntfernen();
     }
-
-
 }

@@ -2,12 +2,14 @@ package org.bschlangaul.schulbuecher.buchner.informatik_10_2022.kapitel_03.thema
 
 import greenfoot.*; // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
-
 public class Figuren extends Actor
 {
     Figur f1 = new Figur();
+
     Dreieck d1 = new Dreieck();
+
     Rechteck r1 = new Rechteck();
+
     Figur f2 = new Dreieck();
 
     public void act()

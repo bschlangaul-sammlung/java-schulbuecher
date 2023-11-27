@@ -13,15 +13,19 @@ class SCHEIBE implements DATENELEMENT
 {
     /** Höhe einer Scheibe */
     private int hoehe;
+
     /** Breite einer Scheibe */
     private int breite;
+
     /** Leinwand zur Anzeige der Scheibe */
     private Canvas c;
+
     /** Zufallszahlgenerator für die Farbe der Scheibe */
     private Random zgenerator;
 
     /**
-     * Konstruktor Legt die Maße und Farbe der Scheibe fest und sorgt für die Anzeige
+     * Konstruktor Legt die Maße und Farbe der Scheibe fest und sorgt für die
+     * Anzeige
      *
      * @param breiteNeu Breite der Scheibe
      */
@@ -31,8 +35,8 @@ class SCHEIBE implements DATENELEMENT
         breite = breiteNeu;
         zgenerator = new Random();
         c = new Canvas();
-        c.setBackground(new Color(zgenerator.nextInt(3) * 127, zgenerator.nextInt(3) * 127,
-                        zgenerator.nextInt(3) * 127));
+        c.setBackground(new Color(zgenerator.nextInt(3) * 127,
+                zgenerator.nextInt(3) * 127, zgenerator.nextInt(3) * 127));
         (FENSTER.PanelGeben()).add(c, 0);
     }
 
@@ -46,17 +50,18 @@ class SCHEIBE implements DATENELEMENT
     void PositionSetzen(int x, int y)
     {
         c.setBounds(x - breite / 2, y, breite, hoehe);
-
     }
 
     /**
      * Ausgabe von Information über ein Ausgabefenster ohne Funktion
      */
     public void InformationAusgeben()
-    {}
+    {
+    }
 
     /**
-     * Vergleich zweier Datenelemente bezüglich einer Ordnungsrelation ohne Funktion
+     * Vergleich zweier Datenelemente bezüglich einer Ordnungsrelation ohne
+     * Funktion
      *
      * @param dvergleich Datenelement zum Vergleich
      */
@@ -66,7 +71,8 @@ class SCHEIBE implements DATENELEMENT
     }
 
     /**
-     * Identifikation eines Datenelements aufgrund seines Schlüssels ohne Funktion
+     * Identifikation eines Datenelements aufgrund seines Schlüssels ohne
+     * Funktion
      *
      * @param s Schlüssel vom Typ String
      */
@@ -82,6 +88,4 @@ class SCHEIBE implements DATENELEMENT
     {
         (FENSTER.PanelGeben()).remove(c);
     }
-
-
 }

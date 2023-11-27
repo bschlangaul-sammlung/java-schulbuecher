@@ -18,7 +18,6 @@ class Fliegenpilz extends Figur
         FigurteilFestlegenEllipse(-45, -10, 90, 30, "rot");
         PositionSetzen(325, 125);
         GanzNachVornBringen();
-
     }
 
     /**
@@ -34,12 +33,10 @@ class Fliegenpilz extends Figur
         FigurteilFestlegenEllipse(-45, -10, 90, 30, "rot");
         PositionSetzen(325, 125);
         GanzNachVornBringen();
-
         if (xNeu < 10 && xNeu >= 0 && yNeu < 10 && yNeu >= 0)
         {
             PositionSetzen(xNeu * 50 + 25, yNeu * 50 + 25);
         }
-
     }
 
     /**

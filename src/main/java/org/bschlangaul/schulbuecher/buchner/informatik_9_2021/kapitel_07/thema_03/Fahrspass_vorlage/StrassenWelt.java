@@ -6,10 +6,9 @@ import greenfoot.World;
  * Projekt zu Kap. 7.3. <br>
  *
  * Klasse StrassenWelt <br>
- * Der Programmtext dieser Klasse braucht für die Bearbeitung der Arbeitsaufträge und Aufgaben weder
- * gelesen noch verstanden zu werden.
+ * Der Programmtext dieser Klasse braucht für die Bearbeitung der
+ * Arbeitsaufträge und Aufgaben weder gelesen noch verstanden zu werden.
  */
-
 public class StrassenWelt extends World
 {
     public StrassenWelt()

@@ -19,7 +19,6 @@ class ZAHL implements DATENELEMENT
         z = zahlNeu;
     }
 
-
     /**
      * Ausgabe der Zahl auf der Konsole
      */
@@ -64,5 +63,4 @@ class ZAHL implements DATENELEMENT
         zahlAlsString = z + "";
         return zahlAlsString.compareTo(s) == 0;
     }
-
 }

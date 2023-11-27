@@ -6,7 +6,6 @@ package org.bschlangaul.schulbuecher.isb.handreichung_11.kapitel_02.softwaretech
  * @author
  * @version 1.0
  */
-
 interface DATENELEMENT
 {
     /**
@@ -21,7 +20,8 @@ interface DATENELEMENT
      * Implementiert die Kleiner-Relation für die Minimumsuche.
      *
      * @param d Datenelement mit dem Vergleichswert.
-     * @return true, wenn das Element einen kleineren Wert hat als der Vergleichswert.
+     * @return true, wenn das Element einen kleineren Wert hat als der
+     *         Vergleichswert.
      */
     boolean IstKleiner(DATENELEMENT d);
 }

@@ -10,9 +10,9 @@ class Monster extends Figur
 {
     /** Anzahl der gefressenen Krümel */
     int anzahl;
+
     /** Mundstellung */
     boolean mundIstZu;
-
 
     /**
      * Legt die Figur und die Munstellung fest.
@@ -83,7 +83,8 @@ class Monster extends Figur
     }
 
     /**
-     * Stellt das in einer der Farben gelb, orange, rot bzw. grün mit geschlossenem Mund dar.
+     * Stellt das in einer der Farben gelb, orange, rot bzw. grün mit
+     * geschlossenem Mund dar.
      *
      * @param farbe die gewünschte Farbe
      */
@@ -108,13 +109,15 @@ class Monster extends Figur
     }
 
     /**
-     * Stellt das in einer der Farben gelb, orange, rot bzw. grün mit offenem Mund dar.
+     * Stellt das in einer der Farben gelb, orange, rot bzw. grün mit offenem
+     * Mund dar.
      *
      * @param farbe die gewünschte Farbe
      */
     void Öffnen(String farbe)
     {
-        if ((farbe == "gelb") || (farbe == "orange") || (farbe == "rot") || (farbe == "grün"))
+        if ((farbe == "gelb") || (farbe == "orange") || (farbe == "rot")
+                || (farbe == "grün"))
         {
             Offen(farbe);
         }
@@ -130,18 +133,21 @@ class Monster extends Figur
     {
         switch (taste)
         {
-            case 37:
-                Drehen(90);
-                break;
-            case 38:
-                Gehen(10);
-                break;
-            case 39:
-                Drehen(-90);
-                break;
-            case 40:
-                Drehen(180);
-                break;
+        case 37:
+            Drehen(90);
+            break;
+
+        case 38:
+            Gehen(10);
+            break;
+
+        case 39:
+            Drehen(-90);
+            break;
+
+        case 40:
+            Drehen(180);
+            break;
         }
     }
 
@@ -155,9 +161,9 @@ class Monster extends Figur
     {
         switch (taste)
         {
-            case ' ':
-                Gehen(50);
-                break;
+        case ' ':
+            Gehen(50);
+            break;
         }
     }
 

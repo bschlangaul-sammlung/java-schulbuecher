@@ -7,10 +7,10 @@ import greenfoot.Actor;
  *
  * Kap. 7.3 Arbeitsauftrag 3, Aufgabe 1
  */
-
 public class PKW extends Actor
 {
     int hoechstgeschwindigkeit;
+
     double ladestand;
 
     PKW()
@@ -20,8 +20,9 @@ public class PKW extends Actor
     }
 
     /*
-     * Das Auto bewegt sich, solange noch Energie vorhanden ist. Ist der Ladestand unter 30%, fährt
-     * es langsamer, verbraucht aber auch weniger Energie.
+     * Das Auto bewegt sich, solange noch Energie vorhanden ist. Ist der
+     * Ladestand unter 30%, fährt es langsamer, verbraucht aber auch weniger
+     * Energie.
      */
     void fahre()
     {
@@ -41,7 +42,8 @@ public class PKW extends Actor
     }
 
     /*
-     * Vor Beginn der Fahrt kann die Batterie (bis maximmal 100) nochmals geladen werden.
+     * Vor Beginn der Fahrt kann die Batterie (bis maximmal 100) nochmals
+     * geladen werden.
      */
     void lade(int menge)
     {

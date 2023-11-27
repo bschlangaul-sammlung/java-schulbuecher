@@ -4,7 +4,9 @@ class KUNDE extends DATENELEMENT
 {
     // Attribute
     private int kundennummer;
+
     private String schulname;
+
     private String software;
 
     // Konstruktor
@@ -16,14 +18,16 @@ class KUNDE extends DATENELEMENT
     }
 
     /**
-     * gibt Information über Kundennummer des Anrufers und Problembeschreibung aus.
+     * gibt Information über Kundennummer des Anrufers und Problembeschreibung
+     * aus.
      */
     void Ausgeben()
     {
         System.out.println("Kundennummer: " + kundennummer);
         System.out.println("Schulname: " + schulname);
         System.out.println("Eingesetzte Software: " + software);
-        System.out.println("----------------------------------------------------");
+        System.out.println(
+                "----------------------------------------------------");
     }
 
     /**
@@ -33,7 +37,6 @@ class KUNDE extends DATENELEMENT
     {
         KUNDE vergleichskunde = (KUNDE) vergleichsObjekt;
         int ergebnis = 0;
-
         if (kundennummer < vergleichskunde.kundennummer)
             ergebnis = -1;
         if (kundennummer == vergleichskunde.kundennummer)
@@ -51,6 +54,4 @@ class KUNDE extends DATENELEMENT
     {
         schulname = name;
     }
-
-
 }

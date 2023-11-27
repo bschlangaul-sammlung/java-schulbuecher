@@ -12,11 +12,17 @@ import java.util.*;
 class PLANANZEIGE extends Canvas
 {
     static final int breite = 400;
+
     static final int hoehe = 500;
+
     private BAHNHOFSLISTE b;
+
     private ArrayList<PLANABSCHNITT> abschnitte;
+
     private int faktorx, faktory;
+
     private int offsetx, offsety;
+
     private BAHNHOF startBahnhof, zielBahnhof;
 
     /**

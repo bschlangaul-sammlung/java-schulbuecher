@@ -14,7 +14,8 @@ public class ADRESSBUCH
     private BINBAUM adressbuch;
 
     /**
-     * Konstruktor für Objekte der Klasse ADRESSBUCH, erzeugt ein Adressbuch mit 7 Einträgen
+     * Konstruktor für Objekte der Klasse ADRESSBUCH, erzeugt ein Adressbuch mit
+     * 7 Einträgen
      */
     public ADRESSBUCH()
     {
@@ -27,15 +28,15 @@ public class ADRESSBUCH
         Einfuegen("Ulli", "97000106");
         Einfuegen("Jennni", "97000108");
         Einfuegen("Peter", "97000109");
-
     }
 
     /**
-     * Einfuegen erzeugt ein ein Objekt der Klasse WOERTERBUCHEINTRAG mit den Eingabewerten und fügt
-     * diesen Wörterbucheintrag sortiert in die Liste woerterbuch ein. Es wird verhindert, dass ein
-     * englisches Wort mehrfach im Wörterbuch abgespeichert werden kann.
+     * Einfuegen erzeugt ein ein Objekt der Klasse WOERTERBUCHEINTRAG mit den
+     * Eingabewerten und fügt diesen Wörterbucheintrag sortiert in die Liste
+     * woerterbuch ein. Es wird verhindert, dass ein englisches Wort mehrfach im
+     * Wörterbuch abgespeichert werden kann.
      *
-     * @param wort englisches Wort
+     * @param wort      englisches Wort
      * @param bedeutung die deutsche(n) Bedeutung(en).
      */
     public void Einfuegen(String name, String telefonnummer)
@@ -56,19 +57,18 @@ public class ADRESSBUCH
         return adressbuch.Suchen(gesuchterName);
     }
 
-
     /**
-     * überprüt, ob ein Datenelement mit dem eingegebenen Schlüssel (in Form einer Zeichenkette)
-     * vorhanden ist.
+     * überprüt, ob ein Datenelement mit dem eingegebenen Schlüssel (in Form
+     * einer Zeichenkette) vorhanden ist.
      *
-     * @param suchSchluessel Schl&uumlssel, nach dem gesucht wird als Zeichenkette
+     * @param suchSchluessel Schl&uumlssel, nach dem gesucht wird als
+     *                       Zeichenkette
      * @return true, im Erfolgsfall, false sonst.
      */
     public boolean IstVorhanden(String gesuchterName)
     {
         return adressbuch.IstVorhanden(gesuchterName);
     }
-
 
     /**
      * Gibt alle Einträge des Wörterbuchs als Baum aus.
@@ -81,7 +81,8 @@ public class ADRESSBUCH
     }
 
     /**
-     * Gibt alle Einträge inklusiv Abschluss-Objekte des Wörterbuchs als Baum aus.
+     * Gibt alle Einträge inklusiv Abschluss-Objekte des Wörterbuchs als Baum
+     * aus.
      *
      */
     public void BaumAusgeben2()
@@ -100,16 +101,16 @@ public class ADRESSBUCH
         System.out.println("---------------------------------");
     }
 
-
     /**
-     * Die Methode BedeutungSetzen ermöglicht es, bei einem englischen Wort die deutsche Bedeutung
-     * zu verändern.
+     * Die Methode BedeutungSetzen ermöglicht es, bei einem englischen Wort die
+     * deutsche Bedeutung zu verändern.
      *
-     * @param gesuchtesWort englisches Wort, dessen Bedeutung verändert werden soll
-     * @param bedeutungNeu neue Bedeutung
+     * @param gesuchtesWort englisches Wort, dessen Bedeutung verändert werden
+     *                      soll
+     * @param bedeutungNeu  neue Bedeutung
      */
-    public void EintragSetzen(String gesuchterName, String telefonnummerNeu, String eMailNeu,
-                    String strasseNeu, String plzNeu, String ortNeu)
+    public void EintragSetzen(String gesuchterName, String telefonnummerNeu,
+            String eMailNeu, String strasseNeu, String plzNeu, String ortNeu)
     {
         ADRESSBUCHEINTRAG adressbucheintrag;
         adressbucheintrag = (ADRESSBUCHEINTRAG) Suchen(gesuchterName);
@@ -119,9 +120,8 @@ public class ADRESSBUCH
         }
         else
         {
-            adressbucheintrag.EintragSetzen(telefonnummerNeu, eMailNeu, strasseNeu, plzNeu, ortNeu);
+            adressbucheintrag.EintragSetzen(telefonnummerNeu, eMailNeu,
+                    strasseNeu, plzNeu, ortNeu);
         }
     }
-
-
 }

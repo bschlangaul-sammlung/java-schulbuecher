@@ -6,7 +6,6 @@ package org.bschlangaul.schulbuecher.isb.handreichung_10.konzept_02.supermarkt.s
  * @author: Albert Wiedemann
  * @version 1.0
  */
-
 interface TAKTKLIENT
 {
     /**

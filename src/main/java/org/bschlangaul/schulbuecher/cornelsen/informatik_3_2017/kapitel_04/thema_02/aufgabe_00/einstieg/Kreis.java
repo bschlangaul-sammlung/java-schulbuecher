@@ -10,16 +10,22 @@ public class Kreis
 {
     /** x-Position des Kreismittelpunktes. */
     protected int x;
+
     /** y-Position des Kreismittelpunktes. */
     protected int y;
+
     /** Radius des Kreises. */
     protected int radius;
+
     /** Farbe des Kreises. */
     protected String farbe;
+
     /** Sichtbarkeit des Kreises. */
     protected boolean sichtbar;
+
     /** Drehwinkel (mathematisch positiver Drehsinn) des Kreises in Grad. */
     protected int winkel;
+
     /** Referenz auf das Delegate-Objekt. */
     Zeichenfenster.GrafikSymbol symbol;
 
@@ -92,9 +98,10 @@ public class Kreis
     }
 
     /**
-     * Setzt die Farbe des Kreises. Erlaubte Farben sind: "weiß", "weiss", "rot", "grün", "gruen",
-     * "blau", "gelb", "magenta", "cyan", "hellgelb", "hellgrün", "hellgruen", "orange", "braun",
-     * "grau", "schwarz" Alle anderen Eingaben werden auf die Farbe schwarz abgebildet.
+     * Setzt die Farbe des Kreises. Erlaubte Farben sind: "weiß", "weiss",
+     * "rot", "grün", "gruen", "blau", "gelb", "magenta", "cyan", "hellgelb",
+     * "hellgrün", "hellgruen", "orange", "braun", "grau", "schwarz" Alle
+     * anderen Eingaben werden auf die Farbe schwarz abgebildet.
      *
      * @param farbe (neue) Farbe
      */
@@ -105,8 +112,9 @@ public class Kreis
     }
 
     /**
-     * Setzt den Drehwinkel des Kreises. Die Winkelangabe ist in Grad,positive Werte drehen gegen
-     * den Uhrzeigersinn, negative Werte drehen im Uhrzeigersinn (mathematisch positiver Drehsinn).
+     * Setzt den Drehwinkel des Kreises. Die Winkelangabe ist in Grad,positive
+     * Werte drehen gegen den Uhrzeigersinn, negative Werte drehen im
+     * Uhrzeigersinn (mathematisch positiver Drehsinn).
      *
      * @param winkel der (neue) Drehwinkel des Kreises
      */
@@ -117,7 +125,8 @@ public class Kreis
     }
 
     /**
-     * Schaltet die Sichtbarkeit des Kreises ein oder aus. Erlaubte Parameterwerte: true, false
+     * Schaltet die Sichtbarkeit des Kreises ein oder aus. Erlaubte
+     * Parameterwerte: true, false
      *
      * @param sichtbar (neue) Sichtbarkeit des Kreises
      */

@@ -9,12 +9,13 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapi
 class LANDINFO
 {
     private int ID;
+
     private String name;
 
     /**
      * Besetzt die Attribute
      *
-     * @param ID Schlüssel des Landes
+     * @param ID   Schlüssel des Landes
      * @param name Name des Landes
      */
     LANDINFO(int ID, String name)

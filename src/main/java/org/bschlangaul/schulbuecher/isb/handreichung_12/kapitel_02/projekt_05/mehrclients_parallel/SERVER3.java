@@ -1,6 +1,5 @@
 package org.bschlangaul.schulbuecher.isb.handreichung_12.kapitel_02.projekt_05.mehrclients_parallel;
 
-
 import java.net.*;
 import java.io.*;
 
@@ -12,9 +11,12 @@ import java.io.*;
  */
 public class SERVER3
 {
-
-    /** bidirektionale Schnittstelle zur Netzwerkprotokoll-Implementierung des Servers */
+    /**
+     * bidirektionale Schnittstelle zur Netzwerkprotokoll-Implementierung des
+     * Servers
+     */
     private ServerSocket serverSocket = null;
+
     /** Portnummer des Ports, auf dem die Verbindungen etabliert sind */
     private int port;
 
@@ -22,13 +24,13 @@ public class SERVER3
      * Konstruktor des Servers
      *
      * @exception IOException eine Ausnahme tritt auf falls:<br/>
-     *            - der Server nicht gestartet werden kann (weil beispielsweise der Port nicht frei
-     *            ist)<br/>
-     *            - die Clientverbindung gestört bzw. unterbrochen wurde.
+     *                        - der Server nicht gestartet werden kann (weil
+     *                        beispielsweise der Port nicht frei ist)<br/>
+     *                        - die Clientverbindung gestört bzw. unterbrochen
+     *                        wurde.
      */
     public SERVER3() throws IOException
     {
-
         ServerStarten();
         while (true)
         {// wartet immer auf neue Clientverbindungen
@@ -42,7 +44,8 @@ public class SERVER3
     private void AufNeuenClientWarten() throws IOException
     {
         System.out.println("warte auf Client, hoere auf Port " + port);
-        Socket clientSocket = serverSocket.accept(); // warten auf die Verbindung
+        Socket clientSocket = serverSocket.accept(); // warten auf die
+                                                     // Verbindung
         CLIENTPROZESS clientprozess = new CLIENTPROZESS(clientSocket);
         clientprozess.start();
         System.out.println("Clientprozess gestartet...");
@@ -53,9 +56,9 @@ public class SERVER3
      */
     private void ServerStarten() throws IOException
     {
-
         System.out.println("Port eingeben: ");
-        BufferedReader tastatur = new BufferedReader(new InputStreamReader(System.in));
+        BufferedReader tastatur = new BufferedReader(
+                new InputStreamReader(System.in));
         // Server Socket erzeugen
         port = Integer.parseInt(tastatur.readLine());
         serverSocket = new ServerSocket(port);
@@ -69,11 +72,11 @@ public class SERVER3
      */
     public static void main(String[] args)
     {
-
         try
         {
             new SERVER3();
-        } catch (Exception e)
+        }
+        catch (Exception e)
         {
             System.err.println("Fehler in der Serververabeitung.");
             System.exit(1);

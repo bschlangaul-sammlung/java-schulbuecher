@@ -4,19 +4,19 @@ import javax.swing.*;
 import java.util.Scanner;
 
 /**
- * Die Klasse Notiz bietet Dienste an, die Meldungen in einem kleinen Fenster ausgeben und
- * Zeichenketten oder Zahlen oder Bestaetigung/Ablehnung in diesem Fenster einlesen. Die Meldungen
- * muessen vom Benutzer bestaetigt werden, erst dann "geht es weiter im Programmablauf".
+ * Die Klasse Notiz bietet Dienste an, die Meldungen in einem kleinen Fenster
+ * ausgeben und Zeichenketten oder Zahlen oder Bestaetigung/Ablehnung in diesem
+ * Fenster einlesen. Die Meldungen muessen vom Benutzer bestaetigt werden, erst
+ * dann "geht es weiter im Programmablauf".
  *
  * @author Ute Heuer
  * @version
  */
 public class Notiz
 {
-
     /**
-     * Ueber ein kleines Eingabefenster kann eine Zeile Text eingelesen werden. Leerzeichen am
-     * Anfang und am Ende werden abgetrennt.
+     * Ueber ein kleines Eingabefenster kann eine Zeile Text eingelesen werden.
+     * Leerzeichen am Anfang und am Ende werden abgetrennt.
      */
     public String lesen()
     {
@@ -24,8 +24,8 @@ public class Notiz
     }
 
     /**
-     * Ueber ein kleines Eingabefenster kann eine Zeile Text eingelesen werden. Leerzeichen am
-     * Anfang und am Ende werden abgetrennt.
+     * Ueber ein kleines Eingabefenster kann eine Zeile Text eingelesen werden.
+     * Leerzeichen am Anfang und am Ende werden abgetrennt.
      *
      * @param aufforderung wird ueber der Eingabezeile des Fensters angezeigt
      */
@@ -43,9 +43,10 @@ public class Notiz
     }
 
     /**
-     * Erzeugt ein kleines Eingabefenster und liest eine Ganzzahl ein. Davor duerfen maximal
-     * Leerzeichen stehen. Das Ende der Ganzzahl kann durch ein Leerzeichen angezeigt werden. Alles
-     * nach diesem Leerzeichen wird dann ignoriert.
+     * Erzeugt ein kleines Eingabefenster und liest eine Ganzzahl ein. Davor
+     * duerfen maximal Leerzeichen stehen. Das Ende der Ganzzahl kann durch ein
+     * Leerzeichen angezeigt werden. Alles nach diesem Leerzeichen wird dann
+     * ignoriert.
      */
     public int ganzeZahlLesen()
     {
@@ -53,33 +54,38 @@ public class Notiz
     }
 
     /**
-     * Erzeugt ein kleines Eingabefenster und liest eine Ganzzahl ein. Davor duerfen maximal
-     * Leerzeichen stehen. Das Ende der Ganzzahl kann durch ein Leerzeichen angezeigt werden. Alles
-     * nach diesem Leerzeichen wird dann ignoriert.
+     * Erzeugt ein kleines Eingabefenster und liest eine Ganzzahl ein. Davor
+     * duerfen maximal Leerzeichen stehen. Das Ende der Ganzzahl kann durch ein
+     * Leerzeichen angezeigt werden. Alles nach diesem Leerzeichen wird dann
+     * ignoriert.
      *
      * @param aufforderung wird ueber der Eingabezeile des Fensters angezeigt
      */
     public int ganzeZahlLesen(String aufforderung)
     {
-        Scanner scanner = eingabeLesen("Eingabe einer ganzen Zahl", aufforderung);
+        Scanner scanner = eingabeLesen("Eingabe einer ganzen Zahl",
+                aufforderung);
         if (scanner.hasNextInt())
         {
             return scanner.nextInt();
         }
         else
         {
-            return new Notiz().ganzeZahlLesen("Sie haben keine ganze Zahl eingegeben. "
+            return new Notiz()
+                    .ganzeZahlLesen("Sie haben keine ganze Zahl eingegeben. "
                             + "Bitte versuchen Sie erneut, eine ganze Zahl einzugeben! \n"
                             + aufforderung);
         }
     }
 
     /**
-     * Erzeugt ein kleines Eingabefenster und liest eine Zahl ein. Davor duerfen maximal Leerzeichen
-     * stehen. Hat die Zahl Stellen nach dem Komma, so muessen diese auch durch ein Komma abgetrennt
-     * werden (falls Sie in einer "deutschen Umgebung" arbeiten). Bsp.: 5 oder 5,789 sind Eingaben,
-     * die in diesem Fall akzeptiert werden. Das Ende der Zahl kann durch ein Leerzeichen angezeigt
-     * werden. Alles nach diesem Leerzeichen wird dann ignoriert.
+     * Erzeugt ein kleines Eingabefenster und liest eine Zahl ein. Davor duerfen
+     * maximal Leerzeichen stehen. Hat die Zahl Stellen nach dem Komma, so
+     * muessen diese auch durch ein Komma abgetrennt werden (falls Sie in einer
+     * "deutschen Umgebung" arbeiten). Bsp.: 5 oder 5,789 sind Eingaben, die in
+     * diesem Fall akzeptiert werden. Das Ende der Zahl kann durch ein
+     * Leerzeichen angezeigt werden. Alles nach diesem Leerzeichen wird dann
+     * ignoriert.
      */
     public double kommaZahlLesen()
     {
@@ -87,11 +93,13 @@ public class Notiz
     }
 
     /**
-     * Erzeugt ein kleines Eingabefenster und liest eine Zahl ein. Davor duerfen maximal Leerzeichen
-     * stehen. Hat die Zahl Stellen nach dem Komma, so muessen diese auch durch ein Komma abgetrennt
-     * werden (falls Sie in einer "deutschen Umgebung" arbeiten). Bsp.: 5 oder 5,789 sind Eingaben,
-     * die in diesem Fall akzeptiert werden. Das Ende der Zahl kann durch ein Leerzeichen angezeigt
-     * werden. Alles nach diesem Leerzeichen wird dann ignoriert.
+     * Erzeugt ein kleines Eingabefenster und liest eine Zahl ein. Davor duerfen
+     * maximal Leerzeichen stehen. Hat die Zahl Stellen nach dem Komma, so
+     * muessen diese auch durch ein Komma abgetrennt werden (falls Sie in einer
+     * "deutschen Umgebung" arbeiten). Bsp.: 5 oder 5,789 sind Eingaben, die in
+     * diesem Fall akzeptiert werden. Das Ende der Zahl kann durch ein
+     * Leerzeichen angezeigt werden. Alles nach diesem Leerzeichen wird dann
+     * ignoriert.
      *
      * @param aufforderung wird ueber der Eingabezeile des Fensters angezeigt
      */
@@ -105,16 +113,17 @@ public class Notiz
         else
         {
             return new Notiz().kommaZahlLesen(
-                            "Sie haben keine Zahl eingegeben. Haben Sie evt. ein falsches Trennzeichen verwendet?"
-                                            + "\nBitte versuchen Sie erneut, eine Zahl einzugeben! \n"
-                                            + aufforderung);
+                    "Sie haben keine Zahl eingegeben. Haben Sie evt. ein falsches Trennzeichen verwendet?"
+                            + "\nBitte versuchen Sie erneut, eine Zahl einzugeben! \n"
+                            + aufforderung);
         }
     }
 
     /**
      * Ausgabe einer Zeichenkette auf einem kleinen Ausgabefenster (MessageBox)
      *
-     * @param objekt das Objekt, dessen Repraesentation als Wort ausgegeben werden soll.
+     * @param objekt das Objekt, dessen Repraesentation als Wort ausgegeben
+     *               werden soll.
      */
     public void schreiben(Object objekt)
     {
@@ -138,12 +147,12 @@ public class Notiz
     }
 
     /**
-     * Diese Methode liefert true, falls der Ja-Knopf vom Benutzer angewaehlt wurde, ansonsten
-     * false.
+     * Diese Methode liefert true, falls der Ja-Knopf vom Benutzer angewaehlt
+     * wurde, ansonsten false.
      */
     public boolean jaNeinAntwortLesen(String jaNeinFrage)
     {
-        Object[] optionen = {"Ja", "Nein"};
+        Object[] optionen = { "Ja", "Nein" };
         JOptionPane pane = new JOptionPane(jaNeinFrage);
         pane.setMessageType(JOptionPane.QUESTION_MESSAGE);
         pane.setOptions(optionen);

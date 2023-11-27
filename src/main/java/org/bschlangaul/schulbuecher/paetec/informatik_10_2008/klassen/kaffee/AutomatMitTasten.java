@@ -16,7 +16,8 @@ public class AutomatMitTasten
     public AutomatMitTasten()
     {
         Kaffeeautomat automat = new Kaffeeautomat(80);
-        Eingabefeld muenzschlitz = new Eingabefeld("Centwert einer Muenze", "20");
+        Eingabefeld muenzschlitz = new Eingabefeld("Centwert einer Muenze",
+                "20");
         Eingabefeld getraenkewahl = new Eingabefeld("Getraenk", "Milchkaffee");
         muenzschlitz.anzeigen();
         getraenkewahl.anzeigen();

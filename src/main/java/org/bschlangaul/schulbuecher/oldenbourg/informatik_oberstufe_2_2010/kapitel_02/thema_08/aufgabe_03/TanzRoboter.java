@@ -15,12 +15,13 @@ class TanzRoboter extends Karol
     /**
      * Positioniert den Roboter in seiner Welt.
      *
-     * @param startX X-Koordinate der Startposition
-     * @param startY Y-Koordinate der Startposition
+     * @param startX             X-Koordinate der Startposition
+     * @param startY             Y-Koordinate der Startposition
      * @param startBlickrichtung Blickrichtung beim Start
-     * @param inWelt Welt, in der der Roboter lebt
+     * @param inWelt             Welt, in der der Roboter lebt
      */
-    TanzRoboter(int startX, int startY, char startBlickrichtung, KarolWelt inWelt)
+    TanzRoboter(int startX, int startY, char startBlickrichtung,
+            KarolWelt inWelt)
     {
         super(startX, startY, startBlickrichtung, inWelt);
         zufall = new Random();
@@ -85,18 +86,21 @@ class TanzRoboter extends Karol
     {
         switch (zufall.nextInt(4))
         {
-            case 0:
-                RechtsDrehen();
-                break;
-            case 1:
-                LinksDrehen();
-                break;
-            case 2:
-                VorsichtigerSchritt();
-                break;
-            case 3:
-                VorsichtigerRechtsSchritt();
-                break;
+        case 0:
+            RechtsDrehen();
+            break;
+
+        case 1:
+            LinksDrehen();
+            break;
+
+        case 2:
+            VorsichtigerSchritt();
+            break;
+
+        case 3:
+            VorsichtigerRechtsSchritt();
+            break;
         }
     }
 }

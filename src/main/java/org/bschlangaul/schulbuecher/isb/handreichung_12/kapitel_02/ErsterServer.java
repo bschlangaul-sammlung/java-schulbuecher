@@ -1,6 +1,5 @@
 package org.bschlangaul.schulbuecher.isb.handreichung_12.kapitel_02;
 
-
 import java.net.*;
 import java.io.*;
 
@@ -13,12 +12,14 @@ import java.io.*;
 public class ErsterServer
 {
     /**
-     * bidirektionale Schnittstelle zur Netzwerkprotokoll-Implementierung des Servers
+     * bidirektionale Schnittstelle zur Netzwerkprotokoll-Implementierung des
+     * Servers
      */
     private ServerSocket serverSocket = null;
 
     /**
-     * bidirektionale Schnittstelle zur Netzwerkprotokoll-Implementierung des Clients
+     * bidirektionale Schnittstelle zur Netzwerkprotokoll-Implementierung des
+     * Clients
      */
     private Socket clientSocket = null;
 
@@ -33,7 +34,8 @@ public class ErsterServer
     private BufferedReader vomClient = null;
 
     /**
-     * Referenz auf die Klasse, die das Zustandsdiagramm des Servers implementiert
+     * Referenz auf die Klasse, die das Zustandsdiagramm des Servers
+     * implementiert
      */
     private ServerVerhalten serverVerhalten;
 
@@ -51,26 +53,23 @@ public class ErsterServer
      * Konstruktor des Servers
      *
      * @exception IOException eine Ausnahme tritt auf falls:<br/>
-     *            - der Server nicht gestartet werden kann (weil beispielsweise der Port nicht frei
-     *            ist)<br/>
-     *            - die Clientverbindung gestört bzw. unterbrochen wurde.
+     *                        - der Server nicht gestartet werden kann (weil
+     *                        beispielsweise der Port nicht frei ist)<br/>
+     *                        - die Clientverbindung gestört bzw. unterbrochen
+     *                        wurde.
      */
     public ErsterServer(ServerVerhalten serverVerhalten) throws IOException
     {
         this.serverVerhalten = serverVerhalten;
-
         ServerStarten();
         ClientVerbindungStarten(); // auf Client warten und verbinden
-
         do
         {// lesen und antworten
-
             clientBotschaft = vomClient.readLine();
             serverAntwort = serverVerhalten.HoleAntwort(clientBotschaft);
             zumClient.println(serverAntwort);
-
-        } while (!serverAntwort.equals("Auf Wiedersehen!"));
-
+        }
+        while (!serverAntwort.equals("Auf Wiedersehen!"));
         ClientVerbindungBeenden();
         ServerStoppen();
     }
@@ -80,10 +79,9 @@ public class ErsterServer
      */
     private void ServerStarten() throws IOException
     {
-
         System.out.println("Port eingeben: ");
-        BufferedReader tastatur = new BufferedReader(new InputStreamReader(System.in));
-
+        BufferedReader tastatur = new BufferedReader(
+                new InputStreamReader(System.in));
         // Server Socket erzeugen
         serverSocket = new ServerSocket(Integer.parseInt(tastatur.readLine()));
         System.out.println("Server gestartet...");
@@ -99,16 +97,15 @@ public class ErsterServer
     }
 
     /**
-     * wartet auf eine Clientverbindung warten und erzeugt die nötigen Lese- und Schreibobjekte nach
-     * dem eine Verbindung hergestellt wurde
+     * wartet auf eine Clientverbindung warten und erzeugt die nötigen Lese- und
+     * Schreibobjekte nach dem eine Verbindung hergestellt wurde
      */
     private void ClientVerbindungStarten() throws IOException
     {
-
         clientSocket = serverSocket.accept(); // warten auf die Verbindung
         zumClient = new PrintWriter(clientSocket.getOutputStream(), true);
-        vomClient = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
-
+        vomClient = new BufferedReader(
+                new InputStreamReader(clientSocket.getInputStream()));
         // Begrue&szlig;ung
         serverAntwort = serverVerhalten.HoleAntwort("");
         zumClient.println(serverAntwort);
@@ -120,11 +117,9 @@ public class ErsterServer
      */
     private void ClientVerbindungBeenden() throws IOException
     {
-
         zumClient.close();
         vomClient.close();
         clientSocket.close();
         System.out.println("Clientverbindung beendet");
     }
-
 }

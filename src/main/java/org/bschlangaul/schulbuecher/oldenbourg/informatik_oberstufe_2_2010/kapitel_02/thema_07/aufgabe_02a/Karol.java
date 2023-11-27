@@ -5,20 +5,22 @@ import javakarol.Roboter;
 /**
  * Realisierung eines Roboters Karol für BlueJ
  *
- * JavaKarol ist eine Weiterführung des Konzepts RobotKarol bei dem die Objekte einer Karolwelt mit
- * Java erzeugt und bearbeitet werden können.
+ * JavaKarol ist eine Weiterführung des Konzepts RobotKarol bei dem die Objekte
+ * einer Karolwelt mit Java erzeugt und bearbeitet werden können.
  *
- * Die Klasse ROBOTER ist eine Umsetzung des Konzepts von RobotKarol in die Programmiersprache Java.
- * Es stehen die gleichen Methoden wie bei RobotKarol zur Verfügung. In einer Welt können sich
- * mehrere Objekte der Klasse Roboter bewegen (Z.Zt. maximal 5). Auf einer Quadratkachel der Welt
- * kann aber immer nur ein Roboter stehen.
+ * Die Klasse ROBOTER ist eine Umsetzung des Konzepts von RobotKarol in die
+ * Programmiersprache Java. Es stehen die gleichen Methoden wie bei RobotKarol
+ * zur Verfügung. In einer Welt können sich mehrere Objekte der Klasse Roboter
+ * bewegen (Z.Zt. maximal 5). Auf einer Quadratkachel der Welt kann aber immer
+ * nur ein Roboter stehen.
  *
- * Die Klasse ROBOTER ist eine Unterklasse der Klasse Roboter aus dem Paket javakarol.jar. Sie kann
- * in einem BlueJ-Projekt direkt verwendet werden. Von der Klasse ROBOTER können in der
- * Programmierumgebung BlueJ Objekte erzeugt und benutzt werden. Zur Vereinfachung des
- * Methodenaufrufs im Objektinspektor von BlueJ wurden einige Methoden der Klasse Roboter in der
- * Klasse ROBOTER erneut definiert (unter Aufruf der geerbten Methoden). Die restlichen Methoden
- * können über "geerbt von Roboter" aufgerufen werden.
+ * Die Klasse ROBOTER ist eine Unterklasse der Klasse Roboter aus dem Paket
+ * javakarol.jar. Sie kann in einem BlueJ-Projekt direkt verwendet werden. Von
+ * der Klasse ROBOTER können in der Programmierumgebung BlueJ Objekte erzeugt
+ * und benutzt werden. Zur Vereinfachung des Methodenaufrufs im Objektinspektor
+ * von BlueJ wurden einige Methoden der Klasse Roboter in der Klasse ROBOTER
+ * erneut definiert (unter Aufruf der geerbten Methoden). Die restlichen
+ * Methoden können über "geerbt von Roboter" aufgerufen werden.
  *
  *
  * @author Ulli Freiberger
@@ -26,31 +28,34 @@ import javakarol.Roboter;
  * @version 1.0 (2.1.2008)
  *
  */
-
 public class Karol extends Roboter
 {
-
     /**
      * Erzeugen eines neuen Roboters mit vorgegebener Startposition
      *
-     * Vorher muss ein Objekt der Klasse WELT angelegt werden, in der der Roboter lebt.
+     * Vorher muss ein Objekt der Klasse WELT angelegt werden, in der der
+     * Roboter lebt.
      *
-     * @param Startposition (startX, startY) mit 1..WeltBreite bzw. 1..WeltLänge
+     * @param Startposition      (startX, startY) mit 1..WeltBreite bzw.
+     *                           1..WeltLänge
      * @param Startblickrichtung 'S','W','N','O'
-     * @param Referenz auf die Welt in der der Roboter leben soll
+     * @param Referenz           auf die Welt in der der Roboter leben soll
      *
      */
-    public Karol(int startX, int startY, char startBlickrichtung, KarolWelt inWelt)
+    public Karol(int startX, int startY, char startBlickrichtung,
+            KarolWelt inWelt)
     {
         super(startX, startY, startBlickrichtung, inWelt);
     }
 
     /**
-     * Erzeugen eines neuen Roboters aufgrund der Einstellungen in einer Karolwelt-Datei
+     * Erzeugen eines neuen Roboters aufgrund der Einstellungen in einer
+     * Karolwelt-Datei
      *
-     * Vorher muss ein Objekt der Klasse WELT angelegt werden, in der der Roboter leben soll. Wenn
-     * dieses Weltobjekt aus einer Karolwelt-Datei geladen wurde, dann werden die dortigen
-     * Robotereinstellungen verwendet, sonst ein Default-Roboter mit (1,1) und Blickrichtung 'S'
+     * Vorher muss ein Objekt der Klasse WELT angelegt werden, in der der
+     * Roboter leben soll. Wenn dieses Weltobjekt aus einer Karolwelt-Datei
+     * geladen wurde, dann werden die dortigen Robotereinstellungen verwendet,
+     * sonst ein Default-Roboter mit (1,1) und Blickrichtung 'S'
      *
      * @param Referenz auf die Welt in der der Roboter leben soll
      *
@@ -153,5 +158,4 @@ public class Karol extends Roboter
     {
         return super.IstMarke();
     }
-
 }

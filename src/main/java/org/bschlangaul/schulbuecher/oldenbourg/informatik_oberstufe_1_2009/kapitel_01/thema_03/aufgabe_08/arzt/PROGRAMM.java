@@ -8,7 +8,6 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapi
  */
 class PROGRAMM
 {
-
     /**
      * Constructor for objects of class PROGRAMM
      */

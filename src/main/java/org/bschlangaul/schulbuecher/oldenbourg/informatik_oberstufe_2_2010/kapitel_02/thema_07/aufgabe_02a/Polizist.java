@@ -8,14 +8,13 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_2_2010.kapi
  */
 class Polizist extends Karol2
 {
-
     /**
      * Positioniert den Roboter in seiner Welt.
      *
-     * @param startX X-Koordinate der Startposition
-     * @param startY Y-Koordinate der Startposition
+     * @param startX             X-Koordinate der Startposition
+     * @param startY             Y-Koordinate der Startposition
      * @param startBlickrichtung Blickrichtung beim Start
-     * @param inWelt Welt, in der der Roboter lebt
+     * @param inWelt             Welt, in der der Roboter lebt
      */
     Polizist(int startX, int startY, char startBlickrichtung, KarolWelt inWelt)
     {
@@ -23,7 +22,8 @@ class Polizist extends Karol2
     }
 
     /**
-     * Läuft die Grenze auf und ab. Kontrolliert dabei, ob der Schmuggler vor ihm steht.
+     * Läuft die Grenze auf und ab. Kontrolliert dabei, ob der Schmuggler vor
+     * ihm steht.
      */
     void Bewegen()
     {

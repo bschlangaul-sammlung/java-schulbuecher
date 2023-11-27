@@ -11,26 +11,32 @@ import java.util.*;
 class RESERVIERUNGSINFO
 {
     private int nummer;
+
     private int wohnung;
+
     private String wohnungsname;
+
     private String benutzer;
+
     private String art;
+
     private Date startDatum;
+
     private Date endeDatum;
 
     /**
      * Belegt die Attributwerte
      *
-     * @param nummer Schlüssel der Reservierung
-     * @param wohnung reservierte Wohnung
+     * @param nummer       Schlüssel der Reservierung
+     * @param wohnung      reservierte Wohnung
      * @param wohnungsname Name der reservierten Wohnung
-     * @param benutzer Benutzername des Reservierenden
-     * @param art Art der Reservierung ('reserviert', 'gebucht')
-     * @param startDatum Beginn der Reservierung
-     * @param endeDatum Ende der Reservierung
+     * @param benutzer     Benutzername des Reservierenden
+     * @param art          Art der Reservierung ('reserviert', 'gebucht')
+     * @param startDatum   Beginn der Reservierung
+     * @param endeDatum    Ende der Reservierung
      */
-    RESERVIERUNGSINFO(int nummer, int wohnung, String wohnungsname, String benutzer, String art,
-                    Date startDatum, Date endeDatum)
+    RESERVIERUNGSINFO(int nummer, int wohnung, String wohnungsname,
+            String benutzer, String art, Date startDatum, Date endeDatum)
     {
         this.nummer = nummer;
         this.wohnung = wohnung;
@@ -108,6 +114,7 @@ class RESERVIERUNGSINFO
      */
     public String toString()
     {
-        return wohnungsname + " " + art + " vom " + startDatum + " bis " + endeDatum;
+        return wohnungsname + " " + art + " vom " + startDatum + " bis "
+                + endeDatum;
     }
 }

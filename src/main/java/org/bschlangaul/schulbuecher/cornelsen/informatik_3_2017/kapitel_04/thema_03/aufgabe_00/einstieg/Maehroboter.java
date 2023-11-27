@@ -1,7 +1,8 @@
 package org.bschlangaul.schulbuecher.cornelsen.informatik_3_2017.kapitel_04.thema_03.aufgabe_00.einstieg;
 
 /**
- * Der Mähroboter geht gerade aus, bis er auf einen Zaun trifft (braunes Hindernis).
+ * Der Mähroboter geht gerade aus, bis er auf einen Zaun trifft (braunes
+ * Hindernis).
  *
  * @author Albert Wiedemann
  * @version 1.0
@@ -22,11 +23,9 @@ class Maehroboter extends Figur
         FigurteilFestlegenRechteck(30, 30, 20, 10, "schwarz");
         FigurteilFestlegenEllipse(-50, -40, 100, 80, "cyan");
         FigurteilFestlegenDreieck(5, -10, 45, 0, 5, 10, "rot");
-
         PositionSetzen(300, 400);
         Drehen(90);
         batteriestand = 200;
-
         new Rasen();
         new ZaunNord();
         new ZaunWest();
@@ -40,7 +39,8 @@ class Maehroboter extends Figur
      */
     void BisZaunMähen()
     {
-        while (!Berührt("braun") && BatteriestandGeben() > 10) // ! bedeutet NICHT
+        while (!Berührt("braun") && BatteriestandGeben() > 10) // ! bedeutet
+                                                               // NICHT
         {
             FahrenUndMähen();
         }
@@ -70,8 +70,6 @@ class Maehroboter extends Figur
         BatteriestandUm1Reduzieren();
         System.out.println("Batteriestand " + BatteriestandGeben());
     }
-
-
     // Hilfsmethoden, die als Black Box verwendet werden können
 
     /**
@@ -120,12 +118,12 @@ class Maehroboter extends Figur
             r.GrößeSetzen(5, 20);
             r.PositionSetzen(XPositionGeben() + 25, YPositionGeben() - 10);
         }
-
         GanzNachVornBringen();
         try
         {
             Thread.sleep(50);
-        } catch (InterruptedException e)
+        }
+        catch (InterruptedException e)
         {
         }
     }
@@ -145,6 +143,5 @@ class Maehroboter extends Figur
         {
             WinkelSetzen(WinkelGeben() + 360);
         }
-
     }
 }

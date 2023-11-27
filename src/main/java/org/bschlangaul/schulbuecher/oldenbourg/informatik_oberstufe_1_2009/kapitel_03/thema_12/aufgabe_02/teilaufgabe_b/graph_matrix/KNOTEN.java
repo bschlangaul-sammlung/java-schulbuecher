@@ -8,7 +8,6 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapi
  * @author U.Freiberger
  * @version 1.0
  */
-
 public class KNOTEN
 {
     private String bezeichnung;
@@ -33,10 +32,11 @@ public class KNOTEN
     }
 
     /**
-     * Gibt den Bezeichner des Knotenobjekts formatiert zurück Der Bezeichner wird auf die
-     * angegebene Länge abgeschnitten bzw. mit Blanks aufgefüllt
+     * Gibt den Bezeichner des Knotenobjekts formatiert zurück Der Bezeichner
+     * wird auf die angegebene Länge abgeschnitten bzw. mit Blanks aufgefüllt
      *
-     * @param breite Anzahl der Zeichen auf die der Bezeichner formatiert wird. Maximal 15 Zeichen.
+     * @param breite Anzahl der Zeichen auf die der Bezeichner formatiert wird.
+     *               Maximal 15 Zeichen.
      * @return formatierter Bezeichner
      *
      */
@@ -44,5 +44,4 @@ public class KNOTEN
     {
         return (bezeichnung + "               ").substring(0, breite);
     }
-
 }

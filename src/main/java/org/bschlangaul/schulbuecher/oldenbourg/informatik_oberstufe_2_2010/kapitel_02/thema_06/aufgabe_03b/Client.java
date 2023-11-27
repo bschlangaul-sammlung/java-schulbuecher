@@ -11,7 +11,6 @@ import java.net.*;
  */
 class Client
 {
-
     /**
      * Führt die eigentliche Arbeit aus.
      *
@@ -36,10 +35,12 @@ class Client
                 {
                     System.out.write(in.read());
                 }
-            } while (true);
+            }
+            while (true);
             anruf.close();
             System.exit(0);
-        } catch (Exception e)
+        }
+        catch (Exception e)
         {
             System.out.println("Allgemeiner Fehler: " + e);
             e.printStackTrace();

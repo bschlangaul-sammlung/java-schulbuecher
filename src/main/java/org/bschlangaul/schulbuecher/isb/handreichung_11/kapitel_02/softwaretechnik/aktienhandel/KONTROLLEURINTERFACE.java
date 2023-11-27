@@ -6,7 +6,6 @@ package org.bschlangaul.schulbuecher.isb.handreichung_11.kapitel_02.softwaretech
  * @author
  * @version 1.0
  */
-
 interface KONTROLLEURINTERFACE
 {
     /**
@@ -20,7 +19,7 @@ interface KONTROLLEURINTERFACE
      * Ereignis "Aktien einkaufen"
      *
      * @param aktienID Schlüssel der Aktie
-     * @param anzahl gewünschte Anzahl der Aktie
+     * @param anzahl   gewünschte Anzahl der Aktie
      */
     void AktienKaufen(int aktienID, int anzahl);
 
@@ -28,7 +27,7 @@ interface KONTROLLEURINTERFACE
      * Ereignis "Aktien verkaufen"
      *
      * @param aktienID Schlüssel der Aktie
-     * @param anzahl gewünschte Anzahl der Aktie
+     * @param anzahl   gewünschte Anzahl der Aktie
      */
     void AktienVerkaufen(int aktienID, int anzahl);
 

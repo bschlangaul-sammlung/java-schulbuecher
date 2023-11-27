@@ -8,7 +8,6 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_2_2010.kapi
  */
 class Client
 {
-
     /**
      * Legt die Arbeitsobjekte an.
      */

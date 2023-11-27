@@ -11,7 +11,9 @@ import java.util.Random;
 class SUPERMARKT
 {
     KASSE[] kassen;
+
     int wartezeit;
+
     Random zufall;
 
     /**
@@ -42,18 +44,21 @@ class SUPERMARKT
         artikel = 3 + zufall.nextInt(8);
         switch (zufall.nextInt(4))
         {
-            case 0:
-                k = new KUNDEWENIG(artikel);
-                break;
-            case 1:
-                k = new KUNDEKURZ(artikel);
-                break;
-            case 2:
-                k = new KUNDEZUFALL(artikel);
-                break;
-            case 3:
-                k = new KUNDEKURZODERWENIG(artikel);
-                break;
+        case 0:
+            k = new KUNDEWENIG(artikel);
+            break;
+
+        case 1:
+            k = new KUNDEKURZ(artikel);
+            break;
+
+        case 2:
+            k = new KUNDEZUFALL(artikel);
+            break;
+
+        case 3:
+            k = new KUNDEKURZODERWENIG(artikel);
+            break;
         }
         k.Anstellen(kassen);
     }
@@ -77,7 +82,6 @@ class SUPERMARKT
             wartezeit = wartezeit - 1;
         }
     }
-
 
     /**
      *ffnet die angegebene Kasse.

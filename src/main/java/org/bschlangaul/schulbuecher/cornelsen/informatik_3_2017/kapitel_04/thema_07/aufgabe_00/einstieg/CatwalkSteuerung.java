@@ -10,6 +10,7 @@ class CatwalkSteuerung extends Figur
 {
     /** Der Laufsteg */
     Catwalk laufsteg;
+
     /** Der Zähler für die Farbensteuerung */
     int zähler;
 
@@ -29,11 +30,13 @@ class CatwalkSteuerung extends Figur
     @Override
     void AktionAusführen()
     {
-        for (int spalte = 0; spalte < laufsteg.SpaltenanzahlGeben() - 1; spalte = spalte + 1)
+        for (int spalte = 0; spalte < laufsteg.SpaltenanzahlGeben()
+                - 1; spalte = spalte + 1)
         {
             laufsteg.FarbeSetzen(spalte, laufsteg.FarbeGeben(spalte + 1));
         }
-        laufsteg.FarbeSetzen(laufsteg.SpaltenanzahlGeben() - 1, NächsteFarbeGeben());
+        laufsteg.FarbeSetzen(laufsteg.SpaltenanzahlGeben() - 1,
+                NächsteFarbeGeben());
     }
 
     /**

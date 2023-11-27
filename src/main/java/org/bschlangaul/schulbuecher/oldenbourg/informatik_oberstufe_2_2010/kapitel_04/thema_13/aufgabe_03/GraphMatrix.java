@@ -1,8 +1,8 @@
 package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_2_2010.kapitel_04.thema_13.aufgabe_03;
 
 /**
- * Klasse GRAPH_MATRIX Klasse für einen ungerichteten, gewichteten Graphen Als Datenstruktur wird
- * eine Adjazenzmatrix verwendet
+ * Klasse GRAPH_MATRIX Klasse für einen ungerichteten, gewichteten Graphen Als
+ * Datenstruktur wird eine Adjazenzmatrix verwendet
  *
  * Schulbuch Informatik 2 Oberstufe Oldenbourg Verlag
  *
@@ -10,7 +10,6 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_2_2010.kapi
  * @version 1.0
  *
  */
-
 public class GraphMatrix
 {
     // Anzahl der maximalen Knoten
@@ -21,15 +20,19 @@ public class GraphMatrix
 
     // 2-dim Feld der Adjazenzmatrix
     private int[][] matrix;
-    // Hilfsfeld zur temporären Speicherung ob ein Knoten besucht wurde oder nicht
+
+    // Hilfsfeld zur temporären Speicherung ob ein Knoten besucht wurde oder
+    // nicht
     private boolean[] besucht;
+
     // Hilfsfelder für die Suche des kürzesten Wegs nach Dijkstra
     private int distanz[];
+
     private int kommtVon[];
 
     /**
-     * Konstruktor für Objekte der Klasse GRAPH_MATRIX Die maximale Anzahl der Knoten wird dabei
-     * festgelegt
+     * Konstruktor für Objekte der Klasse GRAPH_MATRIX Die maximale Anzahl der
+     * Knoten wird dabei festgelegt
      *
      * @param maximaleKnoten Anzahl der maximal möglichen Knoten
      *
@@ -45,10 +48,12 @@ public class GraphMatrix
     }
 
     /**
-     * Einfügen eines neuen Knoten in den Graphen Wenn die maximale Anzahl an Knoten erreicht wird,
-     * dann erfolgt kein Einfügen es fehlt noch die Prüfung auf Eindeutigkeit der Knotenbezeichner
+     * Einfügen eines neuen Knoten in den Graphen Wenn die maximale Anzahl an
+     * Knoten erreicht wird, dann erfolgt kein Einfügen es fehlt noch die
+     * Prüfung auf Eindeutigkeit der Knotenbezeichner
      *
-     * @param bezeichner Bezeichner des neuen Knotens, der dem Graphen hinzugefügt wird.
+     * @param bezeichner Bezeichner des neuen Knotens, der dem Graphen
+     *                   hinzugefügt wird.
      *
      */
     public void KnotenEinfuegen(String bezeichner)
@@ -68,8 +73,8 @@ public class GraphMatrix
     }
 
     /**
-     * Gibt die interne Nummer des Knoten Wenn ein Knoten mit diesem Bezeichner nicht bekannt ist
-     * wird -1 zurückgegeben
+     * Gibt die interne Nummer des Knoten Wenn ein Knoten mit diesem Bezeichner
+     * nicht bekannt ist wird -1 zurückgegeben
      *
      * @param bezeichner Bezeichner des Knoten der gesucht wird
      * @return Indexnummer des Knotens im Knotenarray; 0<= x <= anzahl-1 bzw. -1
@@ -78,7 +83,8 @@ public class GraphMatrix
     private int KnotenNummer(String bezeichner)
     {
         int i;
-        for (i = 0; ((i < anzahlKnoten) && (!knoten[i].BezeichnungGeben().equals(bezeichner))); i++)
+        for (i = 0; ((i < anzahlKnoten)
+                && (!knoten[i].BezeichnungGeben().equals(bezeichner))); i++)
         {
         }
         if (i < anzahlKnoten)
@@ -86,25 +92,24 @@ public class GraphMatrix
             return i;
         else
             return -1;
-
     }
 
     /**
-     * Einfügen einer Kante in den Graphen Eine Kante ist durch einen Anfangsknoten und einen
-     * Endknoten festgelegt und hat eine Gewichtung
+     * Einfügen einer Kante in den Graphen Eine Kante ist durch einen
+     * Anfangsknoten und einen Endknoten festgelegt und hat eine Gewichtung
      *
-     * @param von Bezeichner des Anfangsknotens
-     * @param nach Bezeichner des Endknotens
+     * @param von        Bezeichner des Anfangsknotens
+     * @param nach       Bezeichner des Endknotens
      * @param gewichtung Gewichtung der Kante als Ganzzahl
      *
      */
     public void KanteEinfuegen(String von, String nach, int gewichtung)
     {
         int vonNummer, nachNummer;
-
         vonNummer = KnotenNummer(von);
         nachNummer = KnotenNummer(nach);
-        if ((vonNummer != -1) && (nachNummer != -1) && (vonNummer != nachNummer))
+        if ((vonNummer != -1) && (nachNummer != -1)
+                && (vonNummer != nachNummer))
         {
             matrix[vonNummer][nachNummer] = gewichtung;
             matrix[nachNummer][vonNummer] = gewichtung;
@@ -123,10 +128,10 @@ public class GraphMatrix
     }
 
     /**
-     * Gibt die Gewichtung einer Kante Die Kante ist durch einen Anfangsknoten und einen Endknoten
-     * festgelegt
+     * Gibt die Gewichtung einer Kante Die Kante ist durch einen Anfangsknoten
+     * und einen Endknoten festgelegt
      *
-     * @param von Bezeichner des Anfangsknotens
+     * @param von  Bezeichner des Anfangsknotens
      * @param nach Bezeichner des Endknotens
      * @return Gewichtung der Kante
      *
@@ -134,7 +139,6 @@ public class GraphMatrix
     int KantenGewichtGeben(String von, String nach)
     {
         int vonNummer, nachNummer;
-
         vonNummer = KnotenNummer(von);
         nachNummer = KnotenNummer(nach);
         if ((vonNummer != -1) && (nachNummer != -1))
@@ -144,23 +148,25 @@ public class GraphMatrix
     }
 
     /**
-     * Besucht einen Knoten und läuft alle Abzweigungen ab, die von diesem Knoten ausgehen sofern
-     * deren Zielknoten noch nicht besucht wurden. Bricht ab, wenn der Zielknoten erreicht wurde.
+     * Besucht einen Knoten und läuft alle Abzweigungen ab, die von diesem
+     * Knoten ausgehen sofern deren Zielknoten noch nicht besucht wurden. Bricht
+     * ab, wenn der Zielknoten erreicht wurde.
      *
-     * @param knotenNummer Knotennummer des zu besuchenden Knotens
-     * @param zielKnotenNummer Knotennummer des Zielknoten, der erreicht werden soll
-     * @param pfad bisher abgelaufener Pfad in der Notation kn1/kn2/kn3 ...
-     * @param int Gewichtung des bisher abgelaufenen Pfads
+     * @param knotenNummer     Knotennummer des zu besuchenden Knotens
+     * @param zielKnotenNummer Knotennummer des Zielknoten, der erreicht werden
+     *                         soll
+     * @param pfad             bisher abgelaufener Pfad in der Notation
+     *                         kn1/kn2/kn3 ...
+     * @param int              Gewichtung des bisher abgelaufenen Pfads
      *
      */
-    private void Ablaufen(int knotenNummer, int zielKnotenNummer, String pfad, int laenge)
+    private void Ablaufen(int knotenNummer, int zielKnotenNummer, String pfad,
+            int laenge)
     {
         int neueLaenge;
         String neuerPfad;
-
         // aktiven Knoten auf besucht setzen
         besucht[knotenNummer] = true;
-
         // wenn der Zielknoten erreicht wird, dann abbrechen und Pfad ausgeben
         if (knotenNummer == zielKnotenNummer)
         {
@@ -170,39 +176,43 @@ public class GraphMatrix
         // wie bei der Tiefensuche
         else
         {
-            // in der Matrix die Zeile des aktiven Knotens nach Kanten durchforsten
+            // in der Matrix die Zeile des aktiven Knotens nach Kanten
+            // durchforsten
             for (int abzweigNummer = 0; abzweigNummer < anzahlKnoten; abzweigNummer++)
             {
-                // es gibt eine Kante und deren Zielknoten ist noch nicht besucht
-                if ((matrix[knotenNummer][abzweigNummer] > 0) && (!besucht[abzweigNummer]))
+                // es gibt eine Kante und deren Zielknoten ist noch nicht
+                // besucht
+                if ((matrix[knotenNummer][abzweigNummer] > 0)
+                        && (!besucht[abzweigNummer]))
                 {
                     // der Weg wird in Richtung der Abzweigung verlängert
-                    neuerPfad = pfad + "/" + knoten[abzweigNummer].BezeichnungGeben();
+                    neuerPfad = pfad + "/"
+                            + knoten[abzweigNummer].BezeichnungGeben();
                     neueLaenge = laenge + matrix[knotenNummer][abzweigNummer];
                     // rekursiver Aufruf des Ablaufes
-                    Ablaufen(abzweigNummer, zielKnotenNummer, neuerPfad, neueLaenge);
+                    Ablaufen(abzweigNummer, zielKnotenNummer, neuerPfad,
+                            neueLaenge);
                 }
             }
         }
-
         // Knoten im Gegensatz zur Tiefensuche wieder freigeben
         besucht[knotenNummer] = false;
     }
 
     /**
-     * Eigentliche Wegesuche nach dem Brute-Force-Verfahren ruft die rekursive Methode Ablaufen mit
-     * dem Startknoten und Zielknoten auf
+     * Eigentliche Wegesuche nach dem Brute-Force-Verfahren ruft die rekursive
+     * Methode Ablaufen mit dem Startknoten und Zielknoten auf
      *
      * @param startKnoten Bezeichner des Startknotens für die Wegesuche
-     * @param zielKnoten Bezeichner des Zielknotens für die Wegesuche
+     * @param zielKnoten  Bezeichner des Zielknotens für die Wegesuche
      *
      */
     public void WegeSuchen(String startKnoten, String zielKnoten)
     {
         int startNummer = KnotenNummer(startKnoten);
         int zielNummer = KnotenNummer(zielKnoten);
-
-        if ((startNummer != -1) && (zielNummer != -1) && (startNummer != zielNummer))
+        if ((startNummer != -1) && (zielNummer != -1)
+                && (startNummer != zielNummer))
         {
             for (int i = 0; i < anzahlKnoten; i++)
                 besucht[i] = false;
@@ -211,8 +221,8 @@ public class GraphMatrix
     }
 
     /**
-     * Sucht nach dem unbesuchten Knoten mit derzeit minimalsten Distanzwert wird von
-     * KuerzesterWeg() aufgerufen
+     * Sucht nach dem unbesuchten Knoten mit derzeit minimalsten Distanzwert
+     * wird von KuerzesterWeg() aufgerufen
      *
      * @return Indexnummer des unbesuchten Knotens mit dem kleinsten Distanzwert
      *
@@ -221,7 +231,6 @@ public class GraphMatrix
     {
         int minPos = 0;
         int minWert = Integer.MAX_VALUE;
-
         for (int i = 0; i < anzahlKnoten; i++)
         {
             if (!besucht[i] && (minWert > distanz[i]))
@@ -234,11 +243,13 @@ public class GraphMatrix
     }
 
     /**
-     * Suche nach dem kürzesten Weg zwischen Startknoten und Zielknoten nach dem Algorithmus von
-     * Dijkstra
+     * Suche nach dem kürzesten Weg zwischen Startknoten und Zielknoten nach dem
+     * Algorithmus von Dijkstra
      *
-     * @param startKnoten Bezeichner des Startknotens für die Suche des kürzesten Wegs
-     * @param zielKnoten Bezeichner des Zielknotens für die Suche des kürzesten Wegs
+     * @param startKnoten Bezeichner des Startknotens für die Suche des
+     *                    kürzesten Wegs
+     * @param zielKnoten  Bezeichner des Zielknotens für die Suche des kürzesten
+     *                    Wegs
      *
      */
     public void KuerzesterWeg(String startKnoten, String zielKnoten)
@@ -247,7 +258,6 @@ public class GraphMatrix
         int zielNummer = KnotenNummer(zielKnoten);
         int knotenNummer, neueDistanz;
         String pfad;
-
         if ((startNummer != -1) && (zielNummer != -1))
         {
             // Vorbereitung
@@ -258,22 +268,24 @@ public class GraphMatrix
             }
             distanz[startNummer] = 0;
             kommtVon[startNummer] = startNummer;
-
             // wiederhole bis alle Knoten besucht sind
             for (int i = 0; i < anzahlKnoten; i++)
             {
-                // der unbesuchte Knoten mit der minimalen Distanz wird zum aktiven Knoten
+                // der unbesuchte Knoten mit der minimalen Distanz wird zum
+                // aktiven Knoten
                 knotenNummer = MinKnoten();
                 besucht[knotenNummer] = true;
-
-                // für alle Abzweigungen vom aktiven Knoten zu unbesuchten Knoten
+                // für alle Abzweigungen vom aktiven Knoten zu unbesuchten
+                // Knoten
                 for (int abzweigNummer = 0; abzweigNummer < anzahlKnoten; abzweigNummer++)
                 {
-                    if ((matrix[knotenNummer][abzweigNummer] > 0) && (!besucht[abzweigNummer]))
+                    if ((matrix[knotenNummer][abzweigNummer] > 0)
+                            && (!besucht[abzweigNummer]))
                     {
-                        // die Distanz für den Weg über den aktiven Knoten berechnen
-                        neueDistanz = distanz[knotenNummer] + matrix[knotenNummer][abzweigNummer];
-
+                        // die Distanz für den Weg über den aktiven Knoten
+                        // berechnen
+                        neueDistanz = distanz[knotenNummer]
+                                + matrix[knotenNummer][abzweigNummer];
                         // wenn diese Distanz kleiner ist als die des Knoten
                         if (neueDistanz < distanz[abzweigNummer])
                         {
@@ -285,12 +297,12 @@ public class GraphMatrix
                     }
                 }
             }
-
-            // Fertig! Die Entfernung ausgeben (Auskommentiert für Laufzeitvergleich wg. vielfacher
+            // Fertig! Die Entfernung ausgeben (Auskommentiert für
+            // Laufzeitvergleich wg. vielfacher
             // Durchführung
             // System.out.println("Entfernung: " + distanz[zielNummer]);
-
-            // Den Pfad des kürzesten Weges rückwärts, beim Ziel beginnend ausgeben
+            // Den Pfad des kürzesten Weges rückwärts, beim Ziel beginnend
+            // ausgeben
             pfad = zielKnoten;
             knotenNummer = zielNummer;
             while (knotenNummer != startNummer)
@@ -298,11 +310,10 @@ public class GraphMatrix
                 knotenNummer = kommtVon[knotenNummer];
                 pfad = knoten[knotenNummer].BezeichnungGeben() + "/" + pfad;
             }
-            // Auf die Ausgabe des kürzesten Weges wird verzichtet, da der Algorithmus bei der
+            // Auf die Ausgabe des kürzesten Weges wird verzichtet, da der
+            // Algorithmus bei der
             // Laufzeitmessung 1000 mal aufgerufen wird.
             // System.out.println("Weg: " + pfad);
         }
-
     }
-
 }

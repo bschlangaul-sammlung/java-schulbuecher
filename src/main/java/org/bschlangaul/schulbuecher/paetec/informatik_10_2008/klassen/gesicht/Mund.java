@@ -25,18 +25,17 @@ public class Mund implements Schauspieler
         lippen.farbeSetzen("rot");
         lippen.groesseSetzen(200, 100);
         lippen.positionSetzen(300, 425);
-
         mund = new Ellipse();
         mund.farbeSetzen("schwarz");
         mund.groesseSetzen(150, 50);
         mund.positionSetzen(325, 450);
-
         lippen.anzeigen();
         mund.anzeigen();
     }
 
     /**
-     * Die Methode agieren fuehrt eine fuer das Schauspielerobjekt typische Bewegung aus.
+     * Die Methode agieren fuehrt eine fuer das Schauspielerobjekt typische
+     * Bewegung aus.
      */
     public void agieren()
     {
@@ -44,9 +43,7 @@ public class Mund implements Schauspieler
         mund.groesseSetzen(50, 50);
         mund.positionSetzen(375, 450);
         mund.anzeigen();
-
         warten(1);
-
         mund.verstecken();
         mund.groesseSetzen(150, 50);
         mund.positionSetzen(325, 450);

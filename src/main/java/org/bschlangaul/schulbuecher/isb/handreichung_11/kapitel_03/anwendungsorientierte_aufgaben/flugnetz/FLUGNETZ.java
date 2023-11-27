@@ -15,9 +15,9 @@ class FLUGNETZ
 
     // Methoden
     /**
-     * Hilfsmethode zum Füllen des Knoten-Feldes Die Belegung des Knotenfeldes erfolgt in der
-     * Reihenfolge der Nr., die in der Tabelle gegeben ist. Damit stimmen Feldindex und Flughafennr
-     * überein.
+     * Hilfsmethode zum Füllen des Knoten-Feldes Die Belegung des Knotenfeldes
+     * erfolgt in der Reihenfolge der Nr., die in der Tabelle gegeben ist. Damit
+     * stimmen Feldindex und Flughafennr überein.
      */
     private void FlughaefenAnlegen()
     {
@@ -44,31 +44,34 @@ class FLUGNETZ
     }
 
     /**
-     * Aufgabe 2 Hinzufuegen eines neuen Flughafens Ausgenuetzt wird dabei die Methode
-     * knotenHinzufuegen(DATENELEMENT inhalt) der Klasse GRAPH_MATRIX
+     * Aufgabe 2 Hinzufuegen eines neuen Flughafens Ausgenuetzt wird dabei die
+     * Methode knotenHinzufuegen(DATENELEMENT inhalt) der Klasse GRAPH_MATRIX
      */
-    void FlughafenHinzufuegen(String flughafenname, String stadt, boolean zuganbindung)
+    void FlughafenHinzufuegen(String flughafenname, String stadt,
+            boolean zuganbindung)
     {
-        DATENELEMENT daten = new DATENELEMENT(flughafenname, stadt, zuganbindung);
+        DATENELEMENT daten = new DATENELEMENT(flughafenname, stadt,
+                zuganbindung);
         flugnetz.KnotenHinzufuegen(daten);
     }
 
     /**
-     * Aufgabe 2 Hinzufuegen einer neuen Flugverbindung Ausgenuetzt wird dabei die Methode
-     * kanteHinzufügen(int start, int ziel, int bewertung) der Klasse GRAPH_MATRIX Es wird davon
-     * ausgegangen, dass es sich immer um bidirektionale Verbindungen handelt!
+     * Aufgabe 2 Hinzufuegen einer neuen Flugverbindung Ausgenuetzt wird dabei
+     * die Methode kanteHinzufügen(int start, int ziel, int bewertung) der
+     * Klasse GRAPH_MATRIX Es wird davon ausgegangen, dass es sich immer um
+     * bidirektionale Verbindungen handelt!
      */
-    void FlugverbindungHinzufuegen(int flughafennr01, int flughafennr02, int entfernung)
+    void FlugverbindungHinzufuegen(int flughafennr01, int flughafennr02,
+            int entfernung)
     {
         flugnetz.KanteHinzufügen(flughafennr01, flughafennr02, entfernung);
         flugnetz.KanteHinzufügen(flughafennr02, flughafennr01, entfernung);
     }
 
     /**
-     * Aufgabe 3: Suchen der Flughaefen mit Bahnanbindung Es reicht hier, das Flughafen-Feld zu
-     * untersuchen
+     * Aufgabe 3: Suchen der Flughaefen mit Bahnanbindung Es reicht hier, das
+     * Flughafen-Feld zu untersuchen
      */
-
     void BahnanbindungAusgeben()
     {
         System.out.println("Flughäfen mit direkter Zuganbindung: ");
@@ -84,11 +87,13 @@ class FLUGNETZ
     }
 
     /**
-     * Aufgabe 4: Suchen der Flughaefen, die von einem gegebenen Flughafen direkt erreichbar sind.
-     * Übergeben wird der Index des Feldes, das die Daten des gegebenen Flughafens "enthält".
-     * Ausgenutzt wird hierbei, dass die Adjazenzmatrix symmetrisch ist. Alle "Direktverbindungen"
-     * sind aufgrund der Entfernungseinträge in der Zeile i (i Index des Ausgangsflughafens) bzw.
-     * der Spalte i ersichtlich. Es reicht, entweder die entsprechende Zeile oder Spalte abzuprüfen!
+     * Aufgabe 4: Suchen der Flughaefen, die von einem gegebenen Flughafen
+     * direkt erreichbar sind. Übergeben wird der Index des Feldes, das die
+     * Daten des gegebenen Flughafens "enthält". Ausgenutzt wird hierbei, dass
+     * die Adjazenzmatrix symmetrisch ist. Alle "Direktverbindungen" sind
+     * aufgrund der Entfernungseinträge in der Zeile i (i Index des
+     * Ausgangsflughafens) bzw. der Spalte i ersichtlich. Es reicht, entweder
+     * die entsprechende Zeile oder Spalte abzuprüfen!
      */
     void DirektverbindungSuchen(int i)
     {
@@ -99,7 +104,8 @@ class FLUGNETZ
         {
             if (flugnetz.KantePruefen(i, k))
             {
-                DATENELEMENT zielflughafen = flugnetz.DatenDesKnotenMitIndexAusgeben(k);
+                DATENELEMENT zielflughafen = flugnetz
+                        .DatenDesKnotenMitIndexAusgeben(k);
                 zielflughafen.FlughafennameAusgeben();
             }
         }
@@ -107,12 +113,14 @@ class FLUGNETZ
     }
 
     /**
-     * Aufgabe 5: Suchen der Flughaefen, die von einem durch die Flughafennummer gegebenen Flughafen
-     * aus (irgendwie) erreichbar sind Idee zur Umsetzung: Tiefensuche
+     * Aufgabe 5: Suchen der Flughaefen, die von einem durch die Flughafennummer
+     * gegebenen Flughafen aus (irgendwie) erreichbar sind Idee zur Umsetzung:
+     * Tiefensuche
      */
     void ErreichbareFlughaefenSuchen(int indexStartflughafen)
     {
-        DATENELEMENT flughafen = flugnetz.DatenDesKnotenMitIndexAusgeben(indexStartflughafen);
+        DATENELEMENT flughafen = flugnetz
+                .DatenDesKnotenMitIndexAusgeben(indexStartflughafen);
         System.out.print("Ausgangsflughafen ");
         flughafen.FlughafennameAusgeben();
         System.out.println("Erreichbar sind folgende Flughäfen: ");
@@ -121,9 +129,10 @@ class FLUGNETZ
     }
 
     /**
-     * Aufgabe 6: Anwenderfreundlichere Version der Methode DirektverbindungSuchen durch Eingabe des
-     * Flughafennamens Es wird aus Einfachheitsgruenden davon ausgegangen, dass der übergebene
-     * Flughafenname existiert!
+     * Aufgabe 6: Anwenderfreundlichere Version der Methode
+     * DirektverbindungSuchen durch Eingabe des Flughafennamens Es wird aus
+     * Einfachheitsgruenden davon ausgegangen, dass der übergebene Flughafenname
+     * existiert!
      */
     public void DirektverbindungSuchen(String flughafenname)
     {
@@ -131,8 +140,8 @@ class FLUGNETZ
     }
 
     /**
-     * Hilfsmethode, die zu einem gegebenen Flughafennamen die Flughafennummer, also den Index des
-     * Knotens, der den Flughafen verwaltet, sucht
+     * Hilfsmethode, die zu einem gegebenen Flughafennamen die Flughafennummer,
+     * also den Index des Knotens, der den Flughafen verwaltet, sucht
      */
     private int NameFuerIndexSuchen(String flughafenname)
     {

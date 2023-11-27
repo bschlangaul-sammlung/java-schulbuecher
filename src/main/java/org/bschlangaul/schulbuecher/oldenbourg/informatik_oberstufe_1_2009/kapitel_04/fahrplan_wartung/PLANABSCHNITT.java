@@ -12,9 +12,13 @@ import java.awt.*;
 class PLANABSCHNITT
 {
     private static final int abst = 5;
+
     private static final int dy = 10;
+
     private int x1, y1, x2, y2;
+
     private ArrayList<ABSCHNITT> originale;
+
     private BAHNHOFSLISTE b;
 
     /**
@@ -76,7 +80,8 @@ class PLANABSCHNITT
             }
             else
             {
-                beschriftung = beschriftung + ", " + originale.get(i).LinieGeben();
+                beschriftung = beschriftung + ", "
+                        + originale.get(i).LinieGeben();
             }
         }
         xs = 0;
@@ -120,19 +125,19 @@ class PLANABSCHNITT
                 xs = xs + abst / 2;
             }
         }
-
         g.drawString(beschriftung, xs, ys);
     }
-
     /**
-     * Bestimmt das Trefferrechteck für den Mausklick. Ersetzt durch Trefferpolygon.
+     * Bestimmt das Trefferrechteck für den Mausklick. Ersetzt durch
+     * Trefferpolygon.
      *
      * @return Rechteck mit Breite 6 um die Linie
      */
     /*
-     * Rectangle TrefferRechteckGeben () { if (x1 == x2) { return new Rectangle (x1 - 3, Math. min
-     * (y1, y2), 6, Math. abs (y2 - y1)); } else if (y1 == y2) { return new Rectangle (Math. min
-     * (x1, x2), y1 - 3, Math. abs (x2 - x1), 6); } return null; }
+     * Rectangle TrefferRechteckGeben () { if (x1 == x2) { return new Rectangle
+     * (x1 - 3, Math. min (y1, y2), 6, Math. abs (y2 - y1)); } else if (y1 ==
+     * y2) { return new Rectangle (Math. min (x1, x2), y1 - 3, Math. abs (x2 -
+     * x1), 6); } return null; }
      */
 
     /**
@@ -178,6 +183,6 @@ class PLANABSCHNITT
         PLANABSCHNITT a;
         a = (PLANABSCHNITT) o;
         return (x1 == a.x1) && (x2 == a.x2) && (y1 == a.y1) && (y2 == a.y2)
-                        || (x1 == a.x2) && (x2 == a.x1) && (y1 == a.y2) && (y2 == a.y1);
+                || (x1 == a.x2) && (x2 == a.x1) && (y1 == a.y2) && (y2 == a.y1);
     }
 }

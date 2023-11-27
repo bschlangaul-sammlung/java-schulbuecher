@@ -9,17 +9,20 @@ import java.net.*;
  * @author Albert Wiedemann
  * @version 1.0
  */
-
 class ClientThread extends Thread
 {
     /** Das Verbindungsobjekt */
     private Socket socket;
+
     /** Serverobjekt */
     private Server server;
+
     /** Ausgabeobjekt */
     private OutputStream out;
+
     /** Zeichenpuffer */
     private int[] puffer;
+
     /** Anzahl der Zeichen im Puffer */
     private int pufferStand;
 
@@ -98,14 +101,16 @@ class ClientThread extends Thread
                         beendenEmpfangen = true;
                     }
                 }
-            } while ((!abmeldenEmpfangen) && (!beendenEmpfangen));
+            }
+            while ((!abmeldenEmpfangen) && (!beendenEmpfangen));
             server.Abmelden(this);
             if (beendenEmpfangen)
             {
                 server.BeendenSetzen();
             }
             socket.close();
-        } catch (Exception e)
+        }
+        catch (Exception e)
         {
             System.out.println("Allgemeiner Fehler: " + e);
             e.printStackTrace();
@@ -113,7 +118,8 @@ class ClientThread extends Thread
     }
 
     /**
-     * Speichert die auszugebenden Zeichen bis der Puffer voll ist oder eine Zeile fertig ist.
+     * Speichert die auszugebenden Zeichen bis der Puffer voll ist oder eine
+     * Zeile fertig ist.
      *
      * @param zeichen das zu speichernde Zeichen.
      */
@@ -132,7 +138,7 @@ class ClientThread extends Thread
      * Gibt die Zeichen auf den Ausgabestrom aus.
      *
      * @param zeichen die auszugebenden Zeichen
-     * @param anzahl Anzahl der auszugebenden Zeichen
+     * @param anzahl  Anzahl der auszugebenden Zeichen
      */
     void Ausgeben(int[] zeichen, int anzahl)
     {
@@ -143,7 +149,8 @@ class ClientThread extends Thread
                 out.write(zeichen[i]);
             }
             out.flush();
-        } catch (Exception e)
+        }
+        catch (Exception e)
         {
             System.out.println("Allgemeiner Fehler: " + e);
             e.printStackTrace();

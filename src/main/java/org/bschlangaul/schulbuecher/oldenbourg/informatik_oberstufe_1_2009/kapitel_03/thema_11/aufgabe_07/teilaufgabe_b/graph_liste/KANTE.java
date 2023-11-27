@@ -8,13 +8,13 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapi
  * @author U.Freiberger
  * @version 1.0
  */
-
 public class KANTE
 {
     private int gewichtung;
-    KNOTEN zielknoten;
-    KANTE nachfolger;
 
+    KNOTEN zielknoten;
+
+    KANTE nachfolger;
 
     /**
      * Konstruktor für Objekte der Klasse KANTE
@@ -25,7 +25,6 @@ public class KANTE
         zielknoten = ziel;
         nachfolger = naechste;
     }
-
 
     /**
      * Gibt den Bezeichner des Zielknotens der Kante zurück
@@ -38,7 +37,6 @@ public class KANTE
         return zielknoten.BezeichnungGeben();
     }
 
-
     /**
      * Gibt die Gewichtung der Kante zurück
      *
@@ -50,13 +48,12 @@ public class KANTE
         return gewichtung;
     }
 
-
     /**
-     * Gibt die Kanteliste ab dieser Kante in der Konsole aus, jeweils Bezeichner des Zielknoten und
-     * Gewichtung
+     * Gibt die Kanteliste ab dieser Kante in der Konsole aus, jeweils
+     * Bezeichner des Zielknoten und Gewichtung
      *
-     * Ruft, wenn es nicht die letzte Kante in der Adjazenzliste eines Knotens ist, deren Nachfolger
-     * auf
+     * Ruft, wenn es nicht die letzte Kante in der Adjazenzliste eines Knotens
+     * ist, deren Nachfolger auf
      *
      */
     public void Ausgeben()
@@ -65,6 +62,4 @@ public class KANTE
         if (nachfolger != null)
             nachfolger.Ausgeben();
     }
-
-
 }

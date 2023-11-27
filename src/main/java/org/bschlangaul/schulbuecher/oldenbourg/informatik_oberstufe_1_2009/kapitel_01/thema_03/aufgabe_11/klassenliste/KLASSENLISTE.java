@@ -7,8 +7,6 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapi
  * @version 1.0
  */
 class KLASSENLISTE
-
-
 {
     /** Liste */
     private LISTE l;
@@ -26,7 +24,7 @@ class KLASSENLISTE
      * Fügt einen neuen Schüler ein.
      *
      * @param nachname Nachname des Schülers
-     * @param vorname Vorname des Schülers
+     * @param vorname  Vorname des Schülers
      */
     void Einfuegen(String nachname, String vorname)
     {
@@ -43,17 +41,15 @@ class KLASSENLISTE
         l.InformationAusgeben();
     }
 
-
     /**
-     * ändert den Nachnamen eines gesuchten Schülers n_alt Nachname des gesuchten Schülers v_alt
-     * Vorname des gesuchten Schülers n_neu neuer Nachname
+     * ändert den Nachnamen eines gesuchten Schülers n_alt Nachname des
+     * gesuchten Schülers v_alt Vorname des gesuchten Schülers n_neu neuer
+     * Nachname
      */
     void NachnameSetzen(String n_alt, String v_alt, String n_neu)
     {
         SCHUELER s;
-
         DATENELEMENT d;
-
         d = l.Suchen(n_alt + " " + v_alt);
         s = (SCHUELER) d;
         if (s != null)
@@ -64,8 +60,9 @@ class KLASSENLISTE
     }
 
     /**
-     * ändert den Nachnamen eines gesuchten Schülers n_alt Nachname des gesuchten Schülers v_alt
-     * Vorname des gesuchten Schülers v_neu neuer Vorname
+     * ändert den Nachnamen eines gesuchten Schülers n_alt Nachname des
+     * gesuchten Schülers v_alt Vorname des gesuchten Schülers v_neu neuer
+     * Vorname
      */
     void VornameSetzen(String n_alt, String v_alt, String v_neu)
     {

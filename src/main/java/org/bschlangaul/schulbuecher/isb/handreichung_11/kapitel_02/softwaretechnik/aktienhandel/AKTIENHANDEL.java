@@ -8,7 +8,6 @@ package org.bschlangaul.schulbuecher.isb.handreichung_11.kapitel_02.softwaretech
  */
 class AKTIENHANDEL
 {
-
     /**
      * Constructor for objects of class AKTIENHANDEL
      */

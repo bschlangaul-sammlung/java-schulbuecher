@@ -3,6 +3,7 @@ package org.bschlangaul.schulbuecher.isb.handreichung_11.kapitel_01.thema_01.lis
 class Knoten
 {
     private Knoten nachfolger;
+
     private DatenElement daten;
 
     // Konstruktoren
@@ -17,7 +18,6 @@ class Knoten
         nachfolger = naechsterKnoten;
         daten = datenObjekt;
     }
-
 
     // Getter- und Setter-Methoden
     void NachfolgerSetzen(Knoten neuerNachfolger)
@@ -39,7 +39,6 @@ class Knoten
     {
         return daten;
     }
-
 
     // weitere Methoden
     DatenElement EndeGeben()
@@ -72,5 +71,4 @@ class Knoten
         if (nachfolger != null)
             nachfolger.AlleAusgeben();
     }
-
 }

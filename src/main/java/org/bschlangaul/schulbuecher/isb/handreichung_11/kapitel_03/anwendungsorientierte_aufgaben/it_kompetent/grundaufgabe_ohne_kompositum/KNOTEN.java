@@ -3,6 +3,7 @@ package org.bschlangaul.schulbuecher.isb.handreichung_11.kapitel_03.anwendungsor
 class KNOTEN
 {
     private KNOTEN nachfolger;
+
     private DATENELEMENT daten;
 
     // Konstruktoren
@@ -39,7 +40,6 @@ class KNOTEN
         return daten;
     }
 
-
     // weitere Methoden
     DATENELEMENT EndeGeben()
     {
@@ -71,5 +71,4 @@ class KNOTEN
         if (nachfolger != null)
             nachfolger.AlleAusgeben();
     }
-
 }

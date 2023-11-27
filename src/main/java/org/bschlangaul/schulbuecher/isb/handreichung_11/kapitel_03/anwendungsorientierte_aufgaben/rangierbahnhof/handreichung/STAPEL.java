@@ -2,7 +2,6 @@ package org.bschlangaul.schulbuecher.isb.handreichung_11.kapitel_03.anwendungsor
 
 class STAPEL
 {
-
     private LISTE liste;
 
     // Konstruktor
@@ -48,5 +47,4 @@ class STAPEL
     {
         return liste.AnzahlMitEigenschaftGeben(datenObjekt);
     }
-
 }

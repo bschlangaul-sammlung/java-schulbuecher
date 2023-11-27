@@ -1,18 +1,20 @@
 package org.bschlangaul.schulbuecher.buchner.informatik_10_2022.kapitel_05.thema_10.marius_kart_vorlage;
 
 /**
- * Klasse zur Darstellung eines Spielers in Marius-Kart mit Name, Gefährt, Stärke und gesammelten
- * Items
+ * Klasse zur Darstellung eines Spielers in Marius-Kart mit Name, Gefährt,
+ * Stärke und gesammelten Items
  */
 public class Spieler
 {
     private String name;
+
     private Gefaehrt gefaehrt;
+
     private String staerke;
+
     private Item[] items;
 
     public Spieler(String n, Gefaehrt g, String s)
-
     {
         name = n;
         gefaehrt = g;

@@ -8,13 +8,14 @@ import java.util.Random;
  * @author ISB-Arbeitskreis, Umsetzungshilfen Informatik 12
  * @version 1.0
  */
-
 class GENERIEREN
 {
     /* Maxoimale Entfernung zweier Knoten */
     private final static int maxEntfernung = 100;
+
     /* Adjazenzmatrix */
     private int[][] matrix;
+
     /* Zufallsgenerator für die Weglngen */
     private Random zufall;
 
@@ -30,8 +31,8 @@ class GENERIEREN
     }
 
     /**
-     * Generiert die Adjazenzmatrix. Auf eine zweidimensionale Darstellbarkeit wird nicht geachtet.
-     * Pre: anzahl << knotenanzahl!
+     * Generiert die Adjazenzmatrix. Auf eine zweidimensionale Darstellbarkeit
+     * wird nicht geachtet. Pre: anzahl << knotenanzahl!
      *
      * @param anzahl Anzahl der zu generierenden Kanten;
      * @return Adjazenzmatrix
@@ -52,7 +53,6 @@ class GENERIEREN
                     matrix[i][j] = -1;
                 }
             }
-
         }
         for (int i = 0; i < anzahl; i++)
         {
@@ -60,7 +60,8 @@ class GENERIEREN
             {
                 von = zufall.nextInt(matrix.length);
                 nach = zufall.nextInt(matrix[0].length);
-            } while (matrix[von][nach] >= 0);
+            }
+            while (matrix[von][nach] >= 0);
             weg = zufall.nextInt(maxEntfernung);
             matrix[von][nach] = weg;
             matrix[nach][von] = weg;

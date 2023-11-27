@@ -24,5 +24,4 @@ class ZEICHEN extends DATENELEMENT
     {
         return zeichen;
     }
-
 }

@@ -6,8 +6,6 @@ import greenfoot.Actor;
  * Klasse Boden <br>
  * Enthält weder Attribute noch Methoden.
  */
-
 public class Boden extends Actor
 {
-
 }

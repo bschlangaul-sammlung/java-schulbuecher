@@ -18,7 +18,6 @@ public class MeinJumpRun extends JumpRun
         super.starteTickerNeu(0.1);
     }
 
-
     @Override
     public void tasteReagieren(int tastenCode)
     {
@@ -38,22 +37,20 @@ public class MeinJumpRun extends JumpRun
         {
             super.wirkeImpulsAufSpieler(-1000, 0);
         }
-
         this.aktionen++;
         super.anzeigeAktualisieren(aktionen);
     }
 
-
     @Override
     public void tick()
     {
-        if (super.spielerBeruehrtKreisel() || super.spielerBeruehrtLinkenWaechter()
-                        || super.spielerBeruehrtRechtenWaechter())
+        if (super.spielerBeruehrtKreisel()
+                || super.spielerBeruehrtLinkenWaechter()
+                || super.spielerBeruehrtRechtenWaechter())
         {
             super.stoppeTicker();
             super.zeigeSpielVerlorenAn();
         }
-
         if (super.spielerBeruehrtStern())
         {
             super.stoppeTicker();

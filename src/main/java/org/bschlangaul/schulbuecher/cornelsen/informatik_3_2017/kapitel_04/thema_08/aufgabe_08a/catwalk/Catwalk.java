@@ -10,10 +10,13 @@ class Catwalk
 {
     /** Die Leuchten */
     Rechteck[] leuchten;
+
     /** Die zur Verfügung stehenden Farben */
     String[] farben;
+
     /** Größe einer Leuchte */
     final int breite = 40;
+
     /** Anzahl der Leuchten */
     final int spaltenanzahl = 10;
 
@@ -48,7 +51,7 @@ class Catwalk
      * Setzt die angegebene Leuchte auf die gewünschte Farbe
      *
      * @param spalte die Spaltennummer der Leuchte
-     * @param farbe die gewünschte Farbe
+     * @param farbe  die gewünschte Farbe
      */
     void FarbeSetzen(int spalte, String farbe)
     {
@@ -76,5 +79,4 @@ class Catwalk
     {
         return spaltenanzahl;
     }
-
 }

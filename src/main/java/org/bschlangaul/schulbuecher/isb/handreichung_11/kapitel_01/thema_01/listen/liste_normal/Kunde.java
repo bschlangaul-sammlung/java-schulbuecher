@@ -3,6 +3,7 @@ package org.bschlangaul.schulbuecher.isb.handreichung_11.kapitel_01.thema_01.lis
 class Kunde extends DatenElement
 {
     private String name;
+
     private String vorname;
 
     Kunde(String neuerName, String neuerVorname)
@@ -15,5 +16,4 @@ class Kunde extends DatenElement
     {
         System.out.println("Kunde: " + name + ", " + vorname);
     }
-
 }

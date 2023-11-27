@@ -27,7 +27,6 @@ class Warteschlange
     String AnfangEntfernen()
     {
         String entfernt;
-
         if (!IstLeer())
         {
             entfernt = anfang.NameVornameGeben();
@@ -35,7 +34,6 @@ class Warteschlange
         }
         else
             entfernt = "";
-
         return entfernt;
     }
 
@@ -60,5 +58,4 @@ class Warteschlange
         else
             return 0;
     }
-
 }

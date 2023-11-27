@@ -21,23 +21,13 @@ public class Spielfigur extends Actor
     public void act()
     {
         // 2. (a)
-
-
         move(geschwindigkeit); // 1. (a)
-
         // 2. (b)
-
-
-
         // 2. (c)
-
-
-
         if (getY() >= 190) // 1. (b)
         {
             spielVerloren();
         }
-
         if (beruehrtBoden() == false) // 1. (c)
         {
             falle();
@@ -56,7 +46,8 @@ public class Spielfigur extends Actor
     }
 
     /**
-     * Zeigt einen Text an, wenn das Spiel verloren wurde, und beendet das Programm.
+     * Zeigt einen Text an, wenn das Spiel verloren wurde, und beendet das
+     * Programm.
      */
     void spielVerloren()
     {
@@ -78,8 +69,9 @@ public class Spielfigur extends Actor
     }
 
     /**
-     * Die folgenden, fertig programmierten Methoden können zur Lösung der Arbeitsaufträge und
-     * Aufgaben verwendet werden. Dazu ist es nicht nötig ihre genaue Arbeitsweise zu verstehen.
+     * Die folgenden, fertig programmierten Methoden können zur Lösung der
+     * Arbeitsaufträge und Aufgaben verwendet werden. Dazu ist es nicht nötig
+     * ihre genaue Arbeitsweise zu verstehen.
      *
      * bewegt die Spielfigur um eine Zelle nach oben
      */
@@ -139,7 +131,8 @@ public class Spielfigur extends Actor
     }
 
     /**
-     * Liefert true, wenn sich die Spielfigur nicht mehr weiter nach rechts bewegen kann.
+     * Liefert true, wenn sich die Spielfigur nicht mehr weiter nach rechts
+     * bewegen kann.
      */
     boolean istBlockiert()
     {

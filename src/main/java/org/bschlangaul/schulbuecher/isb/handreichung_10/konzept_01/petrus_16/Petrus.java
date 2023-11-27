@@ -7,13 +7,16 @@ import java.util.Random;
 public class Petrus
 {
     private Wolke wolke;
+
     private Timer uhr;
+
     private Random zufall;
 
     public Petrus()
     {
         wolke = new Wolke();
-        uhr = new Timer(100, new ActionListener() {
+        uhr = new Timer(100, new ActionListener()
+        {
             public void actionPerformed(ActionEvent e)
             {
                 ticke();
@@ -44,7 +47,7 @@ public class Petrus
         for (int i = 0; i < zahl; i++)
         {
             Tropfen tr = new Tropfen(zufall.nextInt(600), zufall.nextInt(200),
-                            5 + zufall.nextInt(20), wolke);
+                    5 + zufall.nextInt(20), wolke);
             wolke.fuegeHinzu(tr);
         }
     }
@@ -53,7 +56,8 @@ public class Petrus
     {
         for (int i = 0; i < zahl; i++)
         {
-            Hagelkorn hk = new Hagelkorn(zufall.nextInt(600), zufall.nextInt(200));
+            Hagelkorn hk = new Hagelkorn(zufall.nextInt(600),
+                    zufall.nextInt(200));
             wolke.fuegeHinzu(hk);
         }
     }
@@ -62,9 +66,9 @@ public class Petrus
     {
         for (int i = 0; i < zahl; i++)
         {
-            Schneeflocke flocke = new Schneeflocke(zufall.nextInt(600), zufall.nextInt(200));
+            Schneeflocke flocke = new Schneeflocke(zufall.nextInt(600),
+                    zufall.nextInt(200));
             wolke.fuegeHinzu(flocke);
         }
     }
-
 }

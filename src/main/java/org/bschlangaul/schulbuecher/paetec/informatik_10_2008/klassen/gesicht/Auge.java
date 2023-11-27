@@ -25,25 +25,22 @@ public class Auge implements Schauspieler
         auge.farbeSetzen("weiss");
         auge.groesseSetzen(100, 50);
         auge.positionSetzen(xPosition, yPosition);
-
         pupille = new Ellipse();
         pupille.farbeSetzen("schwarz");
         pupille.groesseSetzen(30, 20);
         pupille.positionSetzen(xPosition + 10, yPosition + 10);
-
         auge.anzeigen();
         pupille.anzeigen();
     }
 
     /**
-     * Die Methode agieren fuehrt eine fuer das Schauspielerobjekt typische Bewegung aus.
+     * Die Methode agieren fuehrt eine fuer das Schauspielerobjekt typische
+     * Bewegung aus.
      */
     public void agieren()
     {
         pupille.verschieben(50, 0);
-
         warten(1);
-
         pupille.verschieben(-50, 0);
     }
 }

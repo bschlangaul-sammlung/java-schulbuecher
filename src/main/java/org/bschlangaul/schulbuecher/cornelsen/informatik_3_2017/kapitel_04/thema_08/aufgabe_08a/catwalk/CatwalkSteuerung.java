@@ -12,6 +12,7 @@ class CatwalkSteuerung extends Figur
 {
     /** Der Laufsteg */
     Catwalk laufsteg;
+
     /** Der Zufallsgenerator */
     Random zufallszahlgenerator;
 
@@ -31,11 +32,13 @@ class CatwalkSteuerung extends Figur
     @Override
     void AktionAusführen()
     {
-        for (int spalte = 0; spalte < laufsteg.SpaltenanzahlGeben() - 1; spalte = spalte + 1)
+        for (int spalte = 0; spalte < laufsteg.SpaltenanzahlGeben()
+                - 1; spalte = spalte + 1)
         {
             laufsteg.FarbeSetzen(spalte, laufsteg.FarbeGeben(spalte + 1));
         }
-        laufsteg.FarbeSetzen(laufsteg.SpaltenanzahlGeben() - 1, ZufälligeFarbeGeben());
+        laufsteg.FarbeSetzen(laufsteg.SpaltenanzahlGeben() - 1,
+                ZufälligeFarbeGeben());
     }
 
     /**
@@ -47,32 +50,44 @@ class CatwalkSteuerung extends Figur
     {
         switch (zufallszahlgenerator.nextInt(12))
         {
-            case 1:
-                return "weiß";
-            case 2:
-                return "rot";
-            case 3:
-                return "grün";
-            case 4:
-                return "blau";
-            case 5:
-                return "gelb";
-            case 6:
-                return "magenta";
-            case 7:
-                return "cyan";
-            case 8:
-                return "hellgelb";
-            case 9:
-                return "hellgrün";
-            case 10:
-                return "orange";
-            case 11:
-                return "braun";
-            case 12:
-                return "grau";
-            default:
-                return "schwarz";
+        case 1:
+            return "weiß";
+
+        case 2:
+            return "rot";
+
+        case 3:
+            return "grün";
+
+        case 4:
+            return "blau";
+
+        case 5:
+            return "gelb";
+
+        case 6:
+            return "magenta";
+
+        case 7:
+            return "cyan";
+
+        case 8:
+            return "hellgelb";
+
+        case 9:
+            return "hellgrün";
+
+        case 10:
+            return "orange";
+
+        case 11:
+            return "braun";
+
+        case 12:
+            return "grau";
+
+        default:
+            return "schwarz";
         }
     }
 }

@@ -24,7 +24,7 @@ class KONTROLLEUR
      * Sucht den Weg.
      *
      * @param start Startort
-     * @param ziel Zielort
+     * @param ziel  Zielort
      */
     void WegBerechnen(Object start, Object ziel)
     {

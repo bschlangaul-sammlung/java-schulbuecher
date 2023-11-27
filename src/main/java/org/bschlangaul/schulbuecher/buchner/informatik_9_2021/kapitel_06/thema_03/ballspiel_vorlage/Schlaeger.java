@@ -7,10 +7,10 @@ import greenfoot.Greenfoot;
  * Klasse Schlaeger <br>
  * Kap. 6.3 Arbeitsauftrag 3, Aufgabe 1
  */
-
 public class Schlaeger extends Actor
 {
     boolean autopilot;
+
     Ball ball;
 
     public Schlaeger(Ball parameterBall)
@@ -23,9 +23,6 @@ public class Schlaeger extends Actor
     public void act()
     {
         // Kapitel 6-3 A3
-
-
-
         if (Greenfoot.isKeyDown("space"))
         {
             if (Greenfoot.isKeyDown("left") && istLinkerSchlaeger())
@@ -37,7 +34,6 @@ public class Schlaeger extends Actor
                 autopilot = !autopilot;
             }
         }
-
     }
 
     public boolean istLinkerSchlaeger()

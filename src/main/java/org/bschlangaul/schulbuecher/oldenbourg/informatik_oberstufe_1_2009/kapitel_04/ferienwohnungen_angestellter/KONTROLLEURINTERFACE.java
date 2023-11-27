@@ -6,7 +6,6 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapi
  * @author Albert Wiedemann
  * @version 1.0
  */
-
 interface KONTROLLEURINTERFACE
 {
     /**
@@ -40,35 +39,37 @@ interface KONTROLLEURINTERFACE
     /**
      * Veranlasst das Anlegen eines neuen Objekts mit den gegebenen Daten.
      *
-     * @param name Name des Objekts
-     * @param groesse Wohnfläche des Objekts
-     * @param zimmer Anzahl der Zimmer
-     * @param personen Maximale Anzahl der Personen
-     * @param land Beschreibung des Landes
-     * @param art "Wohnung" oder "Haus"
-     * @param preis Wochenpreis
-     * @param gesperrt Buchungssperre
+     * @param name          Name des Objekts
+     * @param groesse       Wohnfläche des Objekts
+     * @param zimmer        Anzahl der Zimmer
+     * @param personen      Maximale Anzahl der Personen
+     * @param land          Beschreibung des Landes
+     * @param art           "Wohnung" oder "Haus"
+     * @param preis         Wochenpreis
+     * @param gesperrt      Buchungssperre
      * @param ausstattungen Zusatzausstattungen
      */
-    void NeuesObjektAnlegen(String name, int groesse, int zimmer, int personen, Object land,
-                    String art, double preis, boolean gesperrt, boolean[] ausstattungen);
+    void NeuesObjektAnlegen(String name, int groesse, int zimmer, int personen,
+            Object land, String art, double preis, boolean gesperrt,
+            boolean[] ausstattungen);
 
     /**
      * Veranlasst das ändern eines Objekts mit den gegebenen Daten.
      *
-     * @param nummer Schlüssel des Objekts
-     * @param name Name des Objekts
-     * @param groesse Wohnfläche des Objekts
-     * @param zimmer Anzahl der Zimmer
-     * @param personen Maximale Anzahl der Personen
-     * @param land Beschreibung des Landes
-     * @param art "Wohnung" oder "Haus"
-     * @param preis Wochenpreis
-     * @param gesperrt Buchungssperre
+     * @param nummer        Schlüssel des Objekts
+     * @param name          Name des Objekts
+     * @param groesse       Wohnfläche des Objekts
+     * @param zimmer        Anzahl der Zimmer
+     * @param personen      Maximale Anzahl der Personen
+     * @param land          Beschreibung des Landes
+     * @param art           "Wohnung" oder "Haus"
+     * @param preis         Wochenpreis
+     * @param gesperrt      Buchungssperre
      * @param ausstattungen Zusatzausstattungen
      */
-    void ObjektAendern(int nummer, String name, int groesse, int zimmer, int personen, Object land,
-                    String art, double preis, boolean gesperrt, boolean[] ausstattungen);
+    void ObjektAendern(int nummer, String name, int groesse, int zimmer,
+            int personen, Object land, String art, double preis,
+            boolean gesperrt, boolean[] ausstattungen);
 
     /**
      * Veranlasst das Löschen des angegebenen Objekts.
@@ -81,8 +82,8 @@ interface KONTROLLEURINTERFACE
      * Veranlasst das Anlegen eines neuen Kunden mit den gegebenen Daten.
      *
      * @param benutzername Schlüssel des Kunden
-     * @param name Name des Kunden
-     * @param vorname Vorname des Kunden
+     * @param name         Name des Kunden
+     * @param vorname      Vorname des Kunden
      */
     void NeuenKundenAnlegen(String name, String vorname);
 
@@ -90,8 +91,8 @@ interface KONTROLLEURINTERFACE
      * Veranlasst das ändern eines Kunden mit den gegebenen Daten.
      *
      * @param benutzername Schlüssel des Kunden
-     * @param name Name des Kunden
-     * @param vorname Vorname des Kunden
+     * @param name         Name des Kunden
+     * @param vorname      Vorname des Kunden
      */
     void KundenAendern(String benutzername, String name, String vorname);
 
@@ -106,7 +107,7 @@ interface KONTROLLEURINTERFACE
      * Veranlasst das Setzen des Passworts für den angegebenen Kunden.
      *
      * @param benutzername Schlüssel des Kunden
-     * @param pass das Passwort des Kunden
+     * @param pass         das Passwort des Kunden
      */
     void PasswortSetzen(String benutzername, String pass);
 

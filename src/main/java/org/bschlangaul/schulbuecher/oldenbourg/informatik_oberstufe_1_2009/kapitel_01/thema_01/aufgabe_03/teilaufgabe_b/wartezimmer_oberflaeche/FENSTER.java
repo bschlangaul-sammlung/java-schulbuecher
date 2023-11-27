@@ -5,16 +5,14 @@ import java.awt.event.*;
 
 /**
  *
- * Oberfläche zur Verwaltung der Warteschlange Die Klasse wurde mit einer geeigneten
- * Entwicklungsumgebung für grafische Oberflächen erstellt.
+ * Oberfläche zur Verwaltung der Warteschlange Die Klasse wurde mit einer
+ * geeigneten Entwicklungsumgebung für grafische Oberflächen erstellt.
  *
  * @version 1.0 vom 16.08.2008
  * @author Klaus van Dijkstran
  */
-
 class FENSTER extends Frame
 {
-
     /** überschrift */
     private Label labelUeberschrift = new Label();
 
@@ -22,15 +20,18 @@ class FENSTER extends Frame
     private Label labelUnterueberschrift = new Label();
 
     /**
-     * Schaltfläche zum Aufruf der Methode zum Einfügen eines Patienten, der im Textfeld eingetragen
-     * wurde
+     * Schaltfläche zum Aufruf der Methode zum Einfügen eines Patienten, der im
+     * Textfeld eingetragen wurde
      */
     private Button knopfEinfuegen = new Button();
 
     /** Textfeld zum Eintrag eines neuen Patienten */
     private TextField textfeld_Einfuegen = new TextField();
 
-    /** Schaltfläche zum Aufruf der Methode zum Entfernen und Anzeigen eines Patienten */
+    /**
+     * Schaltfläche zum Aufruf der Methode zum Entfernen und Anzeigen eines
+     * Patienten
+     */
     private Button knopf_Entfernen = new Button();
 
     /** Beschriftung */
@@ -42,13 +43,16 @@ class FENSTER extends Frame
     /** Label zur Anzeige des nächsten Patienten */
     private Label labelNaechster = new Label();
 
-    /** Verwaltete Warteschlange, an die Botschaften über Ereignisse weitergeleitet werden */
+    /**
+     * Verwaltete Warteschlange, an die Botschaften über Ereignisse
+     * weitergeleitet werden
+     */
     WARTESCHLANGE w;
-
     // Ende Attribute
 
     /**
-     * Konstruktor der Oberfläche Erzeugt ein Fenster mit den zugehörigen Komponenten
+     * Konstruktor der Oberfläche Erzeugt ein Fenster mit den zugehörigen
+     * Komponenten
      *
      * @param title Fenstertitel
      */
@@ -56,7 +60,8 @@ class FENSTER extends Frame
     {
         // Frame-Initialisierung
         super(title);
-        addWindowListener(new WindowAdapter() {
+        addWindowListener(new WindowAdapter()
+        {
             public void windowClosing(WindowEvent evt)
             {
                 System.exit(0);
@@ -74,18 +79,19 @@ class FENSTER extends Frame
         final WARTESCHLANGE w;
         w = new WARTESCHLANGE();
         // Anfang Komponenten
-
         labelUeberschrift.setBounds(8, 8, 289, 24);
         labelUeberschrift.setText("Warteschlangenverwaltung");
         labelUeberschrift.setFont(new Font("MS Sans Serif", Font.PLAIN, 17));
         fenster.add(labelUeberschrift);
         labelUnterueberschrift.setBounds(8, 32, 115, 16);
         labelUnterueberschrift.setText("Praxis Dr. Krankl");
-        labelUnterueberschrift.setFont(new Font("MS Sans Serif", Font.BOLD, 13));
+        labelUnterueberschrift
+                .setFont(new Font("MS Sans Serif", Font.BOLD, 13));
         fenster.add(labelUnterueberschrift);
         knopfEinfuegen.setBounds(144, 80, 81, 33);
         knopfEinfuegen.setLabel("Einfügen");
-        knopfEinfuegen.addActionListener(new ActionListener() {
+        knopfEinfuegen.addActionListener(new ActionListener()
+        {
             public void actionPerformed(ActionEvent evt)
             {
                 w.Einfuegen(new PATIENT(textfeld_Einfuegen.getText()));
@@ -97,14 +103,16 @@ class FENSTER extends Frame
         fenster.add(textfeld_Einfuegen);
         knopf_Entfernen.setBounds(144, 128, 81, 33);
         knopf_Entfernen.setLabel("Entfernen");
-        knopf_Entfernen.addActionListener(new ActionListener() {
+        knopf_Entfernen.addActionListener(new ActionListener()
+        {
             public void actionPerformed(ActionEvent evt)
             {
                 PATIENT entfernter;
                 entfernter = w.Entfernen();
                 if (entfernter != null)
                 {
-                    labelNaechster.setText("Der Nächste: " + entfernter.NameGeben());
+                    labelNaechster
+                            .setText("Der Nächste: " + entfernter.NameGeben());
                 }
                 else
                 {
@@ -127,9 +135,7 @@ class FENSTER extends Frame
         labelNaechster.setFont(new Font("MS Sans Serif", Font.PLAIN, 13));
         fenster.add(labelNaechster);
         // Ende Komponenten
-
         setResizable(false);
         setVisible(true);
     }
-
 }

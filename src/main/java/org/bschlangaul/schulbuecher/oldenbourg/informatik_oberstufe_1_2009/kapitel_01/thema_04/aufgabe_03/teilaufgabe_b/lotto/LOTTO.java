@@ -30,7 +30,6 @@ class LOTTO
         l.SortiertEinfuegen(zahl);
     }
 
-
     /**
      * Ausgabe aller Zahlen über die Konsole
      */

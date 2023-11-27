@@ -8,8 +8,6 @@ import greenfoot.*; // (World, Actor, GreenfootImage, Greenfoot und MouseInfo)
  * @author Wolfgang Riffelmacher
  * @version 2022-09-12
  */
-
 public class Hai extends Actor
 {
-
 }

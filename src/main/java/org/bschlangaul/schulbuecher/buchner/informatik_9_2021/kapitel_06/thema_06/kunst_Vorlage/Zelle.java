@@ -6,13 +6,13 @@ import greenfoot.GreenfootImage;
 
 /**
  * Klasse Zelle <br>
- * Der Programmtext dieser Klasse braucht für die Bearbeitung der Arbeitsaufträge und Aufgaben weder
- * gelesen noch verstanden zu werden.
+ * Der Programmtext dieser Klasse braucht für die Bearbeitung der
+ * Arbeitsaufträge und Aufgaben weder gelesen noch verstanden zu werden.
  */
-
 class Zelle extends Actor
 {
     static int zaehler = 0;
+
     int zahl;
 
     Zelle()
@@ -23,7 +23,6 @@ class Zelle extends Actor
     Color berechneFarbe()
     {
         zahl = zaehler % 4;
-
         if (zahl == 0)
         {
             return Color.ORANGE;

@@ -5,10 +5,9 @@ import greenfoot.Greenfoot;
 
 /**
  * Projekt zu Kap. 5.10 Aufgabe 9 <br>
- * Der Programmtext dieser Klasse braucht für die Bearbeitung der Arbeitsaufträge und Aufgaben weder
- * gelesen noch verstanden zu werden.
+ * Der Programmtext dieser Klasse braucht für die Bearbeitung der
+ * Arbeitsaufträge und Aufgaben weder gelesen noch verstanden zu werden.
  */
-
 public class Fadenkreuz extends Actor
 {
     Himmel meinHimmel;
@@ -22,7 +21,8 @@ public class Fadenkreuz extends Actor
     {
         if (Greenfoot.getMouseInfo() != null)
         {
-            setLocation(Greenfoot.getMouseInfo().getX(), Greenfoot.getMouseInfo().getY());
+            setLocation(Greenfoot.getMouseInfo().getX(),
+                    Greenfoot.getMouseInfo().getY());
         }
     }
 }

@@ -13,11 +13,13 @@ class IT_HOTLINE
 
     // Methoden
     /**
-     * nimmt die Daten der anrufenden Kunden auf und reiht den Kunden in die Warteschlange ein
+     * nimmt die Daten der anrufenden Kunden auf und reiht den Kunden in die
+     * Warteschlange ein
      *
-     * @param Kundennummer und Problemschilderung 'Wir begrü&szig;en Sie bei der Hotline von
-     *        IT-Kompetent. Geben Sie bitte Ihre Kundennummer sowie eine Kurzbeschreibung Ihres
-     *        Problems an.'
+     * @param Kundennummer und Problemschilderung 'Wir begrü&szig;en Sie bei der
+     *                     Hotline von IT-Kompetent. Geben Sie bitte Ihre
+     *                     Kundennummer sowie eine Kurzbeschreibung Ihres
+     *                     Problems an.'
      */
     void DatenAufnehmen(int kundennummer, String problem)
     {
@@ -26,7 +28,8 @@ class IT_HOTLINE
     }
 
     /**
-     * holt nächsten Anrufer aus der Warteschlange und zeigt Informationen auf der Konsole an
+     * holt nächsten Anrufer aus der Warteschlange und zeigt Informationen auf
+     * der Konsole an
      */
     void NaechstenAnruferHolen()
     {
@@ -37,22 +40,22 @@ class IT_HOTLINE
         }
         else
         {
-            System.out.println("Derzeit sind keine Anrufer in der Warteschleife");
-            System.out.println("----------------------------------------------------");
+            System.out
+                    .println("Derzeit sind keine Anrufer in der Warteschleife");
+            System.out.println(
+                    "----------------------------------------------------");
         }
-
     }
 
     /**
-     * bestimmt die Anzahl der Anrufer, die sich momentan in der Warteschlange befinden und zeigt
-     * diese auf der Konsole an
+     * bestimmt die Anzahl der Anrufer, die sich momentan in der Warteschlange
+     * befinden und zeigt diese auf der Konsole an
      */
     void AnzahlDerAnruferHolen()
     {
         System.out.println("Momentane Anzahl der Anrufer in der Warteschleife: "
-                        + anruferschlange.AnzahlGeben());
-        System.out.println("----------------------------------------------------");
+                + anruferschlange.AnzahlGeben());
+        System.out.println(
+                "----------------------------------------------------");
     }
-
-
 }

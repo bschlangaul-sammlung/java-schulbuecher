@@ -5,7 +5,6 @@ package org.bschlangaul.schulbuecher.buchner.informatik_9_2021.kapitel_07.thema_
  *
  * Kap. 7.2 Arbeitsauftrag 1 und 3
  */
-
 class Biene extends Tier
 {
     Biene()

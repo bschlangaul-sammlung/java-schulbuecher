@@ -8,10 +8,10 @@ import greenfoot.*;
  * @author Ulrich Schneider
  * @version 2022-09-12
  */
-
 public class Bauer extends Actor
 {
     private int GrasAnzahl = 0;
+
     private int timer = 0;
 
     public void act()
@@ -32,19 +32,11 @@ public class Bauer extends Actor
         {
             bewege(0, 2);
         }
-
         // Aufgabe b: Taste g: Gras sammeln, Taste p: Schwein putzen
-
         // Aufgabe g: Brunnen Betätigen
-
         timer++;
     }
-
-
-
     // Die Rümpfe der Methoden ab hier müssen nicht gelesen werden.
-
-
 
     void bewege(int dx, int dy)
     {
@@ -69,21 +61,22 @@ public class Bauer extends Actor
 
     public void schweinPutzen()
     {
-        // Falls ein dreckiges Schwein vorhanden und genug Gras vorhanden, Schein putzen
+        // Falls ein dreckiges Schwein vorhanden und genug Gras vorhanden,
+        // Schein putzen
         if (isTouching(Schwein.class))
         {
             Schwein schwein = (Schwein) getOneIntersectingObject(Schwein.class);
-            // Aufgabe e: Schwein wird nur geputzt, wenn es dreckig ist und genügend Gras vorhanden
+            // Aufgabe e: Schwein wird nur geputzt, wenn es dreckig ist und
+            // genügend Gras vorhanden
             // ist
             if (timer > 100)
             {
                 schwein.putzen();
                 timer = 0;
-                // Aufgabe d: Beim putzen, ein Gras weniger und Zähler aktualisieren
+                // Aufgabe d: Beim putzen, ein Gras weniger und Zähler
+                // aktualisieren
                 // Ein Grasbüschel weniger
-
                 // Graszähler aktualisieren
-
                 // Aufgabe d Ende
                 // Prüfen, ob alle Schweine geputzt sind
                 ((SchweineWelt) getWorld()).sindAlleSchweineSauber();
@@ -99,11 +92,10 @@ public class Bauer extends Actor
             // Aufgabe f Ende
             // Grasbüschel aus der Welt entfernen
             removeTouching(Gras.class);
-            // Aufgabe d: Beim Gras sammeln, ein Gras mehr und Zähler aktualisieren
+            // Aufgabe d: Beim Gras sammeln, ein Gras mehr und Zähler
+            // aktualisieren
             // Ein Grasbüschel mehr
-
             // Graszähler aktualisieren
-
             // Aufgabe d Ende
         }
     }

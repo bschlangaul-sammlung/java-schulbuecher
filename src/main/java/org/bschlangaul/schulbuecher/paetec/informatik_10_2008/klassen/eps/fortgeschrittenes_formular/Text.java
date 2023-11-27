@@ -8,15 +8,14 @@ import java.awt.GraphicsEnvironment;
 import javax.swing.JLabel;
 
 /**
- * Diese Klasse implementiert einen einfachen Text. Die Schriftart und die Groesse des Textes kann
- * veraendert werden.
+ * Diese Klasse implementiert einen einfachen Text. Die Schriftart und die
+ * Groesse des Textes kann veraendert werden.
  *
  * @author Florian Prager, Universität Passau
  * @version 02.2008
  */
 public class Text extends Formulargrafik
 {
-
     private String originalInhalt;
 
     private String schriftart;
@@ -92,8 +91,9 @@ public class Text extends Formulargrafik
     }
 
     /**
-     * Aendert die Farbe des Textes nach der RGB-Tabelle. Es sind Werte zwischen 0 und 255 moeglich.
-     * Groessere Angaben werden auf 255 gesetzt. Negative Angaben werden auf 0 gesetzt.
+     * Aendert die Farbe des Textes nach der RGB-Tabelle. Es sind Werte zwischen
+     * 0 und 255 moeglich. Groessere Angaben werden auf 255 gesetzt. Negative
+     * Angaben werden auf 0 gesetzt.
      */
     public void farbeSetzen(int rot, int gruen, int blau)
     {
@@ -114,9 +114,10 @@ public class Text extends Formulargrafik
     }
 
     /**
-     * Die Farbe des Textes kann gewaehlt werden. Mögliche Farben sind: "weiss", "gelb", "orange",
-     * "rot", "pink", "magenta", "cyan", "gruen", "blau", "grau", "schwarz" Achtung: Die
-     * Anfuehrungsstriche sind noetig! Alle anderen Eingabewerte werden ignoriert.
+     * Die Farbe des Textes kann gewaehlt werden. Mögliche Farben sind: "weiss",
+     * "gelb", "orange", "rot", "pink", "magenta", "cyan", "gruen", "blau",
+     * "grau", "schwarz" Achtung: Die Anfuehrungsstriche sind noetig! Alle
+     * anderen Eingabewerte werden ignoriert.
      */
     public void farbeSetzen(String neueFarbe)
     {
@@ -129,7 +130,8 @@ public class Text extends Formulargrafik
     }
 
     /**
-     * Uebersetzt den String in ein Colorobjekt, falls moeglich. Ansonsten wird null zurueckgegeben.
+     * Uebersetzt den String in ein Colorobjekt, falls moeglich. Ansonsten wird
+     * null zurueckgegeben.
      */
     private Color farbeAufloesen(String farbe)
     {
@@ -188,7 +190,7 @@ public class Text extends Formulargrafik
     public void schriftartSetzen(String name)
     {
         String[] fonts = GraphicsEnvironment.getLocalGraphicsEnvironment()
-                        .getAvailableFontFamilyNames();
+                .getAvailableFontFamilyNames();
         for (int i = 0; i < fonts.length; i++)
         {
             if (fonts[i].equals(name))
@@ -227,14 +229,15 @@ public class Text extends Formulargrafik
     }
 
     /**
-     * Liefert eine Liste der verfuegbaren Schriftarten auf dem aktuellen System.
+     * Liefert eine Liste der verfuegbaren Schriftarten auf dem aktuellen
+     * System.
      *
      * @return die Liste
      */
     public String[] schriftartenGeben()
     {
         String[] fonts = GraphicsEnvironment.getLocalGraphicsEnvironment()
-                        .getAvailableFontFamilyNames();
+                .getAvailableFontFamilyNames();
         return fonts;
         // String ergebnis = "";
         // if (fonts == null)
@@ -293,7 +296,8 @@ public class Text extends Formulargrafik
         for (int i = 0; i < kleinTextArray.length; i++)
         {
             int anfangsIndex = anfangsIndexBerechnen(kleinTextArray, i);
-            ergebnis[i] = text.substring(anfangsIndex, anfangsIndex + kleinTextArray[i].length());
+            ergebnis[i] = text.substring(anfangsIndex,
+                    anfangsIndex + kleinTextArray[i].length());
         }
         return ergebnis;
     }
@@ -321,7 +325,8 @@ public class Text extends Formulargrafik
         MeinLabel label = new MeinLabel(text);
         label.setFont(font);
         label.setText(text);
-        int textbreite = label.getFontMetrics(font).stringWidth(label.getText());
+        int textbreite = label.getFontMetrics(font)
+                .stringWidth(label.getText());
         int texthoehe = label.getFontMetrics(font).getHeight();
         char[] textArray = text.toCharArray();
         if (textbreite >= formularGeben().breiteGeben())
@@ -333,14 +338,17 @@ public class Text extends Formulargrafik
             int letztesZeilenende = 0;
             for (int i = 0; i < textArray.length; i++)
             {
-                zeilenString = stringExtrahieren(textArray, aktuellerStartindex, i);
-                int zeilenbreite = label.getFontMetrics(font).stringWidth(zeilenString);
+                zeilenString = stringExtrahieren(textArray, aktuellerStartindex,
+                        i);
+                int zeilenbreite = label.getFontMetrics(font)
+                        .stringWidth(zeilenString);
                 if (zeilenbreite >= formularGeben().breiteGeben())
                 {
                     int zeilenende = i - 1;
                     if (textArray[i] != ' ')
                     {
-                        zeilenende = zurueckVerfolgen(textArray, i, letztesZeilenende + 1) - 1;
+                        zeilenende = zurueckVerfolgen(textArray, i,
+                                letztesZeilenende + 1) - 1;
                     }
                     letztesZeilenende = zeilenende;
                     // int testbreite = label.getFontMetrics(font).stringWidth(
@@ -348,7 +356,8 @@ public class Text extends Formulargrafik
                     // zeilenende));
                     // if (testbreite > textbreite)
                     // textbreite = testbreite;
-                    text += stringExtrahieren(textArray, aktuellerStartindex, zeilenende) + "<br>";
+                    text += stringExtrahieren(textArray, aktuellerStartindex,
+                            zeilenende) + "<br>";
                     if (textArray[zeilenende + 1] == ' ')
                     {
                         aktuellerStartindex = zeilenende + 2;
@@ -374,10 +383,11 @@ public class Text extends Formulargrafik
         gesamtLabel.setFont(label.getFont());
         gesamtLabel.setText(gesamtLabel.getText() + label.getText());
         if (gesamtLabel.getWidth() < label.getWidth())
-            gesamtLabel.setSize(label.getWidth(), gesamtLabel.getHeight() + label.getHeight());
+            gesamtLabel.setSize(label.getWidth(),
+                    gesamtLabel.getHeight() + label.getHeight());
         else
             gesamtLabel.setSize(gesamtLabel.getWidth(),
-                            gesamtLabel.getHeight() + label.getHeight());
+                    gesamtLabel.getHeight() + label.getHeight());
     }
 
     private boolean hatZentrierungsProblem(String text, String zeile)
@@ -386,19 +396,23 @@ public class Text extends Formulargrafik
             return false;
         if (text.length() <= zeile.length())
             return false;
-        char[] ta = text.substring(0, text.length() - zeile.length() - 4).toCharArray();
+        char[] ta = text.substring(0, text.length() - zeile.length() - 4)
+                .toCharArray();
         for (int i = ta.length - 1; i >= 3; i--)
         {
-            if (ta[i] == '>' && ta[i - 1] == 'r' && ta[i - 2] == 'b' && ta[i - 3] == '>')
-                return zeile.length() > text.substring(i + 1, ta.length).length();
+            if (ta[i] == '>' && ta[i - 1] == 'r' && ta[i - 2] == 'b'
+                    && ta[i - 3] == '>')
+                return zeile.length() > text.substring(i + 1, ta.length)
+                        .length();
         }
         return zeile.length() > text.substring(0, ta.length).length();
     }
 
-    private String stringExtrahieren(char[] textArray, int startIndex, int endIndex)
+    private String stringExtrahieren(char[] textArray, int startIndex,
+            int endIndex)
     {
-        if (endIndex >= textArray.length || startIndex > textArray.length || endIndex < 0
-                        || startIndex < 0 || startIndex > endIndex)
+        if (endIndex >= textArray.length || startIndex > textArray.length
+                || endIndex < 0 || startIndex < 0 || startIndex > endIndex)
             return null;
         else
         {
@@ -411,7 +425,8 @@ public class Text extends Formulargrafik
         }
     }
 
-    synchronized private int zurueckVerfolgen(char[] textArray, int index, int letztesZeilenende)
+    synchronized private int zurueckVerfolgen(char[] textArray, int index,
+            int letztesZeilenende)
     {
         int i = index;
         while (textArray[i] != ' ' && i > letztesZeilenende)
@@ -428,23 +443,26 @@ public class Text extends Formulargrafik
     private String geeigneteFontFamilieSuchen()
     {
         String[] fonts = GraphicsEnvironment.getLocalGraphicsEnvironment()
-                        .getAvailableFontFamilyNames();
+                .getAvailableFontFamilyNames();
         String font = fonts[0];
         for (int i = 0; i < fonts.length; i++)
         {
             Font testFont = new Font(fonts[i], Font.PLAIN, groesse);
-            int texthoehe = new MeinLabel("").getFontMetrics(testFont).getHeight();
+            int texthoehe = new MeinLabel("").getFontMetrics(testFont)
+                    .getHeight();
             if (fonts[i].equals("Arial") || fonts[i].equals("Helvetica"))
                 return fonts[i];
             if (testFont.canDisplay('\u00E4') && testFont.canDisplay('\u00F6')
-                            && testFont.canDisplay('\u00FC') && testFont.canDisplay('\u00C4')
-                            && testFont.canDisplay('\u00D6') && testFont.canDisplay('\u00DC')
-                            && testFont.canDisplay('\u00DF') && testFont.canDisplay('?')
-                            && testFont.canDisplay('!') && testFont.canDisplay('-')
-                            && testFont.canDisplay(',') && testFont.canDisplay(';')
-                            && testFont.canDisplay('.') && testFont.canDisplay('(')
-                            && testFont.canDisplay(')') && testFont.isPlain() && texthoehe > 15
-                            && texthoehe < 25)
+                    && testFont.canDisplay('\u00FC')
+                    && testFont.canDisplay('\u00C4')
+                    && testFont.canDisplay('\u00D6')
+                    && testFont.canDisplay('\u00DC')
+                    && testFont.canDisplay('\u00DF') && testFont.canDisplay('?')
+                    && testFont.canDisplay('!') && testFont.canDisplay('-')
+                    && testFont.canDisplay(',') && testFont.canDisplay(';')
+                    && testFont.canDisplay('.') && testFont.canDisplay('(')
+                    && testFont.canDisplay(')') && testFont.isPlain()
+                    && texthoehe > 15 && texthoehe < 25)
             {
                 font = fonts[i];
             }
@@ -486,7 +504,8 @@ public class Text extends Formulargrafik
             int y = getFont().getSize();
             for (int i = 0; i < textArray.length; i++)
             {
-                int breite = getFontMetrics(getFont()).stringWidth(textArray[i]);
+                int breite = getFontMetrics(getFont())
+                        .stringWidth(textArray[i]);
                 g.drawString(textArray[i], getWidth() / 2 - breite / 2, y);
                 y += hoehe;
             }

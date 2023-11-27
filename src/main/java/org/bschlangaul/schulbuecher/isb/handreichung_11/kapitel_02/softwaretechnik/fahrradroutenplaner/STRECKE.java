@@ -9,19 +9,23 @@ package org.bschlangaul.schulbuecher.isb.handreichung_11.kapitel_02.softwaretech
 class STRECKE implements DATENELEMENT
 {
     private ORT startOrt;
+
     private ORT zielOrt;
+
     private String streckenInfo;
+
     private int laenge;
+
     private int steigung;
 
     /**
      * Belegt die Attribute.
      *
      * @param start Startort
-     * @param ziel Zielort
-     * @param info Information über die Strecke
-     * @param l Länge der Strecke
-     * @param st Steigung der Strecke
+     * @param ziel  Zielort
+     * @param info  Information über die Strecke
+     * @param l     Länge der Strecke
+     * @param st    Steigung der Strecke
      */
     STRECKE(ORT start, ORT ziel, String info, int l, int st)
     {
@@ -94,8 +98,8 @@ class STRECKE implements DATENELEMENT
     }
 
     /**
-     * Implementiert die Kleiner-Relation für die Minimumsuche. d Datenelement mit dem
-     * Vergleichswert.
+     * Implementiert die Kleiner-Relation für die Minimumsuche. d Datenelement
+     * mit dem Vergleichswert.
      *
      * @return meldet immer false.
      */

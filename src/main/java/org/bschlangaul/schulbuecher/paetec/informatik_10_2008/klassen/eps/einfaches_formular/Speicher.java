@@ -13,11 +13,12 @@ public class Speicher extends TestCase
 { // Typ und Name
   // der Objekte, deren Zustand spaeter wiederhergestellt werden soll
     private Text text1;
+
     private Bild bild1;
 
     /**
-     * Hier koennen Zustandsaenderungen (<-> Methodenaufrufe) mitprotokolliert werden. Beim
-     * Wiederherstellen werden diese ausgefuehrt.
+     * Hier koennen Zustandsaenderungen (<-> Methodenaufrufe) mitprotokolliert
+     * werden. Beim Wiederherstellen werden diese ausgefuehrt.
      */
     protected void setUp()
     {
@@ -31,5 +32,6 @@ public class Speicher extends TestCase
      * Diese Methode kann in der 10.Klasse ignoriert werden.
      */
     protected void tearDown()
-    {}
+    {
+    }
 }

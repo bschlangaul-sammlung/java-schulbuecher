@@ -1,6 +1,5 @@
 package org.bschlangaul.schulbuecher.isb.handreichung_11.kapitel_01.thema_02.baeume.baum5_test;
 
-
 /**
  * The test class TESTENTFERNEN.
  *
@@ -13,7 +12,8 @@ public class TESTENTFERNEN extends junit.framework.TestCase
      * Default constructor for test class TESTENTFERNEN
      */
     public TESTENTFERNEN()
-    {}
+    {
+    }
 
     /**
      * Sets up the test fixture.
@@ -21,7 +21,8 @@ public class TESTENTFERNEN extends junit.framework.TestCase
      * Called before every test case method.
      */
     protected void setUp()
-    {}
+    {
+    }
 
     /**
      * Tears down the test fixture.
@@ -29,7 +30,8 @@ public class TESTENTFERNEN extends junit.framework.TestCase
      * Called after every test case method.
      */
     protected void tearDown()
-    {}
+    {
+    }
 
     public void testEntfernen()
     {

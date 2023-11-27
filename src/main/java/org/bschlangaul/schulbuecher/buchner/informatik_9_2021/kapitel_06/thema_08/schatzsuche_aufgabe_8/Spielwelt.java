@@ -7,14 +7,15 @@ import greenfoot.World;
  * Projekt zu 6.8, Aufgabe 8
  *
  * Klasse Spielwelt <br>
- * Der Programmtext dieser Klasse braucht für die Bearbeitung der Arbeitsaufträge und Aufgaben weder
- * gelesen noch verstanden zu werden.
+ * Der Programmtext dieser Klasse braucht für die Bearbeitung der
+ * Arbeitsaufträge und Aufgaben weder gelesen noch verstanden zu werden.
  */
-
 public class Spielwelt extends World
 {
     int timer = 60 * 55;
+
     Anzeige anzeige = new Anzeige();
+
     Pirat joe;
 
     public Spielwelt()
@@ -46,16 +47,13 @@ public class Spielwelt extends World
     {
         joe = new Pirat(this);
         addObject(joe, 2, 3); // Pirat einfügen
-
         /* Meer einfügen */
         Meer meer = new Meer();
         meer.getImage().scale(120, 660);
         addObject(meer, 17, 5);
-
         /* Tafel einfügen */
         addObject(new Tafel(), 1, 1);
         addObject(anzeige, 1, 0);
-
         /* 9 Schatztruhen einfügen */
         Schatztruhe schatztruhe1 = new Schatztruhe();
         addObject(schatztruhe1, 11, 3);
@@ -75,7 +73,6 @@ public class Spielwelt extends World
         addObject(schatztruhe8, 14, 10);
         Schatztruhe schatztruhe9 = new Schatztruhe();
         addObject(schatztruhe9, 11, 0);
-
         /* 74 Felsen einfügen */
         Fels fels1 = new Fels();
         addObject(fels1, 5, 7);
@@ -225,7 +222,6 @@ public class Spielwelt extends World
         addObject(fels73, 2, 8);
         Fels fels74 = new Fels();
         addObject(fels74, 14, 1);
-
         /* 35 Grasbüschel einfügen */
         Gras gras1 = new Gras();
         addObject(gras1, 6, 1);
@@ -297,7 +293,6 @@ public class Spielwelt extends World
         addObject(gras34, 13, 5);
         Gras gras35 = new Gras();
         addObject(gras35, 13, 4);
-
         /* Piratenschiff einfügen */
         Piratenschiff piratenschiff = new Piratenschiff();
         addObject(piratenschiff, 16, 2);

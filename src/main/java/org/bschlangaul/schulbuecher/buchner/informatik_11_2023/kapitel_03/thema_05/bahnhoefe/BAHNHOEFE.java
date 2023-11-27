@@ -11,7 +11,6 @@ public class BAHNHOEFE
     public void ablaufen()
     {
         GRAPH graph = new GRAPH(12);
-
         KNOTEN k1 = new KNOTEN("Hamburg", "HH");
         KNOTEN k2 = new KNOTEN("Bremen", "HB");
         KNOTEN k3 = new KNOTEN("Hannover", "H");
@@ -24,7 +23,6 @@ public class BAHNHOEFE
         KNOTEN k10 = new KNOTEN("Nürnberg", "N");
         KNOTEN k11 = new KNOTEN("Augsburg", "A");
         KNOTEN k12 = new KNOTEN("München", "M");
-
         graph.knotenHinzufuegen(k1);
         graph.knotenHinzufuegen(k2);
         graph.knotenHinzufuegen(k3);
@@ -37,7 +35,6 @@ public class BAHNHOEFE
         graph.knotenHinzufuegen(k10);
         graph.knotenHinzufuegen(k11);
         graph.knotenHinzufuegen(k12);
-
         graph.kanteHinzufuegen(0, 1);
         graph.kanteHinzufuegen(0, 2);
         graph.kanteHinzufuegen(0, 3);
@@ -55,9 +52,7 @@ public class BAHNHOEFE
         graph.kanteHinzufuegen(9, 10);
         graph.kanteHinzufuegen(9, 11);
         graph.kanteHinzufuegen(10, 11);
-
         // graph.adjaAusgeben();
         graph.breitensuche_2b("Augsburg", "Dresden");
     }
-
 }

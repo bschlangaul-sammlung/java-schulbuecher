@@ -6,6 +6,7 @@ import static org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps
 public class Ellipse
 {
     private String farbe;
+
     /**
      * Die Groesse des Bildes
      */
@@ -32,7 +33,8 @@ public class Ellipse
     private boolean wirdAngezeigt;
 
     /**
-     * Es wird eine neue Ellipse mit den Standardeinstellungen erzeugt. Die Ellipse ist gefuellt.
+     * Es wird eine neue Ellipse mit den Standardeinstellungen erzeugt. Die
+     * Ellipse ist gefuellt.
      */
     public Ellipse()
     {
@@ -40,17 +42,17 @@ public class Ellipse
     }
 
     /**
-     * Es wird eine neue Ellipse mit den Standardeinstellungen erzeugt. Das Fenster, an dem die
-     * Ellipse angemeldet wird, kann dabei angegeben werden. Dazu muss zuerst ein Zeichenfenster
-     * erzeugt worden sein. Dieses kann dann "waehrend des Konstruktoraufrufs eingefuellt" werden.
-     * Die Ellipse ist gefuellt.
+     * Es wird eine neue Ellipse mit den Standardeinstellungen erzeugt. Das
+     * Fenster, an dem die Ellipse angemeldet wird, kann dabei angegeben werden.
+     * Dazu muss zuerst ein Zeichenfenster erzeugt worden sein. Dieses kann dann
+     * "waehrend des Konstruktoraufrufs eingefuellt" werden. Die Ellipse ist
+     * gefuellt.
      */
     public Ellipse(Zeichenfenster fenster)
     {// uh
         einfachegrafikAnmelden(this, fortgeschrittenesFensterGeben(fenster));// uh
-        org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.fortgeschrittene_grafik.Ellipse fg =
-                        (org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.fortgeschrittene_grafik.Ellipse) fortgeschrittenegrafikGeben(
-                                        this);
+        org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.fortgeschrittene_grafik.Ellipse fg = (org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.fortgeschrittene_grafik.Ellipse) fortgeschrittenegrafikGeben(
+                this);
         wirdAngezeigt = false;
         breite = fg.breiteGeben();
         hoehe = fg.hoeheGeben();
@@ -58,15 +60,15 @@ public class Ellipse
     }
 
     /**
-     * Breite und Hoehe der Ellipse koennen gewaehlt werden. Nicht positive (unsinnige) Angaben
-     * werden automatisch auf den kleinsten noch sinnvollen Wert fuer eine Grafik gesetzt, hier 1.
-     * Die Grafik ist dann entsprechend auf dem Zeichenfenster zu sehen.
+     * Breite und Hoehe der Ellipse koennen gewaehlt werden. Nicht positive
+     * (unsinnige) Angaben werden automatisch auf den kleinsten noch sinnvollen
+     * Wert fuer eine Grafik gesetzt, hier 1. Die Grafik ist dann entsprechend
+     * auf dem Zeichenfenster zu sehen.
      */
     public void groesseSetzen(int neueBreite, int neueHoehe)
     {
-        org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.fortgeschrittene_grafik.Ellipse fg =
-                        (org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.fortgeschrittene_grafik.Ellipse) fortgeschrittenegrafikGeben(
-                                        this);
+        org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.fortgeschrittene_grafik.Ellipse fg = (org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.fortgeschrittene_grafik.Ellipse) fortgeschrittenegrafikGeben(
+                this);
         fg.groesseSetzen(neueBreite, neueHoehe);
         breite = fg.breiteGeben();
         hoehe = fg.hoeheGeben();
@@ -75,51 +77,48 @@ public class Ellipse
     }
 
     /**
-     * Veraendert den Aufpunkt der Grafik. Der Aufpunkt ist die linke obere Ecke des die Grafik
-     * ueberdeckenden Rechtecks.
+     * Veraendert den Aufpunkt der Grafik. Der Aufpunkt ist die linke obere Ecke
+     * des die Grafik ueberdeckenden Rechtecks.
      */
     public void positionSetzen(int neueXPosition, int neueYPosition)
     {
         xPosition = neueXPosition;
         yPosition = neueYPosition;
-        org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.fortgeschrittene_grafik.Ellipse fg =
-                        (org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.fortgeschrittene_grafik.Ellipse) fortgeschrittenegrafikGeben(
-                                        this);
+        org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.fortgeschrittene_grafik.Ellipse fg = (org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.fortgeschrittene_grafik.Ellipse) fortgeschrittenegrafikGeben(
+                this);
         fg.positionSetzen(neueXPosition, neueYPosition);
         if (wirdAngezeigt)
             fg.fensterGeben().zeichnen();
     }
 
     /**
-     * Verschiebt die Grafik um deltaX in x-Richtung und um deltaY in y-Richtung.
+     * Verschiebt die Grafik um deltaX in x-Richtung und um deltaY in
+     * y-Richtung.
      */
     public void verschieben(int deltaX, int deltaY)
     {
         xPosition += deltaX;
         yPosition += deltaY;
-        org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.fortgeschrittene_grafik.Ellipse fg =
-                        (org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.fortgeschrittene_grafik.Ellipse) fortgeschrittenegrafikGeben(
-                                        this);
+        org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.fortgeschrittene_grafik.Ellipse fg = (org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.fortgeschrittene_grafik.Ellipse) fortgeschrittenegrafikGeben(
+                this);
         fg.verschieben(deltaX, deltaY);
         if (wirdAngezeigt)
             fg.fensterGeben().zeichnen();
     }
 
     /**
-     * Die Farbe der Grafik kann gewaehlt werden. Mögliche Farben sind: "weiss", "gelb", "orange",
-     * "rot", "pink", "magenta", "cyan", "gruen", "blau", "grau", "schwarz" Achtung: Die
-     * Anfuehrungsstriche sind noetig!
+     * Die Farbe der Grafik kann gewaehlt werden. Mögliche Farben sind: "weiss",
+     * "gelb", "orange", "rot", "pink", "magenta", "cyan", "gruen", "blau",
+     * "grau", "schwarz" Achtung: Die Anfuehrungsstriche sind noetig!
      */
     public void farbeSetzen(String neueFarbe)
     {
-        org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.fortgeschrittene_grafik.Ellipse fg =
-                        (org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.fortgeschrittene_grafik.Ellipse) fortgeschrittenegrafikGeben(
-                                        this);
+        org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.fortgeschrittene_grafik.Ellipse fg = (org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.fortgeschrittene_grafik.Ellipse) fortgeschrittenegrafikGeben(
+                this);
         fg.farbeSetzen(neueFarbe);
         farbe = fg.farbeGeben();
         if (wirdAngezeigt)
             fg.fensterGeben().zeichnen();
-
     }
 
     /**
@@ -127,9 +126,8 @@ public class Ellipse
      */
     public void anzeigen()
     {
-        org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.fortgeschrittene_grafik.Ellipse fg =
-                        (org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.fortgeschrittene_grafik.Ellipse) fortgeschrittenegrafikGeben(
-                                        this);
+        org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.fortgeschrittene_grafik.Ellipse fg = (org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.fortgeschrittene_grafik.Ellipse) fortgeschrittenegrafikGeben(
+                this);
         fg.abmelden();
         fg.anmelden();
         wirdAngezeigt = true;
@@ -141,9 +139,8 @@ public class Ellipse
      */
     public void verstecken()
     {
-        org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.fortgeschrittene_grafik.Ellipse fg =
-                        (org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.fortgeschrittene_grafik.Ellipse) fortgeschrittenegrafikGeben(
-                                        this);
+        org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.fortgeschrittene_grafik.Ellipse fg = (org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.fortgeschrittene_grafik.Ellipse) fortgeschrittenegrafikGeben(
+                this);
         fg.abmelden();
         wirdAngezeigt = false;
         fg.fensterGeben().zeichnen();
@@ -158,13 +155,13 @@ public class Ellipse
     }
 
     /**
-     * Unsere einfache "Visitenkarte": unser Klassenname gefolgt von interessanten Attributwerten
+     * Unsere einfache "Visitenkarte": unser Klassenname gefolgt von
+     * interessanten Attributwerten
      */
     public String toString()
     {
-        org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.fortgeschrittene_grafik.Ellipse fg =
-                        (org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.fortgeschrittene_grafik.Ellipse) fortgeschrittenegrafikGeben(
-                                        this);
+        org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.fortgeschrittene_grafik.Ellipse fg = (org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.fortgeschrittene_grafik.Ellipse) fortgeschrittenegrafikGeben(
+                this);
         return fg.toString();
     }
 }

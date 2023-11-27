@@ -9,7 +9,9 @@ package org.bschlangaul.schulbuecher.buchner.informatik_10_2022.kapitel_06.bank_
 class Kunde
 {
     private String vorname;
+
     private String name;
+
     private Konto eigenesKonto;
 
     public Kunde(String einVorname, String einNachnname, Konto einKonto)
@@ -21,7 +23,8 @@ class Kunde
 
     public void zeigeEigeneKontoInformationen()
     {
-        System.out.println("Nummer von eigenem Konto: " + eigenesKonto.gibKontonummer());
+        System.out.println(
+                "Nummer von eigenem Konto: " + eigenesKonto.gibKontonummer());
     }
 
     public String gibVorname()

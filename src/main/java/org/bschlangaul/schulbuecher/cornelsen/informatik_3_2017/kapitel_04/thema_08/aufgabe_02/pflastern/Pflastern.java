@@ -8,14 +8,13 @@ package org.bschlangaul.schulbuecher.cornelsen.informatik_3_2017.kapitel_04.them
  */
 class Pflastern
 {
-
     /**
      * Legt die Steine
      *
-     * @param zeilenAnzahl die Anzahl der Pflasterzeilen
+     * @param zeilenAnzahl  die Anzahl der Pflasterzeilen
      * @param spaltenAnzahl die Anzahl der Pflasterspalten
-     * @param größe die Größe der Pflastersteine
-     * @param farbe die Farbe der Pflastersteine
+     * @param größe         die Größe der Pflastersteine
+     * @param farbe         die Farbe der Pflastersteine
      */
     Pflastern(int zeilenAnzahl, int spaltenAnzahl, int größe, String farbe)
     {

@@ -9,13 +9,14 @@ package org.bschlangaul.schulbuecher.isb.handreichung_11.kapitel_02.softwaretech
 class KNOTEN extends LISTENELEMENT
 {
     private LISTENELEMENT nachfolger;
+
     private DATENELEMENT daten;
 
     /**
      * Belegt die Attribute.
      *
      * @param nf Referenz auf den Nachfolger dieses Knotens
-     * @param d Referenz auf das zu verwaltende Datenobjekt
+     * @param d  Referenz auf das zu verwaltende Datenobjekt
      */
     KNOTEN(LISTENELEMENT nf, DATENELEMENT d)
     {
@@ -86,7 +87,8 @@ class KNOTEN extends LISTENELEMENT
     }
 
     /**
-     * Führt die Kopie in eine Feld durch. Zählt die Elemente und trägt das eigene Element ein.
+     * Führt die Kopie in eine Feld durch. Zählt die Elemente und trägt das
+     * eigene Element ein.
      *
      * @param anzahl Anzahl der bisher gezählten Elemente.
      * @return Feld mit den Datenreferenzen
@@ -100,8 +102,9 @@ class KNOTEN extends LISTENELEMENT
     }
 
     /**
-     * Erzeugt eine Kopie des Listenelements und der Liste ab hier. Die Datenelemente werden nicht
-     * kopiert. Auf Verwendung von Object. clone wurde bewusst verzichtet.
+     * Erzeugt eine Kopie des Listenelements und der Liste ab hier. Die
+     * Datenelemente werden nicht kopiert. Auf Verwendung von Object. clone
+     * wurde bewusst verzichtet.
      *
      * @return Kopie des Listenelements mit Referenz auf kopierte Nachfolger
      */

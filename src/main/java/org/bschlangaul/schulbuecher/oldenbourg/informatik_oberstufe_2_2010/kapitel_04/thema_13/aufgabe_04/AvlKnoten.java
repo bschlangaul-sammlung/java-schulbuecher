@@ -1,8 +1,8 @@
 package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_2_2010.kapitel_04.thema_13.aufgabe_04;
 
 /**
- * Die Klasse beschreibt einen AVL-Knoten. Beim Einfügen eines neuen Knotens wird auf die
- * Ausgeglichenheit des Baumes geachtet.
+ * Die Klasse beschreibt einen AVL-Knoten. Beim Einfügen eines neuen Knotens
+ * wird auf die Ausgeglichenheit des Baumes geachtet.
  *
  * @author Klaus Reinold
  * @version 1.0
@@ -22,8 +22,8 @@ class AvlKnoten
     private AvlKnoten rechterNachfolger;
 
     /**
-     * Konstruktor Erzeugt einen neuen AVL-Knoten und setzt die Referenz auf das übergebene
-     * Datenelement.
+     * Konstruktor Erzeugt einen neuen AVL-Knoten und setzt die Referenz auf das
+     * übergebene Datenelement.
      *
      * @param d zu verwaltendes Datenelement
      */
@@ -35,8 +35,9 @@ class AvlKnoten
     }
 
     /**
-     * Ermöglicht die Suche nach einem Schlüsselwert vom Typ int. Untersucht zuerst das verwaltete
-     * Datenelement, dann rekursiv den linken und rechten Nachfolger.
+     * Ermöglicht die Suche nach einem Schlüsselwert vom Typ int. Untersucht
+     * zuerst das verwaltete Datenelement, dann rekursiv den linken und rechten
+     * Nachfolger.
      *
      * @param i gesuchter Wert
      * @return gesuchtes Datenelement
@@ -44,16 +45,20 @@ class AvlKnoten
     public DatenElement Suchen(int vergleichswert)
     {
         Zaehler.ZaehlerInkrementieren();
-        if (daten.SchluesselIstGleich(vergleichswert))// Prüfung der Bedingung und Methodenaufruf
-                                                      // werden als zwei Schritte gewertet
+        if (daten.SchluesselIstGleich(vergleichswert))// Prüfung der Bedingung
+                                                      // und Methodenaufruf
+                                                      // werden als zwei
+                                                      // Schritte gewertet
         {
             Zaehler.ZaehlerInkrementieren();
             return daten;
         }
         else
             Zaehler.ZaehlerInkrementieren();
-        if (daten.SchluesselIstGroesser(vergleichswert))// Prüfung der Bedingung und Methodenaufruf
-                                                        // werden als zwei Schritte gewertet
+        if (daten.SchluesselIstGroesser(vergleichswert))// Prüfung der Bedingung
+                                                        // und Methodenaufruf
+                                                        // werden als zwei
+                                                        // Schritte gewertet
         {
             Zaehler.ZaehlerInkrementieren();
             if (linkerNachfolger != null)
@@ -94,7 +99,8 @@ class AvlKnoten
     }
 
     /**
-     * Setzt die Referenz des verwalteten Datenelements auf den übergebenen Wert.
+     * Setzt die Referenz des verwalteten Datenelements auf den übergebenen
+     * Wert.
      *
      * @param d neues Datenelement
      */
@@ -164,11 +170,12 @@ class AvlKnoten
     }
 
     /**
-     * Fügt ein neues Datenelement in den Baum ein, falls der Schlüsselwert noch nicht enthalten
-     * ist.
+     * Fügt ein neues Datenelement in den Baum ein, falls der Schlüsselwert noch
+     * nicht enthalten ist.
      *
      * @param d einzufügendes Datenelement
-     * @return liefert zurück, ob der Teilbaum unterhalb des Knotens gewachsen ist
+     * @return liefert zurück, ob der Teilbaum unterhalb des Knotens gewachsen
+     *         ist
      */
     public boolean Einfuegen(DatenElement d)
     {
@@ -204,7 +211,8 @@ class AvlKnoten
                 if (rechterNachfolger == null)
                 {
                     rechterNachfolger = new AvlKnoten(d);
-                    balance = (byte) (balance + 1);// irgendwas noch mit gewachsen???
+                    balance = (byte) (balance + 1);// irgendwas noch mit
+                                                   // gewachsen???
                     if (linkerNachfolger != null)
                     {
                         gewachsen = false;
@@ -217,38 +225,39 @@ class AvlKnoten
                     {
                         balance = (byte) (balance + 1);
                     }
-
                 }
             }
         }
-
         switch (balance)
         {
-            case -2:
-                if (linkerNachfolger.BalanceGeben() == 1)
-                {
-                    linkerNachfolger.RotierenLinks();
-                }
-                RotierenRechts();
-                gewachsen = false;
-                break;
-            case -1:
-                break;
-            case 0:
-                gewachsen = false;
-                break;
-            case 1:
-                break;
-            case 2:
-                if (rechterNachfolger.BalanceGeben() == -1)
-                {
-                    rechterNachfolger.RotierenRechts();
-                }
-                RotierenLinks();
-                gewachsen = false;
-                break;
-        }
+        case -2:
+            if (linkerNachfolger.BalanceGeben() == 1)
+            {
+                linkerNachfolger.RotierenLinks();
+            }
+            RotierenRechts();
+            gewachsen = false;
+            break;
 
+        case -1:
+            break;
+
+        case 0:
+            gewachsen = false;
+            break;
+
+        case 1:
+            break;
+
+        case 2:
+            if (rechterNachfolger.BalanceGeben() == -1)
+            {
+                rechterNachfolger.RotierenRechts();
+            }
+            RotierenLinks();
+            gewachsen = false;
+            break;
+        }
         return gewachsen;
     }
 
@@ -289,5 +298,4 @@ class AvlKnoten
         balance = (byte) bk;
         m.BalanceSetzen((byte) bm);
     }
-
 }

@@ -9,6 +9,7 @@ package org.bschlangaul.schulbuecher.buchner.informatik_10_2022.kapitel_05.thema
 public class Schueler
 {
     private String name;
+
     private int alter;
 
     public Schueler(String name)

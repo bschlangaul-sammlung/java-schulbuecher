@@ -8,7 +8,6 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapi
  */
 class FAHRPLANAUSKUNFT
 {
-
     /**
      * Baut die Bausteine des Programms zusammen.
      */

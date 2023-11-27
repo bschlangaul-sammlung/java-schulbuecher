@@ -13,7 +13,6 @@ class Ganzzahl extends DatenElement
     {
         Ganzzahl vergleichsZahl = (Ganzzahl) vergleichsObjekt;
         int ergebnis = 0;
-
         if (zahl < vergleichsZahl.zahl)
             ergebnis = -1;
         if (zahl == vergleichsZahl.zahl)
@@ -27,5 +26,4 @@ class Ganzzahl extends DatenElement
     {
         System.out.println("Zahl: " + zahl);
     }
-
 }

@@ -6,7 +6,6 @@ package org.bschlangaul.schulbuecher.isb.handreichung_11.kapitel_02.softwaretech
  * @author
  * @version 1.0
  */
-
 import java.awt.*;
 import javax.swing.*;
 import java.awt.event.*;
@@ -14,15 +13,22 @@ import java.util.*;
 
 class KARTE extends JComponent implements STATUSBEOBACHTER
 {
-    private Color hintergrundfarbe, vordergrundfarbe, startfarbe, zielfarbe, streckenfarbe;
+    private Color hintergrundfarbe, vordergrundfarbe, startfarbe, zielfarbe,
+            streckenfarbe;
+
     private ORT[] orte;
+
     private STRECKE[] strecken;
+
     private LISTE weg;
+
     String start, ziel;
+
     private static final int radius = 5; // Radius des Ortssymbols
 
     /**
-     * Besetzt die Farben f&uumlr die Darstellung. Erstellt die Felder mit Orten und Strecken.
+     * Besetzt die Farben f&uumlr die Darstellung. Erstellt die Felder mit Orten
+     * und Strecken.
      *
      * @param o Ortsliste
      * @param s Streckenliste
@@ -50,7 +56,6 @@ class KARTE extends JComponent implements STATUSBEOBACHTER
         weg = null;
     }
 
-
     /**
      * Empfängt Statusmeldungen
      *
@@ -65,8 +70,8 @@ class KARTE extends JComponent implements STATUSBEOBACHTER
      * Empfängt die Vorgängerinformation, Start und Ziel
      *
      * @param vorgaenger Liste mit der Vorgängerinformation
-     * @param start Name des Startortes
-     * @param ziel Name des Zielortes
+     * @param start      Name des Startortes
+     * @param ziel       Name des Zielortes
      */
     public void WegSetzen(LISTE vorgaenger, String start, String ziel)
     {
@@ -78,67 +83,69 @@ class KARTE extends JComponent implements STATUSBEOBACHTER
     }
 
     /**
-     * Orte als Kreisscheiben und Ortsnamen als Text werden gezeichnet. Falls ein Weg existiert,
-     * werden die entsprechenden Strecken gezeichnet.
+     * Orte als Kreisscheiben und Ortsnamen als Text werden gezeichnet. Falls
+     * ein Weg existiert, werden die entsprechenden Strecken gezeichnet.
      */
     public void paintComponent(Graphics g)
     {
         g.setColor(hintergrundfarbe);
         g.fillRect(0, 0, this.getBounds().width, this.getBounds().height);
-
         // Zeichnet alle Strecken
         g.setColor(vordergrundfarbe);
         for (STRECKE s : strecken)
         {
-            g.drawLine(s.StartortGeben().XPosGeben(), s.StartortGeben().YPosGeben(),
-                            s.ZielortGeben().XPosGeben(), s.ZielortGeben().YPosGeben());
+            g.drawLine(s.StartortGeben().XPosGeben(),
+                    s.StartortGeben().YPosGeben(), s.ZielortGeben().XPosGeben(),
+                    s.ZielortGeben().YPosGeben());
         }
         // Zeichnet alle Orte und beschrifte sie mit den Ortsnamen
         for (ORT o : orte)
         {
-            g.fillOval(o.XPosGeben() - radius, o.YPosGeben() - radius, 2 * radius, 2 * radius);
-            g.drawString(o.NameGeben(), o.XPosGeben() - radius, o.YPosGeben() - 2 * radius);
+            g.fillOval(o.XPosGeben() - radius, o.YPosGeben() - radius,
+                    2 * radius, 2 * radius);
+            g.drawString(o.NameGeben(), o.XPosGeben() - radius,
+                    o.YPosGeben() - 2 * radius);
         }
-
         // Falls ein Weg berechnet wurde
         if (weg != null)
         {
             VORGAENGERINFO akt;
             akt = (VORGAENGERINFO) weg.Suchen(ziel);
-
-            // markiere die zu durchfahrenden Orte und zeichne die zu fahrenden Strecken in der
+            // markiere die zu durchfahrenden Orte und zeichne die zu fahrenden
+            // Strecken in der
             // streckenfarbe
             g.setColor(streckenfarbe);
             while (true)
             {
-                g.fillOval(akt.OrtGeben().XPosGeben() - radius, akt.OrtGeben().YPosGeben() - radius,
-                                2 * radius, 2 * radius);
+                g.fillOval(akt.OrtGeben().XPosGeben() - radius,
+                        akt.OrtGeben().YPosGeben() - radius, 2 * radius,
+                        2 * radius);
                 if (akt.VorgaengerGeben() == null)
                 {
                     break;
                 }
-                g.drawLine(akt.OrtGeben().XPosGeben(), akt.OrtGeben().YPosGeben(),
-                                akt.VorgaengerGeben().XPosGeben(),
-                                akt.VorgaengerGeben().YPosGeben());
-                akt = (VORGAENGERINFO) weg.Suchen(akt.VorgaengerGeben().NameGeben());
+                g.drawLine(akt.OrtGeben().XPosGeben(),
+                        akt.OrtGeben().YPosGeben(),
+                        akt.VorgaengerGeben().XPosGeben(),
+                        akt.VorgaengerGeben().YPosGeben());
+                akt = (VORGAENGERINFO) weg
+                        .Suchen(akt.VorgaengerGeben().NameGeben());
             }
-
-
             for (ORT o : orte)
             {
                 if (start.equals(o.NameGeben()))
                 {
                     // markiere den Startort in der Startfarbe
                     g.setColor(startfarbe);
-                    g.fillOval(o.XPosGeben() - radius, o.YPosGeben() - radius, 2 * radius,
-                                    2 * radius);
+                    g.fillOval(o.XPosGeben() - radius, o.YPosGeben() - radius,
+                            2 * radius, 2 * radius);
                 }
                 if (ziel.equals(o.NameGeben()))
                 {
                     // markiere den Zielort in der Zielfarbe
                     g.setColor(zielfarbe);
-                    g.fillOval(o.XPosGeben() - radius, o.YPosGeben() - radius, 2 * radius,
-                                    2 * radius);
+                    g.fillOval(o.XPosGeben() - radius, o.YPosGeben() - radius,
+                            2 * radius, 2 * radius);
                 }
             }
         }

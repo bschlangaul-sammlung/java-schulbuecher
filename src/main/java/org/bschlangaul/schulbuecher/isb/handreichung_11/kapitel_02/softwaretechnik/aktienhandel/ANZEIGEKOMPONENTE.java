@@ -6,7 +6,6 @@ package org.bschlangaul.schulbuecher.isb.handreichung_11.kapitel_02.softwaretech
  * @author (your name)
  * @version (a version number or a date)
  */
-
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
@@ -15,6 +14,7 @@ import javax.swing.border.*;
 class ANZEIGEKOMPONENTE extends JComponent
 {
     private double[] kurse;
+
     private String aktienname;
 
     /**
@@ -30,7 +30,7 @@ class ANZEIGEKOMPONENTE extends JComponent
      * Setzt die Anzeigedaten
      *
      * @param kurse die neuen Kurswerte
-     * @param name Name der Aktie
+     * @param name  Name der Aktie
      */
     void AnzeigeSetzen(double[] kurse, String name)
     {
@@ -57,7 +57,6 @@ class ANZEIGEKOMPONENTE extends JComponent
         double kursAkt = 10; // letzter (aktueller) Kurswert
         double deltaKurs = 0;
         int xCal = (int) 200 / KURSANZEIGE.kursAnzahl;
-
         for (int i = 0; i < kurse.length; i++)
         {
             if (kurse[i] < kursMin)
@@ -69,7 +68,6 @@ class ANZEIGEKOMPONENTE extends JComponent
                 kursMax = kurse[i];
             }
         }
-
         // Falls Extremwerte identisch, dann wähle +/- 5%
         if (kursMin == kursMax)
         {
@@ -80,7 +78,6 @@ class ANZEIGEKOMPONENTE extends JComponent
         kursMax = (int) (kursMax * 100 + 0.5) / 100.0;
         kursMin = (int) (kursMin * 100 + 0.5) / 100.0;
         kursAkt = (int) (kurse[kurse.length - 1] * 100 + 0.5) / 100.0;
-
         // Zeichne Achsenkreuz auf farbigem Hintergrund
         setBackground(flaeche);
         g.drawLine(60, 185, 60, 25);
@@ -96,7 +93,6 @@ class ANZEIGEKOMPONENTE extends JComponent
         // Diagrammüberschrift
         g.drawString(aktienname, 80, 40);
         g.setColor(Color.blue);
-
         // Linie für Kursverlauf Ziehen
         for (int i = 0; i < kurse.length; i++)
         {

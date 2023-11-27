@@ -1,4 +1,5 @@
 package org.bschlangaul.schulbuecher.isb.handreichung_10.konzept_02.supermarkt.supermarkt_05;
+
 /**
  * Ein Kundensymbol (Kreis) auf einem Fenster. Das Fenster wird bei Bedarf generiert.
  *
@@ -17,12 +18,14 @@ class KREIS
     private OBERFLAECHE.FARBE aktFarbe;
 
     /**
-     * Standardkonstruktor für Objekte der Klasse KREIS. Er erzeugt einen schwarzen Kreis in der
-     * linken oberen Ecke des Fensters. Das Fenster wird bei Bedarf angelegt.
+     * Standardkonstruktor für Objekte der Klasse KREIS. Er erzeugt einen
+     * schwarzen Kreis in der linken oberen Ecke des Fensters. Das Fenster wird
+     * bei Bedarf angelegt.
      */
     KREIS()
     {
-        anzeige = new Canvas() {
+        anzeige = new Canvas()
+        {
             /**
              * Stellt die Figur auf dem Fenster dar.
              */
@@ -34,7 +37,6 @@ class KREIS
                 g.setColor(Color.black);
                 g.drawOval(0, 0, groesse - 1, groesse - 1);
             }
-
         };
         aktFarbe = OBERFLAECHE.FARBE.schwarz;
         anzeige.setVisible(true);
@@ -67,8 +69,10 @@ class KREIS
         {
             try
             {
-                aktFarbe = OBERFLAECHE.FARBE.valueOf(aktFarbe.getDeclaringClass(), neueFarbe);
-            } catch (Exception e)
+                aktFarbe = OBERFLAECHE.FARBE
+                        .valueOf(aktFarbe.getDeclaringClass(), neueFarbe);
+            }
+            catch (Exception e)
             {
                 aktFarbe = OBERFLAECHE.FARBE.weiss;
             }

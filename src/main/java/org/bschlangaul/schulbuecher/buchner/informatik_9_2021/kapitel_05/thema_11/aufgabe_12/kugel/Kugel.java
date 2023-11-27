@@ -5,7 +5,6 @@ import greenfoot.Actor;
 /**
  * Kap. 5.11, Aufgabe 12 Lösung
  */
-
 public class Kugel extends Actor
 {
     int radius;

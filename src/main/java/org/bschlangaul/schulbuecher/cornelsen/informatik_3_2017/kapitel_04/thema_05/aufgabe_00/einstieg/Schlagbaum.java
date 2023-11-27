@@ -8,12 +8,11 @@ package org.bschlangaul.schulbuecher.cornelsen.informatik_3_2017.kapitel_04.them
  */
 class Schlagbaum extends Hindernis
 {
-
     /**
      * Legt das Aussehen und die Startposition fest
      *
-     * @param x x-Koordinate des Hindernisses
-     * @param y y-Koordinate des Hindernisses
+     * @param x           x-Koordinate des Hindernisses
+     * @param y           y-Koordinate des Hindernisses
      * @param richtungNeu Blickrichtung des Hindernisses
      */
     Schlagbaum(int x, int y, char richtungNeu)

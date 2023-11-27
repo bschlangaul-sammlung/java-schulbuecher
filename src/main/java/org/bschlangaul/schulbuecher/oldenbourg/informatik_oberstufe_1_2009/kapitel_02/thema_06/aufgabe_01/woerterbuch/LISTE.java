@@ -11,7 +11,6 @@ public class LISTE
     /** Verwaltung des ersten Knotens in der Warteschlange. */
     private LISTENELEMENT anfang;
 
-
     /**
      * Konstruktor der Liste
      *
@@ -20,7 +19,6 @@ public class LISTE
     {
         anfang = new ABSCHLUSS();
     }
-
 
     /**
      * Fügt ein neues Datenelement am Anfang der Liste ein.
@@ -47,7 +45,7 @@ public class LISTE
     /**
      * Fügt ein neues Datenelement vor einem bestimmten Datenelement ein.
      *
-     * @param dneu neues Datenelement
+     * @param dneu        neues Datenelement
      * @param d_vergleich Datenelement, vor dem eingefügt werden soll
      */
     public void EinfuegenVor(DATENELEMENT dneu, DATENELEMENT d_vergleich)
@@ -102,7 +100,8 @@ public class LISTE
     }
 
     /**
-     * Sucht ein Datenelement, das über seinen Schlüssel identifiziert wird, und gibt es aus.
+     * Sucht ein Datenelement, das über seinen Schlüssel identifiziert wird, und
+     * gibt es aus.
      *
      * @param vergleichswert gesuchter Schlüssel
      * @return gesuchtes Datenelement
@@ -129,5 +128,4 @@ public class LISTE
     {
         return anfang.RestlaengeGeben();
     }
-
 }

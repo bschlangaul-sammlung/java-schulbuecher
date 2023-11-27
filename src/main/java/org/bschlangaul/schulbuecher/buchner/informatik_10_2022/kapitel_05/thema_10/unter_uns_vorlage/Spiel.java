@@ -11,8 +11,11 @@ import java.util.Random;
 public class Spiel
 {
     private String name;
+
     private Spieler ersteller;
+
     private Spieler[] spieler;
+
     private int spielerzahl;
 
     public Spiel(String name, Spieler ersteller)

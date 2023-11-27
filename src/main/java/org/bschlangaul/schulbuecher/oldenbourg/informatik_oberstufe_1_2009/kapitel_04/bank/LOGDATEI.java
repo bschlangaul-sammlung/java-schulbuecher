@@ -21,7 +21,8 @@ class LOGDATEI implements MELDUNGSBEOBACHTER
         try
         {
             writer = new BufferedWriter(new FileWriter("log.dat", true));
-        } catch (Exception e)
+        }
+        catch (Exception e)
         {
             e.printStackTrace();
         }
@@ -35,7 +36,8 @@ class LOGDATEI implements MELDUNGSBEOBACHTER
         try
         {
             writer.close();
-        } catch (Exception e)
+        }
+        catch (Exception e)
         {
             e.printStackTrace();
         }
@@ -58,7 +60,8 @@ class LOGDATEI implements MELDUNGSBEOBACHTER
         {
             writer.write(text);
             writer.newLine();
-        } catch (Exception e)
+        }
+        catch (Exception e)
         {
             e.printStackTrace();
         }

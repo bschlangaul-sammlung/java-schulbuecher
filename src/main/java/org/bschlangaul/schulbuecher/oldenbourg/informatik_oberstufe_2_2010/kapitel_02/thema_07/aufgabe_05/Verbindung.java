@@ -6,14 +6,15 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_2_2010.kapi
  * @author Albert Wiedemann
  * @version 1.0
  */
-
 import java.io.*;
 import java.net.*;
 
 class Verbindung
 {
     private InputStream in;
+
     private OutputStream out;
+
     private Socket socket;
 
     /**
@@ -28,13 +29,13 @@ class Verbindung
             in = socket.getInputStream();
             out = socket.getOutputStream();
             this.socket = socket;
-        } catch (Exception ex)
+        }
+        catch (Exception ex)
         {
             System.out.println("\u00DCbertragungsfehler: " + ex);
             in = null;
             out = null;
         }
-
     }
 
     /**
@@ -56,11 +57,14 @@ class Verbindung
                 do
                 {
                     ch = (char) in.read();
-                } while (ch == '\n');
+                }
+                while (ch == '\n');
                 chars[pos] = ch;
                 pos += 1;
-            } while (chars[pos - 1] != '\r');
-        } catch (IOException ioex)
+            }
+            while (chars[pos - 1] != '\r');
+        }
+        catch (IOException ioex)
         {
             System.out.println("\u00DCbertragungsfehler: " + ioex);
             pos += 1;
@@ -85,7 +89,8 @@ class Verbindung
             out.write((int) '\r');
             out.write((int) '\n');
             out.flush();
-        } catch (IOException ioex)
+        }
+        catch (IOException ioex)
         {
             System.out.println("\u00DCbertragungsfehler: " + ioex);
         }
@@ -99,7 +104,8 @@ class Verbindung
         try
         {
             socket.close();
-        } catch (IOException ioex)
+        }
+        catch (IOException ioex)
         {
             System.out.println("Fehler beim Verbindungsabbau: " + ioex);
         }

@@ -10,18 +10,25 @@ class Rechteck
 {
     /** x-Position der linken oberen Ecke. */
     private int x;
+
     /** y-Position der linken oberen Ecke. */
     private int y;
+
     /** Breite des Rechtecks. */
     private int breite;
+
     /** Höhe des Rechtecks. */
     private int höhe;
+
     /** Farbe des Rechtecks. */
     private String farbe;
+
     /** Sichtbarkeit des Rechtecks. */
     private boolean sichtbar;
+
     /** Drehwinkel (mathematisch positiver Drehsinn) des Rechtecks in Grad. */
     private int winkel;
+
     /** Referenz auf das Delegate-Objekt. */
     Zeichenfenster.GrafikSymbol symbol;
 
@@ -37,7 +44,8 @@ class Rechteck
         farbe = "rot";
         sichtbar = true;
         winkel = 0;
-        symbol = Zeichenfenster.SymbolErzeugen(Zeichenfenster.SymbolArt.rechteck);
+        symbol = Zeichenfenster
+                .SymbolErzeugen(Zeichenfenster.SymbolArt.rechteck);
         symbol.PositionSetzen(x, y);
         symbol.GrößeSetzen(breite, höhe);
         symbol.FarbeSetzen(farbe);
@@ -86,7 +94,7 @@ class Rechteck
      * Setzt die Größe des Rechtecks.
      *
      * @param breite (neue) Breite
-     * @param höhe (neue) Höhe
+     * @param höhe   (neue) Höhe
      */
     void GrößeSetzen(int breite, int höhe)
     {
@@ -96,9 +104,10 @@ class Rechteck
     }
 
     /**
-     * Setzt die Farbe des Rechtecks. Erlaubte Farben sind: "weiß", "weiss", "rot", "grün", "gruen",
-     * "blau", "gelb", "magenta", "cyan", "hellgelb", "hellgrün", "hellgruen", "orange", "braun",
-     * "grau", "schwarz" Alle anderen Eingaben werden auf die Farbe schwarz abgebildet.
+     * Setzt die Farbe des Rechtecks. Erlaubte Farben sind: "weiß", "weiss",
+     * "rot", "grün", "gruen", "blau", "gelb", "magenta", "cyan", "hellgelb",
+     * "hellgrün", "hellgruen", "orange", "braun", "grau", "schwarz" Alle
+     * anderen Eingaben werden auf die Farbe schwarz abgebildet.
      *
      * @param farbe (neue) Farbe
      */
@@ -109,8 +118,9 @@ class Rechteck
     }
 
     /**
-     * Setzt den Drehwinkel des Rechtecks. Die Winkelangabe ist in Grad,positive Werte drehen gegen
-     * den Uhrzeigersinn, negative Werte drehen im Uhrzeigersinn (mathematisch positiver Drehsinn).
+     * Setzt den Drehwinkel des Rechtecks. Die Winkelangabe ist in Grad,positive
+     * Werte drehen gegen den Uhrzeigersinn, negative Werte drehen im
+     * Uhrzeigersinn (mathematisch positiver Drehsinn).
      *
      * @param winkel der (neue) Drehwinkel des Rechtecks
      */
@@ -121,7 +131,8 @@ class Rechteck
     }
 
     /**
-     * Schaltet die Sichtbarkeit des Rechtecks ein oder aus. Erlaubte Parameterwerte: true, false
+     * Schaltet die Sichtbarkeit des Rechtecks ein oder aus. Erlaubte
+     * Parameterwerte: true, false
      *
      * @param sichtbar (neue) Sichtbarkeit des Rechtecks
      */

@@ -5,8 +5,8 @@ import java.applet.AudioClip;
 import java.net.URL;
 
 /**
- * Spielt Tondateien ab, die im Ordner "tonDateien" relativ zum Ort der Datei TonSpieler.class
- * liegen.
+ * Spielt Tondateien ab, die im Ordner "tonDateien" relativ zum Ort der Datei
+ * TonSpieler.class liegen.
  *
  * @author Florian Prager, Universität Passau
  * @version 02.2008
@@ -21,7 +21,8 @@ public class TonSpieler
     public static void tonDateiAbspielen(String dateiName)
     {
         final String d = dateiName;
-        new Thread() {
+        new Thread()
+        {
             public void run()
             {
                 URL u = TonSpieler.class.getResource(ordnerpfad + d);
@@ -33,7 +34,8 @@ public class TonSpieler
                 try
                 {
                     Thread.sleep(1000);
-                } catch (InterruptedException e)
+                }
+                catch (InterruptedException e)
                 {
                 }
             }

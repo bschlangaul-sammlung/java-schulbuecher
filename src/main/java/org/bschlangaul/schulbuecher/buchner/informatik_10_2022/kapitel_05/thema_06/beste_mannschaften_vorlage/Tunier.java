@@ -11,8 +11,11 @@ import java.time.LocalDate;
 public class Tunier
 {
     private Mannschaft[] mannschaften;
+
     private String name;
+
     private LocalDate datum;
+
     private Mannschaft[] bestenliste;
 
     public Tunier(String name, LocalDate datum)
@@ -29,5 +32,4 @@ public class Tunier
         bestenliste[position1] = bestenliste[position2];
         bestenliste[position2] = h;
     }
-
 }

@@ -6,10 +6,8 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapi
  * @author Albert Wiedemann
  * @version 1.0
  */
-
 interface KONTROLLEURINTERFACE
 {
-
     /**
      * Setzt die zugehörige Oberfläche
      *
@@ -31,7 +29,7 @@ interface KONTROLLEURINTERFACE
      * Versucht, den angegebenen Namen als Kunden anzumelden.
      *
      * @param name Name des Kunden
-     * @param pin PIN des Kunden
+     * @param pin  PIN des Kunden
      * @return true, vbei erfolgreicher Anmeldung
      */
     void KundeAnmelden(String name, int pin);
@@ -97,7 +95,7 @@ interface KONTROLLEURINTERFACE
      * Versucht, den angegebenen Namen als Angestellten anzumelden.
      *
      * @param name Name des Angestellten
-     * @param pin PIN des Angestellten
+     * @param pin  PIN des Angestellten
      */
     void AngestellterAnmelden(String name, int pin);
 
@@ -109,7 +107,8 @@ interface KONTROLLEURINTERFACE
     String[] KundenNamenGeben();
 
     /**
-     * Meldet die Namen aller Angestellten ausser "Chef" und dem aktuell angemeldeten Angestellten.
+     * Meldet die Namen aller Angestellten ausser "Chef" und dem aktuell
+     * angemeldeten Angestellten.
      *
      * @return Stringfeld mit den vorhandenen Angestelltennamen oder null
      */
@@ -126,7 +125,7 @@ interface KONTROLLEURINTERFACE
      * Erzeugt einen Kunden und setzt ihn als aktuellen Kunden des Angestellten.
      *
      * @param name Name des Kunden
-     * @param pin PIN des Kunden
+     * @param pin  PIN des Kunden
      */
     void KundeErzeugen(String name, int pin);
 
@@ -141,13 +140,13 @@ interface KONTROLLEURINTERFACE
      * Erzeugt einen Angestellten.
      *
      * @param name Name des Angestellten
-     * @param pin PIN des Angestellten
+     * @param pin  PIN des Angestellten
      */
     void AngestellterErzeugen(String name, int pin);
 
-
     /**
-     * Holt die Nummern der verfügbaren Konten des aktuelle bearbeiteten Kunden eines Angestellten.
+     * Holt die Nummern der verfügbaren Konten des aktuelle bearbeiteten Kunden
+     * eines Angestellten.
      */
     int[] NummerFuerAktKundenGeben();
 
@@ -178,7 +177,8 @@ interface KONTROLLEURINTERFACE
     void KontoLoeschen();
 
     /**
-     * Holt die Kontoauszüge des aktuellen Kontos des aktuellen Kunden für den Angestellten.
+     * Holt die Kontoauszüge des aktuellen Kontos des aktuellen Kunden für den
+     * Angestellten.
      *
      * @return Feld von Texten mit einem Kontoauszug pro Element
      */

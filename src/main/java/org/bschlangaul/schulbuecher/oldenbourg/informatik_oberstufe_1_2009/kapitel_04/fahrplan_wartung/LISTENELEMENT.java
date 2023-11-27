@@ -33,8 +33,8 @@ abstract class LISTENELEMENT
     abstract LISTENELEMENT Loeschen(DATENELEMENT welches);
 
     /**
-     * Sucht das Datenelement mit dem in test angegebenen Schlüssel. Nutzt die Sortierung der Liste
-     * aus.
+     * Sucht das Datenelement mit dem in test angegebenen Schlüssel. Nutzt die
+     * Sortierung der Liste aus.
      *
      * @param test Schlüssel des zu suchenden Datenelements.
      * @return Referenz auf das gefundene Datenelement oder null.

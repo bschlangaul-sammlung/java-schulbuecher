@@ -2,10 +2,8 @@ package org.bschlangaul.schulbuecher.buchner.informatik_11_2023.kapitel_04.thema
 
 public class Aufgabe4
 {
-
     public Aufgabe4()
     {
-
     }
 
     // Aufgabe 4a
@@ -22,7 +20,6 @@ public class Aufgabe4
             // Eine direkte Umwandlung kann mit
             // ausgabe = Integer.toBinaryString(eingabeDezimal);
             // gemacht werden
-
             // Lösung nach dem Algorithmus aus dem Buch
             // Finden der größten Stufenzahl im Dualsystem
             int basis = 2;
@@ -33,7 +30,6 @@ public class Aufgabe4
                 stufenzahl = stufenzahl * basis;
             }
             // Zerlegen der Eingabe
-
             while (stufenzahl >= 1)
             {
                 // Rest der Division wird als Binärstelle gespeichert
@@ -43,7 +39,6 @@ public class Aufgabe4
                 // Nächste Stufenzahl
                 stufenzahl = stufenzahl / basis;
             }
-
             System.out.println(ausgabe);
             return ausgabe;
         }
@@ -63,7 +58,6 @@ public class Aufgabe4
             // Eine direkte Umwandlung kann mit
             // ausgabe = Integer.toHexString(eingabeDezimal);
             // gemacht werden
-
             // Lösung nach dem Algorithmus aus dem Buch
             // Finden der größten Stufenzahl im Dualsystem
             int basis = 16;
@@ -74,10 +68,10 @@ public class Aufgabe4
                 stufenzahl = stufenzahl * basis;
             }
             // Zerlegen der Eingabe
-
             while (stufenzahl >= 1)
             {
-                // Rest der Division wird als Binärstelle gespeichert, Zahlen größer als 9 müssen in
+                // Rest der Division wird als Binärstelle gespeichert, Zahlen
+                // größer als 9 müssen in
                 // Buchstaben umgeandelt werden.
                 if (eingabeDezimal / stufenzahl < 10)
                     ausgabe = ausgabe + eingabeDezimal / stufenzahl;
@@ -98,7 +92,6 @@ public class Aufgabe4
                 // Nächste Stufenzahl
                 stufenzahl = stufenzahl / basis;
             }
-
             System.out.println(ausgabe);
             return ausgabe;
         }
@@ -108,7 +101,6 @@ public class Aufgabe4
     public String binaerZuHexadezimal(String eingabeBinaer)
     {
         int ausgabe = 0;
-
         // Lösung über Half-Byte entspricht einer Hexadezimalstelle
         // 0000 -> 0; 0001 -> 1; 0010 -> 2; ... ; 1110 -> E; 1111 -> F
         // wäre möglich
@@ -117,7 +109,8 @@ public class Aufgabe4
         int basis = 2;
         int stufenzahl = 1;
         int stelle = eingabeBinaer.length() - 1;
-        // eingabeBinaer wird von Rechts nach Links durchgelaufen und entsprechend der Stufenzahl
+        // eingabeBinaer wird von Rechts nach Links durchgelaufen und
+        // entsprechend der Stufenzahl
         // ausgewertet
         while (stelle >= 0)
         {
@@ -132,7 +125,5 @@ public class Aufgabe4
         }
         System.out.println("Zwischenschritt Dezimal: " + ausgabe);
         return dezimalZuHexadezimal(ausgabe);
-
     }
-
 }

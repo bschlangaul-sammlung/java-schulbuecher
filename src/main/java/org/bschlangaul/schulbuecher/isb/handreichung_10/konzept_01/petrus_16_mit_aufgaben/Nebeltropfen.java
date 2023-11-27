@@ -25,5 +25,4 @@ public class Nebeltropfen extends Tropfen
             meineWolke.entferne(this);
         }
     }
-
 }

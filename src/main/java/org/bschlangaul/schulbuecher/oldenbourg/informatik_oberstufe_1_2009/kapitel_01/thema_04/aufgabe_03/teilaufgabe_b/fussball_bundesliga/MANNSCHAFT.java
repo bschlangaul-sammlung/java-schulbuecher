@@ -17,11 +17,10 @@ class MANNSCHAFT implements DATENELEMENT
     /** Anzahl bisheriger Spiele */
     private int spiele;
 
-
     /**
      * Konstruktor
      *
-     * @param nameNeu Name der Mannschaft
+     * @param nameNeu   Name der Mannschaft
      * @param punkteNeu momentaner Punktestand
      */
     MANNSCHAFT(String nameNeu, int punkteNeu, int spieleNeu)
@@ -30,7 +29,6 @@ class MANNSCHAFT implements DATENELEMENT
         punkte = punkteNeu;
         spiele = spieleNeu;
     }
-
 
     /**
      * Ausgabe von Name, Punkten und Anzahl der Spiele
@@ -78,6 +76,4 @@ class MANNSCHAFT implements DATENELEMENT
     {
         return name == s;
     }
-
-
 }

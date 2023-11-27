@@ -7,10 +7,10 @@ import greenfoot.Actor;
  *
  * Kap. 7.3 Arbeitsauftrag 3, Aufgabe 1
  */
-
 public class Fahrrad extends Actor
 {
     int hoechstgeschwindigkeit;
+
     double reifendruck;
 
     Fahrrad()
@@ -20,8 +20,9 @@ public class Fahrrad extends Actor
     }
 
     /*
-     * Das Fahrrad bewegt sich, jedoch lässt der Reifendruck (unverhältnismäßig stark) nach. Ist der
-     * Reifendruck auf 1.5 gesunken, bewegt es sich nicht mehr.
+     * Das Fahrrad bewegt sich, jedoch lässt der Reifendruck (unverhältnismäßig
+     * stark) nach. Ist der Reifendruck auf 1.5 gesunken, bewegt es sich nicht
+     * mehr.
      */
     void fahre()
     {
@@ -33,8 +34,8 @@ public class Fahrrad extends Actor
     }
 
     /*
-     * Vor Beginn der Fahrt kann der Reifendruck erhöht werden. Damit ist eine längere Fahrt
-     * möglich.
+     * Vor Beginn der Fahrt kann der Reifendruck erhöht werden. Damit ist eine
+     * längere Fahrt möglich.
      */
     void pumpeAuf()
     {

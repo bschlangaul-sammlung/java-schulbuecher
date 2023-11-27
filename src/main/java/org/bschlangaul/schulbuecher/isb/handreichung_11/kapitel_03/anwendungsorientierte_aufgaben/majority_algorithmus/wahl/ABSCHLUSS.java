@@ -1,12 +1,12 @@
+package org.bschlangaul.schulbuecher.isb.handreichung_11.kapitel_03.anwendungsorientierte_aufgaben.majority_algorithmus.wahl;
+
 class ABSCHLUSS extends LISTENELEMENT
 {
-
     // KONSTRUKTOR
     ABSCHLUSS()
     {
         super();
     }
-
 
     // Getter- und Setter-Methoden
     LISTENELEMENT NachfolgerGeben()
@@ -18,7 +18,6 @@ class ABSCHLUSS extends LISTENELEMENT
     {
         return null;
     }
-
 
     // weitere Methoden
     DATENELEMENT EndeGeben()
@@ -52,11 +51,11 @@ class ABSCHLUSS extends LISTENELEMENT
     }
 
     void AlleAbHierAusgeben()
-    {}
+    {
+    }
 
     int AnzahlMitEigenschaftAbHierGeben(DATENELEMENT datenObjekt)
     {
         return 0;
     }
-
 }

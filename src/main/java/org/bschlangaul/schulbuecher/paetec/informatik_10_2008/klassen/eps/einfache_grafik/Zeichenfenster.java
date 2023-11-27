@@ -10,8 +10,6 @@ import static org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps
 public class Zeichenfenster
 {
     /*---------------Attribute-----*/
-
-
     /*---------------Konstruktor---*/
     public Zeichenfenster(int breite, int hoehe)
     {
@@ -28,7 +26,4 @@ public class Zeichenfenster
     {
         return fortgeschrittenesFensterGeben(this).hoeheGeben();
     }
-
-
-
 }

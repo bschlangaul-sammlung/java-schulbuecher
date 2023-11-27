@@ -11,7 +11,9 @@ import java.util.Random;
 class SUPERMARKT implements TAKTKLIENT
 {
     private KASSE[] kassen;
+
     private int wartezeit;
+
     private Random zufall;
 
     /**
@@ -43,18 +45,21 @@ class SUPERMARKT implements TAKTKLIENT
         artikel = 3 + zufall.nextInt(8);
         switch (zufall.nextInt(4))
         {
-            case 0:
-                k = new KUNDEWENIG(artikel);
-                break;
-            case 1:
-                k = new KUNDEKURZ(artikel);
-                break;
-            case 2:
-                k = new KUNDEZUFALL(artikel);
-                break;
-            case 3:
-                k = new KUNDEKURZODERWENIG(artikel);
-                break;
+        case 0:
+            k = new KUNDEWENIG(artikel);
+            break;
+
+        case 1:
+            k = new KUNDEKURZ(artikel);
+            break;
+
+        case 2:
+            k = new KUNDEZUFALL(artikel);
+            break;
+
+        case 3:
+            k = new KUNDEKURZODERWENIG(artikel);
+            break;
         }
         k.Anstellen(kassen);
     }
@@ -74,7 +79,6 @@ class SUPERMARKT implements TAKTKLIENT
             wartezeit = wartezeit - 1;
         }
     }
-
 
     /**
      *ffnet die angegebene Kasse.

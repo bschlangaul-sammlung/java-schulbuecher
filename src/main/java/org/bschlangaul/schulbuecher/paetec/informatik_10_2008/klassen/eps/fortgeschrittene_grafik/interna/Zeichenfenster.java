@@ -36,7 +36,6 @@ import org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.werkze
 import org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.werkzeuge.Notiz;
 import org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.werkzeuge.Fenster;
 
-
 /**
  * Das Zeichenfenster der Grafiken
  *
@@ -98,36 +97,40 @@ public class Zeichenfenster extends Canvas implements Fenster
     private boolean inGuterQualitaetZeichnen;
 
     /**
-     * Die Konstante STANDARD_FENSTER_BREITE stellt eine Fensterbreite in Bildpunkten bereit, wenn
-     * vom Nutzer keine andere angegeben wird.
+     * Die Konstante STANDARD_FENSTER_BREITE stellt eine Fensterbreite in
+     * Bildpunkten bereit, wenn vom Nutzer keine andere angegeben wird.
      */
     private static final int STANDARD_FENSTER_BREITE = 810;
 
     /**
-     * Die Konstante STANDARD_FENSTER_HOEHE stellt eine Fensterhoehe in Bildpunkten bereit, wenn vom
-     * Nutzer keine andere angegeben wird.
+     * Die Konstante STANDARD_FENSTER_HOEHE stellt eine Fensterhoehe in
+     * Bildpunkten bereit, wenn vom Nutzer keine andere angegeben wird.
      */
     private static final int STANDARD_FENSTER_HOEHE = 600;
 
     /**
-     * Die Konsante FENSTER_NAME haelt den Titel des mit öffentlichem Konstruktor erzeugten
-     * Fensters.
+     * Die Konsante FENSTER_NAME haelt den Titel des mit öffentlichem
+     * Konstruktor erzeugten Fensters.
      */
     private static final String FENSTER_NAME = "Zeichenfenster";
 
     /**
-     * Die Konsante SINGLETON_FENSTER_NAME haelt den Titel des bei Bedarf automatisch erzeugten
-     * Fensters. Von diesem gibt es maximal eines nach der Singleton-Idee.
+     * Die Konsante SINGLETON_FENSTER_NAME haelt den Titel des bei Bedarf
+     * automatisch erzeugten Fensters. Von diesem gibt es maximal eines nach der
+     * Singleton-Idee.
      */
     private static final String SINGLETON_FENSTER_NAME = "Standard-Zeichenfenster";
+
     /**
-     * Die Konstante HINTERGRUND_FARBE haelt die Hintergrundfarbe des Zeichenfensters.
+     * Die Konstante HINTERGRUND_FARBE haelt die Hintergrundfarbe des
+     * Zeichenfensters.
      */
     private static final Color HINTERGRUND_FARBE = Color.WHITE;
 
     /**
-     * Hier wird gehalten, wieviele Fenster bisher erzeugt wurden. Es wird nicht nach
-     * Standardfenster (Singleton) und Fenster unterschieden sondern einfach durchgezaehlt.
+     * Hier wird gehalten, wieviele Fenster bisher erzeugt wurden. Es wird nicht
+     * nach Standardfenster (Singleton) und Fenster unterschieden sondern
+     * einfach durchgezaehlt.
      */
     private static int fensteranzahl = 0;
 
@@ -135,6 +138,7 @@ public class Zeichenfenster extends Canvas implements Fenster
      * Mehrere Fenster werden kaskadierend angeordnet, deltaX = deltaY = offset
      */
     private static int offset = 0;
+
     /**
      * Fuer das automatische Zeichnen noetig
      */
@@ -144,7 +148,6 @@ public class Zeichenfenster extends Canvas implements Fenster
      * Fuer das automatische Zeichnen noetig
      */
     private boolean zeichenautomatAn = false;
-
 
     /**
      * Erzeugt ein Zeichenfenster in der angegebenen Groesse
@@ -156,8 +159,9 @@ public class Zeichenfenster extends Canvas implements Fenster
 
     private Zeichenfenster(int breite, int hoehe, boolean singleton)
     {
-        if (breite < 0 || hoehe < 0 || breite > Toolkit.getDefaultToolkit().getScreenSize().width
-                        || hoehe > Toolkit.getDefaultToolkit().getScreenSize().height)
+        if (breite < 0 || hoehe < 0
+                || breite > Toolkit.getDefaultToolkit().getScreenSize().width
+                || hoehe > Toolkit.getDefaultToolkit().getScreenSize().height)
         {
             breite = STANDARD_FENSTER_BREITE;
             hoehe = STANDARD_FENSTER_HOEHE;
@@ -170,20 +174,22 @@ public class Zeichenfenster extends Canvas implements Fenster
     }
 
     /**
-     * Die Konstruktor-Ersatzmethode zeichenfensterGeben erzeugt ein neues Standardzeichenfenster
-     * mit Standardbreite und -hoehe falls noch kein Standardzeichenfenster existiert. Sonst wird
-     * das bestehende Standardzeichenfenster zurueckgegeben. Anmerkung: Von Nutzern via Konstruktor
-     * erzeugte Zeichenfenster sind keine Standardzeichenfenster.
+     * Die Konstruktor-Ersatzmethode zeichenfensterGeben erzeugt ein neues
+     * Standardzeichenfenster mit Standardbreite und -hoehe falls noch kein
+     * Standardzeichenfenster existiert. Sonst wird das bestehende
+     * Standardzeichenfenster zurueckgegeben. Anmerkung: Von Nutzern via
+     * Konstruktor erzeugte Zeichenfenster sind keine Standardzeichenfenster.
      */
     public static Zeichenfenster zeichenfensterGeben()
     {
         if (zeichenfenster == null)
         {
             Dimension d = standardDimensionenAuslesen();
-            zeichenfenster = new Zeichenfenster((int) d.getWidth(), (int) d.getHeight(), true); // true
-                                                                                                // heisst:
-                                                                                                // Standard-Zeichenfenster
-                                                                                                // erzeugen
+            zeichenfenster = new Zeichenfenster((int) d.getWidth(),
+                    (int) d.getHeight(), true); // true
+                                                // heisst:
+                                                // Standard-Zeichenfenster
+                                                // erzeugen
         }
         return zeichenfenster;
     }
@@ -227,9 +233,10 @@ public class Zeichenfenster extends Canvas implements Fenster
     }
 
     /**
-     * Das Zeichenfenster kann zugunsten der Zeichengeschwindigkeit in guter und in schlechter
-     * Qualitaet gezeichnet werden. Bei schlechter Qaulitaet wird unter Anderem das Anti-Aliasing
-     * ausgeschaltet. Standardeinstellung: gute Qualitaet
+     * Das Zeichenfenster kann zugunsten der Zeichengeschwindigkeit in guter und
+     * in schlechter Qualitaet gezeichnet werden. Bei schlechter Qaulitaet wird
+     * unter Anderem das Anti-Aliasing ausgeschaltet. Standardeinstellung: gute
+     * Qualitaet
      */
     public void zeichenqualitaetWechseln()
     {
@@ -255,8 +262,8 @@ public class Zeichenfenster extends Canvas implements Fenster
     }
 
     /**
-     * Schaltet das automatische Neuzeichnen des Zeichenfensters an. So wird das Zeichenfenster
-     * mindestens all 200ms neugezeichnet.
+     * Schaltet das automatische Neuzeichnen des Zeichenfensters an. So wird das
+     * Zeichenfenster mindestens all 200ms neugezeichnet.
      */
     public void zeichenautomatStarten()
     {
@@ -265,7 +272,8 @@ public class Zeichenfenster extends Canvas implements Fenster
         if (synchronisation == null)
         {
             synchronisation = new Synchronisierer();
-            new Thread() {
+            new Thread()
+            {
                 public void run()
                 {
                     while (true)
@@ -285,7 +293,8 @@ public class Zeichenfenster extends Canvas implements Fenster
     }
 
     /**
-     * Schaltet das automatische Neuzeichnen des Zeichenfensters ab, sofern es angeschaltet ist.
+     * Schaltet das automatische Neuzeichnen des Zeichenfensters ab, sofern es
+     * angeschaltet ist.
      */
     public void zeichenautomatStoppen()
     {
@@ -344,21 +353,22 @@ public class Zeichenfenster extends Canvas implements Fenster
         {
             frame = new JFrame(FENSTER_NAME + " (" + fensteranzahl + ")");
         }
-        frame.setIconImage(
-                        new ImageIcon(Bild.class.getResource(BildSpeicher.ordnerpfad + "logo.gif"))
-                                        .getImage());
+        frame.setIconImage(new ImageIcon(
+                Bild.class.getResource(BildSpeicher.ordnerpfad + "logo.gif"))
+                .getImage());
         frame.setPreferredSize(new Dimension(breite, hoehe));
         frame.setBounds(offset, offset, breite, hoehe);// UH - 0,0
         offset = offset + 10;
         frame.setLayout(null);
         frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE); // UH
         ImageIcon gitterIcon = new ImageIcon(
-                        Bild.class.getResource(BildSpeicher.ordnerpfad + "skala.gif"));
+                Bild.class.getResource(BildSpeicher.ordnerpfad + "skala.gif"));
         gitternetzButton = new JButton(gitterIcon);
         gitternetzButton.addActionListener(new GitterHorcher());
         buttonHoehe = gitterIcon.getIconHeight() + 55;
         leinwandPanel = new JPanel();
-        leinwandPanel.setPreferredSize(new Dimension(breite, hoehe - buttonHoehe));
+        leinwandPanel
+                .setPreferredSize(new Dimension(breite, hoehe - buttonHoehe));
         leinwandPanel.setLayout(null);
         leinwandPanel.setBounds(0, 0, breite, hoehe - buttonHoehe);
         leinwandPanel.setBackground(HINTERGRUND_FARBE);
@@ -368,8 +378,9 @@ public class Zeichenfenster extends Canvas implements Fenster
         buttonPanel.setBackground(HINTERGRUND_FARBE);
         buttonPanel.setBounds(0, hoehe - buttonHoehe, breite, buttonHoehe);
         buttonPanel.setLayout(null);
-        gitternetzButton.setBounds(breite / 2 - gitterIcon.getIconWidth() / 2, 0,
-                        gitterIcon.getIconWidth() + 10, gitterIcon.getIconHeight() + 10);
+        gitternetzButton.setBounds(breite / 2 - gitterIcon.getIconWidth() / 2,
+                0, gitterIcon.getIconWidth() + 10,
+                gitterIcon.getIconHeight() + 10);
         buttonPanel.add(gitternetzButton);
         frame.add(buttonPanel);
         frame.pack();
@@ -395,31 +406,37 @@ public class Zeichenfenster extends Canvas implements Fenster
         Graphics2D g = (Graphics2D) strategie.getDrawGraphics();
         if (inGuterQualitaetZeichnen)
         {
-            g.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+            g.setRenderingHint(RenderingHints.KEY_ANTIALIASING,
+                    RenderingHints.VALUE_ANTIALIAS_ON);
             g.setRenderingHint(RenderingHints.KEY_ALPHA_INTERPOLATION,
-                            RenderingHints.VALUE_ALPHA_INTERPOLATION_SPEED);
+                    RenderingHints.VALUE_ALPHA_INTERPOLATION_SPEED);
             g.setRenderingHint(RenderingHints.KEY_COLOR_RENDERING,
-                            RenderingHints.VALUE_COLOR_RENDER_QUALITY);
-            g.setRenderingHint(RenderingHints.KEY_DITHERING, RenderingHints.VALUE_DITHER_ENABLE);
+                    RenderingHints.VALUE_COLOR_RENDER_QUALITY);
+            g.setRenderingHint(RenderingHints.KEY_DITHERING,
+                    RenderingHints.VALUE_DITHER_ENABLE);
             g.setRenderingHint(RenderingHints.KEY_FRACTIONALMETRICS,
-                            RenderingHints.VALUE_FRACTIONALMETRICS_OFF);
-            g.setRenderingHint(RenderingHints.KEY_RENDERING, RenderingHints.VALUE_RENDER_QUALITY);
+                    RenderingHints.VALUE_FRACTIONALMETRICS_OFF);
+            g.setRenderingHint(RenderingHints.KEY_RENDERING,
+                    RenderingHints.VALUE_RENDER_QUALITY);
             g.setRenderingHint(RenderingHints.KEY_STROKE_CONTROL,
-                            RenderingHints.VALUE_STROKE_DEFAULT);
+                    RenderingHints.VALUE_STROKE_DEFAULT);
         }
         else
         {
-            g.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_OFF);
+            g.setRenderingHint(RenderingHints.KEY_ANTIALIASING,
+                    RenderingHints.VALUE_ANTIALIAS_OFF);
             g.setRenderingHint(RenderingHints.KEY_ALPHA_INTERPOLATION,
-                            RenderingHints.VALUE_ALPHA_INTERPOLATION_SPEED);
+                    RenderingHints.VALUE_ALPHA_INTERPOLATION_SPEED);
             g.setRenderingHint(RenderingHints.KEY_COLOR_RENDERING,
-                            RenderingHints.VALUE_COLOR_RENDER_DEFAULT);
-            g.setRenderingHint(RenderingHints.KEY_DITHERING, RenderingHints.VALUE_DITHER_DISABLE);
+                    RenderingHints.VALUE_COLOR_RENDER_DEFAULT);
+            g.setRenderingHint(RenderingHints.KEY_DITHERING,
+                    RenderingHints.VALUE_DITHER_DISABLE);
             g.setRenderingHint(RenderingHints.KEY_FRACTIONALMETRICS,
-                            RenderingHints.VALUE_FRACTIONALMETRICS_OFF);
-            g.setRenderingHint(RenderingHints.KEY_RENDERING, RenderingHints.VALUE_RENDER_SPEED);
+                    RenderingHints.VALUE_FRACTIONALMETRICS_OFF);
+            g.setRenderingHint(RenderingHints.KEY_RENDERING,
+                    RenderingHints.VALUE_RENDER_SPEED);
             g.setRenderingHint(RenderingHints.KEY_STROKE_CONTROL,
-                            RenderingHints.VALUE_STROKE_DEFAULT);
+                    RenderingHints.VALUE_STROKE_DEFAULT);
         }
         g.setColor(HINTERGRUND_FARBE);
         g.clearRect(0, 0, getWidth(), getHeight());
@@ -437,15 +454,18 @@ public class Zeichenfenster extends Canvas implements Fenster
 
     private static Dimension standardDimensionenAuslesen()
     {
-        URL u = Bild.class.getResource("sonstigeRessourcen/standardFenstergroesse.txt");
+        URL u = Bild.class
+                .getResource("sonstigeRessourcen/standardFenstergroesse.txt");
         if (u == null || u.getPath() == null)
-            return new Dimension(STANDARD_FENSTER_BREITE, STANDARD_FENSTER_HOEHE);
+            return new Dimension(STANDARD_FENSTER_BREITE,
+                    STANDARD_FENSTER_HOEHE);
         BufferedReader reader;
         try
         {
             reader = new BufferedReader(new InputStreamReader(u.openStream()));
             String zeile = reader.readLine();
-            while (reader.ready() && (zeile.length() < 3 || !zeile.contains(",")))
+            while (reader.ready()
+                    && (zeile.length() < 3 || !zeile.contains(",")))
             {
                 zeile = reader.readLine();
             }
@@ -453,17 +473,19 @@ public class Zeichenfenster extends Canvas implements Fenster
             int breite = Integer.parseInt(zeile.trim().split(",")[0].trim());
             int hoehe = Integer.parseInt(zeile.trim().split(",")[1].trim());
             return new Dimension(breite, hoehe);
-        } catch (FileNotFoundException e)
+        }
+        catch (FileNotFoundException e)
         {
-        } catch (IOException e)
+        }
+        catch (IOException e)
         {
         }
         return new Dimension(STANDARD_FENSTER_BREITE, STANDARD_FENSTER_HOEHE);
     }
 
     /**
-     * Die Methode koordinatensystemMalen zeichnet auf wunsche ein Koordinatensystem mit Hilfslinien
-     * auf das Zeichenfenster.
+     * Die Methode koordinatensystemMalen zeichnet auf wunsche ein
+     * Koordinatensystem mit Hilfslinien auf das Zeichenfenster.
      */
     private void koordinatensystemMalen(Graphics2D zeichenInstanz)
     {
@@ -475,7 +497,6 @@ public class Zeichenfenster extends Canvas implements Fenster
         /* Koordinatenachsen zeichnen */
         zeichenInstanz.drawLine(5, 0, 5, fensterhoehe);
         zeichenInstanz.drawLine(0, 5, fensterbreite, 5);
-
         /* Skala und Striche der y-Achse */
         for (int i = 50; i < fensterhoehe; i += 50)
         {
@@ -501,7 +522,8 @@ public class Zeichenfenster extends Canvas implements Fenster
         public void windowClosing(WindowEvent e)
         {
             Notiz meldung = new Notiz();// UH
-            if (meldung.jaNeinAntwortLesen("Wenn Sie schliessen werden ALLE erzeugten "
+            if (meldung.jaNeinAntwortLesen(
+                    "Wenn Sie schliessen werden ALLE erzeugten "
                             + "Objekte entfernt.\n Beabsichtigen Sie dies?"))
             {
                 System.exit(0);
@@ -514,7 +536,8 @@ public class Zeichenfenster extends Canvas implements Fenster
         public void actionPerformed(ActionEvent event)
         {
             gitternetz = !gitternetz;
-            new Thread() {
+            new Thread()
+            {
                 public void run()
                 {
                     neuZeichnen();
@@ -526,7 +549,8 @@ public class Zeichenfenster extends Canvas implements Fenster
     private class KomponentenHorcher implements ComponentListener
     {
         public void componentHidden(ComponentEvent arg0)
-        {}
+        {
+        }
 
         public void componentMoved(ComponentEvent arg0)
         {
@@ -535,13 +559,19 @@ public class Zeichenfenster extends Canvas implements Fenster
 
         public void componentResized(ComponentEvent arg0)
         {
-            leinwandPanel.setBounds(0, 0, ((JFrame) arg0.getSource()).getWidth(),
-                            ((JFrame) arg0.getSource()).getHeight() - buttonHoehe);
-            setBounds(0, 0, leinwandPanel.getWidth(), leinwandPanel.getHeight());
-            buttonPanel.setBounds(0, ((JFrame) arg0.getSource()).getHeight() - buttonHoehe,
-                            ((JFrame) arg0.getSource()).getWidth(), buttonHoehe);
-            gitternetzButton.setBounds(buttonPanel.getWidth() / 2 - gitternetzButton.getWidth() / 2,
-                            0, gitternetzButton.getWidth(), gitternetzButton.getHeight());
+            leinwandPanel.setBounds(0, 0,
+                    ((JFrame) arg0.getSource()).getWidth(),
+                    ((JFrame) arg0.getSource()).getHeight() - buttonHoehe);
+            setBounds(0, 0, leinwandPanel.getWidth(),
+                    leinwandPanel.getHeight());
+            buttonPanel.setBounds(0,
+                    ((JFrame) arg0.getSource()).getHeight() - buttonHoehe,
+                    ((JFrame) arg0.getSource()).getWidth(), buttonHoehe);
+            gitternetzButton.setBounds(
+                    buttonPanel.getWidth() / 2
+                            - gitternetzButton.getWidth() / 2,
+                    0, gitternetzButton.getWidth(),
+                    gitternetzButton.getHeight());
             buttonPanel.repaint();
             neuZeichnen();
         }
@@ -554,7 +584,6 @@ public class Zeichenfenster extends Canvas implements Fenster
 
     private class MausHorcher implements MouseListener
     {
-
         public void mouseClicked(MouseEvent arg0)
         {
             neuZeichnen();
@@ -571,10 +600,12 @@ public class Zeichenfenster extends Canvas implements Fenster
         }
 
         public void mousePressed(MouseEvent arg0)
-        {}
+        {
+        }
 
         public void mouseReleased(MouseEvent arg0)
-        {}
+        {
+        }
     }
 
     private class TastenHorcher implements KeyListener
@@ -610,7 +641,8 @@ public class Zeichenfenster extends Canvas implements Fenster
             try
             {
                 Thread.sleep(2000);
-            } catch (InterruptedException e)
+            }
+            catch (InterruptedException e)
             {
             }
             frame.setAlwaysOnTop(false);
@@ -627,7 +659,8 @@ public class Zeichenfenster extends Canvas implements Fenster
             try
             {
                 wait();
-            } catch (InterruptedException e)
+            }
+            catch (InterruptedException e)
             {
             }
         }

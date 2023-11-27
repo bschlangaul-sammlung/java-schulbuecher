@@ -13,12 +13,13 @@ class GIROKONTO extends KONTO
     /**
      * Belegt die Attribute vor.
      *
-     * @param nummer die Nummer des neuen Kontos
+     * @param nummer       die Nummer des neuen Kontos
      * @param ueberziehung gewährter Dispokredit
-     * @param bes Besitzer des Kontos
-     * @param ver Verbindungsobjekt zur Datenbank
+     * @param bes          Besitzer des Kontos
+     * @param ver          Verbindungsobjekt zur Datenbank
      */
-    GIROKONTO(int nummer, double ueberziehung, KUNDE bes, DATENBANKVERBINDUNG ver)
+    GIROKONTO(int nummer, double ueberziehung, KUNDE bes,
+            DATENBANKVERBINDUNG ver)
     {
         super(nummer, bes, ver);
         ueberziehungsrahmen = ueberziehung;
@@ -27,13 +28,14 @@ class GIROKONTO extends KONTO
     /**
      * Besetzt die Attribute
      *
-     * @param nummer die Nummer des neuen Kontos
-     * @param stand der aktuelle Kontostand
+     * @param nummer       die Nummer des neuen Kontos
+     * @param stand        der aktuelle Kontostand
      * @param ueberziehung gewährter Dispokredit
-     * @param bes Besitzer des Kontos
-     * @param ver Verbindungsobjekt zur Datenbank
+     * @param bes          Besitzer des Kontos
+     * @param ver          Verbindungsobjekt zur Datenbank
      */
-    GIROKONTO(int nummer, double stand, double ueberziehung, KUNDE bes, DATENBANKVERBINDUNG ver)
+    GIROKONTO(int nummer, double stand, double ueberziehung, KUNDE bes,
+            DATENBANKVERBINDUNG ver)
     {
         super(nummer, stand, bes, ver);
         ueberziehungsrahmen = ueberziehung;
@@ -50,8 +52,9 @@ class GIROKONTO extends KONTO
     }
 
     /**
-     * Abheben vom Konto. Voraussetzung: betrag grö&szlig;er 0. Die änderung wird auch persistent in
-     * der Datenbank ausgeführt. Es wird geprüft, dass der Betrag den Kreditrahmen nicht übersteigt.
+     * Abheben vom Konto. Voraussetzung: betrag grö&szlig;er 0. Die änderung
+     * wird auch persistent in der Datenbank ausgeführt. Es wird geprüft, dass
+     * der Betrag den Kreditrahmen nicht übersteigt.
      *
      * @param betrag abzuhebender Betrag
      * @return true, wenn die Aktion ausgeführt werden konnte.

@@ -10,8 +10,10 @@ class KNOTEN extends BAUMELEMENT
 {
     /** Referenz auf den linken Nachfolger */
     private BAUMELEMENT linkerNachfolger;
+
     /** Referenz auf den rechten Nachfolger */
     private BAUMELEMENT rechterNachfolger;
+
     /** Referenz auf das Datenelement */
     private DATENELEMENT daten;
 
@@ -55,7 +57,8 @@ class KNOTEN extends BAUMELEMENT
     }
 
     /**
-     * Fügt ein neues Datenelement in den Baum ein. Der Wert darf noch nicht vorkommen
+     * Fügt ein neues Datenelement in den Baum ein. Der Wert darf noch nicht
+     * vorkommen
      *
      * @param wert Referenz auf das einzufügende Datenelement
      * @return der (neue) Nachfolger des Aufrufers
@@ -112,7 +115,8 @@ class KNOTEN extends BAUMELEMENT
     }
 
     /**
-     * Entfernt den Knoten mit der Referenz auf das Datenelement mit dem gegebenen Schlüssel.
+     * Entfernt den Knoten mit der Referenz auf das Datenelement mit dem
+     * gegebenen Schlüssel.
      *
      * @param wert Referenz auf ein Datenelement mit dem Schlüsselwert
      * @return der (neue) Nachfolger des Aufrufers
@@ -138,7 +142,8 @@ class KNOTEN extends BAUMELEMENT
     }
 
     /**
-     * Fügt den angegebenen Teilbaum an der am weitesten rechts stehenden Stelle ein.
+     * Fügt den angegebenen Teilbaum an der am weitesten rechts stehenden Stelle
+     * ein.
      *
      * @param teil der Anzufügende Teilbaum
      * @return der (neue) Nachfolger des Aufrufers

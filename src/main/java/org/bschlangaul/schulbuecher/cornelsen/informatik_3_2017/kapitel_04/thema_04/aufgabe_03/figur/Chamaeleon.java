@@ -8,7 +8,6 @@ package org.bschlangaul.schulbuecher.cornelsen.informatik_3_2017.kapitel_04.them
  */
 class Chamaeleon extends Figur
 {
-
     /**
      * Legt das Chamäleon in der Farbe grün an.
      */
@@ -71,7 +70,8 @@ class Chamaeleon extends Figur
     }
 
     /**
-     * Stellt das Chamäleon rot dar, wenn eine andere Grafikfigur berührt wird, sonst schwarz.
+     * Stellt das Chamäleon rot dar, wenn eine andere Grafikfigur berührt wird,
+     * sonst schwarz.
      */
     void Umfärben()
     {

@@ -22,11 +22,13 @@ public class RANGIERBAHNHOF
 
     // Methoden
     /**
-     * erzeugt einen neuen Waggon (mit übergebenen Attributwerten) und setzt ihn auf Gleis 1
+     * erzeugt einen neuen Waggon (mit übergebenen Attributwerten) und setzt ihn
+     * auf Gleis 1
      *
      * @param Waggonnummer, Waggontyp und Zielgleis
      */
-    void NeuenWaggonAufGleis1Stellen(int waggonnummer, char waggontyp, int zielgleis)
+    void NeuenWaggonAufGleis1Stellen(int waggonnummer, char waggontyp,
+            int zielgleis)
     {
         WAGGON waggon = new WAGGON(waggonnummer, waggontyp, zielgleis);
         gleis1.Einfuegen(waggon);
@@ -46,12 +48,13 @@ public class RANGIERBAHNHOF
         System.out.print("Gleis 3: ");
         gleis3.AlleAusgeben();
         System.out.println();
-        System.out.println("--------------------------------------------------------------");
+        System.out.println(
+                "--------------------------------------------------------------");
     }
 
     /**
-     * führt den Rangiervorgang aus Dabei muss nur überprüft werden, aus welches Zielgleis der
-     * Waggon gesetzt werden soll.
+     * führt den Rangiervorgang aus Dabei muss nur überprüft werden, aus welches
+     * Zielgleis der Waggon gesetzt werden soll.
      */
     void Rangieren()
     {
@@ -72,8 +75,9 @@ public class RANGIERBAHNHOF
     }
 
     /**
-     * gibt die Anzahl der Waggons auf dem gewüschten Gleis aus Dabei muss nur überprüft werden, aus
-     * welches Zielgleis der Waggon gesetzt werden soll. Aufgabe c i
+     * gibt die Anzahl der Waggons auf dem gewüschten Gleis aus Dabei muss nur
+     * überprüft werden, aus welches Zielgleis der Waggon gesetzt werden soll.
+     * Aufgabe c i
      *
      * @param Gleisnummer des Gleises, dessen Waggonanzahl bestimmt werden soll.
      */
@@ -82,27 +86,29 @@ public class RANGIERBAHNHOF
         int anzahl = 0;
         switch (gleisnummer)
         {
-            case 1:
-                anzahl = gleis1.AnzahlGeben();
-                break;
-            case 2:
-                anzahl = gleis2.AnzahlGeben();
-                break;
-            case 3:
-                anzahl = gleis3.AnzahlGeben();
-                break;
-            // Fehlerfall:
-            default:
-                anzahl = -1;
-        }
+        case 1:
+            anzahl = gleis1.AnzahlGeben();
+            break;
 
+        case 2:
+            anzahl = gleis2.AnzahlGeben();
+            break;
+
+        case 3:
+            anzahl = gleis3.AnzahlGeben();
+            break;
+
+        // Fehlerfall:
+        default:
+            anzahl = -1;
+        }
         System.out.println("Gleis " + gleisnummer + ": " + anzahl + " Waggons");
     }
 
     /**
-     * sucht einen Waggon mit der gew&uum;schten Waggonnummer und gibt ggf. die Nummer des Gleises
-     * aus, auf dem dieser Waggon steht Die Methode nutzt Methode Suchen von STAPEL bzw. LISTE
-     * Aufgabe c ii
+     * sucht einen Waggon mit der gew&uum;schten Waggonnummer und gibt ggf. die
+     * Nummer des Gleises aus, auf dem dieser Waggon steht Die Methode nutzt
+     * Methode Suchen von STAPEL bzw. LISTE Aufgabe c ii
      *
      * @param Nummer des gesuchten Waggons
      */
@@ -111,36 +117,38 @@ public class RANGIERBAHNHOF
         WAGGON waggon = new WAGGON(waggonnummer, '0', -1);
         if (gleis1.Suchen(waggon))
         {
-            System.out.println("Gesuchter Waggon " + waggonnummer + " befindet sich auf Gleis 1");
+            System.out.println("Gesuchter Waggon " + waggonnummer
+                    + " befindet sich auf Gleis 1");
         }
         else
         {
             if (gleis2.Suchen(waggon))
             {
-                System.out.println(
-                                "Gesuchter Waggon " + waggonnummer + " befindet sich auf Gleis 2");
+                System.out.println("Gesuchter Waggon " + waggonnummer
+                        + " befindet sich auf Gleis 2");
             }
             else
             {
                 if (gleis3.Suchen(waggon))
                 {
                     System.out.println("Gesuchter Waggon " + waggonnummer
-                                    + " befindet sich auf Gleis 3");
+                            + " befindet sich auf Gleis 3");
                 }
                 else
                 {
-                    System.out.println(
-                                    "Gesuchter Waggon " + waggonnummer + " ist nicht vorhanden!");
+                    System.out.println("Gesuchter Waggon " + waggonnummer
+                            + " ist nicht vorhanden!");
                 }
             }
         }
     }
 
     /**
-     * bestimmt die Anzahl der Waggons des vorgegebenen Typs auf einem bestimmten Gleis Aufgabe c
-     * iii
+     * bestimmt die Anzahl der Waggons des vorgegebenen Typs auf einem
+     * bestimmten Gleis Aufgabe c iii
      *
-     * @param Nummer des Gleises, das untersucht werden soll und Typ der gesuchten Waggons
+     * @param Nummer des Gleises, das untersucht werden soll und Typ der
+     *               gesuchten Waggons
      */
     void AnzahlWaggontypGeben(int gleisnummer, char typ)
     {
@@ -148,20 +156,23 @@ public class RANGIERBAHNHOF
         WAGGON waggon = new WAGGON(-1, typ, 0);
         switch (gleisnummer)
         {
-            case 1:
-                anzahl = gleis1.AnzahlmitEigenschaftGeben(waggon);
-                break;
-            case 2:
-                anzahl = gleis2.AnzahlmitEigenschaftGeben(waggon);
-                break;
-            case 3:
-                anzahl = gleis3.AnzahlmitEigenschaftGeben(waggon);
-                break;
-            // Fehlerfall:
-            default:
-                anzahl = -1;
-        }
-        System.out.println("Gleis " + gleisnummer + ": " + anzahl + " Waggons vom Typ " + typ);
-    }
+        case 1:
+            anzahl = gleis1.AnzahlmitEigenschaftGeben(waggon);
+            break;
 
+        case 2:
+            anzahl = gleis2.AnzahlmitEigenschaftGeben(waggon);
+            break;
+
+        case 3:
+            anzahl = gleis3.AnzahlmitEigenschaftGeben(waggon);
+            break;
+
+        // Fehlerfall:
+        default:
+            anzahl = -1;
+        }
+        System.out.println("Gleis " + gleisnummer + ": " + anzahl
+                + " Waggons vom Typ " + typ);
+    }
 }

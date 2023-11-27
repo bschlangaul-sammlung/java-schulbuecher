@@ -6,10 +6,8 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapi
  * @author Klaus van Dijkstran und Barbara Leidorn
  * @version 1.0
  */
-
 abstract class KUNDE implements DATENELEMENT
 {
-
     /** Anzeigesymbol für den Kunden */
     private KUNDENSYMBOL darstellung;
 
@@ -20,13 +18,12 @@ abstract class KUNDE implements DATENELEMENT
     private KUNDE nachfolger;
 
     /**
-     * Konstruktor des Kunden. Setzt eine zufällige Farbe und die Grö&szlig;e gemä&szlig; der
-     * Artikelanzahl. Ein Objekt der Klasse KUNDENSYMBOL dient zur Darstellung des Kunden an zuächst
-     * fester Position vor Kasse 1.
+     * Konstruktor des Kunden. Setzt eine zufällige Farbe und die Grö&szlig;e
+     * gemä&szlig; der Artikelanzahl. Ein Objekt der Klasse KUNDENSYMBOL dient
+     * zur Darstellung des Kunden an zuächst fester Position vor Kasse 1.
      *
      * @param artikel die neue artikelzahl des Kunden.
      */
-
     KUNDE(int artikel)
     {
         artikelzahl = artikel;
@@ -71,7 +68,6 @@ abstract class KUNDE implements DATENELEMENT
         return artikelzahl;
     }
 
-
     /**
      * Setzt den Nachfolger des Kunden auf den übergebenen Wert.
      */
@@ -89,8 +85,8 @@ abstract class KUNDE implements DATENELEMENT
     }
 
     /**
-     * Vergleicht zwei Datenelemente Wird im speziellen Projekt nicht benötigt, muss aber wegen
-     * Implementierung des Interfaces ausgeführt werden.
+     * Vergleicht zwei Datenelemente Wird im speziellen Projekt nicht benötigt,
+     * muss aber wegen Implementierung des Interfaces ausgeführt werden.
      *
      * @param d Vergleichs-Datenelement
      * @return Ergebnis des Vergleichs
@@ -101,15 +97,17 @@ abstract class KUNDE implements DATENELEMENT
     }
 
     /**
-     * Ausgabe von Information über ein Fenster. Wird im speziellen Projekt nicht benötigt, muss
-     * aber wegen Implementierung des Interfaces ausgeführt werden.
+     * Ausgabe von Information über ein Fenster. Wird im speziellen Projekt
+     * nicht benötigt, muss aber wegen Implementierung des Interfaces ausgeführt
+     * werden.
      */
     public void InformationAusgeben()
-    {}
+    {
+    }
 
     /**
-     * Vergleicht zwei Datenelemente Wird im speziellen Projekt nicht benötigt, muss aber wegen
-     * Implementierung des Interfaces ausgeführt werden.
+     * Vergleicht zwei Datenelemente Wird im speziellen Projekt nicht benötigt,
+     * muss aber wegen Implementierung des Interfaces ausgeführt werden.
      *
      * @param vergleichswert Vergleichs-String
      * @return Ergebnis des Vergleichs
@@ -118,7 +116,4 @@ abstract class KUNDE implements DATENELEMENT
     {
         return true;
     }
-
-
-
 }

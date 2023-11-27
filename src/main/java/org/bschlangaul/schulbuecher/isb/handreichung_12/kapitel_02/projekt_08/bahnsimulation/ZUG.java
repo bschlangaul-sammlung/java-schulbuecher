@@ -1,6 +1,5 @@
 package org.bschlangaul.schulbuecher.isb.handreichung_12.kapitel_02.projekt_08.bahnsimulation;
 
-
 /**
  * Klasse zur Simulation eines Zuges<br/>
  * der Zugriff auf die freien Plätze ist nicht synchronisiert.
@@ -12,6 +11,7 @@ public class ZUG
 {
     /** die Platznummer im Zug */
     private int platz = 0;
+
     /** der Name des Zuges */
     private String name = "DB";
 
@@ -36,7 +36,8 @@ public class ZUG
     }
 
     /**
-     * gibt den nächsten freien Platz zurück, es wird in aufsteigender Reihenfolge gebucht.
+     * gibt den nächsten freien Platz zurück, es wird in aufsteigender
+     * Reihenfolge gebucht.
      *
      * @return der nächsten freie und damit buchbare Platz
      */
@@ -46,7 +47,8 @@ public class ZUG
         try
         { // das Lesen braucht etwas Zeit ...
             Thread.sleep((int) (Math.random() * 100));
-        } catch (InterruptedException e)
+        }
+        catch (InterruptedException e)
         {
         }
         platz = n + 1; // naechsten (freien) Platz "ermittlen und belegen"

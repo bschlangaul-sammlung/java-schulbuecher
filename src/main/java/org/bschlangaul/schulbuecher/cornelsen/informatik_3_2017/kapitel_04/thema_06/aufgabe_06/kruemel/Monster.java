@@ -10,9 +10,9 @@ class Monster extends Figur
 {
     /** Anzahl der gefressenen Krümel */
     int anzahl;
+
     /** Mundstellung */
     boolean mundIstZu;
-
 
     /**
      * Legt die Figur und die Munstellung fest.
@@ -83,7 +83,8 @@ class Monster extends Figur
     }
 
     /**
-     * Stellt das in einer der Farben gelb, orange, rot bzw. grün mit geschlossenem Mund dar.
+     * Stellt das in einer der Farben gelb, orange, rot bzw. grün mit
+     * geschlossenem Mund dar.
      *
      * @param farbe die gewünschte Farbe
      */
@@ -108,13 +109,15 @@ class Monster extends Figur
     }
 
     /**
-     * Stellt das in einer der Farben gelb, orange, rot bzw. grün mit offenem Mund dar.
+     * Stellt das in einer der Farben gelb, orange, rot bzw. grün mit offenem
+     * Mund dar.
      *
      * @param farbe die gewünschte Farbe
      */
     void Öffnen(String farbe)
     {
-        if ((farbe == "gelb") || (farbe == "orange") || (farbe == "rot") || (farbe == "grün"))
+        if ((farbe == "gelb") || (farbe == "orange") || (farbe == "rot")
+                || (farbe == "grün"))
         {
             Offen(farbe);
         }

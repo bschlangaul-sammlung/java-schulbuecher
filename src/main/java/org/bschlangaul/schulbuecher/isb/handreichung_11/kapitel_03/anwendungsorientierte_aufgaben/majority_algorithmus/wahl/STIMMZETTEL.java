@@ -1,3 +1,5 @@
+package org.bschlangaul.schulbuecher.isb.handreichung_11.kapitel_03.anwendungsorientierte_aufgaben.majority_algorithmus.wahl;
+
 class STIMMZETTEL extends DATENELEMENT
 {
     // Reihenfolgennummer
@@ -18,5 +20,4 @@ class STIMMZETTEL extends DATENELEMENT
         STIMMZETTEL stimmzettel = (STIMMZETTEL) vergleichsObjekt;
         return (name == stimmzettel.name);
     }
-
 }

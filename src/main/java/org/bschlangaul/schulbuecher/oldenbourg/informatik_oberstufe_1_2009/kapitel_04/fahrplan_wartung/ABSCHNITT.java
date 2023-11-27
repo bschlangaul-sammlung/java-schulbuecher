@@ -9,16 +9,18 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapi
 class ABSCHNITT implements DATENELEMENT
 {
     private int linie;
+
     private int bahnhof1, bahnhof2;
+
     private float laenge;
 
     /**
      * Legt die Daten fest.
      *
-     * @param linie linie, zu der der Abschnitt gehört
+     * @param linie    linie, zu der der Abschnitt gehört
      * @param bahnhof1 ein Bahnhof des Abschnitts
      * @param bahnhof2 anderer Bahnhof des Abschnitts
-     * @param laenge Länge des Abschnitts
+     * @param laenge   Länge des Abschnitts
      */
     ABSCHNITT(int linie, int bahnhof1, int bahnhof2, float laenge)
     {
@@ -36,15 +38,19 @@ class ABSCHNITT implements DATENELEMENT
      */
     public boolean IstGleich(DATENELEMENT test)
     {
-        return (((ABSCHNITT) test).linie == linie) && (((ABSCHNITT) test).bahnhof1 == bahnhof1)
-                        && (((ABSCHNITT) test).bahnhof2 == bahnhof2);
+        return (((ABSCHNITT) test).linie == linie)
+                && (((ABSCHNITT) test).bahnhof1 == bahnhof1)
+                && (((ABSCHNITT) test).bahnhof2 == bahnhof2);
     }
 
     /**
      * Vergleicht das Datemelement mit dem Parameter. <br>
-     * Hat das Datenelement einen kleineren Schlüssel als test, ist das Ergebnis -1. <br>
-     * Hat das Datenelement den gleichen Schlüssel wie test, ist das Ergebnis 0. <br>
-     * Hat das Datenelement einen grö&szlig;eren Schlüssel als test, ist das Ergebnis 1.
+     * Hat das Datenelement einen kleineren Schlüssel als test, ist das Ergebnis
+     * -1. <br>
+     * Hat das Datenelement den gleichen Schlüssel wie test, ist das Ergebnis 0.
+     * <br>
+     * Hat das Datenelement einen grö&szlig;eren Schlüssel als test, ist das
+     * Ergebnis 1.
      *
      * @param test Datenelement mit dem Testschlüssel
      * @return Vergleichsergebnis

@@ -14,10 +14,15 @@ class KASSE
     };
 
     RECHTECK darstellung;
+
     KUNDE kunde;
+
     WARTESCHLANGE warteschlange;
+
     int x;
+
     int y;
+
     Zustaende zustand;
 
     /**

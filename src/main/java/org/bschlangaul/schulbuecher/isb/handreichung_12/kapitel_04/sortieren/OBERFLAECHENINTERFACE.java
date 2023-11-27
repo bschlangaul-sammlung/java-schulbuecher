@@ -8,7 +8,6 @@ package org.bschlangaul.schulbuecher.isb.handreichung_12.kapitel_04.sortieren;
  */
 interface OBERFLAECHENINTERFACE
 {
-
     /**
      * Trägt die Suchzeit für Sortieren durch Auswählen ein.
      *

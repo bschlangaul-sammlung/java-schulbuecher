@@ -1,8 +1,8 @@
 package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapitel_01.thema_03.aufgabe_08.arzt;
 
 /**
- * Logische Verwaltung der Warteschlange in der Gemeinschaftspraxis Schnittstelle zwischen LISTE und
- * OBERFLäCHE.
+ * Logische Verwaltung der Warteschlange in der Gemeinschaftspraxis
+ * Schnittstelle zwischen LISTE und OBERFLäCHE.
  *
  * @author Klaus Reinold
  * @version 1.0
@@ -10,6 +10,7 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapi
 class GEMEINSCHAFTSPRAXIS
 {
     private LISTE liste;
+
     private FENSTER oberflaeche;
 
     /**
@@ -19,11 +20,11 @@ class GEMEINSCHAFTSPRAXIS
     {
         liste = new LISTE();
         oberflaeche = new FENSTER(this);
-
     }
 
     /**
-     * Aufnahme eines Patienten Fordert die Liste auf, einen neuen Patienten hinten einzufügen.
+     * Aufnahme eines Patienten Fordert die Liste auf, einen neuen Patienten
+     * hinten einzufügen.
      *
      * @p neuer Patient
      */
@@ -33,8 +34,8 @@ class GEMEINSCHAFTSPRAXIS
     }
 
     /**
-     * Ausgabe eines Patienten Fordert die Liste auf, einen geeigneten Patienten auszugeben undd
-     * gibt seinen Namen im Fenster aus..
+     * Ausgabe eines Patienten Fordert die Liste auf, einen geeigneten Patienten
+     * auszugeben undd gibt seinen Namen im Fenster aus..
      *
      * @s Arzt, der neuen Patienten benötigt.
      * @return Name des Patienten
@@ -55,6 +56,4 @@ class GEMEINSCHAFTSPRAXIS
             return "leer";
         }
     }
-
-
 }

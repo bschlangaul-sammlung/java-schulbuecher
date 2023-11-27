@@ -8,9 +8,9 @@ package org.bschlangaul.schulbuecher.isb.handreichung_12.kapitel_02.projekt_08.b
  */
 public class SIMULATION
 {
-
     /**
-     * erzeugt zwei Informationen über Züge und zwei Kunden die zufällig in den Zügen buchen
+     * erzeugt zwei Informationen über Züge und zwei Kunden die zufällig in den
+     * Zügen buchen
      *
      * @param args wird nicht benötigt
      */

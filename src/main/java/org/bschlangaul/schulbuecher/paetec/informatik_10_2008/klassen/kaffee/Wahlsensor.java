@@ -22,10 +22,11 @@ public class Wahlsensor extends Sensor
     private Eingabefeld feld;
 
     /**
-     * Erzeugt einen neuen Wahlsensor. Der wird dann beim Klick auf "Getraenk bestaetigen"
-     * ausgeloest
+     * Erzeugt einen neuen Wahlsensor. Der wird dann beim Klick auf "Getraenk
+     * bestaetigen" ausgeloest
      */
-    public Wahlsensor(Kaffeeautomat aktuellerAutomat, Eingabefeld relevantesFeld)
+    public Wahlsensor(Kaffeeautomat aktuellerAutomat,
+            Eingabefeld relevantesFeld)
     {
         feld = relevantesFeld;
         automat = aktuellerAutomat;

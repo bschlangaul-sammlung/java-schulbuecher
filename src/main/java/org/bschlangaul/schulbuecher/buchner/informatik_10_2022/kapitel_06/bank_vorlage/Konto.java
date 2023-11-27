@@ -9,7 +9,9 @@ package org.bschlangaul.schulbuecher.buchner.informatik_10_2022.kapitel_06.bank_
 public class Konto
 {
     private double kontostand;
+
     private int kontonummer;
+
     private int pin;
 
     public Konto(int eineNummer, int einePin)
@@ -64,5 +66,4 @@ public class Konto
             System.out.println("falsche Pin-Eingabe");
         }
     }
-
 }

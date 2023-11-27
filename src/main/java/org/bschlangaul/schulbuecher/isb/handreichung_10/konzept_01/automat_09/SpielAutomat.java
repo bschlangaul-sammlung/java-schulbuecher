@@ -7,8 +7,11 @@ import java.util.Random;
 public class SpielAutomat
 {
     private SpielWalze spielwalze1, spielwalze2, spielwalze3;
+
     private int z1, z2, z3;
+
     private Random zufall;
+
     private int guthaben;
 
     public SpielAutomat()
@@ -42,14 +45,15 @@ public class SpielAutomat
 
     public void spiele()
     {
-        setzeFarbmuster(zufall.nextInt(9), zufall.nextInt(9), zufall.nextInt(9));
+        setzeFarbmuster(zufall.nextInt(9), zufall.nextInt(9),
+                zufall.nextInt(9));
         berechneGuthaben();
     }
 
     public void schreibeWerte()
     {
-        System.out.println("z1: " + z1 + "  z2: " + z2 + "  z3: " + z3 + "  Gewinn: "
-                        + ermittleGewinn());
+        System.out.println("z1: " + z1 + "  z2: " + z2 + "  z3: " + z3
+                + "  Gewinn: " + ermittleGewinn());
     }
 
     public int ermittleGewinn()
@@ -76,9 +80,11 @@ public class SpielAutomat
         int g;
         do
         {
-            setzeFarbmuster(zufall.nextInt(9), zufall.nextInt(9), zufall.nextInt(9));
+            setzeFarbmuster(zufall.nextInt(9), zufall.nextInt(9),
+                    zufall.nextInt(9));
             g = ermittleGewinn();
-        } while (g == 0);
+        }
+        while (g == 0);
         System.out.println("Gewinn: " + g);
     }
 
@@ -95,5 +101,4 @@ public class SpielAutomat
             ZeichenFenster.gibFenster().warte(100);
         }
     }
-
 }

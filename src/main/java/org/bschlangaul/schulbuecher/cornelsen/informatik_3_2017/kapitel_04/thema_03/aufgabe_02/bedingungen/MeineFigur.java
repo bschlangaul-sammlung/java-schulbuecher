@@ -13,8 +13,8 @@ class MeineFigur extends Figur
      */
     void ZumRandGehen()
     {
-        while ((XPositionGeben() >= 0) && (XPositionGeben() <= 800) && (YPositionGeben() >= 0)
-                        && (YPositionGeben() <= 550))
+        while ((XPositionGeben() >= 0) && (XPositionGeben() <= 800)
+                && (YPositionGeben() >= 0) && (YPositionGeben() <= 550))
         {
             Gehen(1);
         }

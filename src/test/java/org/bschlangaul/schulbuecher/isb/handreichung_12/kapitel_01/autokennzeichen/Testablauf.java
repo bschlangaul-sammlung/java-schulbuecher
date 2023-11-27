@@ -2,7 +2,6 @@ package org.bschlangaul.schulbuecher.isb.handreichung_12.kapitel_01.autokennzeic
 
 public class Testablauf extends junit.framework.TestCase
 {
-
     Autokennzeichen knacker = new Autokennzeichen();
 
     public void testeOaFj123()
@@ -19,5 +18,4 @@ public class Testablauf extends junit.framework.TestCase
     {
         assertTrue(knacker.wortUntersuchen("DEG A 2010"));
     }
-
 }

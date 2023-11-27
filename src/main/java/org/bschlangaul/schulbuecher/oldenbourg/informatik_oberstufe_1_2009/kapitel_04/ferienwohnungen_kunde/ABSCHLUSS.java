@@ -41,17 +41,17 @@ class ABSCHLUSS extends LISTENELEMENT
     /**
      * Sucht alle Objekte mit den angegebenen Daten
      *
-     * @param res in deiser Liste werden die Ergebnisse eingetragen
-     * @param land Land, in dem das Objekt liegt
-     * @param art Art des Objekts
+     * @param res     in deiser Liste werden die Ergebnisse eingetragen
+     * @param land    Land, in dem das Objekt liegt
+     * @param art     Art des Objekts
      * @param persmin Platz für mindestens persmin Personen
      * @param persmax Platz für maximal persmax Personen
-     * @param zimmin minimale Zimmeranzahl
-     * @param zimmax maximale Zimmeranzahl
-     * @param aus geforderte Ausstattung
+     * @param zimmin  minimale Zimmeranzahl
+     * @param zimmax  maximale Zimmeranzahl
+     * @param aus     geforderte Ausstattung
      */
-    void ObjekteSuchen(OBJEKTLISTE res, LANDINFO land, String art, int persmin, int persmax,
-                    int zimmin, int zimmax, boolean[] aus)
+    void ObjekteSuchen(OBJEKTLISTE res, LANDINFO land, String art, int persmin,
+            int persmax, int zimmin, int zimmax, boolean[] aus)
     {
         return;
     }

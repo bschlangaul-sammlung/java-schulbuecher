@@ -62,6 +62,4 @@ class KNOTEN
     {
         daten.InformationAusgeben();
     }
-
-
 }

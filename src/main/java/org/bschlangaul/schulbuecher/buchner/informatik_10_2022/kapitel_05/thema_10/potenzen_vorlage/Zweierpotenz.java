@@ -13,23 +13,16 @@ public class Zweierpotenz
     public Zweierpotenz(int n)
     {
         zweierpotenz = new int[n];
-
         int i = 0;
-
         // Ergänze ab hier
-
         while (i < n)
         {
-
         }
-
     }
 
     public void tauscheEnden()
     {
-
         // Ergänze hier
-
     }
 
     public void umsortieren()

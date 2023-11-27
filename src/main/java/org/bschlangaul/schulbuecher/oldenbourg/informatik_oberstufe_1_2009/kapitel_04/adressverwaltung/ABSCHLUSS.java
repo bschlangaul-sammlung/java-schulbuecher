@@ -62,7 +62,7 @@ class ABSCHLUSS extends LISTENELEMENT
     /**
      * überträgt die Datenreferenz in das Feld.
      *
-     * @param feld Das Feld zur Aufnahme der Referenzen
+     * @param feld  Das Feld zur Aufnahme der Referenzen
      * @param index Feldindex für das Element dieses Listenelements
      */
     void Eintragen(DATENELEMENT[] feld, int index)

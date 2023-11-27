@@ -1,27 +1,29 @@
 package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapitel_02.thema_07.aufgabe_08.binbaum_woerterbuch;
 
 /**
- * Klasse KNOTEN als Bestandteil eines geordneten Binärbaums. (Implementierung ohne Composite
- * Pattern)
+ * Klasse KNOTEN als Bestandteil eines geordneten Binärbaums. (Implementierung
+ * ohne Composite Pattern)
  *
  * @author (Peter Brichzin)
  * @version (27.7.08)
  */
 public class KNOTEN
 {
-
     // Referenz auf das Datenelement
     private DATENELEMENT daten;
 
     // Referenz auf den linken und rechten Nachfolger
     private KNOTEN linkerNachfolger;
+
     private KNOTEN rechterNachfolger;
 
     /**
-     * Konstruktor für Objekte der Klasse KNOTEN ohne linken und rechten Nachfolger, d.h. die
-     * entsprechenden Referenzattribute haben den "Wert" null.
+     * Konstruktor für Objekte der Klasse KNOTEN ohne linken und rechten
+     * Nachfolger, d.h. die entsprechenden Referenzattribute haben den "Wert"
+     * null.
      *
-     * @param datenNeu Referenz auf das Datenelement, das vom Knoten verwaltet wird.
+     * @param datenNeu Referenz auf das Datenelement, das vom Knoten verwaltet
+     *                 wird.
      */
     public KNOTEN(DATENELEMENT datenNeu)
     {
@@ -31,13 +33,18 @@ public class KNOTEN
     }
 
     /**
-     * Konstruktor für Objekte der Klasse KNOTEN mit linken und rechten Nachfolger,
+     * Konstruktor für Objekte der Klasse KNOTEN mit linken und rechten
+     * Nachfolger,
      *
-     * @param datenNeu Referenz auf das Datenelement, das vom Knoten verwaltet wird.
-     * @param liNachfolgerNeu Referenz auf ein Knoten, der linker Nachfolger wird.
-     * @param reNachfolgerNeu Referenz auf ein Knoten, der linker Nachfolger wird.
+     * @param datenNeu        Referenz auf das Datenelement, das vom Knoten
+     *                        verwaltet wird.
+     * @param liNachfolgerNeu Referenz auf ein Knoten, der linker Nachfolger
+     *                        wird.
+     * @param reNachfolgerNeu Referenz auf ein Knoten, der linker Nachfolger
+     *                        wird.
      */
-    public KNOTEN(DATENELEMENT datenNeu, KNOTEN liNachfolgerNeu, KNOTEN reNachfolgerNeu)
+    public KNOTEN(DATENELEMENT datenNeu, KNOTEN liNachfolgerNeu,
+            KNOTEN reNachfolgerNeu)
     {
         daten = datenNeu;
         if (datenNeu.IstGroesserAls(liNachfolgerNeu.DatenGeben()))
@@ -48,9 +55,8 @@ public class KNOTEN
         {
             linkerNachfolger = null;
             System.out.println(
-                            "Linker Nachfolger wurde nicht eingef\u00FCgt, um die Ordnng des Bin\u00E4rbaums zu erhalten!");
+                    "Linker Nachfolger wurde nicht eingef\u00FCgt, um die Ordnng des Bin\u00E4rbaums zu erhalten!");
         }
-
         if (datenNeu.IstKleinerAls(reNachfolgerNeu.DatenGeben()))
         {
             rechterNachfolger = reNachfolgerNeu;
@@ -59,16 +65,16 @@ public class KNOTEN
         {
             rechterNachfolger = null;
             System.out.println(
-                            "Rechter Nachfolger wurde nicht eingef\u00FCgt, um die Ordnng des Bin\u00E4rbaums zu erhalten!");
+                    "Rechter Nachfolger wurde nicht eingef\u00FCgt, um die Ordnng des Bin\u00E4rbaums zu erhalten!");
         }
-
-
     }
 
     /**
-     * Sucht ein Datenelement, das über seinen Schlüssel identifiziert wird und gibt dieses aus.
+     * Sucht ein Datenelement, das über seinen Schlüssel identifiziert wird und
+     * gibt dieses aus.
      *
-     * @param suchSchluessel Schl&uumlssel nach dem gesucht wird als Zeichenkette
+     * @param suchSchluessel Schl&uumlssel nach dem gesucht wird als
+     *                       Zeichenkette
      * @return gesuchtes Datenelement bzw. null, falls die Suche erfolglos ist
      */
     public DATENELEMENT Suchen(String suchSchluessel)
@@ -82,12 +88,17 @@ public class KNOTEN
             if (daten.SchluesselIstGroesserAls(suchSchluessel))
             {
                 // wenn es einen linken Nachfolger gibt,
-                // dann wird über eine Methodenaufruf beim linken Nachfolger rekursiv gesucht
+                // dann wird über eine Methodenaufruf beim linken Nachfolger
+                // rekursiv gesucht
                 // sonst war die Suche erfolglos,
                 if (linkerNachfolger != null)
                 {
-                    return linkerNachfolger.Suchen(suchSchluessel); // Rückgabewert wird nach unten
-                                                                    // abgefragt und dann nach oben
+                    return linkerNachfolger.Suchen(suchSchluessel); // Rückgabewert
+                                                                    // wird nach
+                                                                    // unten
+                                                                    // abgefragt
+                                                                    // und dann
+                                                                    // nach oben
                                                                     // durchgereicht
                 }
                 else
@@ -98,12 +109,19 @@ public class KNOTEN
             else
             {
                 // wenn es einen rechten Nachfolger gibt,
-                // dann wird über eine Methodenaufruf beim rechten Nachfolger rekursiv gesucht
+                // dann wird über eine Methodenaufruf beim rechten Nachfolger
+                // rekursiv gesucht
                 // sonst war die Suche erfolglos,
                 if (rechterNachfolger != null)
                 {
-                    return rechterNachfolger.Suchen(suchSchluessel); // Rückgabewert wird nach unten
-                                                                     // abgefragt und dann nach oben
+                    return rechterNachfolger.Suchen(suchSchluessel); // Rückgabewert
+                                                                     // wird
+                                                                     // nach
+                                                                     // unten
+                                                                     // abgefragt
+                                                                     // und dann
+                                                                     // nach
+                                                                     // oben
                                                                      // durchgereicht
                 }
                 else
@@ -115,14 +133,16 @@ public class KNOTEN
     }
 
     /**
-     * Fügt ein Datenelement, falls sein Schlüssel noch nicht vorhanden ist, in die bestehende
-     * Datenstruktur ein. D.h. die Eigenschaft geordneter Binärbaum bleibt erhalten.
+     * Fügt ein Datenelement, falls sein Schlüssel noch nicht vorhanden ist, in
+     * die bestehende Datenstruktur ein. D.h. die Eigenschaft geordneter
+     * Binärbaum bleibt erhalten.
      *
      * @param datenNeu einzufügendes Datenelement
      */
     public void Einfuegen(DATENELEMENT datenNeu)
     {
-        // Falls es ein Datenelement mit dem gleichen Schlüssel schon gibt, Einfuegen abbrechen.
+        // Falls es ein Datenelement mit dem gleichen Schlüssel schon gibt,
+        // Einfuegen abbrechen.
         if (daten.IstGleich(datenNeu))
         {
             System.out.println("Die Daten existieren schon!");
@@ -134,7 +154,8 @@ public class KNOTEN
             {
                 // wenn es einen linken Nachfolger gibt,
                 // dannn wird das Datenelement im linkem Teilbaum eingefügt
-                // sonst wird ein Knoten mit einer Referenz auf das Datenelement erzeugt und als
+                // sonst wird ein Knoten mit einer Referenz auf das Datenelement
+                // erzeugt und als
                 // linker Nachfolger zugewiesen
                 if (linkerNachfolger != null)
                 {
@@ -149,7 +170,8 @@ public class KNOTEN
             {
                 // wenn es einen rechten Nachfolger gibt,
                 // dannn wird das Datenelement im rechten Teilbaum eingefügt
-                // sonst wird ein Knoten mit einer Referenz auf das Datenelement erzeugt und als
+                // sonst wird ein Knoten mit einer Referenz auf das Datenelement
+                // erzeugt und als
                 // rechter Nachfolger zugewiesen
                 if (rechterNachfolger != null)
                 {
@@ -165,10 +187,11 @@ public class KNOTEN
     }
 
     /**
-     * überprüt, ob ein Datenelement mit dem eingegebenen Schlüssel (in Form einer Zeichenkette)
-     * vorhanden ist.
+     * überprüt, ob ein Datenelement mit dem eingegebenen Schlüssel (in Form
+     * einer Zeichenkette) vorhanden ist.
      *
-     * @param suchSchluessel Schl&uumlssel, nach dem gesucht wird als Zeichenkette
+     * @param suchSchluessel Schl&uumlssel, nach dem gesucht wird als
+     *                       Zeichenkette
      * @return true, im Erfolgsfall, false sonst.
      */
     public boolean IstVorhanden(String suchSchluessel)
@@ -182,13 +205,20 @@ public class KNOTEN
             if (daten.SchluesselIstGroesserAls(suchSchluessel))
             {
                 // wenn es einen linken Nachfolger gibt,
-                // dannn wird durch einen Methodenaufruf beim linken Nachfolger rekursiv gesucht
+                // dannn wird durch einen Methodenaufruf beim linken Nachfolger
+                // rekursiv gesucht
                 // sonst war die Suche erfolglos, false wird zurückgegeben.
                 if (linkerNachfolger != null)
                 {
-                    return linkerNachfolger.IstVorhanden(suchSchluessel); // Rückgabewert wird nach
-                                                                          // unten abgefragt und
-                                                                          // dann nach oben
+                    return linkerNachfolger.IstVorhanden(suchSchluessel); // Rückgabewert
+                                                                          // wird
+                                                                          // nach
+                                                                          // unten
+                                                                          // abgefragt
+                                                                          // und
+                                                                          // dann
+                                                                          // nach
+                                                                          // oben
                                                                           // durchgereicht
                 }
                 else
@@ -199,13 +229,20 @@ public class KNOTEN
             else
             {
                 // wenn es einen rechten Nachfolger gibt,
-                // dannn wird durch einen Methodenaufruf beim rechten Nachfolger rekursiv gesucht
+                // dannn wird durch einen Methodenaufruf beim rechten Nachfolger
+                // rekursiv gesucht
                 // sonst war die Suche erfolglos, false wird zurückgegeben.
                 if (rechterNachfolger != null)
                 {
-                    return rechterNachfolger.IstVorhanden(suchSchluessel); // Rückgabewert wird nach
-                                                                           // unten abgefragt und
-                                                                           // dann nach oben
+                    return rechterNachfolger.IstVorhanden(suchSchluessel); // Rückgabewert
+                                                                           // wird
+                                                                           // nach
+                                                                           // unten
+                                                                           // abgefragt
+                                                                           // und
+                                                                           // dann
+                                                                           // nach
+                                                                           // oben
                                                                            // durchgereicht
                 }
                 else
@@ -216,8 +253,6 @@ public class KNOTEN
         }
     }
 
-
-
     public void DatenSetzen(DATENELEMENT datenNeu)
     {
         daten = datenNeu;
@@ -227,7 +262,4 @@ public class KNOTEN
     {
         return daten;
     }
-
-
-
 }

@@ -8,10 +8,10 @@ import greenfoot.*;
  * @author Wolfgang Riffelmacher
  * @version 2022-09-12
  */
-
 public class Angestellter extends Actor
 {
     private String name;
+
     private String rolle;
 
     public Angestellter(String name, String rolle)
@@ -39,5 +39,4 @@ public class Angestellter extends Actor
     {
         return rolle;
     }
-
 }

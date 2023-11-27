@@ -14,10 +14,13 @@ class DATENBANKVERBINDUNG implements MELDUNGSERZEUGER
 {
     /** Speichert das einzige Objekt der Klasse DATENBANKVERBINDUNG. */
     private static DATENBANKVERBINDUNG verb = new DATENBANKVERBINDUNG();
+
     /** Speichert die Verbindung zur Datenbank. */
     private Connection conn;
+
     /** Die Meldungsbeobachter */
     private ArrayList<MELDUNGSBEOBACHTER> allebeobachter;
+
     /** Für Datumskonvertierungen */
     SimpleDateFormat format;
 
@@ -32,9 +35,10 @@ class DATENBANKVERBINDUNG implements MELDUNGSERZEUGER
         {
             Class.forName("com.mysql.jdbc.Driver").newInstance();
             conn = DriverManager.getConnection(
-                            "jdbc:mysql://localhost/ferienwohnung?user=ferien&password=wohnung");
+                    "jdbc:mysql://localhost/ferienwohnung?user=ferien&password=wohnung");
             LogeintragMelden("Verbindung aufgebaut.");
-        } catch (Exception e)
+        }
+        catch (Exception e)
         {
             e.printStackTrace();
         }
@@ -125,7 +129,8 @@ class DATENBANKVERBINDUNG implements MELDUNGSERZEUGER
         {
             conn.close();
             LogeintragMelden("Verbindung beendet.");
-        } catch (Exception e)
+        }
+        catch (Exception e)
         {
             ExceptionMelden(e);
         }
@@ -155,11 +160,13 @@ class DATENBANKVERBINDUNG implements MELDUNGSERZEUGER
                 index = 0;
                 while (rs.next())
                 {
-                    res[index] = new LANDINFO(rs.getInt("LandNummer"), rs.getString("Name"));
+                    res[index] = new LANDINFO(rs.getInt("LandNummer"),
+                            rs.getString("Name"));
                     index += 1;
                 }
             }
-        } catch (Exception e)
+        }
+        catch (Exception e)
         {
             ExceptionMelden(e);
         }
@@ -179,17 +186,19 @@ class DATENBANKVERBINDUNG implements MELDUNGSERZEUGER
         {
             st = conn.createStatement();
             rs = st.executeQuery(
-                            "SELECT WohnungsNummer, Name, Groesse, AnzahlZimmer, AnzahlPersonen, Landnummer, Art, Preis, Ausstattung, Sperre "
-                                            + "FROM objekt ORDER BY WohnungsNummer");
+                    "SELECT WohnungsNummer, Name, Groesse, AnzahlZimmer, AnzahlPersonen, Landnummer, Art, Preis, Ausstattung, Sperre "
+                            + "FROM objekt ORDER BY WohnungsNummer");
             while (rs.next())
             {
-                liste.Einfuegen(new OBJEKTINFO(rs.getInt("WohnungsNummer"), rs.getString("Name"),
-                                rs.getInt("Groesse"), rs.getInt("AnzahlZimmer"),
-                                rs.getInt("AnzahlPersonen"), rs.getInt("Landnummer"),
-                                rs.getString("Art"), rs.getDouble("Preis"),
-                                rs.getString("Ausstattung"), rs.getBoolean("Sperre")));
+                liste.Einfuegen(new OBJEKTINFO(rs.getInt("WohnungsNummer"),
+                        rs.getString("Name"), rs.getInt("Groesse"),
+                        rs.getInt("AnzahlZimmer"), rs.getInt("AnzahlPersonen"),
+                        rs.getInt("Landnummer"), rs.getString("Art"),
+                        rs.getDouble("Preis"), rs.getString("Ausstattung"),
+                        rs.getBoolean("Sperre")));
             }
-        } catch (Exception e)
+        }
+        catch (Exception e)
         {
             ExceptionMelden(e);
         }
@@ -210,13 +219,14 @@ class DATENBANKVERBINDUNG implements MELDUNGSERZEUGER
         {
             st = conn.createStatement();
             rs = st.executeQuery("SELECT Name, Vorname, Passwort "
-                            + "FROM kunde WHERE Benutzername = '" + benutzername + "'");
+                    + "FROM kunde WHERE Benutzername = '" + benutzername + "'");
             if (rs.next())
             {
-                res = new KUNDENINFO(benutzername, rs.getString("Name"), rs.getString("Vorname"),
-                                rs.getString("Passwort"));
+                res = new KUNDENINFO(benutzername, rs.getString("Name"),
+                        rs.getString("Vorname"), rs.getString("Passwort"));
             }
-        } catch (Exception e)
+        }
+        catch (Exception e)
         {
             ExceptionMelden(e);
         }
@@ -226,8 +236,8 @@ class DATENBANKVERBINDUNG implements MELDUNGSERZEUGER
     /**
      * Holt die Reservierungen einer Wohnung im angegebenen Zeitraum
      */
-    RESERVIERUNGSINFO[] ReservierungenHolen(int wohnung, java.util.Date startDatum,
-                    java.util.Date endeDatum)
+    RESERVIERUNGSINFO[] ReservierungenHolen(int wohnung,
+            java.util.Date startDatum, java.util.Date endeDatum)
     {
         RESERVIERUNGSINFO[] res;
         int index;
@@ -237,32 +247,36 @@ class DATENBANKVERBINDUNG implements MELDUNGSERZEUGER
         try
         {
             st = conn.createStatement();
-            rs = st.executeQuery("SELECT COUNT(*) FROM reservierungen " + "WHERE WohnungsNummer = "
-                            + wohnung + " AND Startdatum <= '" + format.format(endeDatum)
-                            + "' AND Enddatum >= '" + format.format(startDatum) + "'");
+            rs = st.executeQuery("SELECT COUNT(*) FROM reservierungen "
+                    + "WHERE WohnungsNummer = " + wohnung
+                    + " AND Startdatum <= '" + format.format(endeDatum)
+                    + "' AND Enddatum >= '" + format.format(startDatum) + "'");
             if (rs.next())
             {
                 res = new RESERVIERUNGSINFO[rs.getInt(1)];
                 rs.close();
                 rs = st.executeQuery(
-                                "SELECT Nummer, WohnungsNummer, Benutzername, Art, Startdatum, Enddatum FROM reservierungen "
-                                                + "WHERE WohnungsNummer = " + wohnung
-                                                + " AND Startdatum <= '" + format.format(endeDatum)
-                                                + "' AND Enddatum >= '" + format.format(startDatum)
-                                                + "' ORDER BY Startdatum");
+                        "SELECT Nummer, WohnungsNummer, Benutzername, Art, Startdatum, Enddatum FROM reservierungen "
+                                + "WHERE WohnungsNummer = " + wohnung
+                                + " AND Startdatum <= '"
+                                + format.format(endeDatum)
+                                + "' AND Enddatum >= '"
+                                + format.format(startDatum)
+                                + "' ORDER BY Startdatum");
                 index = 0;
                 while (rs.next())
                 {
                     res[index] = new RESERVIERUNGSINFO(rs.getInt("Nummer"),
-                                    rs.getInt("WohnungsNummer"), "", rs.getString("Benutzername"),
-                                    rs.getString("Art"), rs.getDate("Startdatum"),
-                                    rs.getDate("Enddatum"));
+                            rs.getInt("WohnungsNummer"), "",
+                            rs.getString("Benutzername"), rs.getString("Art"),
+                            rs.getDate("Startdatum"), rs.getDate("Enddatum"));
                     index += 1;
                 }
                 rs.close();
             }
             st.close();
-        } catch (Exception e)
+        }
+        catch (Exception e)
         {
             ExceptionMelden(e);
         }
@@ -272,33 +286,37 @@ class DATENBANKVERBINDUNG implements MELDUNGSERZEUGER
     /**
      * Reserviert das angegebene Objekt im angegebenen Zeitraum (wenn frei);
      *
-     * @param wohnung das gewählte Objekt
+     * @param wohnung  das gewählte Objekt
      * @param benutzer der reservierende Benutzer
-     * @param start Startdatum des Interessezeitraums
-     * @param ende Endedatum des Interessezeitraums
+     * @param start    Startdatum des Interessezeitraums
+     * @param ende     Endedatum des Interessezeitraums
      */
-    boolean Reservieren(int wohnung, String benutzer, java.util.Date start, java.util.Date ende)
+    boolean Reservieren(int wohnung, String benutzer, java.util.Date start,
+            java.util.Date ende)
     {
         Statement st;
         ResultSet rs;
         try
         {
             st = conn.createStatement();
-            rs = st.executeQuery("SELECT COUNT(*) FROM reservierungen " + "WHERE WohnungsNummer = "
-                            + wohnung + " AND Startdatum <= '" + format.format(ende)
-                            + "' AND Enddatum >= '" + format.format(start) + "'");
+            rs = st.executeQuery("SELECT COUNT(*) FROM reservierungen "
+                    + "WHERE WohnungsNummer = " + wohnung
+                    + " AND Startdatum <= '" + format.format(ende)
+                    + "' AND Enddatum >= '" + format.format(start) + "'");
             if (!rs.next() || (rs.getInt(1) == 0))
             {
                 rs.close();
                 rs = st.executeQuery("SELECT COUNT(*) FROM reservierungen "
-                                + "WHERE Benutzername = '" + benutzer + "' AND Art = 'reserviert'");
+                        + "WHERE Benutzername = '" + benutzer
+                        + "' AND Art = 'reserviert'");
                 if (!rs.next() || (rs.getInt(1) < 4))
                 {
                     st.executeUpdate(
-                                    "INSERT INTO reservierungen (WohnungsNummer, Benutzername, Art, Startdatum, Enddatum) "
-                                                    + "VALUES (" + wohnung + ", '" + benutzer
-                                                    + "', 'reserviert', '" + format.format(start)
-                                                    + "', '" + format.format(ende) + "')");
+                            "INSERT INTO reservierungen (WohnungsNummer, Benutzername, Art, Startdatum, Enddatum) "
+                                    + "VALUES (" + wohnung + ", '" + benutzer
+                                    + "', 'reserviert', '"
+                                    + format.format(start) + "', '"
+                                    + format.format(ende) + "')");
                     rs.close();
                     st.close();
                     return true;
@@ -306,7 +324,8 @@ class DATENBANKVERBINDUNG implements MELDUNGSERZEUGER
                 rs.close();
                 st.close();
             }
-        } catch (Exception e)
+        }
+        catch (Exception e)
         {
             ExceptionMelden(e);
         }
@@ -330,33 +349,34 @@ class DATENBANKVERBINDUNG implements MELDUNGSERZEUGER
         {
             st = conn.createStatement();
             rs = st.executeQuery("SELECT COUNT(*) FROM reservierungen "
-                            + "WHERE Art = 'reserviert' AND Benutzername = '" + benutzer + "'");
+                    + "WHERE Art = 'reserviert' AND Benutzername = '" + benutzer
+                    + "'");
             if (rs.next())
             {
                 res = new RESERVIERUNGSINFO[rs.getInt(1)];
                 rs.close();
                 rs = st.executeQuery(
-                                "SELECT Nummer, reservierungen. WohnungsNummer AS WohnungsNummer, Benutzername, reservierungen. Art AS Art, Startdatum, Enddatum, Name FROM reservierungen, objekt "
-                                                + "WHERE reservierungen. Art = 'reserviert' AND objekt. WohnungsNummer = reservierungen. Wohnungsnummer AND Benutzername = '"
-                                                + benutzer + "'");
+                        "SELECT Nummer, reservierungen. WohnungsNummer AS WohnungsNummer, Benutzername, reservierungen. Art AS Art, Startdatum, Enddatum, Name FROM reservierungen, objekt "
+                                + "WHERE reservierungen. Art = 'reserviert' AND objekt. WohnungsNummer = reservierungen. Wohnungsnummer AND Benutzername = '"
+                                + benutzer + "'");
                 index = 0;
                 while (rs.next())
                 {
                     res[index] = new RESERVIERUNGSINFO(rs.getInt("Nummer"),
-                                    rs.getInt("WohnungsNummer"), rs.getString("Name"),
-                                    rs.getString("Benutzername"), rs.getString("Art"),
-                                    rs.getDate("Startdatum"), rs.getDate("Enddatum"));
+                            rs.getInt("WohnungsNummer"), rs.getString("Name"),
+                            rs.getString("Benutzername"), rs.getString("Art"),
+                            rs.getDate("Startdatum"), rs.getDate("Enddatum"));
                     index += 1;
                 }
                 rs.close();
             }
             st.close();
-        } catch (Exception e)
+        }
+        catch (Exception e)
         {
             ExceptionMelden(e);
         }
         return res;
-
     }
 
     /**
@@ -369,10 +389,12 @@ class DATENBANKVERBINDUNG implements MELDUNGSERZEUGER
         try
         {
             Statement st = conn.createStatement();
-            int res = st.executeUpdate("DELETE FROM reservierungen WHERE Nummer = " + nummer);
+            int res = st.executeUpdate(
+                    "DELETE FROM reservierungen WHERE Nummer = " + nummer);
             st.close();
             LogeintragMelden("Reservierung gel\u00F6scht: " + nummer);
-        } catch (Exception e)
+        }
+        catch (Exception e)
         {
             ExceptionMelden(e);
         }
@@ -389,10 +411,12 @@ class DATENBANKVERBINDUNG implements MELDUNGSERZEUGER
         {
             Statement st = conn.createStatement();
             int res = st.executeUpdate(
-                            "UPDATE reservierungen SET Art = 'gebucht' WHERE Nummer = " + nummer);
+                    "UPDATE reservierungen SET Art = 'gebucht' WHERE Nummer = "
+                            + nummer);
             st.close();
             LogeintragMelden("Reservierung fest gebucht: " + nummer);
-        } catch (Exception e)
+        }
+        catch (Exception e)
         {
             ExceptionMelden(e);
         }
@@ -402,18 +426,19 @@ class DATENBANKVERBINDUNG implements MELDUNGSERZEUGER
      * Veranlasst das Setzen des Passworts für den angegebenen Kunden.
      *
      * @param benutzername Schlüssel des Kunden
-     * @param pass das Passwort des Kunden
+     * @param pass         das Passwort des Kunden
      */
     void PasswortSetzen(String benutzername, String pass)
     {
         try
         {
             Statement st = conn.createStatement();
-            int res = st.executeUpdate("UPDATE kunde SET Passwort = '" + pass + "' "
-                            + " WHERE Benutzername = '" + benutzername + "'");
+            int res = st.executeUpdate("UPDATE kunde SET Passwort = '" + pass
+                    + "' " + " WHERE Benutzername = '" + benutzername + "'");
             st.close();
             LogeintragMelden("Passwort ge\u00E4ndert: " + benutzername);
-        } catch (Exception e)
+        }
+        catch (Exception e)
         {
             ExceptionMelden(e);
         }

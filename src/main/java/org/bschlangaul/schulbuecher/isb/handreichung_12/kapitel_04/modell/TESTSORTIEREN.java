@@ -6,7 +6,6 @@ package org.bschlangaul.schulbuecher.isb.handreichung_12.kapitel_04.modell;
  * @author ISB-Arbeitskreis, Umsetzungshilfen Informatik 12
  * @version 1.0
  */
-
 public class TESTSORTIEREN
 {
     /**
@@ -45,7 +44,8 @@ public class TESTSORTIEREN
     }
 
     /**
-     * Sortiert das gegebene Feld durch Auswahl des jeweils kleinsten Elements im unsortierten Rest.
+     * Sortiert das gegebene Feld durch Auswahl des jeweils kleinsten Elements
+     * im unsortierten Rest.
      *
      * @param d das zu sortierende Feld
      */
@@ -72,15 +72,17 @@ public class TESTSORTIEREN
     }
 
     /**
-     * Sortiert den angegebenen Teilbereich des Feldes. pre: beide Felder enthalten die
-     * Ausgangsdaten, da der Start nicht vorhersagbar ist.
+     * Sortiert den angegebenen Teilbereich des Feldes. pre: beide Felder
+     * enthalten die Ausgangsdaten, da der Start nicht vorhersagbar ist.
      *
-     * @param von das Feld mit den Ausgangsdaten
-     * @param nach das Feld mit den Zieldaten
+     * @param von      das Feld mit den Ausgangsdaten
+     * @param nach     das Feld mit den Zieldaten
      * @param minIndex der Index, ab dem sortiert werden soll
-     * @param topIndex der Index, bis zu dem (ausschlie&szlig;lich) sortiert werden soll
+     * @param topIndex der Index, bis zu dem (ausschlie&szlig;lich) sortiert
+     *                 werden soll
      */
-    private void Mischen(DATENELEMENT[] von, DATENELEMENT[] nach, int minIndex, int topIndex)
+    private void Mischen(DATENELEMENT[] von, DATENELEMENT[] nach, int minIndex,
+            int topIndex)
     {
         int mitte;
         int pos;
@@ -117,7 +119,8 @@ public class TESTSORTIEREN
                 else
                 {
                     anzahl2 += 1;
-                    if (((STRINGDATEN) von[posUnten]).Vergleichen(von[posOben]) <= 0)
+                    if (((STRINGDATEN) von[posUnten])
+                            .Vergleichen(von[posOben]) <= 0)
                     {
                         nach[pos] = von[posUnten];
                         posUnten += 1;
@@ -151,9 +154,10 @@ public class TESTSORTIEREN
     }
 
     /**
-     * Misst die Zeit f&uumlr einen Sortiervorgang mittels Sortieren durch direktes Auswählen. Um
-     * die unterschiedlichen Prozessorfremdbelastungen auszugleichen wird der Vorgang hundert Mal
-     * wiederholt und die minimale Sortierzeit ermittelt.
+     * Misst die Zeit f&uumlr einen Sortiervorgang mittels Sortieren durch
+     * direktes Auswählen. Um die unterschiedlichen Prozessorfremdbelastungen
+     * auszugleichen wird der Vorgang hundert Mal wiederholt und die minimale
+     * Sortierzeit ermittelt.
      *
      * @return das Minimum der benötigten Sortierzeiten
      */
@@ -174,9 +178,10 @@ public class TESTSORTIEREN
     }
 
     /**
-     * Misst die Zeit f&uumlr einen Sortiervorgang mittels Sortieren durch Mischen. Um die
-     * unterschiedlichen Prozessorfremdbelastungen auszugleichen wird der Vorgang hundert Mal
-     * wiederholt und die minimale Sortierzeit ermittelt.
+     * Misst die Zeit f&uumlr einen Sortiervorgang mittels Sortieren durch
+     * Mischen. Um die unterschiedlichen Prozessorfremdbelastungen auszugleichen
+     * wird der Vorgang hundert Mal wiederholt und die minimale Sortierzeit
+     * ermittelt.
      *
      * @return das Minimum der benötigten Sortierzeiten
      */
@@ -220,7 +225,7 @@ public class TESTSORTIEREN
      * Bestimmt die durschnittlichen Sortierzeiten.
      *
      * @param auswahl gibt an, ob in der Liste gesucht werden soll
-     * @param merge gibt an, ob im Baum gesucht werden soll
+     * @param merge   gibt an, ob im Baum gesucht werden soll
      */
     public void DurchschnittsTestZeit(boolean auswahl, boolean merge)
     {
@@ -235,8 +240,8 @@ public class TESTSORTIEREN
     }
 
     /**
-     * Meldet die durchschnittliche Anzahl der Vergleiche für die Sortierung durch direktes
-     * Auswählen.
+     * Meldet die durchschnittliche Anzahl der Vergleiche für die Sortierung
+     * durch direktes Auswählen.
      *
      * @return Suchzeit
      */
@@ -246,7 +251,8 @@ public class TESTSORTIEREN
     }
 
     /**
-     * Meldet die durchschnittliche Anzahl der Vergleiche für die Sortierung durch Mischen.
+     * Meldet die durchschnittliche Anzahl der Vergleiche für die Sortierung
+     * durch Mischen.
      *
      * @return Suchzeit
      */
@@ -258,8 +264,10 @@ public class TESTSORTIEREN
     /**
      * Bestimmt die Vergleichsanzahlen.
      *
-     * @param auswahl gibt an, ob Sortiren durch Auswählen durchgeführt werden soll
-     * @param merge gibt an, ob Sortiren durch Mischen durchgeführt werden soll
+     * @param auswahl gibt an, ob Sortiren durch Auswählen durchgeführt werden
+     *                soll
+     * @param merge   gibt an, ob Sortiren durch Mischen durchgeführt werden
+     *                soll
      */
     public void DurchschnittsTestAnzahl(boolean auswahl, boolean merge)
     {

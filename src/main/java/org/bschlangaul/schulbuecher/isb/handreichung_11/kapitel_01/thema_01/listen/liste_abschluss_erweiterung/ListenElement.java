@@ -2,9 +2,9 @@ package org.bschlangaul.schulbuecher.isb.handreichung_11.kapitel_01.thema_01.lis
 
 abstract class ListenElement
 {
-
     ListenElement()
-    {}
+    {
+    }
 
     abstract ListenElement NachfolgerGeben();
 
@@ -23,5 +23,4 @@ abstract class ListenElement
     abstract int AnzahlAbHierGeben();
 
     abstract void AlleAusgeben();
-
 }

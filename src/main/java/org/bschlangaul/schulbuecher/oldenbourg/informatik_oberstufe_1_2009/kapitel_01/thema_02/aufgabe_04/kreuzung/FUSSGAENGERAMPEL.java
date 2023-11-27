@@ -1,9 +1,9 @@
 package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapitel_01.thema_02.aufgabe_04.kreuzung;
 
 /**
- * Eine Fu&szlig;gängerampel verwendet zur Anzeige zwei Lampen. Die Fu&szlig;gängerampel verwaltet
- * ihre Position als Ganzes, ihre Ausrichtung und auch die nach den Verkehrsregeln möglichen
- * Ampelphasen.
+ * Eine Fu&szlig;gängerampel verwendet zur Anzeige zwei Lampen. Die
+ * Fu&szlig;gängerampel verwaltet ihre Position als Ganzes, ihre Ausrichtung und
+ * auch die nach den Verkehrsregeln möglichen Ampelphasen.
  *
  * @author Peter Cody
  * @version 1.0
@@ -11,12 +11,16 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapi
 class FUSSGAENGERAMPEL
 {
     private int positionX;
+
     private int positionY;
+
     private String ampelphase;
+
     private char ausrichtung;
 
     /** Referenzattribute */
     private LAMPE lampeOben;
+
     private LAMPE lampeUnten;
 
     /**
@@ -28,34 +32,30 @@ class FUSSGAENGERAMPEL
         positionY = 1;
         ampelphase = "rot";
         ausrichtung = 'S';
-
         lampeOben = new LAMPE();
         lampeUnten = new LAMPE();
         lampeOben.FarbeSetzen("rot");
         lampeUnten.FarbeSetzen("schwarz");
-
         AmpelAnordnen();
     }
 
     /**
-     * Konstruktor für Objekte der Klasse FUSSGAENGERAMPEL mit folgenden Eingabewerten.
+     * Konstruktor für Objekte der Klasse FUSSGAENGERAMPEL mit folgenden
+     * Eingabewerten.
      *
-     * @param xNeu - neue x-Position
-     * @param yNeu - neue y-Position
+     * @param xNeu           - neue x-Position
+     * @param yNeu           - neue y-Position
      * @param ausrichtungNeu - neue Ausrichtung
      */
-
     public FUSSGAENGERAMPEL(int xNeu, int yNeu, char ausrichtungNeu)
     {
         lampeOben = new LAMPE();
         lampeUnten = new LAMPE();
         lampeOben.FarbeSetzen("rot");
         lampeUnten.FarbeSetzen("schwarz");
-
         PositionSetzen(xNeu, yNeu);
         ampelphase = "rot";
         AusrichtungSetzen(ausrichtungNeu);
-
     }
 
     /**
@@ -80,9 +80,9 @@ class FUSSGAENGERAMPEL
         AmpelAnordnen();
     }
 
-
     /**
-     * Schaltet die Ampelphasen in der Reihenfolge von rot auf grün bzw. umgekehrt
+     * Schaltet die Ampelphasen in der Reihenfolge von rot auf grün bzw.
+     * umgekehrt
      */
     public void Weiterschalten()
     {
@@ -96,26 +96,26 @@ class FUSSGAENGERAMPEL
         }
     }
 
-
     /**
-     * Setzt die Ausrichtung der Fussgängerampel auf die möglichen Werte S, W, N, O.
+     * Setzt die Ausrichtung der Fussgängerampel auf die möglichen Werte S, W,
+     * N, O.
      *
      * @param ausrichtungNeu neue Ausrichtung der Ampel
      */
     public void AusrichtungSetzen(char ausrichtungNeu)
     {
-        if ((ausrichtungNeu == 'S') || (ausrichtungNeu == 'W') || (ausrichtungNeu == 'N')
-                        || (ausrichtungNeu == 'O'))
+        if ((ausrichtungNeu == 'S') || (ausrichtungNeu == 'W')
+                || (ausrichtungNeu == 'N') || (ausrichtungNeu == 'O'))
         {
             ausrichtung = ausrichtungNeu;
             AmpelAnordnen();
         }
     }
 
-
     /**
-     * Setzt die Position der Fussgängerampel. Der Ursprung liegt in der Mitte des Fensters, die
-     * y-Achse zeigt nach unten. (x /y) bedeutet das Kästchen rechts unterhalb der Gitterlinien.
+     * Setzt die Position der Fussgängerampel. Der Ursprung liegt in der Mitte
+     * des Fensters, die y-Achse zeigt nach unten. (x /y) bedeutet das Kästchen
+     * rechts unterhalb der Gitterlinien.
      *
      * @param x xNeu-Position
      * @param y yNeu-Position
@@ -137,25 +137,25 @@ class FUSSGAENGERAMPEL
     {
         switch (ausrichtung)
         {
-            case 'S':
-                lampeOben.PositionSetzen(positionX, positionY);
-                lampeUnten.PositionSetzen(positionX, positionY + 1);
+        case 'S':
+            lampeOben.PositionSetzen(positionX, positionY);
+            lampeUnten.PositionSetzen(positionX, positionY + 1);
+            break;
 
-                break;
-            case 'W':
-                lampeOben.PositionSetzen(positionX, positionY);
-                lampeUnten.PositionSetzen(positionX - 1, positionY);
-                break;
-            case 'N':
-                lampeOben.PositionSetzen(positionX, positionY);
-                lampeUnten.PositionSetzen(positionX, positionY - 1);
-                break;
-            case 'O':
-                lampeOben.PositionSetzen(positionX, positionY);
-                lampeUnten.PositionSetzen(positionX + 1, positionY);
-                break;
+        case 'W':
+            lampeOben.PositionSetzen(positionX, positionY);
+            lampeUnten.PositionSetzen(positionX - 1, positionY);
+            break;
+
+        case 'N':
+            lampeOben.PositionSetzen(positionX, positionY);
+            lampeUnten.PositionSetzen(positionX, positionY - 1);
+            break;
+
+        case 'O':
+            lampeOben.PositionSetzen(positionX, positionY);
+            lampeUnten.PositionSetzen(positionX + 1, positionY);
+            break;
         }
     }
-
-
 }

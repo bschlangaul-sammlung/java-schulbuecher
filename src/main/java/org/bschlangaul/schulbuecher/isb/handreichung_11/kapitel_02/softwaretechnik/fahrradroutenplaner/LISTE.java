@@ -70,8 +70,8 @@ class LISTE
     }
 
     /**
-     * Erzeugt eine Kopie der Liste. Die Datenelemente werden nicht kopiert. Auf Verwendung von
-     * Object. clone wurde bewusst verzichtet.
+     * Erzeugt eine Kopie der Liste. Die Datenelemente werden nicht kopiert. Auf
+     * Verwendung von Object. clone wurde bewusst verzichtet.
      *
      * @return Kopie der Liste
      */

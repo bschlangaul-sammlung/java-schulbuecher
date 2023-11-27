@@ -33,7 +33,6 @@ class Spielfigur extends Figur
         {
             PositionSetzen(XPositionGeben(), YPositionGeben() + 1);
         }
-
     }
 
     /**
@@ -49,7 +48,6 @@ class Spielfigur extends Figur
         {
             PositionSetzen(XPositionGeben(), YPositionGeben() - 1);
         }
-
     }
 
     /**
@@ -65,7 +63,6 @@ class Spielfigur extends Figur
         {
             PositionSetzen(XPositionGeben() + 1, YPositionGeben());
         }
-
     }
 
     /**
@@ -81,7 +78,6 @@ class Spielfigur extends Figur
         {
             PositionSetzen(XPositionGeben() - 1, YPositionGeben());
         }
-
     }
 
     /**
@@ -94,18 +90,21 @@ class Spielfigur extends Figur
     {
         switch (taste)
         {
-            case 37:
-                NachLinksBewegen();
-                break;
-            case 38:
-                NachObenBewegen();
-                break;
-            case 39:
-                NachRechtsBewegen();
-                break;
-            case 40:
-                NachUntenBewegen();
-                break;
+        case 37:
+            NachLinksBewegen();
+            break;
+
+        case 38:
+            NachObenBewegen();
+            break;
+
+        case 39:
+            NachRechtsBewegen();
+            break;
+
+        case 40:
+            NachUntenBewegen();
+            break;
         }
     }
 }

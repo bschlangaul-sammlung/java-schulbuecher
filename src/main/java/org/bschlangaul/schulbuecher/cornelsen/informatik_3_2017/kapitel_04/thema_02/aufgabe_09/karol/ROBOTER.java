@@ -2,24 +2,25 @@ package org.bschlangaul.schulbuecher.cornelsen.informatik_3_2017.kapitel_04.them
 
 import javakarol.Roboter;
 
-
 /**
  * Realisierung eines Roboters Karol für BlueJ
  *
- * JavaKarol ist eine Weiterführung des Konzepts RobotKarol bei dem die Objekte einer Karolwelt mit
- * Java erzeugt und bearbeitet werden können.
+ * JavaKarol ist eine Weiterführung des Konzepts RobotKarol bei dem die Objekte
+ * einer Karolwelt mit Java erzeugt und bearbeitet werden können.
  *
- * Die Klasse ROBOTER ist eine Umsetzung des Konzepts von RobotKarol in die Programmiersprache Java.
- * Es stehen die gleichen Methoden wie bei RobotKarol zur Verfügung. In einer Welt können sich
- * mehrere Objekte der Klasse Roboter bewegen (Z.Zt. maximal 9). Auf einer Quadratkachel der Welt
- * kann aber immer nur ein Roboter stehen.
+ * Die Klasse ROBOTER ist eine Umsetzung des Konzepts von RobotKarol in die
+ * Programmiersprache Java. Es stehen die gleichen Methoden wie bei RobotKarol
+ * zur Verfügung. In einer Welt können sich mehrere Objekte der Klasse Roboter
+ * bewegen (Z.Zt. maximal 9). Auf einer Quadratkachel der Welt kann aber immer
+ * nur ein Roboter stehen.
  *
- * Die Klasse ROBOTER ist eine Unterklasse der Klasse Roboter aus dem Paket javakarol.jar. Sie kann
- * in einem BlueJ-Projekt direkt verwendet werden. Von der Klasse ROBOTER können in der
- * Programmierumgebung BlueJ Objekte erzeugt und benutzt werden. Zur Vereinfachung des
- * Methodenaufrufs im Objektinspektor von BlueJ wurden einige Methoden der Klasse Roboter in der
- * Klasse ROBOTER erneut definiert (unter Aufruf der geerbten Methoden). Die restlichen Methoden
- * können über "geerbt von Roboter" aufgerufen werden.
+ * Die Klasse ROBOTER ist eine Unterklasse der Klasse Roboter aus dem Paket
+ * javakarol.jar. Sie kann in einem BlueJ-Projekt direkt verwendet werden. Von
+ * der Klasse ROBOTER können in der Programmierumgebung BlueJ Objekte erzeugt
+ * und benutzt werden. Zur Vereinfachung des Methodenaufrufs im Objektinspektor
+ * von BlueJ wurden einige Methoden der Klasse Roboter in der Klasse ROBOTER
+ * erneut definiert (unter Aufruf der geerbten Methoden). Die restlichen
+ * Methoden können über "geerbt von Roboter" aufgerufen werden.
  *
  *
  * @author Ulli Freiberger
@@ -28,18 +29,18 @@ import javakarol.Roboter;
  * @version 3.0 (1.11.2018)
  *
  */
-
 public class ROBOTER extends Roboter
 {
-
     /**
      * Erzeugen eines neuen Roboters mit vorgegebener Startposition
      *
-     * Vorher muss ein Objekt der Klasse WELT angelegt werden, in der der Roboter lebt.
+     * Vorher muss ein Objekt der Klasse WELT angelegt werden, in der der
+     * Roboter lebt.
      *
-     * @param Startposition (startX, startY) mit 1..WeltBreite bzw. 1..WeltL�nge
+     * @param Startposition      (startX, startY) mit 1..WeltBreite bzw.
+     *                           1..WeltL�nge
      * @param Startblickrichtung 'S','W','N','O'
-     * @param Referenz auf die Welt in der der Roboter leben soll
+     * @param Referenz           auf die Welt in der der Roboter leben soll
      *
      */
     public ROBOTER(int startX, int startY, char startBlickrichtung, WELT inWelt)
@@ -48,11 +49,13 @@ public class ROBOTER extends Roboter
     }
 
     /**
-     * Erzeugen eines neuen Roboters aufgrund der Einstellungen in einer Karolwelt-Datei
+     * Erzeugen eines neuen Roboters aufgrund der Einstellungen in einer
+     * Karolwelt-Datei
      *
-     * Vorher muss ein Objekt der Klasse WELT angelegt werden, in der der Roboter leben soll. Wenn
-     * dieses Weltobjekt aus einer Karolwelt-Datei geladen wurde, dann werden die dortigen
-     * Robotereinstellungen verwendet, sonst ein Default-Roboter mit (1,1) und Blickrichtung 'S'
+     * Vorher muss ein Objekt der Klasse WELT angelegt werden, in der der
+     * Roboter leben soll. Wenn dieses Weltobjekt aus einer Karolwelt-Datei
+     * geladen wurde, dann werden die dortigen Robotereinstellungen verwendet,
+     * sonst ein Default-Roboter mit (1,1) und Blickrichtung 'S'
      *
      * @param Referenz auf die Welt in der der Roboter leben soll
      *
@@ -62,7 +65,6 @@ public class ROBOTER extends Roboter
         super(inWelt);
     }
 
-
     /**
      * Der Roboter macht einen Schritt nach vorne
      */
@@ -70,7 +72,6 @@ public class ROBOTER extends Roboter
     {
         super.Schritt();
     }
-
 
     /**
      * Der Roboter dreht sich nach Links (gegen den Uhrzeigersinn)
@@ -80,7 +81,6 @@ public class ROBOTER extends Roboter
         super.LinksDrehen();
     }
 
-
     /**
      * Der Roboter dreht sich nach Rechts (im Uhrzeigersinn)
      */
@@ -88,7 +88,6 @@ public class ROBOTER extends Roboter
     {
         super.RechtsDrehen();
     }
-
 
     /**
      * Der Roboter legt vor sich einen roten Ziegel hin
@@ -98,16 +97,14 @@ public class ROBOTER extends Roboter
         super.Hinlegen();
     }
 
-
     /**
-     * Der Roboter legt vor sich einen Ziegel der gewählten Farbe hin Mögliche Farben:
-     * "rot","gelb","blau","grün"
+     * Der Roboter legt vor sich einen Ziegel der gewählten Farbe hin Mögliche
+     * Farben: "rot","gelb","blau","grün"
      */
     public void Hinlegen(String farbeZiegel)
     {
         super.Hinlegen(farbeZiegel);
     }
-
 
     /**
      * Der Roboter hebt vor sich einen Ziegel beliebiger Farbe auf
@@ -117,7 +114,6 @@ public class ROBOTER extends Roboter
         super.Aufheben();
     }
 
-
     /**
      * Der Roboter setzt auf der Kachel unter ihm eine gelbe Marke
      */
@@ -126,16 +122,14 @@ public class ROBOTER extends Roboter
         super.MarkeSetzen();
     }
 
-
     /**
-     * Der Roboter setzt auf der Kachel unter ihm eine Marke der gewählten Farbe Mögliche Farben:
-     * "rot","gelb","blau","grün","schwarz"
+     * Der Roboter setzt auf der Kachel unter ihm eine Marke der gewählten Farbe
+     * Mögliche Farben: "rot","gelb","blau","grün","schwarz"
      */
     public void MarkeSetzen(String farbeMarke)
     {
         super.MarkeSetzen(farbeMarke);
     }
-
 
     /**
      * Der Roboter entfernt von der Kachel unter ihm eine Marke
@@ -145,7 +139,6 @@ public class ROBOTER extends Roboter
         super.MarkeLoeschen();
     }
 
-
     /**
      * Der Roboter gibt einen Piep-Ton aus
      */
@@ -153,7 +146,6 @@ public class ROBOTER extends Roboter
     {
         super.TonErzeugen();
     }
-
 
     /**
      * Abfrage ob der Roboter vor einer Wand bzw. einem Quader steht
@@ -165,7 +157,6 @@ public class ROBOTER extends Roboter
         return super.IstWand();
     }
 
-
     /**
      * Abfrage ob vor dem Roboter ein Ziegel beliebiger Farbe liegt
      *
@@ -176,10 +167,9 @@ public class ROBOTER extends Roboter
         return super.IstZiegel();
     }
 
-
     /**
-     * Abfrage ob vor dem Roboter ein Ziegel der angegebenen Farbe liegt Mögliche Farben:
-     * "rot","gelb","blau","grün"
+     * Abfrage ob vor dem Roboter ein Ziegel der angegebenen Farbe liegt
+     * Mögliche Farben: "rot","gelb","blau","grün"
      *
      * @return wenn zutrifft dann true
      */
@@ -187,7 +177,6 @@ public class ROBOTER extends Roboter
     {
         return super.IstZiegel(farbeZiegel);
     }
-
 
     // neu ab Version 1.1 17.1.2013
     /**
@@ -200,7 +189,6 @@ public class ROBOTER extends Roboter
         return super.IstZiegelLinks();
     }
 
-
     // neu ab Version 1.1 17.1.2013
     /**
      * Abfrage ob rechts vom Roboter ein Ziegel liegt
@@ -212,7 +200,6 @@ public class ROBOTER extends Roboter
         return super.IstZiegelRechts();
     }
 
-
     /**
      * Abfrage ob sich unter dem Roboter eine Marke beliebiger Farbe befindet
      *
@@ -223,10 +210,9 @@ public class ROBOTER extends Roboter
         return super.IstMarke();
     }
 
-
     /**
-     * Abfrage ob sich unter dem Roboter eine Marke mit bestimmter Farbe befindet Mögliche Farben:
-     * "rot","gelb","blau","grün","schwarz"
+     * Abfrage ob sich unter dem Roboter eine Marke mit bestimmter Farbe
+     * befindet Mögliche Farben: "rot","gelb","blau","grün","schwarz"
      *
      * @return wenn zutrifft dann true
      */
@@ -234,6 +220,4 @@ public class ROBOTER extends Roboter
     {
         return super.IstMarke(farbeMarke);
     }
-
-
 }

@@ -2,7 +2,6 @@ package org.bschlangaul.schulbuecher.isb.handreichung_11.kapitel_01.thema_01.lis
 
 class Abschluss extends ListenElement
 {
-
     // KONSTRUKTOR
     Abschluss()
     {
@@ -52,6 +51,6 @@ class Abschluss extends ListenElement
     }
 
     void AlleAusgeben()
-    {}
-
+    {
+    }
 }

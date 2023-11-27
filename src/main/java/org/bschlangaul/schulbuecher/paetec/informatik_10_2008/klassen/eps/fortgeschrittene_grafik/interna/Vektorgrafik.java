@@ -22,9 +22,10 @@ public abstract class Vektorgrafik extends Grafik
     }
 
     /**
-     * Die Farbe der Grafik kann gewaehlt werden. Mögliche Farben sind: "weiss", "gelb", "orange",
-     * "rot", "pink", "magenta", "cyan", "gruen", "blau", "grau", "schwarz" Achtung: Die
-     * Anfuehrungsstriche sind noetig! Alle anderen Eingabewerte werden ignoriert.
+     * Die Farbe der Grafik kann gewaehlt werden. Mögliche Farben sind: "weiss",
+     * "gelb", "orange", "rot", "pink", "magenta", "cyan", "gruen", "blau",
+     * "grau", "schwarz" Achtung: Die Anfuehrungsstriche sind noetig! Alle
+     * anderen Eingabewerte werden ignoriert.
      */
     public void farbeSetzen(String neueFarbe)
     {
@@ -35,8 +36,8 @@ public abstract class Vektorgrafik extends Grafik
     }
 
     /**
-     * Liest unsere Farbe aus. Mögliche Werte sind: "weiss", "gelb", "orange", "rot", "pink",
-     * "magenta", "cyan", "gruen", "blau", "grau", "schwarz"
+     * Liest unsere Farbe aus. Mögliche Werte sind: "weiss", "gelb", "orange",
+     * "rot", "pink", "magenta", "cyan", "gruen", "blau", "grau", "schwarz"
      */
     public String farbeGeben()
     {
@@ -44,9 +45,10 @@ public abstract class Vektorgrafik extends Grafik
     }
 
     /**
-     * Gibt unsere Farbe als Colorobjekt zurueck, falls gueltig, d.h. in der Liste der moeglichen
-     * Werte enthalten, ansonsten wird null zurueckgegeben. Mögliche Werte sind: "weiss", "gelb",
-     * "orange", "rot", "pink", "magenta", "cyan", "gruen", "blau", "grau", "schwarz"
+     * Gibt unsere Farbe als Colorobjekt zurueck, falls gueltig, d.h. in der
+     * Liste der moeglichen Werte enthalten, ansonsten wird null zurueckgegeben.
+     * Mögliche Werte sind: "weiss", "gelb", "orange", "rot", "pink", "magenta",
+     * "cyan", "gruen", "blau", "grau", "schwarz"
      */
     private Color farbeUebersetzen()
     {
@@ -98,9 +100,10 @@ public abstract class Vektorgrafik extends Grafik
     }
 
     /**
-     * Wird von Unterklassen aufgerufen, wenn diese vom Zeichenfenster aufgefordert werden, eine
-     * aktuelle "Zeichnung" ihrer selbst abzugeben. Bei (momentan) ungueltiger Farbe wird die Farbe
-     * schwarz zurueckgegeben, so kann damit notfalls auch gezeichnet werden.
+     * Wird von Unterklassen aufgerufen, wenn diese vom Zeichenfenster
+     * aufgefordert werden, eine aktuelle "Zeichnung" ihrer selbst abzugeben.
+     * Bei (momentan) ungueltiger Farbe wird die Farbe schwarz zurueckgegeben,
+     * so kann damit notfalls auch gezeichnet werden.
      */
     protected Color farbeAufloesen()
     {
@@ -116,7 +119,8 @@ public abstract class Vektorgrafik extends Grafik
     }
 
     /**
-     * Unsere einfache "Visitenkarte": unser Klassenname gefolgt von interessanten Attributwerten
+     * Unsere einfache "Visitenkarte": unser Klassenname gefolgt von
+     * interessanten Attributwerten
      */
     public String toString()
     {

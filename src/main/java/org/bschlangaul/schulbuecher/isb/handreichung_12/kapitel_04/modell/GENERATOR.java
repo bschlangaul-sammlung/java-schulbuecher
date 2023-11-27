@@ -6,15 +6,17 @@ package org.bschlangaul.schulbuecher.isb.handreichung_12.kapitel_04.modell;
  * @author ISB-Arbeitskreis, Umsetzungshilfen Informatik 12
  * @version 1.0
  */
-
 import java.util.Random;
 
 public class GENERATOR
 {
     /* Der Zufallsgenerator */
     private Random zufall;
+
     /* Der Zeichenvorrat für die Bezeichner */
-    private char[] zeichen = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'};
+    private char[] zeichen = { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i',
+            'j' };
+
     /* Die Länge der zu generierenden Bezeichner */
     private int laenge;
 

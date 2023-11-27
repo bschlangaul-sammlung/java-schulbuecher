@@ -1,11 +1,10 @@
 package org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.fortgeschrittene_grafik.interna;
 
-
 import java.awt.Graphics2D;
 
 /**
- * Abstrakte Klasse Grafik - Dienste, die alle Grafiken zum Darstellen auf einem Zeichenfenster
- * anbieten, werden festgelegt
+ * Abstrakte Klasse Grafik - Dienste, die alle Grafiken zum Darstellen auf einem
+ * Zeichenfenster anbieten, werden festgelegt
  *
  * @author Florian Prager, Universität Passau
  * @version 02.2008
@@ -23,7 +22,8 @@ public abstract class Grafik
     protected double standardHoehe;
 
     /**
-     * Zaehlt die Identifikationsnummern der Grafiken. Entspricht ihrer Gesamtanzahl
+     * Zaehlt die Identifikationsnummern der Grafiken. Entspricht ihrer
+     * Gesamtanzahl
      */
     private static int idzaehler;
 
@@ -38,19 +38,20 @@ public abstract class Grafik
     private Zeichenfenster zeichenfenster;
 
     /**
-     * x-Koordinate der linken oberen Ecke des die Grafik ueberdeckenden (waagrecht ausgerichteten)
-     * Rechtecks
+     * x-Koordinate der linken oberen Ecke des die Grafik ueberdeckenden
+     * (waagrecht ausgerichteten) Rechtecks
      */
     private double xPosition;
 
     /**
-     * y-Koordinate der linken oberen Ecke des die Grafik ueberdeckenden (waagrecht ausgerichteten)
-     * Rechtecks
+     * y-Koordinate der linken oberen Ecke des die Grafik ueberdeckenden
+     * (waagrecht ausgerichteten) Rechtecks
      */
     private double yPosition;
 
     /**
-     * Breite des, die Grafik ueberdeckenden (waagrecht ausgerichteten) Rechtecks
+     * Breite des, die Grafik ueberdeckenden (waagrecht ausgerichteten)
+     * Rechtecks
      */
     private double breite;
 
@@ -68,7 +69,6 @@ public abstract class Grafik
     {
         xPosition = 0;
         yPosition = 0;
-
         id = idzaehler++;
         transformationen = new TransformationsSpeicher();
         if (fenster == null)
@@ -92,8 +92,9 @@ public abstract class Grafik
     }
 
     /**
-     * Fuegt die Grafik dem Zeichenfenster hinzu. Ruft der Nutzer den Dienst zeichnen() des
-     * Zeichenfensters auf, wird die Grafik vor alle bisherigen Grafiken gezeichnet.
+     * Fuegt die Grafik dem Zeichenfenster hinzu. Ruft der Nutzer den Dienst
+     * zeichnen() des Zeichenfensters auf, wird die Grafik vor alle bisherigen
+     * Grafiken gezeichnet.
      */
     public void anmelden()
     {
@@ -109,8 +110,8 @@ public abstract class Grafik
     }
 
     /**
-     * Veraendert den Aufpunkt der Grafik. Der Aufpunkt ist die linke obere Ecke des die Grafik
-     * ueberdeckenden (waagrecht ausgerichteten) Rechtecks.
+     * Veraendert den Aufpunkt der Grafik. Der Aufpunkt ist die linke obere Ecke
+     * des die Grafik ueberdeckenden (waagrecht ausgerichteten) Rechtecks.
      */
     public void positionSetzen(int neueXPosition, int neueYPosition)
     {
@@ -120,7 +121,8 @@ public abstract class Grafik
     }
 
     /**
-     * Wird von Grafikunterklasseobjekten intern genutzt. Liefert die bisherigen Transformationen.
+     * Wird von Grafikunterklasseobjekten intern genutzt. Liefert die bisherigen
+     * Transformationen.
      */
     protected TransformationsSpeicher transformationenGeben()
     {
@@ -128,9 +130,10 @@ public abstract class Grafik
     }
 
     /**
-     * Breite und Hoehe der Grafik koennen gewaehlt werden. Nicht positive (unsinnige) Angaben
-     * werden automatisch auf den kleinsten noch sinnvollen Wert fuer eine Grafik gesetzt, hier 1.
-     * Die Grafik ist dann entsprechend auf dem Zeichenfenster zu sehen.
+     * Breite und Hoehe der Grafik koennen gewaehlt werden. Nicht positive
+     * (unsinnige) Angaben werden automatisch auf den kleinsten noch sinnvollen
+     * Wert fuer eine Grafik gesetzt, hier 1. Die Grafik ist dann entsprechend
+     * auf dem Zeichenfenster zu sehen.
      */
     public void groesseSetzen(int neueBreite, int neueHoehe)
     {
@@ -162,15 +165,16 @@ public abstract class Grafik
     }
 
     /**
-     * Streckt die Grafik um den gegebenen Faktor an dem gegebenen Zentrum. Negative Streckfaktoren
-     * werden hier ignoriert. Verwenden Sie bei Bedarf erst eine Drehung und strecken Sie dann...
+     * Streckt die Grafik um den gegebenen Faktor an dem gegebenen Zentrum.
+     * Negative Streckfaktoren werden hier ignoriert. Verwenden Sie bei Bedarf
+     * erst eine Drehung und strecken Sie dann...
      */
     public void streckenAn(int xZentrum, int yZentrum, double faktor)
     {
         if (faktor < 0)
             return;
-        transformationen.transformationHinzufuegen(
-                        new Skalierung(faktor, faktor, (double) xZentrum, (double) yZentrum));
+        transformationen.transformationHinzufuegen(new Skalierung(faktor,
+                faktor, (double) xZentrum, (double) yZentrum));
         grenzenAktualisieren();
     }
 
@@ -191,8 +195,8 @@ public abstract class Grafik
     }
 
     /**
-     * Liest die x-Koordinate der Position (linke obere Ecke des die Grafik ueberdeckenden
-     * Rechtecks) aus.
+     * Liest die x-Koordinate der Position (linke obere Ecke des die Grafik
+     * ueberdeckenden Rechtecks) aus.
      */
     public int xPositionGeben()
     {
@@ -200,8 +204,8 @@ public abstract class Grafik
     }
 
     /**
-     * Liest die y-Koordinate der Position (linke obere Ecke des die Grafik ueberdeckenden
-     * Rechtecks) aus.
+     * Liest die y-Koordinate der Position (linke obere Ecke des die Grafik
+     * ueberdeckenden Rechtecks) aus.
      */
     public int yPositionGeben()
     {
@@ -209,17 +213,19 @@ public abstract class Grafik
     }
 
     /**
-     * Verschiebt die Grafik um deltaX in x-Richtung und um deltaY in y-Richtung.
+     * Verschiebt die Grafik um deltaX in x-Richtung und um deltaY in
+     * y-Richtung.
      */
     public void verschieben(int deltaX, int deltaY)
     {
         transformationen.transformationHinzufuegen(
-                        new Translation((double) deltaX, (double) deltaY));
+                new Translation((double) deltaX, (double) deltaY));
         grenzenAktualisieren();
     }
 
     /**
-     * Vergleicht zwei Grafiken. Grafikek sind gleich, wenn ihre IDs identisch sind.
+     * Vergleicht zwei Grafiken. Grafikek sind gleich, wenn ihre IDs identisch
+     * sind.
      */
     public boolean equals(Object o)
     {
@@ -227,28 +233,26 @@ public abstract class Grafik
     }
 
     /**
-     * Unsere einfache "Visitenkarte": unser Klassenname gefolgt von interessanten Attributwerten
+     * Unsere einfache "Visitenkarte": unser Klassenname gefolgt von
+     * interessanten Attributwerten
      */
     public String toString()
     {
-        return "ein " + getClass().getSimpleName() + " - Aufpunkt: (" + xPositionGeben() + ", "
-                        + yPositionGeben() + ")" + " - Groesse: " + breiteGeben() + " X "
-                        + hoeheGeben();
+        return "ein " + getClass().getSimpleName() + " - Aufpunkt: ("
+                + xPositionGeben() + ", " + yPositionGeben() + ")"
+                + " - Groesse: " + breiteGeben() + " X " + hoeheGeben();
     }
 
-
-
     /**
-     * Die Methode drehen dreht die Vektorgrafik relativ um den uebergebenen Winkel.
+     * Die Methode drehen dreht die Vektorgrafik relativ um den uebergebenen
+     * Winkel.
      */
     public void drehenUm(int xDrehpunkt, int yDrehpunkt, int winkel)
     {
         transformationen.transformationHinzufuegen(
-                        new Rotation((double) xDrehpunkt, (double) yDrehpunkt, winkel));
+                new Rotation((double) xDrehpunkt, (double) yDrehpunkt, winkel));
         grenzenAktualisieren();
     }
-
-
 
     /**
      * Liefert die ID der Grafik. Wird von der equals()-Methode aufgerufen
@@ -258,11 +262,10 @@ public abstract class Grafik
         return id;
     }
 
-
-
     /**
-     * Nur das Zeichenfenster, bei dem diese Grafik registriert ist, nutzt den Dienst zeichnenAuf.
-     * Grafikobjekte werden angestossen, sich selbst passend im Fenster zu zeichnen.
+     * Nur das Zeichenfenster, bei dem diese Grafik registriert ist, nutzt den
+     * Dienst zeichnenAuf. Grafikobjekte werden angestossen, sich selbst passend
+     * im Fenster zu zeichnen.
      */
     protected abstract void zeichnenAuf(Graphics2D zeichnung);
 
@@ -271,7 +274,8 @@ public abstract class Grafik
      */
     private void grenzenAktualisieren()
     {
-        Grenze g = transformationen.aktuelleGrenzenGeben(standardBreite, standardHoehe);
+        Grenze g = transformationen.aktuelleGrenzenGeben(standardBreite,
+                standardHoehe);
         xPosition = g.xGeben();
         yPosition = g.yGeben();
         breite = g.breiteGeben();
@@ -281,12 +285,13 @@ public abstract class Grafik
     /**
      * Verzerrt die Grafik (fuer groesseSetzen())
      */
-    private void verzerrenAn(double xZentrum, double yZentrum, double xFaktor, double yFaktor)
+    private void verzerrenAn(double xZentrum, double yZentrum, double xFaktor,
+            double yFaktor)
     {
         if (xFaktor < 0 || yFaktor < 0)
             return;
         transformationen.transformationHinzufuegen(
-                        new Skalierung(xFaktor, yFaktor, xZentrum, yZentrum));
+                new Skalierung(xFaktor, yFaktor, xZentrum, yZentrum));
         grenzenAktualisieren();
     }
 }

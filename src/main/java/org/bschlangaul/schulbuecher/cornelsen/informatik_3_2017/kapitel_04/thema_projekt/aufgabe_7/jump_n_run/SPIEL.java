@@ -1,15 +1,16 @@
 package org.bschlangaul.schulbuecher.cornelsen.informatik_3_2017.kapitel_04.thema_projekt.aufgabe_7.jump_n_run;
 
-
 import ea.edu.EduActor;
 import ea.edu.Figur;
 import ea.edu.Spiel;
 
 /**
- * Die Klasse SPIEL ist ein Template. Es startet alles Notwendige fuer ein Spiel. (Einzige
- * Voraussetzung ist, dass die Engine-Alpha-Bibliothek im Suchpfad erreichbar ist.)
+ * Die Klasse SPIEL ist ein Template. Es startet alles Notwendige fuer ein
+ * Spiel. (Einzige Voraussetzung ist, dass die Engine-Alpha-Bibliothek im
+ * Suchpfad erreichbar ist.)
  *
- * Es gibt Tastatur-Ereignisse, Maus-Ereignisse, Timer-Events und Frame-Update-Events.
+ * Es gibt Tastatur-Ereignisse, Maus-Ereignisse, Timer-Events und
+ * Frame-Update-Events.
  *
  *
  * @author Michael Andonie und Mike Ganshorn
@@ -22,8 +23,8 @@ import ea.edu.Spiel;
  *
  *
  */
-public class SPIEL extends Spiel implements TastenReagierbar, Ticker, MausKlickReagierbar,
-                MausRadReagierbar, BildAktualisierungReagierbar
+public class SPIEL extends Spiel implements TastenReagierbar, Ticker,
+        MausKlickReagierbar, MausRadReagierbar, BildAktualisierungReagierbar
 {
     /**
      * Dieser Zaehler ermoeglicht den Tik-Tak-Wechsel.
@@ -31,12 +32,12 @@ public class SPIEL extends Spiel implements TastenReagierbar, Ticker, MausKlickR
     private int zaehler;
 
     private Figur hintergrundbild;
-
-
-    // ===== K o n s t r u k t o r e n =========================================================
+    // ===== K o n s t r u k t o r e n
+    // =========================================================
 
     /**
-     * Erstellt ein einfaches Spiel: 800 x 600 Pixel , ohne Punktestand und Maus. <br />
+     * Erstellt ein einfaches Spiel: 800 x 600 Pixel , ohne Punktestand und
+     * Maus. <br />
      * Ueberschreibe bei Bedarf die Methoden tick(), tasteReagieren(int taste),
      * mausKlickReagieren(double x, double y), ....
      */
@@ -45,18 +46,16 @@ public class SPIEL extends Spiel implements TastenReagierbar, Ticker, MausKlickR
         this(false);
     }
 
-
     /**
      * SPIEL Konstruktor ohne Maus.
      *
-     * @param fensterHoehe Hoehe des Fensters in Pixeln
+     * @param fensterHoehe  Hoehe des Fensters in Pixeln
      * @param fensterBreite Breite des Fensters in Pixeln
      */
     public SPIEL(int fensterHoehe, int fensterBreite)
     {
         this(fensterHoehe, fensterBreite, false);
     }
-
 
     /**
      * SPIEL Konstruktor 800 x 600 Pixel mit Mausunterstuetzung.
@@ -68,15 +67,15 @@ public class SPIEL extends Spiel implements TastenReagierbar, Ticker, MausKlickR
         this(800, 600, maus);
     }
 
-
     /**
      * SPIEL Konstruktor mit allen Moeglichkeiten <br />
-     * . Ueberschreibe bei Bedarf die Methoden tick() bzw. tasteReagieren(int taste).
+     * . Ueberschreibe bei Bedarf die Methoden tick() bzw. tasteReagieren(int
+     * taste).
      *
      * @param fensterBreite in Pixel
-     * @param fensterHoehe in Pixel
-     * @param maus true : man sieht den Mauszeiger (Klick-Spiel) false : man sieht ihn nicht (reines
-     *        Tastatur-Spiel)
+     * @param fensterHoehe  in Pixel
+     * @param maus          true : man sieht den Mauszeiger (Klick-Spiel) false
+     *                      : man sieht ihn nicht (reines Tastatur-Spiel)
      */
     public SPIEL(int fensterBreite, int fensterHoehe, boolean maus)
     {
@@ -94,17 +93,15 @@ public class SPIEL extends Spiel implements TastenReagierbar, Ticker, MausKlickR
         // Frame-Updates
         registriereBildAktualisierungReagierbar(this);
     }
-
-
-
-    // ===== G e s t a l t e n d e s S p i e l f e l d e s =========================================
+    // ===== G e s t a l t e n d e s S p i e l f e l d e s
+    // =========================================
 
     /**
-     * Setzt eine Hintergrundgrafik fuer das Spiel. Dieses Bild liegt immer hinter allen anderen
-     * Objekten.
+     * Setzt eine Hintergrundgrafik fuer das Spiel. Dieses Bild liegt immer
+     * hinter allen anderen Objekten.
      *
-     * @param pfad Der Pfad der Bilddatei (jpg, bmp, png) des Bildes, das benutzt werden soll. zB:
-     *        "hintergrund.jpg"
+     * @param pfad Der Pfad der Bilddatei (jpg, bmp, png) des Bildes, das
+     *             benutzt werden soll. zB: "hintergrund.jpg"
      */
     public void setzeHintergrundgrafik(String pfad)
     {
@@ -117,13 +114,12 @@ public class SPIEL extends Spiel implements TastenReagierbar, Ticker, MausKlickR
         this.hintergrundbild.setzeMittelpunkt(0, 0);
         this.hintergrundbild.setzeSichtbar(true);
     }
-
-
-
-    // ===== G r a f i s c h e s D e b u g g i n g ==============================================
+    // ===== G r a f i s c h e s D e b u g g i n g
+    // ==============================================
 
     /**
-     * Blendet das Koordinaten-System ein/aus und zeigt/versteckt die Collider der Grafik-Objekte
+     * Blendet das Koordinaten-System ein/aus und zeigt/versteckt die Collider
+     * der Grafik-Objekte
      *
      * @param anzeigen einblenden = true ; ausblenden = false
      */
@@ -132,9 +128,9 @@ public class SPIEL extends Spiel implements TastenReagierbar, Ticker, MausKlickR
         ea.Game.setDebug(anzeigen);
     }
 
-
     /**
-     * Methode zum Verschieben der Kamera durch die Pfeiltasten und zum Zoomen durch das Mausrad
+     * Methode zum Verschieben der Kamera durch die Pfeiltasten und zum Zoomen
+     * durch das Mausrad
      *
      * @param erkunden einschalten: true , ausschalten: false
      */
@@ -142,10 +138,8 @@ public class SPIEL extends Spiel implements TastenReagierbar, Ticker, MausKlickR
     {
         this.setzeErkundungsModus(erkunden);
     }
-
-
-
-    // ===== T o o l s ==========================================================================
+    // ===== T o o l s
+    // ==========================================================================
 
     /**
      * Gibt eine ganzzahlige Zufallszahl aus.
@@ -160,15 +154,15 @@ public class SPIEL extends Spiel implements TastenReagierbar, Ticker, MausKlickR
         return ea.Random.nextInteger(bis - von) + von;
     }
 
-
     /**
-     * Wartet um die Angegebene Anzahl an Millisekunden BLOCKIEREND bis zur Ausfuehrung des
-     * naechsten Befehls.
+     * Wartet um die Angegebene Anzahl an Millisekunden BLOCKIEREND bis zur
+     * Ausfuehrung des naechsten Befehls.
      *
-     * <b> !!! V O R S I C H T !!! Nur verwenden bei reiner Grafik ohne Engine-Alpha Automatismen
-     * !!! <br />
+     * <b> !!! V O R S I C H T !!! Nur verwenden bei reiner Grafik ohne
+     * Engine-Alpha Automatismen !!! <br />
      *
-     * Geht NICHT mit tick(), tasteReagieren(...), mausReagieren(...), ... !!! </b>
+     * Geht NICHT mit tick(), tasteReagieren(...), mausReagieren(...), ... !!!
+     * </b>
      *
      * @param sekunden Die zu wartende Zeit in Sekunden
      */
@@ -177,20 +171,20 @@ public class SPIEL extends Spiel implements TastenReagierbar, Ticker, MausKlickR
         try
         {
             Thread.sleep((int) (sekunden * 1000));
-        } catch (InterruptedException e)
+        }
+        catch (InterruptedException e)
         {
             e.printStackTrace();
         }
     }
-
-
-
-    // ===== T i c k e r a n p a s s e n ===========================================================
+    // ===== T i c k e r a n p a s s e n
+    // ===========================================================
 
     /**
      * Setzt das Ticker-Intervall.
      *
-     * @param sekunden Die Zeit in Sekunden zwischen zwei Aufrufen der tick()-Methode.
+     * @param sekunden Die Zeit in Sekunden zwischen zwei Aufrufen der
+     *                 tick()-Methode.
      *
      * @see #tickerNeuStarten(double)
      * @see #tickerStoppen(double)
@@ -201,11 +195,10 @@ public class SPIEL extends Spiel implements TastenReagierbar, Ticker, MausKlickR
         super.registriereTicker(sekunden, this);
     }
 
-
     /**
-     * Stoppt die Ticker-Funktion. Die tick()-Methode wird nicht weiter aufgerufen. Der automatische
-     * Aufruf der tick()-Methode kann durch die Methode tickerNeuStarten(double sekunden)
-     * wiedergestartet werden.
+     * Stoppt die Ticker-Funktion. Die tick()-Methode wird nicht weiter
+     * aufgerufen. Der automatische Aufruf der tick()-Methode kann durch die
+     * Methode tickerNeuStarten(double sekunden) wiedergestartet werden.
      *
      * @see #tickerNeuStarten(double)
      * @see #tickerIntervallSetzen(double)
@@ -216,11 +209,11 @@ public class SPIEL extends Spiel implements TastenReagierbar, Ticker, MausKlickR
         super.entferneTicker(this);
     }
 
-
     /**
      * Startet den Ticker neu.
      *
-     * @param sekunden Die Zeit in Sekunden zwischen zwei Aufrufen der tick()-Methode.
+     * @param sekunden Die Zeit in Sekunden zwischen zwei Aufrufen der
+     *                 tick()-Methode.
      *
      * @see #tickerIntervallSetzen(double)
      * @see #tick()
@@ -230,14 +223,13 @@ public class SPIEL extends Spiel implements TastenReagierbar, Ticker, MausKlickR
     {
         super.registriereTicker(sekunden, this);
     }
-
-
-
-    // ===== M e t h o d e n z u m U e b e s c h r e i b e n ======================================
+    // ===== M e t h o d e n z u m U e b e s c h r e i b e n
+    // ======================================
 
     /**
-     * Wird nach Aufruf von tickerNeuStarten(double) regelmaessig automatisch aufgerufen. So kommt
-     * Bewegung ins Spiel! Tick-Intervall kann angepasst werden. Ticker muss erst gestartet werden!
+     * Wird nach Aufruf von tickerNeuStarten(double) regelmaessig automatisch
+     * aufgerufen. So kommt Bewegung ins Spiel! Tick-Intervall kann angepasst
+     * werden. Ticker muss erst gestartet werden!
      *
      * @see #tickerNeuStarten(double)
      * @see #tickerStoppen()
@@ -258,13 +250,12 @@ public class SPIEL extends Spiel implements TastenReagierbar, Ticker, MausKlickR
         }
     }
 
-
     /**
-     * Wird bei jedem <b>Druecken einer Taste/b> automatisch aufgerufen und automatisch das Kuerzel
-     * der entsprechenden Taste mitgegeben.
+     * Wird bei jedem <b>Druecken einer Taste/b> automatisch aufgerufen und
+     * automatisch das Kuerzel der entsprechenden Taste mitgegeben.
      *
-     * @param taste ganzzahliges Kuerzel der Taste oder ENUM-Typ aus <b>Klasse TASTE</b> (darin die
-     *        Klassen-Doku lesen)
+     * @param taste ganzzahliges Kuerzel der Taste oder ENUM-Typ aus <b>Klasse
+     *              TASTE</b> (darin die Klassen-Doku lesen)
      */
     @Override
     public void tasteReagieren(int taste)
@@ -272,26 +263,26 @@ public class SPIEL extends Spiel implements TastenReagierbar, Ticker, MausKlickR
         System.out.println("Taste mit Kuerzel " + taste + " wurde gedrueckt");
     }
 
-
     /**
-     * Wird bei jedem <b>Loslassen einer Taste</b> automatisch aufgerufen und automatisch das
-     * Kuerzel der entsprechenden Taste mitgegeben.
+     * Wird bei jedem <b>Loslassen einer Taste</b> automatisch aufgerufen und
+     * automatisch das Kuerzel der entsprechenden Taste mitgegeben.
      *
-     * @param taste ganzzahliges Kuerzel der Taste oder ENUM-Typ aus <b>Klasse TASTE</b> (darin die
-     *        Klassen-Doku lesen)
+     * @param taste ganzzahliges Kuerzel der Taste oder ENUM-Typ aus <b>Klasse
+     *              TASTE</b> (darin die Klassen-Doku lesen)
      */
     @Override
     public void tasteLosgelassenReagieren(int taste)
     {
-        // System.out.println( "Taste mit Kuerzel " + taste + " wurde losgelassen" );
+        // System.out.println( "Taste mit Kuerzel " + taste + " wurde
+        // losgelassen" );
     }
-
 
     /**
      * Ueberprueft, ob eine <b>Taste gerade gedrueckt gehalten</b> wird.
      *
-     * @param taste Der ganzzahlige Wert, der fuer die gedrueckte Taste steht. Details koennen im
-     *        ENUM-Typen der <b>Klasse TASTE</b> nachgelesen werden.
+     * @param taste Der ganzzahlige Wert, der fuer die gedrueckte Taste steht.
+     *              Details koennen im ENUM-Typen der <b>Klasse TASTE</b>
+     *              nachgelesen werden.
      *
      * @return true, falls die Taste gedrueckt gehalten wird.
      */
@@ -300,10 +291,10 @@ public class SPIEL extends Spiel implements TastenReagierbar, Ticker, MausKlickR
         return ea.Game.isKeyPressed(taste);
     }
 
-
     /**
-     * Wird bei jedem <b>Mausklick (Linksklick)</b> automatisch aufgerufen. <b> !!! Funktioniert
-     * nur, wenn ein Konstruktor von SPIEL mit Maus-Unteratuetzung aufgerufen wurde !!! </b>
+     * Wird bei jedem <b>Mausklick (Linksklick)</b> automatisch aufgerufen. <b>
+     * !!! Funktioniert nur, wenn ein Konstruktor von SPIEL mit
+     * Maus-Unteratuetzung aufgerufen wurde !!! </b>
      *
      * @param x Die X-Koordinate des Klicks
      * @param y Die Y-Koordinate des Klicks
@@ -314,11 +305,10 @@ public class SPIEL extends Spiel implements TastenReagierbar, Ticker, MausKlickR
         System.out.println("Klick bei (" + x + ", " + y + ").");
     }
 
-
     /**
-     * Wird bei jedem <b>Loslassen der Mausktaste (Linksklick)</b> automatisch aufgerufen. <b> !!!
-     * Funktioniert nur, wenn ein Konstruktor von SPIEL mit Maus-Unteratuetzung aufgerufen wurde !!!
-     * </b>
+     * Wird bei jedem <b>Loslassen der Mausktaste (Linksklick)</b> automatisch
+     * aufgerufen. <b> !!! Funktioniert nur, wenn ein Konstruktor von SPIEL mit
+     * Maus-Unteratuetzung aufgerufen wurde !!! </b>
      *
      * @param x Die X-Koordinate des Klicks
      * @param y Die Y-Koordinate des Klicks
@@ -329,13 +319,13 @@ public class SPIEL extends Spiel implements TastenReagierbar, Ticker, MausKlickR
         // System.out.println( "Losgelassen bei (" + x + ", " + y + ")." );
     }
 
-
     /**
-     * Wird bei jedem <b>Drehen am Mausrad</b> automatisch aufgerufen. <b> !!! Funktioniert nur,
-     * wenn ein Konstruktor von SPIEL mit Maus-Unteratuetzung aufgerufen wurde !!! </b>
+     * Wird bei jedem <b>Drehen am Mausrad</b> automatisch aufgerufen. <b> !!!
+     * Funktioniert nur, wenn ein Konstruktor von SPIEL mit Maus-Unteratuetzung
+     * aufgerufen wurde !!! </b>
      *
-     * @param drehung Wie stark das Rad gedreht wurde, inkl. Vorzeichen: + Mausrad von sich weg
-     *        drehen ; - zu sich hin drehen
+     * @param drehung Wie stark das Rad gedreht wurde, inkl. Vorzeichen: +
+     *                Mausrad von sich weg drehen ; - zu sich hin drehen
      */
     @Override
     public void mausRadReagieren(double drehung)
@@ -343,14 +333,16 @@ public class SPIEL extends Spiel implements TastenReagierbar, Ticker, MausKlickR
         System.out.println("Mausrad wurde um " + drehung + " gedreht");
     }
 
-
     /**
-     * Wird fuer jeden Frame (Bild-Aktualisierung) des Spiels exakt einmal aufgerufen.
+     * Wird fuer jeden Frame (Bild-Aktualisierung) des Spiels exakt einmal
+     * aufgerufen.
      *
-     * Extra-Info fuer Nerds: nur in der aktuellen Szene! --> EDU Games agieren in der Regel nur
-     * innerhalb einer Scene ("Hauptszene"). Du kannst aber mehrere Szenen erzeugen.
+     * Extra-Info fuer Nerds: nur in der aktuellen Szene! --> EDU Games agieren
+     * in der Regel nur innerhalb einer Scene ("Hauptszene"). Du kannst aber
+     * mehrere Szenen erzeugen.
      *
-     * @param sekunden Die Anzahl an Sekunden, die seit dem letzten Frame vergangen sind.
+     * @param sekunden Die Anzahl an Sekunden, die seit dem letzten Frame
+     *                 vergangen sind.
      */
     @Override
     public void bildAktualisierungReagieren(double sekunden)
@@ -359,10 +351,8 @@ public class SPIEL extends Spiel implements TastenReagierbar, Ticker, MausKlickR
         // in Subklasse ueberschreiben und statt tick() nutzen.
         // System.out.println("Frame Update nach " + sekunden + " Sekunden");
     }
-
-
-
-    // ===== K a m e r a =====================================================================
+    // ===== K a m e r a
+    // =====================================================================
 
     /**
      * Verschiebt die Kamera um ein Stueck.
@@ -375,7 +365,6 @@ public class SPIEL extends Spiel implements TastenReagierbar, Ticker, MausKlickR
         super.verschiebeKamera(dX, dY);
     }
 
-
     /**
      * Setzt den Zoom-Faktor der Kamera. 1.0 ist normal.
      *
@@ -386,17 +375,16 @@ public class SPIEL extends Spiel implements TastenReagierbar, Ticker, MausKlickR
         super.setzeKamerazoom(zoom);
     }
 
-
     /**
      * Nennt den aktuellen Zoom-Wert der Kamera.
      *
-     * @return aktueller Zoom-Wert der Kamera: >1 vergroessert ; <1 (aber >0) verkleinert
+     * @return aktueller Zoom-Wert der Kamera: >1 vergroessert ; <1 (aber >0)
+     *         verkleinert
      */
     public double nenneKamerazoom()
     {
         return super.nenneKamerazoom();
     }
-
 
     /**
      * Setze den Kamera-Fokus auf ein bestimmtes Objekt.
@@ -408,18 +396,16 @@ public class SPIEL extends Spiel implements TastenReagierbar, Ticker, MausKlickR
         super.setzeKamerafokus(focus);
     }
 
-
     /**
      * Rotiert die Kamera im oder gegen den Uhrzeigersinn.
      *
-     * @param winkelInGrad Winkel, um den gedreht werden soll. >0 im Uhrzeigersinn ; <0 gegen den
-     *        Uhrzeigersinn
+     * @param winkelInGrad Winkel, um den gedreht werden soll. >0 im
+     *                     Uhrzeigersinn ; <0 gegen den Uhrzeigersinn
      */
     public void rotiereKamera(double winkelInGrad)
     {
         super.rotiereKamera(winkelInGrad);
     }
-
 
     /**
      * Setzt den Rotationswinkel der Kamera auf einen bestimmten Wert.
@@ -430,10 +416,8 @@ public class SPIEL extends Spiel implements TastenReagierbar, Ticker, MausKlickR
     {
         super.setzeKamerarotation((double) (Math.toRadians(winkelInGrad)));
     }
-
-
-
-    // ===== S z e n e n ========================================================================
+    // ===== S z e n e n
+    // ========================================================================
 
     /**
      * Benennt eine Szene
@@ -454,7 +438,6 @@ public class SPIEL extends Spiel implements TastenReagierbar, Ticker, MausKlickR
     {
         super.setzeAktiveSzene(name);
     }
-
     // public void entferneSzene(String name) {
     // // ToDo
     // }
@@ -466,12 +449,10 @@ public class SPIEL extends Spiel implements TastenReagierbar, Ticker, MausKlickR
     {
         super.erzeugeNeueSzene();
     }
-
-
-
-    // ===== D i a l o g e ======================================================================
-
-    // Diese Methoden koennen den Spiel-Ablauf stoeren! Kann z.B. mit tick() Probleme geben!
+    // ===== D i a l o g e
+    // ======================================================================
+    // Diese Methoden koennen den Spiel-Ablauf stoeren! Kann z.B. mit tick()
+    // Probleme geben!
 
     /**
      * Gibt ein <b>blockierendes</b> Nachricht-Fenster aus.
@@ -482,7 +463,6 @@ public class SPIEL extends Spiel implements TastenReagierbar, Ticker, MausKlickR
     {
         super.zeigeNachricht(nachricht);
     }
-
 
     /**
      * Gibt ein <b>blockierendes</b> Frage-Fenster aus.
@@ -495,7 +475,6 @@ public class SPIEL extends Spiel implements TastenReagierbar, Ticker, MausKlickR
         return super.zeigeNachrichtMitJaNein(frage);
     }
 
-
     /**
      * Gibt ein <b>blockierendes</b> Frage-Fenster aus.
      *
@@ -507,7 +486,6 @@ public class SPIEL extends Spiel implements TastenReagierbar, Ticker, MausKlickR
         return super.zeigeNachrichtMitBestaetigung(frage);
     }
 
-
     /**
      * Gibt ein <b>blockierendes</b> Eingabe-Fenster aus.
      *
@@ -518,29 +496,27 @@ public class SPIEL extends Spiel implements TastenReagierbar, Ticker, MausKlickR
     {
         return super.zeigeNachrichtMitEingabe(nachricht);
     }
-
-
-
-    // ===== P h y s i k d e r g e s a m t e n S z e n e =====================================
+    // ===== P h y s i k d e r g e s a m t e n S z e n e
+    // =====================================
 
     /**
      * Setzt die Intensitaet der Schwerkraft (normal=9.8).
      *
-     * @param meterProQuadratsekunde Wert fuer die gewuenschte Fallbeschleunigung
+     * @param meterProQuadratsekunde Wert fuer die gewuenschte
+     *                               Fallbeschleunigung
      */
     public void setzeSchwerkraft(double meterProQuadratsekunde)
     {
         super.setzeSchwerkraft(meterProQuadratsekunde);
     }
-
-
-
-    // ===== N e b e n l a e u f i g k e i t e n a b s c h i c k e n ==============================
+    // ===== N e b e n l a e u f i g k e i t e n a b s c h i c k e n
+    // ==============================
 
     /**
      * Die Methode 'parallel' erwartet einen Lambda-Ausdruck der Form: () ->
-     * methodenAufruf(parameterListe) oder () -> {methode1(...);methode2(...);...;} <b>Das ist z.B.
-     * noetig, wenn eine Methode mit 'warte(...)' durch Tasten ausgefuehrt werden soll!</b>
+     * methodenAufruf(parameterListe) oder () ->
+     * {methode1(...);methode2(...);...;} <b>Das ist z.B. noetig, wenn eine
+     * Methode mit 'warte(...)' durch Tasten ausgefuehrt werden soll!</b>
      *
      * @param runnable Ein oder mehrere Methodenaufrufe als Lambda-Ausdruck
      */
@@ -548,13 +524,10 @@ public class SPIEL extends Spiel implements TastenReagierbar, Ticker, MausKlickR
     {
         new Thread(runnable).start();
     }
-
     // weitere interssante Technik - aber nicht so multifunktional
-
-    // public static <T> void parallel( java.util.function.Consumer<T> consumer , T argument )
+    // public static <T> void parallel( java.util.function.Consumer<T> consumer
+    // , T argument )
     // {
     // parallel( () -> consumer.accept(argument) );
     // }
-
-
 }

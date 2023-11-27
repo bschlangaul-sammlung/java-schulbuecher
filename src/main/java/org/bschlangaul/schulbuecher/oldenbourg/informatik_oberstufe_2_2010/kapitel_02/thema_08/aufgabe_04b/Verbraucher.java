@@ -6,15 +6,16 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_2_2010.kapi
  * @author Albert Wiedemann
  * @version 1.0
  */
-
 import java.util.Random;
 
 class Verbraucher extends Thread
 {
     /** Die mittlere Einlagerzeit pro Kiste */
     private int zeit;
+
     /** Der Zwischenspeicher */
     private Speicher speicher;
+
     /** Zufallsgenerator für die Einlagerzeit. */
     private Random ran;
 
@@ -55,11 +56,13 @@ class Verbraucher extends Thread
             try
             {
                 wait(ende - akt);
-            } catch (Exception e)
+            }
+            catch (Exception e)
             {
             }
             akt = System.currentTimeMillis();
         }
-        System.out.println("Kiste Nummer " + kiste.KistennummerGeben() + " eingelagert.");
+        System.out.println(
+                "Kiste Nummer " + kiste.KistennummerGeben() + " eingelagert.");
     }
 }

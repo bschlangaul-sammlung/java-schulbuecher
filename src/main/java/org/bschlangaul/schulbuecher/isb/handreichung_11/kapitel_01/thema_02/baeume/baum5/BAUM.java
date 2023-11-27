@@ -32,7 +32,8 @@ class BAUM
     }
 
     /**
-     * Fügt ein neues Datenelement in den Baum ein. Der Wert darf noch nicht vorkommen
+     * Fügt ein neues Datenelement in den Baum ein. Der Wert darf noch nicht
+     * vorkommen
      *
      * @param wert Referenz auf das einzufügende Datenelement
      */
@@ -66,7 +67,8 @@ class BAUM
     }
 
     /**
-     * Entfernt den Knoten mit der Referenz auf das Datenelement mit dem gegebenen Schlüssel.
+     * Entfernt den Knoten mit der Referenz auf das Datenelement mit dem
+     * gegebenen Schlüssel.
      *
      * @param wert Referenz auf ein Datenelement mit dem Schlüsselwert
      */

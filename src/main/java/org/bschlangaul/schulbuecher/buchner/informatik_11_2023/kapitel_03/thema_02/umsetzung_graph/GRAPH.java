@@ -10,7 +10,9 @@ public class GRAPH
 {
     // TO-DO: Deklarieren der Adjazenzmatrix und des Knotenfeldes.
     private KNOTEN[] knotennamen;
+
     private boolean[][] adja;
+
     private int aktAnzahl, maxAnzahl;
 
     public GRAPH(int anzKnoten)
@@ -45,7 +47,6 @@ public class GRAPH
             adja[start][ende] = true;
         }
     }
-
     // Die folgenden Methoden sind für dich nicht relevant.
 
     public void adjaAusgeben()
@@ -85,7 +86,6 @@ public class GRAPH
                 position = i;
             }
         }
-
         return position;
     }
 
@@ -99,5 +99,4 @@ public class GRAPH
             }
         }
     }
-
 }

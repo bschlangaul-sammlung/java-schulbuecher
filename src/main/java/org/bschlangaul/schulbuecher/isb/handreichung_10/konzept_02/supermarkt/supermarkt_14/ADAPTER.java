@@ -9,6 +9,7 @@ package org.bschlangaul.schulbuecher.isb.handreichung_10.konzept_02.supermarkt.s
 class ADAPTER
 {
     SUPERMARKT s;
+
     TAKTGEBER t;
 
     /**

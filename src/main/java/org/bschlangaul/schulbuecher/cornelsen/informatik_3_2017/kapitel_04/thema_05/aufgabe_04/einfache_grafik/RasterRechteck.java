@@ -8,7 +8,6 @@ package org.bschlangaul.schulbuecher.cornelsen.informatik_3_2017.kapitel_04.them
  */
 class RasterRechteck extends Rechteck
 {
-
     /**
      * Setzt die Position (der linken oberen Ecke) des Rechtecks.
      *
@@ -25,7 +24,7 @@ class RasterRechteck extends Rechteck
      * Setzt die Größe des Rechtecks.
      *
      * @param breite (neue) Breite
-     * @param höhe (neue) Höhe
+     * @param höhe   (neue) Höhe
      */
     @Override
     void GrößeSetzen(int breite, int höhe)

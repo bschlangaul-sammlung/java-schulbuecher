@@ -6,7 +6,6 @@ package org.bschlangaul.schulbuecher.isb.handreichung_10.konzept_02.supermarkt.s
  * @author Albert Wiedemann
  * @version 1.0
  */
-
 import java.util.Random;
 
 class KUNDEKURZODERWENIG extends KUNDE
@@ -14,8 +13,8 @@ class KUNDEKURZODERWENIG extends KUNDE
     Random zufall;
 
     /**
-     * Konstruktor des Kunden. Setzt eine zufällige Farbe und die Grö&szlig;e gemä&szlig; der
-     * Artikelanzahl
+     * Konstruktor des Kunden. Setzt eine zufällige Farbe und die Grö&szlig;e
+     * gemä&szlig; der Artikelanzahl
      */
     KUNDEKURZODERWENIG(int artikel)
     {
@@ -24,8 +23,8 @@ class KUNDEKURZODERWENIG extends KUNDE
     }
 
     /**
-     * Entscheidet, an welche Schlange sich der Kunde anstellt. Hier ist die Strategie: krzeste
-     * Schlange pre: es gibt mindestens eine offene Kasse
+     * Entscheidet, an welche Schlange sich der Kunde anstellt. Hier ist die
+     * Strategie: krzeste Schlange pre: es gibt mindestens eine offene Kasse
      *
      * @param kassen Feld der im Markt vorhandenen Kassen
      */
@@ -39,8 +38,8 @@ class KUNDEKURZODERWENIG extends KUNDE
             for (int i = 0; i < kassen.length; i++)
             {
                 w = kassen[i].WarteschlangeHolen();
-                if ((kassen[i].IstOffen())
-                                && ((beste == null) || (w.LaengeHolen() < beste.LaengeHolen())))
+                if ((kassen[i].IstOffen()) && ((beste == null)
+                        || (w.LaengeHolen() < beste.LaengeHolen())))
                 {
                     beste = w;
                 }
@@ -51,8 +50,9 @@ class KUNDEKURZODERWENIG extends KUNDE
             for (int i = 0; i < kassen.length; i++)
             {
                 w = kassen[i].WarteschlangeHolen();
-                if ((kassen[i].IstOffen()) && ((beste == null) || (w
-                                .ArtikelanzahlGesamtHolen() < beste.ArtikelanzahlGesamtHolen())))
+                if ((kassen[i].IstOffen()) && ((beste == null)
+                        || (w.ArtikelanzahlGesamtHolen() < beste
+                                .ArtikelanzahlGesamtHolen())))
                 {
                     beste = w;
                 }

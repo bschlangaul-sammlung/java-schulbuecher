@@ -12,9 +12,9 @@ import org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.fortge
 import static org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.fortgeschrittene_grafik.interna.Zeichenfenster.*;
 
 /**
- * Diese Klasse implementiert einen statischen Grafikspeicher, der lediglich dazu dient, auch
- * Anfaengern ein Inspizieren von einfachen Grafiken in der didaktischen Entwicklungsumgebung BlueJ
- * zu ermoeglichen.
+ * Diese Klasse implementiert einen statischen Grafikspeicher, der lediglich
+ * dazu dient, auch Anfaengern ein Inspizieren von einfachen Grafiken in der
+ * didaktischen Entwicklungsumgebung BlueJ zu ermoeglichen.
  *
  * @author Florian Prager, Universität Passau
  * @version 02.2008
@@ -48,7 +48,8 @@ public class GrafikSpeicher
     /**
      * Meldet eine einfache Grafik im Speicher an
      */
-    public static void einfachegrafikAnmelden(Object einfacheGrafik, Zeichenfenster fenster)
+    public static void einfachegrafikAnmelden(Object einfacheGrafik,
+            Zeichenfenster fenster)
     {
         if (fenster == null)
         {
@@ -56,36 +57,38 @@ public class GrafikSpeicher
         }
         if (einfacheGrafik instanceof Bild)
             grafikMap.put(einfacheGrafik,
-                            new org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.fortgeschrittene_grafik.Bild(
-                                            false, fenster));
+                    new org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.fortgeschrittene_grafik.Bild(
+                            false, fenster));
         else if (einfacheGrafik instanceof Dreieck)
             grafikMap.put(einfacheGrafik,
-                            new org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.fortgeschrittene_grafik.Dreieck(
-                                            false, fenster));
+                    new org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.fortgeschrittene_grafik.Dreieck(
+                            false, fenster));
         else if (einfacheGrafik instanceof Ellipse)
             grafikMap.put(einfacheGrafik,
-                            new org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.fortgeschrittene_grafik.Ellipse(
-                                            false, fenster));
+                    new org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.fortgeschrittene_grafik.Ellipse(
+                            false, fenster));
         else if (einfacheGrafik instanceof Rechteck)
             grafikMap.put(einfacheGrafik,
-                            new org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.fortgeschrittene_grafik.Rechteck(
-                                            false, fenster));
-        else if (einfacheGrafik instanceof Text)// Text mit Standardschriftgroesse anmelden (kann
+                    new org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.fortgeschrittene_grafik.Rechteck(
+                            false, fenster));
+        else if (einfacheGrafik instanceof Text)// Text mit
+                                                // Standardschriftgroesse
+                                                // anmelden (kann
                                                 // entfernt werden)
             grafikMap.put(einfacheGrafik,
-                            new org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.fortgeschrittene_grafik.Text(
-                                            false, fenster));
+                    new org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.fortgeschrittene_grafik.Text(
+                            false, fenster));
         else
             return;
         ((org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.fortgeschrittene_grafik.interna.Grafik) grafikMap
-                        .get(einfacheGrafik)).fensterGeben().zeichenautomatStarten();
+                .get(einfacheGrafik)).fensterGeben().zeichenautomatStarten();
     }
 
     /**
      * Meldet einen einfachen Text im Speicher an
      */
-    public static void einfachenTextAnmelden(int schriftgroesse, Object einfacheGrafik,
-                    Zeichenfenster fenster)
+    public static void einfachenTextAnmelden(int schriftgroesse,
+            Object einfacheGrafik, Zeichenfenster fenster)
     {
         if (fenster == null)
         {
@@ -93,11 +96,11 @@ public class GrafikSpeicher
         }
         if (einfacheGrafik instanceof Text)
             grafikMap.put(einfacheGrafik,
-                            new org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.fortgeschrittene_grafik.Text(
-                                            schriftgroesse, false, fenster));
+                    new org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.fortgeschrittene_grafik.Text(
+                            schriftgroesse, false, fenster));
         else
             return;
         ((org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.fortgeschrittene_grafik.interna.Grafik) grafikMap
-                        .get(einfacheGrafik)).fensterGeben().zeichenautomatStarten();
+                .get(einfacheGrafik)).fensterGeben().zeichenautomatStarten();
     }
 }

@@ -6,6 +6,7 @@ package org.bschlangaul.schulbuecher.buchner.informatik_10_2022.kapitel_05.thema
 public class Buch
 {
     private String name;
+
     private int seitenzahl;
 
     public Buch(String name, int seitenzahl)

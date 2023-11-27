@@ -8,17 +8,17 @@ package org.bschlangaul.schulbuecher.isb.handreichung_12.kapitel_02.projekt_09.s
  */
 public class Stab
 {
-
     /**
      * speichert, ob der Stab aufgenommen wurde.
      */
     private boolean gegriffen = false;
 
     /**
-     * prüft, ob der Stab bereits verwendet wird, wenn nicht wird er vom aufrufenden Philosophen in
-     * die Hand genommen, muss synchronisiert sein.
+     * prüft, ob der Stab bereits verwendet wird, wenn nicht wird er vom
+     * aufrufenden Philosophen in die Hand genommen, muss synchronisiert sein.
      *
-     * @return true, falls der Stab aufgenommen werden konnte, weil er noch nicht verwendet wird.
+     * @return true, falls der Stab aufgenommen werden konnte, weil er noch
+     *         nicht verwendet wird.
      */
     public synchronized boolean nehmen()
     {

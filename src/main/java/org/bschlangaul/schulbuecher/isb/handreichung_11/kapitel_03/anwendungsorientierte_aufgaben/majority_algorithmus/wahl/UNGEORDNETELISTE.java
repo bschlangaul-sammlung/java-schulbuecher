@@ -1,6 +1,7 @@
+package org.bschlangaul.schulbuecher.isb.handreichung_11.kapitel_03.anwendungsorientierte_aufgaben.majority_algorithmus.wahl;
+
 class UNGEORDNETELISTE
 {
-
     private LISTE liste;
 
     // Konstruktor
@@ -34,7 +35,4 @@ class UNGEORDNETELISTE
     {
         return liste.AnzahlmitEigenschaftGeben(daten);
     }
-
-
-
 }

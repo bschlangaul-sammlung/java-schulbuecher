@@ -6,13 +6,13 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapi
  * @author Albert Wiedemann
  * @version 1.0
  */
-
 interface OBERFLAECHENINTERFACE
 {
     /** Die von der Oberfläche darzustellenden Zustände */
     enum Status
     {
-        anmelden, kundenkontowahl, kundenkontoarbeit, angestelltensicht, angestelltensicht_kunde, angestelltensicht_kundeundkonto
+        anmelden, kundenkontowahl, kundenkontoarbeit, angestelltensicht,
+        angestelltensicht_kunde, angestelltensicht_kundeundkonto
     };
 
     /**
@@ -35,5 +35,4 @@ interface OBERFLAECHENINTERFACE
      * @param text anzuzeigende Fehlermeldung
      */
     void FehlermeldungAnzeigen(String text);
-
 }

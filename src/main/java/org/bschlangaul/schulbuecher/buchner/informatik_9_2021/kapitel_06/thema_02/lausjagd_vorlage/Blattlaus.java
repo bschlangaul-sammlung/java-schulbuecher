@@ -6,10 +6,9 @@ import greenfoot.Greenfoot;
 /**
  * Klasse Blattlaus <br>
  * Enthält unter anderem die Steuerung der Blattlaus-Objekte. <br>
- * Der Programmtext dieser Klasse braucht für die Bearbeitung der Arbeitsaufträge und Aufgaben weder
- * gelesen noch verstanden zu werden.
+ * Der Programmtext dieser Klasse braucht für die Bearbeitung der
+ * Arbeitsaufträge und Aufgaben weder gelesen noch verstanden zu werden.
  */
-
 public class Blattlaus extends Actor
 {
     public void act()
@@ -21,7 +20,6 @@ public class Blattlaus extends Actor
         {
             int rotation = berechneWinkelZwischen(this, naechste);
             double distanz = berechneDistanzZwischen(this, naechste);
-
             if (distanz > 15)
             {
                 setRotation(rotation);
@@ -47,12 +45,10 @@ public class Blattlaus extends Actor
                 move(2);
             }
         }
-
         if (getX() < 100)
         {
             setLocation(100, getY());
         }
-
         if (getX() > 700)
         {
             setLocation(700, getY());
@@ -99,9 +95,13 @@ public class Blattlaus extends Actor
 
     int berechneRotationAusVektor(int dx, int dy)
     {
-        double winkelPolar = Math.atan2(-dy, dx); // -dy: Greenfoot Koordinaten sind gespiegelt
-        double winkelGrad = (winkelPolar / Math.PI * 180 + 360) % 360; // Polar -> Grad
-        double winkelGreenfoot = 360 - winkelGrad; // Greenfoot Rotation ist gespiegelt
+        double winkelPolar = Math.atan2(-dy, dx); // -dy: Greenfoot Koordinaten
+                                                  // sind gespiegelt
+        double winkelGrad = (winkelPolar / Math.PI * 180 + 360) % 360; // Polar
+                                                                       // ->
+                                                                       // Grad
+        double winkelGreenfoot = 360 - winkelGrad; // Greenfoot Rotation ist
+                                                   // gespiegelt
         return (int) winkelGreenfoot;
     }
 }

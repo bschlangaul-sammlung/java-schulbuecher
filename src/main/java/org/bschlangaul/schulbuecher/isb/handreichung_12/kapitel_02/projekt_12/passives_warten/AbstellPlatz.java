@@ -9,7 +9,6 @@ package org.bschlangaul.schulbuecher.isb.handreichung_12.kapitel_02.projekt_12.p
  */
 public class AbstellPlatz
 {
-
     /**
      * wahr, wenn der Platz belegt ist
      */
@@ -18,20 +17,20 @@ public class AbstellPlatz
     /**
      * belegt den Abstellplatz, falls nicht frei ist.<br/>
      *
-     * falls der Platz belegt ist, werden Threads die den Zugriff versuchen in den Wartezustand
-     * versetzt.
+     * falls der Platz belegt ist, werden Threads die den Zugriff versuchen in
+     * den Wartezustand versetzt.
      *
      * @return true, falls der Platz belegt werden konnte
      */
     public synchronized void ablegen()
     {
-
         while (platzbelegt)
         {
             try
             {
                 wait();
-            } catch (InterruptedException e)
+            }
+            catch (InterruptedException e)
             {
             }
         }
@@ -43,20 +42,20 @@ public class AbstellPlatz
     /**
      * holt das Produkt vom Abstellplatz, falls er belegt ist.<br/>
      *
-     * falls keine Produkt vorhanden ist (der Platz ist nicht belegt), werden Threads die den
-     * Zugriff versuchen in den Wartezustand versetzt.
+     * falls keine Produkt vorhanden ist (der Platz ist nicht belegt), werden
+     * Threads die den Zugriff versuchen in den Wartezustand versetzt.
      *
      * @return true, falls das Produkt abgeholt werden konnte.
      */
     public synchronized void abholen()
     {
-
         while (!platzbelegt)
         {
             try
             {
                 wait();
-            } catch (InterruptedException e)
+            }
+            catch (InterruptedException e)
             {
             }
         }

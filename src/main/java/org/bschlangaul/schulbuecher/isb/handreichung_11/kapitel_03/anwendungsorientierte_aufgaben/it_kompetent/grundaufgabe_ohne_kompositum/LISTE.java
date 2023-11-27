@@ -10,7 +10,6 @@ class LISTE
         anfang = null;
     }
 
-
     // weitere Methoden
     boolean IstLeer()
     {
@@ -67,5 +66,4 @@ class LISTE
         else
             return 0;
     }
-
 }

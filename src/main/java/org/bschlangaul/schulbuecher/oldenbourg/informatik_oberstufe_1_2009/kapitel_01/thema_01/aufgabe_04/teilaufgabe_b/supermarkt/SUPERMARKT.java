@@ -10,11 +10,14 @@ import java.util.Random;
 
 class SUPERMARKT implements TAKTKLIENT
 {
-
     private KASSE[] kassen;
+
     private WARTESCHLANGE[] schlangen;
+
     private int wartezeit;
+
     private int mittlereWartezeit;
+
     private Random zzgenerator;
 
     /**
@@ -44,28 +47,32 @@ class SUPERMARKT implements TAKTKLIENT
         zufallszahl = zzgenerator.nextInt(20) + 1;
         switch (zzgenerator.nextInt(4))
         {
-            case 0:
-                k = new KUNDEWENIG(zufallszahl);
-                break;
-            case 1:
-                k = new KUNDEKURZ(zufallszahl);
-                break;
-            case 2:
-                k = new KUNDEZUFALL(zufallszahl);
-                break;
-            case 3:
-                k = new KUNDEZUFALL2(zufallszahl);
-                break;
-            default:
-                k = null;
-                break;
+        case 0:
+            k = new KUNDEWENIG(zufallszahl);
+            break;
+
+        case 1:
+            k = new KUNDEKURZ(zufallszahl);
+            break;
+
+        case 2:
+            k = new KUNDEZUFALL(zufallszahl);
+            break;
+
+        case 3:
+            k = new KUNDEZUFALL2(zufallszahl);
+            break;
+
+        default:
+            k = null;
+            break;
         }
         k.Anstellen(schlangen);
     }
 
     /**
-     * Erzeugt nach Ablauf der Wartezeit den nächsten Kunden. Gibt den Taktimpuls an die Kassen
-     * weiter.
+     * Erzeugt nach Ablauf der Wartezeit den nächsten Kunden. Gibt den
+     * Taktimpuls an die Kassen weiter.
      */
     public void TaktImpulsAusfuehren()
     {

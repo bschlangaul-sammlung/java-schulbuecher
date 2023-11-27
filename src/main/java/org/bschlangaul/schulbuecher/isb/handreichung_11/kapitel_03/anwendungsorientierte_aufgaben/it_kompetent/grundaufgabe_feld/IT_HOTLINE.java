@@ -2,10 +2,11 @@ package org.bschlangaul.schulbuecher.isb.handreichung_11.kapitel_03.anwendungsor
 
 class IT_HOTLINE
 {
-
     // Referenzattribute
     private DATENELEMENT[] anruferschlange;
-    // Hilfsattribut: Erleichtert den Umgang mit dem Feld, da damit das erste freie Element leicht
+
+    // Hilfsattribut: Erleichtert den Umgang mit dem Feld, da damit das erste
+    // freie Element leicht
     // ermittelt werden kann.
     private int anzahlAnrufer;
 
@@ -16,11 +17,13 @@ class IT_HOTLINE
     }
 
     /**
-     * nimmt die Daten der anrufenden Kunden auf und reiht den Kunden in die Warteschlange ein
+     * nimmt die Daten der anrufenden Kunden auf und reiht den Kunden in die
+     * Warteschlange ein
      *
-     * @param Kundennummer und Problemschilderung 'Wir begrü&szig;en Sie bei der Hotline von
-     *        IT-Kompetent. Geben Sie bitte Ihre Kundennummer sowie eine Kurzbeschreibung Ihres
-     *        Problems an.'
+     * @param Kundennummer und Problemschilderung 'Wir begrü&szig;en Sie bei der
+     *                     Hotline von IT-Kompetent. Geben Sie bitte Ihre
+     *                     Kundennummer sowie eine Kurzbeschreibung Ihres
+     *                     Problems an.'
      */
     void DatenAufnehmen(int kundennummer, String problembeschreibung)
     {
@@ -37,7 +40,8 @@ class IT_HOTLINE
     }
 
     /**
-     * holt nächsten Anrufer aus der Warteschlange und zeigt Informationen auf der Konsole an
+     * holt nächsten Anrufer aus der Warteschlange und zeigt Informationen auf
+     * der Konsole an
      */
     void NaechstenAnruferHolen()
     {
@@ -45,7 +49,8 @@ class IT_HOTLINE
         {
             DATENELEMENT naechster = anruferschlange[0];
             naechster.Ausgeben();
-            // Vorrücken der restlichen Anrufer: Jeder Anrufer rückt um eine Position nach vorne.
+            // Vorrücken der restlichen Anrufer: Jeder Anrufer rückt um eine
+            // Position nach vorne.
             // Das ist ein Nachteil des Feldes!
             for (int i = 1; i < anzahlAnrufer; i = i + 1)
             {
@@ -55,22 +60,23 @@ class IT_HOTLINE
         }
         else
         {
-            System.out.println("Derzeit sind keine Anrufer in der Warteschleife");
-            System.out.println("----------------------------------------------------");
+            System.out
+                    .println("Derzeit sind keine Anrufer in der Warteschleife");
+            System.out.println(
+                    "----------------------------------------------------");
         }
-
     }
 
     /**
-     * bestimmt die Anzahl der Anrufer, die sich momentan in der Warteschlange befinden und zeigt
-     * diese auf der Konsole an
+     * bestimmt die Anzahl der Anrufer, die sich momentan in der Warteschlange
+     * befinden und zeigt diese auf der Konsole an
      */
     void AnzahlDerAnruferHolen()
     {
         // Das ist hier wegen des Attributs anzahlAnrufer natürlich einfach
-        System.out.println("Momentane Anzahl der Anrufer in der Warteschleife: " + anzahlAnrufer);
-        System.out.println("----------------------------------------------------");
+        System.out.println("Momentane Anzahl der Anrufer in der Warteschleife: "
+                + anzahlAnrufer);
+        System.out.println(
+                "----------------------------------------------------");
     }
-
-
 }

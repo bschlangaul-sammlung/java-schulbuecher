@@ -2,7 +2,6 @@ package org.bschlangaul.schulbuecher.isb.handreichung_11.kapitel_03.anwendungsor
 
 class ABSCHLUSS_LISTE extends LISTENELEMENT
 {
-
     // KONSTRUKTOR
     ABSCHLUSS_LISTE()
     {
@@ -18,5 +17,4 @@ class ABSCHLUSS_LISTE extends LISTENELEMENT
     {
         return null;
     }
-
 }

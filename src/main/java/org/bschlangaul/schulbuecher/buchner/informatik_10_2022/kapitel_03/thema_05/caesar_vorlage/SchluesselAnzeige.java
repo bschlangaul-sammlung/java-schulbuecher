@@ -10,8 +10,8 @@ import greenfoot.*; // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class SchluesselAnzeige extends Actor
 {
-
     private int schluessel = 3;
+
     private KryptoWorld world;
 
     public SchluesselAnzeige(KryptoWorld w, int initSchluessel)
@@ -37,7 +37,6 @@ public class SchluesselAnzeige extends Actor
         }
         schluessel = nr;
         update();
-
     }
 
     public void act()
@@ -54,10 +53,8 @@ public class SchluesselAnzeige extends Actor
     private GreenfootImage createImage()
     {
         GreenfootImage img = new GreenfootImage(80, 150);
-
         img.setColor(Color.LIGHT_GRAY);
         img.fillRect(0, 0, 150, 100);
-
         img.setFont(new Font("Courier", false, false, 60));
         if (schluessel == 0)
         {
@@ -69,8 +66,6 @@ public class SchluesselAnzeige extends Actor
             img.setColor(Color.BLUE);
             img.drawString(schluessel + "", 5, 75);
         }
-
         return img;
-
     }
 }

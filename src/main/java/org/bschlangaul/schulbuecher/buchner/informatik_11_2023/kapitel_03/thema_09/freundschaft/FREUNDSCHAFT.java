@@ -11,7 +11,6 @@ public class FREUNDSCHAFT
     public void ablaufen()
     {
         GRAPH graph = new GRAPH(7);
-
         KNOTEN k0 = new KNOTEN("Aaron");
         KNOTEN k1 = new KNOTEN("Felix");
         KNOTEN k2 = new KNOTEN("James");
@@ -19,7 +18,6 @@ public class FREUNDSCHAFT
         KNOTEN k4 = new KNOTEN("Mirko");
         KNOTEN k5 = new KNOTEN("Nico");
         KNOTEN k6 = new KNOTEN("Samiha");
-
         graph.knotenHinzufuegen(k0);
         graph.knotenHinzufuegen(k1);
         graph.knotenHinzufuegen(k2);
@@ -27,7 +25,6 @@ public class FREUNDSCHAFT
         graph.knotenHinzufuegen(k4);
         graph.knotenHinzufuegen(k5);
         graph.knotenHinzufuegen(k6);
-
         graph.kanteHinzufuegen(0, 1, 1.0);
         graph.kanteHinzufuegen(0, 6, 3.4);
         graph.kanteHinzufuegen(1, 3, 6.1);
@@ -35,9 +32,7 @@ public class FREUNDSCHAFT
         graph.kanteHinzufuegen(1, 6, 4.7);
         graph.kanteHinzufuegen(3, 4, 0.8);
         graph.kanteHinzufuegen(4, 5, 9.4);
-
         graph.adjaAusgeben();
         graph.existierenDickeFreunde();
     }
-
 }

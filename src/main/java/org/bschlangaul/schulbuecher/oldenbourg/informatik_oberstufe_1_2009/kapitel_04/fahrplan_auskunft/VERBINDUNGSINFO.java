@@ -9,12 +9,13 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapi
 class VERBINDUNGSINFO implements DATENELEMENT
 {
     private GKNOTEN ziel;
+
     private float laenge;
 
     /**
      * Legt die Daten fest.
      *
-     * @param ziel Zielknoten
+     * @param ziel   Zielknoten
      * @param laenge Länge des Wegs
      */
     VERBINDUNGSINFO(GKNOTEN ziel, float laenge)
@@ -36,9 +37,12 @@ class VERBINDUNGSINFO implements DATENELEMENT
 
     /**
      * Vergleicht das Datemelement mit dem Parameter. <br>
-     * Hat das Datenelement einen kleineren Schlüssel als test, ist das Ergebnis -1. <br>
-     * Hat das Datenelement den gleichen Schlüssel wie test, ist das Ergebnis 0. <br>
-     * Hat das Datenelement einen grö&szlig;eren Schlüssel als test, ist das Ergebnis 1.
+     * Hat das Datenelement einen kleineren Schlüssel als test, ist das Ergebnis
+     * -1. <br>
+     * Hat das Datenelement den gleichen Schlüssel wie test, ist das Ergebnis 0.
+     * <br>
+     * Hat das Datenelement einen grö&szlig;eren Schlüssel als test, ist das
+     * Ergebnis 1.
      *
      * @param test Datenelement mit dem Testschlüssel
      * @return Vergleichsergebnis

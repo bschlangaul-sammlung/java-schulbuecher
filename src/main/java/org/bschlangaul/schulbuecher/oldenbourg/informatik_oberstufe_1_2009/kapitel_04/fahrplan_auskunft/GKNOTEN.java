@@ -10,17 +10,21 @@ class GKNOTEN implements DATENELEMENT
 {
     /* Graphdaten */
     private BAHNHOF bahnhof;
+
     private int linie;
+
     private LISTE verbindungen;
+
     /* Temporäre Daten der aktuellen Route */
     private float gesamtlaenge;
+
     private GKNOTEN vorgaenger;
 
     /**
      * Legt die Daten fest.
      *
      * @param bahnhof der Asugangsbahnhof
-     * @param linie die abgehende Linie
+     * @param linie   die abgehende Linie
      */
     GKNOTEN(BAHNHOF bahnhof, int linie)
     {
@@ -39,14 +43,18 @@ class GKNOTEN implements DATENELEMENT
      */
     public boolean IstGleich(DATENELEMENT test)
     {
-        return ((((GKNOTEN) test).bahnhof == bahnhof) && (((GKNOTEN) test).linie == linie));
+        return ((((GKNOTEN) test).bahnhof == bahnhof)
+                && (((GKNOTEN) test).linie == linie));
     }
 
     /**
      * Vergleicht das Datenemelement mit dem Parameter. <br>
-     * Hat das Datenelement einen kleineren Schlüssel als test, ist das Ergebnis -1. <br>
-     * Hat das Datenelement den gleichen Schlüssel wie test, ist das Ergebnis 0. <br>
-     * Hat das Datenelement einen grö&szlig;eren Schlüssel als test, ist das Ergebnis 1.
+     * Hat das Datenelement einen kleineren Schlüssel als test, ist das Ergebnis
+     * -1. <br>
+     * Hat das Datenelement den gleichen Schlüssel wie test, ist das Ergebnis 0.
+     * <br>
+     * Hat das Datenelement einen grö&szlig;eren Schlüssel als test, ist das
+     * Ergebnis 1.
      *
      * @param test Datenelement mit dem Testschlüssel
      * @return Vergleichsergebnis
@@ -81,7 +89,7 @@ class GKNOTEN implements DATENELEMENT
     /**
      * Fügt eine neue Verbindung ein.
      *
-     * @param ziel Zielknoten im Graph
+     * @param ziel   Zielknoten im Graph
      * @param laenge Länge des Weges
      */
     void VerbindungEinfuegen(GKNOTEN ziel, float laenge)

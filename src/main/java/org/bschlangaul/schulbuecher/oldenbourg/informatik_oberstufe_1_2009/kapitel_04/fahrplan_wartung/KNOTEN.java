@@ -9,12 +9,13 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapi
 class KNOTEN extends LISTENELEMENT
 {
     private DATENELEMENT daten;
+
     private LISTENELEMENT nachfolger;
 
     /**
      * Baut die Referenzen auf.
      *
-     * @param d Datenelement
+     * @param d  Datenelement
      * @param nf Nachfolgeelement der Liste
      */
     KNOTEN(DATENELEMENT d, LISTENELEMENT nf)
@@ -63,8 +64,8 @@ class KNOTEN extends LISTENELEMENT
     }
 
     /**
-     * Sucht das Datenelement mit dem in test angegebenen Schlüssel. Nutzt die Sortierung der Liste
-     * aus.
+     * Sucht das Datenelement mit dem in test angegebenen Schlüssel. Nutzt die
+     * Sortierung der Liste aus.
      *
      * @param test Schlüssel des zu suchenden Datenelements.
      * @return Referenz auf das gefundene Datenelement oder null.

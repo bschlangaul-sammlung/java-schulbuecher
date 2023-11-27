@@ -3,7 +3,9 @@ package org.bschlangaul.schulbuecher.buchner.informatik_10_2022.kapitel_05.thema
 class Schule
 {
     String name;
+
     int schuelerzahl;
+
     Raum[] raeume;
 
     Schule(Raum[] raeume)

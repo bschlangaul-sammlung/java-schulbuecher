@@ -13,8 +13,10 @@ class Server
 {
     /** Endeangabe */
     private boolean beendenEmpfangen;
+
     /** Liste mit den aktuellen Klienten */
     private ArrayList<ClientThread> angemeldet;
+
     /** Der Serversocket */
     ServerSocket server;
 
@@ -43,8 +45,10 @@ class Server
                 neu = new ClientThread(anruf, this);
                 angemeldet.add(neu);
                 neu.start();
-            } while (!beendenEmpfangen);
-        } catch (Exception e)
+            }
+            while (!beendenEmpfangen);
+        }
+        catch (Exception e)
         {
             if (!beendenEmpfangen)
             {
@@ -87,7 +91,8 @@ class Server
         try
         {
             server.close();
-        } catch (Exception e)
+        }
+        catch (Exception e)
         {
         }
     }

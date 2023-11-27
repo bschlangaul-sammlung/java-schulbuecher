@@ -42,41 +42,46 @@ class Rahmen extends Ereignisbehandlung
         {
             switch (zufall.nextInt(4))
             {
-                case 0:
-                    farbe = "rot";
-                    break;
-                case 1:
-                    farbe = "grün";
-                    break;
-                case 2:
-                    farbe = "blau";
-                    break;
-                case 3:
-                    farbe = "gelb";
-                    break;
+            case 0:
+                farbe = "rot";
+                break;
+
+            case 1:
+                farbe = "grün";
+                break;
+
+            case 2:
+                farbe = "blau";
+                break;
+
+            case 3:
+                farbe = "gelb";
+                break;
             }
             switch (zufall.nextInt(3))
             {
-                case 0:
-                    breite = zufall.nextInt(40) + 10;
-                    höhe = zufall.nextInt(40) + 10;
-                    x = zufall.nextInt(760 - breite) + 20;
-                    y = zufall.nextInt(460 - höhe) + 20;
-                    new RechteckBesser(x, y, breite, höhe, farbe);
-                    break;
-                case 1:
-                    radius = zufall.nextInt(20) + 5;
-                    x = zufall.nextInt(760 - radius * 2) + 20 + radius;
-                    y = zufall.nextInt(460 - radius * 2) + 20 + radius;
-                    new KreisBesser(x, y, radius, farbe);
-                    break;
-                case 2:
-                    breite = zufall.nextInt(40) + 10;
-                    höhe = zufall.nextInt(40) + 10;
-                    x = zufall.nextInt(760 - breite) + 20 + breite / 2;
-                    y = zufall.nextInt(460 - höhe) + 20;
-                    new DreieckBesser(x, y, breite, höhe, farbe);
-                    break;
+            case 0:
+                breite = zufall.nextInt(40) + 10;
+                höhe = zufall.nextInt(40) + 10;
+                x = zufall.nextInt(760 - breite) + 20;
+                y = zufall.nextInt(460 - höhe) + 20;
+                new RechteckBesser(x, y, breite, höhe, farbe);
+                break;
+
+            case 1:
+                radius = zufall.nextInt(20) + 5;
+                x = zufall.nextInt(760 - radius * 2) + 20 + radius;
+                y = zufall.nextInt(460 - radius * 2) + 20 + radius;
+                new KreisBesser(x, y, radius, farbe);
+                break;
+
+            case 2:
+                breite = zufall.nextInt(40) + 10;
+                höhe = zufall.nextInt(40) + 10;
+                x = zufall.nextInt(760 - breite) + 20 + breite / 2;
+                y = zufall.nextInt(460 - höhe) + 20;
+                new DreieckBesser(x, y, breite, höhe, farbe);
+                break;
             }
         }
     }
@@ -86,19 +91,22 @@ class Rahmen extends Ereignisbehandlung
      */
     @Override
     void TaktImpulsAusführen()
-    {}
+    {
+    }
 
     /**
      * Dummy zur Vermeidung der Ausgabe
      */
     @Override
     void SonderTasteGedrückt(int taste)
-    {}
+    {
+    }
 
     /**
      * Dummy zur Vermeidung der Ausgabe
      */
     @Override
     void TasteGedrückt(char taste)
-    {}
+    {
+    }
 }

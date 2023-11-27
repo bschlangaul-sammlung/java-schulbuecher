@@ -2,7 +2,6 @@ package org.bschlangaul.schulbuecher.isb.handreichung_11.kapitel_03.anwendungsor
 
 class ABSCHLUSS extends LISTENELEMENT
 {
-
     // KONSTRUKTOR
     ABSCHLUSS()
     {
@@ -52,6 +51,6 @@ class ABSCHLUSS extends LISTENELEMENT
     }
 
     void AlleAusgeben()
-    {}
-
+    {
+    }
 }

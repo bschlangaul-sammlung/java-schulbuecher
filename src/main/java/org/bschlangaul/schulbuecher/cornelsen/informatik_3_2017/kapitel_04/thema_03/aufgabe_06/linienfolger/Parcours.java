@@ -8,7 +8,6 @@ package org.bschlangaul.schulbuecher.cornelsen.informatik_3_2017.kapitel_04.them
  */
 class Parcours
 {
-
     /**
      * Baut die Linien und das Ziel auf
      */
@@ -21,7 +20,6 @@ class Parcours
         new LinieWaagerecht(320, 110, 200, 10);
         new LinieSenkrecht(520, 110, 300, 10);
         new LinieWaagerecht(520, 410, 200, 10);
-
         Rechteck linienende = new Rechteck();
         linienende.FarbeSetzen("blau");
         linienende.PositionSetzen(720, 405);

@@ -5,8 +5,8 @@ import java.awt.*;
 import java.awt.geom.*;
 
 /**
- * Class ZEICHENFENSTER - Eine Klasse, die einfache grafische Zeichnungen in einem Programmfenster
- * ermöglicht.
+ * Class ZEICHENFENSTER - Eine Klasse, die einfache grafische Zeichnungen in
+ * einem Programmfenster ermöglicht.
  *
  * @author Michael Kolling (mik)
  * @author Bruce Quig
@@ -14,20 +14,25 @@ import java.awt.geom.*;
  *
  * @version 2007.05.07
  */
-
 public class ZeichenFenster
 {
     private JFrame frame;
+
     private CanvasPane canvas;
+
     private JPanel steuerungOst, steuerungSued;
+
     private Graphics2D graphic;
+
     private Color backgroundColor;
+
     private Image canvasImage;
 
     private static ZeichenFenster singleton;
 
     /**
-     * Erzeugt eine Zeichenfenster mit Standardmaßen 600*500 und Hintergrundfarbe weiß
+     * Erzeugt eine Zeichenfenster mit Standardmaßen 600*500 und
+     * Hintergrundfarbe weiß
      *
      * @param titel Titel des Fensters
      */
@@ -39,9 +44,9 @@ public class ZeichenFenster
     /**
      * Erzeugt ein Zeichenfenster mit weißem Hintergrund.
      *
-     * @param titel Fensterueberschirft
+     * @param titel  Fensterueberschirft
      * @param breite Breite des Fensters
-     * @param hoehe Hoehe des Fensters
+     * @param hoehe  Hoehe des Fensters
      */
     public ZeichenFenster(String titel, int breite, int hoehe)
     {
@@ -51,12 +56,13 @@ public class ZeichenFenster
     /**
      * Erzeugt ein Zeichenfenster.
      *
-     * @param titel Fensterueberschirft
-     * @param breite Breite des Fensters
-     * @param hoehe Hoehe des Fensters
+     * @param titel            Fensterueberschirft
+     * @param breite           Breite des Fensters
+     * @param hoehe            Hoehe des Fensters
      * @param hintergrundFarbe Hintergrundfarbe des Zeichenfensters
      */
-    private ZeichenFenster(String titel, int breite, int hoehe, Color hintergrundFarbe)
+    private ZeichenFenster(String titel, int breite, int hoehe,
+            Color hintergrundFarbe)
     {
         frame = new JFrame();
         canvas = new CanvasPane();
@@ -88,14 +94,15 @@ public class ZeichenFenster
     }
 
     /**
-     * Macht das Zeichenfenster sichtbar bzw. setzt es in den Vordergrund, falls es bereits sichtbar
-     * ist.
+     * Macht das Zeichenfenster sichtbar bzw. setzt es in den Vordergrund, falls
+     * es bereits sichtbar ist.
      */
     public void zeige()
     {
         if (graphic == null)
         {
-            // nur beim ersten Aufruf wird der Hintergrund mit der Hintergrundfarbe
+            // nur beim ersten Aufruf wird der Hintergrund mit der
+            // Hintergrundfarbe
             // gefuellt
             Dimension size = canvas.getSize();
             canvasImage = canvas.createImage(size.width, size.height);
@@ -120,26 +127,26 @@ public class ZeichenFenster
     /**
      * Zeichnet einen Elipsenbogen (Siehe Graphics.drawArc)
      *
-     * @param x x-Koordinate des Elipsenmittelpunkts
-     * @param y y-Koordinate des Elipsenmittelpunkts
-     * @param halbachseX Halbachse der Elipse in x-Richtung
-     * @param halbachseY Halbachse der Elipse in y-Richtung
+     * @param x           x-Koordinate des Elipsenmittelpunkts
+     * @param y           y-Koordinate des Elipsenmittelpunkts
+     * @param halbachseX  Halbachse der Elipse in x-Richtung
+     * @param halbachseY  Halbachse der Elipse in y-Richtung
      * @param startWinkel Polarwinkel, an dem der Bogen anfängt
-     * @param winkel Polarwinkel, welchen der Bogen durchläuft
+     * @param winkel      Polarwinkel, welchen der Bogen durchläuft
      */
-    public void zeichneBogen(int x, int y, int halbachseX, int halbachseY, int startWinkel,
-                    int winkel)
+    public void zeichneBogen(int x, int y, int halbachseX, int halbachseY,
+            int startWinkel, int winkel)
     {
-        graphic.drawArc(x - halbachseX, y - halbachseY, 2 * halbachseX, 2 * halbachseY, startWinkel,
-                        winkel);
+        graphic.drawArc(x - halbachseX, y - halbachseY, 2 * halbachseX,
+                2 * halbachseY, startWinkel, winkel);
         canvas.repaint();
     }
 
     /**
      * Zeichnet einen Kreis (Siehe Graphics.drawOval)
      *
-     * @param x x-Koordinate des Mittelpunkts
-     * @param y y-Koordinate des Mittelpunkts
+     * @param x      x-Koordinate des Mittelpunkts
+     * @param y      y-Koordinate des Mittelpunkts
      * @param radius Kreisradius
      */
     public void zeichneKreis(int x, int y, int radius)
@@ -151,11 +158,11 @@ public class ZeichenFenster
     /**
      * Füllt das Innere eines Kreises mit der angegebenen Farbe.
      *
-     * @param x x-Koordinate des Mittelpunkts
-     * @param y y-Koordinate des Mittelpunkts
+     * @param x      x-Koordinate des Mittelpunkts
+     * @param y      y-Koordinate des Mittelpunkts
      * @param radius Kreisradius
-     * @param farbe Füllfarbe für den Kreis, erlaubt sind "weiss" "schwarz" "rot" "gruen" "blau"
-     *        "gelb" "magenta" "cyan" "grau"
+     * @param farbe  Füllfarbe für den Kreis, erlaubt sind "weiss" "schwarz"
+     *               "rot" "gruen" "blau" "gelb" "magenta" "cyan" "grau"
      */
     public void fuelleKreis(int x, int y, int radius, String farbe)
     {
@@ -169,8 +176,8 @@ public class ZeichenFenster
     /**
      * Füllt das Innere eines Kreises mit der angegebenen Farbe.
      *
-     * @param x x-Koordinate des Mittelpunkts
-     * @param y y-Koordinate des Mittelpunkts
+     * @param x      x-Koordinate des Mittelpunkts
+     * @param y      y-Koordinate des Mittelpunkts
      * @param radius Kreisradius
      * @param farbnr Füllfarbnummer für den Kreis (0 bis 8)
      */
@@ -186,14 +193,14 @@ public class ZeichenFenster
     /**
      * Löscht das Innere eines Kreises
      *
-     * @param x x-Koordinate des Mittelpunkts
-     * @param y y-Koordinate des Mittelpunkts
+     * @param x      x-Koordinate des Mittelpunkts
+     * @param y      y-Koordinate des Mittelpunkts
      * @param radius Kreisradius
      */
     public void loescheKreis(int x, int y, int radius)
     {
-        Ellipse2D.Double circle =
-                        new Ellipse2D.Double(x - radius, y - radius, 2 * radius, 2 * radius);
+        Ellipse2D.Double circle = new Ellipse2D.Double(x - radius, y - radius,
+                2 * radius, 2 * radius);
         loesche(circle);
     }
 
@@ -212,8 +219,9 @@ public class ZeichenFenster
      * Füllt das Innere eines Shape-Objekts mit der angegebenen Farbe.
      *
      * @param shape das Shape-Objekt, welches gefüllt werden soll
-     * @param farbe Füllfarbe für das Shape-Objekt, erlaubt sind "weiss" "schwarz" "rot" "gruen"
-     *        "blau" "gelb" "magenta" "cyan" "grau"
+     * @param farbe Füllfarbe für das Shape-Objekt, erlaubt sind "weiss"
+     *              "schwarz" "rot" "gruen" "blau" "gelb" "magenta" "cyan"
+     *              "grau"
      */
     public void fuelle(Shape shape, String farbe)
     {
@@ -227,7 +235,7 @@ public class ZeichenFenster
     /**
      * Füllt das Innere eines Shape-Objekts mit der angegebenen Farbe.
      *
-     * @param shape das Shape-Objekt, welches gefüllt werden soll
+     * @param shape  das Shape-Objekt, welches gefüllt werden soll
      * @param farbnr Füllfarbnummer für das Shape-Objekt (0 bis 8)
      */
     public void fuelle(Shape shape, int farbnr)
@@ -257,7 +265,7 @@ public class ZeichenFenster
      * Zeichnet den Rand des Rechtecks mit der aktuellen Farbe.
      *
      * @param xPos,yPos Koordinaten der linken oberen Ecke
-     * @param breite, hoehe Breite und Höhe des Rechtecks
+     * @param breite,   hoehe Breite und Höhe des Rechtecks
      */
     public void zeichneRechteck(int xPos, int yPos, int breite, int hoehe)
     {
@@ -270,11 +278,13 @@ public class ZeichenFenster
      * Füllt das Innere des Rechtecks mit der angegebenen Farbe.
      *
      * @param xPos,yPos Koordinaten der linken oberen Ecke
-     * @param breite, hoehe Breite und Höhe des Rechtecks
-     * @param farbe Füllfarbe für das Rechteck, erlaubt sind "weiss" "schwarz" "rot" "gruen" "blau"
-     *        "gelb" "magenta" "cyan" "grau"
+     * @param breite,   hoehe Breite und Höhe des Rechtecks
+     * @param farbe     Füllfarbe für das Rechteck, erlaubt sind "weiss"
+     *                  "schwarz" "rot" "gruen" "blau" "gelb" "magenta" "cyan"
+     *                  "grau"
      */
-    public void fuelleRechteck(int xPos, int yPos, int breite, int hoehe, String farbe)
+    public void fuelleRechteck(int xPos, int yPos, int breite, int hoehe,
+            String farbe)
     {
         Color original = graphic.getColor();
         graphic.setColor(farbeZuColor(farbe));
@@ -287,10 +297,11 @@ public class ZeichenFenster
      * Füllt das Innere des Rechtecks mit der angegebenen Farbe.
      *
      * @param xPos,yPos Koordinaten der linken oberen Ecke
-     * @param breite, hoehe Breite und Höhe des Rechtecks
-     * @param farbnr Füllfarbnummer für das Rechteck (0 bis 8)
+     * @param breite,   hoehe Breite und Höhe des Rechtecks
+     * @param farbnr    Füllfarbnummer für das Rechteck (0 bis 8)
      */
-    public void fuelleRechteck(int xPos, int yPos, int breite, int hoehe, int farbnr)
+    public void fuelleRechteck(int xPos, int yPos, int breite, int hoehe,
+            int farbnr)
     {
         Color original = graphic.getColor();
         graphic.setColor(farbeZuColor(farbnr));
@@ -303,7 +314,7 @@ public class ZeichenFenster
      * Löscht das Innere eines Rechtecks.
      *
      * @param xPos,yPos Koordinaten der linken oberen Ecke
-     * @param breite, hoehe Breite und Höhe des Rechtecks
+     * @param breite,   hoehe Breite und Höhe des Rechtecks
      */
     public void loescheRechteck(int xPos, int yPos, int breite, int hoehe)
     {
@@ -338,10 +349,11 @@ public class ZeichenFenster
      * @param x1,y1 Koordinaten des ersten Eckpunkts
      * @param x2,y2 Koordinaten des zweiten Eckpunkts
      * @param x3,y3 Koordinaten des dritten Eckpunkts
-     * @param farbe Füllfarbe für das Dreieck, erlaubt sind "weiss" "schwarz" "rot" "gruen" "blau"
-     *        "gelb" "magenta" "cyan" "grau"
+     * @param farbe Füllfarbe für das Dreieck, erlaubt sind "weiss" "schwarz"
+     *              "rot" "gruen" "blau" "gelb" "magenta" "cyan" "grau"
      */
-    public void fuelleDreieck(int x1, int y1, int x2, int y2, int x3, int y3, String farbe)
+    public void fuelleDreieck(int x1, int y1, int x2, int y2, int x3, int y3,
+            String farbe)
     {
         Color original = graphic.getColor();
         graphic.setColor(farbeZuColor(farbe));
@@ -353,12 +365,13 @@ public class ZeichenFenster
     /**
      * Füllt das Innere eines Dreiecks mit der angegebenen Farbe.
      *
-     * @param x1,y1 Koordinaten des ersten Eckpunkts
-     * @param x2,y2 Koordinaten des zweiten Eckpunkts
-     * @param x3,y3 Koordinaten des dritten Eckpunkts
+     * @param x1,y1  Koordinaten des ersten Eckpunkts
+     * @param x2,y2  Koordinaten des zweiten Eckpunkts
+     * @param x3,y3  Koordinaten des dritten Eckpunkts
      * @param farbnr Füllfarbnummer für das Dreieck (0 bis 8)
      */
-    public void fuelleDreieck(int x1, int y1, int x2, int y2, int x3, int y3, int farbnr)
+    public void fuelleDreieck(int x1, int y1, int x2, int y2, int x3, int y3,
+            int farbnr)
     {
         Color original = graphic.getColor();
         graphic.setColor(farbeZuColor(farbnr));
@@ -410,10 +423,10 @@ public class ZeichenFenster
      * Zeichnet ein Bild in das Zeichnenfenster .
      *
      * @param bild das anzuzeigende Bild
-     * @param x x-Koordinate des linken Bildrands
-     * @param y y-Koordinate des oberen Bildrands
-     * @return gibt eines booleschen Wert zurück, der angibt, ob das Bild vollständig geladen werden
-     *         konnte
+     * @param x    x-Koordinate des linken Bildrands
+     * @param y    y-Koordinate des oberen Bildrands
+     * @return gibt eines booleschen Wert zurück, der angibt, ob das Bild
+     *         vollständig geladen werden konnte
      */
     public boolean zeichneBild(Image bild, int x, int y)
     {
@@ -426,8 +439,8 @@ public class ZeichenFenster
      * Zeichnet einen Text.
      *
      * @param text die anzuzeigende Zeichenkette
-     * @param x x-Koordinate des linken Rands
-     * @param y y-Koordinate des oberen Rands
+     * @param x    x-Koordinate des linken Rands
+     * @param y    y-Koordinate des oberen Rands
      */
     public void zeichneText(String text, int x, int y)
     {
@@ -439,8 +452,8 @@ public class ZeichenFenster
      * Löscht einen Text vom Zeichenfenster.
      *
      * @param text die zu löschende Zeichenkette
-     * @param x x-Koordinate des linken Rands
-     * @param y y-Koordinate des oberen Rands
+     * @param x    x-Koordinate des linken Rands
+     * @param y    y-Koordinate des oberen Rands
      */
     public void loescheText(String text, int x, int y)
     {
@@ -479,28 +492,36 @@ public class ZeichenFenster
     {
         switch (farbnr)
         {
-            case 0:
-                return Color.black;
-            case 1:
-                return Color.blue;
-            case 2:
-                return Color.green;
-            case 3:
-                return Color.cyan;
-            case 4:
-                return Color.red;
-            case 5:
-                return Color.magenta;
-            case 6:
-                return Color.yellow;
-            case 7:
-                return Color.gray;
-            case 8:
-                return Color.white;
-            default:
-                return graphic.getColor();
-        }
+        case 0:
+            return Color.black;
 
+        case 1:
+            return Color.blue;
+
+        case 2:
+            return Color.green;
+
+        case 3:
+            return Color.cyan;
+
+        case 4:
+            return Color.red;
+
+        case 5:
+            return Color.magenta;
+
+        case 6:
+            return Color.yellow;
+
+        case 7:
+            return Color.gray;
+
+        case 8:
+            return Color.white;
+
+        default:
+            return graphic.getColor();
+        }
     }
 
     private Color farbeZuColor(String farbe)
@@ -583,7 +604,8 @@ public class ZeichenFenster
     /**
      * Ändert den aktuellen Zeichensatz des Zeichenfensters.
      *
-     * @param neuerZeichensatz Zeichensatz, der künftig für Zeichenkettenausgaben verwendet wird
+     * @param neuerZeichensatz Zeichensatz, der künftig für
+     *                         Zeichenkettenausgaben verwendet wird
      */
     public void setzeZeichensatz(Font neuerZeichensatz)
     {
@@ -604,7 +626,7 @@ public class ZeichenFenster
      * Ändert die Abmessungen des Zeichenfensters.
      *
      * @param breite neue Breite
-     * @param hoehe neue Höhe
+     * @param hoehe  neue Höhe
      */
     public void setzeMasse(int breite, int hoehe)
     {
@@ -627,8 +649,8 @@ public class ZeichenFenster
     }
 
     /**
-     * Wartet eine bestimmte Zeit. Eine kurze Verzögerung kann z. B. für Animationen verwendet
-     * werden.
+     * Wartet eine bestimmte Zeit. Eine kurze Verzögerung kann z. B. für
+     * Animationen verwendet werden.
      *
      * @param zeit Wartezeit in Millisekunden
      */
@@ -637,7 +659,8 @@ public class ZeichenFenster
         try
         {
             Thread.sleep(zeit);
-        } catch (InterruptedException e)
+        }
+        catch (InterruptedException e)
         {
             // ignoring exception at the moment
         }
@@ -646,8 +669,8 @@ public class ZeichenFenster
     /**
      * Fügt ein weiteres Steuerungselement in die rechte Steuerungsleiste ein.
      *
-     * @param element Das einzufügende Steuerungselement muss aus JComponent abgeleitet sein. z. B.
-     *        JButton, JComboBox.
+     * @param element Das einzufügende Steuerungselement muss aus JComponent
+     *                abgeleitet sein. z. B. JButton, JComboBox.
      */
     public void komponenteHinzufuegen(JComponent element, String position)
     {
@@ -669,8 +692,9 @@ public class ZeichenFenster
     }
 
     /************************************************************************
-     * Nested class CanvasPane - the actual canvas component contained in the Canvas frame. This is
-     * essentially a JPanel with added capability to refresh the image drawn on it.
+     * Nested class CanvasPane - the actual canvas component contained in the
+     * Canvas frame. This is essentially a JPanel with added capability to
+     * refresh the image drawn on it.
      */
     private class CanvasPane extends JPanel
     {

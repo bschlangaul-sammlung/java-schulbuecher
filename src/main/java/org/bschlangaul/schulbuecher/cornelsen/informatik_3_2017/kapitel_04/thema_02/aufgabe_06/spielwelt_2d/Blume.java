@@ -43,12 +43,9 @@ public class Blume extends Figur
         this.FigurteilFestlegenEllipse(-20, -10, 20, 20, "weiss");
         this.FigurteilFestlegenEllipse(-20, 10, 20, 20, "weiss");
         this.GanzNachVornBringen();
-
         if (xNeu < 10 && xNeu >= 0 && yNeu < 10 && yNeu >= 0)
         {
             this.PositionSetzen(xNeu * 50 + 25, yNeu * 50 + 25);
         }
     }
-
-
 }

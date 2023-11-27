@@ -10,10 +10,13 @@ public class DIJKSTRA
 {
     /* Adjazenzmatrix des Graphen */
     private int[][] matrix;
+
     /* Liste der abgearbeiteten Knoten */
     private LISTE fertig;
+
     /* Liste der unbearbeiteten Knoten */
     private LISTE rest;
+
     /* Liste der erreichten Knoten */
     private LISTE inarbeit;
 
@@ -33,7 +36,7 @@ public class DIJKSTRA
     /**
      * Führ die Suche aus.
      *
-     * @param von Startknoten
+     * @param von  Startknoten
      * @param nach Zielknoten
      * @return Weglänge
      */

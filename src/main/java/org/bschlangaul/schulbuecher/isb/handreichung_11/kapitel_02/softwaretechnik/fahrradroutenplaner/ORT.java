@@ -9,8 +9,11 @@ package org.bschlangaul.schulbuecher.isb.handreichung_11.kapitel_02.softwaretech
 class ORT implements DATENELEMENT
 {
     private String ortsname;
+
     private String ortsinfo;
+
     private int xpos;
+
     private int ypos;
 
     /**
@@ -18,8 +21,8 @@ class ORT implements DATENELEMENT
      *
      * @param name Ortsname
      * @param info Informationen über den Ort
-     * @param x x-Koordinate
-     * @param y y-Koordinate
+     * @param x    x-Koordinate
+     * @param y    y-Koordinate
      */
     ORT(String name, String info, int x, int y)
     {

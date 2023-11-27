@@ -27,5 +27,4 @@ public class Fahrkartenautomat
             System.out.println("Vorgang nicht möglich.");
         }
     }
-
 }

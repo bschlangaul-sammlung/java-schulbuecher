@@ -8,14 +8,15 @@ import greenfoot.GreenfootImage;
 /**
  * Klasse Anzeige <br>
  *
- * Der Programmtext dieser Klasse braucht für die Bearbeitung der Arbeitsaufträge und Aufgaben weder
- * gelesen noch verstanden zu werden.
+ * Der Programmtext dieser Klasse braucht für die Bearbeitung der
+ * Arbeitsaufträge und Aufgaben weder gelesen noch verstanden zu werden.
  */
-
 public class Anzeige extends Actor
 {
     GreenfootImage bild = new GreenfootImage(180, 200);
+
     int zeit;
+
     int goldstuecke;
 
     Anzeige()
@@ -29,8 +30,9 @@ public class Anzeige extends Actor
     void zeigeText()
     {
         bild.clear();
-        String text = "Zeit            : " + Integer.toString(zeit) + gibLineSeparator()
-                        + "Goldstücke: " + Integer.toString(goldstuecke);
+        String text = "Zeit            : " + Integer.toString(zeit)
+                + gibLineSeparator() + "Goldstücke: "
+                + Integer.toString(goldstuecke);
         bild.drawString(text, 15, 150);
     }
 

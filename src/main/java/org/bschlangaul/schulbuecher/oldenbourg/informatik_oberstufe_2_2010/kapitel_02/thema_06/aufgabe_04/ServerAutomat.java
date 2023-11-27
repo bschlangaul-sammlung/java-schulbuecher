@@ -6,7 +6,6 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_2_2010.kapi
  * @author Albert. Wiedemann
  * @version 1.0
  */
-
 class ServerAutomat
 {
     private enum Zustaende
@@ -15,6 +14,7 @@ class ServerAutomat
     };
 
     private Zustaende zustand;
+
     private Verbindung verb;
 
     /**
@@ -41,42 +41,46 @@ class ServerAutomat
         {
             switch (zustand)
             {
-                case start:
-                    zeile = verb.ZeileLesen();
-                    if (zeile.equals("schicken"))
-                    {
-                        zustand = Zustaende.dateinameSchreiben;
-                        VerstandenSenden();
-                    }
-                    else if (zeile.equals("holen"))
-                    {
-                        zustand = Zustaende.dateinameLesen;
-                        VerstandenSenden();
-                    }
-                    else if (zeile.equals("beenden"))
-                    {
-                        return true;
-                    }
-                    break;
-                case dateinameLesen:
-                    zeile = verb.ZeileLesen();
-                    Senden(zeile);
-                    zustand = Zustaende.verstandenWarten;
-                    break;
-                case verstandenWarten:
-                    zeile = verb.ZeileLesen();
-                    if (!zeile.equals("verstanden"))
-                    {
-                        System.out.println("Protokollverletzung: verstanden erwartet, " + zeile
-                                        + " empfangen");
-                    }
-                    return false;
-                case dateinameSchreiben:
-                    zeile = verb.ZeileLesen();
+            case start:
+                zeile = verb.ZeileLesen();
+                if (zeile.equals("schicken"))
+                {
+                    zustand = Zustaende.dateinameSchreiben;
                     VerstandenSenden();
-                    Empfangen(zeile);
+                }
+                else if (zeile.equals("holen"))
+                {
+                    zustand = Zustaende.dateinameLesen;
                     VerstandenSenden();
-                    return false;
+                }
+                else if (zeile.equals("beenden"))
+                {
+                    return true;
+                }
+                break;
+
+            case dateinameLesen:
+                zeile = verb.ZeileLesen();
+                Senden(zeile);
+                zustand = Zustaende.verstandenWarten;
+                break;
+
+            case verstandenWarten:
+                zeile = verb.ZeileLesen();
+                if (!zeile.equals("verstanden"))
+                {
+                    System.out.println(
+                            "Protokollverletzung: verstanden erwartet, " + zeile
+                                    + " empfangen");
+                }
+                return false;
+
+            case dateinameSchreiben:
+                zeile = verb.ZeileLesen();
+                VerstandenSenden();
+                Empfangen(zeile);
+                VerstandenSenden();
+                return false;
             }
         }
     }
@@ -137,7 +141,8 @@ class ServerAutomat
         zeile = verb.ZeileLesen();
         if (!zeile.equals("*"))
         {
-            System.out.println("Protokollverletzung, '*' erwartet, " + zeile + " empfangen");
+            System.out.println("Protokollverletzung, '*' erwartet, " + zeile
+                    + " empfangen");
         }
         else if (datei.Oeffnen(name))
         {
@@ -154,7 +159,8 @@ class ServerAutomat
         }
         else
         {
-            System.out.println("Ausgabedatei konnte nicht ge\u00F6ffnet werden: " + name);
+            System.out.println(
+                    "Ausgabedatei konnte nicht ge\u00F6ffnet werden: " + name);
         }
         VerstandenSenden();
     }

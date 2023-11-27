@@ -20,8 +20,8 @@ class BAUM
     }
 
     /**
-     * Legt einen Baum mit angegebener Wurzel an. Dieser Konstruktor ist nur zu Testzwecken
-     * vorhanden.
+     * Legt einen Baum mit angegebener Wurzel an. Dieser Konstruktor ist nur zu
+     * Testzwecken vorhanden.
      *
      * @param w Referenz auf den Wurzelknoten
      */

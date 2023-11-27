@@ -4,7 +4,6 @@ import org.bschlangaul.schulbuecher.isb.handreichung_10.konzept_01.ZeichenFenste
 
 public class Schneeflocke extends Niederschlag
 {
-
     public Schneeflocke(int xStart, int yStart)
     {
         super(xStart, yStart);
@@ -15,6 +14,5 @@ public class Schneeflocke extends Niederschlag
     public void zeichne()
     {
         ZeichenFenster.gibFenster().fuelleKreis((int) x, (int) y, 20, 6);
-
     }
 }

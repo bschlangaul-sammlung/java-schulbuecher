@@ -8,7 +8,6 @@ package org.bschlangaul.schulbuecher.isb.handreichung_12.kapitel_04.modell.dijks
  */
 class ABSCHLUSS extends LISTENELEMENT
 {
-
     /**
      * Constructor for objects of class ABSCHLUSS
      */

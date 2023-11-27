@@ -1,7 +1,8 @@
 package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapitel_02.thema_07.aufgabe_09.binbaum_mit_entfernen_mit_testklasse;
 
 /**
- * Englisch-deutsches Wörterbuch als geordneter Binärbaum (ohne Composite Pattern) implementiert.
+ * Englisch-deutsches Wörterbuch als geordneter Binärbaum (ohne Composite
+ * Pattern) implementiert.
  *
  * @author (Peter Brichzin)
  * @version (20.3.09)
@@ -14,8 +15,8 @@ public class WOERTERBUCH
     private BINBAUM woerterbuch;
 
     /**
-     * Konstruktor für Objekte der Klasse WOERTERBUCH, erzeugt ein englischen Wörterbuch mit 7
-     * Einträgen, wie in Abbildung 6 bzw. 8 von Kapitel 7.
+     * Konstruktor für Objekte der Klasse WOERTERBUCH, erzeugt ein englischen
+     * Wörterbuch mit 7 Einträgen, wie in Abbildung 6 bzw. 8 von Kapitel 7.
      */
     public WOERTERBUCH()
     {
@@ -27,15 +28,15 @@ public class WOERTERBUCH
         Einfuegen("cave", "H\u00f6hle, aush\u00f6hlen, einbrechen");
         Einfuegen("crab", "Krabbe, Krebs, Griesgram");
         Einfuegen("coin", "M\u00fcnze, auspr\u00e4gen, erfinden");
-
     }
 
     /**
-     * Einfuegen erzeugt ein ein Objekt der Klasse WOERTERBUCHEINTRAG mit den Eingabewerten und fügt
-     * diesen Wörterbucheintrag sortiert in die Liste woerterbuch ein. Es wird verhindert, dass ein
-     * englisches Wort mehrfach im Wörterbuch abgespeichert werden kann.
+     * Einfuegen erzeugt ein ein Objekt der Klasse WOERTERBUCHEINTRAG mit den
+     * Eingabewerten und fügt diesen Wörterbucheintrag sortiert in die Liste
+     * woerterbuch ein. Es wird verhindert, dass ein englisches Wort mehrfach im
+     * Wörterbuch abgespeichert werden kann.
      *
-     * @param wort englisches Wort
+     * @param wort      englisches Wort
      * @param bedeutung die deutsche(n) Bedeutung(en).
      */
     public void Einfuegen(String wort, String bedeutung)
@@ -57,35 +58,34 @@ public class WOERTERBUCH
     }
 
     /**
-     * Entfernt den Knoten, dessen Datenelement den eingegebenen Schlüssel hat. Falls es keinen
-     * Knoten mit dem eingegebenen Schlüssel gibt, wird dies über die Standardausgabe mitgeteilt.
+     * Entfernt den Knoten, dessen Datenelement den eingegebenen Schlüssel hat.
+     * Falls es keinen Knoten mit dem eingegebenen Schlüssel gibt, wird dies
+     * über die Standardausgabe mitgeteilt.
      *
-     * @param suchSchluessel Schl&uumlssel, nach dem gesucht wird als Zeichenkette
+     * @param suchSchluessel Schl&uumlssel, nach dem gesucht wird als
+     *                       Zeichenkette
      */
-
     public void KnotenEntfernen(String suchSchluessel)
     {
         woerterbuch.KnotenEntfernen(suchSchluessel);
     }
 
-
     /**
      * Gibt alle Einträge des Wörterbuchs aus.
      */
-
     public void InformationAusgeben()
     {
         woerterbuch.StrukturAusgeben();
         System.out.println("---------------------------------");
     }
 
-
     /**
-     * Die Methode BedeutungSetzen ermöglicht es, bei einem englischen Wort die deutsche Bedeutung
-     * zu verändern.
+     * Die Methode BedeutungSetzen ermöglicht es, bei einem englischen Wort die
+     * deutsche Bedeutung zu verändern.
      *
-     * @param gesuchtesWort englisches Wort, dessen Bedeutung verändert werden soll
-     * @param bedeutungNeu neue Bedeutung
+     * @param gesuchtesWort englisches Wort, dessen Bedeutung verändert werden
+     *                      soll
+     * @param bedeutungNeu  neue Bedeutung
      */
     public void BedeutungSetzen(String gesuchtesWort, String bedeutungNeu)
     {
@@ -99,6 +99,5 @@ public class WOERTERBUCH
         {
             woerterbucheintrag.BedeutungSetzen(bedeutungNeu);
         }
-
     }
 }

@@ -27,32 +27,28 @@ public class Nase implements Schauspieler
         ruecken.farbeSetzen("orange");
         ruecken.groesseSetzen(75, 125);
         ruecken.positionSetzen(375, 275);
-
         lochLinks = new Ellipse();
         lochLinks.farbeSetzen("schwarz");
         lochLinks.groesseSetzen(20, 20);
         lochLinks.positionSetzen(380, 350);
-
         lochRechts = new Ellipse();
         lochRechts.farbeSetzen("schwarz");
         lochRechts.groesseSetzen(20, 20);
         lochRechts.positionSetzen(425, 350);
-
         ruecken.anzeigen();
         lochRechts.anzeigen();
         lochLinks.anzeigen();
     }
 
     /**
-     * Die Methode agieren fuehrt eine fuer das Schauspielerobjekt typische Bewegung aus.
+     * Die Methode agieren fuehrt eine fuer das Schauspielerobjekt typische
+     * Bewegung aus.
      */
     public void agieren()
     {
         lochLinks.verschieben(0, -10);
         lochRechts.verschieben(0, -10);
-
         warten(1);
-
         lochLinks.verschieben(0, 10);
         lochRechts.verschieben(0, 10);
     }

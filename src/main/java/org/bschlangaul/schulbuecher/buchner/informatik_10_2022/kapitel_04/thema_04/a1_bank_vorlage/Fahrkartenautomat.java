@@ -22,5 +22,4 @@ public class Fahrkartenautomat
         einKonto.abheben(1.80, einePin);
         System.out.println("Fahrkarte entnehmen");
     }
-
 }

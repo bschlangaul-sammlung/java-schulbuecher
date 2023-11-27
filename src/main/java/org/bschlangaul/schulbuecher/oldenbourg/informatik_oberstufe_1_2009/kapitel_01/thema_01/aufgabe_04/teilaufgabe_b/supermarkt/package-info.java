@@ -1,9 +1,10 @@
 /**
- * Seite 10 Bei der Simulation des Kassenbereiches eines Supermarktes wurde die Verwaltung der
- * anstehenden Kunden über ein Feld realisiert (siehe Vorlage).
+ * Seite 10 Bei der Simulation des Kassenbereiches eines Supermarktes wurde die
+ * Verwaltung der anstehenden Kunden über ein Feld realisiert (siehe Vorlage).
  *
- * Weshalb ist es von Vorteil, dies über die Datenstruktur Schlange zu erledigen? Ist es auch
- * sinnvoll, die Verwaltung der drei Kassen als Schlange umzusetzen?
+ * Weshalb ist es von Vorteil, dies über die Datenstruktur Schlange zu
+ * erledigen? Ist es auch sinnvoll, die Verwaltung der drei Kassen als Schlange
+ * umzusetzen?
  *
  * Ändern Sie die vorliegende Implementierung gemäß Teilaufgabe a) ab.
  */

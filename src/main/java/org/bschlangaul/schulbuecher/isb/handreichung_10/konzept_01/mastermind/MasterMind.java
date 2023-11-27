@@ -9,10 +9,15 @@ import java.awt.event.*;
 public class MasterMind
 {
     private int[] vorgabe, tipp;
+
     private SpielWalze[] anzeige;
+
     private SpielWalze[] auswertung;
+
     private int anzahlWeiss, anzahlSchwarz;
+
     private Random zufall;
+
     private FarbeAuswahl auswahl1, auswahl2, auswahl3, auswahl4;
 
     public MasterMind()
@@ -31,7 +36,8 @@ public class MasterMind
         ZeichenFenster fenster = ZeichenFenster.gibFenster();
         fenster.setzeTitel("Mastermind");
         JButton schaltknopf = new JButton("Raten");
-        schaltknopf.addActionListener(new ActionListener() {
+        schaltknopf.addActionListener(new ActionListener()
+        {
             public void actionPerformed(ActionEvent e)
             {
                 rate();
@@ -58,8 +64,8 @@ public class MasterMind
 
     public void rate()
     {
-        tippe(auswahl1.gibFarbnummer(), auswahl2.gibFarbnummer(), auswahl3.gibFarbnummer(),
-                        auswahl4.gibFarbnummer());
+        tippe(auswahl1.gibFarbnummer(), auswahl2.gibFarbnummer(),
+                auswahl3.gibFarbnummer(), auswahl4.gibFarbnummer());
     }
 
     public void tippe(int r0, int r1, int r2, int r3)
@@ -115,6 +121,5 @@ public class MasterMind
                 }
             }
         }
-
     }
 }

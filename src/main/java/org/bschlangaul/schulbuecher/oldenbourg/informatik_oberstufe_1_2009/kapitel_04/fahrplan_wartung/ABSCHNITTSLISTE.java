@@ -17,7 +17,8 @@ class ABSCHNITTSLISTE extends LISTE
     }
 
     /**
-     * Sucht den Abschnitt mit den angegebenen Daten. Nutzt die Sortierung der Liste aus.
+     * Sucht den Abschnitt mit den angegebenen Daten. Nutzt die Sortierung der
+     * Liste aus.
      *
      * @param nummer Nummer des zu suchenden Bahnhofs.
      * @return Referenz auf den Bahnhof oder null
@@ -39,7 +40,7 @@ class ABSCHNITTSLISTE extends LISTE
         while (AufNaechstesPositionieren())
         {
             if ((nummer == ((ABSCHNITT) DatenGeben()).Bahnhof1Geben())
-                            || (nummer == ((ABSCHNITT) DatenGeben()).Bahnhof2Geben()))
+                    || (nummer == ((ABSCHNITT) DatenGeben()).Bahnhof2Geben()))
             {
                 return true;
             }
@@ -65,7 +66,7 @@ class ABSCHNITTSLISTE extends LISTE
         while (AufNaechstesPositionieren())
         {
             if ((nummer == ((ABSCHNITT) DatenGeben()).Bahnhof1Geben())
-                            || (nummer == ((ABSCHNITT) DatenGeben()).Bahnhof2Geben()))
+                    || (nummer == ((ABSCHNITT) DatenGeben()).Bahnhof2Geben()))
             {
                 linie = ((ABSCHNITT) DatenGeben()).LinieGeben();
                 gefunden = false;

@@ -6,7 +6,6 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapi
  * @author Klaus Reinold
  * @version 1.0
  */
-
 interface DATENELEMENT
 {
     /**
@@ -20,5 +19,4 @@ interface DATENELEMENT
      * @param dvergleich Datenelement zum Vergleich
      */
     boolean IstKleinerAls(DATENELEMENT dvergleich);
-
 }

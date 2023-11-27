@@ -1,9 +1,9 @@
 package org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.fortgeschrittenes_formular;
 
 /**
- * Diese Klasse kann zur Verarbeitung von Benutzereingaben eingesetzt werden. Sie wird durch einen
- * Menuepunkt auf dem Formular repraesentiert, bei dessen Betaetigung automatisch die Methode
- * ausloesen() aufgerufen wird.
+ * Diese Klasse kann zur Verarbeitung von Benutzereingaben eingesetzt werden.
+ * Sie wird durch einen Menuepunkt auf dem Formular repraesentiert, bei dessen
+ * Betaetigung automatisch die Methode ausloesen() aufgerufen wird.
  *
  * @author Florian Prager, Ute Heuer, Universität Passau
  * @version 05.2008
@@ -74,7 +74,8 @@ public abstract class Sensor
         formular.menuepunktEntfernen(this);
         if (!formular.sensorenVorhanden())
         {
-            // Wir waren der letzte Sensor auf dem Formular, jetzt gibt es keine mehr da drauf
+            // Wir waren der letzte Sensor auf dem Formular, jetzt gibt es keine
+            // mehr da drauf
             // Eintrag "Ereignisse" auf der Menueleiste entfernen
             formular.menueleisteAktualisieren();
         }

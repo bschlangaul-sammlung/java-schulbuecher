@@ -6,7 +6,6 @@ package org.bschlangaul.schulbuecher.isb.handreichung_12.kapitel_04.modell;
  * @author ISB-Arbeitskreis, Umsetzungshilfen Informatik 12
  * @version 1.0
  */
-
 import java.util.Random;
 import org.bschlangaul.schulbuecher.isb.handreichung_12.kapitel_04.modell.dijkstra.DIJKSTRA;
 
@@ -14,12 +13,16 @@ public class TESTSUCHEN
 {
     /* Anzahl der Datenelemente im Graphen */
     private int anzahl;
+
     /* Die Laufzeitsummen */
     private long zeitTiefe, zeitDijkstra;
+
     /* Die Adjazenzmatrix */
     private int[][] matrix;
+
     /* Startort */
     private int start;
+
     /* Zielort */
     private int ziel;
 
@@ -31,13 +34,14 @@ public class TESTSUCHEN
     public TESTSUCHEN(int anzahl)
     {
         this.anzahl = anzahl;
-        matrix = new GENERIEREN(anzahl).AdjazenzmatrixGenerieren((anzahl - 1) * 2);
+        matrix = new GENERIEREN(anzahl)
+                .AdjazenzmatrixGenerieren((anzahl - 1) * 2);
     }
 
     /**
      * Bestimmt die durschnittlichen Knotenbesuche.
      *
-     * @param tiefe gibt an, ob mit Tiefensuche gesucht werden soll
+     * @param tiefe    gibt an, ob mit Tiefensuche gesucht werden soll
      * @param dijkstra gibt an, ob nach Dikstra gesucht werden soll
      */
     public void DurchschnittsTest(boolean tiefe, boolean dijkstra)
@@ -58,7 +62,8 @@ public class TESTSUCHEN
                 do
                 {
                     ziel = zufall.nextInt(anzahl);
-                } while (start == ziel);
+                }
+                while (start == ziel);
                 if (tiefe)
                 {
                     TIEFENSUCHE t;

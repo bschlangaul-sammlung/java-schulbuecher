@@ -10,8 +10,8 @@ import static org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps
 import static org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.werkzeuge.Pause.*;
 
 /**
- * Die Klasse Roboterarm definiert die Funktionsweise und Darstellung eines Roboterarms, der sich im
- * Kreis bewegen, zugreifen und loslassen kann.
+ * Die Klasse Roboterarm definiert die Funktionsweise und Darstellung eines
+ * Roboterarms, der sich im Kreis bewegen, zugreifen und loslassen kann.
  *
  * @author Florian Prager, Ute Heuer, Frank Fiedler
  * @version 09.2008
@@ -19,28 +19,32 @@ import static org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps
 public class Roboterarm
 {
     /**
-     * Zwischen den Bewegungen wartet der Roboterarm etwas. Die Zeit ist in ms angegeben.
+     * Zwischen den Bewegungen wartet der Roboterarm etwas. Die Zeit ist in ms
+     * angegeben.
      */
     private int wartezeit = 100;
 
     /**
-     * Falls das Drehen animiert wird, passiert das mit einer Schrittweite in Grad.
+     * Falls das Drehen animiert wird, passiert das mit einer Schrittweite in
+     * Grad.
      *
      */
     private int winkelschrittweite = 1;
 
     /**
-     * Haelt die Referenz auf das Zeichenfenster-Objekt. So kann ein komplettes Neuzeichnen
-     * angestossen werden, und zwar erst dann, wenn der Entwickler es wuenscht. So koennen schoenere
-     * Ablaeufe grafisch dargestellt werden. Figuren werden nicht mehr alle einzeln etwas
-     * stakatoartig gezeichnet. Statt dessen kann ein Bild aus mehreren Figuren einfach auf einen
-     * Schlag gezeichnet werden.
+     * Haelt die Referenz auf das Zeichenfenster-Objekt. So kann ein komplettes
+     * Neuzeichnen angestossen werden, und zwar erst dann, wenn der Entwickler
+     * es wuenscht. So koennen schoenere Ablaeufe grafisch dargestellt werden.
+     * Figuren werden nicht mehr alle einzeln etwas stakatoartig gezeichnet.
+     * Statt dessen kann ein Bild aus mehreren Figuren einfach auf einen Schlag
+     * gezeichnet werden.
      */
     private org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.fortgeschrittene_grafik.interna.Zeichenfenster zeichenfenster;
 
     /**
-     * Die Repraesentation des Zeichenfensters als einfachesFenster - alle technischen Details
-     * werden versteckt, sie koennen in BlueJ nicht mehr inspiziert werden.
+     * Die Repraesentation des Zeichenfensters als einfachesFenster - alle
+     * technischen Details werden versteckt, sie koennen in BlueJ nicht mehr
+     * inspiziert werden.
      */
     private Zeichenfenster fenster;
 
@@ -50,35 +54,38 @@ public class Roboterarm
     private int xNabenmittelpunkt = 550;
 
     /**
-     * Das Attribut arm speichert das Rechteck, das den Arm des Roboters darstellen soll.
+     * Das Attribut arm speichert das Rechteck, das den Arm des Roboters
+     * darstellen soll.
      */
     private Rechteck arm;
 
     /**
-     * Das Attribut greifer speichert die Ellipse, die den Greifer des Roboters darstellen soll.
+     * Das Attribut greifer speichert die Ellipse, die den Greifer des Roboters
+     * darstellen soll.
      */
     private Ellipse greifer;
 
     /**
-     * Das Attribut zentrum speichert die Ellipse, die die Narbe des Roboterarms darstellen soll.
+     * Das Attribut zentrum speichert die Ellipse, die die Narbe des Roboterarms
+     * darstellen soll.
      */
     private Ellipse zentrum;
 
     /**
-     * Das Attribut kugel speichert die Referenz auf die Kugel, die sich bei geschlossenem Zustand
-     * im Greifer des Roboterarms befindet.
+     * Das Attribut kugel speichert die Referenz auf die Kugel, die sich bei
+     * geschlossenem Zustand im Greifer des Roboterarms befindet.
      */
     private Kugel kugel;
 
     /**
-     * Das Attribut topfliste speichert die Liste, die die Toepfe enthaelt, in die die Kugeln fallen
-     * koennen.
+     * Das Attribut topfliste speichert die Liste, die die Toepfe enthaelt, in
+     * die die Kugeln fallen koennen.
      */
     private ArrayList<Topf> topfliste;
 
     /**
-     * Das Attribut fliessband speichert die Referenz auf das Fliessband-Objekt, von dem der Greifer
-     * die Kugeln nehmen kann.
+     * Das Attribut fliessband speichert die Referenz auf das Fliessband-Objekt,
+     * von dem der Greifer die Kugeln nehmen kann.
      */
     private Fliessband fliessband;
 
@@ -88,8 +95,9 @@ public class Roboterarm
     private int winkel = 0;
 
     /**
-     * Ein Roboterarm kann ein Fliessband bedienen. Der Nutzer des Arms kann festlegen, wieviele
-     * Kugeln Anfangs auf dem Fliessband liegen sollen. mit anzahlKugelnAufFliessband.
+     * Ein Roboterarm kann ein Fliessband bedienen. Der Nutzer des Arms kann
+     * festlegen, wieviele Kugeln Anfangs auf dem Fliessband liegen sollen. mit
+     * anzahlKugelnAufFliessband.
      */
     public Roboterarm(int anzahlKugelnAufFliessband)
     {
@@ -129,8 +137,8 @@ public class Roboterarm
     }
 
     /**
-     * Die Methode drehen dreht den Roboterarm um den uebergebenen Winkel gegen den Uhrzeigersinn
-     * weiter.
+     * Die Methode drehen dreht den Roboterarm um den uebergebenen Winkel gegen
+     * den Uhrzeigersinn weiter.
      */
     public void drehen(int deltaWinkel, boolean istAnimiert)
     {
@@ -163,15 +171,16 @@ public class Roboterarm
     }
 
     /**
-     * Die Methode greifen greift nur dann nach einer Kugel, falls sich der Roboterarm ueber dem
-     * Fliessband befindet und keine Kugel gegriffen hat.
+     * Die Methode greifen greift nur dann nach einer Kugel, falls sich der
+     * Roboterarm ueber dem Fliessband befindet und keine Kugel gegriffen hat.
      */
     public void greifen()
     {
         msWarten(wartezeit);
         if (kugel == null)
         {
-            if (fliessband.aufErsterKugel(greifer.xPositionGeben(), greifer.yPositionGeben()))
+            if (fliessband.aufErsterKugel(greifer.xPositionGeben(),
+                    greifer.yPositionGeben()))
             {
                 kugel = fliessband.kugelEntfernen();
             }
@@ -218,8 +227,8 @@ public class Roboterarm
     }
 
     /**
-     * Die Methode kugelFarbeGeben gibt die Farbe der gegriffenen Kugel zurueck, oder "Es ist keine
-     * Kugel in der Hand!" falls keine Kugel gegriffen wurde.
+     * Die Methode kugelFarbeGeben gibt die Farbe der gegriffenen Kugel zurueck,
+     * oder "Es ist keine Kugel in der Hand!" falls keine Kugel gegriffen wurde.
      */
     public String kugelFarbeGeben()
     {

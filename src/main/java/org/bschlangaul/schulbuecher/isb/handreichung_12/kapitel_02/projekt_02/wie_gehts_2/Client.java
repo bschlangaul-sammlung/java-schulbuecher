@@ -5,7 +5,6 @@ import org.bschlangaul.schulbuecher.isb.handreichung_12.kapitel_02.ErsterClient;
 
 public class Client extends ErsterClient
 {
-
     public Client() throws IOException
     {
         super();
@@ -18,11 +17,11 @@ public class Client extends ErsterClient
      */
     public static void main(String[] args)
     {
-
         try
         {
             new Client();
-        } catch (Exception e)
+        }
+        catch (Exception e)
         {
             System.out.println("Fehler im Clientprogramm.");
             System.exit(1);

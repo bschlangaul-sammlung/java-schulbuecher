@@ -8,7 +8,6 @@ package org.bschlangaul.schulbuecher.cornelsen.informatik_3_2017.kapitel_04.them
  */
 class RechteckBesser extends Rechteck
 {
-
     /**
      * Legt das Rechteck nach den gegebenen Daten an.
      */

@@ -9,21 +9,26 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapi
 class TELEFON implements DATENELEMENT
 {
     private int personennummer;
+
     private int lfnr;
+
     private String nummer;
+
     private String notiz;
+
     private String art;
 
     /**
      * Legt die Daten der Person an.
      *
      * @param personennummer Schlüssel der Person
-     * @param lfnr laufende Nummer innerhalb der Person
-     * @param nummer Telefonnummer
-     * @param notiz Notiz
-     * @param art Art der Nummer
+     * @param lfnr           laufende Nummer innerhalb der Person
+     * @param nummer         Telefonnummer
+     * @param notiz          Notiz
+     * @param art            Art der Nummer
      */
-    TELEFON(int personennummer, int lfnr, String nummer, String notiz, String art)
+    TELEFON(int personennummer, int lfnr, String nummer, String notiz,
+            String art)
     {
         this.personennummer = personennummer;
         this.lfnr = lfnr;
@@ -41,14 +46,17 @@ class TELEFON implements DATENELEMENT
     public boolean IstGleich(DATENELEMENT test)
     {
         return ((personennummer == ((TELEFON) test).personennummer)
-                        && (lfnr == ((TELEFON) test).lfnr));
+                && (lfnr == ((TELEFON) test).lfnr));
     }
 
     /**
      * Vergleicht das Datemelement mit dem Parameter. <br>
-     * Hat das Datenelement einen kleineren Schlüssel als test, ist das Ergebnis -1. <br>
-     * Hat das Datenelement den gleichen Schlüssel wie test, ist das Ergebnis 0. <br>
-     * Hat das Datenelement einen grö&szlig;eren Schlüssel als test, ist das Ergebnis 1.
+     * Hat das Datenelement einen kleineren Schlüssel als test, ist das Ergebnis
+     * -1. <br>
+     * Hat das Datenelement den gleichen Schlüssel wie test, ist das Ergebnis 0.
+     * <br>
+     * Hat das Datenelement einen grö&szlig;eren Schlüssel als test, ist das
+     * Ergebnis 1.
      *
      * @param test Datenelement mit dem Testschlüssel
      * @return Vergleichsergebnis
@@ -57,7 +65,7 @@ class TELEFON implements DATENELEMENT
     {
         TELEFON t = (TELEFON) test;
         if ((personennummer < t.personennummer)
-                        || (personennummer == t.personennummer) && (lfnr < t.lfnr))
+                || (personennummer == t.personennummer) && (lfnr < t.lfnr))
         {
             return -1;
         }
@@ -85,8 +93,8 @@ class TELEFON implements DATENELEMENT
      * ändert die Daten des Telefoneintrags.
      *
      * @param nummer die Telefonnummer
-     * @param art die Art des Anschlusses
-     * @param notiz Bemerkung zum Anschluss
+     * @param art    die Art des Anschlusses
+     * @param notiz  Bemerkung zum Anschluss
      */
     void DatenSetzen(String nummer, String art, String notiz)
     {

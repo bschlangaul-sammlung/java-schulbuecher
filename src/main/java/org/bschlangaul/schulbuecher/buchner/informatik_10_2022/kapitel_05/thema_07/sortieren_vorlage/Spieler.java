@@ -9,10 +9,15 @@ package org.bschlangaul.schulbuecher.buchner.informatik_10_2022.kapitel_05.thema
 public class Spieler
 {
     private String name;
+
     private int trikotnummer;
+
     private int spielzeit;
+
     private int toranzahl;
+
     private String[] sportarten;
+
     private String[] lieblingssport;
 
     public Spieler(String name, int trikotnummer, int toranzahl, int spielzeit)
@@ -21,10 +26,7 @@ public class Spieler
         this.trikotnummer = trikotnummer;
         this.toranzahl = toranzahl;
         this.spielzeit = spielzeit;
-
-
         sportarten = new String[6];
-
         sportarten[0] = "Tennis";
         sportarten[1] = "Schwimmen";
         sportarten[2] = "Fußball";
@@ -39,8 +41,8 @@ public class Spieler
         int i = 0;
         while (i < sportarten.length)
         {
-            System.out.println("Der Spieler" + this.name + " übt die Sportart " + sportarten[i]
-                            + " aus.");
+            System.out.println("Der Spieler" + this.name + " übt die Sportart "
+                    + sportarten[i] + " aus.");
             i = i + 1;
         }
     }

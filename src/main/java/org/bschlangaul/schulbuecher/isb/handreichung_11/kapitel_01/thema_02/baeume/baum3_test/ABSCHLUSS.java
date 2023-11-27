@@ -8,7 +8,6 @@ package org.bschlangaul.schulbuecher.isb.handreichung_11.kapitel_01.thema_02.bae
  */
 class ABSCHLUSS extends BAUMELEMENT
 {
-
     /**
      * In der Klasse ABSCHLUSS fallen keine speziellen Initialisierungen an.
      */
@@ -30,7 +29,8 @@ class ABSCHLUSS extends BAUMELEMENT
     }
 
     /**
-     * Fügt ein neues Datenelement in den Baum ein. Der Wert darf noch nicht vorkommen
+     * Fügt ein neues Datenelement in den Baum ein. Der Wert darf noch nicht
+     * vorkommen
      *
      * @param wert Referenz auf das einzufügende Datenelement
      */

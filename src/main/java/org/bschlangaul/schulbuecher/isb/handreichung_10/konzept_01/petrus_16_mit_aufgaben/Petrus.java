@@ -10,16 +10,21 @@ import javax.swing.*;
 public class Petrus
 {
     private Wolke wolke;
+
     private Timer uhr;
+
     private Random zufall;
-    private JButton startknopf, stopknopf, regenknopf, schneeknopf, hagelknopf, wirbelknopf,
-                    nebelknopf, blasenknopf;
+
+    private JButton startknopf, stopknopf, regenknopf, schneeknopf, hagelknopf,
+            wirbelknopf, nebelknopf, blasenknopf;
+
     private JTextField eingabe;
 
     public Petrus()
     {
         wolke = new Wolke();
-        uhr = new Timer(100, new ActionListener() {
+        uhr = new Timer(100, new ActionListener()
+        {
             public void actionPerformed(ActionEvent e)
             {
                 ticke();
@@ -27,7 +32,8 @@ public class Petrus
         });
         zufall = new Random();
         startknopf = new JButton("Start");
-        startknopf.addActionListener(new ActionListener() {
+        startknopf.addActionListener(new ActionListener()
+        {
             public void actionPerformed(ActionEvent e)
             {
                 starte();
@@ -35,7 +41,8 @@ public class Petrus
         });
         ZeichenFenster.gibFenster().komponenteHinzufuegen(startknopf, "rechts");
         stopknopf = new JButton("Stopp");
-        stopknopf.addActionListener(new ActionListener() {
+        stopknopf.addActionListener(new ActionListener()
+        {
             public void actionPerformed(ActionEvent e)
             {
                 stoppe();
@@ -45,7 +52,8 @@ public class Petrus
         eingabe = new JTextField("20");
         ZeichenFenster.gibFenster().komponenteHinzufuegen(eingabe, "rechts");
         regenknopf = new JButton("Regen erzeugen");
-        regenknopf.addActionListener(new ActionListener() {
+        regenknopf.addActionListener(new ActionListener()
+        {
             public void actionPerformed(ActionEvent e)
             {
                 erzeugeTropfen(holeEingabe());
@@ -53,7 +61,8 @@ public class Petrus
         });
         ZeichenFenster.gibFenster().komponenteHinzufuegen(regenknopf, "rechts");
         hagelknopf = new JButton("Hagel erzeugen");
-        hagelknopf.addActionListener(new ActionListener() {
+        hagelknopf.addActionListener(new ActionListener()
+        {
             public void actionPerformed(ActionEvent e)
             {
                 erzeugeHagel(holeEingabe());
@@ -61,23 +70,28 @@ public class Petrus
         });
         ZeichenFenster.gibFenster().komponenteHinzufuegen(hagelknopf, "rechts");
         schneeknopf = new JButton("Schnee erzeugen");
-        schneeknopf.addActionListener(new ActionListener() {
+        schneeknopf.addActionListener(new ActionListener()
+        {
             public void actionPerformed(ActionEvent e)
             {
                 erzeugeFlocken(holeEingabe());
             }
         });
-        ZeichenFenster.gibFenster().komponenteHinzufuegen(schneeknopf, "rechts");
+        ZeichenFenster.gibFenster().komponenteHinzufuegen(schneeknopf,
+                "rechts");
         wirbelknopf = new JButton("Wirbelschnee erzeugen");
-        wirbelknopf.addActionListener(new ActionListener() {
+        wirbelknopf.addActionListener(new ActionListener()
+        {
             public void actionPerformed(ActionEvent e)
             {
                 erzeugeWirbelflocken(holeEingabe());
             }
         });
-        ZeichenFenster.gibFenster().komponenteHinzufuegen(wirbelknopf, "rechts");
+        ZeichenFenster.gibFenster().komponenteHinzufuegen(wirbelknopf,
+                "rechts");
         nebelknopf = new JButton("Nebel erzeugen");
-        nebelknopf.addActionListener(new ActionListener() {
+        nebelknopf.addActionListener(new ActionListener()
+        {
             public void actionPerformed(ActionEvent e)
             {
                 erzeugeNebel(holeEingabe());
@@ -85,13 +99,15 @@ public class Petrus
         });
         ZeichenFenster.gibFenster().komponenteHinzufuegen(nebelknopf, "rechts");
         blasenknopf = new JButton("Luftblasen erzeugen");
-        blasenknopf.addActionListener(new ActionListener() {
+        blasenknopf.addActionListener(new ActionListener()
+        {
             public void actionPerformed(ActionEvent e)
             {
                 erzeugeBlasen(holeEingabe());
             }
         });
-        ZeichenFenster.gibFenster().komponenteHinzufuegen(blasenknopf, "rechts");
+        ZeichenFenster.gibFenster().komponenteHinzufuegen(blasenknopf,
+                "rechts");
     }
 
     private void ticke()
@@ -115,7 +131,7 @@ public class Petrus
         for (int i = 0; i < zahl; i++)
         {
             Tropfen tr = new Tropfen(zufall.nextInt(600), zufall.nextInt(200),
-                            5 + zufall.nextInt(20), wolke);
+                    5 + zufall.nextInt(20), wolke);
             wolke.fuegeHinzu(tr);
         }
     }
@@ -124,7 +140,8 @@ public class Petrus
     {
         for (int i = 0; i < zahl; i++)
         {
-            Hagelkorn hk = new Hagelkorn(zufall.nextInt(600), zufall.nextInt(200));
+            Hagelkorn hk = new Hagelkorn(zufall.nextInt(600),
+                    zufall.nextInt(200));
             wolke.fuegeHinzu(hk);
         }
     }
@@ -133,7 +150,8 @@ public class Petrus
     {
         for (int i = 0; i < zahl; i++)
         {
-            Schneeflocke flocke = new Schneeflocke(zufall.nextInt(600), zufall.nextInt(200));
+            Schneeflocke flocke = new Schneeflocke(zufall.nextInt(600),
+                    zufall.nextInt(200));
             wolke.fuegeHinzu(flocke);
         }
     }
@@ -142,7 +160,8 @@ public class Petrus
     {
         for (int i = 0; i < zahl; i++)
         {
-            Wirbelflocke flocke = new Wirbelflocke(zufall.nextInt(600), zufall.nextInt(200));
+            Wirbelflocke flocke = new Wirbelflocke(zufall.nextInt(600),
+                    zufall.nextInt(200));
             wolke.fuegeHinzu(flocke);
         }
     }
@@ -151,8 +170,8 @@ public class Petrus
     {
         for (int i = 0; i < zahl; i++)
         {
-            Luftblase bl = new Luftblase(zufall.nextInt(600), 280 + zufall.nextInt(200),
-                            5 + zufall.nextInt(20), wolke);
+            Luftblase bl = new Luftblase(zufall.nextInt(600),
+                    280 + zufall.nextInt(200), 5 + zufall.nextInt(20), wolke);
             wolke.fuegeHinzu(bl);
         }
     }
@@ -161,8 +180,8 @@ public class Petrus
     {
         for (int i = 0; i < zahl; i++)
         {
-            Nebeltropfen nt = new Nebeltropfen(zufall.nextInt(600), zufall.nextInt(480),
-                            5 + zufall.nextInt(40), wolke);
+            Nebeltropfen nt = new Nebeltropfen(zufall.nextInt(600),
+                    zufall.nextInt(480), 5 + zufall.nextInt(40), wolke);
             wolke.fuegeHinzu(nt);
         }
     }
@@ -171,5 +190,4 @@ public class Petrus
     {
         return Integer.parseInt(eingabe.getText());
     }
-
 }

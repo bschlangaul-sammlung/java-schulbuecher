@@ -10,6 +10,7 @@ class Speicher
 {
     /** Gibt an, ob Platz frei ist */
     private boolean frei;
+
     /** Die eventuell vorhandene Kiste */
     private Kiste kiste;
 
@@ -34,7 +35,8 @@ class Speicher
             try
             {
                 wait();
-            } catch (Exception e)
+            }
+            catch (Exception e)
             {
             }
         }
@@ -56,7 +58,8 @@ class Speicher
             try
             {
                 wait();
-            } catch (Exception e)
+            }
+            catch (Exception e)
             {
             }
         }

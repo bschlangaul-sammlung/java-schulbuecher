@@ -8,7 +8,6 @@ package org.bschlangaul.schulbuecher.isb.handreichung_11.kapitel_03.anwendungsor
  */
 abstract class BAUMELEMENT
 {
-
     /**
      * Der Konstruktor ist aus Dokumentationsgründen vorhanden
      */
@@ -40,7 +39,4 @@ abstract class BAUMELEMENT
      * Durchläft den Baum in Postorder
      */
     abstract void PostOrder();
-
-
-
 }

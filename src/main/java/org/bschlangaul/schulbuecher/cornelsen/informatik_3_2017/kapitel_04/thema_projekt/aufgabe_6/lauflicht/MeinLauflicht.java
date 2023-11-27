@@ -19,7 +19,6 @@ public class MeinLauflicht extends Lauflicht
         {
             super.licht(i, true);
         }
-
     }
 
     public void geradeAus()

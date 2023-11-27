@@ -9,7 +9,8 @@ package org.bschlangaul.schulbuecher.cornelsen.informatik_3_2017.kapitel_04.them
 class RegenTropfen extends Figur
 {
     /**
-     * Positioniert den Tropfen und legt den Fallwinkel fest Boden und Vorboden werden eingerichtet
+     * Positioniert den Tropfen und legt den Fallwinkel fest Boden und Vorboden
+     * werden eingerichtet
      */
     RegenTropfen()
     {

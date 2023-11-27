@@ -8,14 +8,13 @@ package org.bschlangaul.schulbuecher.cornelsen.informatik_3_2017.kapitel_04.them
  */
 class MauerRechteck extends Rechteck
 {
-
     /**
      * Der Konstruktor legt Position, Größe und Farbe fest
      *
-     * @param x x-Koordinate des Rechtecks
-     * @param y y-Koordinate des Rechtecks
+     * @param x      x-Koordinate des Rechtecks
+     * @param y      y-Koordinate des Rechtecks
      * @param breite Breite des Rechtecks
-     * @param höhe Höhe des Rechtecks
+     * @param höhe   Höhe des Rechtecks
      */
     MauerRechteck(int x, int y, int breite, int höhe)
     {

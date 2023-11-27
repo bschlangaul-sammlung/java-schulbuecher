@@ -9,6 +9,7 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapi
 class UMSTEIGEINFO implements DATENELEMENT
 {
     private int nummer;
+
     private int linie1, linie2;
 
     /**
@@ -33,15 +34,19 @@ class UMSTEIGEINFO implements DATENELEMENT
      */
     public boolean IstGleich(DATENELEMENT test)
     {
-        return (((UMSTEIGEINFO) test).nummer == nummer) && (((UMSTEIGEINFO) test).linie1 == linie1)
-                        && (((UMSTEIGEINFO) test).linie2 == linie2);
+        return (((UMSTEIGEINFO) test).nummer == nummer)
+                && (((UMSTEIGEINFO) test).linie1 == linie1)
+                && (((UMSTEIGEINFO) test).linie2 == linie2);
     }
 
     /**
      * Vergleicht das Datemelement mit dem Parameter. <br>
-     * Hat das Datenelement einen kleineren Schlüssel als test, ist das Ergebnis -1. <br>
-     * Hat das Datenelement den gleichen Schlüssel wie test, ist das Ergebnis 0. <br>
-     * Hat das Datenelement einen grö&szlig;eren Schlüssel als test, ist das Ergebnis 1.
+     * Hat das Datenelement einen kleineren Schlüssel als test, ist das Ergebnis
+     * -1. <br>
+     * Hat das Datenelement den gleichen Schlüssel wie test, ist das Ergebnis 0.
+     * <br>
+     * Hat das Datenelement einen grö&szlig;eren Schlüssel als test, ist das
+     * Ergebnis 1.
      *
      * @param test Datenelement mit dem Testschlüssel
      * @return Vergleichsergebnis

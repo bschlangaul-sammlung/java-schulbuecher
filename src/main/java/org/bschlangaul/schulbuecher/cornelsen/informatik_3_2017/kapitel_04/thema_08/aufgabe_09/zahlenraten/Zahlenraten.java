@@ -12,15 +12,19 @@ class Zahlenraten
 {
     /** die zufällige, zu erratende Zahl */
     int zufallszahl;
+
     /** die Anzahl der Versuche */
     int anzahlVersuche;
+
     /** der Zufallsgenerator */
     Random zzGenerator;
+
     /** der Kreis zur Bewertungsanzeige */
     Kreis bewertungsKreis;
 
     /**
-     * Der Konstruktor erzeugt die zu erratende Zahl und bereitet die anderen Attribute vor
+     * Der Konstruktor erzeugt die zu erratende Zahl und bereitet die anderen
+     * Attribute vor
      */
     Zahlenraten()
     {
@@ -29,7 +33,6 @@ class Zahlenraten
         anzahlVersuche = 0;
         bewertungsKreis = new Kreis();
         bewertungsKreis.FarbeSetzen("schwarz");
-
     }
 
     /**

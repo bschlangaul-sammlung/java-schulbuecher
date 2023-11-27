@@ -20,14 +20,13 @@ public class TEXT extends Text
 
     private double M_y;
 
-
     /**
      * Konstruktor der Klasse Text.
      *
-     * @param x x-Koordinate im Fenster
-     * @param y y-Koordinate im Fenster
+     * @param x         x-Koordinate im Fenster
+     * @param y         y-Koordinate im Fenster
      * @param textHoehe Hoehe des Texts in Bildschirm-Metern
-     * @param text anzuzeigender Text
+     * @param text      anzuzeigender Text
      */
     public TEXT(double x, double y, double textHoehe, String text)
     {
@@ -37,14 +36,13 @@ public class TEXT extends Text
         super.setzeMittelpunkt(x, y);
     }
 
-
     /**
      * TEXT Konstruktor
      *
-     * @param x x-Koordinate im Fenster
-     * @param y y-Koordinate im Fenster
+     * @param x         x-Koordinate im Fenster
+     * @param y         y-Koordinate im Fenster
      * @param textHoehe Hoehe des Texts in Bildschirm-Metern
-     * @param zahl anzuzeigende Zahl
+     * @param zahl      anzuzeigende Zahl
      */
     public TEXT(double x, double y, double textHoehe, int zahl)
     {
@@ -53,7 +51,6 @@ public class TEXT extends Text
         this.M_y = y;
         super.setzeMittelpunkt(x, y);
     }
-
 
     /**
      * Setzt den angezeigten Text neu.
@@ -65,7 +62,6 @@ public class TEXT extends Text
         super.setzeInhalt(text);
     }
 
-
     /**
      * Setzt den angezeigten Text neu.
      *
@@ -75,7 +71,6 @@ public class TEXT extends Text
     {
         super.setzeInhalt("" + zahl);
     }
-
 
     /**
      * Setzt die Schriftgroesse auf einen neuen Wert.
@@ -87,7 +82,6 @@ public class TEXT extends Text
         super.setzeHoehe(schriftHoehe);
     }
 
-
     /**
      * Setzt die Schriftfarbe neu.
      *
@@ -98,9 +92,9 @@ public class TEXT extends Text
         super.setzeFarbe(schriftfarbe);
     }
 
-
     /**
-     * Setzt die Schriftart. Diese muss als TrueTypeFont als Datei im Projekt liegen.
+     * Setzt die Schriftart. Diese muss als TrueTypeFont als Datei im Projekt
+     * liegen.
      *
      * @param ttfDatei Pfad zur TTF-Datei
      */
@@ -108,7 +102,6 @@ public class TEXT extends Text
     {
         getActor().setFont(ttfDatei);
     }
-
 
     /**
      * Setzt den Schriftstil (fett, kursiv) des Textes.
@@ -119,7 +112,6 @@ public class TEXT extends Text
     {
         getActor().setStyle(schriftStil);
     }
-
 
     /**
      * Verschiebt das Objekt um die angegebenen Pixel.
@@ -134,7 +126,6 @@ public class TEXT extends Text
         super.verschieben(deltaX, deltaY);
     }
 
-
     /**
      * Prueft, ob ein anderes Grafik-Objekt beruehrt wird.
      *
@@ -147,9 +138,9 @@ public class TEXT extends Text
         return super.schneidet(ea);
     }
 
-
     /**
-     * Diese Methode prueft, ob ein bestimmter Punkt in dem Objekt enthalten ist. <br />
+     * Diese Methode prueft, ob ein bestimmter Punkt in dem Objekt enthalten
+     * ist. <br />
      * z.B. interessant zum Auswerten von Maus-Klicks.
      *
      * @param x x-Koordinate des Punkts (in Bildschirm-Metern)
@@ -161,7 +152,6 @@ public class TEXT extends Text
     {
         return super.beinhaltetPunkt(x, y);
     }
-
 
     /**
      * Setzt den Mittelpunkt des Objekts auf einen anzugebenden Punkt.
@@ -176,20 +166,20 @@ public class TEXT extends Text
         super.setzeMittelpunkt(x, y);
     }
 
-
     /**
-     * Nennt die Nummer der Ebene, in der dieses Objekt derzeit gezeichnet wird. Durch veraendern
-     * der Ebenen-Nummer kann man Objekte vor / hinter andere stellen. Ebenen mit groesserer Nummer
-     * verdecken Ebenen mit kleinerer Nummer.
+     * Nennt die Nummer der Ebene, in der dieses Objekt derzeit gezeichnet wird.
+     * Durch veraendern der Ebenen-Nummer kann man Objekte vor / hinter andere
+     * stellen. Ebenen mit groesserer Nummer verdecken Ebenen mit kleinerer
+     * Nummer.
      *
-     * @return Ebenen-Nummer: -1=Hintergrund ; 0=Standard (ueberdeckt Hintergrund) , 1=weiter vorne
-     *         (ueberdeckt Hintergrund und Ebene 0) ; ...
+     * @return Ebenen-Nummer: -1=Hintergrund ; 0=Standard (ueberdeckt
+     *         Hintergrund) , 1=weiter vorne (ueberdeckt Hintergrund und Ebene
+     *         0) ; ...
      */
     public int nenneEbenenposition()
     {
         return super.nenneEbenenposition();
     }
-
 
     /**
      * Nennt die x-Koordinate des Mittelpunkts dieses Objekts.
@@ -201,7 +191,6 @@ public class TEXT extends Text
         return this.M_x;
     }
 
-
     /**
      * Nennt die y-Koordinate des Mittelpunkts dieses Objekts.
      *
@@ -211,7 +200,6 @@ public class TEXT extends Text
     {
         return this.M_y;
     }
-
 
     /**
      * Macht das Objekt sichtbar / unsichtbar.
@@ -223,7 +211,6 @@ public class TEXT extends Text
         super.setzeSichtbar(sichtbarNeu);
     }
 
-
     /**
      * Prueft, od dieses Objekt gerade sichtbar ist.
      *
@@ -234,12 +221,12 @@ public class TEXT extends Text
         return super.istSichtbar();
     }
 
-
     /**
      * Dreht die Grafik um einen Winkel
      *
-     * @param winkelAenderung +: mathematisch positiver Drehsinn (gegen den Uhrzeigersinn) -:
-     *        mathematisch negativer Drehsinn (im Uhrzeigersinn)
+     * @param winkelAenderung +: mathematisch positiver Drehsinn (gegen den
+     *                        Uhrzeigersinn) -: mathematisch negativer Drehsinn
+     *                        (im Uhrzeigersinn)
      */
     public void drehenUm(double winkelAenderung)
     {
@@ -251,60 +238,58 @@ public class TEXT extends Text
         super.setzeSichtbar(true);
     }
 
-
     /**
      * Setzt den Drehwinkel auf eine absoluten neuen Wert
      *
-     * @param neuerDrehwinkel der neue Drehwinkel +: mathematisch positiver Drehsinn (gegen den
-     *        Uhrzeigersinn) -: mathematisch negativer Drehsinn (im Uhrzeigersinn)
+     * @param neuerDrehwinkel der neue Drehwinkel +: mathematisch positiver
+     *                        Drehsinn (gegen den Uhrzeigersinn) -: mathematisch
+     *                        negativer Drehsinn (im Uhrzeigersinn)
      */
     public void setzeDrehwinkel(double neuerDrehwinkel)
     {
         this.drehenUm(neuerDrehwinkel - this.nenneDrehwinkel());
     }
 
-
     /**
-     * Nennt den Winkel, um den die Grafik gegenueber ihrer Erzeugung gedreht wurde.
+     * Nennt den Winkel, um den die Grafik gegenueber ihrer Erzeugung gedreht
+     * wurde.
      *
-     * @return der Winkel, um den die Grafik gedreht wurde 0: wenn nicht gedreht +: wenn
-     *         mathematisch positiver Drehsinn (gegen den Uhrzeigersinn) -: wenn mathematisch
-     *         negativer Drehsinn (im Uhrzeigersinn)
+     * @return der Winkel, um den die Grafik gedreht wurde 0: wenn nicht gedreht
+     *         +: wenn mathematisch positiver Drehsinn (gegen den Uhrzeigersinn)
+     *         -: wenn mathematisch negativer Drehsinn (im Uhrzeigersinn)
      */
     public double nenneDrehwinkel()
     {
         return super.nenneDrehwinkel();
     }
 
-
     /**
-     * Diese Methode prueft, wie weit der Mittelpunkt dieses Objekts vom Mittelpunkt eines anderen
-     * Grafik-Objekts in x-Richtung entfernt ist.
+     * Diese Methode prueft, wie weit der Mittelpunkt dieses Objekts vom
+     * Mittelpunkt eines anderen Grafik-Objekts in x-Richtung entfernt ist.
      *
      * @param grafikObjekt Das andere Grafik-Objekt
      *
-     * @return Abstand (in Pixeln) dieses Rechtecks vom anderen Grafik-Objekt in x-Richtung (>0,
-     *         wenn dieses Rechteck rechts des anderen Grafik-Objekts liegt)
+     * @return Abstand (in Pixeln) dieses Rechtecks vom anderen Grafik-Objekt in
+     *         x-Richtung (>0, wenn dieses Rechteck rechts des anderen
+     *         Grafik-Objekts liegt)
      */
     public double berechneAbstandX(EduActor ea)
     {
         return this.M_x - ea.nenneMittelpunktX();
     }
 
-
     /**
-     * Diese Methode prueft, wie weit der Mittelpunkt dieses Objekts vom Mittelpunkt eines anderen
-     * Grafik-Objekts in y-Richtung entfernt ist.
+     * Diese Methode prueft, wie weit der Mittelpunkt dieses Objekts vom
+     * Mittelpunkt eines anderen Grafik-Objekts in y-Richtung entfernt ist.
      *
      * @param grafikObjekt Das andere Grafik-Objekt
      *
-     * @return Abstand (in Pixeln) dieses Kreises vom anderen Grafik-Objekt in y-Richtung (>0, wenn
-     *         dieser Kreis unterhalb des anderen Grafik-Objekts liegt)
+     * @return Abstand (in Pixeln) dieses Kreises vom anderen Grafik-Objekt in
+     *         y-Richtung (>0, wenn dieser Kreis unterhalb des anderen
+     *         Grafik-Objekts liegt)
      */
     public double berechneAbstandY(EduActor ea)
     {
         return this.M_y - ea.nenneMittelpunktY();
     }
-
-
 }

@@ -9,16 +9,19 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapi
 abstract class KONTO
 {
     protected double kontostand;
+
     protected int kontonummer;
+
     private KUNDE besitzer;
+
     protected DATENBANKVERBINDUNG verbindung;
 
     /**
      * Besetzt die Attribute
      *
      * @param nummer die Nummer des neuen Kontos
-     * @param bes Besitzer des Kontos
-     * @param ver Verbindungsobjekt zur Datenbank
+     * @param bes    Besitzer des Kontos
+     * @param ver    Verbindungsobjekt zur Datenbank
      */
     KONTO(int nummer, KUNDE bes, DATENBANKVERBINDUNG ver)
     {
@@ -29,9 +32,9 @@ abstract class KONTO
      * Besetzt die Attribute
      *
      * @param nummer die Nummer des neuen Kontos
-     * @param stand der aktuelle Kontostand
-     * @param bes Besitzer des Kontos
-     * @param ver Verbindungsobjekt zur Datenbank
+     * @param stand  der aktuelle Kontostand
+     * @param bes    Besitzer des Kontos
+     * @param ver    Verbindungsobjekt zur Datenbank
      *
      */
     KONTO(int nummer, double stand, KUNDE bes, DATENBANKVERBINDUNG ver)
@@ -84,8 +87,8 @@ abstract class KONTO
     }
 
     /**
-     * Abheben vom Konto. Voraussetzung: betrag grö&szlig;er 0. Die änderung wird auch persistent in
-     * der Datenbank ausgeführt.
+     * Abheben vom Konto. Voraussetzung: betrag grö&szlig;er 0. Die änderung
+     * wird auch persistent in der Datenbank ausgeführt.
      *
      * @param betrag abzuhebender Betrag
      * @return true, wenn die Aktion ausgeführt werden konnte.

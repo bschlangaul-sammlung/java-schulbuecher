@@ -10,7 +10,6 @@ class LISTE
         anfang = new ABSCHLUSS();
     }
 
-
     // weitere Methoden
     boolean IstLeer()
     {
@@ -34,10 +33,8 @@ class LISTE
     DATENELEMENT AnfangEntfernen()
     {
         DATENELEMENT entfernt;
-
         entfernt = anfang.DatenGeben();
         anfang = anfang.NachfolgerGeben();
-
         return entfernt;
     }
 
@@ -48,6 +45,4 @@ class LISTE
             anfang.AlleAbHierAusgeben();
         }
     }
-
-
 }

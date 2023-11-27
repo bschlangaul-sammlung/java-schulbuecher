@@ -7,13 +7,16 @@ import greenfoot.World;
  *
  * Aufgaben 1-3
  */
-
 public class Welt extends World
 {
     Dauerlicht dauerlicht;
+
     Blinklicht blinklicht;
+
     Kurzzeitlicht kurzzeitlicht;
+
     DauerlichtFarbe dauerlichtFarbe;
+
     DauerlichtHelligkeit dauerlichtHelligkeit;
 
     public Welt()

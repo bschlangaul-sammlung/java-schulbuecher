@@ -1,7 +1,10 @@
+package org.bschlangaul.schulbuecher.isb.handreichung_11.kapitel_03.anwendungsorientierte_aufgaben.majority_algorithmus.wahl;
+
 class WAHL
 {
     // Attribute
     private STAPEL stapel;
+
     private UNGEORDNETELISTE stimmzettelliste;
 
     // Konstruktor
@@ -11,10 +14,10 @@ class WAHL
         stimmzettelliste = new UNGEORDNETELISTE();
     }
 
-
     // Methoden
     /**
-     * ermöglicht die Stimmabgabe Die Stimmen werden in einer (ungeordneten) Liste verwaltet
+     * ermöglicht die Stimmabgabe Die Stimmen werden in einer (ungeordneten)
+     * Liste verwaltet
      *
      * @param Name der gewälten Person
      */
@@ -24,17 +27,17 @@ class WAHL
         stimmzettelliste.Einfuegen(stimmzettel);
     }
 
-
-
     /**
-     * wertet die Wahl unter Verwendung des Majority-Algorithmus aus und gibt anschließend den
-     * Wahlsieger, sofern es einen gibt, auf der Konsole aus
+     * wertet die Wahl unter Verwendung des Majority-Algorithmus aus und gibt
+     * anschließend den Wahlsieger, sofern es einen gibt, auf der Konsole aus
      */
     void WahlAuswerten()
     {
-        // stimmzettelliste wird im Laufe von WahlAuswerten abgebaut. Um die Daten nicht zu
+        // stimmzettelliste wird im Laufe von WahlAuswerten abgebaut. Um die
+        // Daten nicht zu
         // verliegen, werden sie in einer anderen Liste zwischengespeichert, die
-        // am Ende der Methodenausführung dem Attribut stimmzettelliste wieder zugewiesen wird
+        // am Ende der Methodenausführung dem Attribut stimmzettelliste wieder
+        // zugewiesen wird
         UNGEORDNETELISTE zwischenspeicher = new UNGEORDNETELISTE();
         // Phase 1: Abarbeiten der Stimmzettel und evtl. Ablegen auf dem Stapel
         while (!stimmzettelliste.IstLeer())
@@ -46,8 +49,10 @@ class WAHL
             }
             else
             {
-                // Lösung, die nur auf die Methoden Entfernen und Einfügen basiert
-                // Die Methode AnfangGeben, die nur das jeweilige Datenelement zurückgibt, ohne das
+                // Lösung, die nur auf die Methoden Entfernen und Einfügen
+                // basiert
+                // Die Methode AnfangGeben, die nur das jeweilige Datenelement
+                // zurückgibt, ohne das
                 // Listen- bzw. Stapelelement zu löschen, wird hier
                 // nicht verwendet.
                 DATENELEMENT vergleichsstimme = stapel.Entfernen();
@@ -63,7 +68,8 @@ class WAHL
         // Phase 2: Auswertung des Stapels
         if (stapel.IstLeer())
         {
-            System.out.println("Kein Kandidat erreicht die absolute Mehrheit erreicht!");
+            System.out.println(
+                    "Kein Kandidat erreicht die absolute Mehrheit erreicht!");
         }
         else
         {
@@ -72,13 +78,15 @@ class WAHL
             int stimmenInListe = stimmzettelliste.AnzahlGeben();
             if (stimmenanzahl > stimmenInListe / 2)
             {
-                System.out.print("Folgender Kandidat hat die absolute Mehrheit erhalten: ");
+                System.out.print(
+                        "Folgender Kandidat hat die absolute Mehrheit erhalten: ");
                 vergleichsstimme.Ausgeben();
                 System.out.println();
             }
             else
             {
-                System.out.println("Kein Kandidat erreicht die absolute Mehrheit erreicht!");
+                System.out.println(
+                        "Kein Kandidat erreicht die absolute Mehrheit erreicht!");
             }
         }
     }
@@ -88,6 +96,4 @@ class WAHL
     {
         return stimmzettelliste.AnzahlMitEigenschaftGeben(daten);
     }
-
-
 }

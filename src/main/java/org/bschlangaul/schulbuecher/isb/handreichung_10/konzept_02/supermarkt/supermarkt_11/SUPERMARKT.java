@@ -11,7 +11,9 @@ import java.util.Random;
 class SUPERMARKT
 {
     KASSE[] kassen;
+
     int wartezeit;
+
     Random zufall;
 
     /**
@@ -59,7 +61,6 @@ class SUPERMARKT
             wartezeit = wartezeit - 1;
         }
     }
-
 
     /**
      *ffnet die angegebene Kasse.

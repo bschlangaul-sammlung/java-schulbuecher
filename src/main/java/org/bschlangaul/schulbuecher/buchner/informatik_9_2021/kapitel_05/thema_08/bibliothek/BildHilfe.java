@@ -4,22 +4,18 @@ import greenfoot.GreenfootImage;
 
 /**
  * Projekt zu Kap. 5.6 <br>
- * Der Programmtext dieser Klasse braucht für die Bearbeitung der Arbeitsaufträge und Aufgaben weder
- * gelesen noch verstanden zu werden. Erstellt richtige Bilder für Objekte der Klassen Schueler und
- * Buch.
+ * Der Programmtext dieser Klasse braucht für die Bearbeitung der
+ * Arbeitsaufträge und Aufgaben weder gelesen noch verstanden zu werden.
+ * Erstellt richtige Bilder für Objekte der Klassen Schueler und Buch.
  */
-
 public class BildHilfe
 {
     static GreenfootImage erstelleBuchBild(Buch buch)
     {
         double preisAusBuchInEuro = buch.gibPreisInEuro();
-
         GreenfootImage img;
         img = new GreenfootImage("Buch.png");
-
         String preisStr = String.format("%.2f", preisAusBuchInEuro) + "€";
-
         img.drawString(preisStr, 55, 111);
         return img;
     }
@@ -28,7 +24,6 @@ public class BildHilfe
     {
         GreenfootImage img;
         int groesse = 64;
-
         if (alter <= 16)
         {
             groesse = 48;
@@ -41,8 +36,7 @@ public class BildHilfe
         {
             groesse = 24;
         }
-
-        int closest = getClosest(groesse, new int[] {16, 20, 24, 32, 48, 64});
+        int closest = getClosest(groesse, new int[] { 16, 20, 24, 32, 48, 64 });
         char geschlechtFilename = geschlecht == 'm' ? 'm' : 'w';
         String filename = geschlechtFilename + "" + closest + ".png";
         img = new GreenfootImage(filename);
@@ -54,7 +48,6 @@ public class BildHilfe
     {
         int dist = Integer.MAX_VALUE;
         int val = Integer.MAX_VALUE;
-
         for (int curVal : vals)
         {
             int curDist = Math.abs(nr - curVal);
@@ -67,7 +60,6 @@ public class BildHilfe
             {
                 val = curVal;
             }
-
         }
         return val;
     }

@@ -1,28 +1,29 @@
 package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapitel_02.thema_08.aufgabe_01.binbaum_woerterbuch_kompositum;
 
 /**
- * Klasse KNOTEN als Bestandteil eines geordneten Binärbaums. (Implementierung mit Composite
- * Pattern)
+ * Klasse KNOTEN als Bestandteil eines geordneten Binärbaums. (Implementierung
+ * mit Composite Pattern)
  *
  * @author (Peter Brichzin)
  * @version (6.8.08)
  */
 public class KNOTEN extends BAUMELEMENT
 {
-
     // Knoten
     private DATENELEMENT daten;
 
     // Referenz auf den linken und rechten Nachfolger
     private BAUMELEMENT linkerNachfolger;
+
     private BAUMELEMENT rechterNachfolger;
 
     /**
-     * Konstruktor für Objekte der Klasse KNOTEN ohne linken und rechten Nachfolger, d.h. es werden
-     * zwei Abschluss-Objekte erzeugt und den entsprechenden Referenzattributen zugewiesen.
+     * Konstruktor für Objekte der Klasse KNOTEN ohne linken und rechten
+     * Nachfolger, d.h. es werden zwei Abschluss-Objekte erzeugt und den
+     * entsprechenden Referenzattributen zugewiesen.
      *
-     * @param datenNeu Referenz auf ein Objekt der KLasse DATENELEMENT, das vom Knoten verwaltet
-     *        wird.
+     * @param datenNeu Referenz auf ein Objekt der KLasse DATENELEMENT, das vom
+     *                 Knoten verwaltet wird.
      */
     public KNOTEN(DATENELEMENT datenNeu)
     {
@@ -33,8 +34,9 @@ public class KNOTEN extends BAUMELEMENT
     }
 
     /**
-     * Fügt ein Datenelement, falls sein Schlüssel noch nicht vorhanden ist, in die bestehende
-     * Datenstruktur ein. D.h. die Eigenschaft geordneter Binärbaum bleibt erhalten.
+     * Fügt ein Datenelement, falls sein Schlüssel noch nicht vorhanden ist, in
+     * die bestehende Datenstruktur ein. D.h. die Eigenschaft geordneter
+     * Binärbaum bleibt erhalten.
      *
      * @param datenNeu einzufügendes Datenelement
      * @return Referenz auf das eigene Objekt
@@ -62,9 +64,11 @@ public class KNOTEN extends BAUMELEMENT
     }
 
     /**
-     * Sucht ein Datenelement, das über seinen Schlüssel identifiziert wird und gibt dieses aus.
+     * Sucht ein Datenelement, das über seinen Schlüssel identifiziert wird und
+     * gibt dieses aus.
      *
-     * @param suchSchluessel Schl&uumlssel nach dem gesucht wird als Zeichenkette
+     * @param suchSchluessel Schl&uumlssel nach dem gesucht wird als
+     *                       Zeichenkette
      * @return gesuchtes Datenelement bzw. null, falls die Suche erfolglos ist
      */
     public DATENELEMENT Suchen(String suchSchluessel)
@@ -77,24 +81,33 @@ public class KNOTEN extends BAUMELEMENT
         {
             if (daten.SchluesselIstGroesserAls(suchSchluessel))
             {
-                return linkerNachfolger.Suchen(suchSchluessel); // Rückgabewert wird nach unten
-                                                                // abgefragt und dann nach oben
+                return linkerNachfolger.Suchen(suchSchluessel); // Rückgabewert
+                                                                // wird nach
+                                                                // unten
+                                                                // abgefragt und
+                                                                // dann nach
+                                                                // oben
                                                                 // durchgereicht
             }
             else
             {
-                return rechterNachfolger.Suchen(suchSchluessel); // Rückgabewert wird nach unten
-                                                                 // abgefragt und dann nach oben
+                return rechterNachfolger.Suchen(suchSchluessel); // Rückgabewert
+                                                                 // wird nach
+                                                                 // unten
+                                                                 // abgefragt
+                                                                 // und dann
+                                                                 // nach oben
                                                                  // durchgereicht
             }
         }
     }
 
     /**
-     * überprüt, ob ein Datenelement mit dem eingegebenen Schlüssel (in Form einer Zeichenkette)
-     * vorhanden ist.
+     * überprüt, ob ein Datenelement mit dem eingegebenen Schlüssel (in Form
+     * einer Zeichenkette) vorhanden ist.
      *
-     * @param suchSchluessel Schl&uumlssel, nach dem gesucht wird als Zeichenkette
+     * @param suchSchluessel Schl&uumlssel, nach dem gesucht wird als
+     *                       Zeichenkette
      * @return true, im Erfolgsfall, false sonst.
      */
     public boolean IstVorhanden(String suchSchluessel)
@@ -107,17 +120,30 @@ public class KNOTEN extends BAUMELEMENT
         {
             if (daten.SchluesselIstGroesserAls(suchSchluessel))
             {
-                return linkerNachfolger.IstVorhanden(suchSchluessel); // Rückgabewert wird nach
-                                                                      // unten abgefragt und dann
-                                                                      // nach oben durchgereicht
+                return linkerNachfolger.IstVorhanden(suchSchluessel); // Rückgabewert
+                                                                      // wird
+                                                                      // nach
+                                                                      // unten
+                                                                      // abgefragt
+                                                                      // und
+                                                                      // dann
+                                                                      // nach
+                                                                      // oben
+                                                                      // durchgereicht
             }
             else
             {
-                return rechterNachfolger.IstVorhanden(suchSchluessel); // Rückgabewert wird nach
-                                                                       // unten abgefragt und dann
-                                                                       // nach oben durchgereicht
+                return rechterNachfolger.IstVorhanden(suchSchluessel); // Rückgabewert
+                                                                       // wird
+                                                                       // nach
+                                                                       // unten
+                                                                       // abgefragt
+                                                                       // und
+                                                                       // dann
+                                                                       // nach
+                                                                       // oben
+                                                                       // durchgereicht
             }
         }
     }
-
 }

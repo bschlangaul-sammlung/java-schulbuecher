@@ -8,7 +8,6 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapi
  */
 class UMSTEIGELISTE extends LISTE
 {
-
     /**
      * Legt eine leere Liste an.
      */
@@ -18,11 +17,12 @@ class UMSTEIGELISTE extends LISTE
     }
 
     /**
-     * Sucht die Umsteigeinformation mit den angegebenen Daten. Nutzt die Sortierung der Liste aus.
+     * Sucht die Umsteigeinformation mit den angegebenen Daten. Nutzt die
+     * Sortierung der Liste aus.
      *
      * @param nummer Nummer des Bahnhofs
-     * @param l1 von-Linie
-     * @param l2 nach-Linie
+     * @param l1     von-Linie
+     * @param l2     nach-Linie
      * @return Referenz auf den Bahnhof oder null
      */
     UMSTEIGEINFO Suchen(int nummer, int l1, int l2)

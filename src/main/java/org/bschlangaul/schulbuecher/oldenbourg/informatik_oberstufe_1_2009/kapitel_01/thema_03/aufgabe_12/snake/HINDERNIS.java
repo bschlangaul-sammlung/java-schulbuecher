@@ -10,9 +10,9 @@ import java.util.Random;
 
 class HINDERNIS
 {
-
     /** x-Position des Hindernisses */
     protected int x;
+
     /** y-Position des Hindernisses */
     protected int y;
 
@@ -33,8 +33,6 @@ class HINDERNIS
         zgenerator = new Random();
     }
 
-
-
     /**
      * Legt einen neuen Startort fest.
      */
@@ -44,37 +42,42 @@ class HINDERNIS
         richtung_neu = zgenerator.nextInt(4);
         switch (richtung_neu)
         {
-            case 0:
-                ausrichtung = 'N';
-                break;
-            case 1:
-                ausrichtung = 'O';
-                break;
-            case 2:
-                ausrichtung = 'S';
-                break;
-            default:
-                ausrichtung = 'W';
+        case 0:
+            ausrichtung = 'N';
+            break;
+
+        case 1:
+            ausrichtung = 'O';
+            break;
+
+        case 2:
+            ausrichtung = 'S';
+            break;
+
+        default:
+            ausrichtung = 'W';
         }
         switch (ausrichtung)
         {
-            case 'S':
-                y = 0;
-                x = zgenerator.nextInt(s.Kaestchenzahl_rechtsGeben());
-                break;
-            case 'O':
-                x = 0;
-                y = zgenerator.nextInt(s.Kaestchenzahl_untenGeben());
-                break;
-            case 'N':
-                y = s.Kaestchenzahl_untenGeben() - 1;
-                x = zgenerator.nextInt(s.Kaestchenzahl_rechtsGeben());
-                break;
-            default:
-                x = s.Kaestchenzahl_rechtsGeben() - 1;
-                y = zgenerator.nextInt(s.Kaestchenzahl_untenGeben());
-        }
+        case 'S':
+            y = 0;
+            x = zgenerator.nextInt(s.Kaestchenzahl_rechtsGeben());
+            break;
 
+        case 'O':
+            x = 0;
+            y = zgenerator.nextInt(s.Kaestchenzahl_untenGeben());
+            break;
+
+        case 'N':
+            y = s.Kaestchenzahl_untenGeben() - 1;
+            x = zgenerator.nextInt(s.Kaestchenzahl_rechtsGeben());
+            break;
+
+        default:
+            x = s.Kaestchenzahl_rechtsGeben() - 1;
+            y = zgenerator.nextInt(s.Kaestchenzahl_untenGeben());
+        }
     }
 
     /**
@@ -87,18 +90,20 @@ class HINDERNIS
         int xneu;
         switch (ausrichtung)
         {
-            case 'S':
-                xneu = x;
-                break;
-            case 'O':
-                xneu = x + 1;
-                break;
-            case 'N':
-                xneu = x;
-                break;
-            default:
-                xneu = x - 1;
+        case 'S':
+            xneu = x;
+            break;
 
+        case 'O':
+            xneu = x + 1;
+            break;
+
+        case 'N':
+            xneu = x;
+            break;
+
+        default:
+            xneu = x - 1;
         }
         return xneu;
     }
@@ -113,17 +118,20 @@ class HINDERNIS
         int yneu;
         switch (ausrichtung)
         {
-            case 'S':
-                yneu = y + 1;
-                break;
-            case 'O':
-                yneu = y;
-                break;
-            case 'N':
-                yneu = y - 1;
-                break;
-            default:
-                yneu = y;
+        case 'S':
+            yneu = y + 1;
+            break;
+
+        case 'O':
+            yneu = y;
+            break;
+
+        case 'N':
+            yneu = y - 1;
+            break;
+
+        default:
+            yneu = y;
         }
         return yneu;
     }

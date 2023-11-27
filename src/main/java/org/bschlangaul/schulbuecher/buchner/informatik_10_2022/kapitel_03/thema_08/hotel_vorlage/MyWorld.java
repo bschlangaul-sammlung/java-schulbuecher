@@ -8,13 +8,10 @@ import greenfoot.*; // (World, Actor, GreenfootImage, Greenfoot und MouseInfo)
  * @author Wolfgang Riffelmacher
  * @version 2022-09-12
  */
-
 public class MyWorld extends World
 {
-
     public MyWorld()
     {
         super(600, 400, 1);
     }
-
 }

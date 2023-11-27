@@ -14,25 +14,21 @@ class ZELLE implements DATENELEMENT
     /** y-Koordinate der Zelle */
     private int y;
 
-
     /** Spiel */
     SPIEL spiel;
-
 
     /**
      * Konstruktor für die Objekte der Klasse ZELLE
      *
      * @param xneu x-Koordinate
      * @param yneu y-Koordinate
-     * @param nf Referenz auf die Nachfolger-Zelle.
+     * @param nf   Referenz auf die Nachfolger-Zelle.
      */
     ZELLE(int xneu, int yneu)
     {
         x = xneu;
         y = yneu;
     }
-
-
 
     /**
      * Belegt beim übergebenen Spiel das Feld mit den Koordinaten x und y
@@ -44,7 +40,6 @@ class ZELLE implements DATENELEMENT
         s.FeldBelegen(x, y, 's');
         spiel = s;
     }
-
 
     /**
      * Gibt beim übergebenen Spiel das Feld mit den Koordinaten x und y frei
@@ -78,8 +73,8 @@ class ZELLE implements DATENELEMENT
      * Ausgabe von Information über ein Ausgabefenster nicht erforderlich
      */
     public void InformationAusgeben()
-    {}
-
+    {
+    }
 
     /**
      * Identifikation einer Zelle aufgrund des Schlüssels
@@ -91,9 +86,9 @@ class ZELLE implements DATENELEMENT
         return (s.compareTo(x + "," + y) == 0);
     }
 
-
     /**
-     * Vergleich zweier Datenelemente bezüglich einer Ordnungsrelation nicht erforderlich
+     * Vergleich zweier Datenelemente bezüglich einer Ordnungsrelation nicht
+     * erforderlich
      *
      * @param d Datenelement zum Vergleich
      */
@@ -101,6 +96,4 @@ class ZELLE implements DATENELEMENT
     {
         return true;
     }
-
-
 }

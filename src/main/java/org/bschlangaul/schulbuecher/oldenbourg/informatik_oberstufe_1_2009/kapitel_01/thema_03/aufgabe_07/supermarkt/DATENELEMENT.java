@@ -6,15 +6,14 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapi
  * @author Klaus Reinold
  * @version 1.0
  */
-
 interface DATENELEMENT
 {
-
     /**
-     * Sorgt für das NeuPositionieren der Darstellungssymbole des Datenelements und der Nachfolger
+     * Sorgt für das NeuPositionieren der Darstellungssymbole des Datenelements
+     * und der Nachfolger
      *
      * @param knummer Nummer der Kasse
-     * @param pos Position vor der Kasse
+     * @param pos     Position vor der Kasse
      */
     void NeuPositionieren(int i, int j);
 
@@ -45,5 +44,4 @@ interface DATENELEMENT
      * @return Ergebnis des Vergleichs
      */
     boolean SchluesselIstGleich(String vergleichswert);
-
 }

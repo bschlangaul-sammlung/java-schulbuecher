@@ -10,14 +10,19 @@ public class Text
 {
     /** x-Position der linken Seite der Grundlinie. */
     private int x;
+
     /** y-Position der Grundlinie. */
     private int y;
+
     /** Farbe des Textes. */
     private String farbe;
+
     /** Sichtbarkeit des Textes. */
     private boolean sichtbar;
+
     /** Drehwinkel (mathematisch positiver Drehsinn) des Textes in Grad. */
     private int winkel;
+
     /** Größe des Textes in Punkten. */
     private int textgröße;
 
@@ -36,7 +41,7 @@ public class Text
         winkel = 0;
         textgröße = 12;
         symbol = (Zeichenfenster.TextIntern) Zeichenfenster
-                        .SymbolErzeugen(Zeichenfenster.SymbolArt.text);
+                .SymbolErzeugen(Zeichenfenster.SymbolArt.text);
         symbol.PositionSetzen(x, y);
         symbol.FarbeSetzen(farbe);
         symbol.SichtbarkeitSetzen(sichtbar);
@@ -121,9 +126,10 @@ public class Text
     }
 
     /**
-     * Setzt die Farbe des Textes. Erlaubte Farben sind: "weiß", "weiss", "rot", "grün", "gruen",
-     * "blau", "gelb", "magenta", "cyan", "hellgelb", "hellgrün", "hellgruen", "orange", "braun",
-     * "grau", "schwarz" Alle anderen Eingaben werden auf die Farbe schwarz abgebildet.
+     * Setzt die Farbe des Textes. Erlaubte Farben sind: "weiß", "weiss", "rot",
+     * "grün", "gruen", "blau", "gelb", "magenta", "cyan", "hellgelb",
+     * "hellgrün", "hellgruen", "orange", "braun", "grau", "schwarz" Alle
+     * anderen Eingaben werden auf die Farbe schwarz abgebildet.
      *
      * @param farbe (neue) Farbe
      */
@@ -134,8 +140,9 @@ public class Text
     }
 
     /**
-     * Setzt den Drehwinkel des Textes. Die Winkelangabe ist in Grad,positive Werte drehen gegen den
-     * Uhrzeigersinn, negative Werte drehen im Uhrzeigersinn (mathematisch positiver Drehsinn).
+     * Setzt den Drehwinkel des Textes. Die Winkelangabe ist in Grad,positive
+     * Werte drehen gegen den Uhrzeigersinn, negative Werte drehen im
+     * Uhrzeigersinn (mathematisch positiver Drehsinn).
      *
      * @param winkel der (neue) Drehwinkel des Textes
      */
@@ -146,7 +153,8 @@ public class Text
     }
 
     /**
-     * Schaltet die Sichtbarkeit des Textes ein oder aus. Erlaubte Parameterwerte: true, false
+     * Schaltet die Sichtbarkeit des Textes ein oder aus. Erlaubte
+     * Parameterwerte: true, false
      *
      * @param sichtbar (neue) Sichtbarkeit des Textes
      */

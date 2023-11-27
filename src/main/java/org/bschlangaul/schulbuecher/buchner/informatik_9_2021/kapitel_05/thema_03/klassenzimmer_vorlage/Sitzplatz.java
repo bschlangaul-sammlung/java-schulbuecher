@@ -6,8 +6,6 @@ import greenfoot.Actor;
  * Klasse Sitzplatz <br>
  * Kap. 5.1, Aufgabe 3b)
  */
-
 public class Sitzplatz extends Actor
 {
-
 }

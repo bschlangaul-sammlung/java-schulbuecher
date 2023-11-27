@@ -9,6 +9,7 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_2_2010.kapi
 class Kontroller
 {
     private Spieler pac;
+
     private FigurenThread[] threads;
 
     /**
@@ -48,24 +49,28 @@ class Kontroller
     {
         switch (ch)
         {
-            case 'W':
-            case 'w':
-                pac.RichtungSetzen('N');
-                break;
-            case 'X':
-            case 'x':
-                pac.RichtungSetzen('S');
-                break;
-            case 'A':
-            case 'a':
-                pac.RichtungSetzen('W');
-                break;
-            case 'D':
-            case 'd':
-                pac.RichtungSetzen('O');
-                break;
-            default:
-                // Nichts zu tun.
+        case 'W':
+        case 'w':
+            pac.RichtungSetzen('N');
+            break;
+
+        case 'X':
+        case 'x':
+            pac.RichtungSetzen('S');
+            break;
+
+        case 'A':
+        case 'a':
+            pac.RichtungSetzen('W');
+            break;
+
+        case 'D':
+        case 'd':
+            pac.RichtungSetzen('O');
+            break;
+
+        default:
+            // Nichts zu tun.
         }
     }
 }

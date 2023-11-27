@@ -12,8 +12,11 @@ import java.awt.event.*;
 class Steuerung implements Beobachter
 {
     private Frame fenster;
+
     private Kontroller kontrolleur;
+
     private Button start, ende;
+
     private Label anzeige;
 
     /**
@@ -39,7 +42,8 @@ class Steuerung implements Beobachter
         start.setEnabled(true);
         start.setVisible(true);
         fenster.add(start);
-        start.addActionListener(new ActionListener() {
+        start.addActionListener(new ActionListener()
+        {
             public void actionPerformed(ActionEvent ev)
             {
                 start.setEnabled(false);
@@ -57,13 +61,15 @@ class Steuerung implements Beobachter
         ende.setEnabled(true);
         ende.setVisible(true);
         fenster.add(ende);
-        ende.addActionListener(new ActionListener() {
+        ende.addActionListener(new ActionListener()
+        {
             public void actionPerformed(ActionEvent ev)
             {
                 kontrolleur.Beenden();
             }
         });
-        fenster.addKeyListener(new KeyAdapter() {
+        fenster.addKeyListener(new KeyAdapter()
+        {
             public void keyTyped(KeyEvent ev)
             {
                 kontrolleur.ZeichenVerarbeiten(ev.getKeyChar());

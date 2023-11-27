@@ -16,53 +16,62 @@ public class WOERTERBUCHTEST
     public WOERTERBUCHTEST()
     {
         woerterbuch = new WOERTERBUCH();
-
     }
 
     /**
-     * Methode zum Testen der Methode TiefeGeben am Beispiel des Baums aus Kapitel 8 Abb. 1 bzw. 2
+     * Methode zum Testen der Methode TiefeGeben am Beispiel des Baums aus
+     * Kapitel 8 Abb. 1 bzw. 2
      *
      */
     public void TiefeGebenTesten()
     {
-        System.out.println("Test der Tiefe des Datenelements mit dem Schl\u00fce\u00dfel clip:");
+        System.out.println(
+                "Test der Tiefe des Datenelements mit dem Schl\u00fce\u00dfel clip:");
         System.out.println(woerterbuch.TiefeGeben("clip"));
-        System.out.println("Testergebnis: " + (woerterbuch.TiefeGeben("clip") == 0));
+        System.out.println(
+                "Testergebnis: " + (woerterbuch.TiefeGeben("clip") == 0));
         System.out.println("------------------------------------------------");
-
-        System.out.println("Test der Tiefe des Datenelements mit dem Schl\u00fce\u00dfel car:");
+        System.out.println(
+                "Test der Tiefe des Datenelements mit dem Schl\u00fce\u00dfel car:");
         System.out.println(woerterbuch.TiefeGeben("car"));
-        System.out.println("Testergebnis: " + (woerterbuch.TiefeGeben("car") == 1));
+        System.out.println(
+                "Testergebnis: " + (woerterbuch.TiefeGeben("car") == 1));
         System.out.println("------------------------------------------------");
-
-        System.out.println("Test der Tiefe des Datenelements mit dem Schl\u00fce\u00dfel cat:");
+        System.out.println(
+                "Test der Tiefe des Datenelements mit dem Schl\u00fce\u00dfel cat:");
         System.out.println(woerterbuch.TiefeGeben("cat"));
-        System.out.println("Testergebnis: " + (woerterbuch.TiefeGeben("cat") == 2));
+        System.out.println(
+                "Testergebnis: " + (woerterbuch.TiefeGeben("cat") == 2));
         System.out.println("------------------------------------------------");
-
-        System.out.println("Test der Tiefe des Datenelements mit dem Schl\u00fce\u00dfel cave:");
+        System.out.println(
+                "Test der Tiefe des Datenelements mit dem Schl\u00fce\u00dfel cave:");
         System.out.println(woerterbuch.TiefeGeben("cave"));
-        System.out.println("Testergebnis: " + (woerterbuch.TiefeGeben("cave") == 3));
+        System.out.println(
+                "Testergebnis: " + (woerterbuch.TiefeGeben("cave") == 3));
         System.out.println("------------------------------------------------");
-
-        System.out.println("Test der Tiefe des Datenelements mit dem Schl\u00fce\u00dfel cook:");
+        System.out.println(
+                "Test der Tiefe des Datenelements mit dem Schl\u00fce\u00dfel cook:");
         System.out.println(woerterbuch.TiefeGeben("cook"));
-        System.out.println("Testergebnis: " + (woerterbuch.TiefeGeben("cook") == 3));
+        System.out.println(
+                "Testergebnis: " + (woerterbuch.TiefeGeben("cook") == 3));
         System.out.println("------------------------------------------------");
-
-        System.out.println("Test der Tiefe des Datenelements mit dem Schl\u00fce\u00dfel cell:");
+        System.out.println(
+                "Test der Tiefe des Datenelements mit dem Schl\u00fce\u00dfel cell:");
         System.out.println(woerterbuch.TiefeGeben("cell"));
-        System.out.println("Testergebnis: " + (woerterbuch.TiefeGeben("cell") == -1));
+        System.out.println(
+                "Testergebnis: " + (woerterbuch.TiefeGeben("cell") == -1));
         System.out.println("------------------------------------------------");
-
-        System.out.println("Test der Tiefe des Datenelements mit dem Schl\u00fce\u00dfel cable:");
+        System.out.println(
+                "Test der Tiefe des Datenelements mit dem Schl\u00fce\u00dfel cable:");
         System.out.println(woerterbuch.TiefeGeben("cable"));
-        System.out.println("Testergebnis: " + (woerterbuch.TiefeGeben("cable") == -1));
+        System.out.println(
+                "Testergebnis: " + (woerterbuch.TiefeGeben("cable") == -1));
         System.out.println("------------------------------------------------");
-
-        System.out.println("Test der Tiefe des Datenelements mit dem Schl\u00fce\u00dfel cut:");
+        System.out.println(
+                "Test der Tiefe des Datenelements mit dem Schl\u00fce\u00dfel cut:");
         System.out.println(woerterbuch.TiefeGeben("cut"));
-        System.out.println("Testergebnis: " + (woerterbuch.TiefeGeben("cut") == -1));
+        System.out.println(
+                "Testergebnis: " + (woerterbuch.TiefeGeben("cut") == -1));
         System.out.println("------------------------------------------------");
     }
 
@@ -73,14 +82,13 @@ public class WOERTERBUCHTEST
      */
     public WOERTERBUCH WoerterbuchGeben()
     {
-
         return woerterbuch;
     }
 
     /**
-     * Methode zum Testen der Methode RechtsEinfuegen: Fügt in den Baum aus Abbildung 1, Kapitel 8
-     * einen Baum mit den drei Schlüsseln Wurzel: cute; linker Nachfolger: cut; rechter Nachfolger:
-     * cup ein
+     * Methode zum Testen der Methode RechtsEinfuegen: Fügt in den Baum aus
+     * Abbildung 1, Kapitel 8 einen Baum mit den drei Schlüsseln Wurzel: cute;
+     * linker Nachfolger: cut; rechter Nachfolger: cup ein
      *
      */
     public void RechtsEinfuegenTesten()
@@ -90,18 +98,17 @@ public class WOERTERBUCHTEST
         WOERTERBUCHEINTRAG wb3;
         KNOTEN knoten;
         wb1 = new WOERTERBUCHEINTRAG("cute", "nett, pfiffig");
-        wb2 = new WOERTERBUCHEINTRAG("cut", "Schnitt, \u00d6ffnung, k\u00fcrzen");
+        wb2 = new WOERTERBUCHEINTRAG("cut",
+                "Schnitt, \u00d6ffnung, k\u00fcrzen");
         wb3 = new WOERTERBUCHEINTRAG("cup", "Tasse, Becher");
-
         knoten = new KNOTEN(wb1, new KNOTEN(wb2), new KNOTEN(wb3));
-
         woerterbuch.RechtsEinfuegen(knoten);
     }
 
     /**
-     * Methode zum Testen der Methode Entfernen: Knoten werden für unterschiedliche Fälle entfernt
-     * und jeweils die Baumstruktur ausgegeben. So ist ein überprüfen der Korrektheit über die
-     * Konsole möglich.
+     * Methode zum Testen der Methode Entfernen: Knoten werden für
+     * unterschiedliche Fälle entfernt und jeweils die Baumstruktur ausgegeben.
+     * So ist ein überprüfen der Korrektheit über die Konsole möglich.
      *
      */
     public void EntfernenTesten()
@@ -109,17 +116,19 @@ public class WOERTERBUCHTEST
         System.out.println("Startsituation:");
         woerterbuch.InformationAusgeben();
         System.out.println(
-                        "Entfernen eines Knotens mit nur einem linken, keinen rechten Nachfolger: coin");
+                "Entfernen eines Knotens mit nur einem linken, keinen rechten Nachfolger: coin");
         woerterbuch.KnotenEntfernen("coin");
         woerterbuch.InformationAusgeben();
-        System.out.println("Entfernen eines Knotens mit rechten, keinen linken Nachfolger: cable");
+        System.out.println(
+                "Entfernen eines Knotens mit rechten, keinen linken Nachfolger: cable");
         woerterbuch.KnotenEntfernen("cable");
         woerterbuch.InformationAusgeben();
         System.out.println("Entfernen eines Knotens mit zwei Nachfolger: crab");
         System.out.println("(Rechter Nachfolger ist verzweigt)");
         woerterbuch.KnotenEntfernen("crab");
         woerterbuch.InformationAusgeben();
-        System.out.println("Entfernen eines Knotens mit zwei Nachfolger: creek");
+        System.out
+                .println("Entfernen eines Knotens mit zwei Nachfolger: creek");
         System.out.println("(Rechter Nachfolger ist eine entartete Liste)");
         woerterbuch.KnotenEntfernen("creek");
         woerterbuch.InformationAusgeben();
@@ -135,10 +144,9 @@ public class WOERTERBUCHTEST
         System.out.println("(Das Blatt ist ein rechter Nachfolger)");
         woerterbuch.KnotenEntfernen("canvas");
         woerterbuch.InformationAusgeben();
-        System.out.println("Versuch einen Schluessel zu entfernen, der nicht existiert: city");
+        System.out.println(
+                "Versuch einen Schluessel zu entfernen, der nicht existiert: city");
         woerterbuch.KnotenEntfernen("city");
         woerterbuch.InformationAusgeben();
-
     }
-
 }

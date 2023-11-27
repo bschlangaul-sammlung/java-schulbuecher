@@ -6,7 +6,6 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_2_2010.kapi
  * @author Albert Wiedemann
  * @version 1.0
  */
-
 import java.io.*;
 
 class DateiLesen
@@ -33,9 +32,11 @@ class DateiLesen
         {
             in = new FileInputStream(name);
             return true;
-        } catch (FileNotFoundException e)
+        }
+        catch (FileNotFoundException e)
         {
-            System.out.println("Fehler beimffnen der Datei: " + e.getMessage());
+            System.out
+                    .println("Fehler beimffnen der Datei: " + e.getMessage());
             return false;
         }
     }
@@ -74,7 +75,8 @@ class DateiLesen
                 }
                 return new String(res, 0, anzahl * 2);
             }
-        } catch (IOException e)
+        }
+        catch (IOException e)
         {
             System.out.println("Fehler beim Lesen: " + e.getMessage());
             return null;
@@ -90,7 +92,8 @@ class DateiLesen
         {
             in.close();
             in = null;
-        } catch (IOException e)
+        }
+        catch (IOException e)
         {
         }
     }

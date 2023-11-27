@@ -8,7 +8,6 @@ package org.bschlangaul.schulbuecher.cornelsen.informatik_3_2017.kapitel_04.them
  */
 class Monster extends Figur
 {
-
     /**
      * Stellt das gelb gefärbte Monster mit geschlossenem Mund dar.
      */
@@ -67,7 +66,8 @@ class Monster extends Figur
     }
 
     /**
-     * Stellt das in einer der Farben gelb, orange, rot bzw. grün mit geschlossenem Mund dar.
+     * Stellt das in einer der Farben gelb, orange, rot bzw. grün mit
+     * geschlossenem Mund dar.
      *
      * @param farbe die gewünschte Farbe
      */
@@ -92,13 +92,15 @@ class Monster extends Figur
     }
 
     /**
-     * Stellt das in einer der Farben gelb, orange, rot bzw. grün mit offenem Mund dar.
+     * Stellt das in einer der Farben gelb, orange, rot bzw. grün mit offenem
+     * Mund dar.
      *
      * @param farbe die gewünschte Farbe
      */
     void Öffnen(String farbe)
     {
-        if ((farbe == "gelb") || (farbe == "orange") || (farbe == "rot") || (farbe == "grün"))
+        if ((farbe == "gelb") || (farbe == "orange") || (farbe == "rot")
+                || (farbe == "grün"))
         {
             Offen(farbe);
         }

@@ -9,8 +9,11 @@ package org.bschlangaul.schulbuecher.buchner.informatik_10_2022.kapitel_05.thema
 public class Lehrer
 {
     String name;
+
     Instrument[] instrumente;
+
     double gehalt;
+
     Schueler[] musikschueler;
 
     public Lehrer()
@@ -18,10 +21,7 @@ public class Lehrer
         name = "Hans Dampf";
         gehalt = 2100.0;
         musikschueler = new Schueler[40];
-
-
         instrumente = new Instrument[4];
-
         instrumente[0] = new Instrument("Klavier");
         instrumente[1] = new Instrument("Geige");
         instrumente[2] = new Instrument("Gitarre");

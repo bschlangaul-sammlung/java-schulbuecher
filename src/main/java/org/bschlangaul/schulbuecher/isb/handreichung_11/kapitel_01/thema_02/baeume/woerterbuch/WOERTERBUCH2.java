@@ -47,10 +47,11 @@ class WOERTERBUCH2
     }
 
     /**
-     * Fügt ein neues Wort in das Wörterbuch ein. Der Wert darf noch nicht vorkommen
+     * Fügt ein neues Wort in das Wörterbuch ein. Der Wert darf noch nicht
+     * vorkommen
      *
      * @param englisch der englische Begriff
-     * @param deutsch die möglichen deutschen übersetzungen
+     * @param deutsch  die möglichen deutschen übersetzungen
      */
     void Einfuegen(String englisch, String deutsch)
     {

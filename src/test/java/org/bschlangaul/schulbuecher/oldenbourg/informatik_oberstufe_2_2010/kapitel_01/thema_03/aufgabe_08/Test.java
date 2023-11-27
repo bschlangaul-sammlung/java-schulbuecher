@@ -8,7 +8,6 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_2_2010.kapi
  */
 public class Test extends junit.framework.TestCase
 {
-
     public void testenPositivTagEinstelligMonatEinstelligVor2000()
     {
         AutomatDatum a = new AutomatDatum();
@@ -86,5 +85,4 @@ public class Test extends junit.framework.TestCase
         AutomatDatum a = new AutomatDatum();
         assertEquals(false, a.IstEingabeAkzeptiert("31.1.2001"));
     }
-
 }

@@ -1,8 +1,8 @@
 package org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.kaffee;
 
 /**
- * Die Klasse Kaffeeautomat ist das "Gehirn" der Simulation. Diese Klasse simuliert die
- * Funktionsweise eines Kaffeeautomaten.
+ * Die Klasse Kaffeeautomat ist das "Gehirn" der Simulation. Diese Klasse
+ * simuliert die Funktionsweise eines Kaffeeautomaten.
  *
  * @author Florian Prager, Ute Heuer, Universität Passau
  * @version 02.2008
@@ -30,8 +30,8 @@ public class Kaffeeautomat
     private Kaffeegrafik animation;
 
     /**
-     * Der Getraenkepreis wird vom Automatenbesitzer im Konstruktor festgelegt. Unsinnige Getraenke-
-     * preise (kleiner 1 Cent) werden nicht abgefangen.
+     * Der Getraenkepreis wird vom Automatenbesitzer im Konstruktor festgelegt.
+     * Unsinnige Getraenke- preise (kleiner 1 Cent) werden nicht abgefangen.
      */
     public Kaffeeautomat(int neuerPreis)
     {
@@ -42,7 +42,8 @@ public class Kaffeeautomat
     }
 
     /**
-     * Befindet sich ein Becher im Ausgabefach, dann entfernt die Methode becherNehmen() diesen.
+     * Befindet sich ein Becher im Ausgabefach, dann entfernt die Methode
+     * becherNehmen() diesen.
      */
     public void becherNehmen()
     {
@@ -55,9 +56,10 @@ public class Kaffeeautomat
     }
 
     /**
-     * Wenn der Benutzer bereits genuegend bezahlt hat, dann kann er ein Getraenk waehlen. als Wert
-     * des Eingangsparameters einfach das gewuenschte Getraenk waehlen. (getraenk ist vom Typ
-     * String, Werte muessen mit Anfuehrungszeichen " " eingefasst werden.)
+     * Wenn der Benutzer bereits genuegend bezahlt hat, dann kann er ein
+     * Getraenk waehlen. als Wert des Eingangsparameters einfach das gewuenschte
+     * Getraenk waehlen. (getraenk ist vom Typ String, Werte muessen mit
+     * Anfuehrungszeichen " " eingefasst werden.)
      */
     public void getraenkWaehlen(String getraenk)
     {
@@ -70,11 +72,13 @@ public class Kaffeeautomat
     }
 
     /**
-     * Der Benutzer kann nur Muenzen einwerfen, wenn er noch nicht genuegend bezahlt hat. Der
-     * Automat nimmt auch keine Muenzen an, wenn ein Becher im Ausgabefach ist. Der Benutzer hat
-     * bezahlt und darf ein Getraenk waehlen, wenn der eingeworfene Muenzwert zusammen mit dem
-     * bisherigen eingeworfenen Betrag den Preis eines Getraenks erreicht oder uebersteigt.
-     * muenzwert - hier darf angegeben werden, was an Kleingeldwerten zur Verfuegung steht...
+     * Der Benutzer kann nur Muenzen einwerfen, wenn er noch nicht genuegend
+     * bezahlt hat. Der Automat nimmt auch keine Muenzen an, wenn ein Becher im
+     * Ausgabefach ist. Der Benutzer hat bezahlt und darf ein Getraenk waehlen,
+     * wenn der eingeworfene Muenzwert zusammen mit dem bisherigen eingeworfenen
+     * Betrag den Preis eines Getraenks erreicht oder uebersteigt. muenzwert -
+     * hier darf angegeben werden, was an Kleingeldwerten zur Verfuegung
+     * steht...
      */
     public void muenzeEinwerfen(int muenzwert)
     {
@@ -92,7 +96,6 @@ public class Kaffeeautomat
             }
         }
     }
-
     // /**
     // * Der Dienst anzeigen stoesst ein Neuzeichnen des Automatengehaeuses an.
     // */

@@ -5,15 +5,12 @@ import greenfoot.Actor;
 /**
  * Klasse Schueler Kap. 5.1, Arbeitsauftrag 4c) und Aufgabe 1
  */
-
 class Schueler extends Actor
 {
     /*
-     * Ab hier ist Platz für neue Methoden. Aktuell sind noch keine programmiert. Methoden dürfen
-     * nicht nach dem letzten "}" stehen!
+     * Ab hier ist Platz für neue Methoden. Aktuell sind noch keine
+     * programmiert. Methoden dürfen nicht nach dem letzten "}" stehen!
      */
-
-
     void geheNachLinks()
     {
         setRotation(180);

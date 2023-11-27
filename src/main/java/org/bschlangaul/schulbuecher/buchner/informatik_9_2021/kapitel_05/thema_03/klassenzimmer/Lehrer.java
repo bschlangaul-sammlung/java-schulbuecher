@@ -14,7 +14,6 @@ class Lehrer extends Actor
         setRotation(0);
     }
 
-
     /**
      * Die Methode bewegt die Lehrerin nach oben
      */

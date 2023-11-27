@@ -6,7 +6,6 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_2_2010.kapi
  * @author Albert. Wiedemann
  * @version 1.0
  */
-
 class ServerAutomat extends Thread
 {
     private enum Zustaende
@@ -15,7 +14,9 @@ class ServerAutomat extends Thread
     };
 
     private Zustaende zustand;
+
     private Verbindung verb;
+
     private EndeMarkierung ende;
 
     /**
@@ -41,46 +42,49 @@ class ServerAutomat extends Thread
         {
             switch (zustand)
             {
-                case start:
-                    zeile = verb.ZeileLesen();
-                    if (zeile.equals("schicken"))
-                    {
-                        zustand = Zustaende.dateinameSchreiben;
-                        VerstandenSenden();
-                    }
-                    else if (zeile.equals("holen"))
-                    {
-                        zustand = Zustaende.dateinameLesen;
-                        VerstandenSenden();
-                    }
-                    else if (zeile.equals("beenden"))
-                    {
-                        ende.BeendenSetzen();
-                        zustand = Zustaende.beenden;
-                    }
-                    break;
-                case dateinameLesen:
-                    zeile = verb.ZeileLesen();
-                    Senden(zeile);
-                    zustand = Zustaende.verstandenWarten;
-                    break;
-                case verstandenWarten:
-                    zeile = verb.ZeileLesen();
-                    if (!zeile.equals("verstanden"))
-                    {
-                        System.out.println("Protokollverletzung: verstanden erwartet, " + zeile
-                                        + " empfangen");
-                    }
-                    zustand = Zustaende.beenden;
-                case dateinameSchreiben:
-                    zeile = verb.ZeileLesen();
+            case start:
+                zeile = verb.ZeileLesen();
+                if (zeile.equals("schicken"))
+                {
+                    zustand = Zustaende.dateinameSchreiben;
                     VerstandenSenden();
-                    Empfangen(zeile);
+                }
+                else if (zeile.equals("holen"))
+                {
+                    zustand = Zustaende.dateinameLesen;
                     VerstandenSenden();
+                }
+                else if (zeile.equals("beenden"))
+                {
+                    ende.BeendenSetzen();
                     zustand = Zustaende.beenden;
-                case beenden:
-                    verb.Schliessen();
-                    return;
+                }
+                break;
+
+            case dateinameLesen:
+                zeile = verb.ZeileLesen();
+                Senden(zeile);
+                zustand = Zustaende.verstandenWarten;
+                break;
+
+            case verstandenWarten:
+                zeile = verb.ZeileLesen();
+                if (!zeile.equals("verstanden"))
+                {
+                    System.out.println(
+                            "Protokollverletzung: verstanden erwartet, " + zeile
+                                    + " empfangen");
+                }
+                zustand = Zustaende.beenden;
+            case dateinameSchreiben:
+                zeile = verb.ZeileLesen();
+                VerstandenSenden();
+                Empfangen(zeile);
+                VerstandenSenden();
+                zustand = Zustaende.beenden;
+            case beenden:
+                verb.Schliessen();
+                return;
             }
         }
     }
@@ -141,7 +145,8 @@ class ServerAutomat extends Thread
         zeile = verb.ZeileLesen();
         if (!zeile.equals("*"))
         {
-            System.out.println("Protokollverletzung, '*' erwartet, " + zeile + " empfangen");
+            System.out.println("Protokollverletzung, '*' erwartet, " + zeile
+                    + " empfangen");
         }
         else if (datei.Oeffnen(name))
         {
@@ -158,7 +163,8 @@ class ServerAutomat extends Thread
         }
         else
         {
-            System.out.println("Ausgabedatei konnte nicht ge\u00F6ffnet werden: " + name);
+            System.out.println(
+                    "Ausgabedatei konnte nicht ge\u00F6ffnet werden: " + name);
         }
         VerstandenSenden();
     }

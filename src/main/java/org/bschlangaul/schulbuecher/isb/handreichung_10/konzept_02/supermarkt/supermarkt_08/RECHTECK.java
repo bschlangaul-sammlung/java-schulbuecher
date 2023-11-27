@@ -1,4 +1,5 @@
 package org.bschlangaul.schulbuecher.isb.handreichung_10.konzept_02.supermarkt.supermarkt_08;
+
 /**
  * Ein Kassensymbol Rechteck) auf einem Fenster. Das Fenster wird bei Bedarf generiert.
  *
@@ -17,12 +18,14 @@ class RECHTECK
     private OBERFLAECHE.FARBE aktFarbe;
 
     /**
-     * Standardkonstruktor für Objekte der Klasse RECHTECK. Er erzeugt ein scharzes Rechteck in der
-     * linken oberen Ecke des Fensters. Das Fenster wird bei Bedarf angelegt.
+     * Standardkonstruktor für Objekte der Klasse RECHTECK. Er erzeugt ein
+     * scharzes Rechteck in der linken oberen Ecke des Fensters. Das Fenster
+     * wird bei Bedarf angelegt.
      */
     RECHTECK()
     {
-        anzeige = new Canvas() {
+        anzeige = new Canvas()
+        {
             /**
              * Stellt die Figur auf dem Fenster dar.
              */
@@ -36,7 +39,6 @@ class RECHTECK
                 g.setColor(aktFarbe.AWTFarbe());
                 g.fillRect(1, 1, breite - 2, hoehe - 2);
             }
-
         };
         aktFarbe = OBERFLAECHE.FARBE.schwarz;
         anzeige.setVisible(true);
@@ -69,8 +71,10 @@ class RECHTECK
         {
             try
             {
-                aktFarbe = OBERFLAECHE.FARBE.valueOf(aktFarbe.getDeclaringClass(), neueFarbe);
-            } catch (Exception e)
+                aktFarbe = OBERFLAECHE.FARBE
+                        .valueOf(aktFarbe.getDeclaringClass(), neueFarbe);
+            }
+            catch (Exception e)
             {
                 aktFarbe = OBERFLAECHE.FARBE.weiss;
             }
@@ -93,7 +97,7 @@ class RECHTECK
      * Setzt die Grö&szlig;e der Figur.
      *
      * @param breite neue Breite
-     * @param h neue Höhe
+     * @param h      neue Höhe
      */
     void GroesseSetzen(int breite, int hoehe)
     {

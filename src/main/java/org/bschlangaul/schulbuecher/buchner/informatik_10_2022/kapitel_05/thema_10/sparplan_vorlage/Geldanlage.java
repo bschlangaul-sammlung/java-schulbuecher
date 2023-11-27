@@ -9,7 +9,9 @@ package org.bschlangaul.schulbuecher.buchner.informatik_10_2022.kapitel_05.thema
 public class Geldanlage
 {
     private double kapital;
+
     private double zinsen;
+
     private double[] vermoegen;
 
     public Geldanlage(double kapital)

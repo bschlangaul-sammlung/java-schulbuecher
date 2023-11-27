@@ -12,15 +12,20 @@ class KNOTEN extends BAUMELEMENT
 {
     /* Referenz auf das Datenelement */
     private DATENELEMENT daten;
+
     /* Referenz auf den linken Nachfolgerknoten (mit den kleineren Werten) */
     private BAUMELEMENT linksnachfolger;
-    /* Referenz auf den rechten Nachfolgerknoten (mit den grö&szlig;eren Werten) */
+
+    /*
+     * Referenz auf den rechten Nachfolgerknoten (mit den grö&szlig;eren Werten)
+     */
     private BAUMELEMENT rechtsnachfolger;
 
     /**
-     * Legt einen neuen Knoten mit gegebenem Datenelement und gegebenen Nachfolgern an.
+     * Legt einen neuen Knoten mit gegebenem Datenelement und gegebenen
+     * Nachfolgern an.
      *
-     * @param d Referenz auf das von diesem Knoten verwaltete Datenelement
+     * @param d   Referenz auf das von diesem Knoten verwaltete Datenelement
      * @param lnf Referenz auf das linke Nachfolgerelement
      * @param rnf Referenz auf das rechte Nachfolgerelement
      */
@@ -53,7 +58,8 @@ class KNOTEN extends BAUMELEMENT
     /**
      * Sucht ein Datenelement mit dem in der Referenz angegebenen Schlüssel.
      *
-     * @param schluessel Referenz auf ein Datenelement mit dem zu suchenden Schlüsselwert
+     * @param schluessel Referenz auf ein Datenelement mit dem zu suchenden
+     *                   Schlüsselwert
      * @return das gefundene Datenelement oder null
      */
     DATENELEMENT Suchen(DATENELEMENT schluessel)
@@ -74,5 +80,4 @@ class KNOTEN extends BAUMELEMENT
             return rechtsnachfolger.Suchen(schluessel);
         }
     }
-
 }

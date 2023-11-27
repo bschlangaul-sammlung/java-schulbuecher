@@ -9,7 +9,9 @@ package org.bschlangaul.schulbuecher.buchner.informatik_10_2022.kapitel_04.thema
 public class Konto
 {
     public double kontostand;
+
     public int kontonummer;
+
     public int pin;
 
     /**
@@ -71,5 +73,4 @@ public class Konto
             return true;
         }
     }
-
 }

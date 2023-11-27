@@ -6,10 +6,8 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapi
  * @author Klaus van Dijkstran und Barbara Leidorn
  * @version 1.0
  */
-
 abstract class KUNDE
 {
-
     /** Anzeigesymbol für den Kunden */
     private KUNDENSYMBOL darstellung;
 
@@ -20,13 +18,12 @@ abstract class KUNDE
     private KUNDE nachfolger;
 
     /**
-     * Konstruktor des Kunden. Setzt eine zufällige Farbe und die Grö&szlig;e gemä&szlig; der
-     * Artikelanzahl. Ein Objekt der Klasse KUNDENSYMBOL dient zur Darstellung des Kunden an zuächst
-     * fester Position vor Kasse 1.
+     * Konstruktor des Kunden. Setzt eine zufällige Farbe und die Grö&szlig;e
+     * gemä&szlig; der Artikelanzahl. Ein Objekt der Klasse KUNDENSYMBOL dient
+     * zur Darstellung des Kunden an zuächst fester Position vor Kasse 1.
      *
      * @param artikel die neue artikelzahl des Kunden.
      */
-
     KUNDE(int artikel)
     {
         artikelzahl = artikel;
@@ -71,7 +68,6 @@ abstract class KUNDE
         return artikelzahl;
     }
 
-
     /**
      * Setzt den Nachfolger des Kunden auf den übergebenen Wert.
      */
@@ -87,7 +83,4 @@ abstract class KUNDE
     {
         return nachfolger;
     }
-
-
-
 }

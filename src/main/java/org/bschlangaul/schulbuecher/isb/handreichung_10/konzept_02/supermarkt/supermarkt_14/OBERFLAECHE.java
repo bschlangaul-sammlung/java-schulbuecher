@@ -6,20 +6,17 @@ package org.bschlangaul.schulbuecher.isb.handreichung_10.konzept_02.supermarkt.s
  * @author Albert Wiedemann
  * @version 1.0
  */
-
 import java.awt.*;
 import java.awt.event.*;
 
 class OBERFLAECHE
 {
-
     /**
      * Vereinbart die für die Simulation nötigen Standardfarben.
      *
      * @author Albert Wiedemann
      * @version 1.0
      */
-
     enum FARBE
     {
         weiss, schwarz, rot, gruen, blau, gelb, magenta, cyan, grau;
@@ -34,35 +31,44 @@ class OBERFLAECHE
             java.awt.Color farbe;
             switch (this)
             {
-                case weiss:
-                    farbe = java.awt.Color.white;
-                    break;
-                case schwarz:
-                    farbe = java.awt.Color.black;
-                    break;
-                case rot:
-                    farbe = java.awt.Color.red;
-                    break;
-                case gruen:
-                    farbe = java.awt.Color.green;
-                    break;
-                case blau:
-                    farbe = java.awt.Color.blue;
-                    break;
-                case gelb:
-                    farbe = java.awt.Color.yellow;
-                    break;
-                case magenta:
-                    farbe = java.awt.Color.magenta;
-                    break;
-                case cyan:
-                    farbe = java.awt.Color.cyan;
-                    break;
-                case grau:
-                    farbe = java.awt.Color.gray;
-                    break;
-                default:
-                    farbe = java.awt.Color.white;
+            case weiss:
+                farbe = java.awt.Color.white;
+                break;
+
+            case schwarz:
+                farbe = java.awt.Color.black;
+                break;
+
+            case rot:
+                farbe = java.awt.Color.red;
+                break;
+
+            case gruen:
+                farbe = java.awt.Color.green;
+                break;
+
+            case blau:
+                farbe = java.awt.Color.blue;
+                break;
+
+            case gelb:
+                farbe = java.awt.Color.yellow;
+                break;
+
+            case magenta:
+                farbe = java.awt.Color.magenta;
+                break;
+
+            case cyan:
+                farbe = java.awt.Color.cyan;
+                break;
+
+            case grau:
+                farbe = java.awt.Color.gray;
+                break;
+
+            default:
+                farbe = java.awt.Color.white;
             }
             return farbe;
         }
@@ -82,9 +88,13 @@ class OBERFLAECHE
     }
 
     private static OBERFLAECHE o = null;
+
     private Frame fenster = null;
+
     private TextField eingabe;
+
     private TextField eingabe2;
+
     private ADAPTER a;
 
     /**
@@ -104,8 +114,8 @@ class OBERFLAECHE
         fenster.setLayout(null);
         fenster.setBackground(Color.white);
         fenster.setSize(breite, hoehe);
-
-        fenster.addWindowListener(new WindowAdapter() {
+        fenster.addWindowListener(new WindowAdapter()
+        {
             public void windowClosing(WindowEvent e)
             {
                 System.exit(1);
@@ -123,7 +133,8 @@ class OBERFLAECHE
         button.setVisible(true);
         button.setSize(100, 30);
         button.setEnabled(true);
-        button.addActionListener(new ActionListener() {
+        button.addActionListener(new ActionListener()
+        {
             public void actionPerformed(ActionEvent e)
             {
                 a.KasseOeffnen(0);
@@ -136,7 +147,8 @@ class OBERFLAECHE
         button.setVisible(true);
         button.setSize(100, 30);
         button.setEnabled(true);
-        button.addActionListener(new ActionListener() {
+        button.addActionListener(new ActionListener()
+        {
             public void actionPerformed(ActionEvent e)
             {
                 a.KasseSchliessen(0);
@@ -155,7 +167,8 @@ class OBERFLAECHE
         button.setVisible(true);
         button.setSize(100, 30);
         button.setEnabled(true);
-        button.addActionListener(new ActionListener() {
+        button.addActionListener(new ActionListener()
+        {
             public void actionPerformed(ActionEvent e)
             {
                 a.KasseOeffnen(1);
@@ -168,7 +181,8 @@ class OBERFLAECHE
         button.setVisible(true);
         button.setSize(100, 30);
         button.setEnabled(true);
-        button.addActionListener(new ActionListener() {
+        button.addActionListener(new ActionListener()
+        {
             public void actionPerformed(ActionEvent e)
             {
                 a.KasseSchliessen(1);
@@ -187,7 +201,8 @@ class OBERFLAECHE
         button.setVisible(true);
         button.setSize(100, 30);
         button.setEnabled(true);
-        button.addActionListener(new ActionListener() {
+        button.addActionListener(new ActionListener()
+        {
             public void actionPerformed(ActionEvent e)
             {
                 a.KasseOeffnen(2);
@@ -200,7 +215,8 @@ class OBERFLAECHE
         button.setVisible(true);
         button.setSize(100, 30);
         button.setEnabled(true);
-        button.addActionListener(new ActionListener() {
+        button.addActionListener(new ActionListener()
+        {
             public void actionPerformed(ActionEvent e)
             {
                 a.KasseSchliessen(2);
@@ -226,13 +242,15 @@ class OBERFLAECHE
         button.setVisible(true);
         button.setSize(80, 30);
         button.setEnabled(true);
-        button.addActionListener(new ActionListener() {
+        button.addActionListener(new ActionListener()
+        {
             public void actionPerformed(ActionEvent e)
             {
                 try
                 {
                     a.KundenabstandSetzen(Integer.parseInt(eingabe.getText()));
-                } catch (Exception ex)
+                }
+                catch (Exception ex)
                 {
                     (Toolkit.getDefaultToolkit()).beep();
                 }
@@ -245,7 +263,8 @@ class OBERFLAECHE
         button.setVisible(true);
         button.setSize(100, 30);
         button.setEnabled(true);
-        button.addActionListener(new ActionListener() {
+        button.addActionListener(new ActionListener()
+        {
             public void actionPerformed(ActionEvent e)
             {
                 a.Starten();
@@ -258,14 +277,14 @@ class OBERFLAECHE
         button.setVisible(true);
         button.setSize(100, 30);
         button.setEnabled(true);
-        button.addActionListener(new ActionListener() {
+        button.addActionListener(new ActionListener()
+        {
             public void actionPerformed(ActionEvent e)
             {
                 a.Anhalten();
             }
         });
         fenster.add(button);
-
         l = new Label();
         l.setText("Zeitfaktor");
         l.setLocation(620, hoehe - 90);
@@ -285,13 +304,15 @@ class OBERFLAECHE
         button.setVisible(true);
         button.setSize(80, 30);
         button.setEnabled(true);
-        button.addActionListener(new ActionListener() {
+        button.addActionListener(new ActionListener()
+        {
             public void actionPerformed(ActionEvent e)
             {
                 try
                 {
                     a.DauerSetzen(Integer.parseInt(eingabe2.getText()));
-                } catch (Exception ex)
+                }
+                catch (Exception ex)
                 {
                     (Toolkit.getDefaultToolkit()).beep();
                 }
@@ -299,7 +320,6 @@ class OBERFLAECHE
         });
         fenster.add(button);
     }
-
 
     /**
      * Gibt das Ausgabefenster zurück und erzeugt es gegebenenfalls.

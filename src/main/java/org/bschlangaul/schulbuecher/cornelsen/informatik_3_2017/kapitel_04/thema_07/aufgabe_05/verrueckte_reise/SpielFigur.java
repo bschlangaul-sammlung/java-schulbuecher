@@ -8,7 +8,6 @@ package org.bschlangaul.schulbuecher.cornelsen.informatik_3_2017.kapitel_04.them
  */
 class SpielFigur extends Figur
 {
-
     /**
      * Bewegt die Figur
      */
@@ -62,5 +61,4 @@ class SpielFigur extends Figur
             Drehen(-5);
         }
     }
-
 }

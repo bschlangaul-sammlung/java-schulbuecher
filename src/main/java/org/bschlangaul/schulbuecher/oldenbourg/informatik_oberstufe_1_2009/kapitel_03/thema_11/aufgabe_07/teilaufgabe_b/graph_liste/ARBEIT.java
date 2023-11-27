@@ -1,31 +1,29 @@
 package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapitel_03.thema_11.aufgabe_07.teilaufgabe_b.graph_liste;
 
 /**
- * Baut Adjazenzlisten entsprechend der Aufgabe 4 in Kapitel 11 auf Buch Informatik Oberstufe 1
- * Oldenbourg Verlag
+ * Baut Adjazenzlisten entsprechend der Aufgabe 4 in Kapitel 11 auf Buch
+ * Informatik Oberstufe 1 Oldenbourg Verlag
  *
  * @author U.Freiberger
  * @version 1.0
  */
-
 public class ARBEIT
 {
-
     GRAPH_LISTE g;
 
     /**
      * Konstruktor der Klasse ARBEIT
      */
     public ARBEIT()
-    {}
-
+    {
+    }
 
     /**
      * Methode AusfuehrenAutobahn()
      *
-     * führt sämtliche Arbeiten zur Implementierung des Graphen entsprechend der Vorgabe in der
-     * Teilaufgabe Autobahn aus Instanzieren des Graphenobjekts; Einfügen der Knoten und Einfügen
-     * der Kanten
+     * führt sämtliche Arbeiten zur Implementierung des Graphen entsprechend der
+     * Vorgabe in der Teilaufgabe Autobahn aus Instanzieren des Graphenobjekts;
+     * Einfügen der Knoten und Einfügen der Kanten
      *
      * Am Ende Ausgabe der Adjazenzlisten zur Kontrolle
      *
@@ -34,7 +32,6 @@ public class ARBEIT
     {
         // Erzeugen eines Graphenobjekts g mit Adjazenzlisten
         GRAPH_LISTE g = new GRAPH_LISTE();
-
         // Anlegen der Knoten
         g.KnotenEinfuegen("A");
         g.KnotenEinfuegen("F");
@@ -50,7 +47,6 @@ public class ARBEIT
         g.KnotenEinfuegen("S");
         g.KnotenEinfuegen("UL");
         g.KnotenEinfuegen("WÜ");
-
         // Anlegen der Kanten
         g.KanteEinfuegen("KA", "F", 127);
         g.KanteEinfuegen("F", "WÜ", 131);
@@ -71,9 +67,7 @@ public class ARBEIT
         g.KanteEinfuegen("UL", "S", 103);
         g.KanteEinfuegen("S", "KA", 53);
         g.KanteEinfuegen("S", "WÜ", 155);
-
         // Ausgeben der Adjazenzlisten in der Konsole
         g.Ausgeben();
     }
-
 }

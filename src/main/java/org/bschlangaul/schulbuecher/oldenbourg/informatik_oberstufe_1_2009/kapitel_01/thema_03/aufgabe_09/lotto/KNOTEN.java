@@ -45,8 +45,6 @@ class KNOTEN
         }
     }
 
-
-
     /**
      * Fügt ein Datenelement sortiert in die Liste ein
      *
@@ -75,9 +73,9 @@ class KNOTEN
         }
     }
 
-
     /**
-     * Gibt Information über das Datenelement und den Nachfolger des Knotens aus.
+     * Gibt Information über das Datenelement und den Nachfolger des Knotens
+     * aus.
      */
     void InformationAusgeben()
     {
@@ -87,7 +85,4 @@ class KNOTEN
             nachfolger.InformationAusgeben();
         }
     }
-
-
-
 }

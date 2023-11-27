@@ -7,10 +7,10 @@ import greenfoot.Actor;
  *
  * Kap. 7.3 Arbeitsauftrag 3, Aufgabe 1
  */
-
 public class Fahrzeug extends Actor
 {
     int hoechstgeschwindigkeit;
+
     String farbe;
 
     // Alter Konstruktor muss deaktiviert sein
@@ -18,8 +18,8 @@ public class Fahrzeug extends Actor
      * public Fahrzeug() { farbe = "schwarz"; }
      */
     /*
-     * Kap. 7.3 Aufgabe 1d - der andere Konstruktor muss durch diesen ersetzt werden, um den
-     * angesprochenen Fehler zu erzeugen.
+     * Kap. 7.3 Aufgabe 1d - der andere Konstruktor muss durch diesen ersetzt
+     * werden, um den angesprochenen Fehler zu erzeugen.
      */
     public Fahrzeug(String startfarbe)
     {
@@ -28,7 +28,6 @@ public class Fahrzeug extends Actor
 
     void gibLaut()
     {
-
     }
 
     public void act()
@@ -38,6 +37,5 @@ public class Fahrzeug extends Actor
 
     void fahre()
     {
-
     }
 }

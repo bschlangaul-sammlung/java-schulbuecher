@@ -10,7 +10,9 @@ public class GRAPH
 {
     // TO-DO: Deklarieren der Adjazenzmatrix und des Knotenfeldes.
     private KNOTEN[] knotennamen;
+
     private double[][] adja;
+
     private int aktAnzahl, maxAnzahl;
 
     public GRAPH(int anzKnoten)
@@ -56,13 +58,12 @@ public class GRAPH
             {
                 if ((adja[start][ende] >= 0) && (adja[start][ende] <= 1))
                 {
-                    System.out.println(knotennamen[start].bezeichnerGeben() + " und "
-                                    + knotennamen[ende].bezeichnerGeben());
+                    System.out.println(knotennamen[start].bezeichnerGeben()
+                            + " und " + knotennamen[ende].bezeichnerGeben());
                 }
             }
         }
     }
-
     // Die folgenden Methoden sind für dich nicht relevant.
 
     public void adjaAusgeben()
@@ -102,7 +103,6 @@ public class GRAPH
                 position = i;
             }
         }
-
         return position;
     }
 
@@ -116,5 +116,4 @@ public class GRAPH
             }
         }
     }
-
 }

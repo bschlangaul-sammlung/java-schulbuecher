@@ -25,20 +25,20 @@ interface OBERFLACHENINTERFACE
     /**
      * Besetzt die Anzeigeelemente für ein bestimmtes Objekt.
      *
-     * @param nummer die Objektnummer
-     * @param name Name des Objekts
-     * @param groesse Objektgrö&szlig;e in qm
-     * @param zimmer Anzahl der Zimmer
+     * @param nummer   die Objektnummer
+     * @param name     Name des Objekts
+     * @param groesse  Objektgrö&szlig;e in qm
+     * @param zimmer   Anzahl der Zimmer
      * @param personen Anzahl der Personen
      * @param landinfo Infoobjekt für das Land des Objekts
-     * @param a Art des Objekts
-     * @param p Preis des Objekts
-     * @param sperr Sperrinformation für dieses Objekt
-     * @param aus Feld mit der Ausstattunsinformation
+     * @param a        Art des Objekts
+     * @param p        Preis des Objekts
+     * @param sperr    Sperrinformation für dieses Objekt
+     * @param aus      Feld mit der Ausstattunsinformation
      */
-    void ObjektInfoSetzen(int nummer, String name, int groesse, int zimmer, int personen,
-                    Object landinfo, String a, double p, boolean sperr, boolean[] aus);
-
+    void ObjektInfoSetzen(int nummer, String name, int groesse, int zimmer,
+            int personen, Object landinfo, String a, double p, boolean sperr,
+            boolean[] aus);
 
     /**
      * Besetzt das Auswahlmenü mit Kundendaten
@@ -51,8 +51,8 @@ interface OBERFLACHENINTERFACE
      * Besetzt die Anzeigeelemente für einen bestimmten Kunden.
      *
      * @param benutzername der Benutzername des Kunden
-     * @param name Name
-     * @param vorname Vorname
+     * @param name         Name
+     * @param vorname      Vorname
      */
     void KundenInfoSetzen(String benutzername, String name, String vorname);
 

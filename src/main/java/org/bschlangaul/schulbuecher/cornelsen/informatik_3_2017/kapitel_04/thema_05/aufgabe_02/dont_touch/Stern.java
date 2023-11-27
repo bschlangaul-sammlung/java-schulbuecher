@@ -14,8 +14,8 @@ class Stern extends Hindernis
     /**
      * Legt das Aussehen und die Startposition fest
      *
-     * @param x x-Koordinate des Hindernisses
-     * @param y y-Koordinate des Hindernisses
+     * @param x           x-Koordinate des Hindernisses
+     * @param y           y-Koordinate des Hindernisses
      * @param richtungNeu Blickrichtung des Hindernisses
      */
     Stern(int x, int y, char richtungNeu)
@@ -46,12 +46,11 @@ class Stern extends Hindernis
                     else
                     {
                         System.out.println(
-                                        "unbekannte Richtung in Methode Bewegen, Klasse Hindernis");
+                                "unbekannte Richtung in Methode Bewegen, Klasse Hindernis");
                     }
                 }
             }
         }
-
         WinkelSetzen(winkel);
         Zeichnen();
     }
@@ -135,7 +134,7 @@ class Stern extends Hindernis
                                     else
                                     {
                                         System.out.println(
-                                                        "unbekannte Richtung in Methode Bewegen, Klasse Hindernis");
+                                                "unbekannte Richtung in Methode Bewegen, Klasse Hindernis");
                                     }
                                 }
                             }
@@ -144,7 +143,6 @@ class Stern extends Hindernis
                 }
             }
         }
-
         WinkelSetzen(winkel);
         Gehen(5);
         EntfernenWennAußerhalb();
@@ -161,6 +159,4 @@ class Stern extends Hindernis
         FigurteilFestlegenDreieck(25, -50, -50, 0, 25, 50, "grün");
         GrößeSetzen(60);
     }
-
-
 }

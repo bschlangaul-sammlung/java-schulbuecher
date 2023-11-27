@@ -8,7 +8,6 @@ package org.bschlangaul.schulbuecher.cornelsen.informatik_3_2017.kapitel_04.them
  */
 class GeoTurtle extends Turtle
 {
-
     /**
      * Zeichnet ein Rechteck mit fester Breite und Höhe
      */
@@ -28,7 +27,7 @@ class GeoTurtle extends Turtle
      * Zeichnet ein Rechteck mit angebbarer Breite und Höhe
      *
      * @param breite Breite des Rechtecks
-     * @param höhe Höhe des Rechtecks
+     * @param höhe   Höhe des Rechtecks
      */
     void RechteckZeichnen(int breite, int höhe)
     {
@@ -46,8 +45,8 @@ class GeoTurtle extends Turtle
      * Zeichnet ein Rechteck mit angebbarer Breite, Höhe und Farbe
      *
      * @param breite Breite des Rechtecks
-     * @param höhe Höhe des Rechtecks
-     * @param farbe Farbe des Rechtecks
+     * @param höhe   Höhe des Rechtecks
+     * @param farbe  Farbe des Rechtecks
      */
     void RechteckZeichnen(int breite, int höhe, String farbe)
     {
@@ -82,12 +81,13 @@ class GeoTurtle extends Turtle
     }
 
     /**
-     * Zeichnet ein Parallelogramms mit angebbarer Breite, Höhe, Winkel und Farbe
+     * Zeichnet ein Parallelogramms mit angebbarer Breite, Höhe, Winkel und
+     * Farbe
      *
      * @param breite Breite des Parallelogramms
-     * @param höhe Höhe des Parallelogramms
-     * @param alpha Winkel bei A
-     * @param farbe Farbe des Parallelogramms
+     * @param höhe   Höhe des Parallelogramms
+     * @param alpha  Winkel bei A
+     * @param farbe  Farbe des Parallelogramms
      */
     void ParallelogrammZeichnen(int breite, int höhe, int alpha, String farbe)
     {

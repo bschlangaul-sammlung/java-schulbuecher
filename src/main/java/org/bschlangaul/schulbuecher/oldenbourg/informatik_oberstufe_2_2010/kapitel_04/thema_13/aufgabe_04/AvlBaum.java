@@ -1,15 +1,15 @@
 package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_2_2010.kapitel_04.thema_13.aufgabe_04;
 
 /**
- * Die Klasse beschreibt einen balancierten Baum (AVL-Baum) mit den Methoden, die für den
- * Laufzeittest beim Suchen im Baum erforderlich sind. Auf andere Methoden wird verzichtet.
+ * Die Klasse beschreibt einen balancierten Baum (AVL-Baum) mit den Methoden,
+ * die für den Laufzeittest beim Suchen im Baum erforderlich sind. Auf andere
+ * Methoden wird verzichtet.
  *
  * @author Klaus Reinold
  * @version 1.0
  */
 public class AvlBaum
 {
-
     /** Die Wurzel des Baumes */
     private AvlKnoten wurzel;
 
@@ -36,12 +36,10 @@ public class AvlBaum
         {
             wurzel.Einfuegen(d);
         }
-
     }
 
     public DatenElement Suchen(int vergleichswert)
     {
-
         Zaehler.ZaehlerInkrementieren();
         if (wurzel == null)
         {
@@ -53,7 +51,5 @@ public class AvlBaum
             Zaehler.ZaehlerInkrementieren();
             return wurzel.Suchen(vergleichswert);
         }
-
     }
-
 }

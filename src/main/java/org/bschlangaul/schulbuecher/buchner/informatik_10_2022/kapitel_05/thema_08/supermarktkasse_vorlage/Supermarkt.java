@@ -10,7 +10,6 @@ public class Supermarkt
     private String name;
 
     public Supermarkt()
-
     {
         name = "Zuckerberg-Markt";
     }

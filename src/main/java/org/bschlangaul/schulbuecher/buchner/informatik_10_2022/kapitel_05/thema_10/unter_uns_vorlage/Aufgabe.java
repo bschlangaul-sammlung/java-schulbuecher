@@ -9,7 +9,9 @@ package org.bschlangaul.schulbuecher.buchner.informatik_10_2022.kapitel_05.thema
 public class Aufgabe
 {
     private int aufgabennummer;
+
     private int punktezahl;
+
     private boolean erledigt;
 
     public Aufgabe(int aufgabennummer, int punktezahl)

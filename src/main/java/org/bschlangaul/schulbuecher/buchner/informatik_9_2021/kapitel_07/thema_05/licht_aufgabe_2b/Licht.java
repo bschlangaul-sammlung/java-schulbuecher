@@ -9,11 +9,12 @@ import greenfoot.GreenfootImage;
  * Oberklasse für die Lichter.
  *
  */
-
 class Licht extends Actor
 {
     GreenfootImage licht = new GreenfootImage(100, 100);
+
     Color farbe = Color.YELLOW;
+
     boolean istAn;
 
     Licht()
@@ -69,7 +70,6 @@ class Licht extends Actor
         {
             schalteUm();
         }
-
         if (farbe == Color.YELLOW)
         {
             farbe = Color.RED;
@@ -78,7 +78,6 @@ class Licht extends Actor
         {
             farbe = Color.YELLOW;
         }
-
         leuchte();
     }
 }

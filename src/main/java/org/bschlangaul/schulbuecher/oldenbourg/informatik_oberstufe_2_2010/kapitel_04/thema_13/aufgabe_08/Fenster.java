@@ -10,22 +10,31 @@ import java.awt.event.*;
  * @version 1.0 vom 26.08.2009
  * @author Klaus Reinold
  */
-
 public class Fenster extends Frame
 {
     // Anfang Attribute
     private Label label1 = new Label();
+
     private TextField textField1 = new TextField();
+
     private Label label2 = new Label();
+
     private Choice choice1 = new Choice();
+
     private Label label3 = new Label();
+
     private Label label4 = new Label();
+
     private Choice choice2 = new Choice();
 
     private Button button1 = new Button();
+
     private Label label5 = new Label();
+
     private Label label6 = new Label();
+
     Controller c;
+
     Fenster f;
     // Ende Attribute
 
@@ -33,7 +42,8 @@ public class Fenster extends Frame
     {
         // Frame-Initialisierung
         super("Laufzeitmessung bei Brute-Force-Attacke");
-        addWindowListener(new WindowAdapter() {
+        addWindowListener(new WindowAdapter()
+        {
             public void windowClosing(WindowEvent evt)
             {
                 System.exit(0);
@@ -50,7 +60,6 @@ public class Fenster extends Frame
         add(cp);
         f = this;
         // Anfang Komponenten
-
         label1.setBounds(24, 16, 400, 29);
         label1.setText("Laufzeitmessung Brute-Force-Attacke");
         label1.setFont(new Font("MS Sans Serif", Font.PLAIN, 21));
@@ -69,7 +78,7 @@ public class Fenster extends Frame
         choice1.add("a..z 0..9");
         choice1.add("a..z A..Z 0..9");
         choice1.add("a..z A..Z 0..9 !" + (new Character((char) 34)).toString()
-                        + " §$%&/()=?*+#-_.:;,");
+                + " §$%&/()=?*+#-_.:;,");
         cp.add(choice1);
         label3.setBounds(24, 128, 82, 16);
         label3.setText("Zeichenvorrat");
@@ -94,10 +103,10 @@ public class Fenster extends Frame
         choice2.add("12");
         choice2.add("13");
         cp.add(choice2);
-
         button1.setBounds(24, 192, 321, 33);
         button1.setLabel("Attacke starten!");
-        button1.addActionListener(new ActionListener() {
+        button1.addActionListener(new ActionListener()
+        {
             public void actionPerformed(ActionEvent evt)
             {
                 if (button1.getLabel().equals("Attacke starten!"))
@@ -105,14 +114,12 @@ public class Fenster extends Frame
                     button1.setLabel("Berechnung läuft!");
                     label5.setText("");
                     label6.setText("");
-                    c = new Controller(choice1.getSelectedItem(), choice2.getSelectedItem(),
-                                    textField1.getText(), f);
-
+                    c = new Controller(choice1.getSelectedItem(),
+                            choice2.getSelectedItem(), textField1.getText(), f);
                 }
                 else
                 {
                     button1.setLabel("Attacke starten!");
-
                 }
             }
         });
@@ -126,7 +133,6 @@ public class Fenster extends Frame
         label6.setFont(new Font("MS Sans Serif", Font.PLAIN, 13));
         cp.add(label6);
         // Ende Komponenten
-
         setResizable(false);
         setVisible(true);
     }
@@ -149,5 +155,4 @@ public class Fenster extends Frame
     {
         new Fenster();
     }
-
 }

@@ -6,11 +6,8 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapi
  * @author Klaus van Dijkstran
  * @version 1.0
  */
-
-
 class MAUS extends HINDERNIS
 {
-
     /**
      * Konstruktor der Maus Ruft den Konstruktor der Oberklasse auf.
      */
@@ -30,7 +27,6 @@ class MAUS extends HINDERNIS
         int xneu, yneu;
         xneu = super.X_VorausBerechnen();
         yneu = super.Y_VorausBerechnen();
-
         if (s.IstInSpielfeld(xneu, yneu))
         {
             x = xneu;
@@ -52,8 +48,5 @@ class MAUS extends HINDERNIS
             s.FeldBelegen(x, y, 's');
             RichtungUndOrtBestimmen(s);
         }
-
     }
-
-
 }

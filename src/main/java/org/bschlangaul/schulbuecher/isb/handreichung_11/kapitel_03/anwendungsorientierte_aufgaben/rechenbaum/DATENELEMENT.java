@@ -6,7 +6,6 @@ package org.bschlangaul.schulbuecher.isb.handreichung_11.kapitel_03.anwendungsor
  * @author ISB-Arbeitskreis
  * @version 1.0
  */
-
 interface DATENELEMENT
 {
     /**

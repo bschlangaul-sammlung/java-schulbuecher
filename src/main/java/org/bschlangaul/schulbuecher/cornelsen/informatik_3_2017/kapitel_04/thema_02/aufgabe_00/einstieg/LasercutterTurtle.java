@@ -8,7 +8,6 @@ package org.bschlangaul.schulbuecher.cornelsen.informatik_3_2017.kapitel_04.them
  */
 class LasercutterTurtle extends Turtle
 {
-
     /**
      * Zeichnet ein reguläres Sechseck mit 50 Einheiten Kantenlänge
      */

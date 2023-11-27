@@ -45,11 +45,10 @@ public class KNOTEN
         }
     }
 
-
     /**
      * Fügt ein Datenelement vor einem bestimmten anderen Datenelement ein
      *
-     * @param dneu neues Datenelement
+     * @param dneu        neues Datenelement
      * @param d_vergleich gesuchtes Datenelement, vor dem eingefügt werden soll
      * @return Weitergabe des künftigen Nachfolgers
      */
@@ -73,8 +72,6 @@ public class KNOTEN
             kneu = new KNOTEN(dneu, this);
             return kneu;
         }
-
-
     }
 
     /**
@@ -106,7 +103,8 @@ public class KNOTEN
     }
 
     /**
-     * Entfernt einen Knoten, der über sein Datenelement identifiziert wird, aus der Liste
+     * Entfernt einen Knoten, der über sein Datenelement identifiziert wird, aus
+     * der Liste
      *
      * @param dvergleich gesuchtes Datenelement
      * @return Weitergabe des künftigen Nachfolgers
@@ -129,8 +127,6 @@ public class KNOTEN
                 return null;
             }
         }
-
-
     }
 
     /**
@@ -149,7 +145,6 @@ public class KNOTEN
             return nachfolger.EndeGeben();
         }
     }
-
 
     /**
      * Gibt den letzten Knoten aus und entfernt ihn aus der Liste
@@ -170,7 +165,8 @@ public class KNOTEN
     }
 
     /**
-     * Gibt Information über das Datenelement und den Nachfolger des Knotens aus.
+     * Gibt Information über das Datenelement und den Nachfolger des Knotens
+     * aus.
      */
     public void InformationAusgeben()
     {
@@ -182,7 +178,8 @@ public class KNOTEN
     }
 
     /**
-     * Sucht ein Datenelement, das über seinen Schlüssel identifiziert wird, und gibt es aus.
+     * Sucht ein Datenelement, das über seinen Schlüssel identifiziert wird, und
+     * gibt es aus.
      *
      * @param vergleichswert Schlüssel vom Typ String
      * @return gesuchtes Datenelement

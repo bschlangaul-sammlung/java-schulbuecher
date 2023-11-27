@@ -25,7 +25,8 @@ abstract class LISTENELEMENTK
     abstract LISTENELEMENTK Einfuegen(KONTO konto);
 
     /**
-     * Löscht das angegebene KONTO aus der Liste. Nutzt die Sortierung der Liste aus.
+     * Löscht das angegebene KONTO aus der Liste. Nutzt die Sortierung der Liste
+     * aus.
      *
      * @param konto Referenz auf das einzufügende Konto.
      * @return (neues) Nachfolgeelement des Aufrufers.
@@ -43,7 +44,8 @@ abstract class LISTENELEMENTK
     /**
      * Zählt die Konten, die der angegebene Kunde besitzt.
      *
-     * @param kunde Referenz auf den Kunde, für den die Konten gezählt werden sollen.
+     * @param kunde Referenz auf den Kunde, für den die Konten gezählt werden
+     *              sollen.
      * @return Anzahl der Mitglieder der Menge.
      */
     abstract int KontosFuerKundeZaehlen(KUNDE kunde);
@@ -51,11 +53,13 @@ abstract class LISTENELEMENTK
     /**
      * Trägt die Kontonummern der Konten des angegebenen Kunden in das Feld ein.
      *
-     * @param kunde Referenz auf den Kunden.
+     * @param kunde    Referenz auf den Kunden.
      * @param ergebnis Referenz auf das Feld mit den gefundenen Daten.
-     * @param pos Index, auf dem das nächste Element eingetragen werden soll.
+     * @param pos      Index, auf dem das nächste Element eingetragen werden
+     *                 soll.
      */
-    abstract void KontonummernFuerKundeEintragen(KUNDE kunde, int[] ergebnis, int pos);
+    abstract void KontonummernFuerKundeEintragen(KUNDE kunde, int[] ergebnis,
+            int pos);
 
     /**
      * Verzinst alle Sparkonten.

@@ -4,5 +4,4 @@ import greenfoot.Actor;
 
 class Sitzplatz extends Actor
 {
-
 }

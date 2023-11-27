@@ -6,18 +6,18 @@ package org.bschlangaul.schulbuecher.buchner.informatik_10_2022.kapitel_05.thema
 public class Loewe
 {
     private String name;
+
     private char geschlecht;
+
     private boolean hungrig;
 
     public Loewe(String n, char g)
-
     {
         name = n;
         geschlecht = g;
     }
 
     public void fuettern()
-
     {
         hungrig = false;
     }

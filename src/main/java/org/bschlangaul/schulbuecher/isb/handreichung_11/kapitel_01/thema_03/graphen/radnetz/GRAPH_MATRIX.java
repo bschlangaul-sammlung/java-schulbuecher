@@ -1,16 +1,19 @@
 package org.bschlangaul.schulbuecher.isb.handreichung_11.kapitel_01.thema_03.graphen.radnetz;
 
 /**
- * Beispiel für einen gerichteten, bewerteten Graphen, der mit Hilfe der Adjazenzmatrix
- * implementiert wird. Der Anwendungszusammenhang ist ein Wegenetz für Radfahrer. Die Richtung einer
- * Kante gibt die Richtung des Radweges an und ihre Bewertung steht für die durchschnittlich
- * benoetigte Zeit.
+ * Beispiel für einen gerichteten, bewerteten Graphen, der mit Hilfe der
+ * Adjazenzmatrix implementiert wird. Der Anwendungszusammenhang ist ein
+ * Wegenetz für Radfahrer. Die Richtung einer Kante gibt die Richtung des
+ * Radweges an und ihre Bewertung steht für die durchschnittlich benoetigte
+ * Zeit.
  *
  */
 class GRAPH_MATRIX
 {
     private KNOTEN[] knotenfeld;
+
     private int[][] adjazenzmatrix;
+
     private int anzahlKnoten = 0;
 
     // Konstruktor
@@ -18,7 +21,6 @@ class GRAPH_MATRIX
     {
         knotenfeld = new KNOTEN[maxAnzahlKnoten];
         adjazenzmatrix = new int[maxAnzahlKnoten][maxAnzahlKnoten];
-
         // Die Adjazenzmatrix wird mit den Werten 0 auf der Diagonalen und
         // sonst mit den Werten -1 ("keine Kante") vorbelegt.
         for (int i = 0; i < maxAnzahlKnoten; i = i + 1)
@@ -51,7 +53,6 @@ class GRAPH_MATRIX
     {
         System.out.println("");
         System.out.println("Die Adjazenzmatrix lautet:");
-
         for (int i = 0; i < anzahlKnoten; i = i + 1)
         {
             for (int j = 0; j < anzahlKnoten; j = j + 1)
@@ -73,7 +74,6 @@ class GRAPH_MATRIX
         {
             knotenfeld[i].markierungSetzen(false);
         }
-
         // Beginn der Tiefensuche mit dem angegebenen Startknoten
         if (startKnotenNr >= 0 && startKnotenNr < anzahlKnoten)
         {
@@ -88,11 +88,11 @@ class GRAPH_MATRIX
         knotenfeld[knotenNr].markierungSetzen(true);
         System.out.println("Jetzt wurde der folgende Ort besucht:");
         knotenfeld[knotenNr].datenLiefern().ausgeben();
-
         // Für benachbarte Knoten die Tiefensuche erneut aufrufen.
         for (int j = 0; j < anzahlKnoten; j++)
         {
-            if (adjazenzmatrix[knotenNr][j] > 0 && (knotenfeld[j].markierungGeben() == false))
+            if (adjazenzmatrix[knotenNr][j] > 0
+                    && (knotenfeld[j].markierungGeben() == false))
             {
                 // Rekursiver Aufruf der Tiefensuche für den naechsten Knoten
                 tiefensucheDurchfuehren(j);
@@ -113,7 +113,7 @@ class GRAPH_MATRIX
         else
         {
             System.out.println(
-                            "Es wurde keine Kante erzeugt, da Start- oder Zielknoten nicht existieren.");
+                    "Es wurde keine Kante erzeugt, da Start- oder Zielknoten nicht existieren.");
         }
     }
 
@@ -127,7 +127,7 @@ class GRAPH_MATRIX
         else
         {
             System.out.println(
-                            "Es wurde keine Kante geloescht, da Start- oder Zielknoten nicht existieren.");
+                    "Es wurde keine Kante geloescht, da Start- oder Zielknoten nicht existieren.");
         }
     }
 
@@ -145,7 +145,7 @@ class GRAPH_MATRIX
         else
         {
             System.out.println(
-                            "Es wurde kein Knoten erzeugt, da der Graph schon die maximale Anzahl an Knoten enthält.");
+                    "Es wurde kein Knoten erzeugt, da der Graph schon die maximale Anzahl an Knoten enthält.");
         }
         return index;
     }
@@ -166,7 +166,8 @@ class GRAPH_MATRIX
         }
         else
         {
-            // Alle Feldelemente des Knotenfeldes ab dem zu loeschenden Knoten werden eine Stelle
+            // Alle Feldelemente des Knotenfeldes ab dem zu loeschenden Knoten
+            // werden eine Stelle
             // nach vorne gerückt.
             for (int i = knotenIndex; i < knotenfeld.length - 1; i = i + 1)
             {
@@ -191,6 +192,7 @@ class GRAPH_MATRIX
             }
         }
         anzahlKnoten = anzahlKnoten - 1;
-        System.out.println("Es wurde der Knoten mit der Nummer " + knotenIndex + " geloescht.");
+        System.out.println("Es wurde der Knoten mit der Nummer " + knotenIndex
+                + " geloescht.");
     }
 }

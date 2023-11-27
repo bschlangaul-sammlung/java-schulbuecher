@@ -107,7 +107,7 @@
                     <artifactId>formatter-maven-plugin</artifactId>
                     <version>2.19.0</version>
                     <configuration>
-                        <configFile>${project.basedir}/eclipse-formatter.xml</configFile>
+                        <configFile>${project.basedir}/.eclipse-formatter/school.xml</configFile>
                     </configuration>
                 </plugin>
 
