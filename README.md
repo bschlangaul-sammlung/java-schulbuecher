@@ -115,27 +115,9 @@ mvn install:install-file \
    -DgeneratePom=true
 ```
 
-```
-mvn install:install-file \
-   -Dfile=.jars/Engine.Alpha-4.jar \
-   -DgroupId=ea.edu \
-   -DartifactId=AlphaEngine \
-   -Dversion=4.0.0 \
-   -Dpackaging=jar \
-   -DgeneratePom=true
-```
 
-### javakarol
 
-```
-mvn install:install-file \
-   -Dfile=.jars/javakarol-3.0.jar \
-   -DgroupId=javakarol \
-   -DartifactId=javakarol \
-   -Dversion=3.0 \
-   -Dpackaging=jar \
-   -DgeneratePom=true
-```
+
 
 # Formatierung
 

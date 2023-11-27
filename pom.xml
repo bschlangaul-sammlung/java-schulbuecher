@@ -17,12 +17,19 @@
         <maven.compiler.source>14</maven.compiler.source>
     </properties>
 
+    <repositories>
+        <repository>
+          <id>project-repository</id>
+          <url>file://${project.basedir}/repository</url>
+        </repository>
+      </repositories>
+
     <dependencies>
 
         <dependency>
             <groupId>greenfoot</groupId>
             <artifactId>greenfoot</artifactId>
-            <version>3.7.0</version>
+            <version>3.8.1</version>
         </dependency>
 
         <dependency>
@@ -41,7 +48,7 @@
         <dependency>
             <groupId>javakarol</groupId>
             <artifactId>javakarol</artifactId>
-            <version>3.0</version>
+            <version>3.0.4</version>
         </dependency>
 
         <dependency>
