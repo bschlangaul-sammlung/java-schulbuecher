@@ -1,0 +1,90 @@
+Knoten: 40
+22	128	Mammendorf
+41	467	Geltendorf
+101	520	Herrsching
+190	527	Tutzing
+140	280	Pasing
+210	280	Laim
+276	280	D_bergerbrücke
+173	190	Dachau
+106	91	Altomünster
+173	62	Petershausen
+278	343	Heimeranpl.
+220	342	Laimer Platz
+280	418	Harras
+197	413	Großhadern
+309	524	Wolfratshausen
+357	279	Hauptbahnhof
+399	160	Scheidplatz
+292	200	OEZ
+228	145	Feldmoching
+320	60	Neufahrn
+461	18	Freising
+434	280	Karlsplatz
+523	280	Marienplatz
+435	376	Sendlinger Tor
+238	481	Fürstenried
+473	450	Mangfallplatz
+522	195	Odeonsplatz
+521	80	Garching
+640	279	Ostbahnhof
+621	164	Arabellapark
+710	33	Flughafen
+767	99	Erding
+547	386	Giesing
+663	370	Innsbr. Ring
+724	311	Trudering
+768	261	Messe
+763	464	Ebersberg
+522	536	Holzkirchen
+661	531	Kreuzstraße
+640	462	Neuperlach
+Kanten: 48
+Mammendorf	Pasing	1	false
+Geltendorf	Pasing	1	false
+Herrsching	Pasing	1	false
+Tutzing	Pasing	1	false
+Laim	Pasing	1	false
+Laim	D_bergerbrücke	1	false
+Pasing	Dachau	1	false
+Altomünster	Dachau	1	false
+Petershausen	Dachau	1	false
+D_bergerbrücke	Heimeranpl.	1	false
+Heimeranpl.	Laimer Platz	1	false
+Heimeranpl.	Harras	1	false
+Harras	Großhadern	1	false
+Harras	Wolfratshausen	1	false
+Hauptbahnhof	D_bergerbrücke	1	false
+OEZ	Hauptbahnhof	1	false
+Hauptbahnhof	Scheidplatz	1	false
+Scheidplatz	OEZ	1	false
+Laim	Feldmoching	1	false
+Feldmoching	Scheidplatz	1	false
+Feldmoching	Neufahrn	1	false
+Neufahrn	Freising	1	false
+Hauptbahnhof	Karlsplatz	1	false
+Karlsplatz	Marienplatz	1	false
+Marienplatz	Sendlinger Tor	1	false
+Sendlinger Tor	Hauptbahnhof	1	false
+Fürstenried	Sendlinger Tor	1	false
+Sendlinger Tor	Mangfallplatz	1	false
+Harras	Sendlinger Tor	1	false
+Marienplatz	Odeonsplatz	1	false
+Odeonsplatz	Garching	1	false
+Karlsplatz	Odeonsplatz	1	false
+Scheidplatz	Odeonsplatz	1	false
+Marienplatz	Ostbahnhof	1	false
+Marienplatz	Arabellapark	1	false
+Flughafen	Ostbahnhof	1	false
+Ostbahnhof	Erding	1	false
+Sendlinger Tor	Giesing	1	false
+Giesing	Innsbr. Ring	1	false
+Innsbr. Ring	Trudering	1	false
+Trudering	Messe	1	false
+Trudering	Ebersberg	1	false
+Ostbahnhof	Innsbr. Ring	1	false
+Giesing	Ostbahnhof	1	false
+Giesing	Holzkirchen	1	false
+Giesing	Neuperlach	1	false
+Neuperlach	Innsbr. Ring	1	false
+Neuperlach	Kreuzstraße	1	false

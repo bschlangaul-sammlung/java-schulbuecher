@@ -1,0 +1,78 @@
+Knoten: 32
+39	63	F
+155	28	FD
+203	77	K4
+313	82	BA
+423	68	BT
+528	20	HO
+202	154	WÜ
+113	153	K9
+23	202	MA
+28	282	K8
+104	292	HN
+203	286	K2
+328	224	N
+477	228	K3
+519	296	R
+646	361	DEG
+741	403	PA
+22	362	KA
+27	535	K7
+127	379	S
+113	499	FR
+210	406	UL
+298	425	A
+393	470	M
+395	393	K1
+352	334	IN
+201	476	MM
+165	553	LI
+358	532	GAP
+578	494	RO
+622	552	K5
+688	512	K6
+Kanten: 44
+F	K9	108	false
+F	FD	85	false
+FD	K4	118	false
+K4	BA	70	false
+BA	BT	53	false
+BT	HO	39	false
+K9	WÜ	23	false
+K4	WÜ	30	false
+F	MA	57	false
+MA	K8	32	false
+K8	HN	58	false
+HN	K9	82	false
+HN	K2	72	false
+K2	WÜ	71	false
+K2	N	86	false
+WÜ	N	104	false
+N	BT	77	false
+N	K3	46	false
+HO	K3	129	false
+N	R	80	false
+K3	R	38	false
+R	DEG	72	false
+DEG	PA	39	false
+K8	KA	38	false
+KA	K7	193	false
+KA	S	61	false
+HN	S	58	false
+FR	S	108	false
+S	UL	103	false
+K2	UL	94	false
+UL	A	59	false
+A	M	64	false
+N	IN	95	false
+IN	K1	17	false
+K1	M	31	false
+K1	R	65	false
+M	DEG	147	false
+UL	MM	53	false
+MM	LI	58	false
+MM	M	109	false
+GAP	M	91	false
+M	RO	60	false
+RO	K5	30	false
+RO	K6	73	false
