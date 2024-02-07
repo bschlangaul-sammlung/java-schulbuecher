@@ -9,7 +9,6 @@ package org.bschlangaul.schulbuecher.cornelsen.informatik_3_2017.kapitel_04.them
  * @changelog 4.0 Umstieg auf EA 4
  *
  */
-
 import ea.edu.EduActor;
 import ea.edu.Rechteck;
 

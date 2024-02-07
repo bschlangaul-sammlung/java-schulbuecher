@@ -6,7 +6,6 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapi
  * @author Klaus van Dijkstran und Barbara Leidorn
  * @version 1.0
  */
-
 import java.awt.*;
 
 class KASSENSYMBOL

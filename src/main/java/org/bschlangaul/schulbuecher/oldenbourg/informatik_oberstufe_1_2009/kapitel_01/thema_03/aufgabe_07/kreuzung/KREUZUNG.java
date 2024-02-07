@@ -10,7 +10,6 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapi
  * @author Peter Cody
  * @version 1.0
  */
-
 import java.util.Random;
 
 class KREUZUNG implements TAKTKLIENT
