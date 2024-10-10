@@ -1,0 +1,13 @@
+anweisung Ausfuehren()
+  wenn IstZiegel() dann
+    Aufheben()
+    Ausfuehren()
+    Hinlegen()
+  sonst
+    Linksdrehen()
+    Schritt()
+    Rechtsdrehen()
+  *wenn
+*anweisung
+
+Ausfuehren()
