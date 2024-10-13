@@ -1,0 +1,20 @@
+package org.bschlangaul.schulbuecher.isb.handreichung_11.kapitel_03.anwendungsorientierte_aufgaben.rechenbaum;
+
+class ABSCHLUSS_LISTE extends LISTENELEMENT
+{
+    // KONSTRUKTOR
+    ABSCHLUSS_LISTE()
+    {
+        super();
+    }
+
+    LISTENELEMENT NachfolgerGeben()
+    {
+        return this;
+    }
+
+    BAUM DatenGeben()
+    {
+        return null;
+    }
+}

@@ -1,0 +1,40 @@
+Knoten: 16
+354	27	HH
+353	110	H
+380	228	FD
+426	322	WÜ
+513	388	N
+478	486	A
+567	524	M
+523	77	B
+516	178	L
+630	226	DD
+301	288	F
+352	443	S
+240	316	F2
+261	407	MA
+172	242	K
+223	149	D
+Kanten: 22
+HH	H	74	false
+B	H	98	false
+H	D	100	false
+D	K	77	false
+K	F2	67	false
+F2	F	10	false
+F	FD	52	false
+FD	H	88	false
+FD	L	151	false
+L	B	67	false
+L	DD	73	false
+FD	WÜ	34	false
+F	WÜ	70	false
+WÜ	N	58	false
+L	N	189	false
+F2	MA	30	false
+MA	S	37	false
+S	A	98	false
+A	N	62	false
+N	M	71	false
+M	A	40	false
+HH	B	143	false
