@@ -1,6 +1,6 @@
 package org.bschlangaul.schulbuecher.buchner.informatik_10_2022.kapitel_03.thema_08.hotel_vorlage;
 
-import greenfoot.*; // (World, Actor, GreenfootImage, Greenfoot und MouseInfo)
+import greenfoot.World;
 
 /**
  * Projekt 3-8_Hotel

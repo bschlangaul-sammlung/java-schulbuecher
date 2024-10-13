@@ -1,13 +1,17 @@
 package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapitel_01.thema_01.aufgabe_04.teilaufgabe_c.kreuzung;
 
+import java.awt.Canvas;
+import java.awt.Color;
+import java.awt.Frame;
+import java.awt.Graphics;
+
 /**
  * Eine Richtungsfahrbahn mit Haltelinie.
  *
  * @author Albert Wiedemann
+ *
  * @version 1.0
  */
-import java.awt.*;
-
 class FAHRBAHNSYMBOL
 {
     /**

@@ -1,7 +1,11 @@
 package org.bschlangaul.schulbuecher.cornelsen.informatik_5.kapitel_01.thema_02.aufgabe_07.graph_liste;
 
-import java.io.*;
-import java.sql.*;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
 
 /**
  * Stellt Methoden zum Lesen der Graphendaten bereit

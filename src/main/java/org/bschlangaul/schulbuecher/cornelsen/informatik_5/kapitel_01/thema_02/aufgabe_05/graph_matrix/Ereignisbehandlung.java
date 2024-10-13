@@ -1,9 +1,5 @@
 package org.bschlangaul.schulbuecher.cornelsen.informatik_5.kapitel_01.thema_02.aufgabe_05.graph_matrix;
 
-import java.awt.*;
-import javax.swing.*;
-import java.awt.event.*;
-
 /**
  * Zugriff auf die Ereignisse einschließlich Taktgeber.
  *

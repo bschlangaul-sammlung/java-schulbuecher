@@ -1,14 +1,7 @@
 package org.bschlangaul.schulbuecher.buchner.informatik_10_2022.kapitel_03.thema_08.aquarium_vorlage;
 
-import greenfoot.*; // (World, Actor, GreenfootImage, Greenfoot und MouseInfo)
+import greenfoot.World;
 
-/**
- * Ergänzen Sie hier eine Beschreibung für die Klasse MyWorld.
- *
- * @author (Ihr Name)
- *
- * @version (eine Versionsnummer oder ein Datum)
- */
 public class MyWorld extends World
 {
     /**

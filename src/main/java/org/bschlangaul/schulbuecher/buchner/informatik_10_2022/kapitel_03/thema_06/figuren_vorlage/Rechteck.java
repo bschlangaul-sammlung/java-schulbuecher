@@ -1,10 +1,9 @@
 package org.bschlangaul.schulbuecher.buchner.informatik_10_2022.kapitel_03.thema_06.figuren_vorlage;
 
-import greenfoot.*; // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import greenfoot.Color;
+import greenfoot.GreenfootImage;
 
 /**
- * Write a description of class Rechteck here.
- *
  * @author Anja Stube
  *
  * @version 05-05-2021

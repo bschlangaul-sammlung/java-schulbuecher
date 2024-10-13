@@ -1,7 +1,11 @@
 package org.bschlangaul.schulbuecher.isb.handreichung_10.konzept_01.mastermind;
 
-import javax.swing.*;
-import java.awt.*;
+import java.awt.GridLayout;
+
+import javax.swing.BorderFactory;
+import javax.swing.ButtonGroup;
+import javax.swing.JPanel;
+import javax.swing.JRadioButton;
 
 /**
  * Die Klasse FARBAUSWAHL dient zur Auswahl einer vordefinierten Farbe aus dem

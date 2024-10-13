@@ -1,14 +1,10 @@
 package org.bschlangaul.schulbuecher.buchner.informatik_11_2023.kapitel_04.thema_03.qr_code;
 
-import greenfoot.*; // (World, Actor, GreenfootImage, Greenfoot und MouseInfo)
+import greenfoot.Actor;
+import greenfoot.Color;
+import greenfoot.Font;
+import greenfoot.GreenfootImage;
 
-/**
- * Ergänzen Sie hier eine Beschreibung für die Klasse Output.
- *
- * @author (Ihr Name)
- *
- * @version (eine Versionsnummer oder ein Datum)
- */
 public class Output extends Actor
 {
     GreenfootImage image;

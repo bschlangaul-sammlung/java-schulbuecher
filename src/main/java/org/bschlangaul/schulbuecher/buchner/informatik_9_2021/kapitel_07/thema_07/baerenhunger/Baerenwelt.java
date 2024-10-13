@@ -1,6 +1,10 @@
 package org.bschlangaul.schulbuecher.buchner.informatik_9_2021.kapitel_07.thema_07.baerenhunger;
 
-import greenfoot.*;
+import greenfoot.Actor;
+import greenfoot.Color;
+import greenfoot.Greenfoot;
+import greenfoot.GreenfootImage;
+import greenfoot.World;
 
 /**
  * Projekt zu 7.7 Aufgabe 11

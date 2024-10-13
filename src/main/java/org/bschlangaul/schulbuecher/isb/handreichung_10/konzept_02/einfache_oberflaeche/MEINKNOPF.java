@@ -1,6 +1,6 @@
 package org.bschlangaul.schulbuecher.isb.handreichung_10.konzept_02.einfache_oberflaeche;
 
-import java.awt.*;
+import java.awt.Button;
 
 /**
  * Testknopf.

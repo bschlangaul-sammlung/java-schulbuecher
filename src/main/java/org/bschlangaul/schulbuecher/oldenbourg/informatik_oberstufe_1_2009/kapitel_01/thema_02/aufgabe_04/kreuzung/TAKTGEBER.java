@@ -1,8 +1,9 @@
 package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapitel_01.thema_02.aufgabe_04.kreuzung;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.Timer;
-import java.awt.event.*;
-import java.util.*;
 
 /**
  * Zeitkontrolle der Kreuzung.

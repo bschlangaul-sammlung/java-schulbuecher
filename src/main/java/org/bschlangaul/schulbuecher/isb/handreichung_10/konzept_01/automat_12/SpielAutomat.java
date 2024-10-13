@@ -1,10 +1,13 @@
 package org.bschlangaul.schulbuecher.isb.handreichung_10.konzept_01.automat_12;
 
-import org.bschlangaul.schulbuecher.isb.handreichung_10.konzept_01.ZeichenFenster;
-
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.Random;
-import javax.swing.*;
-import java.awt.event.*;
+
+import javax.swing.JButton;
+import javax.swing.JLabel;
+
+import org.bschlangaul.schulbuecher.isb.handreichung_10.konzept_01.ZeichenFenster;
 
 public class SpielAutomat
 {

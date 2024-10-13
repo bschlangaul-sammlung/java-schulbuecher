@@ -1,14 +1,11 @@
 package org.bschlangaul.schulbuecher.buchner.informatik_11_2023.kapitel_04.thema_03.qr_code;
 
-import greenfoot.*; // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import greenfoot.Actor;
+import greenfoot.Color;
+import greenfoot.Greenfoot;
+import greenfoot.GreenfootImage;
+import greenfoot.World;
 
-/**
- * Write a description of class TextField here.
- *
- * @author (your name)
- *
- * @version (a version number or a date)
- */
 public class TextField extends Actor
 {
     private boolean active = false;

@@ -1,10 +1,8 @@
 package org.bschlangaul.schulbuecher.buchner.informatik_10_2022.kapitel_03.thema_06.figuren_vorlage;
 
-import greenfoot.*; // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import greenfoot.Actor;
 
 /**
- * Write a description of class Figur here.
- *
  * @author Anja Stube
  *
  * @version 05-05-2021

@@ -1,13 +1,14 @@
 package org.bschlangaul.schulbuecher.isb.handreichung_11.kapitel_02.softwaretechnik.aktienhandel;
 
+import java.util.Random;
+
 /**
  * Der Börsenplatz.
  *
  * @author
+ *
  * @version 1.0
  */
-import java.util.*;
-
 class BOERSE implements STATUSERZEUGER
 {
     private DATENBANKVERBINDUNG verbindung;

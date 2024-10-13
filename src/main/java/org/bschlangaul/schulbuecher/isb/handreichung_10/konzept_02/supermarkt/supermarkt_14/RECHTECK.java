@@ -1,13 +1,17 @@
 package org.bschlangaul.schulbuecher.isb.handreichung_10.konzept_02.supermarkt.supermarkt_14;
 
+import java.awt.Canvas;
+import java.awt.Color;
+import java.awt.Graphics;
+
 /**
- * Ein Kassensymbol Rechteck) auf einem Fenster. Das Fenster wird bei Bedarf generiert.
+ * Ein Kassensymbol Rechteck) auf einem Fenster. Das Fenster wird bei Bedarf
+ * generiert.
  *
  * @author Albert Wiedemann
+ *
  * @version 1.0
  */
-import java.awt.*;
-
 class RECHTECK
 {
     /**

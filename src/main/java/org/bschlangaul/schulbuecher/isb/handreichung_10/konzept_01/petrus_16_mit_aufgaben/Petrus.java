@@ -1,11 +1,14 @@
 package org.bschlangaul.schulbuecher.isb.handreichung_10.konzept_01.petrus_16_mit_aufgaben;
 
-import org.bschlangaul.schulbuecher.isb.handreichung_10.konzept_01.ZeichenFenster;
-
-import javax.swing.Timer;
-import java.awt.event.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.Random;
-import javax.swing.*;
+
+import javax.swing.JButton;
+import javax.swing.JTextField;
+import javax.swing.Timer;
+
+import org.bschlangaul.schulbuecher.isb.handreichung_10.konzept_01.ZeichenFenster;
 
 public class Petrus
 {

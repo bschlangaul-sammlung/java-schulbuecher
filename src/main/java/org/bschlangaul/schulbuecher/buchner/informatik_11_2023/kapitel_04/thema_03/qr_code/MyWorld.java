@@ -2,7 +2,10 @@ package org.bschlangaul.schulbuecher.buchner.informatik_11_2023.kapitel_04.thema
 
 import java.util.Arrays;
 import java.util.List;
-import greenfoot.*;
+
+import greenfoot.Color;
+import greenfoot.Greenfoot;
+import greenfoot.World;
 
 /**
  * MyWorld enthält alle Schritte um einen QR-Code der verschiedenen Versionen zu

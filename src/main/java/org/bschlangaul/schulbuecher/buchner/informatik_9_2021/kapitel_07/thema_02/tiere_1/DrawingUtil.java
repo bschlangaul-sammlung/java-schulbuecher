@@ -1,12 +1,15 @@
 package org.bschlangaul.schulbuecher.buchner.informatik_9_2021.kapitel_07.thema_02.tiere_1;
 
-import greenfoot.Actor;
-import greenfoot.GreenfootImage;
-
-import java.awt.*;
+import java.awt.FontMetrics;
+import java.awt.Graphics2D;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
-import java.util.*;
+
+import greenfoot.Actor;
+import greenfoot.GreenfootImage;
 
 /**
  * Klasse DrawingUtil <br>

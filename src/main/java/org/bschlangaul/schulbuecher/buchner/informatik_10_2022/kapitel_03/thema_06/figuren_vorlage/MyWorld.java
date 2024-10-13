@@ -1,14 +1,7 @@
 package org.bschlangaul.schulbuecher.buchner.informatik_10_2022.kapitel_03.thema_06.figuren_vorlage;
 
-import greenfoot.*; // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import greenfoot.World;
 
-/**
- * Write a description of class MyWorld here.
- *
- * @author (your name)
- *
- * @version (a version number or a date)
- */
 public class MyWorld extends World
 {
     /**

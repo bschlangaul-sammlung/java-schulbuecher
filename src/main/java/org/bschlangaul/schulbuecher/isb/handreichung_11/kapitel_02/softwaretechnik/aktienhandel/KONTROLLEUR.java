@@ -1,13 +1,14 @@
 package org.bschlangaul.schulbuecher.isb.handreichung_11.kapitel_02.softwaretechnik.aktienhandel;
 
+import java.util.ArrayList;
+
 /**
  * Zusändig für die Weitergabe der Ereignisse.
  *
  * @author
+ *
  * @version 1.0
  */
-import java.util.*;
-
 class KONTROLLEUR implements KONTROLLEURINTERFACE
 {
     private BOERSE boerse;

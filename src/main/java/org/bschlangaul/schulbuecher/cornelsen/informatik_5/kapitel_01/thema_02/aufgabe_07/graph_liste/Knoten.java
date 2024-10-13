@@ -1,6 +1,6 @@
 package org.bschlangaul.schulbuecher.cornelsen.informatik_5.kapitel_01.thema_02.aufgabe_07.graph_liste;
 
-import java.util.*;
+import java.util.ArrayList;
 
 /**
  * Beschreibt einen Knoten für die Graphendarstellung mit Adjazenzlisten

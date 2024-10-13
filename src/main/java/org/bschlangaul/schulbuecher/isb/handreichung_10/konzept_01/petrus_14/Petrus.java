@@ -1,8 +1,10 @@
 package org.bschlangaul.schulbuecher.isb.handreichung_10.konzept_01.petrus_14;
 
-import javax.swing.Timer;
-import java.awt.event.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.Random;
+
+import javax.swing.Timer;
 
 public class Petrus
 {

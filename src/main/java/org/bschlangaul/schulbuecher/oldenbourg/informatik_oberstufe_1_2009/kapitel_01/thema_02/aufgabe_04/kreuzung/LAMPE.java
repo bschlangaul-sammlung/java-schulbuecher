@@ -1,15 +1,20 @@
 package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapitel_01.thema_02.aufgabe_04.kreuzung;
 
+import java.awt.Canvas;
+import java.awt.Color;
+import java.awt.Frame;
+import java.awt.Graphics;
+
 /**
- * Eine Lampe auf einem Fenster. Das Fenster wird bei Bedarf generiert. Das Koordinatensystem des
- * Fensters ist ein Rastersystem mit Ursprung in der Mitte, (0/0) bezeichnet das Feld rechts
- * unterhalb des Ursprungs. Die y-Achse zeigt nach unten
+ * Eine Lampe auf einem Fenster. Das Fenster wird bei Bedarf generiert. Das
+ * Koordinatensystem des Fensters ist ein Rastersystem mit Ursprung in der
+ * Mitte, (0/0) bezeichnet das Feld rechts unterhalb des Ursprungs. Die y-Achse
+ * zeigt nach unten
  *
  * @author Albert Wiedemann
+ *
  * @version 1.0
  */
-import java.awt.*;
-
 public class LAMPE
 {
     private enum Farbe

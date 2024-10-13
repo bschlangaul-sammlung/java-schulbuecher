@@ -1,14 +1,9 @@
 package org.bschlangaul.schulbuecher.buchner.informatik_11_2023.kapitel_04.thema_03.qr_code;
 
-import greenfoot.*; // (World, Actor, GreenfootImage, Greenfoot und MouseInfo)
+import greenfoot.Actor;
+import greenfoot.Greenfoot;
+import greenfoot.GreenfootImage;
 
-/**
- * Ergänzen Sie hier eine Beschreibung für die Klasse ButtonNeu.
- *
- * @author (Ihr Name)
- *
- * @version (eine Versionsnummer oder ein Datum)
- */
 public class Button extends Actor
 {
     private GreenfootImage button_1, button_2, button_3;

@@ -1,7 +1,7 @@
 package org.bschlangaul.schulbuecher.buchner.informatik_10_2022.kapitel_05.thema_10.einkaufsverwaltung_vorlage;
 
 import java.time.LocalDate;
-import java.util.*;
+import java.util.ArrayList;
 
 /**
  * Projekt 5-10_Einkaufsverwaltung (ÜuV Aufgabe 24)

@@ -1,8 +1,21 @@
 package org.bschlangaul.schulbuecher.isb.handreichung_10.konzept_01;
 
-import javax.swing.*;
-import java.awt.*;
-import java.awt.geom.*;
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Font;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.Image;
+import java.awt.Polygon;
+import java.awt.Rectangle;
+import java.awt.Shape;
+import java.awt.geom.Ellipse2D;
+
+import javax.swing.BoxLayout;
+import javax.swing.JComponent;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
 
 /**
  * Class ZEICHENFENSTER - Eine Klasse, die einfache grafische Zeichnungen in

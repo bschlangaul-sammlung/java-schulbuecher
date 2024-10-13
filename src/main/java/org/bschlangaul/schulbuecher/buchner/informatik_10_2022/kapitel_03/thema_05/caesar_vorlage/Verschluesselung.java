@@ -1,8 +1,5 @@
 package org.bschlangaul.schulbuecher.buchner.informatik_10_2022.kapitel_03.thema_05.caesar_vorlage;
 
-import greenfoot.*; // (World, Actor, GreenfootImage, Greenfoot und MouseInfo)
-import java.util.*;
-
 /**
  * Projekt 3-5_Caesar
  *

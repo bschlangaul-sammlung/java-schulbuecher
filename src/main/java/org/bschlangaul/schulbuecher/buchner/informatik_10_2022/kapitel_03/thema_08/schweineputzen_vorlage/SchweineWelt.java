@@ -1,7 +1,10 @@
 package org.bschlangaul.schulbuecher.buchner.informatik_10_2022.kapitel_03.thema_08.schweineputzen_vorlage;
 
-import greenfoot.*;
-import java.util.*;
+import java.util.List;
+
+import greenfoot.Actor;
+import greenfoot.Greenfoot;
+import greenfoot.World;
 
 /**
  * Projekt 3-8_Schweineputzen
