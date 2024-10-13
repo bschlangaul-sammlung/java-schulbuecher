@@ -3,15 +3,15 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapi
 /**
  * Gibt die Botschaften der Oberfläche an den Supermarkt weiter
  *
- * @author Klaus van Dijkstran und Barbara Leidorn
+ * @author Klaus Reinold und Barbara Leidorn
  *
  * @version 1.0
  */
-class ADAPTER
+class Adapter
 {
-    SUPERMARKT s;
+    Supermarkt s;
 
-    TAKTGEBER t;
+    Taktgeber t;
 
     /**
      * Setzt die Empfänger der Botschaften
@@ -19,7 +19,7 @@ class ADAPTER
      * @param s der zu bedienende Supermarkt
      * @param t der zu bedienende Taktgeber
      */
-    ADAPTER(SUPERMARKT s, TAKTGEBER t)
+    Adapter(Supermarkt s, Taktgeber t)
     {
         this.s = s;
         this.t = t;

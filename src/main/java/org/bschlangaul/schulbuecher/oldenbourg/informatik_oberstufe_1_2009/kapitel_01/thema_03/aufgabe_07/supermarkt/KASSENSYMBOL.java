@@ -1,13 +1,16 @@
 package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapitel_01.thema_03.aufgabe_07.supermarkt;
 
+import java.awt.Canvas;
+import java.awt.Color;
+import java.awt.Graphics;
+
 /**
  * Ein Kassensymbol auf einem Fenster. Das Fenster wird bei Bedarf generiert.
  *
- * @author Klaus van Dijkstran und Barbara Leidorn
+ * @author Klaus Reinold und Barbara Leidorn
+ *
  * @version 1.0
  */
-import java.awt.*;
-
 class KASSENSYMBOL
 {
     /** Das Anzeigefenster. */

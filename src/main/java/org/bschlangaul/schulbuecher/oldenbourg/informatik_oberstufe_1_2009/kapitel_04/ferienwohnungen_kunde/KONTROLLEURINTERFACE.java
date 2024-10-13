@@ -1,13 +1,14 @@
 package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapitel_04.ferienwohnungen_kunde;
 
+import java.util.Date;
+
 /**
  * Die Schnittstelle des Kontrolleurs zur Oberfläche.
  *
  * @author Albert Wiedemann
+ *
  * @version 1.0
  */
-import java.util.*;
-
 interface KONTROLLEURINTERFACE
 {
     /**

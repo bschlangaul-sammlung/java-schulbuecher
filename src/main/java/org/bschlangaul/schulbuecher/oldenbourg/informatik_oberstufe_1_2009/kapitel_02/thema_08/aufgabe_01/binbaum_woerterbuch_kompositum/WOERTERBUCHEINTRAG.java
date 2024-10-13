@@ -1,7 +1,5 @@
 package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapitel_02.thema_08.aufgabe_01.binbaum_woerterbuch_kompositum;
 
-import java.lang.String.*;
-
 /**
  * Die Klasse WOERTERBUCHEINTRAG dient zur Speicherung von Wörterbucheinträgen
  * für ein Englisch-Deutsches Wörterbuch. Dabei kann jedem englischen Wort

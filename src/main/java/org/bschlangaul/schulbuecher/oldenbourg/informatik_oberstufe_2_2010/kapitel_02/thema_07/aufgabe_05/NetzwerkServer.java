@@ -1,13 +1,15 @@
 package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_2_2010.kapitel_02.thema_07.aufgabe_05;
 
+import java.net.ServerSocket;
+import java.net.Socket;
+
 /**
  * Verwaltet die Netzwerkverbindung und die ankommenden Anrufe.
  *
  * @author Albert Wiedemann
+ *
  * @version 1.0
  */
-import java.net.*;
-
 class NetzwerkServer
 {
     EndeMarkierung ende;

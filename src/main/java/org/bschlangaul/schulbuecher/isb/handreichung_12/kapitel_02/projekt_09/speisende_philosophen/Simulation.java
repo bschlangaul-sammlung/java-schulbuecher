@@ -1,6 +1,6 @@
 package org.bschlangaul.schulbuecher.isb.handreichung_12.kapitel_02.projekt_09.speisende_philosophen;
 
-import java.util.*;
+import java.util.ArrayList;
 
 /**
  * Hauptprogramm zur Simulation der speisenden Philosophen<br/>

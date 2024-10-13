@@ -1,13 +1,15 @@
 package org.bschlangaul.schulbuecher.isb.handreichung_11.kapitel_02.softwaretechnik.fahrradroutenplaner;
 
+import java.util.ArrayList;
+
 /**
- * Berechnet die kürzeste Entfernung von Start nach Ziel. Verwendet den Algorithmus nach E. Dijkstra
+ * Berechnet die kürzeste Entfernung von Start nach Ziel. Verwendet den
+ * Algorithmus nach E. Dijkstra
  *
  * @author
+ *
  * @version 1.0
  */
-import java.util.*;
-
 class DIJKSTRA implements STATUSERZEUGER
 {
     private LISTE orte;

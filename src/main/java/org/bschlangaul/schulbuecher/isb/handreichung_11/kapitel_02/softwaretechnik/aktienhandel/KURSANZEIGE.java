@@ -1,16 +1,18 @@
 package org.bschlangaul.schulbuecher.isb.handreichung_11.kapitel_02.softwaretechnik.aktienhandel;
 
+import java.awt.BorderLayout;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+
+import javax.swing.JFrame;
+
 /**
  * Fenster zur Anzeige eines Aktienkurses.
  *
  * @author
+ *
  * @version 1.0
  */
-import java.awt.*;
-import java.awt.event.*;
-import javax.swing.*;
-import javax.swing.border.*;
-
 class KURSANZEIGE
 {
     /** Anzahl der angezeigten Kurse */

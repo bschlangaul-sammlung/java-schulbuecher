@@ -1,13 +1,14 @@
 package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapitel_01.thema_01.aufgabe_05.snake;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.Timer;
-import java.awt.event.*;
-import java.util.*;
 
 /**
  * Zeitkontrolle des Spiels.
  *
- * @author Klaus van Dijkstran
+ * @author Klaus Reinold
  *
  * @version 1.0
  */

@@ -1,12 +1,13 @@
 package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapitel_01.thema_02.aufgabe_04.snake;
 
-import java.awt.*;
-import java.awt.event.*;
+import java.awt.Canvas;
+import java.awt.Color;
+import java.awt.Graphics;
 
 /**
  * Leinwand für die Darstellung der Symbole.
  *
- * @author Klaus van Dijkstran
+ * @author Klaus Reinold
  *
  * @version 1.0
  */

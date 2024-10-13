@@ -1,6 +1,8 @@
 package org.bschlangaul.schulbuecher.isb.handreichung_12.kapitel_02.projekt_10.chatserver;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.PrintWriter;
 
 /**
  * Der Clientsender liest alle Tastatureingaben auf der Clientseite und schickt

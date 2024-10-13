@@ -1,14 +1,17 @@
 package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_2_2010.kapitel_02.thema_06.aufgabe_04;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.net.Socket;
+
 /**
  * Stellt die Operationen auf der Verbindung zur Verfügung
  *
  * @author Albert Wiedemann
+ *
  * @version 1.0
  */
-import java.io.*;
-import java.net.*;
-
 class Verbindung
 {
     private InputStream in;

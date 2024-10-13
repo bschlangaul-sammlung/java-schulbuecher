@@ -1,13 +1,13 @@
 package org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.robotersimulation.robotergrafik;
 
+import static org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.einfache_grafik.interna.FensterSpeicher.fortgeschrittenesFensterGeben;
+import static org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.werkzeuge.Pause.msWarten;
+
 import java.util.ArrayList;
 
+import org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.einfache_grafik.Zeichenfenster;
 import org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.fortgeschrittene_grafik.Ellipse;
 import org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.fortgeschrittene_grafik.Rechteck;
-import org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.einfache_grafik.Zeichenfenster;
-import static org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.einfache_grafik.interna.FensterSpeicher.*;
-
-import static org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.werkzeuge.Pause.*;
 
 /**
  * Die Klasse Roboterarm definiert die Funktionsweise und Darstellung eines

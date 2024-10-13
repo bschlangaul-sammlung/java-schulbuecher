@@ -1,14 +1,18 @@
 package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapitel_01.thema_01.aufgabe_04.teilaufgabe_b.supermarkt;
 
+import java.awt.Canvas;
+import java.awt.Color;
+import java.awt.Graphics;
+
 /**
- * Ein Kundensymbol (Kreis) auf einem Fenster. Das Fenster wird bei Bedarf generiert.
+ * Ein Kundensymbol (Kreis) auf einem Fenster. Das Fenster wird bei Bedarf
+ * generiert.
  *
- * @author Klaus van Dijkstran und Barbara Leidorn
+ * @author Klaus Reinold und Barbara Leidorn
+ *
  * @version 1.0
  */
-import java.awt.*;
-
-class KUNDENSYMBOL
+class KundenSymbol
 {
     /** Das Anzeigefenster. */
     private Canvas anzeige;
@@ -17,14 +21,14 @@ class KUNDENSYMBOL
     private int groesse = 20;
 
     /** Interna */
-    private OBERFLAECHE.FARBE aktFarbe;
+    private Oberflaeche.FARBE aktFarbe;
 
     /**
      * Standardkonstruktor für Objekte der Klasse KUNDENSYMBOL. Er erzeugt einen
      * scharzen Kreis in der linken oberen Ecke des Fensters. Das Fenster wird
      * bei Bedarf angelegt.
      */
-    KUNDENSYMBOL()
+    KundenSymbol()
     {
         anzeige = new Canvas()
         {
@@ -39,11 +43,11 @@ class KUNDENSYMBOL
                 g.drawOval(0, 0, groesse - 1, groesse - 1);
             }
         };
-        aktFarbe = OBERFLAECHE.FARBE.schwarz;
+        aktFarbe = Oberflaeche.FARBE.schwarz;
         anzeige.setVisible(true);
         anzeige.setSize(groesse, groesse);
         anzeige.setLocation(0, 20);
-        (OBERFLAECHE.FensterGeben()).add(anzeige, 0);
+        (Oberflaeche.FensterGeben()).add(anzeige, 0);
     }
 
     /**
@@ -64,18 +68,18 @@ class KUNDENSYMBOL
     {
         if ("zufall".equals(neueFarbe))
         {
-            aktFarbe = OBERFLAECHE.FARBE.ZufallsFarbeErzeugen();
+            aktFarbe = Oberflaeche.FARBE.ZufallsFarbeErzeugen();
         }
         else
         {
             try
             {
-                aktFarbe = OBERFLAECHE.FARBE
+                aktFarbe = Oberflaeche.FARBE
                         .valueOf(aktFarbe.getDeclaringClass(), neueFarbe);
             }
             catch (Exception e)
             {
-                aktFarbe = OBERFLAECHE.FARBE.weiss;
+                aktFarbe = Oberflaeche.FARBE.weiss;
             }
         }
         Zeichnen();
@@ -110,6 +114,6 @@ class KUNDENSYMBOL
      */
     public void Entfernen()
     {
-        (OBERFLAECHE.FensterGeben()).remove(anzeige);
+        (Oberflaeche.FensterGeben()).remove(anzeige);
     }
 }

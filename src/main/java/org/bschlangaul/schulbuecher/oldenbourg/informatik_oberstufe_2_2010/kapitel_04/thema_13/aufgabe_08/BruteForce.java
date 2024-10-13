@@ -65,7 +65,7 @@ public class BruteForce
         while (i < zeichenvorrat.length && !gefunden && !abgebrochen)
         {
             String sneu;
-            sneu = s + new Character(zeichenvorrat[i]).toString();
+            sneu = s + Character.toString(zeichenvorrat[i]);
             if (sneu.equals(passwort))
             {
                 gefunden = true;

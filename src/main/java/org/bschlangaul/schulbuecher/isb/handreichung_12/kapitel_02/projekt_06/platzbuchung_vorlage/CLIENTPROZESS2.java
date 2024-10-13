@@ -1,7 +1,10 @@
 package org.bschlangaul.schulbuecher.isb.handreichung_12.kapitel_02.projekt_06.platzbuchung_vorlage;
 
-import java.net.*;
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
+import java.net.Socket;
 
 /**
  * serverseitig laufender Prozess je Client zur Bearbeitung der Kommunikation

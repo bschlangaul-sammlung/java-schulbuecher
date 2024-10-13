@@ -3,23 +3,23 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapi
 /**
  * Kasse des Supermarkts.
  *
- * @author Klaus van Dijkstran und Barbara Leidorn
+ * @author Klaus Reinold und Barbara Leidorn
  *
  * @version 1.0
  */
-class KASSE
+class Kasse
 {
     /** Das zugehörige Darstellungssymbol für den Kunden. */
-    private KASSENSYMBOL darstellung;
+    private KassenSymbol darstellung;
 
     /** Referenz auf das gerade anstehende Kundenobjekt. */
-    private KUNDE kunde;
+    private Kunde kunde;
 
     /** Die Kassennummer */
     private int nummer;
 
     /** Die zugehörige Warteschlange */
-    private WARTESCHLANGE wschlange;
+    private Warteschlange wschlange;
 
     /** Wartezeit bis zum nächsten Kunden */
     private int wartezeit;
@@ -32,10 +32,10 @@ class KASSE
      *
      * @param nummer Nummer für diese Kasse
      */
-    KASSE(int nummer, WARTESCHLANGE w)
+    Kasse(int nummer, Warteschlange w)
     {
         this.nummer = nummer;
-        darstellung = new KASSENSYMBOL();
+        darstellung = new KassenSymbol();
         darstellung.PositionSetzen(nummer);
         wschlange = w;
         wschlange.KassennummerSetzen(nummer);

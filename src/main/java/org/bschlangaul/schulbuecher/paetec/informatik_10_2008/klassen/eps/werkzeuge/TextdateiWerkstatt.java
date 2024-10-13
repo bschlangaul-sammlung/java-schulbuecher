@@ -1,8 +1,15 @@
 package org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.werkzeuge;
 
 import java.awt.Component;
-import java.io.*;
-import java.util.*;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.io.StringWriter;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 import javax.swing.JFileChooser;
 import javax.swing.filechooser.FileFilter;

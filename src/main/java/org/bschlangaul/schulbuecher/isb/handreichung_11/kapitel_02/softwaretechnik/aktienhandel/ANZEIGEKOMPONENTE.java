@@ -1,16 +1,13 @@
 package org.bschlangaul.schulbuecher.isb.handreichung_11.kapitel_02.softwaretechnik.aktienhandel;
 
+import java.awt.Color;
+import java.awt.Graphics;
+
+import javax.swing.JComponent;
+
 /**
  * Write a description of class ANZEIGECOMPONENTE here.
- *
- * @author (your name)
- * @version (a version number or a date)
  */
-import java.awt.*;
-import java.awt.event.*;
-import javax.swing.*;
-import javax.swing.border.*;
-
 class ANZEIGEKOMPONENTE extends JComponent
 {
     private double[] kurse;

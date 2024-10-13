@@ -4,10 +4,9 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapi
  * Beschreibung der Klasse PATIENT
  *
  * @author Klaus Reinold
+ *
  * @version 1.0
  */
-import java.lang.String.*;
-
 class PATIENT implements DATENELEMENT
 {
     /** Name des Patienten */

@@ -1,14 +1,16 @@
 package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapitel_04.fahrplan_wartung;
 
+import java.awt.Graphics;
+import java.awt.Polygon;
+import java.util.ArrayList;
+
 /**
  * Beschreibt einen Abschnitt für die Darstellung im Linienplan.
  *
  * @author Albert Wiedemann
+ *
  * @version 1.0
  */
-import java.util.*;
-import java.awt.*;
-
 class PLANABSCHNITT
 {
     private static final int abst = 5;

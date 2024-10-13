@@ -33,16 +33,16 @@ class FigurenThread extends Thread
      */
     public void run()
     {
-        long akt, ende;
-        while (!this.ende)
+        long akt, endeLocal;
+        while (!ende)
         {
             akt = System.currentTimeMillis();
-            ende = akt + warteZeit;
-            while (akt < ende)
+            endeLocal = akt + warteZeit;
+            while (akt < endeLocal)
             {
                 try
                 {
-                    wait(ende - akt);
+                    wait(endeLocal - akt);
                 }
                 catch (Exception e)
                 {

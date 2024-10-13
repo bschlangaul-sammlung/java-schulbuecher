@@ -10,7 +10,7 @@ import java.awt.event.*;
  *
  * @version 1.0 vom 16.08.2008
  *
- * @author Klaus van Dijkstran
+ * @author Klaus Reinold
  */
 class FENSTER extends Frame
 {

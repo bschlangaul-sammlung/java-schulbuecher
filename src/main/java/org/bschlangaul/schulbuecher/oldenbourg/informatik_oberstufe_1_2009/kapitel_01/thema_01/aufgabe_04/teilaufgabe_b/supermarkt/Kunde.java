@@ -3,20 +3,20 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapi
 /**
  * Verwaltet einen Kunden.
  *
- * @author Klaus van Dijkstran und Barbara Leidorn
+ * @author Klaus Reinold und Barbara Leidorn
  *
  * @version 1.0
  */
-abstract class KUNDE
+abstract class Kunde
 {
     /** Anzeigesymbol für den Kunden */
-    private KUNDENSYMBOL darstellung;
+    private KundenSymbol darstellung;
 
     /** Anzahl der Artikel des Kunden */
     private int artikelzahl;
 
     /** Nachfolger des Kunden */
-    private KUNDE nachfolger;
+    private Kunde nachfolger;
 
     /**
      * Konstruktor des Kunden. Setzt eine zufällige Farbe und die Größe gemäß
@@ -25,10 +25,10 @@ abstract class KUNDE
      *
      * @param artikel die neue artikelzahl des Kunden.
      */
-    KUNDE(int artikel)
+    Kunde(int artikel)
     {
         artikelzahl = artikel;
-        darstellung = new KUNDENSYMBOL();
+        darstellung = new KundenSymbol();
         darstellung.GroesseSetzen(artikelzahl);
         darstellung.PositionSetzen(1, 1);
         darstellung.FarbeSetzen("zufall");
@@ -40,7 +40,7 @@ abstract class KUNDE
      *
      * @param schlangenZurAuswahl Warteschlange, an der sich der Kunde anstellt
      */
-    abstract void Anstellen(WARTESCHLANGE[] schlangenZurAuswahl);
+    abstract void Anstellen(Warteschlange[] schlangenZurAuswahl);
 
     /**
      * Sorgt für ein Neuzeichnen des Kundensymbols.
@@ -73,7 +73,7 @@ abstract class KUNDE
     /**
      * Setzt den Nachfolger des Kunden auf den übergebenen Wert.
      */
-    void NachfolgerSetzen(KUNDE kneu)
+    void NachfolgerSetzen(Kunde kneu)
     {
         nachfolger = kneu;
     }
@@ -81,7 +81,7 @@ abstract class KUNDE
     /**
      * Gibt den Nachfolger des Kunden aus.
      */
-    KUNDE NachfolgerGeben()
+    Kunde NachfolgerGeben()
     {
         return nachfolger;
     }

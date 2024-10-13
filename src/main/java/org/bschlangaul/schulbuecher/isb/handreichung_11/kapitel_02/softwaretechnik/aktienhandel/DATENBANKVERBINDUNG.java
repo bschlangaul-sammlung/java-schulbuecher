@@ -1,14 +1,19 @@
 package org.bschlangaul.schulbuecher.isb.handreichung_11.kapitel_02.softwaretechnik.aktienhandel;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+
 /**
  * Verwaltet die Verbindung des Programms zu Datenbank.
  *
  * @author
+ *
  * @version 1.0
  */
-import java.sql.*;
-import java.util.*;
-
 class DATENBANKVERBINDUNG implements STATUSERZEUGER
 {
     private String treiber = "com.mysql.jdbc.Driver"; // Treiber

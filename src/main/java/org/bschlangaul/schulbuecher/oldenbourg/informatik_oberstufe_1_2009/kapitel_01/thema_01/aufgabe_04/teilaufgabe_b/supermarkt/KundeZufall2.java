@@ -3,12 +3,12 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapi
 /**
  * Verwaltet einen Kunden.
  *
- * @author Klaus van Dijkstran und Barbara Leidorn
+ * @author Klaus Reinold und Barbara Leidorn
  * @version 1.0
  */
 import java.util.Random;
 
-class KUNDEZUFALL2 extends KUNDE
+class KundeZufall2 extends Kunde
 {
     private Random zufall;
 
@@ -17,7 +17,7 @@ class KUNDEZUFALL2 extends KUNDE
      *
      * @param artikel Anzahl der Artikel im Warenkorb
      */
-    KUNDEZUFALL2(int artikel)
+    KundeZufall2(int artikel)
     {
         super(artikel);
         zufall = new Random();
@@ -30,9 +30,9 @@ class KUNDEZUFALL2 extends KUNDE
      *
      * @param schlangen Warteschlange, an der sich der Kunde anstellt
      */
-    void Anstellen(WARTESCHLANGE[] schlangen)
+    void Anstellen(Warteschlange[] schlangen)
     {
-        WARTESCHLANGE beste;
+        Warteschlange beste;
         int i;
         i = 0;
         while (!schlangen[i].IstAnstellenMoeglich())

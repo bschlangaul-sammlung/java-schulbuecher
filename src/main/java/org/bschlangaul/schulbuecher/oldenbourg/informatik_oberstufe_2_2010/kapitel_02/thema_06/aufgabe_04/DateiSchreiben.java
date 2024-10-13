@@ -1,13 +1,16 @@
 package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_2_2010.kapitel_02.thema_06.aufgabe_04;
 
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+
 /**
  * Verwaltet den Ausgabestrom.
  *
  * @author Albert Wiedemann
+ *
  * @version 1.0
  */
-import java.io.*;
-
 class DateiSchreiben
 {
     FileOutputStream out;

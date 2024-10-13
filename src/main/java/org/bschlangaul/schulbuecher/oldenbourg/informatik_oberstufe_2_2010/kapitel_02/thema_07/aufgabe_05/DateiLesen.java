@@ -1,13 +1,16 @@
 package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_2_2010.kapitel_02.thema_07.aufgabe_05;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
 /**
  * Verwaltet den Eingabestrom.
  *
  * @author Albert Wiedemann
+ *
  * @version 1.0
  */
-import java.io.*;
-
 class DateiLesen
 {
     FileInputStream in;

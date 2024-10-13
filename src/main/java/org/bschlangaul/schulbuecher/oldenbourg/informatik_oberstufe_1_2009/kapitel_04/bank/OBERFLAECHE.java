@@ -1,15 +1,31 @@
 package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapitel_04.bank;
 
+import java.awt.Button;
+import java.awt.Checkbox;
+import java.awt.CheckboxGroup;
+import java.awt.Choice;
+import java.awt.Dialog;
+import java.awt.Frame;
+import java.awt.Label;
+import java.awt.Panel;
+import java.awt.TextArea;
+import java.awt.TextField;
+import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+
 /**
- * Realisiert die Bedienoberfl&auml;che. In dieser Version wird erst nach der Anmeldung zwischen
- * Kunden und Angestellten unterschieden.
+ * Realisiert die Bedienoberfl&auml;che. In dieser Version wird erst nach der
+ * Anmeldung zwischen Kunden und Angestellten unterschieden.
  *
  * @author Albert Wiedemann
+ *
  * @version 1.0
  */
-import java.awt.*;
-import java.awt.event.*;
-
 class OBERFLAECHE implements OBERFLAECHENINTERFACE, MELDUNGSBEOBACHTER
 {
     private static final int breite = 700;

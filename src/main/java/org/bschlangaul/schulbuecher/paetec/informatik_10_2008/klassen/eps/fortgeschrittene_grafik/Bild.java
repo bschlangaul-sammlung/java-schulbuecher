@@ -1,10 +1,9 @@
 package org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.fortgeschrittene_grafik;
 
-import java.awt.Image;
 import java.awt.Graphics2D;
-import java.io.*;
+import java.awt.Image;
+import java.io.File;
 import java.net.URL;
-import java.util.List;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;

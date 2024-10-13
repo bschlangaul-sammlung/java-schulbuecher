@@ -3,24 +3,24 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapi
 /**
  * Baut den Supermarkt zusammen und schafft die Rahmenbedingungen.
  *
- * @author Klaus van Dijkstran und Barbara Leidorn
+ * @author Klaus Reinold und Barbara Leidorn
  *
  * @version 1.0
  */
-class SIMULATION
+class Simulation
 {
     /**
      * Aufbau der Bestandteile der Simultion.
      */
-    SIMULATION()
+    Simulation()
     {
-        TAKTGEBER t;
-        SUPERMARKT s;
-        ADAPTER a;
-        s = new SUPERMARKT();
-        t = new TAKTGEBER(s);
-        a = new ADAPTER(s, t);
-        OBERFLAECHE.AdapterSetzen(a);
+        Taktgeber t;
+        Supermarkt s;
+        Adapter a;
+        s = new Supermarkt();
+        t = new Taktgeber(s);
+        a = new Adapter(s, t);
+        Oberflaeche.AdapterSetzen(a);
     }
 
     /**
@@ -28,6 +28,6 @@ class SIMULATION
      */
     public static void main(String[] args)
     {
-        new SIMULATION();
+        new Simulation();
     }
 }

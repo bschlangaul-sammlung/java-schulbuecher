@@ -1,14 +1,14 @@
 package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_2_2010.kapitel_02.thema_06.aufgabe_04;
 
+import java.net.Socket;
+
 /**
  * Baut die Verbindung um Server auf.
  *
  * @author Albert Wiedemann
+ *
  * @version 1.0
  */
-import java.net.*;
-import java.io.*;
-
 class NetzwerkClient
 {
     private Socket socket;

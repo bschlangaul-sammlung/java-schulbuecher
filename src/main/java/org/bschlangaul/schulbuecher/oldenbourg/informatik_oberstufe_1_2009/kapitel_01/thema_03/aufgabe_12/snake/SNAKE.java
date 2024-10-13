@@ -4,7 +4,7 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapi
  * Klasse zur Verwaltung der Snake-Schlange Am Kopf des Snake-Objekts werden
  * Objekte eingefügt; er entspricht deshalb dem Ende einer Warteschlange!
  *
- * @author Klaus van Dijkstran
+ * @author Klaus Reinold
  *
  * @version 1.0
  */

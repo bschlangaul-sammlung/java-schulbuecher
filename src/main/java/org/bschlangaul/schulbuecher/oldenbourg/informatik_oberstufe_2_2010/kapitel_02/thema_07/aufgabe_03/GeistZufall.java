@@ -1,6 +1,6 @@
 package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_2_2010.kapitel_02.thema_07.aufgabe_03;
 
-import java.util.*;
+import java.util.Random;
 
 /**
  * Ein Geist, der seinen Weg zufällig wählt.

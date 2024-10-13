@@ -1,8 +1,11 @@
 package org.bschlangaul.schulbuecher.isb.handreichung_12.kapitel_02.zusaetzliches_projekt_02.maximale_clientanzahl_liste;
 
-import java.net.*;
-import java.io.*;
-import java.util.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.ServerSocket;
+import java.net.Socket;
+import java.util.ArrayList;
 
 /**
  * Serverimplementierung, Auslagerung der Clientprozesse in einen Thread<br/>

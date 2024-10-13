@@ -1,14 +1,15 @@
 package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapitel_01.thema_01.aufgabe_04.teilaufgabe_b.supermarkt;
 
+import java.util.Random;
+
 /**
  * Verwaltet einen Kunden.
  *
- * @author Klaus van Dijkstran und Barbara Leidorn
+ * @author Klaus Reinold und Barbara Leidorn
+ *
  * @version 1.0
  */
-import java.util.Random;
-
-class KUNDEZUFALL extends KUNDE
+class KundeZufall extends Kunde
 {
     private Random zufall;
 
@@ -17,7 +18,7 @@ class KUNDEZUFALL extends KUNDE
      *
      * @param artikel Anzahl der Artikel im Warenkorb
      */
-    KUNDEZUFALL(int artikel)
+    KundeZufall(int artikel)
     {
         super(artikel);
         zufall = new Random();
@@ -29,7 +30,7 @@ class KUNDEZUFALL extends KUNDE
      *
      * @param schlangen Warteschlange, an der sich der Kunde anstellt
      */
-    void Anstellen(WARTESCHLANGE[] schlangen)
+    void Anstellen(Warteschlange[] schlangen)
     {
         int anzahl, nummer;
         anzahl = 0;

@@ -1,12 +1,11 @@
 package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapitel_01.thema_02.aufgabe_04.snake;
 
-import java.awt.*;
 import java.util.Random;
 
 /**
  * Klasse zur Verwaltung des Spiels
  *
- * @author Klaus van Dijkstran
+ * @author Klaus Reinold
  *
  * @version 1.0
  */

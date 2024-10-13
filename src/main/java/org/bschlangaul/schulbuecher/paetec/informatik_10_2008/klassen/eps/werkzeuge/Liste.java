@@ -1,6 +1,9 @@
 package org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.werkzeuge;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.LinkedList;
 
 /**
  * Klasse Liste. Objekte eines Typs koennen gehalten werden. Beim Erzeugen eines

@@ -1,24 +1,25 @@
 package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapitel_01.thema_01.aufgabe_04.teilaufgabe_b.supermarkt;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.Timer;
-import java.awt.event.*;
-import java.util.*;
 
 /**
  * Zeitkontrolle des Supermarktes.
  *
- * @author Klaus van Dijkstran und Barbara Leidorn
+ * @author Klaus Reinold und Barbara Leidorn
  *
  * @version 1.0
  */
-class TAKTGEBER implements ActionListener
+class Taktgeber implements ActionListener
 {
     /** Timerobjekt für die zentrale Zeitverwaltung */
     private Timer timer;
 
     /** zu steuernde Objekte, müssen von jedem Takt benachrichtigt werden. */
     // Hierher kommen die Attribute für die zu benachrichtigenden Objekte
-    private TAKTKLIENT klient;
+    private TaktKlient klient;
 
     /**
      * Standardkonstruktor für Objekte der Klasse Taktgeber. Erzeugt den
@@ -26,7 +27,7 @@ class TAKTGEBER implements ActionListener
      *
      * @param klient der zu bedienende Superklient
      */
-    TAKTGEBER(TAKTKLIENT klient)
+    Taktgeber(TaktKlient klient)
     {
         timer = new Timer(1, this);
         this.klient = klient;

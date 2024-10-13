@@ -1,7 +1,9 @@
 package org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.werkzeuge;
 
-import javax.swing.*;
 import java.util.Scanner;
+
+import javax.swing.JDialog;
+import javax.swing.JOptionPane;
 
 /**
  * Die Klasse Notiz bietet Dienste an, die Meldungen in einem kleinen Fenster

@@ -1,13 +1,16 @@
 package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_2_2010.kapitel_02.thema_06.aufgabe_04;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
 /**
  * Stellt einfache Eingabemethoden zur Verfügung
  *
  * @author Albert Wiedemann
+ *
  * @version 1.0
  */
-import java.io.*;
-
 class Eingabe
 {
     BufferedReader in;

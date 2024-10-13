@@ -11,6 +11,7 @@ public class Controller
 {
     private BruteForce b;
 
+    @SuppressWarnings("unused")
     private Fenster f;
 
     /**

@@ -1,15 +1,28 @@
 package org.bschlangaul.schulbuecher.isb.handreichung_11.kapitel_02.softwaretechnik.fahrradroutenplaner;
 
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JComponent;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JList;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+
 /**
  * Beschreibt die Bedienoberfläche.
  *
  * @author
+ *
  * @version 1.0
  */
-import java.awt.*;
-import java.awt.event.*;
-import javax.swing.*;
-
 class OBERFLAECHE implements STATUSBEOBACHTER
 {
     private JComponent karte;

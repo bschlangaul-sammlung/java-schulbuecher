@@ -1,21 +1,23 @@
 package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapitel_01.thema_01.aufgabe_04.teilaufgabe_b.supermarkt;
 
+import java.util.Random;
+
 /**
  * Kontrolle des Supermarkts.
  *
- * @author Klaus van Dijkstran und Barbara Leidorn
+ * @author Klaus Reinold und Barbara Leidorn
+ *
  * @version 1.0
  */
-import java.util.Random;
-
-class SUPERMARKT implements TAKTKLIENT
+class Supermarkt implements TaktKlient
 {
-    private KASSE[] kassen;
+    private Kasse[] kassen;
 
-    private WARTESCHLANGE[] schlangen;
+    private Warteschlange[] schlangen;
 
     private int wartezeit;
 
+    @SuppressWarnings("unused")
     private int mittlereWartezeit;
 
     private Random zzgenerator;
@@ -23,15 +25,15 @@ class SUPERMARKT implements TAKTKLIENT
     /**
      * Legt die Kassen und ihre Warteschlangen an.
      */
-    SUPERMARKT()
+    Supermarkt()
     {
-        schlangen = new WARTESCHLANGE[3];
-        kassen = new KASSE[schlangen.length];
+        schlangen = new Warteschlange[3];
+        kassen = new Kasse[schlangen.length];
         for (int i = 0; i < kassen.length; i++)
         {
-            schlangen[i] = new WARTESCHLANGE();
+            schlangen[i] = new Warteschlange();
             schlangen[i].KassennummerSetzen(i + 1);
-            kassen[i] = new KASSE(i + 1, schlangen[i]);
+            kassen[i] = new Kasse(i + 1, schlangen[i]);
         }
         wartezeit = 0;
         zzgenerator = new Random();
@@ -43,24 +45,24 @@ class SUPERMARKT implements TAKTKLIENT
     private void KundeErzeugen()
     {
         int zufallszahl;
-        KUNDE k;
+        Kunde k;
         zufallszahl = zzgenerator.nextInt(20) + 1;
         switch (zzgenerator.nextInt(4))
         {
         case 0:
-            k = new KUNDEWENIG(zufallszahl);
+            k = new KundeWenig(zufallszahl);
             break;
 
         case 1:
-            k = new KUNDEKURZ(zufallszahl);
+            k = new KundeKurz(zufallszahl);
             break;
 
         case 2:
-            k = new KUNDEZUFALL(zufallszahl);
+            k = new KundeZufall(zufallszahl);
             break;
 
         case 3:
-            k = new KUNDEZUFALL2(zufallszahl);
+            k = new KundeZufall2(zufallszahl);
             break;
 
         default:

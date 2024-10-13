@@ -1,5 +1,7 @@
 package org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.einfache_grafik.interna;
 
+import static org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.fortgeschrittene_grafik.interna.Zeichenfenster.zeichenfensterGeben;
+
 import java.util.HashMap;
 
 import org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.einfache_grafik.Bild;
@@ -9,7 +11,6 @@ import org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.einfac
 import org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.einfache_grafik.Text;
 import org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.fortgeschrittene_grafik.interna.Grafik;
 import org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.fortgeschrittene_grafik.interna.Zeichenfenster;
-import static org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.fortgeschrittene_grafik.interna.Zeichenfenster.*;
 
 /**
  * Diese Klasse implementiert einen statischen Grafikspeicher, der lediglich

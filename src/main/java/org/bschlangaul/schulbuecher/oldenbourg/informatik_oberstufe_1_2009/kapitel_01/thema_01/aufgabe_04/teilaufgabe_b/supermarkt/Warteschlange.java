@@ -3,17 +3,17 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapi
 /**
  * Verwaltet eine Warteschlange
  *
- * @author Klaus van Dijkstran und Barbara Leidorn
+ * @author Klaus Reinold und Barbara Leidorn
  *
  * @version 1.0
  */
-class WARTESCHLANGE
+class Warteschlange
 {
     /** Verwaltung des ersten Kunden in der Warteschlange. */
-    private KUNDE anfang;
+    private Kunde anfang;
 
     /** Verwaltung des letzten Kunden in der Warteschlange. */
-    private KUNDE ende;
+    private Kunde ende;
 
     /** Die Nummer der zugehörigen Kasse */
     private int kassennummer;
@@ -27,7 +27,7 @@ class WARTESCHLANGE
     /**
      * Konstruktor der WARTESCHLANGE Realisierung mit Datenstruktur Schlange
      */
-    WARTESCHLANGE()
+    Warteschlange()
     {
         anfang = null;
         ende = null;
@@ -40,7 +40,7 @@ class WARTESCHLANGE
      *
      * @param kundeNeu einzureihender Kunde
      */
-    void Einreihen(KUNDE kundeNeu)
+    void Einreihen(Kunde kundeNeu)
     {
         if (ende != null)
         {
@@ -58,7 +58,7 @@ class WARTESCHLANGE
     /**
      * Gibt den ersten Kunden der Warteschlange aus.
      */
-    KUNDE ErstenKundenGeben()
+    Kunde ErstenKundenGeben()
     {
         return anfang;
     }
@@ -94,7 +94,7 @@ class WARTESCHLANGE
      */
     void KundenNeuPositionieren()
     {
-        KUNDE k;
+        Kunde k;
         k = anfang;
         int i;
         i = 0;
@@ -141,7 +141,7 @@ class WARTESCHLANGE
     {
         int anzahl;
         anzahl = 0;
-        KUNDE k;
+        Kunde k;
         k = anfang;
         while (k != null)
         {

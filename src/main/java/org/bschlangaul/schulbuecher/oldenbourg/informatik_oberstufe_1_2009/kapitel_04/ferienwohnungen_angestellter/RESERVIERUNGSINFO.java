@@ -1,13 +1,14 @@
 package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapitel_04.ferienwohnungen_angestellter;
 
+import java.util.Date;
+
 /**
  * Beschreibt einen Reservierungseintrag.
  *
  * @author Albert Wiedemann
+ *
  * @version 1.0
  */
-import java.util.*;
-
 class RESERVIERUNGSINFO
 {
     private int nummer;

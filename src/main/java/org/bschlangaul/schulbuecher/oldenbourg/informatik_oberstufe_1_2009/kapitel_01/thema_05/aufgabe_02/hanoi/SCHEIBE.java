@@ -1,6 +1,7 @@
 package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapitel_01.thema_05.aufgabe_02.hanoi;
 
-import java.awt.*;
+import java.awt.Canvas;
+import java.awt.Color;
 import java.util.Random;
 
 /**

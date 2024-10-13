@@ -1,13 +1,14 @@
 package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapitel_04.adressverwaltung;
 
+import java.text.Collator;
+
 /**
  * Beschreibt eine Person mit ihrer Adresse.
  *
  * @author Albert Wiedemann
+ *
  * @version 1.0
  */
-import java.text.*;
-
 class PERSON implements DATENELEMENT
 {
     private int personennummer;

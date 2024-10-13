@@ -40,6 +40,7 @@ class LaufzeitMessung
      */
     public void FeldErzeugen()
     {
+        @SuppressWarnings("unused")
         int[] feld = new int[10];
     }
 

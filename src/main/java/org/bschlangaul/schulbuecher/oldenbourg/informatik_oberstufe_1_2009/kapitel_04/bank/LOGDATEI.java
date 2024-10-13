@@ -1,6 +1,7 @@
 package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapitel_04.bank;
 
-import java.io.*;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
 
 /**
  * Verwaltet die Einträge in die Logdatei.

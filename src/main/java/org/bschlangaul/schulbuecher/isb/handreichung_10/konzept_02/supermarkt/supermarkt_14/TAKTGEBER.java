@@ -1,8 +1,10 @@
 package org.bschlangaul.schulbuecher.isb.handreichung_10.konzept_02.supermarkt.supermarkt_14;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
+
 import javax.swing.Timer;
-import java.awt.event.*;
-import java.util.*;
 
 /**
  * Zeitkontrolle der Simulation.

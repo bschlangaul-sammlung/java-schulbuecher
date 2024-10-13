@@ -1,8 +1,9 @@
 package org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.gesicht;
 
+import static org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.werkzeuge.Pause.warten;
+
+import org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.einfache_grafik.Ellipse;
 import org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.gesicht.interna.Schauspieler;
-import org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.einfache_grafik.*;
-import static org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.werkzeuge.Pause.*;
 
 /**
  * Die Klasse Ohr zeichnet und animiert ein Ohr.

@@ -7,7 +7,7 @@ import java.util.*;
 /**
  * Zeitkontrolle der Kreuzung.
  *
- * @author Klaus van Dijkstran und Barbara Leidorn
+ * @author Klaus Reinold und Barbara Leidorn
  *
  * @version 1.0
  */

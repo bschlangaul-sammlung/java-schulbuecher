@@ -1,14 +1,15 @@
 package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapitel_04.ferienwohnungen_kunde;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 /**
  * Kontrolleur für die Oberfläche eines Angestellten.
  *
  * @author Albert Wiedemann
+ *
  * @version 1.0
  */
-import java.util.*;
-import java.text.*;
-
 class KONTROLLEUR implements KONTROLLEURINTERFACE
 {
     private OBERFLACHENINTERFACE oberflaeche;

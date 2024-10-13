@@ -1,13 +1,17 @@
 package org.bschlangaul.schulbuecher.isb.handreichung_11.kapitel_02.softwaretechnik.fahrradroutenplaner;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
 /**
  * Verwaltet die Verbindung des Programms zu Datenbank.
  *
  * @author
+ *
  * @version 1.0
  */
-import java.sql.*;
-
 class DATENBANKVERBINDUNG
 {
     private String treiber = "com.mysql.jdbc.Driver"; // Treiber

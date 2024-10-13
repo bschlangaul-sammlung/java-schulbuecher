@@ -1,13 +1,14 @@
 package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapitel_04.ferienwohnungen_angestellter;
 
+import java.util.EnumSet;
+
 /**
  * Beschreibung eines Objekts.
  *
  * @author Albert Wiedemann
+ *
  * @version 1.0
  */
-import java.util.*;
-
 class OBJEKTINFO
 {
     enum Ausstattungen

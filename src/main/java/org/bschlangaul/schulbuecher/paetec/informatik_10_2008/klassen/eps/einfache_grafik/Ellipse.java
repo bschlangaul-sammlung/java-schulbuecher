@@ -1,7 +1,9 @@
 package org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.einfache_grafik;
 
-import static org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.einfache_grafik.interna.GrafikSpeicher.*;
-import static org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.einfache_grafik.interna.FensterSpeicher.*;// uh
+// uh
+import static org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.einfache_grafik.interna.FensterSpeicher.fortgeschrittenesFensterGeben;
+import static org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.einfache_grafik.interna.GrafikSpeicher.einfachegrafikAnmelden;
+import static org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.einfache_grafik.interna.GrafikSpeicher.fortgeschrittenegrafikGeben;
 
 @SuppressWarnings("unused")
 public class Ellipse

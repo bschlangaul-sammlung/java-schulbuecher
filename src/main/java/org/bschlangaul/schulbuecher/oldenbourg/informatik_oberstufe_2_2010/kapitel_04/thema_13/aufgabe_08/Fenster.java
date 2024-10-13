@@ -1,7 +1,18 @@
 package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_2_2010.kapitel_04.thema_13.aufgabe_08;
 
-import java.awt.*;
-import java.awt.event.*;
+import java.awt.Button;
+import java.awt.Choice;
+import java.awt.Dimension;
+import java.awt.Font;
+import java.awt.Frame;
+import java.awt.Label;
+import java.awt.Panel;
+import java.awt.TextField;
+import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 
 /**
  *
@@ -78,7 +89,7 @@ public class Fenster extends Frame
         choice1.add("a..z A..Z");
         choice1.add("a..z 0..9");
         choice1.add("a..z A..Z 0..9");
-        choice1.add("a..z A..Z 0..9 !" + (new Character((char) 34)).toString()
+        choice1.add("a..z A..Z 0..9 !" + Character.toString((char) 34)
                 + " §$%&/()=?*+#-_.:;,");
         cp.add(choice1);
         label3.setBounds(24, 128, 82, 16);

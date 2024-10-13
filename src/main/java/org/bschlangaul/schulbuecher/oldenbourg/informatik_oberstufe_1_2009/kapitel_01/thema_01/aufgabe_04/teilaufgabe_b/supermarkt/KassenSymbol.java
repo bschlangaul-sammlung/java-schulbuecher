@@ -1,14 +1,17 @@
 package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapitel_01.thema_01.aufgabe_04.teilaufgabe_b.supermarkt;
 
+import java.awt.Canvas;
+import java.awt.Color;
+import java.awt.Graphics;
+
 /**
  * Ein Kassensymbol auf einem Fenster. Das Fenster wird bei Bedarf generiert.
  *
- * @author Klaus van Dijkstran und Barbara Leidorn
+ * @author Klaus Reinold und Barbara Leidorn
+ *
  * @version 1.0
  */
-import java.awt.*;
-
-class KASSENSYMBOL
+class KassenSymbol
 {
     /** Das Anzeigefenster. */
     private Canvas anzeige;
@@ -19,14 +22,14 @@ class KASSENSYMBOL
     private int breite = 100;
 
     /** Interna */
-    private OBERFLAECHE.FARBE aktFarbe;
+    private Oberflaeche.FARBE aktFarbe;
 
     /**
      * Standardkonstruktor für Objekte der Klasse KASSENSYMBOL. Er erzeugt ein
      * scharzes Rechteck in der linken oberen Ecke des Fensters. Das Fenster
      * wird bei Bedarf angelegt.
      */
-    KASSENSYMBOL()
+    KassenSymbol()
     {
         anzeige = new Canvas()
         {
@@ -42,11 +45,11 @@ class KASSENSYMBOL
                 g.fillRect(1, 1, breite - 2, hoehe - 2);
             }
         };
-        aktFarbe = OBERFLAECHE.FARBE.gruen;
+        aktFarbe = Oberflaeche.FARBE.gruen;
         anzeige.setVisible(true);
         anzeige.setSize(breite, hoehe);
         anzeige.setLocation(0, 20);
-        (OBERFLAECHE.FensterGeben()).add(anzeige, 0);
+        (Oberflaeche.FensterGeben()).add(anzeige, 0);
     }
 
     /**
@@ -67,18 +70,18 @@ class KASSENSYMBOL
     {
         if ("zufall".equals(neueFarbe))
         {
-            aktFarbe = OBERFLAECHE.FARBE.ZufallsFarbeErzeugen();
+            aktFarbe = Oberflaeche.FARBE.ZufallsFarbeErzeugen();
         }
         else
         {
             try
             {
-                aktFarbe = OBERFLAECHE.FARBE
+                aktFarbe = Oberflaeche.FARBE
                         .valueOf(aktFarbe.getDeclaringClass(), neueFarbe);
             }
             catch (Exception e)
             {
-                aktFarbe = OBERFLAECHE.FARBE.weiss;
+                aktFarbe = Oberflaeche.FARBE.weiss;
             }
         }
         Zeichnen();
@@ -93,7 +96,7 @@ class KASSENSYMBOL
     {
         int x = 400;
         int y = 100 * kassennummer;
-        anzeige.setLocation(x, 100 * kassennummer);;
+        anzeige.setLocation(x, y);
     }
 
     /**
@@ -114,6 +117,6 @@ class KASSENSYMBOL
      */
     public void Entfernen()
     {
-        (OBERFLAECHE.FensterGeben()).remove(anzeige);
+        (Oberflaeche.FensterGeben()).remove(anzeige);
     }
 }

@@ -1,14 +1,17 @@
 package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapitel_04.fahrplan_auskunft;
 
+import java.awt.Canvas;
+import java.awt.Color;
+import java.awt.Graphics;
+import java.util.ArrayList;
+
 /**
  * Stellt den Linienplan dar.
  *
  * @author Albert Wiedemann
+ *
  * @version 1.0
  */
-import java.awt.*;
-import java.util.*;
-
 class PLANANZEIGE extends Canvas
 {
     static final int breite = 400;

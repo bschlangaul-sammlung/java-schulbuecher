@@ -1,6 +1,7 @@
 package org.bschlangaul.schulbuecher.paetec.informatik_10_2008.klassen.eps.werkzeuge;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.LinkedList;
 
 /**
  * Ein Puffer (heisst auch Warteschlange oder Queue).<BR>

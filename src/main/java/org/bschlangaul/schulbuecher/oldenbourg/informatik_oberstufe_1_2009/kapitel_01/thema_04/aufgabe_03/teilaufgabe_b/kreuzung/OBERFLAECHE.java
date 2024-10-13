@@ -1,14 +1,25 @@
 package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapitel_01.thema_04.aufgabe_03.teilaufgabe_b.kreuzung;
 
+import java.awt.Button;
+import java.awt.Canvas;
+import java.awt.Color;
+import java.awt.Frame;
+import java.awt.Graphics;
+import java.awt.Label;
+import java.awt.TextField;
+import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+
 /**
  * Verwaltet das Ausgabefenster.
  *
  * @author Albert Wiedemann
+ *
  * @version 1.0
  */
-import java.awt.*;
-import java.awt.event.*;
-
 class OBERFLAECHE
 {
     /** Höhe des Anzeigefensters */

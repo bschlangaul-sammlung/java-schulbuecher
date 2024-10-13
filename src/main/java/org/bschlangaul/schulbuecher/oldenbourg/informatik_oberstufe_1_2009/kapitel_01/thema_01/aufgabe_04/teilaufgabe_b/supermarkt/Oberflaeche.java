@@ -1,15 +1,24 @@
 package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapitel_01.thema_01.aufgabe_04.teilaufgabe_b.supermarkt;
 
+import java.awt.Button;
+import java.awt.Color;
+import java.awt.Frame;
+import java.awt.Label;
+import java.awt.TextField;
+import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+
 /**
  * Erzeugt die Bedienelemente und verwaltet das Ausgabefenster.
  *
- * @author Klaus van Dijkstran und Barbara Leidorn
+ * @author Klaus Reinold und Barbara Leidorn
+ *
  * @version 1.0
  */
-import java.awt.*;
-import java.awt.event.*;
-
-class OBERFLAECHE
+class Oberflaeche
 {
     /**
      * Vereinbart die für die Simulation nötigen Standardfarben.
@@ -84,7 +93,7 @@ class OBERFLAECHE
         }
     }
 
-    private static OBERFLAECHE o = null;
+    private static Oberflaeche o = null;
 
     private Frame fenster = null;
 
@@ -92,12 +101,12 @@ class OBERFLAECHE
 
     private TextField eingabe2;
 
-    private ADAPTER a;
+    private Adapter a;
 
     /**
      * Baut die Bedienoberfläche auf
      */
-    private OBERFLAECHE()
+    private Oberflaeche()
     {
         int hoehe, breite;
         Label l;
@@ -327,7 +336,7 @@ class OBERFLAECHE
     {
         if (o == null)
         {
-            o = new OBERFLAECHE();
+            o = new Oberflaeche();
         }
         return o.fenster;
     }
@@ -337,11 +346,11 @@ class OBERFLAECHE
      *
      * @param a Adapter
      */
-    static void AdapterSetzen(ADAPTER a)
+    static void AdapterSetzen(Adapter a)
     {
         if (o == null)
         {
-            o = new OBERFLAECHE();
+            o = new Oberflaeche();
         }
         o.a = a;
     }

@@ -1,15 +1,21 @@
 package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapitel_04.fahrplan_wartung;
 
+import java.awt.Canvas;
+import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.Point;
+import java.awt.Rectangle;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.util.ArrayList;
+
 /**
  * Stellt den Linienplan dar.
  *
  * @author Albert Wiedemann
+ *
  * @version 1.0
  */
-import java.awt.*;
-import java.awt.event.*;
-import java.util.*;
-
 class PLANANZEIGE extends Canvas
 {
     static final int breite = 400;

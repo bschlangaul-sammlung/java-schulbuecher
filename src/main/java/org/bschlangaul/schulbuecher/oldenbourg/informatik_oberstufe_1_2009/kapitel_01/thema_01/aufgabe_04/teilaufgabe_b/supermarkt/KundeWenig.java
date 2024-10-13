@@ -3,31 +3,32 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapi
 /**
  * Verwaltet einen Kunden.
  *
- * @author Klaus van Dijkstran und Barbara Leidorn
+ * @author Klaus Reinold und Barbara Leidorn
  *
  * @version 1.0
  */
-class KUNDEKURZ extends KUNDE
+class KundeWenig extends Kunde
 {
     /**
      * Konstruktor des Kunden.
      *
      * @param artikel Anzahl der Artikel im Warenkorb
      */
-    KUNDEKURZ(int artikel)
+    KundeWenig(int artikel)
     {
         super(artikel);
     }
 
     /**
-     * Setzt den Anstellmechanismus in Gang. Hier ist die Strategie: kürzeste
-     * Schlange Vorbedingung: es gibt mindestens eine offene Kasse
+     * Setzt den Anstellmechanismus in Gang. Hier ist die Strategie: Schlange
+     * mit der geringsten Gesamtanzahl der Artikel Vorbedingung: es gibt
+     * mindestens eine offene Kasse
      *
      * @param schlangen Warteschlange, an der sich der Kunde anstellt
      */
-    void Anstellen(WARTESCHLANGE[] schlangen)
+    void Anstellen(Warteschlange[] schlangen)
     {
-        WARTESCHLANGE beste;
+        Warteschlange beste;
         int i;
         i = 0;
         while (!schlangen[i].IstAnstellenMoeglich())
@@ -39,8 +40,8 @@ class KUNDEKURZ extends KUNDE
         {
             if (schlangen[i].IstAnstellenMoeglich())
             {
-                if (schlangen[i].KundenanzahlGeben() < beste
-                        .KundenanzahlGeben())
+                if (schlangen[i].ArtikelanzahlGeben() < beste
+                        .ArtikelanzahlGeben())
                 {
                     beste = schlangen[i];
                 }

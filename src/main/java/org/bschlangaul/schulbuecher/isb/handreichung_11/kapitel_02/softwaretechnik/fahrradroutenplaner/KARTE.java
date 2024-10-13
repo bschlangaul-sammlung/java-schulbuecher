@@ -1,16 +1,17 @@
 package org.bschlangaul.schulbuecher.isb.handreichung_11.kapitel_02.softwaretechnik.fahrradroutenplaner;
 
+import java.awt.Color;
+import java.awt.Graphics;
+
+import javax.swing.JComponent;
+
 /**
  * Klasse zur grafischen Ausgabe der Landkarte mit Orten und kürzestem Weg
  *
  * @author
+ *
  * @version 1.0
  */
-import java.awt.*;
-import javax.swing.*;
-import java.awt.event.*;
-import java.util.*;
-
 class KARTE extends JComponent implements STATUSBEOBACHTER
 {
     private Color hintergrundfarbe, vordergrundfarbe, startfarbe, zielfarbe,
