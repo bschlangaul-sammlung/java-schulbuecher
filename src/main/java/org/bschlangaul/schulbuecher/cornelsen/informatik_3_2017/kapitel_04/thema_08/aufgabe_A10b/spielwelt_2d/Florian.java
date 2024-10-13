@@ -2,9 +2,9 @@ package org.bschlangaul.schulbuecher.cornelsen.informatik_3_2017.kapitel_04.them
 
 import java.awt.event.KeyEvent;
 
-import org.bschlangaul.schulbuecher.cornelsen.zeichen_flaeche.Figur;
-import org.bschlangaul.schulbuecher.cornelsen.zeichen_flaeche.Text;
-import org.bschlangaul.schulbuecher.cornelsen.zeichen_flaeche.Zeichenfenster;
+import org.bschlangaul.schulbuecher.cornelsen.shared.graphics_and_games.Figur;
+import org.bschlangaul.schulbuecher.cornelsen.shared.graphics_and_games.Text;
+import org.bschlangaul.schulbuecher.cornelsen.shared.graphics_and_games.Zeichenfenster;
 
 /**
  * Eine Spielfigur in der Blumenwelt.

@@ -1,6 +1,6 @@
 package org.bschlangaul.schulbuecher.cornelsen.informatik_3_2017.kapitel_04.thema_02.aufgabe_03.geo_turtle;
 
-import org.bschlangaul.schulbuecher.cornelsen.zeichen_flaeche.Turtle;
+import org.bschlangaul.schulbuecher.cornelsen.shared.graphics_and_games.Turtle;
 
 /**
  * Ergänzt die Turtle um Methoden zum Zeichnen geometrischer Figuren

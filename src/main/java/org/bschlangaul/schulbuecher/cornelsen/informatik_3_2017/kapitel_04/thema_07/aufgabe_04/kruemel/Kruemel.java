@@ -1,5 +1,7 @@
 package org.bschlangaul.schulbuecher.cornelsen.informatik_3_2017.kapitel_04.thema_07.aufgabe_04.kruemel;
 
+import org.bschlangaul.schulbuecher.cornelsen.shared.graphics_and_games.Figur;
+
 /**
  * Verwaltet einen Krümel
  *
@@ -34,7 +36,7 @@ class Kruemel extends Figur
     /**
      * Der Krümel verschwindet bei Berührung
      */
-    void AktionAusführen()
+    public void AktionAusführen()
     {
         if (Berührt())
         {

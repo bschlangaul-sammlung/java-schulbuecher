@@ -2,6 +2,8 @@ package org.bschlangaul.schulbuecher.cornelsen.informatik_3_2017.kapitel_04.them
 
 import java.util.Random;
 
+import org.bschlangaul.schulbuecher.cornelsen.shared.graphics_and_games.Figur;
+
 /**
  * Steuerung der Leuchten auf dem Dancefloor
  *
@@ -28,7 +30,7 @@ class DancefloorSteuerung extends Figur
      * Lässt die Farben laufen
      */
     @Override
-    void AktionAusführen()
+    public void AktionAusführen()
     {
         for (int spalte = d.SpaltenanzahlGeben()
                 - 1; spalte > 0; spalte = spalte - 1)
@@ -94,5 +96,10 @@ class DancefloorSteuerung extends Figur
         default:
             return "schwarz";
         }
+    }
+
+    public static void main(String[] args)
+    {
+        new DancefloorSteuerung().AktionAusführen();
     }
 }

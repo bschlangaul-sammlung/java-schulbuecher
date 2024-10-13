@@ -3,9 +3,9 @@ package org.bschlangaul.schulbuecher.cornelsen.informatik_6.kapitel_01.thema_05.
 import java.util.ArrayList;
 import java.util.Random;
 
-import org.bschlangaul.schulbuecher.cornelsen.zeichen_flaeche.Rechteck;
-import org.bschlangaul.schulbuecher.cornelsen.zeichen_flaeche.Text;
-import org.bschlangaul.schulbuecher.cornelsen.zeichen_flaeche.Zeichenfenster;
+import org.bschlangaul.schulbuecher.cornelsen.shared.graphics_and_games.Rechteck;
+import org.bschlangaul.schulbuecher.cornelsen.shared.graphics_and_games.Text;
+import org.bschlangaul.schulbuecher.cornelsen.shared.graphics_and_games.Zeichenfenster;
 
 /**
  * Stellt die Warteschlange im Wartezimmer dar

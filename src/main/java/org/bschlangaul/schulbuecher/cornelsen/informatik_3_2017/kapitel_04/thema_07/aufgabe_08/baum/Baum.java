@@ -1,5 +1,9 @@
 package org.bschlangaul.schulbuecher.cornelsen.informatik_3_2017.kapitel_04.thema_07.aufgabe_08.baum;
 
+import org.bschlangaul.schulbuecher.cornelsen.shared.graphics_and_games.Figur;
+import org.bschlangaul.schulbuecher.cornelsen.shared.graphics_and_games.Kreis;
+import org.bschlangaul.schulbuecher.cornelsen.shared.graphics_and_games.Rechteck;
+
 /**
  * Beschreibt einen stilisierten Baum
  *
@@ -116,7 +120,12 @@ class Baum extends Figur
      * Der Baum tut nichts automatisch
      */
     @Override
-    void AktionAusführen()
+    public void AktionAusführen()
     {
+    }
+
+    public static void main(String[] args)
+    {
+        new Baum();
     }
 }

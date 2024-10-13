@@ -4,9 +4,9 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Random;
 
-import org.bschlangaul.schulbuecher.cornelsen.zeichen_flaeche.Kreis;
-import org.bschlangaul.schulbuecher.cornelsen.zeichen_flaeche.Rechteck;
-import org.bschlangaul.schulbuecher.cornelsen.zeichen_flaeche.Text;
+import org.bschlangaul.schulbuecher.cornelsen.shared.graphics_and_games.Kreis;
+import org.bschlangaul.schulbuecher.cornelsen.shared.graphics_and_games.Rechteck;
+import org.bschlangaul.schulbuecher.cornelsen.shared.graphics_and_games.Text;
 
 /**
  * Erzeugung von zufälligen Datenpunkten und Umsetzung des

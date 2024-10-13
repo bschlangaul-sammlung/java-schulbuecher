@@ -13,7 +13,7 @@ class DancefloorSteuerung2 extends DancefloorSteuerung
      * Erzeugt zufällige Farbwechsel
      */
     @Override
-    void AktionAusführen()
+    public void AktionAusführen()
     {
         for (int spalte = 0; spalte < d.SpaltenanzahlGeben(); spalte = spalte
                 + 1)
@@ -24,5 +24,10 @@ class DancefloorSteuerung2 extends DancefloorSteuerung
                 d.FarbeSetzen(spalte, zeile, ZufälligeFarbeGeben());
             }
         }
+    }
+
+    public static void main(String[] args)
+    {
+        new DancefloorSteuerung2().AktionAusführen();
     }
 }

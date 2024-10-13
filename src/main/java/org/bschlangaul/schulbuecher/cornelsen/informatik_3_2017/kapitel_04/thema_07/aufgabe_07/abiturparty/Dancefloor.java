@@ -1,5 +1,7 @@
 package org.bschlangaul.schulbuecher.cornelsen.informatik_3_2017.kapitel_04.thema_07.aufgabe_07.abiturparty;
 
+import org.bschlangaul.schulbuecher.cornelsen.shared.graphics_and_games.Rechteck;
+
 /**
  * Klasse zur Beschreibung des Dancefloors
  *
@@ -109,5 +111,10 @@ class Dancefloor
     int ZeilenanzahlGeben()
     {
         return zeilenanzahl;
+    }
+
+    public static void main(String[] args)
+    {
+        new Dancefloor();
     }
 }

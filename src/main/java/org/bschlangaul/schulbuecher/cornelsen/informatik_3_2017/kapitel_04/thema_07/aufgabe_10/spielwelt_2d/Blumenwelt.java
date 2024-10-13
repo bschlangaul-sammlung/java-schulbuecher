@@ -50,4 +50,9 @@ class Blumenwelt
             new Fliegenpilz(6, posY);
         }
     }
+
+    public static void main(String[] args)
+    {
+        new Blumenwelt();
+    }
 }

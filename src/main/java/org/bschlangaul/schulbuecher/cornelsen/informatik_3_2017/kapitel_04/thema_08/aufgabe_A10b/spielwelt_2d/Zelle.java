@@ -1,6 +1,6 @@
 package org.bschlangaul.schulbuecher.cornelsen.informatik_3_2017.kapitel_04.thema_08.aufgabe_A10b.spielwelt_2d;
 
-import org.bschlangaul.schulbuecher.cornelsen.zeichen_flaeche.Rechteck;
+import org.bschlangaul.schulbuecher.cornelsen.shared.graphics_and_games.Rechteck;
 
 /**
  * Zellen als Bestandteile der Welt, in der sich die Figuren bewegen können.

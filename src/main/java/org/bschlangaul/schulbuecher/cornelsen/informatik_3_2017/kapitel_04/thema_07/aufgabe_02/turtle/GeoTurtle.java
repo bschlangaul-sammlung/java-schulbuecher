@@ -1,5 +1,7 @@
 package org.bschlangaul.schulbuecher.cornelsen.informatik_3_2017.kapitel_04.thema_07.aufgabe_02.turtle;
 
+import org.bschlangaul.schulbuecher.cornelsen.shared.graphics_and_games.Turtle;
+
 /**
  * Turtle mit Geometriekenntnissen.
  *
@@ -43,5 +45,13 @@ class GeoTurtle extends Turtle
             Gehen(5);
             Drehen(3);
         }
+    }
+
+    public static void main(String[] args)
+    {
+        GeoTurtle turtle = new GeoTurtle();
+        turtle.Sechseck();
+        turtle.Achteck();
+        turtle.Hundertzwanzigeck();
     }
 }

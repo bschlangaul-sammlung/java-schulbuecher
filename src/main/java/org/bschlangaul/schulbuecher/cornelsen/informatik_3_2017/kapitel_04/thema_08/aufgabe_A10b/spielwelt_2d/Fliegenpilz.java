@@ -1,6 +1,6 @@
 package org.bschlangaul.schulbuecher.cornelsen.informatik_3_2017.kapitel_04.thema_08.aufgabe_A10b.spielwelt_2d;
 
-import org.bschlangaul.schulbuecher.cornelsen.zeichen_flaeche.Figur;
+import org.bschlangaul.schulbuecher.cornelsen.shared.graphics_and_games.Figur;
 
 /**
  * Fliegenpilz, der darauf wartet gesammelt zu werden

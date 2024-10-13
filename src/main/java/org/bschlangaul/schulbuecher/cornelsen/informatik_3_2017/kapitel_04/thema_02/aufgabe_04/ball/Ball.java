@@ -1,6 +1,6 @@
 package org.bschlangaul.schulbuecher.cornelsen.informatik_3_2017.kapitel_04.thema_02.aufgabe_04.ball;
 
-import org.bschlangaul.schulbuecher.cornelsen.zeichen_flaeche.Kreis;
+import org.bschlangaul.schulbuecher.cornelsen.shared.graphics_and_games.Kreis;
 
 /**
  * Ein einfacher Ball

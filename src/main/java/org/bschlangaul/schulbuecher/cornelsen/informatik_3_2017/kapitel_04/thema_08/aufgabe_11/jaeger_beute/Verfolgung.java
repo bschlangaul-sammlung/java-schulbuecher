@@ -1,6 +1,6 @@
 package org.bschlangaul.schulbuecher.cornelsen.informatik_3_2017.kapitel_04.thema_08.aufgabe_11.jaeger_beute;
 
-import org.bschlangaul.schulbuecher.cornelsen.zeichen_flaeche.Ereignisbehandlung;
+import org.bschlangaul.schulbuecher.cornelsen.shared.graphics_and_games.Ereignisbehandlung;
 
 /**
  * Steuert das Verfolgungsspiel.

@@ -2,7 +2,7 @@ package org.bschlangaul.schulbuecher.cornelsen.informatik_3_2017.kapitel_04.them
 
 import java.util.Random;
 
-import org.bschlangaul.schulbuecher.cornelsen.zeichen_flaeche.Figur;
+import org.bschlangaul.schulbuecher.cornelsen.shared.graphics_and_games.Figur;
 
 /**
  * Die Beute wandert zufällig über das Spielfeld. Sie wechselt ihre Richtung

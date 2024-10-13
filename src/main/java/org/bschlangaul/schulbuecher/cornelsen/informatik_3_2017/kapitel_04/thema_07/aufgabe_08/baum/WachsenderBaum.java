@@ -14,7 +14,7 @@ class WachsenderBaum extends Baum
      * der Baum
      */
     @Override
-    void AktionAusführen()
+    public void AktionAusführen()
     {
         switch (jahreszeit)
         {
