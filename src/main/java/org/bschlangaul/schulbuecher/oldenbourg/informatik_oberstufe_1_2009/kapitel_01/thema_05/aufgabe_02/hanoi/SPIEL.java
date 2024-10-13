@@ -9,16 +9,24 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapi
  */
 class SPIEL
 {
-    /** Erster Hanoiturm */
+    /**
+     * Erster Hanoiturm
+     */
     HANOITURM hanoiturm1;
 
-    /** Zweiter Hanoiturm */
+    /**
+     * Zweiter Hanoiturm
+     */
     HANOITURM hanoiturm2;
 
-    /** Dritter Hanoiturm */
+    /**
+     * Dritter Hanoiturm
+     */
     HANOITURM hanoiturm3;
 
-    /** Sorgt für die Verzögerung bei der Anzeige */
+    /**
+     * Sorgt für die Verzögerung bei der Anzeige
+     */
     int taktdauer;
 
     /**

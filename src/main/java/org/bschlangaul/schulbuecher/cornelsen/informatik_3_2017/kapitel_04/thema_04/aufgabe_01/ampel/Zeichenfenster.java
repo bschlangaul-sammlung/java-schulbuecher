@@ -22,10 +22,14 @@ import java.util.LinkedList;
  */
 class Zeichenfenster
 {
-    /** Interface für die Aktionsausführung. */
+    /**
+     * Interface für die Aktionsausführung.
+     */
     interface AktionsEmpfaenger
     {
-        /** Methode wird vom Taktgeber aufgerufen. */
+        /**
+         * Methode wird vom Taktgeber aufgerufen.
+         */
         void Ausführen();
 
         void Taste(char taste);
@@ -35,37 +39,57 @@ class Zeichenfenster
         void Geklickt(int x, int y, int anzahl);
     }
 
-    /** Aufzählung der erzeugbaren Objektarten. */
+    /**
+     * Aufzählung der erzeugbaren Objektarten.
+     */
     static enum SymbolArt
     {
         kreis, dreieck, rechteck, turtle, figur, text;
     };
 
-    /** Einziges Objekt der Zeichenfläche. */
+    /**
+     * Einziges Objekt der Zeichenfläche.
+     */
     private static Zeichenfenster zeichenfläche = null;
 
-    /** Fenster für die Zeichenfläche. */
+    /**
+     * Fenster für die Zeichenfläche.
+     */
     private JFrame fenster;
 
-    /** Die eigentliche Darstellungskomponente. */
+    /**
+     * Die eigentliche Darstellungskomponente.
+     */
     private JComponent malfläche;
 
-    /** Stop-Knopf für den Taktgeber. */
+    /**
+     * Stop-Knopf für den Taktgeber.
+     */
     private JButton stop;
 
-    /** Start-Knopf für den Taktgeber. */
+    /**
+     * Start-Knopf für den Taktgeber.
+     */
     private JButton start;
 
-    /** Einsteller für die Taktrate */
+    /**
+     * Einsteller für die Taktrate
+     */
     private JSlider slider;
 
-    /** Feld aller zu zeichnenden Objekte. */
+    /**
+     * Feld aller zu zeichnenden Objekte.
+     */
     private ArrayList<GrafikSymbol> alleSymbole;
 
-    /** Feld aller zu zeichnenden Objekte. */
+    /**
+     * Feld aller zu zeichnenden Objekte.
+     */
     private ArrayList<AktionsEmpfaenger> aktionsEmpfänger;
 
-    /** Timerobjekt für die zentrale Zeitverwaltung */
+    /**
+     * Timerobjekt für die zentrale Zeitverwaltung
+     */
     private javax.swing.Timer timer;
 
     /**
@@ -440,40 +464,64 @@ class Zeichenfenster
      */
     abstract class GrafikSymbol
     {
-        /** x-Position der linken oberen Ecke. */
+        /**
+         * x-Position der linken oberen Ecke.
+         */
         protected int x;
 
-        /** y-Position der linken oberen Ecke. */
+        /**
+         * y-Position der linken oberen Ecke.
+         */
         protected int y;
 
-        /** Breite des umgebenden Rechtecks. */
+        /**
+         * Breite des umgebenden Rechtecks.
+         */
         protected int b;
 
-        /** Höhe des umgebenden Rechtecks. */
+        /**
+         * Höhe des umgebenden Rechtecks.
+         */
         protected int h;
 
-        /** Farbe des Symbols. */
+        /**
+         * Farbe des Symbols.
+         */
         protected Color c;
 
-        /** Sichtbarkeit des Symbols. */
+        /**
+         * Sichtbarkeit des Symbols.
+         */
         protected boolean sichtbar;
 
-        /** Drehwinkel (mathematisch positiver Drehsinn) des Symbols. */
+        /**
+         * Drehwinkel (mathematisch positiver Drehsinn) des Symbols.
+         */
         protected int winkel;
 
-        /** Die Form des Grafiksymbols. */
+        /**
+         * Die Form des Grafiksymbols.
+         */
         protected Area form;
 
-        /** Farbe Hellgelb. */
+        /**
+         * Farbe Hellgelb.
+         */
         protected final Color hellgelb = new Color(255, 255, 128);
 
-        /** Farbe Hellgrün. */
+        /**
+         * Farbe Hellgrün.
+         */
         protected final Color hellgrün = new Color(128, 255, 128);
 
-        /** Farbe Orange. */
+        /**
+         * Farbe Orange.
+         */
         protected final Color orange = new Color(255, 128, 0);
 
-        /** Farbe Braun. */
+        /**
+         * Farbe Braun.
+         */
         protected final Color braun = new Color(128, 64, 0);
 
         /**
@@ -842,10 +890,14 @@ class Zeichenfenster
      */
     class TextIntern extends GrafikSymbol
     {
-        /** Der aktuelle Text. */
+        /**
+         * Der aktuelle Text.
+         */
         private String text;
 
-        /** Die aktuelle Textgröße. */
+        /**
+         * Die aktuelle Textgröße.
+         */
         float size;
 
         /**
@@ -1142,7 +1194,9 @@ class Zeichenfenster
      */
     private class FigurenElementPolygon extends FigurenElement
     {
-        /** Das Polygonobjekt */
+        /**
+         * Das Polygonobjekt
+         */
         private Polygon poly;
 
         /**
@@ -1210,19 +1264,29 @@ class Zeichenfenster
     {
         private class LinienElement
         {
-            /** x-Koordinate des Startpunktes. */
+            /**
+             * x-Koordinate des Startpunktes.
+             */
             private double xStart;
 
-            /** y-Koordinate des Startpunktes. */
+            /**
+             * y-Koordinate des Startpunktes.
+             */
             private double yStart;
 
-            /** x-Koordinate des Endpunktes. */
+            /**
+             * x-Koordinate des Endpunktes.
+             */
             private double xEnde;
 
-            /** y-Koordinate des Endpunktes. */
+            /**
+             * y-Koordinate des Endpunktes.
+             */
             private double yEnde;
 
-            /** Farbe des LinienElements. */
+            /**
+             * Farbe des LinienElements.
+             */
             private Color c;
 
             LinienElement(double xStart, double yStart, double xEnde,
@@ -1247,10 +1311,14 @@ class Zeichenfenster
          */
         private class HintergrundBild
         {
-            /** Das aktuelle Hintergrundbild. */
+            /**
+             * Das aktuelle Hintergrundbild.
+             */
             private BufferedImage bild;
 
-            /** Das zugehörige Zeichenobjekt. */
+            /**
+             * Das zugehörige Zeichenobjekt.
+             */
             private Graphics2D g;
 
             /**
@@ -1287,34 +1355,54 @@ class Zeichenfenster
             }
         }
 
-        /** Genaue x-Koordinate der Turtle. */
+        /**
+         * Genaue x-Koordinate der Turtle.
+         */
         double xD;
 
-        /** Genaue y-Koordinate der Turtle. */
+        /**
+         * Genaue y-Koordinate der Turtle.
+         */
         double yD;
 
-        /** Startkoordinate der Turtle. */
+        /**
+         * Startkoordinate der Turtle.
+         */
         private int homeX;
 
-        /** Startkoordinate der Turtle. */
+        /**
+         * Startkoordinate der Turtle.
+         */
         private int homeY;
 
-        /** Startwinkel der Turtle. */
+        /**
+         * Startwinkel der Turtle.
+         */
         private int homeWinkel;
 
-        /** Stiftposition. */
+        /**
+         * Stiftposition.
+         */
         boolean stiftUnten;
 
-        /** Die Sichtbarkeit des Turtle-Symbols. */
+        /**
+         * Die Sichtbarkeit des Turtle-Symbols.
+         */
         private boolean symbolSichtbar;
 
-        /** Linienelemente. */
+        /**
+         * Linienelemente.
+         */
         private ArrayList<LinienElement> linien;
 
-        /** Standardfigur für Turtle. */
+        /**
+         * Standardfigur für Turtle.
+         */
         private LinkedList<FigurenElement> standardFigur;
 
-        /** Das Hintergrundbild für die Linien. */
+        /**
+         * Das Hintergrundbild für die Linien.
+         */
         private HintergrundBild hintergrund;
 
         /**
@@ -1682,25 +1770,39 @@ class Zeichenfenster
      */
     class FigurIntern extends GrafikSymbol
     {
-        /** Genaue x-Koordinate der Figur. */
+        /**
+         * Genaue x-Koordinate der Figur.
+         */
         double xD;
 
-        /** Genaue y-Koordinate der Figur. */
+        /**
+         * Genaue y-Koordinate der Figur.
+         */
         double yD;
 
-        /** Startkoordinate der Figur. */
+        /**
+         * Startkoordinate der Figur.
+         */
         private int homeX;
 
-        /** Startkoordinate der Figur. */
+        /**
+         * Startkoordinate der Figur.
+         */
         private int homeY;
 
-        /** Startwinkel der Figur. */
+        /**
+         * Startwinkel der Figur.
+         */
         private int homeWinkel;
 
-        /** Eigene Figur für Figur. */
+        /**
+         * Eigene Figur für Figur.
+         */
         private LinkedList<FigurenElement> eigeneFigur;
 
-        /** Standardfigur für Figur. */
+        /**
+         * Standardfigur für Figur.
+         */
         private LinkedList<FigurenElement> standardFigur;
 
         /**

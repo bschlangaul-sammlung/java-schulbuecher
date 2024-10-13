@@ -11,12 +11,18 @@ import java.util.*;
  */
 class Knoten
 {
-    /** Der Bezeichner des Knotens */
+    /**
+     * Der Bezeichner des Knotens
+     */
     private String bezeichner;
 
-    /** Das Darstellungssymbol des Knotens */
+    /**
+     * Das Darstellungssymbol des Knotens
+     */
     private KnotenSymbol symbol;
-    /** Die Adjazenzliste */
+    /**
+     * Die Adjazenzliste
+     */
     // Zu ergänzen
 
     /**

@@ -10,7 +10,9 @@ package org.bschlangaul.schulbuecher.isb.handreichung_12.kapitel_02.projekt_12.p
  */
 public class Erzeuger extends Thread
 {
-    /** Referenz auf den Abstellplatz */
+    /**
+     * Referenz auf den Abstellplatz
+     */
     AbstellPlatz abstellplatz;
 
     /**

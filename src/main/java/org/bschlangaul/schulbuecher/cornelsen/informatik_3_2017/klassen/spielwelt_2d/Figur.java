@@ -9,28 +9,44 @@ package org.bschlangaul.schulbuecher.cornelsen.informatik_3_2017.klassen.spielwe
  */
 public class Figur
 {
-    /** x-Position der Figur. */
+    /**
+     * x-Position der Figur.
+     */
     protected int x;
 
-    /** y-Position der Figur. */
+    /**
+     * y-Position der Figur.
+     */
     protected int y;
 
-    /** Größe der Figur. */
+    /**
+     * Größe der Figur.
+     */
     protected int größe;
 
-    /** Farbe der Figur. */
+    /**
+     * Farbe der Figur.
+     */
     protected String farbe;
 
-    /** Sichtbarkeit der Figur. */
+    /**
+     * Sichtbarkeit der Figur.
+     */
     protected boolean sichtbar;
 
-    /** Drehwinkel (mathemtisch positiver Drehsinn) der Turtle in Grad. */
+    /**
+     * Drehwinkel (mathemtisch positiver Drehsinn) der Turtle in Grad.
+     */
     protected int winkel;
 
-    /** Referenz auf das echte Figursymbol. */
+    /**
+     * Referenz auf das echte Figursymbol.
+     */
     Zeichenfenster.FigurIntern symbol;
 
-    /** Referenz auf das Aktionsempfängerobjekt. */
+    /**
+     * Referenz auf das Aktionsempfängerobjekt.
+     */
     Zeichenfenster.AktionsEmpfaenger aktionsEmpfänger;
 
     /**

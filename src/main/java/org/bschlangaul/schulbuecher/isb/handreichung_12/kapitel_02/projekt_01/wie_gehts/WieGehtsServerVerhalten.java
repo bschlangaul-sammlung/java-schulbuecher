@@ -12,19 +12,29 @@ import org.bschlangaul.schulbuecher.isb.handreichung_12.kapitel_02.ServerVerhalt
  */
 public class WieGehtsServerVerhalten implements ServerVerhalten
 {
-    /** Konstante für Zustand wartend */
+    /**
+     * Konstante für Zustand wartend
+     */
     private static final int wartend = 0;
 
-    /** Konstante für Zustand gegrüßt */
+    /**
+     * Konstante für Zustand gegrüßt
+     */
     private static final int gegruesst = 1;
 
-    /** Konstante für Zustand gefragt */
+    /**
+     * Konstante für Zustand gefragt
+     */
     private static final int gefragt = 2;
 
-    /** Konstante für Zustand nochmal */
+    /**
+     * Konstante für Zustand nochmal
+     */
     private static final int nochmal = 3;
 
-    /** speichert den aktuellen Zustand */
+    /**
+     * speichert den aktuellen Zustand
+     */
     private int zustand = wartend;
 
     /**

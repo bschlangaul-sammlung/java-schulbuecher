@@ -9,7 +9,9 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapi
  */
 class ZAHL implements DATENELEMENT
 {
-    /** Zu verwaltender Wert */
+    /**
+     * Zu verwaltender Wert
+     */
     private int z;
 
     /**

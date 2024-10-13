@@ -11,7 +11,9 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_2_2010.kapi
  */
 public class AvlBaum
 {
-    /** Die Wurzel des Baumes */
+    /**
+     * Die Wurzel des Baumes
+     */
     private AvlKnoten wurzel;
 
     /**

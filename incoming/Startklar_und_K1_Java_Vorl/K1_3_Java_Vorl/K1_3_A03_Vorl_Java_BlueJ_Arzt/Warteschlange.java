@@ -1,16 +1,18 @@
 
 /**
  * Beschreibung der Warteschlange
- * 
+ *
  * @author Klaus Reinold
  * @version 0.9
  */
 class Warteschlange
 {
-    /** erster Patient der Warteschlange */
+    /**
+     * erster Patient der Warteschlange */
     private Knoten anfang;
 
-    /** letzter Patient der Warteschlange */
+    /**
+     * letzter Patient der Warteschlange */
     private Knoten ende;
 
     /**
@@ -18,7 +20,7 @@ class Warteschlange
      */
     Warteschlange()
     {
-        anfang = null; 
+        anfang = null;
         ende = null;
     }
 
@@ -43,7 +45,7 @@ class Warteschlange
 
     /**
      * Entfernt den ersten Patient aus der Warteschlange und gibt ihn zurück.
-     * @return bisheriger erster Patient 
+     * @return bisheriger erster Patient
      */
     Patient Entfernen()
     {

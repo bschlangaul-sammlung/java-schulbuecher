@@ -5,15 +5,16 @@ import javax.swing.*;
 
 /**
  * Verwaltet die Ereignisse
- * 
+ *
  * @author Albert Wiedemann
  * @version 1.0
  */
 class EreignisBehandlung
 {
-    /** Timerobjekt für die zentrale Zeitverwaltung */
+    /**
+     * Timerobjekt für die zentrale Zeitverwaltung */
     private Timer timer;
-    
+
     /**
      * Standardkonstruktor für Objekte der Klasse Simulation.
      * Erzeugt den Taktgeber.
@@ -51,7 +52,7 @@ class EreignisBehandlung
         {
             TaktdauerSetzen(starttakt);
         }
-        
+
         /**
          * Startet das Spiel.
          */
@@ -61,7 +62,7 @@ class EreignisBehandlung
         }
         });
     }
-    
+
     /**
      * Die eigentliche Aktionsmethode des Timers.
      * Muss bei Bedarf von einer Unterklasse überschrieben werden.
@@ -86,17 +87,17 @@ class EreignisBehandlung
     {
         timer.stop();
     }
-    
+
     /**
      * Ablaufgeschwindigkeit einstellen
-     * 
+     *
      * @param dauer: Angabe in Millisekunden
      */
     void TaktdauerSetzen(int dauer)
     {
         timer.setDelay(dauer);
     }
-    
+
     /**
      * Die eigentliche Aktionsmethode für gedrückte Tasten.
      * <br>Muss bei Bedarf von einer Unterklasse überschrieben werden.

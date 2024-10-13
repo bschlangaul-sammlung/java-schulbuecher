@@ -15,19 +15,29 @@ import org.bschlangaul.schulbuecher.cornelsen.zeichen_flaeche.Figur;
  */
 class Beute extends Figur
 {
-    /** Zähler für die Bewegungsschritte geradeaus. */
+    /**
+     * Zähler für die Bewegungsschritte geradeaus.
+     */
     int zähler;
 
-    /** Der Zufallsgenerator. */
+    /**
+     * Der Zufallsgenerator.
+     */
     Random zufall;
 
-    /** Breite des Spielfeldes. */
+    /**
+     * Breite des Spielfeldes.
+     */
     int breite;
 
-    /** Höhe des Spielfeldes. */
+    /**
+     * Höhe des Spielfeldes.
+     */
     int höhe;
 
-    /** Zähler für die Zeit nach der Berührung. */
+    /**
+     * Zähler für die Zeit nach der Berührung.
+     */
     int berührtZähler;
 
     /**

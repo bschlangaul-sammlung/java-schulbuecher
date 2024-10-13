@@ -3,31 +3,40 @@ import java.awt.event.*;
 import java.util.*;
 /**
  * Rahmenklasse des Spiels
- * 
+ *
  * @author Albert Wiedemann
  * @version 1.0
  */
 class Spiel extends EreignisBehandlung
 {
-    /** Die Schlange.*/
+    /**
+     * Die Schlange.*/
     private Schlange schlange;
-    /** Das Spielfeld.*/
+    /**
+     * Das Spielfeld.*/
     private RandSymbol spielfeldrand;
-    /** Der Punktestand */
+    /**
+     * Der Punktestand */
     private int punkte;
-    /** Verlängerungsintervall */
+    /**
+     * Verlängerungsintervall */
     private final static int maxSchritte = 10;
-    /** Aktuelle Schrittzahl für Verlängerung */
+    /**
+     * Aktuelle Schrittzahl für Verlängerung */
     private int aktSchritte;
-    /** Zufallsgeneror für das Spiel */
+    /**
+     * Zufallsgeneror für das Spiel */
     private Random zzGenerator;
-    /** Restschritte für Sonderverlängerung der Schlange.*/
+    /**
+     * Restschritte für Sonderverlängerung der Schlange.*/
     private int sonderZähler;
-    /** Restschritte für Bremsen */
+    /**
+     * Restschritte für Bremsen */
     private int bremsZähler;
-    /** Die Sonderfelder */
+    /**
+     * Die Sonderfelder */
     private ArrayList<SonderFeld> sonderfelder;
-    
+
     /**
      * Baut die Basiselemente auf.
      */
@@ -80,7 +89,7 @@ class Spiel extends EreignisBehandlung
     {
         return zzGenerator.nextInt(spielfeldrand.XMaxGeben() - spielfeldrand.XMinGeben() + 1) + spielfeldrand.XMinGeben();
     }
-    
+
     /**
      * Erzeugt eine zufällige y-Koordinate auf den Spielfeld.
      * @return zufällige y-Koordinate
@@ -89,7 +98,7 @@ class Spiel extends EreignisBehandlung
     {
         return zzGenerator.nextInt(spielfeldrand.YMaxGeben() - spielfeldrand.YMinGeben() + 1) + spielfeldrand.YMinGeben();
     }
-    
+
     /**
      * Testet, ob eine gegebene Position noch frei ist.
      * @param x x-Koordinate der Position
@@ -103,7 +112,7 @@ class Spiel extends EreignisBehandlung
             if ((s != null) && (s.XPositionGeben() == x) && (s.YPositionGeben() == y))
             {
                 return false;
-            }            
+            }
         }
         if ((schlange.XPositionGeben() == x) && (schlange.YPositionGeben() == y))
         {
@@ -115,7 +124,7 @@ class Spiel extends EreignisBehandlung
         }
         return true;
     }
-    
+
     /**
      * Verändert den Punktestand um den angegebenen Wert.
      * @param delta die Punktestandsänderung
@@ -124,7 +133,7 @@ class Spiel extends EreignisBehandlung
     {
         punkte += delta;
     }
-    
+
     /**
      * Startet bzw.verlängert das Sonderwachstum der Schlange.
      */
@@ -132,7 +141,7 @@ class Spiel extends EreignisBehandlung
     {
         sonderZähler += 10;
     }
-    
+
     /**
      * Aktiviert die Verzögerung des Ablaufs.
      */
@@ -142,7 +151,7 @@ class Spiel extends EreignisBehandlung
         TaktdauerSetzen(1000);
         spielfeldrand.SonderanzeigeSetzen("+");
     }
-    
+
     /**
      * Entfernt das angegebene Sonderfeldobjekt aus sonderfelder.
      * @param was die zu entfernene Referenz
@@ -214,7 +223,7 @@ class Spiel extends EreignisBehandlung
             }
         }
     }
-    
+
     /**
      * Wertet die Tasteneingaben aus.
      * @param welche Tastencode

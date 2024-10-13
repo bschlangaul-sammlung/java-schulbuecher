@@ -9,10 +9,14 @@ package org.bschlangaul.schulbuecher.cornelsen.informatik_6.kapitel_01.thema_01.
  */
 abstract class SonderFeld
 {
-    /** Das Anzeigesymbol */
+    /**
+     * Das Anzeigesymbol
+     */
     protected SonderSymbol symbol;
 
-    /** Das Spiel, in dem das Sonderfeld erzeugt wurde. */
+    /**
+     * Das Spiel, in dem das Sonderfeld erzeugt wurde.
+     */
     protected Spiel spiel;
 
     /**

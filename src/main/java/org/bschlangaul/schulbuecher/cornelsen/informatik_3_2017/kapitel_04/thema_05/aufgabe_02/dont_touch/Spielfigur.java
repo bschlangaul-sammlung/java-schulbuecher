@@ -9,10 +9,14 @@ package org.bschlangaul.schulbuecher.cornelsen.informatik_3_2017.kapitel_04.them
  */
 class Spielfigur extends Figur
 {
-    /** Länge der Bewegung */
+    /**
+     * Länge der Bewegung
+     */
     int delta;
 
-    /** Anzeigetext */
+    /**
+     * Anzeigetext
+     */
     Text t;
 
     /**

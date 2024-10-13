@@ -9,28 +9,44 @@ package org.bschlangaul.schulbuecher.cornelsen.informatik_5.kapitel_01.thema_02.
  */
 class KnotenSymbol
 {
-    /** Außenkreis des Darstellungssymbols */
+    /**
+     * Außenkreis des Darstellungssymbols
+     */
     private Kreis außen;
 
-    /** Innenkreis des Darstellungssymbols */
+    /**
+     * Innenkreis des Darstellungssymbols
+     */
     private Kreis innen;
 
-    /** Text des Darstellungssymbols */
+    /**
+     * Text des Darstellungssymbols
+     */
     private Text text;
 
-    /** Der Bezeichner */
+    /**
+     * Der Bezeichner
+     */
     private String bezeichner;
 
-    /** Radius */
+    /**
+     * Radius
+     */
     private int r;
 
-    /** x-Koordinate */
+    /**
+     * x-Koordinate
+     */
     private int x;
 
-    /** y-Koordinate */
+    /**
+     * y-Koordinate
+     */
     private int y;
 
-    /** Farbe */
+    /**
+     * Farbe
+     */
     private String farbe;
 
     /**

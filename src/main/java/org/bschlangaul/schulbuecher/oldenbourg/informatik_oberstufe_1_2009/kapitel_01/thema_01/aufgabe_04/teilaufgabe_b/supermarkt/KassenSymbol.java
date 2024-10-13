@@ -13,15 +13,21 @@ import java.awt.Graphics;
  */
 class KassenSymbol
 {
-    /** Das Anzeigefenster. */
+    /**
+     * Das Anzeigefenster.
+     */
     private Canvas anzeige;
 
-    /** Anzeigegröße für das Rechteck */
+    /**
+     * Anzeigegröße für das Rechteck
+     */
     private int hoehe = 50;
 
     private int breite = 100;
 
-    /** Interna */
+    /**
+     * Interna
+     */
     private Oberflaeche.FARBE aktFarbe;
 
     /**

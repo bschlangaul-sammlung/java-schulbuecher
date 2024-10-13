@@ -10,16 +10,24 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_2_2010.kapi
  */
 class AvlKnoten
 {
-    /** Referenz auf das verwaltete Datenelement */
+    /**
+     * Referenz auf das verwaltete Datenelement
+     */
     private DatenElement daten;
 
-    /** Balance des Knotens (mögliche Werte -2, -1, 0, 1, +2) */
+    /**
+     * Balance des Knotens (mögliche Werte -2, -1, 0, 1, +2)
+     */
     private byte balance;
 
-    /** linker Nachfolger */
+    /**
+     * linker Nachfolger
+     */
     private AvlKnoten linkerNachfolger;
 
-    /** rechter Nachfolger */
+    /**
+     * rechter Nachfolger
+     */
     private AvlKnoten rechterNachfolger;
 
     /**

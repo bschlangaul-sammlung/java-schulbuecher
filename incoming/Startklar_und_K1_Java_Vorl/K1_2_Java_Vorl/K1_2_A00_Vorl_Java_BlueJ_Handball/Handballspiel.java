@@ -1,73 +1,104 @@
 import java.util.ArrayList;
 /**
  * Klasse zur Beschreibung eines Handballspiels
- * 
+ *
  * @author Klaus Reinold
  * @version 0.4
  */
 class Handballspiel
 {
-    /** Termin des Spiels */
+    /**
+     * Termin des Spiels */
     private String termin;
-    /** Liga */
+    /**
+     * Liga */
     private String liga;
-    /** Spielort */
+    /**
+     * Spielort */
     private String spielort;
-    /** Mannschaft 1 */
+    /**
+     * Mannschaft 1 */
     private String mannschaft1;
-    /** Mannschaft 2 */
+    /**
+     * Mannschaft 2 */
     private String mannschaft2;
-    /** Schiedsrichter1 */
+    /**
+     * Schiedsrichter1 */
     private String schiedsrichter1;
-    /** Schiedsrichter2 */
+    /**
+     * Schiedsrichter2 */
     private String schiedsrichter2;
-    /** Zeitnehmer */
+    /**
+     * Zeitnehmer */
     private String zeitnehmer;
-    /** Sekretär */
+    /**
+     * Sekretär */
     private String sekretär;
-    /** Offizielle der Mannschaft 1 (Trainer usw.) */
+    /**
+     * Offizielle der Mannschaft 1 (Trainer usw.) */
     private ArrayList<String> offizielleMannschaft1;
-    /** Offizielle der Mannschaft 2 (Trainer usw.) */
+    /**
+     * Offizielle der Mannschaft 2 (Trainer usw.) */
     private ArrayList<String> offizielleMannschaft2;
-    /** Spieler der Mannschaft 1 */
+    /**
+     * Spieler der Mannschaft 1 */
     private ArrayList<String> spielerMannschaft1;
-    /** Spieler der Mannschaft 2 */
+    /**
+     * Spieler der Mannschaft 2 */
     private ArrayList<String> spielerMannschaft2;
-    /** Feld der Minuten, in denen ein Tor für Mannschaft 1 geschossen wurde */
+    /**
+     * Feld der Minuten, in denen ein Tor für Mannschaft 1 geschossen wurde */
     private ArrayList<Integer> torMinuteMannschaft1;
-    /** Feld der Spieler, die ein Tor für Mannschaft 1 geschossen haben */
+    /**
+     * Feld der Spieler, die ein Tor für Mannschaft 1 geschossen haben */
     private ArrayList<String> torSpielerMannschaft1;
-    /** Feld der Minuten, in denen ein Tor für Mannschaft 2 geschossen wurde */
+    /**
+     * Feld der Minuten, in denen ein Tor für Mannschaft 2 geschossen wurde */
     private ArrayList<Integer> torMinuteMannschaft2;
-    /** Feld der Spieler, die ein Tor für Mannschaft 1 geschossen haben */
+    /**
+     * Feld der Spieler, die ein Tor für Mannschaft 1 geschossen haben */
     private ArrayList<String> torSpielerMannschaft2;
-    /** Feld der Minuten der Siebenmeter, die für Mannschaft 1 geschossen wurden */
+    /**
+     * Feld der Minuten der Siebenmeter, die für Mannschaft 1 geschossen wurden */
     private ArrayList<Integer> siebenmeterMinuteMannschaft1;
-    /** Feld der Spieler, die für Mannschaft 1 einen Siebenmeter geschossen haben */
+    /**
+     * Feld der Spieler, die für Mannschaft 1 einen Siebenmeter geschossen haben */
     private ArrayList<String> siebenmeterSpielerMannschaft1;
-    /** Feld speichert, ob Siebenmeter für Mannschaft 1 ein Treffer war */
+    /**
+     * Feld speichert, ob Siebenmeter für Mannschaft 1 ein Treffer war */
     private ArrayList<Boolean> istSiebenmeterTrefferMannschaft1;
-    /** Feld der Minuten der Siebenmeter, die für Mannschaft 2 geschossen wurden */
+    /**
+     * Feld der Minuten der Siebenmeter, die für Mannschaft 2 geschossen wurden */
     private ArrayList<Integer> siebenmeterMinuteMannschaft2;
-    /** Feld der Spieler, die für Mannschaft 2 einen Siebenmeter geschossen haben */
+    /**
+     * Feld der Spieler, die für Mannschaft 2 einen Siebenmeter geschossen haben */
     private ArrayList<String> siebenmeterSpielerMannschaft2;
-    /** Feld speichert, ob Siebenmeter für Mannschaft 2 ein Treffer war */
+    /**
+     * Feld speichert, ob Siebenmeter für Mannschaft 2 ein Treffer war */
     private ArrayList<Boolean> istSiebenmeterTrefferMannschaft2;
-    /** Zweiminutenstrafe x in Minute y für Mannschaft1 */
+    /**
+     * Zweiminutenstrafe x in Minute y für Mannschaft1 */
     private ArrayList<Integer> zweiMinStrafeMinuteMannschaft1;
-    /** Zweiminutenstrafe x für Spieler y für Mannschaft1 */
+    /**
+     * Zweiminutenstrafe x für Spieler y für Mannschaft1 */
     private ArrayList<String> zweiMinStrafeSpielerMannschaft1;
-    /** Zweiminutenstrafe x in Minute y für Mannschaft2 */
+    /**
+     * Zweiminutenstrafe x in Minute y für Mannschaft2 */
     private ArrayList<Integer> zweiMinStrafeMinuteMannschaft2;
-    /** Zweiminutenstrafe x für Spieler y für Mannschaft2 */
+    /**
+     * Zweiminutenstrafe x für Spieler y für Mannschaft2 */
     private ArrayList<String> zweiMinStrafeSpielerMannschaft2;
-    /** Auszeit1 von Mannschaft1 */
+    /**
+     * Auszeit1 von Mannschaft1 */
     private int timeout1Mannschaft1;
-    /** Auszeit2 von Mannschaft1 */
+    /**
+     * Auszeit2 von Mannschaft1 */
     private int timeout2Mannschaft1;
-    /** Auszeit1 von Mannschaft2 */
+    /**
+     * Auszeit1 von Mannschaft2 */
     private int timeout1Mannschaft2;
-    /** Auszeit2 von Mannschaft2 */
+    /**
+     * Auszeit2 von Mannschaft2 */
     private int timeout2Mannschaft2;
 
     /**

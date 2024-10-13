@@ -9,10 +9,14 @@ package org.bschlangaul.schulbuecher.cornelsen.informatik_3_2017.kapitel_04.them
  */
 class CatwalkSteuerung extends Figur
 {
-    /** Der Laufsteg */
+    /**
+     * Der Laufsteg
+     */
     Catwalk laufsteg;
 
-    /** Der Zähler für die Farbensteuerung */
+    /**
+     * Der Zähler für die Farbensteuerung
+     */
     int zähler;
 
     /**

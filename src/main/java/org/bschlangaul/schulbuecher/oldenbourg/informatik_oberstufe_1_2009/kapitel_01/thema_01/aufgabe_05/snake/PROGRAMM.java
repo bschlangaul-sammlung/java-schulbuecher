@@ -9,10 +9,14 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapi
  */
 class PROGRAMM
 {
-    /** Referenz auf ein verwaltetes Spiel-Objekt */
+    /**
+     * Referenz auf ein verwaltetes Spiel-Objekt
+     */
     private static SPIEL s;
 
-    /** Referenz auf einen verwalteten Taktgeber */
+    /**
+     * Referenz auf einen verwalteten Taktgeber
+     */
     private static TAKTGEBER t;
 
     /**

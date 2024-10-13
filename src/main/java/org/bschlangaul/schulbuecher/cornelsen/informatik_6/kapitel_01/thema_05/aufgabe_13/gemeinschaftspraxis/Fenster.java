@@ -23,42 +23,66 @@ class Fenster extends Frame
 
     private Label label4 = new Label();
 
-    /** Textfeld zum Eintrag eines neuen Patienten */
+    /**
+     * Textfeld zum Eintrag eines neuen Patienten
+     */
     private TextField eingabePatient = new TextField();
 
-    /** Knopf zur Aufnahme des Patienten im Textfeld bei Dr. Linde */
+    /**
+     * Knopf zur Aufnahme des Patienten im Textfeld bei Dr. Linde
+     */
     private Button aufnahmeknopfLinde = new Button();
 
-    /** Knopf zur Aufnahme des Patienten im Textfeld bei Dr. Eiche */
+    /**
+     * Knopf zur Aufnahme des Patienten im Textfeld bei Dr. Eiche
+     */
     private Button aufnahmeknopfEiche = new Button();
 
-    /** Knopf zur Aufnahme des Patienten im Textfeld bei Dr. Buche */
+    /**
+     * Knopf zur Aufnahme des Patienten im Textfeld bei Dr. Buche
+     */
     private Button aufnahmeknopfBuche = new Button();
 
-    /** Knopf zur Aufnahme des Patienten im Textfeld bei Dr. Buche */
+    /**
+     * Knopf zur Aufnahme des Patienten im Textfeld bei Dr. Buche
+     */
     private Button aufnahmeknopfEgal = new Button();
 
     private Label label5 = new Label();
 
-    /** Knopf zur Ausgabe des nächste Patienten für Dr. Linde */
+    /**
+     * Knopf zur Ausgabe des nächste Patienten für Dr. Linde
+     */
     private Button ausgabeknopfLinde = new Button();
 
-    /** Knopf zur Ausgabe des nächste Patienten für Dr. Eiche */
+    /**
+     * Knopf zur Ausgabe des nächste Patienten für Dr. Eiche
+     */
     private Button ausgabeknopfEiche = new Button();
 
-    /** Knopf zur Ausgabe des nächste Patienten für Dr. Buche */
+    /**
+     * Knopf zur Ausgabe des nächste Patienten für Dr. Buche
+     */
     private Button ausgabeknopfBuche = new Button();
 
-    /** Label zur Ausgabe des nächste Patienten für Dr. Linde */
+    /**
+     * Label zur Ausgabe des nächste Patienten für Dr. Linde
+     */
     private Label ausgabeLinde = new Label();
 
-    /** Label zur Ausgabe des nächste Patienten für Dr. Eiche */
+    /**
+     * Label zur Ausgabe des nächste Patienten für Dr. Eiche
+     */
     private Label ausgabeEiche = new Label();
 
-    /** Knopf zur Ausgabe des nächste Patienten für Dr. Buche */
+    /**
+     * Knopf zur Ausgabe des nächste Patienten für Dr. Buche
+     */
     private Label ausgabeBuche = new Label();
 
-    /** Verwaltete Praxis */
+    /**
+     * Verwaltete Praxis
+     */
     private Gemeinschaftspraxis praxis;
     // Ende Attribute
 

@@ -1,16 +1,18 @@
 
 /**
  * Beschreibung der Klasse Patient
- * 
- * @author Klaus Reinold 
+ *
+ * @author Klaus Reinold
  * @version 0.9
  */
 class Patient
 {
-    /** Name des Patienten */
+    /**
+     * Name des Patienten */
     private String name;
 
-    /** Verwaltung des nachfolgenden Patienten in der Warteschlange. */
+    /**
+     * Verwaltung des nachfolgenden Patienten in der Warteschlange. */
     private Patient nachfolger;
 
     /**

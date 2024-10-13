@@ -2,15 +2,17 @@
 import java.util.ArrayList;
 /**
  * Die Verwaltungsklasse der Schlange.
- * 
- * @author Albert Wiedemann 
+ *
+ * @author Albert Wiedemann
  * @version 1.0
  */
 class Schlange
 {
-    /** Darstellung des Kopfs.*/
+    /**
+     * Darstellung des Kopfs.*/
     private KopfSymbol kopf;
-    /** Darstellung des Rumpfs */
+    /**
+     * Darstellung des Rumpfs */
     private ArrayList<RumpfSymbol> rumpf;
 
     /**

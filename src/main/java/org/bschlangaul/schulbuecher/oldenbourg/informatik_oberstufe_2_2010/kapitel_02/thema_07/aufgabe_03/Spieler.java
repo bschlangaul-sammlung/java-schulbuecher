@@ -9,10 +9,14 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_2_2010.kapi
  */
 class Spieler extends Figur
 {
-    /** Bewegungsrichtung */
+    /**
+     * Bewegungsrichtung
+     */
     private char richtung;
 
-    /** Anzahl der noch zu suchenden Marken */
+    /**
+     * Anzahl der noch zu suchenden Marken
+     */
     private int anzahlMarken;
 
     /**

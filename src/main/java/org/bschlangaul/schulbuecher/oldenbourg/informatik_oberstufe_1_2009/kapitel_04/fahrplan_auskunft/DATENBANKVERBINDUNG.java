@@ -14,10 +14,14 @@ import java.sql.Statement;
  */
 class DATENBANKVERBINDUNG
 {
-    /** Speichert das einzige Objekt der Klasse DATENBANKVERBINDUNG. */
+    /**
+     * Speichert das einzige Objekt der Klasse DATENBANKVERBINDUNG.
+     */
     private static DATENBANKVERBINDUNG verb = new DATENBANKVERBINDUNG();
 
-    /** Speichert die Verbindung zur Datenbank. */
+    /**
+     * Speichert die Verbindung zur Datenbank.
+     */
     private Connection conn;
 
     /**

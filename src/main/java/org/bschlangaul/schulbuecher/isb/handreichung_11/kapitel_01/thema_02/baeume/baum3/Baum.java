@@ -9,7 +9,9 @@ package org.bschlangaul.schulbuecher.isb.handreichung_11.kapitel_01.thema_02.bae
  */
 class Baum
 {
-    /** Referenz auf die Wurzel des Baums */
+    /**
+     * Referenz auf die Wurzel des Baums
+     */
     private BaumElement wurzel;
 
     /**

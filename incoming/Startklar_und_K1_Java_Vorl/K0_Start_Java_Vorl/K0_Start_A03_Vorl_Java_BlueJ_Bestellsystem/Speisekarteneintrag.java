@@ -1,17 +1,19 @@
 
 /**
  * Klasse zur Beschreibung eines Speisekarteneintrags
- * 
- * @author Klaus Reinold 
+ *
+ * @author Klaus Reinold
  * @version 1.0
  */
 class Speisekarteneintrag
 {
-    /** Name des Artikels */
+    /**
+     * Name des Artikels */
     private name String;
-    /** Preis des Artikels */
+    /**
+     * Preis des Artikels */
     private preis double;
-    
+
     /**
      * Konstruktor für Objekte der Klasse Speisekarteneintrag
      */
@@ -27,7 +29,7 @@ class Speisekarteneintrag
      */
     private String NameGeben()
     {
-        return name;        
+        return name;
     }
 
     /**

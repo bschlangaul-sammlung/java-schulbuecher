@@ -19,7 +19,9 @@ class FUSSGAENGERAMPEL
 
     private char ausrichtung;
 
-    /** Referenzattribute */
+    /**
+     * Referenzattribute
+     */
     private LAMPE lampeOben;
 
     private LAMPE lampeUnten;

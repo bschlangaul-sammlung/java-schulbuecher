@@ -11,10 +11,14 @@ import java.util.Random;
  */
 class Spiel extends Ereignisbehandlung
 {
-    /** Zufallsgenerator */
+    /**
+     * Zufallsgenerator
+     */
     Random zzgenerator;
 
-    /** Taktzähler */
+    /**
+     * Taktzähler
+     */
     int zähler;
 
     /**

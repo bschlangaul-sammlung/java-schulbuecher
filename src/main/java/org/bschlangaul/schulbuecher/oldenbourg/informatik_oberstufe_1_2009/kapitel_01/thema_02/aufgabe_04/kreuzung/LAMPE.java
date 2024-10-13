@@ -69,13 +69,19 @@ public class LAMPE
         }
     }
 
-    /** Das Anzeigefenster. */
+    /**
+     * Das Anzeigefenster.
+     */
     private Frame fenster;
 
-    /** Anzeigegröße für eine Lampe */
+    /**
+     * Anzeigegröße für eine Lampe
+     */
     private static final int groesse = OBERFLAECHE.RasterGroesseGeben();
 
-    /** Interna */
+    /**
+     * Interna
+     */
     private static int radius = groesse / 4;
 
     private Farbe aktFarbe;

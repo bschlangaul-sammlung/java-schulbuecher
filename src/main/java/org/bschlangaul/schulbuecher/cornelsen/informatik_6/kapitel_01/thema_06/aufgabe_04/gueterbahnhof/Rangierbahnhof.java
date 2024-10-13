@@ -11,7 +11,9 @@ import java.util.ArrayList;
  */
 class Rangierbahnhof
 {
-    /** Feld der Abstellgleise */
+    /**
+     * Feld der Abstellgleise
+     */
     private ArrayList<Abstellgleis> gleise;
 
     /**

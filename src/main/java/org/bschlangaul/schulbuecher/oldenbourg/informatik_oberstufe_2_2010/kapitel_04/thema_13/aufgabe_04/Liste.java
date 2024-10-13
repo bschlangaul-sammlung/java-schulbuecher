@@ -9,7 +9,9 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_2_2010.kapi
  */
 class Liste
 {
-    /** Verwaltung des ersten Knotens in der Warteschlange. */
+    /**
+     * Verwaltung des ersten Knotens in der Warteschlange.
+     */
     private Knoten anfang;
 
     /**

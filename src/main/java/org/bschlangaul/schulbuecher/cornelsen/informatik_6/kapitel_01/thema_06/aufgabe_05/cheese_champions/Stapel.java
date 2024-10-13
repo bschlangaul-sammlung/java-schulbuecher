@@ -10,7 +10,9 @@ package org.bschlangaul.schulbuecher.cornelsen.informatik_6.kapitel_01.thema_06.
  */
 class Stapel
 {
-    /** verwendete Liste */
+    /**
+     * verwendete Liste
+     */
     private Liste liste;
 
     /**

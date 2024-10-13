@@ -1,16 +1,18 @@
 
 /**
  * Beschreibung der Klasse Knoten
- * 
- * @author Klaus Reinold 
+ *
+ * @author Klaus Reinold
  * @version 1.0
  */
 class Knoten
 {
-    /** Verwaltung des nachfolgenden Knoten in der Warteschlange. */
+    /**
+     * Verwaltung des nachfolgenden Knoten in der Warteschlange. */
     private Knoten nachfolger;
-    
-    /** Verwaltung der Daten des Autos */
+
+    /**
+     * Verwaltung der Daten des Autos */
     private Auto auto;
 
     /**
@@ -40,7 +42,7 @@ class Knoten
     {
         return nachfolger;
     }
-    
+
     /**
      * Gibt das Auto zurück
      * @return Auto
@@ -49,7 +51,7 @@ class Knoten
     {
         return auto;
     }
-    
+
     /**
      * Gibt Information über das Auto aus.
      */

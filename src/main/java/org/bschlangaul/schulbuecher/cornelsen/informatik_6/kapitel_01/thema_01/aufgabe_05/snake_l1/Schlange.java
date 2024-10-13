@@ -9,10 +9,14 @@ package org.bschlangaul.schulbuecher.cornelsen.informatik_6.kapitel_01.thema_01.
  */
 class Schlange
 {
-    /** Darstellung des Kopfs. */
+    /**
+     * Darstellung des Kopfs.
+     */
     private KopfSymbol kopf;
 
-    /** Darstellung des Rumpfs */
+    /**
+     * Darstellung des Rumpfs
+     */
     private Warteschlange rumpf;
 
     /**

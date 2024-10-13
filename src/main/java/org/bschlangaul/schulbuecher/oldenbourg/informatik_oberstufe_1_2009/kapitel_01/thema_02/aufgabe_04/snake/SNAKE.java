@@ -10,16 +10,24 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapi
  */
 class SNAKE
 {
-    /** Referenz auf Warteschlange */
+    /**
+     * Referenz auf Warteschlange
+     */
     private WARTESCHLANGE w;
 
-    /** momentane Ausrichtung ('O';'W';'N';'S') der Snake */
+    /**
+     * momentane Ausrichtung ('O';'W';'N';'S') der Snake
+     */
     private char ausrichtung;
 
-    /** Referenz auf das Spiel-Objekt */
+    /**
+     * Referenz auf das Spiel-Objekt
+     */
     private SPIEL spiel;
 
-    /** Referenz auf den Kopf */
+    /**
+     * Referenz auf den Kopf
+     */
     private ZELLE kopf;
 
     /**

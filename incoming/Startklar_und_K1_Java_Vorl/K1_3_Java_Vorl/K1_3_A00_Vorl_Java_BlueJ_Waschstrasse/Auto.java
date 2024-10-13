@@ -1,13 +1,14 @@
 
 /**
  * Klasse zur Verwaltung von Autos für eine Waschstraße
- * 
+ *
  * @author Klaus Reinold
  * @version 1.0
  */
 class Auto
 {
-    /** Das Kennzeichen */
+    /**
+     * Das Kennzeichen */
     private String kennzeichen;
 
     /**
@@ -18,7 +19,7 @@ class Auto
     {
         kennzeichen = kennzeichenNeu;
     }
-    
+
     /**
      * Gibt Information über das Auto aus.
      */

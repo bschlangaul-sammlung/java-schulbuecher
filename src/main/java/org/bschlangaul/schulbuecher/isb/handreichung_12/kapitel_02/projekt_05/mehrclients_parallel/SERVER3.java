@@ -21,7 +21,9 @@ public class SERVER3
      */
     private ServerSocket serverSocket = null;
 
-    /** Portnummer des Ports, auf dem die Verbindungen etabliert sind */
+    /**
+     * Portnummer des Ports, auf dem die Verbindungen etabliert sind
+     */
     private int port;
 
     /**

@@ -9,10 +9,14 @@ package org.bschlangaul.schulbuecher.cornelsen.informatik_6.kapitel_01.thema_06.
  */
 class Patient implements Datenelement
 {
-    /** Name des Patienten */
+    /**
+     * Name des Patienten
+     */
     private String name;
 
-    /** Krankheitsverlauf */
+    /**
+     * Krankheitsverlauf
+     */
     private Stapel e_akte;
 
     /**

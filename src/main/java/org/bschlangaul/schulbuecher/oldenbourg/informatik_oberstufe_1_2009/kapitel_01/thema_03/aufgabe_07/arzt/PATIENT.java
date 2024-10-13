@@ -9,7 +9,9 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapi
  */
 class PATIENT implements DATENELEMENT
 {
-    /** Name des Patienten */
+    /**
+     * Name des Patienten
+     */
     private String name;
 
     /**

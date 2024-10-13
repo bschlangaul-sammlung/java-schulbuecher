@@ -9,10 +9,14 @@ package org.bschlangaul.schulbuecher.cornelsen.informatik_6.kapitel_00.aufgabe_0
  */
 class Speisekarteneintrag
 {
-    /** Name des Artikels */
+    /**
+     * Name des Artikels
+     */
     private String name;
 
-    /** Preis des Artikels */
+    /**
+     * Preis des Artikels
+     */
     private double preis;
 
     /**

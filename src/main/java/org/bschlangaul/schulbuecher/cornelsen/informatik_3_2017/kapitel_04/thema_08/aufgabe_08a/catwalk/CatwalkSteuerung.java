@@ -11,10 +11,14 @@ import java.util.Random;
  */
 class CatwalkSteuerung extends Figur
 {
-    /** Der Laufsteg */
+    /**
+     * Der Laufsteg
+     */
     Catwalk laufsteg;
 
-    /** Der Zufallsgenerator */
+    /**
+     * Der Zufallsgenerator
+     */
     Random zufallszahlgenerator;
 
     /**

@@ -14,10 +14,14 @@ import javax.swing.Timer;
  */
 class Taktgeber implements ActionListener
 {
-    /** Timerobjekt für die zentrale Zeitverwaltung */
+    /**
+     * Timerobjekt für die zentrale Zeitverwaltung
+     */
     private Timer timer;
 
-    /** zu steuernde Objekte, müssen von jedem Takt benachrichtigt werden. */
+    /**
+     * zu steuernde Objekte, müssen von jedem Takt benachrichtigt werden.
+     */
     // Hierher kommen die Attribute für die zu benachrichtigenden Objekte
     private TaktKlient klient;
 

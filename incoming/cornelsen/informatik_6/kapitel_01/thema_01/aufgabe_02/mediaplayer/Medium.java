@@ -8,10 +8,12 @@ package org.bschlangaul.schulbuecher.cornelsen.informatik_6.kapitel_01.thema_01.
  */
  class Medium
 {
-    /** Dateiname */
+    /**
+     * Dateiname */
     private String name;
 
-    /** Verwaltung des nachfolgenden Mediums in der Warteschlange. */
+    /**
+     * Verwaltung des nachfolgenden Mediums in der Warteschlange. */
     private Medium nachfolger;
 
     /**

@@ -10,16 +10,24 @@ import java.util.Random;
 
 class HINDERNIS
 {
-    /** x-Position des Hindernisses */
+    /**
+     * x-Position des Hindernisses
+     */
     protected int x;
 
-    /** y-Position des Hindernisses */
+    /**
+     * y-Position des Hindernisses
+     */
     protected int y;
 
-    /** Bewegungsrichtung */
+    /**
+     * Bewegungsrichtung
+     */
     protected char ausrichtung;
 
-    /** Zufallsgenerator für das Futter */
+    /**
+     * Zufallsgenerator für das Futter
+     */
     protected Random zgenerator;
 
     /**

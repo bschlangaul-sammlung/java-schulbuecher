@@ -9,7 +9,9 @@ package org.bschlangaul.schulbuecher.cornelsen.informatik_6.kapitel_01.thema_06.
  */
 class EAktenEintrag implements Datenelement
 {
-    /** der Eintrag */
+    /**
+     * der Eintrag
+     */
     private String eintrag;
 
     /**

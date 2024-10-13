@@ -12,7 +12,9 @@ import java.io.FileWriter;
  */
 class LOGDATEI implements MELDUNGSBEOBACHTER
 {
-    /** Zeichenstrom zur Ausgabedatei */
+    /**
+     * Zeichenstrom zur Ausgabedatei
+     */
     BufferedWriter writer;
 
     /**

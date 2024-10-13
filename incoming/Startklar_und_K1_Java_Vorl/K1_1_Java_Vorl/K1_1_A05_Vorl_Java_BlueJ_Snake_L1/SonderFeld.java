@@ -1,17 +1,19 @@
 
 /**
  * Verwaltet einen allgemeines Sonderfeld.
- * 
+ *
  * @author Albert Wiedemann
  * @version 1.0
  */
 abstract class SonderFeld
 {
-    /** Das Anzeigesymbol */
+    /**
+     * Das Anzeigesymbol */
     protected SonderSymbol symbol;
-    /** Das Spiel, in dem das Sonderfeld erzeugt wurde.*/
+    /**
+     * Das Spiel, in dem das Sonderfeld erzeugt wurde.*/
     protected Spiel spiel;
-    
+
     /**
      * Speichert die Referenz auf das Spiel.
      * @param s das Spiel, in dem der Apfel erzeut werden soll.
@@ -20,7 +22,7 @@ abstract class SonderFeld
     {
         spiel = s;
     }
-    
+
     /**
      * Positioniert das Sonderfeld an zufälliger, freier Stelle.
      */
@@ -45,7 +47,7 @@ abstract class SonderFeld
     {
         return symbol.XPositionGeben();
     }
-    
+
     /**
      * Gibt die y-Position des Sonderfelds zurück.
      * @return y-Position des Sonderfelds
@@ -54,7 +56,7 @@ abstract class SonderFeld
     {
         return symbol.YPositionGeben();
     }
-    
+
     /**
      * Führt die Aktion des Sonderfelds aus.
      * Muss in den Unterklassen überschrieben werden

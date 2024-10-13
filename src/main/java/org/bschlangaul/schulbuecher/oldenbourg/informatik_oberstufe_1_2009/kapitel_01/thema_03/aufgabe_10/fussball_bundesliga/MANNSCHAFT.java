@@ -9,13 +9,19 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapi
  */
 public class MANNSCHAFT implements DATENELEMENT
 {
-    /** Name der Mannschaft */
+    /**
+     * Name der Mannschaft
+     */
     private String name;
 
-    /** Punkte der Mannschaft */
+    /**
+     * Punkte der Mannschaft
+     */
     private int punkte;
 
-    /** Anzahl bisheriger Spiele */
+    /**
+     * Anzahl bisheriger Spiele
+     */
     private int spiele;
 
     /**

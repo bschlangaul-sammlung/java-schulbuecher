@@ -10,7 +10,9 @@ package org.bschlangaul.schulbuecher.cornelsen.informatik_6.kapitel_01.thema_06.
 
 interface Datenelement
 {
-    /** Methode zur Ausgabe von Information über das Datenelement */
+    /**
+     * Methode zur Ausgabe von Information über das Datenelement
+     */
     void InformationAusgeben();
 
     /**

@@ -9,7 +9,9 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapi
  */
 class KUNDE extends PERSON
 {
-    /** Akutelles Konto des Kunden */
+    /**
+     * Akutelles Konto des Kunden
+     */
     KONTO aktKonto;
 
     /**

@@ -9,24 +9,36 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapi
  */
 class KASSE
 {
-    /** Das zugehörige Darstellungssymbol für den Kunden. */
+    /**
+     * Das zugehörige Darstellungssymbol für den Kunden.
+     */
     private KASSENSYMBOL darstellung;
 
-    /** Referenz auf das gerade anstehende Kundenobjekt. */
+    /**
+     * Referenz auf das gerade anstehende Kundenobjekt.
+     */
     private DATENELEMENT kunded;
 
     private KUNDE kunde;
 
-    /** Die Kassennummer */
+    /**
+     * Die Kassennummer
+     */
     private int nummer;
 
-    /** Die zugehörige Warteschlange */
+    /**
+     * Die zugehörige Warteschlange
+     */
     private WARTESCHLANGE wschlange;
 
-    /** Wartezeit bis zum nächsten Kunden */
+    /**
+     * Wartezeit bis zum nächsten Kunden
+     */
     private int wartezeit;
 
-    /** Variable für den aktuellen Zustand der Kasse */
+    /**
+     * Variable für den aktuellen Zustand der Kasse
+     */
     private String zustand;
 
     /**

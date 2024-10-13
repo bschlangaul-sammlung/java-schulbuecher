@@ -10,13 +10,19 @@ import java.text.Collator;
 
 class WORT implements DATENELEMENT
 {
-    /** Der englische Suchbegriff */
+    /**
+     * Der englische Suchbegriff
+     */
     private String englisch;
 
-    /** Die deutschen Entsprchungen */
+    /**
+     * Die deutschen Entsprchungen
+     */
     private String deutsch;
 
-    /** Vergleichsobjekt */
+    /**
+     * Vergleichsobjekt
+     */
     private Collator coll;
 
     /**

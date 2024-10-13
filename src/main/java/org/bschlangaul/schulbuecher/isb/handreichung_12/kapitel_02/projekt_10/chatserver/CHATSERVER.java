@@ -24,10 +24,14 @@ public class CHATSERVER
      */
     private ServerSocket serverSocket = null;
 
-    /** Portnummer des Ports, auf dem die Verbindungen etabliert sind */
+    /**
+     * Portnummer des Ports, auf dem die Verbindungen etabliert sind
+     */
     private int port;
 
-    /** die maximal mögliche Anzahl an Clients */
+    /**
+     * die maximal mögliche Anzahl an Clients
+     */
     private static int maximaleclientanzahl = 10;
 
     /**

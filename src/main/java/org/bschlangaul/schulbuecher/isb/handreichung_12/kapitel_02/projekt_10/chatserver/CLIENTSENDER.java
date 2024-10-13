@@ -14,10 +14,14 @@ import java.io.PrintWriter;
  */
 class CLIENTSENDER extends Thread
 {
-    /** Referenz auf das Leseobjekt für die Tastatur */
+    /**
+     * Referenz auf das Leseobjekt für die Tastatur
+     */
     BufferedReader tastatur = null;
 
-    /** Schreibkanal zum Server */
+    /**
+     * Schreibkanal zum Server
+     */
     PrintWriter zumServer = null;
 
     /**

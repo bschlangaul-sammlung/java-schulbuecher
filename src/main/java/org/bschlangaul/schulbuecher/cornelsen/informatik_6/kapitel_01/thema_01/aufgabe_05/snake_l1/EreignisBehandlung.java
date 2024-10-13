@@ -16,7 +16,9 @@ import javax.swing.Timer;
  */
 class EreignisBehandlung
 {
-    /** Timerobjekt für die zentrale Zeitverwaltung */
+    /**
+     * Timerobjekt für die zentrale Zeitverwaltung
+     */
     private Timer timer;
 
     /**

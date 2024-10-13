@@ -9,10 +9,14 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_2_2010.kapi
  */
 class Speicher
 {
-    /** Gibt an, ob Platz frei ist */
+    /**
+     * Gibt an, ob Platz frei ist
+     */
     private boolean frei;
 
-    /** Die eventuell vorhandene Kiste */
+    /**
+     * Die eventuell vorhandene Kiste
+     */
     private Kiste kiste;
 
     /**

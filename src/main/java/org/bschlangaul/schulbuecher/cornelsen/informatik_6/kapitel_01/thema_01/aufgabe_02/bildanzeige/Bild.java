@@ -9,10 +9,14 @@ package org.bschlangaul.schulbuecher.cornelsen.informatik_6.kapitel_01.thema_01.
  */
 class Bild
 {
-    /** Dateiname */
+    /**
+     * Dateiname
+     */
     private String name;
 
-    /** Verwaltung des nachfolgenden Bildes in der Warteschlange. */
+    /**
+     * Verwaltung des nachfolgenden Bildes in der Warteschlange.
+     */
     private Bild nachfolger;
 
     /**

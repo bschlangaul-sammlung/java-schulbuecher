@@ -11,7 +11,9 @@ import java.util.ArrayList;
  */
 class Tisch
 {
-    /** Feld der bestellten Posten */
+    /**
+     * Feld der bestellten Posten
+     */
     private ArrayList<Posten> bestelltePosten;
 
     /**

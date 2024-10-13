@@ -1,15 +1,17 @@
 /**
  * Beschreibung der Klasse Knoten
- * 
- * @author Klaus Reinold 
+ *
+ * @author Klaus Reinold
  * @version 1.0
  */
 class Knoten
 {
-    /** Verwaltung des nachfolgenden Knoten in der Warteschlange. */
+    /**
+     * Verwaltung des nachfolgenden Knoten in der Warteschlange. */
     private Knoten nachfolger;
 
-    /** Verwaltung der Daten */
+    /**
+     * Verwaltung der Daten */
     private Patient daten;
 
     /**
@@ -39,7 +41,7 @@ class Knoten
      */
     void HintenEinfügen(Patient dneu)
     {
-        if (nachfolger != null)    
+        if (nachfolger != null)
         {
             nachfolger.HintenEinfügen(dneu);
         }
@@ -104,7 +106,7 @@ class Knoten
             kneu = new Knoten(dneu, this);
             return kneu;
         }
-    }  
+    }
 
     /**
      * Sucht ein Datenelement mit einem bestimmten Schlüssel in der Liste
@@ -140,7 +142,7 @@ class Knoten
         {
             return 1;
         }
-        else 
+        else
         {
             return nachfolger.RestlängeGeben()+1;
         }
@@ -209,7 +211,7 @@ class Knoten
             }
         }
     }
-    
+
     /**
      * Gibt das Datenelement des letzten Knotens aus
      * @return hinterstes Datenelement
@@ -224,7 +226,7 @@ class Knoten
         {
             return nachfolger.EndeGeben();
         }
-    }  
+    }
 
     /**
      * Gibt den letzten Knoten aus und entfernt ihn aus der Liste
@@ -241,5 +243,5 @@ class Knoten
             nachfolger = nachfolger.EndeEntfernen();
             return this;
         }
-    }  
+    }
 }

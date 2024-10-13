@@ -10,13 +10,19 @@ import java.awt.*;
 
 class FAHRBAHNSYMBOL
 {
-    /** Das Anzeigefenster. */
+    /**
+     * Das Anzeigefenster.
+     */
     private Frame fenster;
 
-    /** Breite der Richtungsfahrbahn */
+    /**
+     * Breite der Richtungsfahrbahn
+     */
     private static final int breite = OBERFLAECHE.RasterGroesseGeben();
 
-    /** Interna */
+    /**
+     * Interna
+     */
     private int x;
 
     private int y;

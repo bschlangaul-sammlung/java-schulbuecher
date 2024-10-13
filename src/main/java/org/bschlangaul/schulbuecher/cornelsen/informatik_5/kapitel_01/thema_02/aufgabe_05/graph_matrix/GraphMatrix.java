@@ -11,13 +11,17 @@ import java.util.ArrayList;
  */
 class GraphMatrix
 {
-    /** Feld der Knoten des Graphen */
+    /**
+     * Feld der Knoten des Graphen
+     */
     private ArrayList<Knoten> knoten;
 
     /** 2-dim Feld der Adjazenzmatrix */
     private ArrayList<ArrayList<Integer>> matrix;
 
-    /** Feld der Kantensymbole des Graphen */
+    /**
+     * Feld der Kantensymbole des Graphen
+     */
     private ArrayList<KantenSymbol> kanten;
 
     /**

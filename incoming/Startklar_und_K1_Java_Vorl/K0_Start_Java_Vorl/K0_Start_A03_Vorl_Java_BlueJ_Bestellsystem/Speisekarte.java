@@ -1,15 +1,16 @@
 import java.util.ArrayList;
 /**
  * Beschreiben Sie hier die Klasse Speisekarte.
- * 
- * @author Klaus Reinold 
+ *
+ * @author Klaus Reinold
  * @version 0.9
  */
 class Speisekarte
 {
-    /** Feld der Speisekarteneinträge */
+    /**
+     * Feld der Speisekarteneinträge */
     private ArrayList Speisekarteneintrag einträge;
-    
+
     /**
      * Konstruktor für Objekte der Klasse Speisekarte
      */
@@ -32,7 +33,7 @@ class Speisekarte
     {
         einträge.add(new Speisekarteneintrag(name, preis));
     }
-    
+
     /**
      * Gibt einen Speisekarteneintrag mit einem bestimmten Namen zurück
      * @param name Name des Eintrags

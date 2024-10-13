@@ -11,7 +11,9 @@ import java.util.Random;
  */
 class Rahmen extends Ereignisbehandlung
 {
-    /** Der Zufallsgenerator */
+    /**
+     * Der Zufallsgenerator
+     */
     Random zufall;
 
     /**

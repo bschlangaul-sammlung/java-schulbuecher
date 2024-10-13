@@ -11,16 +11,24 @@ import java.awt.event.*;
 
 class OBERFLAECHE
 {
-    /** Höhe des Anzeigefensters */
+    /**
+     * Höhe des Anzeigefensters
+     */
     private static final int hoeheFenster = 600;
 
-    /** Breite des Anzeigefensters */
+    /**
+     * Breite des Anzeigefensters
+     */
     private static final int breiteFenster = 1000;
 
-    /** Anzeigegröße für eine Lampe */
+    /**
+     * Anzeigegröße für eine Lampe
+     */
     private static final int rasterGroesse = 20;
 
-    /** Umrechnung Meter nach Pixel */
+    /**
+     * Umrechnung Meter nach Pixel
+     */
     private static final float meter2pixel = 5.0f;
 
     private static OBERFLAECHE o = null;

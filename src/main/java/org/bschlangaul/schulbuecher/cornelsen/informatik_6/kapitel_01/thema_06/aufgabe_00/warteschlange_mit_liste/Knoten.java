@@ -9,10 +9,14 @@ package org.bschlangaul.schulbuecher.cornelsen.informatik_6.kapitel_01.thema_06.
  */
 class Knoten extends Listenelement
 {
-    /** Verwaltung der Daten */
+    /**
+     * Verwaltung der Daten
+     */
     private Patient daten;
 
-    /** Verwaltung des nachfolgenden Knotens in der Liste */
+    /**
+     * Verwaltung des nachfolgenden Knotens in der Liste
+     */
     private Listenelement nachfolger;
 
     /**

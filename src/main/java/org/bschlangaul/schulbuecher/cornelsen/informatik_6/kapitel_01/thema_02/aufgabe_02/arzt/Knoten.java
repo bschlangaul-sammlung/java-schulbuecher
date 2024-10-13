@@ -9,10 +9,14 @@ package org.bschlangaul.schulbuecher.cornelsen.informatik_6.kapitel_01.thema_02.
  */
 class Knoten
 {
-    /** Verwaltung des nachfolgenden Knoten in der Warteschlange. */
+    /**
+     * Verwaltung des nachfolgenden Knoten in der Warteschlange.
+     */
     private Knoten nachfolger;
 
-    /** Verwaltung der Daten des Patienten */
+    /**
+     * Verwaltung der Daten des Patienten
+     */
     private Patient daten;
 
     /**

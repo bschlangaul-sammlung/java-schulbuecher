@@ -1,17 +1,19 @@
 
 /**
  * Klasse für einen bestellten Posten
- * 
- * @author Klaus Reinold 
+ *
+ * @author Klaus Reinold
  * @version 0.9
  */
 class Posten
 {
-    /** Name des Artikels */
+    /**
+     * Name des Artikels */
     private String artikel;
-    /** Anzahl des Artikels */
+    /**
+     * Anzahl des Artikels */
     private int anzahl;
-    
+
     /**
      * Konstruktor für Objekte der Klasse Posten
      * @param artikelNeu Artikel
@@ -31,7 +33,7 @@ class Posten
     {
         return artikel
     }
-    
+
     /**
      * Gibt die Anzahl der Bestellungen des Artikels zurück
      * @return Anzahl der Bestellungen des Artikels

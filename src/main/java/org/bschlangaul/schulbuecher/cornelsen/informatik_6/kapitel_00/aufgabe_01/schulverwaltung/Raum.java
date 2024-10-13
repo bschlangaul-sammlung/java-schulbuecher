@@ -9,10 +9,14 @@ package org.bschlangaul.schulbuecher.cornelsen.informatik_6.kapitel_00.aufgabe_0
  */
 class Raum
 {
-    /** Raumnummer */
+    /**
+     * Raumnummer
+     */
     protected String nummer;
 
-    /** Anzahl der Plätze im Raum */
+    /**
+     * Anzahl der Plätze im Raum
+     */
     protected int anzahlPlätze;
 
     /**

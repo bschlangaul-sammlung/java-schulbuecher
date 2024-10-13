@@ -1,13 +1,14 @@
 
 /**
  * Klasse für einen E-Akten-Eintrag
- * 
- * @author Klaus Reinold 
+ *
+ * @author Klaus Reinold
  * @version 1.0
  */
 class E_Akten_Eintrag implements Datenelement
 {
-    /** der Eintrag */
+    /**
+     * der Eintrag */
     private String eintrag;
 
     /**
@@ -26,17 +27,17 @@ class E_Akten_Eintrag implements Datenelement
     {
         System.out.println(eintrag);
     }
-    
+
     /**
      * Gibt zurück, ob der Name gleich den übergebenen Wert ist.
      * @param gesuchterWert gesuchter Wert
-     * @return Wahrheitswert, der angibt, ob der Eintrag der gesuchte ist. 
+     * @return Wahrheitswert, der angibt, ob der Eintrag der gesuchte ist.
      */
     public boolean SchlüsselIstGleich(String gesuchterWert)
     {
         return eintrag == gesuchterWert;
     }
-        
+
     /**
      * Vergleich zweier Datenelemente bezüglich einer Ordnungsrelation
      * @param dvergleich Datenelement zum Vergleich

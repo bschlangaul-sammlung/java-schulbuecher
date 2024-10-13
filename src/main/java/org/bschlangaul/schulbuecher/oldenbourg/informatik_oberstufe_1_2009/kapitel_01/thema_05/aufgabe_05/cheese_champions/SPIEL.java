@@ -9,16 +9,24 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapi
  */
 class SPIEL
 {
-    /** Stapel, von dem die Mäuse losgelaufen sind */
+    /**
+     * Stapel, von dem die Mäuse losgelaufen sind
+     */
     private STAPEL ursprungsstapel;
 
-    /** Stapel, an dem die Mäuse angekommen sind */
+    /**
+     * Stapel, an dem die Mäuse angekommen sind
+     */
     private STAPEL zielstapel;
 
-    /** Stapel für die Mäuse in der Sackgasse */
+    /**
+     * Stapel für die Mäuse in der Sackgasse
+     */
     private STAPEL sackgassenstapel;
 
-    /** Spiel beendet oder nicht */
+    /**
+     * Spiel beendet oder nicht
+     */
     private boolean beendet;
 
     /**

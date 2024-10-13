@@ -9,7 +9,9 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_2_2010.kapi
  */
 class GeistDirekt extends Figur
 {
-    /** Die Spielerfigur */
+    /**
+     * Die Spielerfigur
+     */
     Spieler pac;
 
     /**

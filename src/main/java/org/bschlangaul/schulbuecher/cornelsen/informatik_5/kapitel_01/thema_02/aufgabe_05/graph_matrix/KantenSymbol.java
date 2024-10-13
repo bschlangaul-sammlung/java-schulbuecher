@@ -9,34 +9,54 @@ package org.bschlangaul.schulbuecher.cornelsen.informatik_5.kapitel_01.thema_02.
  */
 class KantenSymbol
 {
-    /** Außenrechteck des Darstellungssymbols */
+    /**
+     * Außenrechteck des Darstellungssymbols
+     */
     private Rechteck außen;
 
-    /** Innenrechteck des Darstellungssymbols */
+    /**
+     * Innenrechteck des Darstellungssymbols
+     */
     private Rechteck innen;
 
-    /** Richtungspfeil des Darstellungssymbols */
+    /**
+     * Richtungspfeil des Darstellungssymbols
+     */
     private Dreieck pfeil;
 
-    /** Gewichtsangabe des Darstellungssymbols */
+    /**
+     * Gewichtsangabe des Darstellungssymbols
+     */
     private Text text;
 
-    /** Breite des Darstellungssymbols */
+    /**
+     * Breite des Darstellungssymbols
+     */
     private int breite;
 
-    /** Gerichtete Kante */
+    /**
+     * Gerichtete Kante
+     */
     private boolean gerichtet;
 
-    /** Gewicht der Kante */
+    /**
+     * Gewicht der Kante
+     */
     private String gewicht;
 
-    /** Farbe */
+    /**
+     * Farbe
+     */
     private String farbe;
 
-    /** Startknoten */
+    /**
+     * Startknoten
+     */
     private KnotenSymbol von;
 
-    /** Endknoten */
+    /**
+     * Endknoten
+     */
     private KnotenSymbol nach;
 
     /**

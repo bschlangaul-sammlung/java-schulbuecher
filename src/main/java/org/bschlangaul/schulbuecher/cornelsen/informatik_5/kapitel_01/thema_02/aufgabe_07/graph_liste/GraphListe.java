@@ -11,10 +11,14 @@ import java.util.ArrayList;
  */
 class GraphListe
 {
-    /** Feld der Knoten des Graphen */
+    /**
+     * Feld der Knoten des Graphen
+     */
     private ArrayList<Knoten> knoten;
 
-    /** Feld der Kantensymbole des Graphen */
+    /**
+     * Feld der Kantensymbole des Graphen
+     */
     private ArrayList<KantenSymbol> kanten;
 
     /**

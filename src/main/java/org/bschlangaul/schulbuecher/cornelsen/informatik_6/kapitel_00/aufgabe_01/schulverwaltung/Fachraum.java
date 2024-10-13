@@ -9,7 +9,9 @@ package org.bschlangaul.schulbuecher.cornelsen.informatik_6.kapitel_00.aufgabe_0
  */
 class Fachraum extends Raum
 {
-    /** Name des Fachs */
+    /**
+     * Name des Fachs
+     */
     private String fach;
 
     /**

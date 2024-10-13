@@ -9,7 +9,9 @@ package org.bschlangaul.schulbuecher.isb.handreichung_11.kapitel_03.anwendungsor
  */
 class BAUM
 {
-    /** Referenz auf die Wurzel des Baums */
+    /**
+     * Referenz auf die Wurzel des Baums
+     */
     private BAUMELEMENT wurzel;
 
     /**

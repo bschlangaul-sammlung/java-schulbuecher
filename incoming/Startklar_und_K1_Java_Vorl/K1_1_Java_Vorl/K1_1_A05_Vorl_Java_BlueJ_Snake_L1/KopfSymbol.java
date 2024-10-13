@@ -12,19 +12,25 @@ import javax.swing.*;
  */
 class KopfSymbol
 {
-    /** Das Anzeigefenster.*/
+    /**
+     * Das Anzeigefenster.*/
     private JFrame fenster;
 
-    /** Anzeigegröße für das Rumpfelement */
+    /**
+     * Anzeigegröße für das Rumpfelement */
     private static final int größe = Oberflaeche.RasterGrößeGeben();
 
-    /** x-Position */
+    /**
+     * x-Position */
     private int x;
-    /** y-Position */
+    /**
+     * y-Position */
     private int y;
-    /** Blickrichtung */
+    /**
+     * Blickrichtung */
     private char ausrichtung;
-    /** Anzeige */
+    /**
+     * Anzeige */
     private JComponent anzeige;
 
     /**

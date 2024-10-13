@@ -19,22 +19,34 @@ import java.net.Socket;
  */
 class CLIENTPROZESS extends Thread
 {
-    /** Referenz auf den Server */
+    /**
+     * Referenz auf den Server
+     */
     private CHATSERVER server;
 
-    /** Socket des Clients */
+    /**
+     * Socket des Clients
+     */
     private Socket clientSocket = null;
 
-    /** Datenstrom zum Client */
+    /**
+     * Datenstrom zum Client
+     */
     private PrintWriter zumClient = null;
 
-    /** Datenstrom vom Client */
+    /**
+     * Datenstrom vom Client
+     */
     private BufferedReader vomClient = null;
 
-    /** Spitzname des Clients, muss einmalig sein! */
+    /**
+     * Spitzname des Clients, muss einmalig sein!
+     */
     private String spitzname;
 
-    /** Konstante für den Zustand Wartend des Threads */
+    /**
+     * Konstante für den Zustand Wartend des Threads
+     */
     private static final int wartend = 0;
 
     /**
@@ -43,7 +55,9 @@ class CLIENTPROZESS extends Thread
      */
     private static final int angemeldet = 1;
 
-    /** speichert den aktuellen Zustand des Clientprozesses */
+    /**
+     * speichert den aktuellen Zustand des Clientprozesses
+     */
     private int zustand = wartend;
 
     /**

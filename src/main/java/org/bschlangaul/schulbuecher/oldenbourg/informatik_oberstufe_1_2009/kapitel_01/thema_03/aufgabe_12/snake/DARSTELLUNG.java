@@ -9,22 +9,34 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapi
  */
 class DARSTELLUNG
 {
-    /** Fenster für die Darstellung */
+    /**
+     * Fenster für die Darstellung
+     */
     private OBERFLAECHE oberflaeche;
 
-    /** Leinwand zur Anzeige der Symbole. */
+    /**
+     * Leinwand zur Anzeige der Symbole.
+     */
     private LEINWAND anzeige;
 
-    /** Größe eines Kästchens */
+    /**
+     * Größe eines Kästchens
+     */
     private int kaestchengroesse;
 
-    /** Anzahl der Kästchen nach rechts */
+    /**
+     * Anzahl der Kästchen nach rechts
+     */
     private int kaestchenzahl_nach_rechts;
 
-    /** Anzahl der Kästchen nach unten */
+    /**
+     * Anzahl der Kästchen nach unten
+     */
     private int kaestchenzahl_nach_unten;
 
-    /** Objekt zur logischen Verwaltung des Spiels */
+    /**
+     * Objekt zur logischen Verwaltung des Spiels
+     */
     private SPIEL spiel;
 
     /**

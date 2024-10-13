@@ -9,7 +9,9 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapi
  */
 interface OBERFLAECHENINTERFACE
 {
-    /** Die von der Oberfläche darzustellenden Zustände */
+    /**
+     * Die von der Oberfläche darzustellenden Zustände
+     */
     enum Status
     {
         anmelden, kundenkontowahl, kundenkontoarbeit, angestelltensicht,

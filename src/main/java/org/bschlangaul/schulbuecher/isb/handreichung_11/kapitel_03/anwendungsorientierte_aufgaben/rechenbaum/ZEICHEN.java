@@ -2,7 +2,9 @@ package org.bschlangaul.schulbuecher.isb.handreichung_11.kapitel_03.anwendungsor
 
 class ZEICHEN implements DATENELEMENT
 {
-    /** Der Wert des Elements */
+    /**
+     * Der Wert des Elements
+     */
     private char wert;
 
     /**

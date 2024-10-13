@@ -11,7 +11,9 @@ import java.util.Random;
  */
 class Aufbau2
 {
-    /** der Zufallsgenerator */
+    /**
+     * der Zufallsgenerator
+     */
     Random zufall;
 
     /**

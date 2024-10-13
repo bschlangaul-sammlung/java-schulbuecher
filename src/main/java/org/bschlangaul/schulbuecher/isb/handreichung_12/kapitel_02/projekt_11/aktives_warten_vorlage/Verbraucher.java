@@ -10,7 +10,9 @@ package org.bschlangaul.schulbuecher.isb.handreichung_12.kapitel_02.projekt_11.a
  */
 public class Verbraucher extends Thread
 {
-    /** Referenz auf den Abstellplatz */
+    /**
+     * Referenz auf den Abstellplatz
+     */
     AbstellPlatz abstellplatz;
 
     /**

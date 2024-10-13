@@ -9,13 +9,19 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapi
  */
 class ANGESTELLTER extends PERSON
 {
-    /** Der Kunde, der gerade bearbeitet wird */
+    /**
+     * Der Kunde, der gerade bearbeitet wird
+     */
     private KUNDE aktKunde;
 
-    /** Die Bank, in der der Angestellte arbeitet. */
+    /**
+     * Die Bank, in der der Angestellte arbeitet.
+     */
     private BANK bank;
 
-    /** Das Konto, das geade bearbeitet wird. */
+    /**
+     * Das Konto, das geade bearbeitet wird.
+     */
     private KONTO aktKonto;
 
     /**

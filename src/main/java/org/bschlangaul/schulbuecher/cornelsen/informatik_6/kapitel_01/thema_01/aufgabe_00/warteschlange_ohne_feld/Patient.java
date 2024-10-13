@@ -9,10 +9,14 @@ package org.bschlangaul.schulbuecher.cornelsen.informatik_6.kapitel_01.thema_01.
  */
 class Patient
 {
-    /** Name des Patienten */
+    /**
+     * Name des Patienten
+     */
     private String name;
 
-    /** Verwaltung des nachfolgenden Patienten in der Warteschlange. */
+    /**
+     * Verwaltung des nachfolgenden Patienten in der Warteschlange.
+     */
     private Patient nachfolger;
 
     /**

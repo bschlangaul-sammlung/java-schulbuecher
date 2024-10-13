@@ -9,13 +9,19 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_2_2010.kapi
  */
 class Erzeuger extends Thread
 {
-    /** Die Produktionszeit pro Kiste */
+    /**
+     * Die Produktionszeit pro Kiste
+     */
     private int zeit;
 
-    /** Der Zwischenspeicher */
+    /**
+     * Der Zwischenspeicher
+     */
     private Speicher speicher;
 
-    /** Laufende Nummer der produzierten Kisten */
+    /**
+     * Laufende Nummer der produzierten Kisten
+     */
     private static int nummer = 0;
 
     /**

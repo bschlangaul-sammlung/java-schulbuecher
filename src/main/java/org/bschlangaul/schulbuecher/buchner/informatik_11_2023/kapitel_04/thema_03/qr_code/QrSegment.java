@@ -241,7 +241,9 @@ public final class QrSegment
     }
     /*---- Instance fields ----*/
 
-    /** The mode indicator of this segment. Not {@code null}. */
+    /**
+     * The mode indicator of this segment. Not {@code null}.
+     */
     public final Mode mode;
 
     /**

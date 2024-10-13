@@ -1,16 +1,18 @@
 
 /**
  * Beschreibung der Klasse Knoten
- * 
- * @author Klaus Reinold 
+ *
+ * @author Klaus Reinold
  * @version 0.9
  */
 class Knoten
 {
-    /** Verwaltung des nachfolgenden Knoten in der Warteschlange. */
+    /**
+     * Verwaltung des nachfolgenden Knoten in der Warteschlange. */
     private Knoten nachfolger;
-    
-    /** Verwaltung der Daten des Patienten */
+
+    /**
+     * Verwaltung der Daten des Patienten */
     private Patient daten;
 
     /**
@@ -40,7 +42,7 @@ class Knoten
     {
         return nachfolger;
     }
-    
+
     /**
      * Gibt das Datenelement zurück
      * @return Datenelement
@@ -49,7 +51,7 @@ class Knoten
     {
         return daten;
     }
-    
+
     /**
      * Gibt Information über den Patienten aus.
      */

@@ -9,10 +9,14 @@ package org.bschlangaul.schulbuecher.cornelsen.informatik_6.kapitel_01.thema_04.
  */
 class Knoten
 {
-    /** Verwaltung des nachfolgenden Knoten in der Liste. */
+    /**
+     * Verwaltung des nachfolgenden Knoten in der Liste.
+     */
     private Knoten nachfolger;
 
-    /** Verwaltung der Daten */
+    /**
+     * Verwaltung der Daten
+     */
     private Datenelement daten;
 
     /**

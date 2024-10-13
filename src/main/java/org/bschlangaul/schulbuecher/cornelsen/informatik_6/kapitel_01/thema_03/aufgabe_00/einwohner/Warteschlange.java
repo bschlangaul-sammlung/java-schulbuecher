@@ -9,10 +9,14 @@ package org.bschlangaul.schulbuecher.cornelsen.informatik_6.kapitel_01.thema_03.
  */
 class Warteschlange
 {
-    /** erster Knoten der Warteschlange */
+    /**
+     * erster Knoten der Warteschlange
+     */
     private Knoten anfang;
 
-    /** letzter Knoten der Warteschlange */
+    /**
+     * letzter Knoten der Warteschlange
+     */
     private Knoten ende;
 
     /**

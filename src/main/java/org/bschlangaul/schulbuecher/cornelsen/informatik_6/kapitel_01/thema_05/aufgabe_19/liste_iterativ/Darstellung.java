@@ -24,17 +24,25 @@ class Darstellung
         /** äußeres Rechteck */
         private Rechteck außen;
 
-        /** inneres Rechteck */
+        /**
+         * inneres Rechteck
+         */
         private Rechteck innen;
 
-        /** Anzeigetext */
+        /**
+         * Anzeigetext
+         */
         private Text name;
 
-        /** Die Symbolfarben */
+        /**
+         * Die Symbolfarben
+         */
         private String[] farben = { "weiß", "rot", "grün", "blau", "gelb",
                 "cyan", "magenta", "braun", "orange", "grau" };
 
-        /** Zufallsgenerator */
+        /**
+         * Zufallsgenerator
+         */
         private static Random ran = new Random();
 
         /**
@@ -94,10 +102,14 @@ class Darstellung
         }
     }
 
-    /** Die darzustellende Warteschlange */
+    /**
+     * Die darzustellende Warteschlange
+     */
     private Liste liste;
 
-    /** Der Pool an Patientensymbolen */
+    /**
+     * Der Pool an Patientensymbolen
+     */
     private ArrayList<PatientenSymbol> symbole;
 
     /**

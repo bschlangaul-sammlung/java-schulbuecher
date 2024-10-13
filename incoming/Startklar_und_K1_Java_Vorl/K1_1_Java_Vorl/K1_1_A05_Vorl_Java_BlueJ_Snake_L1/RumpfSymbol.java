@@ -11,17 +11,22 @@ import javax.swing.*;
 
 class RumpfSymbol
 {
-    /** Das Anzeigefenster.*/
+    /**
+     * Das Anzeigefenster.*/
     private JFrame fenster;
-    
-    /** Anzeigegröße für das Rumpfelement */
+
+    /**
+     * Anzeigegröße für das Rumpfelement */
     static final int größe = Oberflaeche.RasterGrößeGeben();
 
-    /** x-Position */
+    /**
+     * x-Position */
     private int x;
-    /** y-Position */
+    /**
+     * y-Position */
     private int y;
-    /** Anzeige */
+    /**
+     * Anzeige */
     private JComponent anzeige;
 
     /**
@@ -46,7 +51,7 @@ class RumpfSymbol
                 g.drawLine(1, 0, größe - 1, größe - 2);
                 g.drawLine(0, 1, größe - 2, größe - 1);
                 g.drawLine(0, größe - 1, größe - 1, 0);
-                g.drawLine(1, größe - 1, größe - 1, 1);                
+                g.drawLine(1, größe - 1, größe - 1, 1);
                 g.drawLine(0, größe - 2, größe - 2, 0);
             }
 

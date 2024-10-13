@@ -13,16 +13,24 @@ import java.awt.Graphics;
  */
 class LEINWAND extends Canvas
 {
-    /** Verwaltung der Darstellung, die im Konstruktor übergeben wird */
+    /**
+     * Verwaltung der Darstellung, die im Konstruktor übergeben wird
+     */
     private DARSTELLUNG darstellung;
 
-    /** Größe eines Kästchens */
+    /**
+     * Größe eines Kästchens
+     */
     private int kaestchengroesse;
 
-    /** Kästchenzahl nach rechts */
+    /**
+     * Kästchenzahl nach rechts
+     */
     private int kaestchenzahl_nach_rechts;
 
-    /** Kästchenzahl nach unten */
+    /**
+     * Kästchenzahl nach unten
+     */
     private int kaestchenzahl_nach_unten;
 
     /**

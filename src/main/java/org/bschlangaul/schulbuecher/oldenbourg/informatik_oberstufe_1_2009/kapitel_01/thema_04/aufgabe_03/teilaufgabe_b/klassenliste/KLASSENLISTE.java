@@ -9,7 +9,9 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapi
  */
 class KLASSENLISTE
 {
-    /** Liste */
+    /**
+     * Liste
+     */
     private LISTE l;
 
     /**

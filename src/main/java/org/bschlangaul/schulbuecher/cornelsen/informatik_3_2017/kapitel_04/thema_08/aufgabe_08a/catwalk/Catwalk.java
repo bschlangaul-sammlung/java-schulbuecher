@@ -9,16 +9,24 @@ package org.bschlangaul.schulbuecher.cornelsen.informatik_3_2017.kapitel_04.them
  */
 class Catwalk
 {
-    /** Die Leuchten */
+    /**
+     * Die Leuchten
+     */
     Rechteck[] leuchten;
 
-    /** Die zur Verfügung stehenden Farben */
+    /**
+     * Die zur Verfügung stehenden Farben
+     */
     String[] farben;
 
-    /** Größe einer Leuchte */
+    /**
+     * Größe einer Leuchte
+     */
     final int breite = 40;
 
-    /** Anzahl der Leuchten */
+    /**
+     * Anzahl der Leuchten
+     */
     final int spaltenanzahl = 10;
 
     /**

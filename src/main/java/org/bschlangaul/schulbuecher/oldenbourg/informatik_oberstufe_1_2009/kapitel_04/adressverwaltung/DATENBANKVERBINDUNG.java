@@ -15,13 +15,19 @@ import java.util.ArrayList;
  */
 class DATENBANKVERBINDUNG implements MELDUNGSERZEUGER
 {
-    /** Speichert das einzige Objekt der Klasse DATENBANKVERBINDUNG. */
+    /**
+     * Speichert das einzige Objekt der Klasse DATENBANKVERBINDUNG.
+     */
     private static DATENBANKVERBINDUNG verb = new DATENBANKVERBINDUNG();
 
-    /** Speichert die Verbindung zur Datenbank. */
+    /**
+     * Speichert die Verbindung zur Datenbank.
+     */
     private Connection conn;
 
-    /** Die Meldungsbeobachter */
+    /**
+     * Die Meldungsbeobachter
+     */
     private ArrayList<MELDUNGSBEOBACHTER> allebeobachter;
 
     /**

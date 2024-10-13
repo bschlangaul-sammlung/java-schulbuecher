@@ -11,13 +11,16 @@ import javax.swing.*;
 
 abstract class SonderSymbol
 {
-    /** Das Anzeigefenster.*/
+    /**
+     * Das Anzeigefenster.*/
     protected JFrame fenster;
-    
-    /** Anzeigegröße für das Symbol */
+
+    /**
+     * Anzeigegröße für das Symbol */
     protected static final int größe = Oberflaeche.RasterGrößeGeben ();
 
-    /** Interna */
+    /**
+     * Interna */
     protected int x;
     protected int y;
     protected JComponent anzeige;

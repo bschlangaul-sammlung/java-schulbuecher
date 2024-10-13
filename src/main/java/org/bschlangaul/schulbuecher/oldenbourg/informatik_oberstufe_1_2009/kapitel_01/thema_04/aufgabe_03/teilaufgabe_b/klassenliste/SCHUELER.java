@@ -9,10 +9,14 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapi
  */
 class SCHUELER implements DATENELEMENT
 {
-    /** Nachname */
+    /**
+     * Nachname
+     */
     private String nachname;
 
-    /** Vorname */
+    /**
+     * Vorname
+     */
     private String vorname;
 
     /**

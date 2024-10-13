@@ -9,10 +9,14 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_2_2010.kapi
  */
 class Speicher
 {
-    /** Gibt an, wie viele Plätze belegt sind */
+    /**
+     * Gibt an, wie viele Plätze belegt sind
+     */
     private int anzahlbelegt;
 
-    /** Die eventuell vorhandene Kiste */
+    /**
+     * Die eventuell vorhandene Kiste
+     */
     private Kiste[] plaetze;
 
     /**

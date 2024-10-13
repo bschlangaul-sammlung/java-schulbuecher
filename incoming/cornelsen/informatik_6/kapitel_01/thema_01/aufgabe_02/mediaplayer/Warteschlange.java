@@ -8,10 +8,12 @@ package org.bschlangaul.schulbuecher.cornelsen.informatik_6.kapitel_01.thema_01.
  */
 class Warteschlange
 {
-    /** Anfang der Warteschlange */
+    /**
+     * Anfang der Warteschlange */
     private Medium anfang;
 
-    /** Ende der Warteschlange */
+    /**
+     * Ende der Warteschlange */
     private Medium ende;
 
     /**

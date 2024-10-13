@@ -9,7 +9,9 @@ package org.bschlangaul.schulbuecher.cornelsen.informatik_6.kapitel_01.thema_05.
  */
 class Bild implements Datenelement
 {
-    /** Dateiname */
+    /**
+     * Dateiname
+     */
     private String name;
 
     /**

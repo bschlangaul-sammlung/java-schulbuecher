@@ -1,13 +1,14 @@
 
 /**
  * Beschreibung der Liste
- * 
+ *
  * @author Klaus Reinold
  * @version 1.0
  */
 class Liste
 {
-    /** erster Knoten der Liste */
+    /**
+     * erster Knoten der Liste */
     private Knoten anfang;
 
     /**
@@ -15,7 +16,7 @@ class Liste
      */
     Liste()
     {
-        anfang = null; 
+        anfang = null;
     }
 
     /**
@@ -88,7 +89,7 @@ class Liste
         {
             return 0;
         }
-        else 
+        else
         {
             return anfang.RestlängeGeben();
         }
@@ -136,18 +137,18 @@ class Liste
 
     /**
      * Entfernt den ersten Knoten aus der Liste und gibt sein Datenelement aus.
-     * @return Datenelement des bisher ersten Knotens 
+     * @return Datenelement des bisher ersten Knotens
      */
     Patient AnfangEntfernen()
     {
         if (anfang != null)
         {
             Patient d;
-            d = anfang.DatenelementGeben(); 
+            d = anfang.DatenelementGeben();
             anfang = anfang.NachfolgerGeben();
             return d;
         }
-        else 
+        else
         {
             return null;
         }
@@ -155,14 +156,14 @@ class Liste
 
     /**
      * Entfernt den letzten Knoten aus der Liste und gibt sein Datenelement aus.
-     * @return Datenelement des bisher letzten Knotens 
+     * @return Datenelement des bisher letzten Knotens
      */
     Patient EndeEntfernen()
     {
         if (anfang != null)
         {
             Patient d;
-            d = anfang.EndeGeben(); 
+            d = anfang.EndeGeben();
             anfang = anfang.EndeEntfernen();
             return d;
         }

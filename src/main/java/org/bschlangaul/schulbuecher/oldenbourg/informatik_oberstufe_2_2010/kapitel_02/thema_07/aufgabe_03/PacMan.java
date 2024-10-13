@@ -9,18 +9,26 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_2_2010.kapi
  */
 class PacMan
 {
-    /** Die Welt */
+    /**
+     * Die Welt
+     */
     private KarolWelt welt;
 
-    /** Der Spieler */
+    /**
+     * Der Spieler
+     */
     private Spieler pac;
 
-    /** Die Geister */
+    /**
+     * Die Geister
+     */
     private GeistZufall geist1;
 
     private GeistDirekt geist2;
 
-    /** Die Figurenthreads */
+    /**
+     * Die Figurenthreads
+     */
     private FigurenThread[] threads;
 
     /**

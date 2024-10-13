@@ -11,16 +11,24 @@ import java.util.Random;
  */
 class Zahlenraten
 {
-    /** die zufällige, zu erratende Zahl */
+    /**
+     * die zufällige, zu erratende Zahl
+     */
     int zufallszahl;
 
-    /** die Anzahl der Versuche */
+    /**
+     * die Anzahl der Versuche
+     */
     int anzahlVersuche;
 
-    /** der Zufallsgenerator */
+    /**
+     * der Zufallsgenerator
+     */
     Random zzGenerator;
 
-    /** der Kreis zur Bewertungsanzeige */
+    /**
+     * der Kreis zur Bewertungsanzeige
+     */
     Kreis bewertungsKreis;
 
     /**

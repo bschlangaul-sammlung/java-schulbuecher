@@ -19,7 +19,9 @@ class Fenster extends Frame
     /** Überschrift */
     private Label labelÜberschrift;
 
-    /** Unterüberschrift */
+    /**
+     * Unterüberschrift
+     */
     private Label labelUnterüberschrift;
 
     /**
@@ -28,7 +30,9 @@ class Fenster extends Frame
      */
     private Button knopfEinfügen;
 
-    /** Textfeld zum Eintrag eines neuen Patienten */
+    /**
+     * Textfeld zum Eintrag eines neuen Patienten
+     */
     private TextField textfeldEinfügen;
 
     /**
@@ -37,13 +41,19 @@ class Fenster extends Frame
      */
     private Button knopfEntfernen;
 
-    /** Beschriftung */
+    /**
+     * Beschriftung
+     */
     private Label labelAufnehmen;
 
-    /** Beschriftung */
+    /**
+     * Beschriftung
+     */
     private Label labelEntfernen;
 
-    /** Label zur Anzeige des nächsten Patienten */
+    /**
+     * Label zur Anzeige des nächsten Patienten
+     */
     private Label labelNächster;
 
     /**

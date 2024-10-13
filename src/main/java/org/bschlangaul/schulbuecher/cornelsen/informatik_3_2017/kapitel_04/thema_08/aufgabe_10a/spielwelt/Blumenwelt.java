@@ -15,7 +15,9 @@ import java.util.Random;
  */
 class Blumenwelt
 {
-    /** Der Zufallsgenerator */
+    /**
+     * Der Zufallsgenerator
+     */
     Random zufallszahlgenerator;
 
     /**

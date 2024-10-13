@@ -9,16 +9,24 @@ package org.bschlangaul.schulbuecher.cornelsen.informatik_3_2017.kapitel_04.them
  */
 class Ampel
 {
-    /** obere Lampe */
+    /**
+     * obere Lampe
+     */
     Kreis lampeOben;
 
-    /** mittlere Lampe */
+    /**
+     * mittlere Lampe
+     */
     Kreis lampeMitte;
 
-    /** untere Lampe */
+    /**
+     * untere Lampe
+     */
     Kreis lampeUnten;
 
-    /** Ampelphase */
+    /**
+     * Ampelphase
+     */
     String ampelphase;
 
     /**

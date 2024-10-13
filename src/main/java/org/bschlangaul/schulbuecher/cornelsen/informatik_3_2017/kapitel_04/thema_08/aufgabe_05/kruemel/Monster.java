@@ -9,10 +9,14 @@ package org.bschlangaul.schulbuecher.cornelsen.informatik_3_2017.kapitel_04.them
  */
 class Monster extends Figur
 {
-    /** Anzahl der gefressenen Krümel */
+    /**
+     * Anzahl der gefressenen Krümel
+     */
     int anzahl;
 
-    /** Mundstellung */
+    /**
+     * Mundstellung
+     */
     boolean mundIstZu;
 
     /**

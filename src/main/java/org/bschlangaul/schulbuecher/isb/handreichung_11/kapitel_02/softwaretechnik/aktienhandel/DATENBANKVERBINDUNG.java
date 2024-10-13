@@ -559,7 +559,9 @@ class DATENBANKVERBINDUNG implements STATUSERZEUGER
         return res;
     }
 
-    /** Kurswerte eintragen */
+    /**
+     * Kurswerte eintragen
+     */
     void NeueKurseEintragen(KURSINFO[] infos)
     {
         Statement stmt;

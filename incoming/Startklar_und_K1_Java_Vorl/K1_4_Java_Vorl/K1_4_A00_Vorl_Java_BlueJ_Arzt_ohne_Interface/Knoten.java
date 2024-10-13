@@ -1,15 +1,17 @@
 /**
  * Beschreibung der Klasse Knoten
- * 
- * @author Klaus Reinold 
+ *
+ * @author Klaus Reinold
  * @version 1.0
  */
-class Knoten 
+class Knoten
 {
-    /** Verwaltung des nachfolgenden Knoten in der Warteschlange. */
+    /**
+     * Verwaltung des nachfolgenden Knoten in der Warteschlange. */
     private Knoten nachfolger;
-    
-    /** Verwaltung der Daten */
+
+    /**
+     * Verwaltung der Daten */
     private Patient daten;
 
     /**
@@ -28,7 +30,7 @@ class Knoten
      */
     void HintenEinfügen(Patient dneu)
     {
-        if(nachfolger != null)    
+        if(nachfolger != null)
         {
             nachfolger.HintenEinfügen(dneu);
         }
@@ -39,7 +41,7 @@ class Knoten
             nachfolger = kneu;
         }
     }
-    
+
     /**
      * Nachfolger des Knoten setzen
      * @param nf neuer Nachfolger
@@ -57,7 +59,7 @@ class Knoten
     {
         return nachfolger;
     }
-    
+
     /**
      * Gibt das Datenelement zurück
      * @return Datenelement
@@ -66,7 +68,7 @@ class Knoten
     {
         return daten;
     }
-    
+
     /**
      * Gibt Information über das Datenelement aus.
      */

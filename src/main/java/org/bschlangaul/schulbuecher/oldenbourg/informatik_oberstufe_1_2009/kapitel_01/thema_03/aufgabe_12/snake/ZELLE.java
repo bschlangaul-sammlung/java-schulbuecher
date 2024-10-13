@@ -9,13 +9,19 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapi
  */
 class ZELLE implements DATENELEMENT
 {
-    /** x-Koordinate der Zelle */
+    /**
+     * x-Koordinate der Zelle
+     */
     private int x;
 
-    /** y-Koordinate der Zelle */
+    /**
+     * y-Koordinate der Zelle
+     */
     private int y;
 
-    /** Spiel */
+    /**
+     * Spiel
+     */
     SPIEL spiel;
 
     /**

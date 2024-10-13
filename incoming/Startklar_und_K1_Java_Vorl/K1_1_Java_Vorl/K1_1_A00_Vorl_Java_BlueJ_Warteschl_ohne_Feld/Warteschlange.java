@@ -1,16 +1,18 @@
 
 /**
  * Beschreibung der Warteschlange
- * 
+ *
  * @author Klaus Reinold
  * @version 0.9
  */
 class Warteschlange
 {
-    /** erstes Element der Warteschlange */
+    /**
+     * erstes Element der Warteschlange */
     private Patient anfang;
 
-    /** letztes Element der Warteschlange */
+    /**
+     * letztes Element der Warteschlange */
     private Patient ende;
 
     /**
@@ -18,7 +20,7 @@ class Warteschlange
      */
     Warteschlange()
     {
-        anfang = null; 
+        anfang = null;
         ende = null;
     }
 

@@ -25,10 +25,14 @@ class CLIENTPROZESS2 extends Thread
      */
     private Socket clientSocket = null;
 
-    /** Schreibkanal zum Client */
+    /**
+     * Schreibkanal zum Client
+     */
     private PrintWriter zumClient = null;
 
-    /** Lesekanal vom Client */
+    /**
+     * Lesekanal vom Client
+     */
     private BufferedReader vomClient = null;
 
     /**
@@ -37,10 +41,14 @@ class CLIENTPROZESS2 extends Thread
      */
     private PLATZBUCHUNG serververhalten;
 
-    /** Botschaft von Client zum Server */
+    /**
+     * Botschaft von Client zum Server
+     */
     private String clientBotschaft = null;
 
-    /** Botschaft vom Server zum Client */
+    /**
+     * Botschaft vom Server zum Client
+     */
     private String serverAntwort = null;
 
     /**

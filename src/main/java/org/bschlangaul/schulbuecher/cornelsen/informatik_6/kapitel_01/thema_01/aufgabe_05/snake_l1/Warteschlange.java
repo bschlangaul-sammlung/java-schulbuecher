@@ -9,7 +9,9 @@ package org.bschlangaul.schulbuecher.cornelsen.informatik_6.kapitel_01.thema_01.
  */
 class Warteschlange
 {
-    /** Verwaltung der Rumpfsymbole in der Warteschlange. */
+    /**
+     * Verwaltung der Rumpfsymbole in der Warteschlange.
+     */
     private RumpfSymbol anfang;
 
     private RumpfSymbol ende;

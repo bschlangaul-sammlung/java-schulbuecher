@@ -9,10 +9,14 @@ package org.bschlangaul.schulbuecher.cornelsen.informatik_6.kapitel_01.thema_01.
  */
 class Warteschlange
 {
-    /** erster Patient der Warteschlange */
+    /**
+     * erster Patient der Warteschlange
+     */
     private Patient anfang;
 
-    /** letzter Patient der Warteschlange */
+    /**
+     * letzter Patient der Warteschlange
+     */
     private Patient ende;
 
     /**

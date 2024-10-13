@@ -1,13 +1,14 @@
 
 /**
  * Beschreibung der Liste
- * 
+ *
  * @author Klaus Reinold
  * @version 1.0
  */
 class Liste
 {
-    /** erstes Element der Liste */
+    /**
+     * erstes Element der Liste */
     private Listenelement anfang;
 
     /**
@@ -15,9 +16,9 @@ class Liste
      */
     Liste()
     {
-        anfang = new Abschluss() 
+        anfang = new Abschluss()
     }
-    
+
     /**
      * Einfügen am Anfang der Liste (nichtrekursiv!)
      * @param dNeu neues Datenelement
@@ -35,7 +36,7 @@ class Liste
     {
         return anfang.RestlängeGeben();
     }
-    
+
     /**
      * Entfernt den letzten Knoten und gibt dessen Datenelement zurück.
      * @return Datenelement des bisher letzten Knotens
@@ -46,7 +47,7 @@ class Liste
         anfang = anfang.KnotenEntfernen(d_letzter);
         return d_letzter;
     }
-    
+
     /**
      * Entfernt den Anfang aus der Liste und gibt das zugehörige Datenelement zurück.
      * @return Datenelement des Anfangsknotens
@@ -57,7 +58,7 @@ class Liste
         anfang = anfang.NachfolgerGeben();
         return d;
     }
-    
+
     /**
      * Gibt die Information zu den Datenelementen auf der Konsole aus.
      */
@@ -65,7 +66,7 @@ class Liste
     {
         anfang.InformationAusgeben();
     }
-    
+
     /**
      * Fügt das Datenelement am Ende ein.
      * @param dNeu neues Datenelement
@@ -73,8 +74,8 @@ class Liste
     void HintenEinfügen(Datenelement dNeu)
     {
         anfang = anfang.HintenEinfügen(dNeu);
-    
-    
+
+
     /**
      * Fügt ein neues Datenelement vor einem bestimmten Datenelement ein.
      * @param dNeu neues Datenelement
@@ -84,7 +85,7 @@ class Liste
     {
         anfang = anfang.EinfügenVor(dNeu, dVergleich);
     }
-    
+
     /**
      * Sucht ein Datenelement mit einem bestimmten Schlüsselwert in der Liste und gibt es zurück.
      * @param schlüssel Wert, nach dem gesucht wird
@@ -94,7 +95,7 @@ class Liste
     {
         return anfang.Suchen(schlüssel);
     }
-    
+
     /**
      * Sortiertes Einfügen in die Liste
      * @param dNeu neues Datenelement
@@ -103,6 +104,6 @@ class Liste
     {
         anfang = anfang.SortiertEinfügen(dNeu);
     }
-    
+
 }
 }

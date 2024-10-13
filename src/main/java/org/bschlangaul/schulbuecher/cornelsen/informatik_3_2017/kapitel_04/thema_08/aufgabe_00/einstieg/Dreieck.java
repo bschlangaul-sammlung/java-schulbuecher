@@ -9,28 +9,44 @@ package org.bschlangaul.schulbuecher.cornelsen.informatik_3_2017.kapitel_04.them
  */
 public class Dreieck
 {
-    /** x-Position der Spitze. */
+    /**
+     * x-Position der Spitze.
+     */
     private int x;
 
-    /** y-Position der Spitze. */
+    /**
+     * y-Position der Spitze.
+     */
     private int y;
 
-    /** Breite des umgebenden Rechtecks. */
+    /**
+     * Breite des umgebenden Rechtecks.
+     */
     private int breite;
 
-    /** Höhe des umgebenden Rechtecks. */
+    /**
+     * Höhe des umgebenden Rechtecks.
+     */
     private int höhe;
 
-    /** Farbe des Dreiecks. */
+    /**
+     * Farbe des Dreiecks.
+     */
     private String farbe;
 
-    /** Sichtbarkeit des Dreiecks. */
+    /**
+     * Sichtbarkeit des Dreiecks.
+     */
     private boolean sichtbar;
 
-    /** Drehwinkel (mathematisch positiver Drehsinn) des Dreiecks in Grad. */
+    /**
+     * Drehwinkel (mathematisch positiver Drehsinn) des Dreiecks in Grad.
+     */
     private int winkel;
 
-    /** Referenz auf das Delegate-Objekt. */
+    /**
+     * Referenz auf das Delegate-Objekt.
+     */
     Zeichenfenster.GrafikSymbol symbol;
 
     /**

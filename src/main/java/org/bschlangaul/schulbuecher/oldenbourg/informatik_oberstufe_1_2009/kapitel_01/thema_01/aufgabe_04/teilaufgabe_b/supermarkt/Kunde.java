@@ -9,13 +9,19 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapi
  */
 abstract class Kunde
 {
-    /** Anzeigesymbol für den Kunden */
+    /**
+     * Anzeigesymbol für den Kunden
+     */
     private KundenSymbol darstellung;
 
-    /** Anzahl der Artikel des Kunden */
+    /**
+     * Anzahl der Artikel des Kunden
+     */
     private int artikelzahl;
 
-    /** Nachfolger des Kunden */
+    /**
+     * Nachfolger des Kunden
+     */
     private Kunde nachfolger;
 
     /**

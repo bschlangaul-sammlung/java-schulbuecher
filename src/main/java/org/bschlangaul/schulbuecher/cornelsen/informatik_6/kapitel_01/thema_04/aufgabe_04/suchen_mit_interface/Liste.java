@@ -9,7 +9,9 @@ package org.bschlangaul.schulbuecher.cornelsen.informatik_6.kapitel_01.thema_04.
  */
 class Liste
 {
-    /** erster Knoten der Liste */
+    /**
+     * erster Knoten der Liste
+     */
     private Knoten anfang;
 
     /**

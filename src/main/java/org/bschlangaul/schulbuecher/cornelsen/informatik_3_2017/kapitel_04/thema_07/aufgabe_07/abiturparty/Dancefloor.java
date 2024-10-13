@@ -9,19 +9,29 @@ package org.bschlangaul.schulbuecher.cornelsen.informatik_3_2017.kapitel_04.them
  */
 class Dancefloor
 {
-    /** Die Leuchten */
+    /**
+     * Die Leuchten
+     */
     Rechteck[][] leuchten;
 
-    /** Die zur Verfügung stehenden Farben */
+    /**
+     * Die zur Verfügung stehenden Farben
+     */
     String[][] farben;
 
-    /** Größe einer Leuchte */
+    /**
+     * Größe einer Leuchte
+     */
     final int breite = 40;
 
-    /** Anzahl der Leuchten pro Spalte */
+    /**
+     * Anzahl der Leuchten pro Spalte
+     */
     final int spaltenanzahl = 19;
 
-    /** Anzahl der Leuchten pro Zeile */
+    /**
+     * Anzahl der Leuchten pro Zeile
+     */
     final int zeilenanzahl = 19;
 
     /**

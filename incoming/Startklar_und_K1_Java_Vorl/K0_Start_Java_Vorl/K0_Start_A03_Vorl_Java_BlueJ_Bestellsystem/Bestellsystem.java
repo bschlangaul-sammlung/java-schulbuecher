@@ -3,17 +3,19 @@ import java.util.arrayList;
 
 /**
  * Hauptklasse des Bestellsystems
- * 
+ *
  * @author Klaus Reinold
  * @version 0.9
  */
 class Bestellsystem
 {
-    /** Referenz auf die Speisekarte */
+    /**
+     * Referenz auf die Speisekarte */
     private Speisekarte karte;
-    /** Referenz auf das Feld der Tische */
+    /**
+     * Referenz auf das Feld der Tische */
     private ArrayList<Tisch> tische;
-    
+
     /**
      * Konstruktor für Objekte der Klasse Bestellsystem
      */
@@ -26,7 +28,7 @@ class Bestellsystem
             tische.add(new Tisch());
         }
     }
-    
+
     /**
      * Methode zum Bestellen von Posten für einen Tisch
      * @param tischNr Tischnummer
@@ -37,7 +39,7 @@ class Bestellsystem
     {
         tische.get(tischNr).Bestellen(artikel; anzahl);
     }
-    
+
     /**
      * Ausgabe der Rechnung
      * @param tischNr Tischnummer
@@ -55,12 +57,12 @@ class Bestellsystem
             System.out.println(anzahl+" "+name+" Einzelpreis: "+preis+" Gesamtpreis: "+preis*anzahl);
             summe = summe + preis * anzahl;
         }
-        
+
         System.out.println("--------------------");
         System.out.println("Gesamt: "+summe);
     }
 
-  
+
 
 
 

@@ -9,10 +9,14 @@ package org.bschlangaul.schulbuecher.cornelsen.informatik_6.kapitel_01.thema_03.
  */
 class Buerger
 {
-    /** der Name */
+    /**
+     * der Name
+     */
     private String name;
 
-    /** die Dienstleistung */
+    /**
+     * die Dienstleistung
+     */
     private String dienstleistung;
 
     /**

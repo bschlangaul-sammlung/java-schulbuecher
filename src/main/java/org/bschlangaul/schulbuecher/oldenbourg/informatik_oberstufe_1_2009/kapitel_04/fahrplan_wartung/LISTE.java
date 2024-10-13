@@ -9,13 +9,19 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapi
  */
 class LISTE
 {
-    /** Referenz auf das erste Listenelement */
+    /**
+     * Referenz auf das erste Listenelement
+     */
     private LISTENELEMENT erstes;
 
-    /** Referenz auf das aktuelle Datenelement für Durchlauf */
+    /**
+     * Referenz auf das aktuelle Datenelement für Durchlauf
+     */
     private LISTENELEMENT aktuelles;
 
-    /** Referenz auf das aktuelle Datenelement */
+    /**
+     * Referenz auf das aktuelle Datenelement
+     */
     private DATENELEMENT daten;
 
     /**

@@ -17,7 +17,9 @@ class FENSTER extends Frame
     /** überschrift */
     private Label labelUeberschrift = new Label();
 
-    /** Unterüberschrift */
+    /**
+     * Unterüberschrift
+     */
     private Label labelUnterueberschrift = new Label();
 
     /**
@@ -26,7 +28,9 @@ class FENSTER extends Frame
      */
     private Button knopfEinfuegen = new Button();
 
-    /** Textfeld zum Eintrag eines neuen Patienten */
+    /**
+     * Textfeld zum Eintrag eines neuen Patienten
+     */
     private TextField textfeld_Einfuegen = new TextField();
 
     /**
@@ -35,13 +39,19 @@ class FENSTER extends Frame
      */
     private Button knopf_Entfernen = new Button();
 
-    /** Beschriftung */
+    /**
+     * Beschriftung
+     */
     private Label labelAufnehmen = new Label();
 
-    /** Beschriftung */
+    /**
+     * Beschriftung
+     */
     private Label labelEntfernen = new Label();
 
-    /** Label zur Anzeige des nächsten Patienten */
+    /**
+     * Label zur Anzeige des nächsten Patienten
+     */
     private Label labelNaechster = new Label();
 
     /**

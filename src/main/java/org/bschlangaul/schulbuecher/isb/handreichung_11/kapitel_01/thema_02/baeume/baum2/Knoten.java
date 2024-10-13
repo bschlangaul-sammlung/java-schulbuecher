@@ -9,13 +9,19 @@ package org.bschlangaul.schulbuecher.isb.handreichung_11.kapitel_01.thema_02.bae
  */
 class Knoten
 {
-    /** Referenz auf den linken Nachfolger */
+    /**
+     * Referenz auf den linken Nachfolger
+     */
     private Knoten linkerNachfolger;
 
-    /** Referenz auf den rechten Nachfolger */
+    /**
+     * Referenz auf den rechten Nachfolger
+     */
     private Knoten rechterNachfolger;
 
-    /** Referenz auf das Datenelement */
+    /**
+     * Referenz auf das Datenelement
+     */
     private DatenElement daten;
 
     /**

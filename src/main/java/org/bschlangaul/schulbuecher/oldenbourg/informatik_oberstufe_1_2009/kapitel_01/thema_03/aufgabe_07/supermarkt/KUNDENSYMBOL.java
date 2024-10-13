@@ -14,13 +14,19 @@ import java.awt.Graphics;
  */
 class KUNDENSYMBOL
 {
-    /** Das Anzeigefenster. */
+    /**
+     * Das Anzeigefenster.
+     */
     private Canvas anzeige;
 
-    /** Anzeigegröße für den Kreis */
+    /**
+     * Anzeigegröße für den Kreis
+     */
     private int groesse = 20;
 
-    /** Interna */
+    /**
+     * Interna
+     */
     private OBERFLAECHE.FARBE aktFarbe;
 
     /**

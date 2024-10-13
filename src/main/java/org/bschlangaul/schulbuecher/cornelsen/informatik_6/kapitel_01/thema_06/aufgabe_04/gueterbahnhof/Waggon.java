@@ -9,10 +9,14 @@ package org.bschlangaul.schulbuecher.cornelsen.informatik_6.kapitel_01.thema_06.
  */
 class Waggon implements Datenelement
 {
-    /** Zielort des Waggons */
+    /**
+     * Zielort des Waggons
+     */
     private String zielort;
 
-    /** Distanz zum Zielort */
+    /**
+     * Distanz zum Zielort
+     */
     private int distanz_zum_zielort;
 
     /**

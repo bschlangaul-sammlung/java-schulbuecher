@@ -10,10 +10,14 @@ package org.bschlangaul.schulbuecher.isb.handreichung_12.kapitel_02.projekt_08.b
  */
 public class ZUG
 {
-    /** die Platznummer im Zug */
+    /**
+     * die Platznummer im Zug
+     */
     private int platz = 0;
 
-    /** der Name des Zuges */
+    /**
+     * der Name des Zuges
+     */
     private String name = "DB";
 
     /**

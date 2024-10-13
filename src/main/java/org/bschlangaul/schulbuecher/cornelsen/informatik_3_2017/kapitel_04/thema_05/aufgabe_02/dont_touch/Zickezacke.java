@@ -9,10 +9,14 @@ package org.bschlangaul.schulbuecher.cornelsen.informatik_3_2017.kapitel_04.them
  */
 class Zickezacke extends Hindernis
 {
-    /** Zählt die grmachten Zacks */
+    /**
+     * Zählt die grmachten Zacks
+     */
     int zackenzähler;
 
-    /** Der Drehwinkel */
+    /**
+     * Der Drehwinkel
+     */
     int winkel;
 
     /**

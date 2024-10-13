@@ -10,7 +10,9 @@ package org.bschlangaul.schulbuecher.cornelsen.informatik_6.kapitel_01.thema_05.
 @SuppressWarnings("unused")
 class Patient
 {
-    /** Name des Patienten */
+    /**
+     * Name des Patienten
+     */
     private String name;
 
     /**

@@ -9,13 +9,19 @@ package org.bschlangaul.schulbuecher.cornelsen.informatik_6.kapitel_01.thema_06.
  */
 class Maus implements Datenelement
 {
-    /** Nummer der Maus */
+    /**
+     * Nummer der Maus
+     */
     private int nummer;
 
-    /** Anzahl der Siege */
+    /**
+     * Anzahl der Siege
+     */
     private int siegeszahl;
 
-    /** Anzahl der Niederlagen */
+    /**
+     * Anzahl der Niederlagen
+     */
     private int niederlagenzahl;
 
     /**

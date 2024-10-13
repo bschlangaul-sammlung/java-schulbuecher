@@ -11,13 +11,16 @@ import javax.swing.*;
  */
 class RandSymbol
 {
-    /** Das Anzeigefenster.*/
+    /**
+     * Das Anzeigefenster.*/
     private JFrame fenster;
 
-    /** Anzeigegröße für das Rumpfelement */
+    /**
+     * Anzeigegröße für das Rumpfelement */
     private static final int größe = Oberflaeche.RasterGrößeGeben();
 
-    /** Interna */
+    /**
+     * Interna */
     private JComponent anzeige;
     private int xMin, xMax, yMin, yMax;
     private boolean wertGesetzt;

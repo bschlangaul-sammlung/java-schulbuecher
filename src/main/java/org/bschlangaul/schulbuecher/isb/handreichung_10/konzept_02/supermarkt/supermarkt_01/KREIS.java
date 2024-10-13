@@ -10,10 +10,14 @@ import java.awt.*;
 
 class KREIS
 {
-    /** Das Anzeigefenster. */
+    /**
+     * Das Anzeigefenster.
+     */
     private Canvas anzeige;
 
-    /** Interna */
+    /**
+     * Interna
+     */
     private OBERFLAECHE.FARBE aktFarbe;
 
     /**

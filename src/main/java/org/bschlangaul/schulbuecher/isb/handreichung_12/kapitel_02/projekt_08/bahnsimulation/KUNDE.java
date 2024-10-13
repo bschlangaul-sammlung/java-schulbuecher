@@ -9,7 +9,9 @@ package org.bschlangaul.schulbuecher.isb.handreichung_12.kapitel_02.projekt_08.b
  */
 class KUNDE extends Thread
 {
-    /** Referenzen auf die Züge mit Möglichkeit der Information und Buchung */
+    /**
+     * Referenzen auf die Züge mit Möglichkeit der Information und Buchung
+     */
     private ZUG[] zuege;
 
     /**
@@ -24,7 +26,9 @@ class KUNDE extends Thread
         this.zuege = zuege;
     }
 
-    /** Der Kunde bucht zufallsgesteuert in den verschiedenen Zügen */
+    /**
+     * Der Kunde bucht zufallsgesteuert in den verschiedenen Zügen
+     */
     @Override
     public void run()
     {

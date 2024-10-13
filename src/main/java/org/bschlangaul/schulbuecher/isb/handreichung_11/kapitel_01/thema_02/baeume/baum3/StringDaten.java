@@ -10,10 +10,14 @@ import java.text.Collator;
 
 class StringDaten implements DatenElement
 {
-    /** Der Wert des Elements */
+    /**
+     * Der Wert des Elements
+     */
     private String wert;
 
-    /** Vergleichsobjekt */
+    /**
+     * Vergleichsobjekt
+     */
     private Collator coll;
 
     /**

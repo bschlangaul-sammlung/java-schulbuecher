@@ -17,10 +17,14 @@ import java.awt.event.WindowEvent;
  */
 class FENSTER extends Frame implements KeyListener
 {
-    /** Ränder */
+    /**
+     * Ränder
+     */
     private Insets raender;
 
-    /** Verwaltung einer Referenz auf die Darstellung. */
+    /**
+     * Verwaltung einer Referenz auf die Darstellung.
+     */
     private DARSTELLUNG darstellung;
 
     /**

@@ -13,19 +13,29 @@ import java.net.Socket;
  */
 class ClientThread extends Thread
 {
-    /** Das Verbindungsobjekt */
+    /**
+     * Das Verbindungsobjekt
+     */
     private Socket socket;
 
-    /** Serverobjekt */
+    /**
+     * Serverobjekt
+     */
     private Server server;
 
-    /** Ausgabeobjekt */
+    /**
+     * Ausgabeobjekt
+     */
     private OutputStream out;
 
-    /** Zeichenpuffer */
+    /**
+     * Zeichenpuffer
+     */
     private int[] puffer;
 
-    /** Anzahl der Zeichen im Puffer */
+    /**
+     * Anzahl der Zeichen im Puffer
+     */
     private int pufferStand;
 
     /**

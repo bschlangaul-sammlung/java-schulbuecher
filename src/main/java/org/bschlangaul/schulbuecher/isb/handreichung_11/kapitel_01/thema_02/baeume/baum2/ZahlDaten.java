@@ -9,7 +9,9 @@ package org.bschlangaul.schulbuecher.isb.handreichung_11.kapitel_01.thema_02.bae
  */
 class ZahlDaten implements DatenElement
 {
-    /** Der Wert des Elements */
+    /**
+     * Der Wert des Elements
+     */
     private int wert;
 
     /**

@@ -1,17 +1,18 @@
 
 /**
  * Klasse zur Beschreibung eines Bildes
- * 
- * @author Klaus Reinold 
+ *
+ * @author Klaus Reinold
  * @version 0.9
  */
  class Bild
 {
-    /** Dateiname */
+    /**
+     * Dateiname */
     private String name;
-    
+
     //Die Nachfolgerverwaltung fehlt noch.
-     
+
     /**
     * Konstruktor des Bildes
     * @param s Name des Bildes
@@ -20,7 +21,7 @@
     {
         name = "Bilder/" + s;
     }
-    
+
      /**
      * Gibt Information über das Bild aus.
      */
@@ -28,7 +29,7 @@
     {
         System.out.println(name);
     }
-    
+
     /**
      * Gibt den Namen des Bildes aus
      * @return Name des Bildes

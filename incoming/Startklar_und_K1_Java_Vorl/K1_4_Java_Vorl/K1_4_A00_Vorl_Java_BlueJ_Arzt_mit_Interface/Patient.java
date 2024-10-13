@@ -1,12 +1,13 @@
 /**
  * Beschreibung der Klasse Patient
- * 
- * @author Klaus Reinold 
+ *
+ * @author Klaus Reinold
  * @version 1.0
  */
 class Patient implements Datenelement
 {
-    /** Name des Patienten */
+    /**
+     * Name des Patienten */
     private String name;
 
     /**

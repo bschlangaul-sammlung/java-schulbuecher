@@ -9,10 +9,14 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_2_2010.kapi
  */
 class Knoten
 {
-    /** Datenelement des Knotens */
+    /**
+     * Datenelement des Knotens
+     */
     private DatenElement daten;
 
-    /** Verwaltung des nachfolgenden Knoten in der Warteschlange. */
+    /**
+     * Verwaltung des nachfolgenden Knoten in der Warteschlange.
+     */
     private Knoten nachfolger;
 
     /**

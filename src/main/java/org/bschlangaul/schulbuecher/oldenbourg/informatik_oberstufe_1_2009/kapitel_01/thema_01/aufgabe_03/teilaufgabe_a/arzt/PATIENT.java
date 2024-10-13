@@ -5,10 +5,14 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapi
  */
 class PATIENT
 {
-    /** Name des Patienten */
+    /**
+     * Name des Patienten
+     */
     private String name;
 
-    /** Verwaltung des nachfolgenden Patienten in der Warteschlange. */
+    /**
+     * Verwaltung des nachfolgenden Patienten in der Warteschlange.
+     */
     private PATIENT nachfolger;
 
     /**

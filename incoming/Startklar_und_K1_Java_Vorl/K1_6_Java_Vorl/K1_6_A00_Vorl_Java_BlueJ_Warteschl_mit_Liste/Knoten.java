@@ -1,15 +1,17 @@
 /**
  * Beschreibung der Klasse Knoten
- * 
- * @author Klaus Reinold 
+ *
+ * @author Klaus Reinold
  * @version 1.0
  */
 class Knoten extends Listenelement
 {
-    /** Verwaltung der Daten */
+    /**
+     * Verwaltung der Daten */
     private Patient daten;
 
-    /** Verwaltung des nachfolgenden Knotens in der Liste */
+    /**
+     * Verwaltung des nachfolgenden Knotens in der Liste */
     private Listenelement nachfolger;
 
     /**
@@ -22,7 +24,7 @@ class Knoten extends Listenelement
         daten = dNeu;
         nachfolger  = lNeu;
     }
-    
+
     /**
      * Gibt die Länge zurück.
      * @return Länge
@@ -31,7 +33,7 @@ class Knoten extends Listenelement
     {
         return nachfolger.RestlängeGeben()+1;
     }
-    
+
     /**
      * Gibt das Datenelement des letzten Knoten zurück
      * @param dNeu übergebenes Datenelement
@@ -41,7 +43,7 @@ class Knoten extends Listenelement
     {
         return nachfolger.EndeGeben(daten);
     }
-    
+
     /**
      * Entfernt den Knoten, dessen Datenelement das übergebene ist.
      * @param dNeu übergebenes Datenelement
@@ -59,25 +61,25 @@ class Knoten extends Listenelement
             return this;
         }
     }
-    
+
     /**
      * Gibt das Datenelement zurück
      * @return daten
      */
     @Override Patient DatenelementGeben()
     {
-        return daten; 
+        return daten;
     }
-    
+
     /**
      * Gibt den Nachfolger zurück
      * @return nachfolger
      */
     @Override Listenelement NachfolgerGeben()
     {
-        return nachfolger; 
+        return nachfolger;
     }
-    
+
     /**
      * Gibt die Information zu den Datenelementen auf der Konsole aus
      */
@@ -86,7 +88,7 @@ class Knoten extends Listenelement
         daten.InformationAusgeben();
         nachfolger.InformationAusgeben();
     }
-    
+
     /**
      * Fügt das Datenelement am Ende ein.
      * @param dNeu neues Datenelement
@@ -97,7 +99,7 @@ class Knoten extends Listenelement
         nachfolger = nachfolger.HintenEinfügen(dNeu);
         return this;
     }
-    
+
     /**
      * Fügt ein neues Datenelement vor einem bestimmten Datenelement ein.
      * @param dNeu neues Datenelement
@@ -116,7 +118,7 @@ class Knoten extends Listenelement
             return this;
         }
     }
-    
+
     /**
      * Sucht ein Datenelement mit einem bestimmten Schlüsselwert in der Liste und gibt es zurück.
      * @param schlüssel Wert, nach dem gesucht wird
@@ -133,7 +135,7 @@ class Knoten extends Listenelement
             return nachfolger.Suchen(schlüssel);
         }
     }
-    
+
     /**
      * Sortiertes Einfügen in die Liste
      * @param dNeu neues Datenelement

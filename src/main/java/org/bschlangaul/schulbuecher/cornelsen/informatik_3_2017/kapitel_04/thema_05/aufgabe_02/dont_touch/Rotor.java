@@ -9,7 +9,9 @@ package org.bschlangaul.schulbuecher.cornelsen.informatik_3_2017.kapitel_04.them
  */
 class Rotor extends Hindernis
 {
-    /** die aktuelle Blickrichtung */
+    /**
+     * die aktuelle Blickrichtung
+     */
     char richtung;
 
     /**

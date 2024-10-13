@@ -11,25 +11,39 @@ import java.util.Random;
  */
 class SPIEL
 {
-    /** Verwaltung der Darstellung */
+    /**
+     * Verwaltung der Darstellung
+     */
     private DARSTELLUNG darstellung;
 
-    /** Verwaltung des Spielfeldes */
+    /**
+     * Verwaltung des Spielfeldes
+     */
     private char[][] spielfeld;
 
-    /** Anzahl der Kästchen nach rechts */
+    /**
+     * Anzahl der Kästchen nach rechts
+     */
     private int kaestchenzahl_rechts;
 
-    /** Anzahl der Kästchen nach unten */
+    /**
+     * Anzahl der Kästchen nach unten
+     */
     private int kaestchenzahl_unten;
 
-    /** Zufallsgenerator für das Futter */
+    /**
+     * Zufallsgenerator für das Futter
+     */
     private Random zgenerator;
 
-    /** Spiel beendet oder nicht */
+    /**
+     * Spiel beendet oder nicht
+     */
     private boolean beendet;
 
-    /** Verwaltung des Snake-Objekts */
+    /**
+     * Verwaltung des Snake-Objekts
+     */
     private SNAKE snake;
 
     /**

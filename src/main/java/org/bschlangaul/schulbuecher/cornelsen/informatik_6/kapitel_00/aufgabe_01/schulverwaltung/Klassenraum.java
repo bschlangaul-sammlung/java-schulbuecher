@@ -9,7 +9,9 @@ package org.bschlangaul.schulbuecher.cornelsen.informatik_6.kapitel_00.aufgabe_0
  */
 class Klassenraum extends Raum
 {
-    /** Name der Schulklasse */
+    /**
+     * Name der Schulklasse
+     */
     private String klasse;
 
     /**

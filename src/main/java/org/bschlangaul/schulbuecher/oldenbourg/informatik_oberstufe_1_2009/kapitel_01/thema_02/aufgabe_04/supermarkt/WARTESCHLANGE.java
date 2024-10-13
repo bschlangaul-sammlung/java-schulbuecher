@@ -9,16 +9,24 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapi
  */
 public class WARTESCHLANGE
 {
-    /** Verwaltung des ersten Kunden in der Warteschlange. */
+    /**
+     * Verwaltung des ersten Kunden in der Warteschlange.
+     */
     private SCHLANGE schlange;
 
-    /** Die Nummer der zugehörigen Kasse */
+    /**
+     * Die Nummer der zugehörigen Kasse
+     */
     private int kassennummer;
 
-    /** Die Anzahl der Kunden in der Warteschlange */
+    /**
+     * Die Anzahl der Kunden in der Warteschlange
+     */
     private int kundenanzahl;
 
-    /** Der Zustand der Warteschlange - Anstellen ist möglich oder nicht */
+    /**
+     * Der Zustand der Warteschlange - Anstellen ist möglich oder nicht
+     */
     private boolean anstellenMoeglich;
 
     /**

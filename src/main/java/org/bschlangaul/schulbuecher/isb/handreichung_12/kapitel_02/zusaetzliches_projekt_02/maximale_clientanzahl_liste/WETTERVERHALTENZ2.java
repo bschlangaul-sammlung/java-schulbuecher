@@ -12,13 +12,19 @@ package org.bschlangaul.schulbuecher.isb.handreichung_12.kapitel_02.zusaetzliche
  */
 public class WETTERVERHALTENZ2
 {
-    /** Konstante für den Zustand wartend */
+    /**
+     * Konstante für den Zustand wartend
+     */
     private static final int wartend = 0;
 
-    /** Konstante für den Zustand, nachdem nach dem Namen gefragt wurde */
+    /**
+     * Konstante für den Zustand, nachdem nach dem Namen gefragt wurde
+     */
     private static final int namegefragt = 1;
 
-    /** Konstante für den Zustand, nachdem nach einer Stadt gefragt wurde */
+    /**
+     * Konstante für den Zustand, nachdem nach einer Stadt gefragt wurde
+     */
     private static final int stadtgefragt = 2;
 
     /**
@@ -27,10 +33,14 @@ public class WETTERVERHALTENZ2
      */
     private static final int nochmal = 3;
 
-    /** speichert den aktuellen Zustand */
+    /**
+     * speichert den aktuellen Zustand
+     */
     private int zustand = wartend;
 
-    /** Liste mit Städten zum Generieren einer (zufälligen) Wetterauskunft */
+    /**
+     * Liste mit Städten zum Generieren einer (zufälligen) Wetterauskunft
+     */
     private String[] staedte = { "Berlin", "London", "Mailand", "Madrid" };
 
     /**

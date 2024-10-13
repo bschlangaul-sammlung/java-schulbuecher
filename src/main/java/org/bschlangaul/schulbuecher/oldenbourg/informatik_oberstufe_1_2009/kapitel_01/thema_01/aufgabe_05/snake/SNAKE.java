@@ -10,16 +10,24 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapi
  */
 class SNAKE
 {
-    /** Referenz auf Anfangszelle (Schwanz der Snake) */
+    /**
+     * Referenz auf Anfangszelle (Schwanz der Snake)
+     */
     private ZELLE anfang;
 
-    /** Referenz auf Endzelle (Kopf der Snake) */
+    /**
+     * Referenz auf Endzelle (Kopf der Snake)
+     */
     private ZELLE ende;
 
-    /** momentane Ausrichtung ('O';'W';'N';'S') der Snake */
+    /**
+     * momentane Ausrichtung ('O';'W';'N';'S') der Snake
+     */
     private char ausrichtung;
 
-    /** Referenz auf das Spiel-Objekt */
+    /**
+     * Referenz auf das Spiel-Objekt
+     */
     private SPIEL spiel;
 
     /**

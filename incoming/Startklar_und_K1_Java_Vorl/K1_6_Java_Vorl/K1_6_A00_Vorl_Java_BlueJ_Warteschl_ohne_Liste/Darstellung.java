@@ -2,7 +2,7 @@
 import java.util.*;
 /**
  * Stellt die Warteschlange im Wartezimmer dar
- * 
+ *
  * @author Albert Wiedemann
  * @version 1.0
  */
@@ -15,15 +15,19 @@ class Darstellung
     {
         /** äußeres Rechteck */
         private Rechteck außen;
-        /** inneres Rechteck */
+        /**
+     * inneres Rechteck */
         private Rechteck innen;
-        /** Anzeigetext */
+        /**
+     * Anzeigetext */
         private Text name;
-        /** Die Symbolfarben */
+        /**
+     * Die Symbolfarben */
         private String [] farben = {"weiß", "rot", "grün", "blau", "gelb", "cyan", "magenta", "braun", "orange", "grau"};
-        /** Zufallsgenerator */
+        /**
+     * Zufallsgenerator */
         private static Random ran = new Random();
-        
+
         /**
          * Der Konstruktor legt die Anzeigeelemente an.
          */
@@ -44,7 +48,7 @@ class Darstellung
             name.PositionSetzen(4, 24);
             name.TextSetzen("");
         }
-        
+
         /**
          * Setzt die Position des Symbols
          * @param x: x-Position der linken oberen Ecke
@@ -56,7 +60,7 @@ class Darstellung
             innen.PositionSetzen(x + 2, y + 2);
             name.PositionSetzen(x + 4, y + 24);
         }
-        
+
         /**
          * Setzt die Sichtbarkeit des Symbols
          * @param sichtbar: wenn wahr, wird das Symbol angezeigt
@@ -67,7 +71,7 @@ class Darstellung
             innen.SichtbarkeitSetzen(sichtbar);
             name.SichtbarkeitSetzen(sichtbar);
         }
-        
+
         /**
          * Setzt den Anzeigetext
          * @param text Anzeigetext
@@ -77,10 +81,12 @@ class Darstellung
             name.TextSetzen(text);
         }
     }
-    
-    /** Die darzustellende Warteschlange */
+
+    /**
+     * Die darzustellende Warteschlange */
     private Warteschlange warteschlange;
-    /** Der Pool an Patientensymbolen */
+    /**
+     * Der Pool an Patientensymbolen */
     private ArrayList<PatientenSymbol> symbole;
 
     /**
@@ -92,7 +98,7 @@ class Darstellung
         warteschlange = ws;
         symbole = new ArrayList<PatientenSymbol>();
     }
-    
+
     /**
      * Stellt den Inhalt der Warteschlange auf der Anzeige dar.
      */
@@ -100,7 +106,7 @@ class Darstellung
     {
         KnotenAnzeigen(warteschlange.AnfangGeben(), 0);
     }
-    
+
     /**
      * Stellt den aktuellen Knoten dar
      * @param aktuell der aktuelle Knoten

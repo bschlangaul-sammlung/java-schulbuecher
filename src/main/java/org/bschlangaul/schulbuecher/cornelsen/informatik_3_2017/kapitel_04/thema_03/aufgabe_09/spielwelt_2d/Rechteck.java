@@ -9,28 +9,44 @@ package org.bschlangaul.schulbuecher.cornelsen.informatik_3_2017.kapitel_04.them
  */
 public class Rechteck
 {
-    /** x-Position der linken oberen Ecke. */
+    /**
+     * x-Position der linken oberen Ecke.
+     */
     protected int x;
 
-    /** y-Position der linken oberen Ecke. */
+    /**
+     * y-Position der linken oberen Ecke.
+     */
     protected int y;
 
-    /** Breite des Rechtecks. */
+    /**
+     * Breite des Rechtecks.
+     */
     protected int breite;
 
-    /** Höhe des Rechtecks. */
+    /**
+     * Höhe des Rechtecks.
+     */
     protected int höhe;
 
-    /** Farbe des Rechtecks. */
+    /**
+     * Farbe des Rechtecks.
+     */
     protected String farbe;
 
-    /** Sichtbarkeit des Rechtecks. */
+    /**
+     * Sichtbarkeit des Rechtecks.
+     */
     protected boolean sichtbar;
 
-    /** Drehwinkel (mathematisch positiver Drehsinn) des Rechtecks in Grad. */
+    /**
+     * Drehwinkel (mathematisch positiver Drehsinn) des Rechtecks in Grad.
+     */
     protected int winkel;
 
-    /** Referenz auf das Delegate-Objekt. */
+    /**
+     * Referenz auf das Delegate-Objekt.
+     */
     Zeichenfenster.GrafikSymbol symbol;
 
     /**

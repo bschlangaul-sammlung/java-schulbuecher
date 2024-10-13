@@ -9,22 +9,34 @@ package org.bschlangaul.schulbuecher.cornelsen.informatik_3_2017.kapitel_04.them
  */
 class Baum extends Figur
 {
-    /** Der Himmel in der oberen Hälfte */
+    /**
+     * Der Himmel in der oberen Hälfte
+     */
     Rechteck himmel;
 
-    /** Der Boden in der unteren Hälfte */
+    /**
+     * Der Boden in der unteren Hälfte
+     */
     Rechteck boden;
 
-    /** Der Baumstamm */
+    /**
+     * Der Baumstamm
+     */
     Rechteck stamm;
 
-    /** Die Baumkrone */
+    /**
+     * Die Baumkrone
+     */
     Kreis krone;
 
-    /** Die aktuelle Jahreszeit */
+    /**
+     * Die aktuelle Jahreszeit
+     */
     String jahreszeit;
 
-    /** Die aktuelle Größe */
+    /**
+     * Die aktuelle Größe
+     */
     int größe;
 
     /**

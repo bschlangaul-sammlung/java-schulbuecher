@@ -5,13 +5,19 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_2_2010.kapi
  */
 class FigurenThread extends Thread
 {
-    /** Die zu verwaltende Figur */
+    /**
+     * Die zu verwaltende Figur
+     */
     private Figur figur;
 
-    /** Die Wartezeit der Figur */
+    /**
+     * Die Wartezeit der Figur
+     */
     private long warteZeit;
 
-    /** Endebedingung für die Threads */
+    /**
+     * Endebedingung für die Threads
+     */
     private static boolean ende;
 
     /**

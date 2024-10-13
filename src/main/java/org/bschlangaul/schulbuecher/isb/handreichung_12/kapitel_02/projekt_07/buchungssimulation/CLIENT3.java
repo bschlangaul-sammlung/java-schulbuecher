@@ -16,25 +16,39 @@ import java.net.Socket;
  */
 public class CLIENT3
 {
-    /** bidirektionale Schnittstelle zur Netzwerkprotokoll-Implementierung */
+    /**
+     * bidirektionale Schnittstelle zur Netzwerkprotokoll-Implementierung
+     */
     private Socket clientSocket = null;
 
-    /** Datenstrom zum Server */
+    /**
+     * Datenstrom zum Server
+     */
     private PrintWriter zumServer = null;
 
-    /** Datenstrom vom Server */
+    /**
+     * Datenstrom vom Server
+     */
     private BufferedReader vomServer = null;
 
-    /** Datenstrom von der Tastatur */
+    /**
+     * Datenstrom von der Tastatur
+     */
     private BufferedReader tastatur = null;
 
-    /** Botschaft vom Server */
+    /**
+     * Botschaft vom Server
+     */
     private String serverBotschaft;
 
-    /** Eingabe von Client an Server */
+    /**
+     * Eingabe von Client an Server
+     */
     private String clientEingabe;
 
-    /** Stringeingaben für die Simulation */
+    /**
+     * Stringeingaben für die Simulation
+     */
     private String[] eingaben = { "plaetze?", "buche" };
 
     /**

@@ -9,7 +9,9 @@ package org.bschlangaul.schulbuecher.cornelsen.informatik_6.kapitel_01.thema_06.
  */
 class Liste
 {
-    /** erstes Element der Liste */
+    /**
+     * erstes Element der Liste
+     */
     private Listenelement anfang;
 
     /**

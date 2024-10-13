@@ -10,13 +10,19 @@ import java.util.Random;
 
 class Verbraucher extends Thread
 {
-    /** Die mittlere Einlagerzeit pro Kiste */
+    /**
+     * Die mittlere Einlagerzeit pro Kiste
+     */
     private int zeit;
 
-    /** Der Zwischenspeicher */
+    /**
+     * Der Zwischenspeicher
+     */
     private Speicher speicher;
 
-    /** Zufallsgenerator für die Einlagerzeit. */
+    /**
+     * Zufallsgenerator für die Einlagerzeit.
+     */
     private Random ran;
 
     /**

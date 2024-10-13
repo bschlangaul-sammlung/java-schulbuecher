@@ -9,28 +9,44 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapi
  */
 class SPIEL
 {
-    /** Verwaltung der Darstellung */
+    /**
+     * Verwaltung der Darstellung
+     */
     private DARSTELLUNG darstellung;
 
-    /** Verwaltung des Spielfeldes */
+    /**
+     * Verwaltung des Spielfeldes
+     */
     private char[][] spielfeld;
 
-    /** Anzahl der Kästchen nach rechts */
+    /**
+     * Anzahl der Kästchen nach rechts
+     */
     private int kaestchenzahl_rechts;
 
-    /** Anzahl der Kästchen nach unten */
+    /**
+     * Anzahl der Kästchen nach unten
+     */
     private int kaestchenzahl_unten;
 
-    /** Spiel beendet oder nicht */
+    /**
+     * Spiel beendet oder nicht
+     */
     private boolean beendet;
 
-    /** Verwaltung des Snake-Objekts */
+    /**
+     * Verwaltung des Snake-Objekts
+     */
     private SNAKE snake;
 
-    /** Verwaltung des Maus-Objekts */
+    /**
+     * Verwaltung des Maus-Objekts
+     */
     private MAUS maus;
 
-    /** Verwaltung des Auto-Objekts */
+    /**
+     * Verwaltung des Auto-Objekts
+     */
     private AUTO auto;
 
     /**

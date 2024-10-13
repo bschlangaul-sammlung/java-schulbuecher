@@ -24,13 +24,19 @@ public class SERVER5
      */
     private ServerSocket serverSocket = null;
 
-    /** Portnummer des Ports, auf dem die Verbindungen etabliert sind */
+    /**
+     * Portnummer des Ports, auf dem die Verbindungen etabliert sind
+     */
     private int port;
 
-    /** speichert die aktuelle Anzahl der noch vorhandenen Plätze */
+    /**
+     * speichert die aktuelle Anzahl der noch vorhandenen Plätze
+     */
     private int plaetzevorhanden = 3;
 
-    /** dieses Platzkontignent wird immer wieder aufgefüllt */
+    /**
+     * dieses Platzkontignent wird immer wieder aufgefüllt
+     */
     private static int platzkontingent = 10;
 
     /**

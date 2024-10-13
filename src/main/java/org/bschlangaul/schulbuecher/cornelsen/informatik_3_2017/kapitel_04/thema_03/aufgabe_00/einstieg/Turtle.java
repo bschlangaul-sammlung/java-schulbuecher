@@ -9,31 +9,49 @@ package org.bschlangaul.schulbuecher.cornelsen.informatik_3_2017.kapitel_04.them
  */
 public class Turtle
 {
-    /** x-Position der Turtle. */
+    /**
+     * x-Position der Turtle.
+     */
     private int x;
 
-    /** y-Position der Turtle. */
+    /**
+     * y-Position der Turtle.
+     */
     private int y;
 
-    /** Größe der Turtle. */
+    /**
+     * Größe der Turtle.
+     */
     private int größe;
 
-    /** Farbe der Turtle. */
+    /**
+     * Farbe der Turtle.
+     */
     private String farbe;
 
-    /** Sichtbarkeit der Turtles. */
+    /**
+     * Sichtbarkeit der Turtles.
+     */
     private boolean sichtbar;
 
-    /** Drehwinkel (mathemtisch positiver Drehsinn) der Turtle in Grad. */
+    /**
+     * Drehwinkel (mathemtisch positiver Drehsinn) der Turtle in Grad.
+     */
     private int winkel;
 
-    /** Stiftposition */
+    /**
+     * Stiftposition
+     */
     private boolean stiftUnten;
 
-    /** Referenz auf das echte Turtlesybol. */
+    /**
+     * Referenz auf das echte Turtlesybol.
+     */
     Zeichenfenster.TurtleIntern symbol;
 
-    /** Referenz auf das Aktionsempfängerobjekt. */
+    /**
+     * Referenz auf das Aktionsempfängerobjekt.
+     */
     Zeichenfenster.AktionsEmpfaenger aktionsEmpfänger;
 
     /**

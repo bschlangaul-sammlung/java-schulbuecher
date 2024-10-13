@@ -11,10 +11,14 @@ import java.util.ArrayList;
  */
 class Bestellsystem
 {
-    /** Referenz auf die Speisekarte */
+    /**
+     * Referenz auf die Speisekarte
+     */
     private Speisekarte karte;
 
-    /** Referenz auf das Feld der Tische */
+    /**
+     * Referenz auf das Feld der Tische
+     */
     private ArrayList<Tisch> tische;
 
     /**

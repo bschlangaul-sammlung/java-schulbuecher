@@ -11,13 +11,19 @@ import java.awt.event.KeyEvent;
  */
 class Florian extends Figur
 {
-    /** Zähler für die Schritte */
+    /**
+     * Zähler für die Schritte
+     */
     int schritte;
 
-    /** Zähler für die gesammelten Blumen */
+    /**
+     * Zähler für die gesammelten Blumen
+     */
     int gesammelteBlumen;
 
-    /** Text für die Erfolgsanzeige */
+    /**
+     * Text für die Erfolgsanzeige
+     */
     Text anzeige;
 
     /**

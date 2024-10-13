@@ -9,16 +9,24 @@ package org.bschlangaul.schulbuecher.cornelsen.informatik_6.kapitel_01.thema_06.
  */
 class Spiel
 {
-    /** Stapel, von dem die Mäuse losgelaufen sind */
+    /**
+     * Stapel, von dem die Mäuse losgelaufen sind
+     */
     private Stapel ursprungsstapel;
 
-    /** Stapel, an dem die Mäuse angekommen sind */
+    /**
+     * Stapel, an dem die Mäuse angekommen sind
+     */
     private Stapel zielstapel;
 
-    /** Stapel für die Mäuse in der Sackgasse */
+    /**
+     * Stapel für die Mäuse in der Sackgasse
+     */
     private Stapel sackgassenstapel;
 
-    /** Spiel beendet oder nicht */
+    /**
+     * Spiel beendet oder nicht
+     */
     private boolean beendet;
 
     /**

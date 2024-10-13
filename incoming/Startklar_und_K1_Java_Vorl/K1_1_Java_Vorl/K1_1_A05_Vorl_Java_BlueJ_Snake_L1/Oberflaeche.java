@@ -5,7 +5,7 @@ import java.awt.event.*;
 
 /**
  * Verwaltet das Ausgabefenster.
- * 
+ *
  * @author Albert Wiedemann
  * @version 1.0
  */
@@ -21,23 +21,28 @@ class Oberflaeche
          * @param starttakt Der Starttakt in Millisekunden
          */
         void StartTaktSetzen(int starttakt);
-        
+
         /**
          * Startet das Spiel.
          */
         void StartAusführen();
     }
-    /** Anzeigegröße für eine Rasterkachel */
+    /**
+     * Anzeigegröße für eine Rasterkachel */
     private static final int rasterGröße = 40;
-    /** Höhe des Anzeigefensters */
+    /**
+     * Höhe des Anzeigefensters */
     private static final int höheFenster = rasterGröße * 20;
-    /** Breite des Anzeigefensters */
+    /**
+     * Breite des Anzeigefensters */
     private static final int breiteFenster = rasterGröße * 26;
     private static Oberflaeche o = new Oberflaeche();
     private JFrame fenster;
-    /** Eingabefeld für die Startgeschwindigkeit */
+    /**
+     * Eingabefeld für die Startgeschwindigkeit */
     private JTextField eingabe;
-    /** Referenz auf das zu steuernde Objekt.*/
+    /**
+     * Referenz auf das zu steuernde Objekt.*/
     private Steuerung s;
 
     /**
@@ -136,7 +141,7 @@ class Oberflaeche
         });
         fenster.add(buttonStart);
     }
-    
+
     /**
      * Setzt das zu steuernde Objekt.
      * @param s das zu steuernde Objekt

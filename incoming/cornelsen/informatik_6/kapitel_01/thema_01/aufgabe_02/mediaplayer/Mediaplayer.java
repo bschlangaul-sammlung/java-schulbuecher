@@ -20,15 +20,20 @@ import java.io.File;
  */
 public class Mediaplayer extends Application
 {
-    /** Warteschlange des Players */
+    /**
+     * Warteschlange des Players */
     private Warteschlange warteschlange;
-    /** Medium-Objekt */
+    /**
+     * Medium-Objekt */
     private Medium medium;
-    /** JavaFX-Media */
+    /**
+     * JavaFX-Media */
     private Media media;
-    /** JavaFX-Mediaplayer */
+    /**
+     * JavaFX-Mediaplayer */
     private MediaPlayer mediaPlayer;
-    /** JavaFX-Mediaview */
+    /**
+     * JavaFX-Mediaview */
     private MediaView mediaView;
 
     /**

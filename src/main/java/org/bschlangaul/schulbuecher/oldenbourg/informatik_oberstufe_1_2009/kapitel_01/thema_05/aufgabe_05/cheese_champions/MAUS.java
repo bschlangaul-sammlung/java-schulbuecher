@@ -9,13 +9,19 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapi
  */
 class MAUS implements DATENELEMENT
 {
-    /** nummer der Maus */
+    /**
+     * nummer der Maus
+     */
     private int nummer;
 
-    /** Anzahl der Siege */
+    /**
+     * Anzahl der Siege
+     */
     private int siegeszahl;
 
-    /** Anzahl der Niederlagen */
+    /**
+     * Anzahl der Niederlagen
+     */
     private int niederlagenzahl;
 
     /**

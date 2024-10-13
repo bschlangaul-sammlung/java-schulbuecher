@@ -15,22 +15,34 @@ import javax.swing.JFrame;
 
 class RumpfSymbol
 {
-    /** Das Anzeigefenster. */
+    /**
+     * Das Anzeigefenster.
+     */
     private JFrame fenster;
 
-    /** Anzeigegröße für das Rumpfelement */
+    /**
+     * Anzeigegröße für das Rumpfelement
+     */
     static final int größe = Oberflaeche.RasterGrößeGeben();
 
-    /** x-Position */
+    /**
+     * x-Position
+     */
     private int x;
 
-    /** y-Position */
+    /**
+     * y-Position
+     */
     private int y;
 
-    /** Anzeige */
+    /**
+     * Anzeige
+     */
     private JComponent anzeige;
 
-    /** Nachfolger des Rumpfsymbols */
+    /**
+     * Nachfolger des Rumpfsymbols
+     */
     private RumpfSymbol nachfolger;
 
     /**

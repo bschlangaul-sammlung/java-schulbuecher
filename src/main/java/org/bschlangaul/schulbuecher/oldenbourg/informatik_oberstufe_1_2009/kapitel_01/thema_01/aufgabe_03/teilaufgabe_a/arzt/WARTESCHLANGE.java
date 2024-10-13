@@ -5,10 +5,14 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapi
  */
 class WARTESCHLANGE
 {
-    /** Verwaltung des ersten Patienten in der Warteschlange. */
+    /**
+     * Verwaltung des ersten Patienten in der Warteschlange.
+     */
     private PATIENT anfang;
 
-    /** Verwaltung des letzten Patienten in der Warteschlange. */
+    /**
+     * Verwaltung des letzten Patienten in der Warteschlange.
+     */
     private PATIENT ende;
 
     /**

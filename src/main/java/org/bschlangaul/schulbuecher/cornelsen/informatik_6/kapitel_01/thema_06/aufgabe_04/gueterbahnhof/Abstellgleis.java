@@ -9,7 +9,9 @@ package org.bschlangaul.schulbuecher.cornelsen.informatik_6.kapitel_01.thema_06.
  */
 class Abstellgleis
 {
-    /** zugehöriger Stapel */
+    /**
+     * zugehöriger Stapel
+     */
     private Stapel stapel;
 
     /**

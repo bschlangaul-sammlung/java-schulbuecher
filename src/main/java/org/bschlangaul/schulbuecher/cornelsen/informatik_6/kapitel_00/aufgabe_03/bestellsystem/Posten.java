@@ -9,10 +9,14 @@ package org.bschlangaul.schulbuecher.cornelsen.informatik_6.kapitel_00.aufgabe_0
  */
 class Posten
 {
-    /** Name des Artikels */
+    /**
+     * Name des Artikels
+     */
     private String artikel;
 
-    /** Anzahl des Artikels */
+    /**
+     * Anzahl des Artikels
+     */
     private int anzahl;
 
     /**

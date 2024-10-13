@@ -9,25 +9,39 @@ package org.bschlangaul.schulbuecher.cornelsen.informatik_3_2017.kapitel_04.them
  */
 public class Kreis
 {
-    /** x-Position des Kreismittelpunktes. */
+    /**
+     * x-Position des Kreismittelpunktes.
+     */
     protected int x;
 
-    /** y-Position des Kreismittelpunktes. */
+    /**
+     * y-Position des Kreismittelpunktes.
+     */
     protected int y;
 
-    /** Radius des Kreises. */
+    /**
+     * Radius des Kreises.
+     */
     protected int radius;
 
-    /** Farbe des Kreises. */
+    /**
+     * Farbe des Kreises.
+     */
     protected String farbe;
 
-    /** Sichtbarkeit des Kreises. */
+    /**
+     * Sichtbarkeit des Kreises.
+     */
     protected boolean sichtbar;
 
-    /** Drehwinkel (mathematisch positiver Drehsinn) des Kreises in Grad. */
+    /**
+     * Drehwinkel (mathematisch positiver Drehsinn) des Kreises in Grad.
+     */
     protected int winkel;
 
-    /** Referenz auf das Delegate-Objekt. */
+    /**
+     * Referenz auf das Delegate-Objekt.
+     */
     Zeichenfenster.GrafikSymbol symbol;
 
     /**

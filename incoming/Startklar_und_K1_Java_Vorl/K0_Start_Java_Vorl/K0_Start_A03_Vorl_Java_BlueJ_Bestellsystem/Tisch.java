@@ -1,16 +1,17 @@
 import java.util.ArrayList;
 /**
  * Klasse zur Verwaltung der Bestellungen eines Tisches
- * 
+ *
  * @author Klaus Reinold
  * @version 0.9
  */
 class Tisch
 {
-    /** Feld der bestellten Posten */
+    /**
+     * Feld der bestellten Posten */
     private ArrayList<Posten> bestelltePosten;
-    
-    
+
+
     /**
      * Konstruktor für Objekte der Klasse Tisch
      */
@@ -27,7 +28,7 @@ class Tisch
     void Bestellen(String artikel,int anzahl)
     {
         bestelltePosten.add(new Posten(artikel, anzahl));
-    
+
 
     /**
      * Gibt die bestellten Posten eines Tisches zurück
@@ -37,5 +38,3 @@ class Tisch
     {
         return bestelltePosten;
     }
-
-

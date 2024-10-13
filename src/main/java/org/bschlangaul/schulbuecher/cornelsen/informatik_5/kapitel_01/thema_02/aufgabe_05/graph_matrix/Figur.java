@@ -9,28 +9,44 @@ package org.bschlangaul.schulbuecher.cornelsen.informatik_5.kapitel_01.thema_02.
  */
 public class Figur
 {
-    /** x-Position der Figur. */
+    /**
+     * x-Position der Figur.
+     */
     private int x;
 
-    /** y-Position der Figur. */
+    /**
+     * y-Position der Figur.
+     */
     private int y;
 
-    /** Größe der Figur. */
+    /**
+     * Größe der Figur.
+     */
     private int größe;
 
-    /** Farbe der Figur. */
+    /**
+     * Farbe der Figur.
+     */
     private String farbe;
 
-    /** Sichtbarkeit der Figur. */
+    /**
+     * Sichtbarkeit der Figur.
+     */
     private boolean sichtbar;
 
-    /** Drehwinkel (mathemtisch positiver Drehsinn) der Turtle in Grad. */
+    /**
+     * Drehwinkel (mathemtisch positiver Drehsinn) der Turtle in Grad.
+     */
     private int winkel;
 
-    /** Referenz auf das echte Figursymbol. */
+    /**
+     * Referenz auf das echte Figursymbol.
+     */
     Zeichenfenster.FigurIntern symbol;
 
-    /** Referenz auf das Aktionsempfängerobjekt. */
+    /**
+     * Referenz auf das Aktionsempfängerobjekt.
+     */
     Zeichenfenster.AktionsEmpfaenger aktionsEmpfänger;
 
     /**

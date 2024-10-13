@@ -10,10 +10,14 @@ import java.awt.*;
 
 class RECHTECK
 {
-    /** Das Anzeigefenster. */
+    /**
+     * Das Anzeigefenster.
+     */
     private Canvas anzeige;
 
-    /** Interna */
+    /**
+     * Interna
+     */
     private OBERFLAECHE.FARBE aktFarbe;
 
     /**

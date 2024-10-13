@@ -11,13 +11,19 @@ import org.bschlangaul.schulbuecher.cornelsen.zeichen_flaeche.Figur;
  */
 class Jaeger extends Figur
 {
-    /** Breite des Spielfeldes. */
+    /**
+     * Breite des Spielfeldes.
+     */
     int breite;
 
-    /** Höhe des Spielfeldes. */
+    /**
+     * Höhe des Spielfeldes.
+     */
     int höhe;
 
-    /** Zähler für dei Berührungen. */
+    /**
+     * Zähler für dei Berührungen.
+     */
     int zähler;
 
     /**

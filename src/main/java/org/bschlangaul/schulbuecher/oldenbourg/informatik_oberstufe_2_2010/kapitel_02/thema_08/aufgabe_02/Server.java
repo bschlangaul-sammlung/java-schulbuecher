@@ -13,13 +13,19 @@ import java.util.ArrayList;
  */
 class Server
 {
-    /** Endeangabe */
+    /**
+     * Endeangabe
+     */
     private boolean beendenEmpfangen;
 
-    /** Liste mit den aktuellen Klienten */
+    /**
+     * Liste mit den aktuellen Klienten
+     */
     private ArrayList<ClientThread> angemeldet;
 
-    /** Der Serversocket */
+    /**
+     * Der Serversocket
+     */
     ServerSocket server;
 
     /**

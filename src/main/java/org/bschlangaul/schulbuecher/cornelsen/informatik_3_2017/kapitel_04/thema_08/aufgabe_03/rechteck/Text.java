@@ -9,25 +9,39 @@ package org.bschlangaul.schulbuecher.cornelsen.informatik_3_2017.kapitel_04.them
  */
 public class Text
 {
-    /** x-Position der linken Seite der Grundlinie. */
+    /**
+     * x-Position der linken Seite der Grundlinie.
+     */
     private int x;
 
-    /** y-Position der Grundlinie. */
+    /**
+     * y-Position der Grundlinie.
+     */
     private int y;
 
-    /** Farbe des Textes. */
+    /**
+     * Farbe des Textes.
+     */
     private String farbe;
 
-    /** Sichtbarkeit des Textes. */
+    /**
+     * Sichtbarkeit des Textes.
+     */
     private boolean sichtbar;
 
-    /** Drehwinkel (mathematisch positiver Drehsinn) des Textes in Grad. */
+    /**
+     * Drehwinkel (mathematisch positiver Drehsinn) des Textes in Grad.
+     */
     private int winkel;
 
-    /** Größe des Textes in Punkten. */
+    /**
+     * Größe des Textes in Punkten.
+     */
     private int textgröße;
 
-    /** Referenz auf das Delegate-Objekt. */
+    /**
+     * Referenz auf das Delegate-Objekt.
+     */
     private Zeichenfenster.TextIntern symbol;
 
     /**

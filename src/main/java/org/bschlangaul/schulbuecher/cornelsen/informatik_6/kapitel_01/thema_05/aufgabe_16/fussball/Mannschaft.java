@@ -9,13 +9,19 @@ package org.bschlangaul.schulbuecher.cornelsen.informatik_6.kapitel_01.thema_05.
  */
 class Mannschaft implements Datenelement
 {
-    /** Name der Mannschaft */
+    /**
+     * Name der Mannschaft
+     */
     private String name;
 
-    /** Punkte der Mannschaft */
+    /**
+     * Punkte der Mannschaft
+     */
     private int punkte;
 
-    /** Anzahl bisheriger Spiele */
+    /**
+     * Anzahl bisheriger Spiele
+     */
     private int spiele;
 
     /**

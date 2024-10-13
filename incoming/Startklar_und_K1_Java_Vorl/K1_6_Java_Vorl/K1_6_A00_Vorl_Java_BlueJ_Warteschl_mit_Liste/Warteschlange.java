@@ -1,13 +1,14 @@
 
 /**
  * Warteschlange unter Zuhilfenahme der Liste
- * 
+ *
  * @author Klaus Reinold
  * @version 0.9
  */
 class Warteschlange
 {
-    /** genutzte Liste */
+    /**
+     * genutzte Liste */
     private Liste liste;
 
     /**
@@ -29,7 +30,7 @@ class Warteschlange
 
     /**
      * Entfernt den ersten Patient aus der Warteschlange und gibt ihn zurück.
-     * @return bisheriger erster Patient 
+     * @return bisheriger erster Patient
      */
     Patient Entfernen()
     {
@@ -45,7 +46,7 @@ class Warteschlange
     {
         liste.InformationAusgeben();
     }
-    
+
     /**
      * Gibt den ersten Knoten zurück.
      * Wird in der Darstellung benötigt

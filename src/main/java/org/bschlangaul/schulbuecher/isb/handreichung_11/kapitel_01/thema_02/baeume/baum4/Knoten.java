@@ -9,13 +9,19 @@ package org.bschlangaul.schulbuecher.isb.handreichung_11.kapitel_01.thema_02.bae
  */
 class Knoten extends BaumElement
 {
-    /** Referenz auf den linken Nachfolger */
+    /**
+     * Referenz auf den linken Nachfolger
+     */
     private BaumElement linkerNachfolger;
 
-    /** Referenz auf den rechten Nachfolger */
+    /**
+     * Referenz auf den rechten Nachfolger
+     */
     private BaumElement rechterNachfolger;
 
-    /** Referenz auf das Datenelement */
+    /**
+     * Referenz auf das Datenelement
+     */
     private DatenElement daten;
 
     /**

@@ -1,15 +1,16 @@
 
 /**
  * Beschreibung der Klasse Patient
- * 
- * @author Klaus Reinold 
+ *
+ * @author Klaus Reinold
  * @version 0.9
  */
 class Patient
 {
-    /** Name des Patienten */
+    /**
+     * Name des Patienten */
     private String name;
-    
+
     /**
      * Konstruktor des Patienten
      * @param s Name des Patienten
@@ -26,7 +27,7 @@ class Patient
     {
         System.out.println(name);
     }
-    
+
     /**
      * Gibt den Namen des Patienten zurück
      * @return Name des Patienten

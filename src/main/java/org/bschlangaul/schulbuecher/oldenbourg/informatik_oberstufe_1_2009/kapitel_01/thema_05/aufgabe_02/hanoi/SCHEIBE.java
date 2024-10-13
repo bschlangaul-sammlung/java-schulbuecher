@@ -13,16 +13,24 @@ import java.util.Random;
  */
 class SCHEIBE implements DATENELEMENT
 {
-    /** Höhe einer Scheibe */
+    /**
+     * Höhe einer Scheibe
+     */
     private int hoehe;
 
-    /** Breite einer Scheibe */
+    /**
+     * Breite einer Scheibe
+     */
     private int breite;
 
-    /** Leinwand zur Anzeige der Scheibe */
+    /**
+     * Leinwand zur Anzeige der Scheibe
+     */
     private Canvas c;
 
-    /** Zufallszahlgenerator für die Farbe der Scheibe */
+    /**
+     * Zufallszahlgenerator für die Farbe der Scheibe
+     */
     private Random zgenerator;
 
     /**

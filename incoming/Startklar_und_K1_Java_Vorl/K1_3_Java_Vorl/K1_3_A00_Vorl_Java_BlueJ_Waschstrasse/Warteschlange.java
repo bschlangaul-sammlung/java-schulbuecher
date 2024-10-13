@@ -1,16 +1,18 @@
 
 /**
  * Beschreibung der Warteschlange
- * 
+ *
  * @author Klaus Reinold
  * @version 0.9
  */
 class Warteschlange
 {
-    /** erster Knoten der Warteschlange */
+    /**
+     * erster Knoten der Warteschlange */
     private Knoten anfang;
 
-    /** letzter Knoten der Warteschlange */
+    /**
+     * letzter Knoten der Warteschlange */
     private Knoten ende;
 
     /**
@@ -18,14 +20,14 @@ class Warteschlange
      */
     Warteschlange()
     {
-        anfang = null; 
+        anfang = null;
         ende = null;
     }
 
     /**
      * Fügt ein neues Auto am Ende der Warteschlange ein.
      * @param autoNeu neues Auto
-     * 
+     *
      */
     void Einfügen(Auto autoNeu)
     {
@@ -44,7 +46,7 @@ class Warteschlange
 
     /**
      * Entfernt das erste Auto aus der Warteschlange und gibt es zurück.
-     * @return bisheriger erster Wagen 
+     * @return bisheriger erster Wagen
      */
     Auto Entfernen()
     {

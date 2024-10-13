@@ -12,10 +12,14 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_2_2010.kapi
  */
 public class Arbeit
 {
-    /** zu untersuchender AVL-Baum */
+    /**
+     * zu untersuchender AVL-Baum
+     */
     AvlBaum baum;
 
-    /** zu untersuchende Liste */
+    /**
+     * zu untersuchende Liste
+     */
     Liste liste;
 
     /**

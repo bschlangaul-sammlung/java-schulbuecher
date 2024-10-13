@@ -11,7 +11,9 @@ import java.util.ArrayList;
  */
 class Speisekarte
 {
-    /** Feld der Speisekarteneinträge */
+    /**
+     * Feld der Speisekarteneinträge
+     */
     private ArrayList<Speisekarteneintrag> einträge;
 
     /**

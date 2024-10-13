@@ -9,10 +9,14 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapi
  */
 public class HANOITURM
 {
-    /** Position des Turms */
+    /**
+     * Position des Turms
+     */
     private int xpos, ypos;
 
-    /** Nutzung der Datenstruktur Stapel */
+    /**
+     * Nutzung der Datenstruktur Stapel
+     */
     private STAPEL stapel;
 
     /**

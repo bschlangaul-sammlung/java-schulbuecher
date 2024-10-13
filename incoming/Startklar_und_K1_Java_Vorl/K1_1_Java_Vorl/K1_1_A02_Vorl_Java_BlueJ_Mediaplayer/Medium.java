@@ -1,13 +1,14 @@
 
 /**
  * Beschreibung der Klasse Medium
- * 
- * @author Klaus Reinold 
+ *
+ * @author Klaus Reinold
  * @version 0.9
  */
 class Medium
 {
-    /** Dateiname */
+    /**
+     * Dateiname */
     private String name;
 
     //Die Referenz auf den Nachfolger und die passenden Methoden fehlen!

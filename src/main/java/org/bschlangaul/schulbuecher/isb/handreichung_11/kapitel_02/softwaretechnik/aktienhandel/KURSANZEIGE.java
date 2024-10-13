@@ -15,7 +15,9 @@ import javax.swing.JFrame;
  */
 class KURSANZEIGE
 {
-    /** Anzahl der angezeigten Kurse */
+    /**
+     * Anzahl der angezeigten Kurse
+     */
     static final int kursAnzahl = 20;
 
     private JFrame fenster;

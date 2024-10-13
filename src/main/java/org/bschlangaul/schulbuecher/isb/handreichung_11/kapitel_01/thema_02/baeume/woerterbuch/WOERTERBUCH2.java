@@ -9,7 +9,9 @@ package org.bschlangaul.schulbuecher.isb.handreichung_11.kapitel_01.thema_02.bae
  */
 class WOERTERBUCH2
 {
-    /** Referenz uaf das benötigte BAUM-Objekt */
+    /**
+     * Referenz uaf das benötigte BAUM-Objekt
+     */
     BAUM baum;
 
     /**

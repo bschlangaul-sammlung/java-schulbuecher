@@ -13,13 +13,19 @@ import java.net.Socket;
  */
 class ClientThread extends Thread
 {
-    /** Das Verbindungsobjekt */
+    /**
+     * Das Verbindungsobjekt
+     */
     private Socket socket;
 
-    /** Serverobjekt */
+    /**
+     * Serverobjekt
+     */
     private Server server;
 
-    /** Ausgabeobjekt */
+    /**
+     * Ausgabeobjekt
+     */
     OutputStream out;
 
     /**

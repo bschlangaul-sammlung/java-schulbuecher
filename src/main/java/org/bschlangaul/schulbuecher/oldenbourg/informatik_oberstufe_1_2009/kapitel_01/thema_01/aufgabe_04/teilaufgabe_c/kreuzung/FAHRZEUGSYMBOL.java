@@ -10,15 +10,21 @@ import java.awt.*;
 
 class FAHRZEUGSYMBOL
 {
-    /** Das Anzeigefenster. */
+    /**
+     * Das Anzeigefenster.
+     */
     protected Frame fenster;
 
-    /** Anzeigegröße für ein Fahrzeug */
+    /**
+     * Anzeigegröße für ein Fahrzeug
+     */
     protected int laenge;
 
     protected static final int breite = OBERFLAECHE.RasterGroesseGeben() / 2;
 
-    /** Interna */
+    /**
+     * Interna
+     */
     protected String aktFarbe;
 
     protected float x;

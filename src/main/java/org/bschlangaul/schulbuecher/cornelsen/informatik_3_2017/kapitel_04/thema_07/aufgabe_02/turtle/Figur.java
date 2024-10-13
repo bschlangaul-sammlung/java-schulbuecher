@@ -9,19 +9,29 @@ package org.bschlangaul.schulbuecher.cornelsen.informatik_3_2017.kapitel_04.them
  */
 public class Figur
 {
-    /** x-Position der Figur. */
+    /**
+     * x-Position der Figur.
+     */
     private int x;
 
-    /** y-Position der Figur. */
+    /**
+     * y-Position der Figur.
+     */
     private int y;
 
-    /** Drehwinkel (mathemtisch positiver Drehsinn) der Turtle in Grad. */
+    /**
+     * Drehwinkel (mathemtisch positiver Drehsinn) der Turtle in Grad.
+     */
     private int winkel;
 
-    /** Referenz auf das echte Figursymbol. */
+    /**
+     * Referenz auf das echte Figursymbol.
+     */
     Zeichenfenster.FigurIntern symbol;
 
-    /** Referenz auf das Aktionsempfängerobjekt. */
+    /**
+     * Referenz auf das Aktionsempfängerobjekt.
+     */
     Zeichenfenster.AktionsEmpfaenger aktionsEmpfänger;
 
     /**

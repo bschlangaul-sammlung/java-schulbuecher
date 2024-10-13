@@ -9,13 +9,19 @@ package org.bschlangaul.schulbuecher.isb.handreichung_11.kapitel_03.anwendungsor
  */
 class KNOTEN_BAUM extends BAUMELEMENT
 {
-    /** Referenz auf den linken Nachfolger */
+    /**
+     * Referenz auf den linken Nachfolger
+     */
     private BAUMELEMENT linkerNachfolger;
 
-    /** Referenz auf den rechten Nachfolger */
+    /**
+     * Referenz auf den rechten Nachfolger
+     */
     private BAUMELEMENT rechterNachfolger;
 
-    /** Referenz auf das Datenelement */
+    /**
+     * Referenz auf das Datenelement
+     */
     private DATENELEMENT daten;
 
     /**
