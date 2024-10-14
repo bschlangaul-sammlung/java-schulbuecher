@@ -1,12 +1,5 @@
 package org.bschlangaul.schulbuecher.cornelsen.informatik_3_2017.kapitel_04.thema_08.aufgabe_05c.kruemel;
 
-/**
- * Write a description of class AlleKrümel here.
- *
- * @author (your name)
- *
- * @version (a version number or a date)
- */
 class AlleKruemel
 {
     /**

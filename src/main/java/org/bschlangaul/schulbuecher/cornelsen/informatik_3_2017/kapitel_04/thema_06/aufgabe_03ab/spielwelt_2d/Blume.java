@@ -1,5 +1,7 @@
 package org.bschlangaul.schulbuecher.cornelsen.informatik_3_2017.kapitel_04.thema_06.aufgabe_03ab.spielwelt_2d;
 
+import org.bschlangaul.schulbuecher.cornelsen.shared.graphics_and_games.Figur;
+
 /**
  * Blume, die darauf wartet gesammelt zu werden
  *
@@ -68,7 +70,7 @@ class Blume extends Figur
     }
 
     @Override
-    void AktionAusführen()
+    public void AktionAusführen()
     {
         GepflücktWerden();
     }

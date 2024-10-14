@@ -1,5 +1,7 @@
 package org.bschlangaul.schulbuecher.cornelsen.informatik_3_2017.kapitel_04.thema_05.aufgabe_07.kruemel;
 
+import org.bschlangaul.schulbuecher.cornelsen.shared.graphics_and_games.Figur;
+
 /**
  * Verwaltet ein zweites Monster
  *
@@ -113,7 +115,7 @@ class Monster2 extends Figur
      * @param taste die gedrückten Taste
      */
     @Override
-    void TasteGedrückt(char taste)
+    public void TasteGedrückt(char taste)
     {
         if (taste == 'a')
         {
@@ -145,7 +147,7 @@ class Monster2 extends Figur
     /**
      * Das Monster geht maximal bis zum Rand
      */
-    void AktionAusführen()
+    public void AktionAusführen()
     {
         if (WinkelGeben() == 0)
         {

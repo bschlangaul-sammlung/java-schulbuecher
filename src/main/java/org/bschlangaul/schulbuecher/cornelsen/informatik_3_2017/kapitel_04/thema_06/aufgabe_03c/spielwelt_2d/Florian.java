@@ -2,6 +2,8 @@ package org.bschlangaul.schulbuecher.cornelsen.informatik_3_2017.kapitel_04.them
 
 import java.awt.event.KeyEvent;
 
+import org.bschlangaul.schulbuecher.cornelsen.shared.graphics_and_games.Figur;
+
 /**
  * Eine Spielfigur in der Blumenwelt.
  *
@@ -210,7 +212,7 @@ class Florian extends Figur
      * @param taste gedrückte Sondertaste
      */
     @Override
-    void SonderTasteGedrückt(int taste)
+    public void SonderTasteGedrückt(int taste)
     {
         if (taste == KeyEvent.VK_RIGHT)
         {
@@ -229,7 +231,7 @@ class Florian extends Figur
      * Ständige Bewegung, außer Florian ist an der Grenze seiner Welt.
      */
     @Override
-    void AktionAusführen()
+    public void AktionAusführen()
     {
         Gehen();
         Pflücken();

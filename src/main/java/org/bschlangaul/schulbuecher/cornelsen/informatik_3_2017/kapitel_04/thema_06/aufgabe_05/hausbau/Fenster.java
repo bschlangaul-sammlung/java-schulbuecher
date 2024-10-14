@@ -1,5 +1,7 @@
 package org.bschlangaul.schulbuecher.cornelsen.informatik_3_2017.kapitel_04.thema_06.aufgabe_05.hausbau;
 
+import org.bschlangaul.schulbuecher.cornelsen.shared.graphics_and_games.Rechteck;
+
 /**
  * Erzeugt das Rechteck für die Fenster des Hauses.
  *
@@ -37,7 +39,7 @@ class Fenster extends Rechteck
      * Sorgt dafür, dass die Farbe nicht verändert werden kann
      */
     @Override
-    void FarbeSetzen(String farbe)
+    public void FarbeSetzen(String farbe)
     {
         // nichts
     }

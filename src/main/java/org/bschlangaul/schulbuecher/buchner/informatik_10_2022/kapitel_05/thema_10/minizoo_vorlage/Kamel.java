@@ -3,6 +3,7 @@ package org.bschlangaul.schulbuecher.buchner.informatik_10_2022.kapitel_05.thema
 /**
  * Klasse zur Darstellung eines Kamels
  */
+@SuppressWarnings("unused")
 public class Kamel
 {
     private String name;

@@ -3,6 +3,7 @@ package org.bschlangaul.schulbuecher.buchner.informatik_10_2022.kapitel_05.thema
 /**
  * Klasse zur Darstellung eines Patienten mit Name und Alter
  */
+@SuppressWarnings("unused")
 public class Patient
 {
     private String name;

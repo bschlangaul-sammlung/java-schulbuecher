@@ -1,5 +1,7 @@
 package org.bschlangaul.schulbuecher.cornelsen.informatik_3_2017.kapitel_04.thema_08.aufgabe_04.regen;
 
+import org.bschlangaul.schulbuecher.cornelsen.shared.graphics_and_games.Ereignisbehandlung;
+
 /**
  * Steuert den Regen
  *
@@ -21,7 +23,7 @@ class Regen extends Ereignisbehandlung
      * Erzeugt bei jedem Taktimpuls einen neuen Tropfen
      */
     @Override
-    void TaktImpulsAusführen()
+    public void TaktImpulsAusführen()
     {
         new RegenTropfen();
     }
@@ -35,7 +37,7 @@ class Regen extends Ereignisbehandlung
      *     benötigt)
      */
     @Override
-    void MausGeklickt(int x, int y, int anzahl)
+    public void MausGeklickt(int x, int y, int anzahl)
     {
         new RegenTropfen(x, y);
     }

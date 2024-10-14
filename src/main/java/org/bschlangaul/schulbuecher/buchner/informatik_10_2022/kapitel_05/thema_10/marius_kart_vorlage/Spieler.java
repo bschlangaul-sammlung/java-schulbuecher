@@ -4,6 +4,7 @@ package org.bschlangaul.schulbuecher.buchner.informatik_10_2022.kapitel_05.thema
  * Klasse zur Darstellung eines Spielers in Marius-Kart mit Name, Gefährt,
  * Stärke und gesammelten Items
  */
+@SuppressWarnings("unused")
 public class Spieler
 {
     private String name;

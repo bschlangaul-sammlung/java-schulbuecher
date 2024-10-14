@@ -2,6 +2,8 @@ package org.bschlangaul.schulbuecher.cornelsen.informatik_3_2017.kapitel_04.them
 
 import java.util.Random;
 
+import org.bschlangaul.schulbuecher.cornelsen.shared.graphics_and_games.Ereignisbehandlung;
+
 /**
  * Schafft den Rahmen für das Spiel.
  *
@@ -34,7 +36,7 @@ class Rahmen extends Ereignisbehandlung
      * nichts
      */
     @Override
-    void SonderTasteGedrückt(int taste)
+    public void SonderTasteGedrückt(int taste)
     {
     }
 
@@ -42,7 +44,7 @@ class Rahmen extends Ereignisbehandlung
      * nichts
      */
     @Override
-    void TasteGedrückt(char taste)
+    public void TasteGedrückt(char taste)
     {
     }
 
@@ -50,7 +52,7 @@ class Rahmen extends Ereignisbehandlung
      * nichts
      */
     @Override
-    void TaktImpulsAusführen()
+    public void TaktImpulsAusführen()
     {
     }
 }

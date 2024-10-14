@@ -13,6 +13,7 @@ import java.util.Random;
  * @version 2022-09-12
  */
 // Diese Klasse übersetzt nach Download nicht. Das ist gewollt, vgl. Aufgabe 17a!
+@SuppressWarnings("unused")
 public class Spieler
 {
     private String name;

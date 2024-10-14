@@ -1,5 +1,7 @@
 package org.bschlangaul.schulbuecher.cornelsen.informatik_3_2017.kapitel_04.thema_06.aufgabe_04.regen;
 
+import org.bschlangaul.schulbuecher.cornelsen.shared.graphics_and_games.Figur;
+
 /**
  * Stellt einen Regentropfen in seinen verschiedenen Phasen dar.
  *
@@ -57,7 +59,7 @@ class RegenTropfen extends Figur
      * Methode wird aufgerufen, wenn die Figur handeln soll.
      */
     @Override
-    void AktionAusführen()
+    public void AktionAusführen()
     {
         if (Berührt("schwarz"))
         {

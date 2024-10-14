@@ -1,5 +1,7 @@
 package org.bschlangaul.schulbuecher.cornelsen.informatik_3_2017.kapitel_04.thema_08.aufgabe_05c.kruemel;
 
+import org.bschlangaul.schulbuecher.cornelsen.shared.graphics_and_games.*;
+
 /**
  * Verwaltet das Monster
  *
@@ -147,7 +149,7 @@ class Monster extends Figur
      * @param taste KeyCode der gedrückten Taste
      */
     @Override
-    void SonderTasteGedrückt(int taste)
+    public void SonderTasteGedrückt(int taste)
     {
         switch (taste)
         {
@@ -175,7 +177,7 @@ class Monster extends Figur
      * @param taste die gedrückte Taste
      */
     @Override
-    void TasteGedrückt(char taste)
+    public void TasteGedrückt(char taste)
     {
         switch (taste)
         {
@@ -188,7 +190,7 @@ class Monster extends Figur
     /**
      * Das Monster geht maximal bis zum Rand
      */
-    void AktionAusführen()
+    public void AktionAusführen()
     {
         if (mundIstZu)
         {

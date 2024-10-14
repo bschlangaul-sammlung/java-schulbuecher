@@ -4,6 +4,7 @@ package org.bschlangaul.schulbuecher.buchner.informatik_10_2022.kapitel_05.thema
  * Klasse zur Darstellung eines Items in Marius-Kart, das vom Spieler
  * eingesammelt und benutzt werden kann
  */
+@SuppressWarnings("unused")
 public class Item
 {
     private String name;

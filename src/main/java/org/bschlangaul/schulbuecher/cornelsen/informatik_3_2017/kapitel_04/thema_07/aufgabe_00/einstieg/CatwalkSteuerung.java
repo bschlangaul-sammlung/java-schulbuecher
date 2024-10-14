@@ -1,5 +1,7 @@
 package org.bschlangaul.schulbuecher.cornelsen.informatik_3_2017.kapitel_04.thema_07.aufgabe_00.einstieg;
 
+import org.bschlangaul.schulbuecher.cornelsen.shared.graphics_and_games.Figur;
+
 /**
  * Steuerung der Leuchten auf dem Catwalk
  *
@@ -33,7 +35,7 @@ class CatwalkSteuerung extends Figur
      * Lässt die Farben eine Spalte weiter laufen
      */
     @Override
-    void AktionAusführen()
+    public void AktionAusführen()
     {
         for (int spalte = 0; spalte < laufsteg.SpaltenanzahlGeben()
                 - 1; spalte = spalte + 1)

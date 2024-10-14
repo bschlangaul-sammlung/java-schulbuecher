@@ -3,6 +3,7 @@ package org.bschlangaul.schulbuecher.buchner.informatik_10_2022.kapitel_05.thema
 /**
  * Klasse zur Darstellung eines Schülers mit Namen und Informatiknoten
  */
+@SuppressWarnings("unused")
 public class Schueler
 {
     private String name;

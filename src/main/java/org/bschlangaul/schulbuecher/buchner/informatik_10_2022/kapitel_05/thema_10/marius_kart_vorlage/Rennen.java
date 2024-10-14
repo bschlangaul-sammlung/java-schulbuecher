@@ -4,6 +4,7 @@ package org.bschlangaul.schulbuecher.buchner.informatik_10_2022.kapitel_05.thema
  * Klasse zur Darstellung eines Rennens zwischen maximal 8 Spielern in
  * Marius-Kart
  */
+@SuppressWarnings("unused")
 public class Rennen
 {
     private String name;

@@ -3,6 +3,7 @@ package org.bschlangaul.schulbuecher.buchner.informatik_10_2022.kapitel_05.thema
 /**
  * Klasse zur Darstellung eines Löwen
  */
+@SuppressWarnings("unused")
 public class Loewe
 {
     private String name;

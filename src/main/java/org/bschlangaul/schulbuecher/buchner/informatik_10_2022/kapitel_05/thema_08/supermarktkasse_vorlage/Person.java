@@ -3,6 +3,7 @@ package org.bschlangaul.schulbuecher.buchner.informatik_10_2022.kapitel_05.thema
 /**
  * Klasse zur Darstellung einer Person
  */
+@SuppressWarnings("unused")
 public class Person
 {
     private String name;

@@ -1,7 +1,5 @@
 package org.bschlangaul.schulbuecher.buchner.informatik_10_2022.kapitel_05.thema_10.unter_uns_vorlage;
 
-import java.util.Random;
-
 /**
  * Projekt 5-10_UnterUns (ÜüV Aufgabe 17)
  *
@@ -9,6 +7,7 @@ import java.util.Random;
  *
  * @version 2022-09-12
  */
+@SuppressWarnings("unused")
 public class Spiel
 {
     private String name;

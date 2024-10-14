@@ -1,5 +1,7 @@
 package org.bschlangaul.schulbuecher.cornelsen.informatik_3_2017.kapitel_04.thema_06.aufgabe_03ab.spielwelt_2d;
 
+import org.bschlangaul.schulbuecher.cornelsen.shared.graphics_and_games.Rechteck;
+
 /**
  * Zellen als Bestandteile der Welt, in der sich die Figuren bewegen können.
  * Jede Zelle hat die Größe 46x46 Pixel. Beachte Ränder um die Zellen, bei der

@@ -1,5 +1,7 @@
 package org.bschlangaul.schulbuecher.cornelsen.informatik_3_2017.kapitel_04.thema_06.aufgabe_06.kruemel;
 
+import org.bschlangaul.schulbuecher.cornelsen.shared.graphics_and_games.Text;
+
 /**
  * Stellt den Gewinntext dar
  *

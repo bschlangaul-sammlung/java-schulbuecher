@@ -3,6 +3,7 @@ package org.bschlangaul.schulbuecher.buchner.informatik_10_2022.kapitel_05.thema
 /**
  * Klasse zur Darstellung eines Gefährts in Marius-Kart mit Namen und Farbe
  */
+@SuppressWarnings("unused")
 public class Gefaehrt
 {
     private String name;

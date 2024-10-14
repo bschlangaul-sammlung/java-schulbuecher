@@ -7,6 +7,7 @@ package org.bschlangaul.schulbuecher.buchner.informatik_10_2022.kapitel_05.thema
  *
  * @version 2022-09-12
  */
+@SuppressWarnings("unused")
 public class Spieler
 {
     private String name;

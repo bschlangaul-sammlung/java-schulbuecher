@@ -9,6 +9,7 @@ import java.time.LocalDate;
  *
  * @version 2022-09-12
  */
+@SuppressWarnings("unused")
 public class Tunier
 {
     private Mannschaft[] mannschaften;

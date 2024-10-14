@@ -52,7 +52,7 @@ public class Dreieck
     /**
      * Der Konstruktor erzeugt das Delegate-Objekt
      */
-    Dreieck()
+    public Dreieck()
     {
         x = 60;
         y = 10;
@@ -76,7 +76,7 @@ public class Dreieck
      * @param x x-Position der Spitze
      * @param y y-Position der Spitze
      */
-    void PositionSetzen(int x, int y)
+    public void PositionSetzen(int x, int y)
     {
         this.x = x;
         this.y = y;
@@ -89,7 +89,7 @@ public class Dreieck
      * @param deltaX Verschiebung in x-Richtung
      * @param deltaY Verschiebung in y-Richtung
      */
-    void Verschieben(int deltaX, int deltaY)
+    public void Verschieben(int deltaX, int deltaY)
     {
         x += deltaX;
         y += deltaY;
@@ -101,7 +101,7 @@ public class Dreieck
      *
      * @param grad Drehwinkel (mathematisch positiver Drehsinn) im Gradmass
      */
-    void Drehen(int grad)
+    public void Drehen(int grad)
     {
         winkel += grad;
         symbol.WinkelSetzen(winkel);
@@ -113,7 +113,7 @@ public class Dreieck
      * @param breite (neue) Breite
      * @param höhe (neue) Höhe
      */
-    void GrößeSetzen(int breite, int höhe)
+    public void GrößeSetzen(int breite, int höhe)
     {
         this.breite = breite;
         this.höhe = höhe;
@@ -129,7 +129,7 @@ public class Dreieck
      *
      * @param farbe (neue) Farbe
      */
-    void FarbeSetzen(String farbe)
+    public void FarbeSetzen(String farbe)
     {
         this.farbe = farbe;
         symbol.FarbeSetzen(farbe);
@@ -142,7 +142,7 @@ public class Dreieck
      *
      * @param winkel der (neue) Drehwinkel des Dreiecks
      */
-    void WinkelSetzen(int winkel)
+    public void WinkelSetzen(int winkel)
     {
         this.winkel = winkel;
         symbol.WinkelSetzen(winkel);
@@ -154,7 +154,7 @@ public class Dreieck
      *
      * @param sichtbar (neue) Sichtbarkeit des Dreiecks
      */
-    void SichtbarkeitSetzen(boolean sichtbar)
+    public void SichtbarkeitSetzen(boolean sichtbar)
     {
         this.sichtbar = sichtbar;
         symbol.SichtbarkeitSetzen(sichtbar);
@@ -163,7 +163,7 @@ public class Dreieck
     /**
      * Entfernt das Dreieck aus dem Zeichenfenster.
      */
-    void Entfernen()
+    public void Entfernen()
     {
         symbol.Entfernen();
     }
@@ -171,7 +171,7 @@ public class Dreieck
     /**
      * Bringt das Dreieck eine Ebene nach vorn.
      */
-    void NachVornBringen()
+    public void NachVornBringen()
     {
         symbol.NachVornBringen();
     }
@@ -179,7 +179,7 @@ public class Dreieck
     /**
      * Bringt das Dreieck in die vorderste Ebene.
      */
-    void GanzNachVornBringen()
+    public void GanzNachVornBringen()
     {
         symbol.GanzNachVornBringen();
     }
@@ -187,7 +187,7 @@ public class Dreieck
     /**
      * Bringt das Dreieck eine Ebene nach hinten.
      */
-    void NachHintenBringen()
+    public void NachHintenBringen()
     {
         symbol.NachHintenBringen();
     }
@@ -195,7 +195,7 @@ public class Dreieck
     /**
      * Bringt das Dreieck in die hinterste Ebene.
      */
-    void GanzNachHintenBringen()
+    public void GanzNachHintenBringen()
     {
         symbol.GanzNachHintenBringen();
     }

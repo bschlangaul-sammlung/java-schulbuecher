@@ -3,6 +3,7 @@ package org.bschlangaul.schulbuecher.buchner.informatik_10_2022.kapitel_05.thema
 /**
  * Klasse zur Darstellung eines Elefanten
  */
+@SuppressWarnings("unused")
 public class Elefant
 {
     private String name;

@@ -7,6 +7,7 @@ package org.bschlangaul.schulbuecher.buchner.informatik_10_2022.kapitel_07.bank3
  *
  * @version 2022-01-31
  */
+@SuppressWarnings("unused")
 class Filiale
 {
     private String name;

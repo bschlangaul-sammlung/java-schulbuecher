@@ -2,6 +2,8 @@ package org.bschlangaul.schulbuecher.cornelsen.informatik_3_2017.kapitel_04.them
 
 import java.util.Random;
 
+import org.bschlangaul.schulbuecher.cornelsen.shared.graphics_and_games.Ereignisbehandlung;
+
 /**
  * Baut das Szenarium auf und steuert den Taktgeber
  *
@@ -93,7 +95,7 @@ class Rahmen extends Ereignisbehandlung
      * Dummy zur Vermeidung der Ausgabe
      */
     @Override
-    void TaktImpulsAusführen()
+    public void TaktImpulsAusführen()
     {
     }
 
@@ -101,7 +103,7 @@ class Rahmen extends Ereignisbehandlung
      * Dummy zur Vermeidung der Ausgabe
      */
     @Override
-    void SonderTasteGedrückt(int taste)
+    public void SonderTasteGedrückt(int taste)
     {
     }
 
@@ -109,7 +111,7 @@ class Rahmen extends Ereignisbehandlung
      * Dummy zur Vermeidung der Ausgabe
      */
     @Override
-    void TasteGedrückt(char taste)
+    public void TasteGedrückt(char taste)
     {
     }
 }
