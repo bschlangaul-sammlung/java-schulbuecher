@@ -1,8 +1,9 @@
 
 /**
  * Rahmenklasse für die Methode Palindromtest
- * 
- * @author Albert Wiedemann 
+ *
+ * @author Albert Wiedemann
+ *
  * @version 1.0
  */
 class PalindromTester
@@ -11,14 +12,16 @@ class PalindromTester
     /**
      * hat nichts zu tun
      */
-    PalindromTester ()
+    PalindromTester()
     {
-        
+
     }
-    
+
     /**
      * Prüft, ob der gegebene Text ein Palindrom ist.
+     *
      * @param text der zu prüfende Text
+     *
      * @return wahr, wenn der text ein Palindrom ist
      */
     static boolean Palindromtest(String text)

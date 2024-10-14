@@ -1,8 +1,9 @@
 
 /**
  * Rahmenklasse für den Test auf gerade bzw. ungerade
- * 
+ *
  * @author Albert Wiedemann
+ *
  * @version 1.0
  */
 class GeradeUngerade
@@ -11,14 +12,16 @@ class GeradeUngerade
     /**
      * nichts zu tun
      */
-    GeradeUngerade ()
+    GeradeUngerade()
     {
-        
+
     }
-    
+
     /**
      * Ermittelt, ob eine Zahl gerade ist
+     *
      * @param n die zu testende Zahl
+     *
      * @return wahr, wenn die Zahl gerade ist
      */
     static boolean Gerade(int n)
@@ -32,10 +35,12 @@ class GeradeUngerade
             return Ungerade(n - 1);
         }
     }
-    
+
     /**
      * Ermittelt, ob eine Zahl ungerade ist
+     *
      * @param n die zu testende Zahl
+     *
      * @return wahr, wenn die Zahl ungerade ist
      */
     static boolean Ungerade(int n)
@@ -49,10 +54,12 @@ class GeradeUngerade
             return Gerade(n - 1);
         }
     }
-    
+
     /**
      * Ermittelt, ob eine Zahl gerade ist
+     *
      * @param n die zu testende Zahl
+     *
      * @return wahr, wenn die Zahl gerade ist
      */
     static boolean IstGerade2(int n)

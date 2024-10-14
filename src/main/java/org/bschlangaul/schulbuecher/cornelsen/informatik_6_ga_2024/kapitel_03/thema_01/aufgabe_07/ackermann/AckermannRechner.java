@@ -1,25 +1,21 @@
+package org.bschlangaul.schulbuecher.cornelsen.informatik_6_ga_2024.kapitel_03.thema_01.aufgabe_07.ackermann;
 
 /**
  * Berechnung der Ackermann-Péter-Funktion
- * 
+ *
  * @author Albert Wiedemann
+ *
  * @version 1.0
  */
 class AckermannRechner
 {
 
     /**
-     * nichts zu tun
-     */
-    AckermannRechner()
-    {
-        
-    }
-    
-    /**
      * Berechnet den Wert der Ackermann-Péter-Funktion rekursiv
+     *
      * @param n 1. Parameter der Ackermann-Péter-Funktion
      * @param m 2. Parameter der Ackermann-Péter-Funktion
+     *
      * @return Wert der Ackermann-Péter-Funktion
      */
     static int Acker(int n, int m)
