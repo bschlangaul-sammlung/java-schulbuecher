@@ -1,3 +1,4 @@
+package org.bschlangaul.schulbuecher.cornelsen.informatik_6_ga_2024.kapitel_03.thema_01.aufgabe_08.gerade_ungerade;
 
 /**
  * Rahmenklasse für den Test auf gerade bzw. ungerade
@@ -8,14 +9,6 @@
  */
 class GeradeUngerade
 {
-
-    /**
-     * nichts zu tun
-     */
-    GeradeUngerade()
-    {
-
-    }
 
     /**
      * Ermittelt, ob eine Zahl gerade ist

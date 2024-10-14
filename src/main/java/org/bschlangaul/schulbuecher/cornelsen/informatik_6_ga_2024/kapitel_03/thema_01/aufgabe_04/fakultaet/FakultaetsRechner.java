@@ -1,3 +1,4 @@
+package org.bschlangaul.schulbuecher.cornelsen.informatik_6_ga_2024.kapitel_03.thema_01.aufgabe_04.fakultaet;
 
 /**
  * Verschiedene Methoden zur Berechnung der Fakultät
@@ -8,14 +9,6 @@
  */
 class FakultaetsRechner
 {
-
-    /**
-     * nichts zu tun
-     */
-    FakultaetsRechner()
-    {
-
-    }
 
     /**
      * Berechnet die Fakultät rekursiv
