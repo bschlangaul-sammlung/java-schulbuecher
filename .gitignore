@@ -45,3 +45,6 @@ target/
 *.jpg
 *.odp
 *.pptx
+*.pdf
+*.txt
+*.TXT
