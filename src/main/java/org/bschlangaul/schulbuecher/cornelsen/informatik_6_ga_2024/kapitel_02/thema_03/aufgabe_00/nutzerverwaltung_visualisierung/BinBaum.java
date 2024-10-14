@@ -1,5 +1,7 @@
 package org.bschlangaul.schulbuecher.cornelsen.informatik_6_ga_2024.kapitel_02.thema_03.aufgabe_00.nutzerverwaltung_visualisierung;
 
+import org.bschlangaul.schulbuecher.cornelsen.shared.graphics_and_games.Zeichenfenster;
+
 /**
  * Die Klasse Binbaum ist die Grundstruktur eines geordneten Binärbaums und hier
  * zur Verwaltung von Usern eingesetzt wird. Die Methoden die ein Objekt dieser
@@ -56,19 +58,8 @@ class BinBaum
                 / (HöheGeben() + 2); // +2 statt +1, damit unten ein Rand bleibt
         int breite = Zeichenfenster.MalflächenBreiteGeben();
 
-        int maxAnzahlKnotenUntersteEbene = (int) Math.pow(2, HöheGeben());
-        int dx = breite / (maxAnzahlKnotenUntersteEbene + 1); // +1, damit
-                                                              // rechts und
-                                                              // links ein Rand
-                                                              // bleibt
-
-        wurzel.KnotenZeichnen(0, breite, 25, höhenschritt, null); // y= 20 für
-                                                                  // die 0te
-                                                                  // Ebene,
-                                                                  // damit der
-                                                                  // Knoten
-                                                                  // sichtbar
-                                                                  // ist
+        // y= 20 für die 0te Ebene, damit der Knoten sichtbar ist
+        wurzel.KnotenZeichnen(0, breite, 25, höhenschritt, null);
     }
 
     /**
@@ -95,10 +86,7 @@ class BinBaum
         binBaum1.Einfügen(user3);
         binBaum1.Einfügen(user4);
         binBaum1.Einfügen(user5);
-
         binBaum1.Einfügen(user6);
-
         binBaum1.BaumZeichnen();
-
     }
 }

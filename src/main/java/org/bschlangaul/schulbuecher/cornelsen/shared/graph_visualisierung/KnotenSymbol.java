@@ -10,7 +10,7 @@ import org.bschlangaul.schulbuecher.cornelsen.shared.graphics_and_games.Text;
  *
  * @version 1.0
  */
-class KnotenSymbol
+public class KnotenSymbol
 {
     /**
      * Außenkreis des Darstellungssymbols
@@ -61,7 +61,8 @@ class KnotenSymbol
      * @param farbe Farbe
      * @param bezeichner Bezeichner
      */
-    KnotenSymbol(int x, int y, int radius, String farbe, String bezeichner)
+    public KnotenSymbol(int x, int y, int radius, String farbe,
+            String bezeichner)
     {
         this.x = x;
         this.y = y;
@@ -97,7 +98,7 @@ class KnotenSymbol
      *
      * @param f die (neue) Farbe
      */
-    void FarbeSetzen(String f)
+    public void FarbeSetzen(String f)
     {
         farbe = f;
         DarstellungAktualisieren();
@@ -109,7 +110,7 @@ class KnotenSymbol
      * @param x x-Koordinate
      * @param y y-Koordinate
      */
-    void PositionSetzen(int x, int y)
+    public void PositionSetzen(int x, int y)
     {
         this.x = x;
         this.y = y;
@@ -121,7 +122,7 @@ class KnotenSymbol
      *
      * @param bezeichner der (neue) Bezeichner
      */
-    void BezeichnerSetzen(String bezeichner)
+    public void BezeichnerSetzen(String bezeichner)
     {
         this.bezeichner = bezeichner;
         DarstellungAktualisieren();
@@ -132,7 +133,7 @@ class KnotenSymbol
      *
      * @return x-Koordinate
      */
-    int XGeben()
+    public int XGeben()
     {
         return x;
     }
@@ -142,7 +143,7 @@ class KnotenSymbol
      *
      * @return y-Koordinate
      */
-    int YGeben()
+    public int YGeben()
     {
         return y;
     }
@@ -152,7 +153,7 @@ class KnotenSymbol
      *
      * @return Bezeichner
      */
-    String BezeichnerGeben()
+    public String BezeichnerGeben()
     {
         return bezeichner;
     }
@@ -160,7 +161,7 @@ class KnotenSymbol
     /**
      * Entfernt das Knotensymbol aus der Anzeige
      */
-    void Entfernen()
+    public void Entfernen()
     {
         außen.Entfernen();
         innen.Entfernen();
@@ -172,7 +173,7 @@ class KnotenSymbol
      *
      * @param sichtbar wenn wahr, ist das Symbol sichtbar
      */
-    void SichtbarkeitSetzen(boolean sichtbar)
+    public void SichtbarkeitSetzen(boolean sichtbar)
     {
         außen.SichtbarkeitSetzen(sichtbar);
         innen.SichtbarkeitSetzen(sichtbar);

@@ -1,18 +1,27 @@
+package org.bschlangaul.schulbuecher.cornelsen.informatik_6_ga_2024.kapitel_02.thema_03.aufgabe_05.teilaufgabe_c.nutzerverwaltung;
+
 /**
- * Die Klasse User dient zur Speicherung von
- * Usern in einem Online-Shop.
+ * Die Klasse User dient zur Speicherung von Usern in einem Online-Shop.
  *
  * @author Peter Brichzin
+ *
  * @version 23.5.24
  */
 class User
 {
     /**
-     * id - Schlüssel dieses Datenelements */
+     * Schlüssel dieses Datenelements
+     */
     private int id;
-    /**  Nachname  */
+
+    /**
+     * Nachname
+     */
     private String nachname;
-    /**  Vorname  */
+
+    /**
+     * Vorname
+     */
     private String vorname;
 
     /**
@@ -30,23 +39,26 @@ class User
     }
 
     /**
-     * Gibt Information über das Datenelement zu Kontrollzwecken
-     * auf das Terminalfenster aus.
+     * Gibt Information über das Datenelement zu Kontrollzwecken auf das
+     * Terminalfenster aus.
      */
     void InformationAusgeben()
     {
-        System.out.println("Der User " + vorname + " " + nachname + " hat die Identifikationsnummer " + id + ".");
+        System.out.println("Der User " + vorname + " " + nachname
+                + " hat die Identifikationsnummer " + id + ".");
     }
 
     /**
      * Vergleicht zwei Datenelemente auf Gleichheit.
-     * @param dvergleich Datenelement mit dem das Objekt verglichen wird.
+     *
+     * @param dVergleich Datenelement mit dem das Objekt verglichen wird.
+     *
      * @return true, wenn die beiden Datenelemente gleichen Schlüssel haben.
      */
     boolean IstGleich(User dVergleich)
     {
 
-        if(id == dVergleich.IdGeben())
+        if (id == dVergleich.IdGeben())
         {
             return true;
         }
@@ -58,12 +70,15 @@ class User
 
     /**
      * Vergleicht zwei Datenelemente bezüglich der Ordnungsrelation.
-     * @param vergleichselement Datenelement mit dem das Objekt verglichen wird.
-     * @return true, wenn das aktuelle Element einen größeren Schlüssel hat, als das angegebene Vergleichselement.
+     *
+     * @param dVergleich Datenelement mit dem das Objekt verglichen wird.
+     *
+     * @return true, wenn das aktuelle Element einen größeren Schlüssel hat, als
+     *     das angegebene Vergleichselement.
      */
     boolean IstGrößerAls(User dVergleich)
     {
-        if(id > dVergleich.IdGeben())
+        if (id > dVergleich.IdGeben())
         {
             return true;
         }
@@ -74,8 +89,12 @@ class User
     }
 
     /**
-     * Vergleicht zwei Schlüssel, die als Zeichenketten vorliegen, auf Gleichheit.
-     * @param vergleichsSchluessel Schlüssel  mit dem der Schlüssel des Objekt verglichen wird.
+     * Vergleicht zwei Schlüssel, die als Zeichenketten vorliegen, auf
+     * Gleichheit.
+     *
+     * @param vergleichsSchlüssel Schlüssel mit dem der Schlüssel des Objekt
+     *     verglichen wird.
+     *
      * @return true, wenn die beiden Schlüssel gleich sind.
      */
     boolean SchlüsselIstGleich(int vergleichsSchlüssel)
@@ -84,9 +103,14 @@ class User
     }
 
     /**
-     * Vergleicht zwei Schlüssel, die als Zeichenketten vorliegen, bezüglich der Ordnungsrelation.
-     * @param vergleichsSchluessel Schlüssel  mit dem der Schlüssel des Objekt verglichen wird.
-     * @return true, wenn das aktuelle Element einen größeren Schlüssel hat, als das angegebene Vergleichselement.
+     * Vergleicht zwei Schlüssel, die als Zeichenketten vorliegen, bezüglich der
+     * Ordnungsrelation.
+     *
+     * @param vergleichsSchlüssel Schlüssel mit dem der Schlüssel des Objekt
+     *     verglichen wird.
+     *
+     * @return true, wenn das aktuelle Element einen größeren Schlüssel hat, als
+     *     das angegebene Vergleichselement.
      */
     boolean SchlüsselIstGrößerAls(int vergleichsSchlüssel)
     {
@@ -95,6 +119,7 @@ class User
 
     /**
      * Geben-Methode zum Attribut id
+     *
      * @return Identifikationsnummer
      */
     int IdGeben()
@@ -104,7 +129,8 @@ class User
 
     /**
      * Gibt den Schlüssel als Zeichenkette zurück.
-     * @return      Vorname
+     *
+     * @return Vorname
      */
     String SchlüsselGeben()
     {
@@ -113,7 +139,8 @@ class User
 
     /**
      * Geben-Methode zum Attribut nachname
-     * @return      Nachname
+     *
+     * @return Nachname
      */
 
     String NachnameGeben()
@@ -123,7 +150,8 @@ class User
 
     /**
      * Geben-Methode zum Attribut vorname
-     * @return      Vorname
+     *
+     * @return Vorname
      */
     String VornameGeben()
     {

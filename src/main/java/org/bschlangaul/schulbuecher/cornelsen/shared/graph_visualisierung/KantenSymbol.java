@@ -11,7 +11,7 @@ import org.bschlangaul.schulbuecher.cornelsen.shared.graphics_and_games.Text;
  *
  * @version 1.0
  */
-class KantenSymbol
+public class KantenSymbol
 {
     /**
      * Außenrechteck des Darstellungssymbols
@@ -74,8 +74,8 @@ class KantenSymbol
      * @param breite Breite der Linie
      * @param farbe Farbe der Linie
      */
-    KantenSymbol(KnotenSymbol start, KnotenSymbol ende, boolean gerichtet,
-            String gewicht, int breite, String farbe)
+    public KantenSymbol(KnotenSymbol start, KnotenSymbol ende,
+            boolean gerichtet, String gewicht, int breite, String farbe)
     {
         von = start;
         nach = ende;
@@ -96,7 +96,7 @@ class KantenSymbol
     /**
      * Aktualisiert das Symbol
      */
-    void DarstellungAktualisieren()
+    public void DarstellungAktualisieren()
     {
         double x1 = von.XGeben();
         double y1 = von.YGeben();
@@ -187,7 +187,7 @@ class KantenSymbol
     /**
      * Entfernt das Kantensymbol aus der Anzeige
      */
-    void Entfernen()
+    public void Entfernen()
     {
         außen.Entfernen();
         innen.Entfernen();
@@ -200,7 +200,7 @@ class KantenSymbol
      *
      * @param f die (neue) Farbe
      */
-    void FarbeSetzen(String f)
+    public void FarbeSetzen(String f)
     {
         farbe = f;
         DarstellungAktualisieren();
@@ -211,7 +211,7 @@ class KantenSymbol
      *
      * @return Startknoten
      */
-    KnotenSymbol StartsymbolGeben()
+    public KnotenSymbol StartsymbolGeben()
     {
         return von;
     }
@@ -221,7 +221,7 @@ class KantenSymbol
      *
      * @return Zielknoten
      */
-    KnotenSymbol ZielsymbolGeben()
+    public KnotenSymbol ZielsymbolGeben()
     {
         return nach;
     }

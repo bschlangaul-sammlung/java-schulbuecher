@@ -11,7 +11,7 @@ package org.bschlangaul.schulbuecher.cornelsen.informatik_6_ga_2024.kapitel_02.t
 class User
 {
     /**
-     * id - Schlüssel dieses Datenelements
+     * Schlüssel dieses Datenelements
      */
     private int id;
 

@@ -1,5 +1,8 @@
 package org.bschlangaul.schulbuecher.cornelsen.informatik_6_ga_2024.kapitel_02.thema_03.aufgabe_00.nutzerverwaltung_visualisierung;
 
+import org.bschlangaul.schulbuecher.cornelsen.shared.graph_visualisierung.KantenSymbol;
+import org.bschlangaul.schulbuecher.cornelsen.shared.graph_visualisierung.KnotenSymbol;
+
 /**
  * Klasse Knoten zur Verwaltung von Usern als Datenelement innerhalb eines
  * geordneten Binärbaums. (Implementierung ohne Entwurfsmuster Kompositum)

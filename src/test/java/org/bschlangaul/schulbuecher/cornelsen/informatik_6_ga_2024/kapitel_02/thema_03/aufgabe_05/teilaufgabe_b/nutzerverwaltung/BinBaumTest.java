@@ -1,33 +1,32 @@
-import static org.junit.jupiter.api.Assertions.*;
-import org.junit.jupiter.api.AfterEach;
+package org.bschlangaul.schulbuecher.cornelsen.informatik_6_ga_2024.kapitel_02.thema_03.aufgabe_05.teilaufgabe_b.nutzerverwaltung;
+
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
 
 /**
  * Die Test-Klasse BinBaumTest.
  *
- * @author  Peter Brichzin
+ * @author Peter Brichzin
+ *
  * @version 23.5.24
  */
 public class BinBaumTest
 {
     private User user1;
+
     private User user2;
+
     private User user3;
+
     private User user4;
+
     private User user5;
+
     private User user6;
+
     private BinBaum binBaum1;
-    
-    /**
-     * Konstruktor fuer die Test-Klasse BinBaumTest
-     */
-    public BinBaumTest()
-    {
-    }
 
     /**
-     *  Setzt das Testgerüst fuer den Test.
+     * Setzt das Testgerüst fuer den Test.
      *
      * Wird vor jeder Testfall-Methode aufgerufen.
      */
@@ -47,13 +46,4 @@ public class BinBaumTest
         binBaum1.Einfügen(user4);
     }
 
-    /**
-     * Gibt das Testgerüst wieder frei.
-     *
-     * Wird nach jeder Testfall-Methode aufgerufen.
-     */
-    @AfterEach
-    public void tearDown()
-    {
-    }
 }
