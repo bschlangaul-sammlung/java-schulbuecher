@@ -1,5 +1,7 @@
 package org.bschlangaul.schulbuecher.cornelsen.informatik_3_2021.kapitel_04.thema_03.aufgabe_05.rennate;
 
+import org.bschlangaul.schulbuecher.cornelsen.shared.graphics_and_games.Turtle;
+
 /**
  * Beschreibt eine Turtle, die auf einer Verkehrsinsel lebt.
  *

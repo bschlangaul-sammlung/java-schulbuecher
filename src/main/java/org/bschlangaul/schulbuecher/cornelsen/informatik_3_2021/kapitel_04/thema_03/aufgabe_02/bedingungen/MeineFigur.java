@@ -1,11 +1,9 @@
 package org.bschlangaul.schulbuecher.cornelsen.informatik_3_2021.kapitel_04.thema_03.aufgabe_02.bedingungen;
 
+import org.bschlangaul.schulbuecher.cornelsen.shared.graphics_and_games.Figur;
+
 /**
  * Tested die Rand-Bedingungen.
- *
- * @author (your name)
- *
- * @version (a version number or a date)
  */
 class MeineFigur extends Figur
 {

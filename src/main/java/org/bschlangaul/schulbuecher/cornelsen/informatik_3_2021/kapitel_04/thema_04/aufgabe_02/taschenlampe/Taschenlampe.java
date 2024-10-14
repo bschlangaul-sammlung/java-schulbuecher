@@ -1,5 +1,8 @@
 package org.bschlangaul.schulbuecher.cornelsen.informatik_3_2021.kapitel_04.thema_04.aufgabe_02.taschenlampe;
 
+import org.bschlangaul.schulbuecher.cornelsen.shared.graphics_and_games.Dreieck;
+import org.bschlangaul.schulbuecher.cornelsen.shared.graphics_and_games.Rechteck;
+
 /**
  * Stellt eine Taschenlampe dar
  *

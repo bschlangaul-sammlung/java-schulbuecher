@@ -1,5 +1,7 @@
 package org.bschlangaul.schulbuecher.cornelsen.informatik_3_2021.kapitel_04.thema_05.aufgabe_04.einfache_grafik;
 
+import org.bschlangaul.schulbuecher.cornelsen.shared.graphics_and_games.*;
+
 /**
  * Kreis mit mittelpunkt und Rand auf Kästenchengröße
  *
@@ -16,7 +18,7 @@ class RasterKreis extends Kreis
      * @param y y-Position des Mittelpunkts
      */
     @Override
-    void PositionSetzen(int x, int y)
+    public void PositionSetzen(int x, int y)
     {
         super.PositionSetzen(x * 10, y * 10);
     }
@@ -28,7 +30,7 @@ class RasterKreis extends Kreis
      * @param deltaY Verschiebung in y-Richtung
      */
     @Override
-    void Verschieben(int deltaX, int deltaY)
+    public void Verschieben(int deltaX, int deltaY)
     {
         super.Verschieben(deltaX * 10, deltaY * 10);
     }
@@ -39,7 +41,7 @@ class RasterKreis extends Kreis
      * @param radius (neuer) Radius
      */
     @Override
-    void RadiusSetzen(int radius)
+    public void RadiusSetzen(int radius)
     {
         super.RadiusSetzen(radius * 10);
     }

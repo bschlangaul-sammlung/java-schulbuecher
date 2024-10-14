@@ -1,5 +1,7 @@
 package org.bschlangaul.schulbuecher.cornelsen.informatik_3_2021.kapitel_04.thema_05.aufgabe_03.turtle_breit;
 
+import org.bschlangaul.schulbuecher.cornelsen.shared.graphics_and_games.Turtle;
+
 /**
  * Turtle für breite Linien.
  *
@@ -15,7 +17,7 @@ class TurtleBreit extends Turtle
      * @param länge Anzahl der Längeneinheiten
      */
     @Override
-    void Gehen(double länge)
+    public void Gehen(double länge)
     {
         super.Gehen(länge);
         this.Drehen(90);

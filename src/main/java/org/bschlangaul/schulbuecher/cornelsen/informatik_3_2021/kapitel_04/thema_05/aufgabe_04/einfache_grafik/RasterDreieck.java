@@ -1,5 +1,7 @@
 package org.bschlangaul.schulbuecher.cornelsen.informatik_3_2021.kapitel_04.thema_05.aufgabe_04.einfache_grafik;
 
+import org.bschlangaul.schulbuecher.cornelsen.shared.graphics_and_games.*;
+
 /**
  * Dreieck mit Ecken auf Kästenchengröße
  *
@@ -16,7 +18,7 @@ class RasterDreieck extends Dreieck
      * @param y y-Position der Spitze
      */
     @Override
-    void PositionSetzen(int x, int y)
+    public void PositionSetzen(int x, int y)
     {
         super.PositionSetzen(x * 10, y * 10);
     }
@@ -28,7 +30,7 @@ class RasterDreieck extends Dreieck
      * @param höhe (neue) Höhe
      */
     @Override
-    void GrößeSetzen(int breite, int höhe)
+    public void GrößeSetzen(int breite, int höhe)
     {
         super.GrößeSetzen(breite * 10, höhe * 10);
     }
@@ -40,7 +42,7 @@ class RasterDreieck extends Dreieck
      * @param deltaY Verschiebung in y-Richtung
      */
     @Override
-    void Verschieben(int deltaX, int deltaY)
+    public void Verschieben(int deltaX, int deltaY)
     {
         super.Verschieben(deltaX * 10, deltaY * 10);
     }

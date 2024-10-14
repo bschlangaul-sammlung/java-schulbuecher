@@ -2,6 +2,8 @@ package org.bschlangaul.schulbuecher.cornelsen.informatik_3_2021.kapitel_04.them
 
 import java.util.Random;
 
+import org.bschlangaul.schulbuecher.cornelsen.shared.graphics_and_games.Ereignisbehandlung;
+
 /**
  * Legt das Spielszenario fest
  *
@@ -36,7 +38,7 @@ class Spiel extends Ereignisbehandlung
      * Legt neue Hindernisse an
      */
     @Override
-    void TaktImpulsAusführen()
+    public void TaktImpulsAusführen()
     {
         if (zähler < 3)
         {
@@ -55,7 +57,7 @@ class Spiel extends Ereignisbehandlung
      * @param taste die gedrückte Taste
      */
     @Override
-    void TasteGedrückt(char taste)
+    public void TasteGedrückt(char taste)
     {
     }
 
@@ -65,7 +67,7 @@ class Spiel extends Ereignisbehandlung
      * @param taste die gedrückte Taste
      */
     @Override
-    void SonderTasteGedrückt(int taste)
+    public void SonderTasteGedrückt(int taste)
     {
     }
 

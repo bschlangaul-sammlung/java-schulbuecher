@@ -1,25 +1,31 @@
-package org.bschlangaul.schulbuecher.cornelsen.informatik_3_2021.kapitel_04.thema_03.aufgabe_09.spielwelt_2d;
+package org.bschlangaul.schulbuecher.cornelsen.shared.graphics_and_games;
 
 /**
+ * <p>
  * Zellen als Bestandteile der Welt, in der sich die Figuren bewegen können.
  * Jede Zelle hat die Größe 46x46 Pixel. Beachte Ränder um die Zellen, bei der
  * Anordnung in der Welt!
+ * </p>
+ *
+ * <p>
+ * Diese Klasse ist nicht im ursprünglichen GraphicsAndGames-Paket enthalten.
+ * Sie wird aber in mehreren Projekten verwendet.
+ * </p>
  *
  * @author Peter Brichzin
  *
  * @version 1.0
  */
-class Zelle extends Rechteck
+public class Zelle extends Rechteck
 {
     /**
-     * Platziert eine Zelle Erzeugt und platziert eine Zelle in der gewünschten
-     * Farbe.
+     * Erzeugt und platziert eine Zelle in der gewünschten Farbe.
      *
      * @param xLinksOben x-Wert der Ecke links oben der Zelle
      * @param yLinksOben y-Wert der Ecke links oben der Zelle
      * @param farbeNeu Farbe der Zelle
      */
-    Zelle(int xLinksOben, int yLinksOben, String farbeNeu)
+    public Zelle(int xLinksOben, int yLinksOben, String farbeNeu)
     {
         super();
         PositionSetzen(xLinksOben, yLinksOben);

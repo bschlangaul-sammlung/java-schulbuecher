@@ -1,5 +1,7 @@
 package org.bschlangaul.schulbuecher.cornelsen.informatik_3_2021.kapitel_04.thema_01.aufgabe_08.spielwelt_2d;
 
+import org.bschlangaul.schulbuecher.cornelsen.shared.graphics_and_games.Rechteck;
+
 /**
  * Legt das Spielfeld an und die nicht beweglichen Objekte
  *
@@ -59,5 +61,10 @@ class KleineWelt
         rechteck8.PositionSetzen(202, 202);
         rechteck8.GrößeSetzen(96, 96);
         rechteck8.FarbeSetzen("blau");
+    }
+
+    public static void main(String[] args)
+    {
+        new KleineWelt();
     }
 }

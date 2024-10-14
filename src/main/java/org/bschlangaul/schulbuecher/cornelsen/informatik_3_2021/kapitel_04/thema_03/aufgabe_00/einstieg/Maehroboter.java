@@ -1,5 +1,8 @@
 package org.bschlangaul.schulbuecher.cornelsen.informatik_3_2021.kapitel_04.thema_03.aufgabe_00.einstieg;
 
+import org.bschlangaul.schulbuecher.cornelsen.shared.graphics_and_games.Figur;
+import org.bschlangaul.schulbuecher.cornelsen.shared.graphics_and_games.Rechteck;
+
 /**
  * Der Mähroboter geht gerade aus, bis er auf einen Zaun trifft (braunes
  * Hindernis).
@@ -133,7 +136,7 @@ class Maehroboter extends Figur
      * Drehen und den Drehwinkel im INtervall [0;360[ halten.
      */
     @Override
-    void Drehen(int grad)
+    public void Drehen(int grad)
     {
         super.Drehen(grad);
         if (WinkelGeben() >= 360)

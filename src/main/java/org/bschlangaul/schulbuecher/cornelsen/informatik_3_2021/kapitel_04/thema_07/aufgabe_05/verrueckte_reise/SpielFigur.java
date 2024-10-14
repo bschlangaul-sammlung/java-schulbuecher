@@ -1,5 +1,7 @@
 package org.bschlangaul.schulbuecher.cornelsen.informatik_3_2021.kapitel_04.thema_07.aufgabe_05.verrueckte_reise;
 
+import org.bschlangaul.schulbuecher.cornelsen.shared.graphics_and_games.Figur;
+
 /**
  * Die Spielfigur der verrückten Reise
  *
@@ -13,7 +15,7 @@ class SpielFigur extends Figur
      * Bewegt die Figur
      */
     @Override
-    void AktionAusführen()
+    public void AktionAusführen()
     {
         if (Berührt("schwarz"))
         {
@@ -51,7 +53,7 @@ class SpielFigur extends Figur
      *
      * @param taste KeyCode der gedrückten Taste
      */
-    void SonderTasteGedrückt(int taste)
+    public void SonderTasteGedrückt(int taste)
     {
         if (taste == 37)
         {

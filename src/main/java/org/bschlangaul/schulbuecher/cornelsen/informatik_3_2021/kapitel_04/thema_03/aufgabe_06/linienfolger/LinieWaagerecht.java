@@ -1,5 +1,7 @@
 package org.bschlangaul.schulbuecher.cornelsen.informatik_3_2021.kapitel_04.thema_03.aufgabe_06.linienfolger;
 
+import org.bschlangaul.schulbuecher.cornelsen.shared.graphics_and_games.Rechteck;
+
 /**
  * Ertellt eine waagrechte Line.
  *

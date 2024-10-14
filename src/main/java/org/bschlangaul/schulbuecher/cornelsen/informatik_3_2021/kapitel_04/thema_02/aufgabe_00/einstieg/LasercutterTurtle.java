@@ -1,5 +1,7 @@
 package org.bschlangaul.schulbuecher.cornelsen.informatik_3_2021.kapitel_04.thema_02.aufgabe_00.einstieg;
 
+import org.bschlangaul.schulbuecher.cornelsen.shared.graphics_and_games.Turtle;
+
 /**
  * Lasercutter-Turtle mit mehr Methoden
  *

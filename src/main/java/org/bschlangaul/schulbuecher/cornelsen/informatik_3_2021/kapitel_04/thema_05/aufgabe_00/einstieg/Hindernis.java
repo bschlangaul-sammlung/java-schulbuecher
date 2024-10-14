@@ -1,5 +1,7 @@
 package org.bschlangaul.schulbuecher.cornelsen.informatik_3_2021.kapitel_04.thema_05.aufgabe_00.einstieg;
 
+import org.bschlangaul.schulbuecher.cornelsen.shared.graphics_and_games.Figur;
+
 /**
  * Klasse Hindernis
  *
@@ -27,7 +29,7 @@ class Hindernis extends Figur
      * Bewegt das Hindernis
      */
     @Override
-    void AktionAusführen()
+    public void AktionAusführen()
     {
         Bewegen();
     }
@@ -38,7 +40,7 @@ class Hindernis extends Figur
      * @param taste die gedrückte Taste
      */
     @Override
-    void TasteGedrückt(char taste)
+    public void TasteGedrückt(char taste)
     {
     }
 
@@ -48,7 +50,7 @@ class Hindernis extends Figur
      * @param taste die gedrückte Taste
      */
     @Override
-    void SonderTasteGedrückt(int taste)
+    public void SonderTasteGedrückt(int taste)
     {
     }
 

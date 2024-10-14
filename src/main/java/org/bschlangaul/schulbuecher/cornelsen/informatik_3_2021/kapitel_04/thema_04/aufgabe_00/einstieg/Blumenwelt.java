@@ -1,5 +1,7 @@
 package org.bschlangaul.schulbuecher.cornelsen.informatik_3_2021.kapitel_04.thema_04.aufgabe_00.einstieg;
 
+import org.bschlangaul.schulbuecher.cornelsen.shared.graphics_and_games.Zelle;
+
 /**
  * Legt die Blumenwelt an und die nicht beweglichen Objekte. Die Welt besteht
  * aus 10x10 Zellen. Damit die Objekte der Klasse Zelle gut sichtbar sind, wird

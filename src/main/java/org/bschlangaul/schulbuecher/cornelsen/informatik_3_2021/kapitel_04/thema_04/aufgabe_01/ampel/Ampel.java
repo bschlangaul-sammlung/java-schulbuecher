@@ -1,5 +1,7 @@
 package org.bschlangaul.schulbuecher.cornelsen.informatik_3_2021.kapitel_04.thema_04.aufgabe_01.ampel;
 
+import org.bschlangaul.schulbuecher.cornelsen.shared.graphics_and_games.*;
+
 /**
  * Stellt eine einfache Ampel dar
  *

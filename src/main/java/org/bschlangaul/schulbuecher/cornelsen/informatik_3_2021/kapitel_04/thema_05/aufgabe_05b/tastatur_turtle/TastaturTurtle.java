@@ -1,5 +1,7 @@
 package org.bschlangaul.schulbuecher.cornelsen.informatik_3_2021.kapitel_04.thema_05.aufgabe_05b.tastatur_turtle;
 
+import org.bschlangaul.schulbuecher.cornelsen.shared.graphics_and_games.Turtle;
+
 /**
  * Durch die Tastatur gesteuerte Turtle
  *
@@ -15,7 +17,7 @@ class TastaturTurtle extends Turtle
      * @param taste KeyCode der gedrückten Taste
      */
     @Override
-    void SonderTasteGedrückt(int taste)
+    public void SonderTasteGedrückt(int taste)
     {
         if (taste == 37)
         {

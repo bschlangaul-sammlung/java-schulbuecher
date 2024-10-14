@@ -1,5 +1,8 @@
 package org.bschlangaul.schulbuecher.cornelsen.informatik_3_2021.kapitel_04.thema_05.aufgabe_00.einstieg;
 
+import org.bschlangaul.schulbuecher.cornelsen.shared.graphics_and_games.Figur;
+import org.bschlangaul.schulbuecher.cornelsen.shared.graphics_and_games.Text;
+
 /**
  * Verwaltet die Spielfigur
  *
@@ -36,7 +39,7 @@ class Spielfigur extends Figur
      * @param taste die gedrückte Taste
      */
     @Override
-    void TasteGedrückt(char taste)
+    public void TasteGedrückt(char taste)
     {
     }
 
@@ -46,7 +49,7 @@ class Spielfigur extends Figur
      * @param taste die gedrückte Sondertaste
      */
     @Override
-    void SonderTasteGedrückt(int taste)
+    public void SonderTasteGedrückt(int taste)
     {
         if (taste == 38)
         {
@@ -82,7 +85,7 @@ class Spielfigur extends Figur
      * Bewegt die Figur.
      */
     @Override
-    void AktionAusführen()
+    public void AktionAusführen()
     {
         if (Berührt())
         {

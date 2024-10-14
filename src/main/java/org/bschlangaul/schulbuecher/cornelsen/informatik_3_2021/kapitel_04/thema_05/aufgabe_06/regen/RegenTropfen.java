@@ -1,5 +1,7 @@
 package org.bschlangaul.schulbuecher.cornelsen.informatik_3_2021.kapitel_04.thema_05.aufgabe_06.regen;
 
+import org.bschlangaul.schulbuecher.cornelsen.shared.graphics_and_games.*;
+
 /**
  * Stellt einen Regentropfen in seinen verschiedenen Phasen dar.
  *
@@ -42,7 +44,7 @@ class RegenTropfen extends Figur
      * Methode wird aufgerufen, wenn die Figur handeln soll.
      */
     @Override
-    void AktionAusführen()
+    public void AktionAusführen()
     {
         WinkelSetzen(270);
         if (YPositionGeben() < 520 - 20)
