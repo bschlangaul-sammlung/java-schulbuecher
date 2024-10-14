@@ -15,7 +15,7 @@ import java.awt.Graphics;
  *
  * @version 1.0
  */
-public class LAMPE
+public class Lampe
 {
     private enum Farbe
     {
@@ -82,7 +82,7 @@ public class LAMPE
     /**
      * Anzeigegröße für eine Lampe
      */
-    private static final int groesse = OBERFLAECHE.RasterGroesseGeben();
+    private static final int groesse = Oberflaeche.RasterGroesseGeben();
 
     /**
      * Interna
@@ -102,9 +102,9 @@ public class LAMPE
      * Lampe in der Zelle (0 / 0) des Fensters. Das Fenster wird bei Bedarf
      * angelegt.
      */
-    public LAMPE()
+    public Lampe()
     {
-        fenster = OBERFLAECHE.FensterGeben();
+        fenster = Oberflaeche.FensterGeben();
         anzeige = new Canvas()
         {
             // Stellt die Lampe auf dem Fenster dar.
@@ -163,7 +163,7 @@ public class LAMPE
     {
         this.x = x;
         this.y = y;
-        anzeige.setLocation(OBERFLAECHE.FensterBreiteGeben() / 2 + x * groesse,
-                OBERFLAECHE.FensterHoeheGeben() / 2 + y * groesse);
+        anzeige.setLocation(Oberflaeche.FensterBreiteGeben() / 2 + x * groesse,
+                Oberflaeche.FensterHoeheGeben() / 2 + y * groesse);
     }
 }

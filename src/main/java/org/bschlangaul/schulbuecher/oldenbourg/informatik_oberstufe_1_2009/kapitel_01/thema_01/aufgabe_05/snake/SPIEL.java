@@ -1,6 +1,7 @@
 package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapitel_01.thema_01.aufgabe_05.snake;
 
 import java.util.Random;
+import org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.shared.*;
 
 /**
  * Klasse zur Verwaltung des Spiels
@@ -9,7 +10,7 @@ import java.util.Random;
  *
  * @version 1.0
  */
-class SPIEL
+class SPIEL implements TaktKlient
 {
     /**
      * Verwaltung der Darstellung
@@ -82,7 +83,8 @@ class SPIEL
      * Falls das Spiel nicht beendet ist, rückt die Schlange ein Feld vor und
      * die Darstellung wird neu gezeichnet.
      */
-    void SpielSchritt()
+    @Override
+    public void TaktImpulsAusfuehren()
     {
         if (!beendet)
         {
@@ -256,4 +258,5 @@ class SPIEL
     {
         snake.RichtungAendern(w);
     }
+
 }

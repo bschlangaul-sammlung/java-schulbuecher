@@ -1,5 +1,7 @@
 package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapitel_01.thema_03.aufgabe_07.kreuzung;
 
+import org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.shared.*;
+
 /**
  * Die Klasse KREUZUNG beschreibt eine Kreuzung, die aus vier Kfz- und acht Fussgängerampeln
  * besteht. Alle Ampeln sind um den Koordinatenursprung positioniert. Die Lichtsignale können
@@ -12,7 +14,7 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapi
  */
 import java.util.Random;
 
-class KREUZUNG implements TAKTKLIENT
+class KREUZUNG implements TaktKlient
 {
     /**
      * Das Attribut Phase beschreibt welche Verkehrsströme innerhalb der Ampel

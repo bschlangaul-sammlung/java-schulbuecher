@@ -7,7 +7,7 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapi
  *
  * @version V1.0
  */
-class LKW extends FAHRZEUG
+class LKW extends Fahrzeug
 {
     private float a1;
 
@@ -19,7 +19,7 @@ class LKW extends FAHRZEUG
     LKW()
     {
         super();
-        symbol = new LKWSYMBOL();
+        symbol = new LKWSymbol();
         switch ((new java.util.Random()).nextInt(7))
         {
         case 0:

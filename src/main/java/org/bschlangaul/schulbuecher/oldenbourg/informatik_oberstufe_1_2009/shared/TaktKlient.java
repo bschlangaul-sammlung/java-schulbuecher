@@ -1,4 +1,4 @@
-package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapitel_01.thema_01.aufgabe_04.teilaufgabe_c.kreuzung;
+package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.shared;
 
 /**
  * Schnittstelle für Klienten des Taktgebers.
@@ -7,7 +7,7 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapi
  *
  * @version 1.0
  */
-public interface TAKTKLIENT
+public interface TaktKlient
 {
     /**
      * Wird vom Taktgeber für jeden Taktimpuls aufgerufen.

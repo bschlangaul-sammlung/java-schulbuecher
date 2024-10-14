@@ -1,14 +1,17 @@
 package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapitel_01.thema_04.aufgabe_03.teilaufgabe_b.supermarkt;
 
+import java.util.Random;
+
+import org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.shared.TaktKlient;
+
 /**
  * Kontrolle des Supermarkts.
  *
  * @author Klaus Reinold und Barbara Leidorn
+ *
  * @version 1.0
  */
-import java.util.Random;
-
-class SUPERMARKT implements TAKTKLIENT
+class SUPERMARKT implements TaktKlient
 {
     private KASSE[] kassen;
 

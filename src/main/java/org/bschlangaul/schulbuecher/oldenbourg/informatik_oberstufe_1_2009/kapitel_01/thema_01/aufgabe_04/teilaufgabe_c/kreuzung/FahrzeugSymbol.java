@@ -10,7 +10,7 @@ import java.awt.Frame;
  *
  * @version 1.0
  */
-class FAHRZEUGSYMBOL
+class FahrzeugSymbol
 {
     /**
      * Das Anzeigefenster.
@@ -22,7 +22,7 @@ class FAHRZEUGSYMBOL
      */
     protected int laenge;
 
-    protected static final int breite = OBERFLAECHE.RasterGroesseGeben() / 2;
+    protected static final int breite = Oberflaeche.RasterGroesseGeben() / 2;
 
     /**
      * Interna
@@ -41,10 +41,10 @@ class FAHRZEUGSYMBOL
      * Standardkonstruktor für Objekte der Klasse FAHRZEUGSYMBOL. Keine Anzeige,
      * Fahrtrichtung Osten. Das Fenster wird bei Bedarf angelegt.
      */
-    FAHRZEUGSYMBOL()
+    FahrzeugSymbol()
     {
-        laenge = OBERFLAECHE.RasterGroesseGeben();
-        fenster = OBERFLAECHE.FensterGeben();
+        laenge = Oberflaeche.RasterGroesseGeben();
+        fenster = Oberflaeche.FensterGeben();
         anzeige = null;
         aktFarbe = "blau";
         ausrichtung = 'O';
@@ -128,10 +128,10 @@ class FAHRZEUGSYMBOL
         this.x = x;
         this.y = y;
         anzeige.setLocation(
-                OBERFLAECHE.FensterBreiteGeben() / 2
-                        + (int) (x * OBERFLAECHE.MeterAlsPixelGeben()),
-                OBERFLAECHE.FensterHoeheGeben() / 2
-                        + (int) (y * OBERFLAECHE.MeterAlsPixelGeben()));
+                Oberflaeche.FensterBreiteGeben() / 2
+                        + (int) (x * Oberflaeche.MeterAlsPixelGeben()),
+                Oberflaeche.FensterHoeheGeben() / 2
+                        + (int) (y * Oberflaeche.MeterAlsPixelGeben()));
     }
 
     /**

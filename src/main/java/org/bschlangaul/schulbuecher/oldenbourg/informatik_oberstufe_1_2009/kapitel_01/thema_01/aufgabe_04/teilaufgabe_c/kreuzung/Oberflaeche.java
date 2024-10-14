@@ -20,7 +20,7 @@ import java.awt.event.WindowEvent;
  *
  * @version 1.0
  */
-class OBERFLAECHE
+class Oberflaeche
 {
     /**
      * Höhe des Anzeigefensters
@@ -42,11 +42,11 @@ class OBERFLAECHE
      */
     private static final float meter2pixel = 5.0f;
 
-    private static OBERFLAECHE o = null;
+    private static Oberflaeche o = null;
 
     private Frame fenster = null;
 
-    private ADAPTER a;
+    private Adapter a;
 
     private TextField eingabe;
 
@@ -55,7 +55,7 @@ class OBERFLAECHE
     /**
      * Baut die Bedienoberfläche auf
      */
-    private OBERFLAECHE()
+    private Oberflaeche()
     {
         Label l;
         Button button;
@@ -217,7 +217,7 @@ class OBERFLAECHE
     {
         if (o == null)
         {
-            o = new OBERFLAECHE();
+            o = new Oberflaeche();
         }
         return o.fenster;
     }
@@ -267,11 +267,11 @@ class OBERFLAECHE
      *
      * @param a Adapter
      */
-    static void AdapterSetzen(ADAPTER a)
+    static void AdapterSetzen(Adapter a)
     {
         if (o == null)
         {
-            o = new OBERFLAECHE();
+            o = new Oberflaeche();
         }
         o.a = a;
     }

@@ -7,7 +7,7 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapi
  *
  * @version V1.0
  */
-class FAHRBAHN
+class FahrBahn
 {
     private int x;
 
@@ -22,11 +22,11 @@ class FAHRBAHN
     private char ausrichtung;
 
     // private FAHRZEUG [] fahrzeuge;
-    private FAHRZEUG anfang, ende;
+    private Fahrzeug anfang, ende;
 
-    private FAHRBAHNSYMBOL darstellung;
+    private FahrbahnSymbol darstellung;
 
-    private AMPEL ampel;
+    private Ampel ampel;
 
     /**
      * Erzeugt eine leere FAHRBAHN ab dem linken Rand unterhalb der
@@ -34,7 +34,7 @@ class FAHRBAHN
      *
      * @param a für diese Richtung zuständige Ampel
      */
-    FAHRBAHN(AMPEL a)
+    FahrBahn(Ampel a)
     {
         x = 0;
         y = 0;
@@ -46,7 +46,7 @@ class FAHRBAHN
          */
         anfang = null;
         ende = null;
-        darstellung = new FAHRBAHNSYMBOL();
+        darstellung = new FahrbahnSymbol();
         darstellung.PositionSetzen(x, y);
         darstellung.AusrichtungSetzen(ausrichtung);
         start = darstellung.EintrittsPositionGeben();
@@ -60,7 +60,7 @@ class FAHRBAHN
      *
      * @param f das neue Fahrzeug
      */
-    void FahrzeugEinreihen(FAHRZEUG f)
+    void FahrzeugEinreihen(Fahrzeug f)
     {
         /*
          * if (fahrzeuge [fahrzeuge. length - 1] == null) { int i; i = 0; while
@@ -91,7 +91,7 @@ class FAHRBAHN
      *
      * @param f das in Frage kommende Fahrzeug
      */
-    private boolean IstDraussen(FAHRZEUG f)
+    private boolean IstDraussen(Fahrzeug f)
     {
         switch (ausrichtung)
         {
@@ -119,7 +119,7 @@ class FAHRBAHN
      * @return true, wenn der Vorgänger wichtig ist, false, wenn die Ampel zählt
      */
     private boolean VorgaengerZaehlt(float ampelabstand,
-            float vorgaengerabstand, FAHRZEUG f)
+            float vorgaengerabstand, Fahrzeug f)
     {
         return (ampelabstand < 0.0f) || (ampelabstand > vorgaengerabstand)
                 || ampel.IstGruen()
@@ -136,7 +136,7 @@ class FAHRBAHN
         float vvorg;
         float wegmax;
         float ampelAbstand;
-        FAHRZEUG fahrzeug, vorgaenger;
+        Fahrzeug fahrzeug, vorgaenger;
         fahrzeug = anfang;
         vorgaenger = null;
         while (fahrzeug != null)

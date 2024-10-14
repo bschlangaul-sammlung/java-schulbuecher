@@ -12,17 +12,17 @@ import java.awt.Polygon;
  *
  * @version 1.0
  */
-class SPORTWAGENSYMBOL extends FAHRZEUGSYMBOL
+class SportwagenSymbol extends FahrzeugSymbol
 {
     /**
      * Standardkonstruktor für Objekte der Klasse SPORTWAGENSYMBOL. Er erzeugt
      * ein blaues Symbol in der Mitte des Fensters, Fahrtrichtung Osten. Das
      * Fenster wird bei Bedarf angelegt.
      */
-    SPORTWAGENSYMBOL()
+    SportwagenSymbol()
     {
         super();
-        laenge = OBERFLAECHE.RasterGroesseGeben() * 3 / 4;
+        laenge = Oberflaeche.RasterGroesseGeben() * 3 / 4;
         anzeige = new Canvas()
         {
             /**

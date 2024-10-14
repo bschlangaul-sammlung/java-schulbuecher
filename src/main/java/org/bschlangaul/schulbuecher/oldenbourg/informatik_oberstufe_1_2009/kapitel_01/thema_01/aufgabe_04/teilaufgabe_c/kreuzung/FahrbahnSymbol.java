@@ -12,7 +12,7 @@ import java.awt.Graphics;
  *
  * @version 1.0
  */
-class FAHRBAHNSYMBOL
+class FahrbahnSymbol
 {
     /**
      * Das Anzeigefenster.
@@ -22,7 +22,7 @@ class FAHRBAHNSYMBOL
     /**
      * Breite der Richtungsfahrbahn
      */
-    private static final int breite = OBERFLAECHE.RasterGroesseGeben();
+    private static final int breite = Oberflaeche.RasterGroesseGeben();
 
     /**
      * Interna
@@ -38,9 +38,9 @@ class FAHRBAHNSYMBOL
     /**
      * Erzeugt das FAHRBAHNSYMBOL in Richtung West -> Ost
      */
-    FAHRBAHNSYMBOL()
+    FahrbahnSymbol()
     {
-        fenster = OBERFLAECHE.FensterGeben();
+        fenster = Oberflaeche.FensterGeben();
         x = 0;
         y = 0;
         ausrichtung = 'O';
@@ -54,27 +54,27 @@ class FAHRBAHNSYMBOL
                 switch (ausrichtung)
                 {
                 case 'N':
-                    g.fillRect(2, OBERFLAECHE.FensterHoeheGeben() / 2
+                    g.fillRect(2, Oberflaeche.FensterHoeheGeben() / 2
                             + (y + 2) * breite, breite - 4, breite / 5);
                     break;
 
                 case 'S':
                     g.fillRect(2,
-                            OBERFLAECHE.FensterHoeheGeben() / 2
+                            Oberflaeche.FensterHoeheGeben() / 2
                                     + (y - 2) * breite - breite / 5,
                             breite - 4, breite / 5);
                     break;
 
                 case 'O':
                     g.fillRect(
-                            OBERFLAECHE.FensterBreiteGeben() / 2
+                            Oberflaeche.FensterBreiteGeben() / 2
                                     + (x - 2) * breite - breite / 5,
                             2, breite / 5, breite - 4);
                     break;
 
                 case 'W':
                     g.fillRect(
-                            OBERFLAECHE.FensterBreiteGeben() / 2
+                            Oberflaeche.FensterBreiteGeben() / 2
                                     + (x + 2) * breite,
                             2, breite / 5, breite - 4);
                     break;
@@ -100,27 +100,27 @@ class FAHRBAHNSYMBOL
         switch (ausrichtung)
         {
         case 'N':
-            anzeige.setSize(breite, OBERFLAECHE.FensterHoeheGeben());
+            anzeige.setSize(breite, Oberflaeche.FensterHoeheGeben());
             anzeige.setLocation(
-                    OBERFLAECHE.FensterBreiteGeben() / 2 + x * breite, 0);
+                    Oberflaeche.FensterBreiteGeben() / 2 + x * breite, 0);
             break;
 
         case 'S':
-            anzeige.setSize(breite, OBERFLAECHE.FensterHoeheGeben());
+            anzeige.setSize(breite, Oberflaeche.FensterHoeheGeben());
             anzeige.setLocation(
-                    OBERFLAECHE.FensterBreiteGeben() / 2 + (x - 1) * breite, 0);
+                    Oberflaeche.FensterBreiteGeben() / 2 + (x - 1) * breite, 0);
             break;
 
         case 'O':
-            anzeige.setSize(OBERFLAECHE.FensterBreiteGeben(), breite);
+            anzeige.setSize(Oberflaeche.FensterBreiteGeben(), breite);
             anzeige.setLocation(0,
-                    OBERFLAECHE.FensterHoeheGeben() / 2 + y * breite);
+                    Oberflaeche.FensterHoeheGeben() / 2 + y * breite);
             break;
 
         case 'W':
-            anzeige.setSize(OBERFLAECHE.FensterBreiteGeben(), breite);
+            anzeige.setSize(Oberflaeche.FensterBreiteGeben(), breite);
             anzeige.setLocation(0,
-                    OBERFLAECHE.FensterHoeheGeben() / 2 + (y - 1) * breite);
+                    Oberflaeche.FensterHoeheGeben() / 2 + (y - 1) * breite);
             break;
         }
         Zeichne();
@@ -170,20 +170,20 @@ class FAHRBAHNSYMBOL
         switch (ausrichtung)
         {
         case 'N':
-            return (OBERFLAECHE.FensterHoeheGeben() / 2)
-                    / OBERFLAECHE.MeterAlsPixelGeben();
+            return (Oberflaeche.FensterHoeheGeben() / 2)
+                    / Oberflaeche.MeterAlsPixelGeben();
 
         case 'S':
-            return -(OBERFLAECHE.FensterHoeheGeben() / 2)
-                    / OBERFLAECHE.MeterAlsPixelGeben();
+            return -(Oberflaeche.FensterHoeheGeben() / 2)
+                    / Oberflaeche.MeterAlsPixelGeben();
 
         case 'O':
-            return -(OBERFLAECHE.FensterBreiteGeben() / 2)
-                    / OBERFLAECHE.MeterAlsPixelGeben();
+            return -(Oberflaeche.FensterBreiteGeben() / 2)
+                    / Oberflaeche.MeterAlsPixelGeben();
 
         case 'W':
-            return (OBERFLAECHE.FensterBreiteGeben() / 2)
-                    / OBERFLAECHE.MeterAlsPixelGeben();
+            return (Oberflaeche.FensterBreiteGeben() / 2)
+                    / Oberflaeche.MeterAlsPixelGeben();
 
         default:
             return 0;
@@ -200,20 +200,20 @@ class FAHRBAHNSYMBOL
         switch (ausrichtung)
         {
         case 'N':
-            return -(OBERFLAECHE.FensterHoeheGeben() / 2)
-                    / OBERFLAECHE.MeterAlsPixelGeben();
+            return -(Oberflaeche.FensterHoeheGeben() / 2)
+                    / Oberflaeche.MeterAlsPixelGeben();
 
         case 'S':
-            return (OBERFLAECHE.FensterHoeheGeben() / 2)
-                    / OBERFLAECHE.MeterAlsPixelGeben();
+            return (Oberflaeche.FensterHoeheGeben() / 2)
+                    / Oberflaeche.MeterAlsPixelGeben();
 
         case 'O':
-            return (OBERFLAECHE.FensterBreiteGeben() / 2)
-                    / OBERFLAECHE.MeterAlsPixelGeben();
+            return (Oberflaeche.FensterBreiteGeben() / 2)
+                    / Oberflaeche.MeterAlsPixelGeben();
 
         case 'W':
-            return -(OBERFLAECHE.FensterBreiteGeben() / 2)
-                    / OBERFLAECHE.MeterAlsPixelGeben();
+            return -(Oberflaeche.FensterBreiteGeben() / 2)
+                    / Oberflaeche.MeterAlsPixelGeben();
 
         default:
             return 0;
@@ -230,16 +230,16 @@ class FAHRBAHNSYMBOL
         switch (ausrichtung)
         {
         case 'N':
-            return x * OBERFLAECHE.MeterAlsPixelGeben() + 1.5f;
+            return x * Oberflaeche.MeterAlsPixelGeben() + 1.5f;
 
         case 'S':
-            return (x - 1) * OBERFLAECHE.MeterAlsPixelGeben() + 1.5f;
+            return (x - 1) * Oberflaeche.MeterAlsPixelGeben() + 1.5f;
 
         case 'O':
-            return y * OBERFLAECHE.MeterAlsPixelGeben() + 1.5f;
+            return y * Oberflaeche.MeterAlsPixelGeben() + 1.5f;
 
         case 'W':
-            return (y - 1) * OBERFLAECHE.MeterAlsPixelGeben() + 1.5f;
+            return (y - 1) * Oberflaeche.MeterAlsPixelGeben() + 1.5f;
 
         default:
             return 0;
@@ -256,16 +256,16 @@ class FAHRBAHNSYMBOL
         switch (ausrichtung)
         {
         case 'N':
-            return (y + 2) * OBERFLAECHE.MeterAlsPixelGeben();
+            return (y + 2) * Oberflaeche.MeterAlsPixelGeben();
 
         case 'S':
-            return (y - 2) * OBERFLAECHE.MeterAlsPixelGeben();
+            return (y - 2) * Oberflaeche.MeterAlsPixelGeben();
 
         case 'O':
-            return (x - 2) * OBERFLAECHE.MeterAlsPixelGeben();
+            return (x - 2) * Oberflaeche.MeterAlsPixelGeben();
 
         case 'W':
-            return (x + 2) * OBERFLAECHE.MeterAlsPixelGeben();
+            return (x + 2) * Oberflaeche.MeterAlsPixelGeben();
 
         default:
             return 0;

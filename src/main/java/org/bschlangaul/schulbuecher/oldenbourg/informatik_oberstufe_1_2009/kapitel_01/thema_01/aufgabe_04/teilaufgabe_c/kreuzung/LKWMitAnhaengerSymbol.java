@@ -12,17 +12,17 @@ import java.awt.Polygon;
  *
  * @version 1.0
  */
-class LKWMITANHAENGERSYMBOL extends FAHRZEUGSYMBOL
+class LKWMitAnhaengerSymbol extends FahrzeugSymbol
 {
     /**
      * Standardkonstruktor für Objekte der Klasse LKWMITANHANGERSYMBOL. Er
      * erzeugt ein blaues Symbol in der Mitte des Fensters, Fahrtrichtung Osten.
      * Das Fenster wird bei Bedarf angelegt.
      */
-    LKWMITANHAENGERSYMBOL()
+    LKWMitAnhaengerSymbol()
     {
         super();
-        laenge = OBERFLAECHE.RasterGroesseGeben() * 3;
+        laenge = Oberflaeche.RasterGroesseGeben() * 3;
         anzeige = new Canvas()
         {
             /**

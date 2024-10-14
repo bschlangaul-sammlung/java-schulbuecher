@@ -9,7 +9,7 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapi
  *
  * @version 1.0
  */
-class AMPEL
+class Ampel
 {
     /**
      * Der Bezugspunkt für die Position ist die obere linke Ecke der lampeOben.
@@ -33,24 +33,24 @@ class AMPEL
     private char ausrichtung;
 
     // Referenzattribute
-    private LAMPE lampeOben;
+    private Lampe lampeOben;
 
-    private LAMPE lampeMitte;
+    private Lampe lampeMitte;
 
-    private LAMPE lampeUnten;
+    private Lampe lampeUnten;
 
     /**
      * Konstruktor für Objekte der Klasse AMPEL.
      */
-    public AMPEL()
+    public Ampel()
     {
         positionX = 1;
         positionY = 1;
         ampelphase = "rot";
         ausrichtung = 'S';
-        lampeOben = new LAMPE();
-        lampeMitte = new LAMPE();
-        lampeUnten = new LAMPE();
+        lampeOben = new Lampe();
+        lampeMitte = new Lampe();
+        lampeUnten = new Lampe();
         lampeOben.FarbeSetzen("rot");
         lampeMitte.FarbeSetzen("schwarz");
         lampeUnten.FarbeSetzen("schwarz");
@@ -64,11 +64,11 @@ class AMPEL
      * @param yNeu - neue y-Position
      * @param ausrichtungNeu - neue Ausrichtung
      */
-    public AMPEL(int xNeu, int yNeu, char ausrichtungNeu)
+    public Ampel(int xNeu, int yNeu, char ausrichtungNeu)
     {
-        lampeOben = new LAMPE();
-        lampeMitte = new LAMPE();
-        lampeUnten = new LAMPE();
+        lampeOben = new Lampe();
+        lampeMitte = new Lampe();
+        lampeUnten = new Lampe();
         lampeOben.FarbeSetzen("rot");
         lampeMitte.FarbeSetzen("schwarz");
         lampeUnten.FarbeSetzen("schwarz");

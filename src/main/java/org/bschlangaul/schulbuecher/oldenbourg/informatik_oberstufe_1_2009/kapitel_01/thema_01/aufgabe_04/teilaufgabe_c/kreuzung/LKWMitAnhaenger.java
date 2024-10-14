@@ -7,7 +7,7 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapi
  *
  * @version V1.0
  */
-class LKWMITANHAENGER extends FAHRZEUG
+class LKWMitAnhaenger extends Fahrzeug
 {
     private float a1;
 
@@ -16,10 +16,10 @@ class LKWMITANHAENGER extends FAHRZEUG
     /**
      * Erzeugt die Anzeige.
      */
-    LKWMITANHAENGER()
+    LKWMitAnhaenger()
     {
         super();
-        symbol = new LKWMITANHAENGERSYMBOL();
+        symbol = new LKWMitAnhaengerSymbol();
         switch ((new java.util.Random()).nextInt(7))
         {
         case 0:

@@ -1,5 +1,7 @@
 package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapitel_01.thema_04.aufgabe_03.teilaufgabe_b.kreuzung;
 
+import org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.shared.*;
+
 /**
  * Gibt die Botschaften der Oberfläche an die Kreuzung weiter
  *
@@ -11,12 +13,12 @@ class ADAPTER
 {
     KREUZUNG k;
 
-    TAKTGEBER t;
+    TaktGeber t;
 
     /**
      * Setzt die Empfänger der Botschaften
      */
-    ADAPTER(KREUZUNG k, TAKTGEBER t)
+    ADAPTER(KREUZUNG k, TaktGeber t)
     {
         this.k = k;
         this.t = t;

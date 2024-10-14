@@ -7,7 +7,7 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapi
  *
  * @version V1.0
  */
-class PKW extends FAHRZEUG
+class PKW extends Fahrzeug
 {
     private float a;
 
@@ -17,7 +17,7 @@ class PKW extends FAHRZEUG
     PKW()
     {
         super();
-        symbol = new PKWSYMBOL();
+        symbol = new PKWSymbol();
         switch ((new java.util.Random()).nextInt(7))
         {
         case 0:

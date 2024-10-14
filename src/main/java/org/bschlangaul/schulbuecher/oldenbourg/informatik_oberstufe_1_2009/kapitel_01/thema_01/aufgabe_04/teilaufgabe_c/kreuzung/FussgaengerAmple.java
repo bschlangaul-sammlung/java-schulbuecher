@@ -9,7 +9,7 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapi
  *
  * @version 1.0
  */
-class FUSSGAENGERAMPEL
+class FussgaengerAmple
 {
     private int positionX;
 
@@ -22,21 +22,21 @@ class FUSSGAENGERAMPEL
     /**
      * Referenzattribute
      */
-    private LAMPE lampeOben;
+    private Lampe lampeOben;
 
-    private LAMPE lampeUnten;
+    private Lampe lampeUnten;
 
     /**
      * Konstruktor für Objekte der Klasse FUSSGAENGERAMPEL.
      */
-    public FUSSGAENGERAMPEL()
+    public FussgaengerAmple()
     {
         positionX = 1;
         positionY = 1;
         ampelphase = "rot";
         ausrichtung = 'S';
-        lampeOben = new LAMPE();
-        lampeUnten = new LAMPE();
+        lampeOben = new Lampe();
+        lampeUnten = new Lampe();
         lampeOben.FarbeSetzen("rot");
         lampeUnten.FarbeSetzen("schwarz");
         AmpelAnordnen();
@@ -50,10 +50,10 @@ class FUSSGAENGERAMPEL
      * @param yNeu - neue y-Position
      * @param ausrichtungNeu - neue Ausrichtung
      */
-    public FUSSGAENGERAMPEL(int xNeu, int yNeu, char ausrichtungNeu)
+    public FussgaengerAmple(int xNeu, int yNeu, char ausrichtungNeu)
     {
-        lampeOben = new LAMPE();
-        lampeUnten = new LAMPE();
+        lampeOben = new Lampe();
+        lampeUnten = new Lampe();
         lampeOben.FarbeSetzen("rot");
         lampeUnten.FarbeSetzen("schwarz");
         PositionSetzen(xNeu, yNeu);

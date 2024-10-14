@@ -7,9 +7,9 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapi
  *
  * @version V1.0
  */
-abstract class FAHRZEUG
+abstract class Fahrzeug
 {
-    protected FAHRZEUGSYMBOL symbol;
+    protected FahrzeugSymbol symbol;
 
     protected float x;
 
@@ -21,12 +21,12 @@ abstract class FAHRZEUG
 
     protected char ausrichtung;
 
-    protected FAHRZEUG nachfolger;
+    protected Fahrzeug nachfolger;
 
     /**
      * Erzeugt die Anzeige.
      */
-    FAHRZEUG()
+    Fahrzeug()
     {
         symbol = null;
         vmax = 13.89f;
@@ -115,7 +115,7 @@ abstract class FAHRZEUG
     /**
      * Setzt den Nachfolger des Fahrzeugs auf den übergebenen Wert
      */
-    void NachfolgerSetzen(FAHRZEUG f)
+    void NachfolgerSetzen(Fahrzeug f)
     {
         nachfolger = f;
     }
@@ -125,7 +125,7 @@ abstract class FAHRZEUG
      *
      * @return nachfolger
      */
-    FAHRZEUG NachfolgerGeben()
+    Fahrzeug NachfolgerGeben()
     {
         return nachfolger;
     }

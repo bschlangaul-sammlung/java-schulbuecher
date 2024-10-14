@@ -1,5 +1,7 @@
 package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapitel_01.thema_01.aufgabe_05.snake;
 
+import org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.shared.*;
+
 /**
  * Klasse zur Programmverwaltung
  *
@@ -17,7 +19,7 @@ class PROGRAMM
     /**
      * Referenz auf einen verwalteten Taktgeber
      */
-    private static TAKTGEBER t;
+    private static TaktGeber t;
 
     /**
      * Konstruktor der Klasse PROGRAMM Erzeugt ein neues Spiel und startet es.
@@ -25,7 +27,7 @@ class PROGRAMM
     PROGRAMM()
     {
         s = new SPIEL();
-        t = new TAKTGEBER(s);
+        t = new TaktGeber(s);
         t.Starten();
     }
 

@@ -1,4 +1,4 @@
-package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapitel_01.thema_01.aufgabe_04.teilaufgabe_c.kreuzung;
+package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.shared;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -12,7 +12,7 @@ import javax.swing.Timer;
  *
  * @version 1.0
  */
-class TAKTGEBER implements ActionListener
+public class TaktGeber implements ActionListener
 {
     /**
      * Timerobjekt für die zentrale Zeitverwaltung
@@ -23,7 +23,7 @@ class TAKTGEBER implements ActionListener
      * zu steuernde Objekte, müssen von jedem Takt benachrichtigt werden.
      */
     // Hierher kommen die Attribute für die zu benachrichtigenden Objekte
-    TAKTKLIENT klient;
+    TaktKlient klient;
 
     /**
      * Standardkonstruktor für Objekte der Klasse Taktgeber. Erzeugt den
@@ -31,7 +31,7 @@ class TAKTGEBER implements ActionListener
      *
      * @param klient der zu bedienende Klient
      */
-    TAKTGEBER(TAKTKLIENT klient)
+    public TaktGeber(TaktKlient klient)
     {
         timer = new Timer(1000, this);
         this.klient = klient;
@@ -52,7 +52,7 @@ class TAKTGEBER implements ActionListener
     /**
      * Timer starten
      */
-    void Starten()
+    public void Starten()
     {
         timer.start();
     }
@@ -60,7 +60,7 @@ class TAKTGEBER implements ActionListener
     /**
      * Timer anhalten
      */
-    void Anhalten()
+    public void Anhalten()
     {
         timer.stop();
     }
@@ -70,7 +70,7 @@ class TAKTGEBER implements ActionListener
      *
      * @param dauer: Angabe in Millisekunden
      */
-    void TaktdauerSetzen(int dauer)
+    public void TaktdauerSetzen(int dauer)
     {
         timer.setDelay(dauer);
     }

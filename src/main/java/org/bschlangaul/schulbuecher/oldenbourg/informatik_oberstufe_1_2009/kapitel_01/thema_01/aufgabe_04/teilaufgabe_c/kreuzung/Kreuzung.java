@@ -1,18 +1,21 @@
 package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapitel_01.thema_01.aufgabe_04.teilaufgabe_c.kreuzung;
 
-/**
- * Die Klasse KREUZUNG beschreibt eine Kreuzung, die aus vier Kfz- und acht Fussgängerampeln
- * besteht. Alle Ampeln sind um den Koordinatenursprung positioniert. Die Lichtsignale können
- * verschiedene Phasen durchlaufen, wobei mit der Grünphase in Ost/West Richtung und gleichzeitig
- * der Rotphase in Nord/Süd Richtung begonnen wird.
- *
- *
- * @author Peter Cody
- * @version 1.0
- */
 import java.util.Random;
 
-class KREUZUNG implements TAKTKLIENT
+import org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.shared.TaktKlient;
+
+/**
+ * Die Klasse KREUZUNG beschreibt eine Kreuzung, die aus vier Kfz- und acht
+ * Fussgängerampeln besteht. Alle Ampeln sind um den Koordinatenursprung
+ * positioniert. Die Lichtsignale können verschiedene Phasen durchlaufen, wobei
+ * mit der Grünphase in Ost/West Richtung und gleichzeitig der Rotphase in
+ * Nord/Süd Richtung begonnen wird.
+ *
+ * @author Peter Cody
+ *
+ * @version 1.0
+ */
+class Kreuzung implements TaktKlient
 {
     /**
      * Das Attribut Phase beschreibt welche Verkehrsströme innerhalb der Ampel
@@ -58,80 +61,80 @@ class KREUZUNG implements TAKTKLIENT
     private Random zzgenerator;
     // Referenzattribute
 
-    private AMPEL ampelNord;
+    private Ampel ampelNord;
 
-    private AMPEL ampelOst;
+    private Ampel ampelOst;
 
-    private AMPEL ampelSued;
+    private Ampel ampelSued;
 
-    private AMPEL ampelWest;
+    private Ampel ampelWest;
 
-    private FUSSGAENGERAMPEL fgAmpelNord1;
+    private FussgaengerAmple fgAmpelNord1;
 
-    private FUSSGAENGERAMPEL fgAmpelNord2;
+    private FussgaengerAmple fgAmpelNord2;
 
-    private FUSSGAENGERAMPEL fgAmpelOst1;
+    private FussgaengerAmple fgAmpelOst1;
 
-    private FUSSGAENGERAMPEL fgAmpelOst2;
+    private FussgaengerAmple fgAmpelOst2;
 
-    private FUSSGAENGERAMPEL fgAmpelSued1;
+    private FussgaengerAmple fgAmpelSued1;
 
-    private FUSSGAENGERAMPEL fgAmpelSued2;
+    private FussgaengerAmple fgAmpelSued2;
 
-    private FUSSGAENGERAMPEL fgAmpelWest1;
+    private FussgaengerAmple fgAmpelWest1;
 
-    private FUSSGAENGERAMPEL fgAmpelWest2;
+    private FussgaengerAmple fgAmpelWest2;
 
-    private FAHRBAHN nachOst;
+    private FahrBahn nachOst;
 
-    private FAHRBAHN nachWest;
+    private FahrBahn nachWest;
 
-    private FAHRBAHN nachNord;
+    private FahrBahn nachNord;
 
-    private FAHRBAHN nachSued;
+    private FahrBahn nachSued;
 
     /**
      * Erzeugt die vier Ampeln, positioniert sie um den Ursprung und setzt die
      * Lichtsignale so, dass eine Grünphase in Ost/West Richtung und
      * gleichzeitig der Rotphase in Nord/Süd Richtung vorliegt.
      */
-    public KREUZUNG()
+    public Kreuzung()
     {
         schaltphase = 1;
-        ampelNord = new AMPEL(-2, -6, 'N');
+        ampelNord = new Ampel(-2, -6, 'N');
         ampelNord.RotSetzen();
-        fgAmpelNord1 = new FUSSGAENGERAMPEL(-4, -2, 'N');
+        fgAmpelNord1 = new FussgaengerAmple(-4, -2, 'N');
         fgAmpelNord1.RotSetzen();
-        fgAmpelNord2 = new FUSSGAENGERAMPEL(3, -2, 'N');
+        fgAmpelNord2 = new FussgaengerAmple(3, -2, 'N');
         fgAmpelNord2.RotSetzen();
-        ampelOst = new AMPEL(5, -2, 'O');
+        ampelOst = new Ampel(5, -2, 'O');
         ampelOst.GruenSetzen();
-        fgAmpelOst1 = new FUSSGAENGERAMPEL(1, -4, 'O');
+        fgAmpelOst1 = new FussgaengerAmple(1, -4, 'O');
         fgAmpelOst1.GruenSetzen();
-        fgAmpelOst2 = new FUSSGAENGERAMPEL(1, 3, 'O');
+        fgAmpelOst2 = new FussgaengerAmple(1, 3, 'O');
         fgAmpelOst2.GruenSetzen();
-        ampelSued = new AMPEL(1, 5, 'S');
+        ampelSued = new Ampel(1, 5, 'S');
         ampelSued.RotSetzen();
-        fgAmpelSued1 = new FUSSGAENGERAMPEL(3, 1, 'S');
+        fgAmpelSued1 = new FussgaengerAmple(3, 1, 'S');
         fgAmpelSued1.RotSetzen();
-        fgAmpelSued2 = new FUSSGAENGERAMPEL(-4, 1, 'S');
+        fgAmpelSued2 = new FussgaengerAmple(-4, 1, 'S');
         fgAmpelSued2.RotSetzen();
-        ampelWest = new AMPEL(-6, 1, 'W');
+        ampelWest = new Ampel(-6, 1, 'W');
         ampelWest.GruenSetzen();
-        fgAmpelWest1 = new FUSSGAENGERAMPEL(-2, 3, 'W');
+        fgAmpelWest1 = new FussgaengerAmple(-2, 3, 'W');
         fgAmpelWest1.GruenSetzen();
-        fgAmpelWest2 = new FUSSGAENGERAMPEL(-2, -4, 'W');
+        fgAmpelWest2 = new FussgaengerAmple(-2, -4, 'W');
         fgAmpelWest2.GruenSetzen();
-        nachOst = new FAHRBAHN(ampelOst);
+        nachOst = new FahrBahn(ampelOst);
         nachOst.PositionSetzen(0, 0);
         nachOst.AusrichtungSetzen('O');
-        nachWest = new FAHRBAHN(ampelWest);
+        nachWest = new FahrBahn(ampelWest);
         nachWest.PositionSetzen(0, 0);
         nachWest.AusrichtungSetzen('W');
-        nachNord = new FAHRBAHN(ampelNord);
+        nachNord = new FahrBahn(ampelNord);
         nachNord.PositionSetzen(0, 0);
         nachNord.AusrichtungSetzen('N');
-        nachSued = new FAHRBAHN(ampelSued);
+        nachSued = new FahrBahn(ampelSued);
         nachSued.PositionSetzen(0, 0);
         nachSued.AusrichtungSetzen('S');
         wartezeitKurz = 5;
@@ -265,7 +268,7 @@ class KREUZUNG implements TAKTKLIENT
      *
      * @return das neue Fahrzeug
      */
-    FAHRZEUG FahrzeugGenerieren()
+    Fahrzeug FahrzeugGenerieren()
     {
         switch (zzgenerator.nextInt(5))
         {
@@ -277,10 +280,10 @@ class KREUZUNG implements TAKTKLIENT
             return new LKW();
 
         case 3:
-            return new SPORTWAGEN();
+            return new SportWagen();
 
         case 4:
-            return new LKWMITANHAENGER();
+            return new LKWMitAnhaenger();
 
         default:
             return null;

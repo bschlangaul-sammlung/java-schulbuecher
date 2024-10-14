@@ -12,17 +12,17 @@ import java.awt.Polygon;
  *
  * @version 1.0
  */
-class LKWSYMBOL extends FAHRZEUGSYMBOL
+class LKWSymbol extends FahrzeugSymbol
 {
     /**
      * Standardkonstruktor für Objekte der Klasse PKWSYMBOL. Er erzeugt ein
      * blaues Symbol in der Mitte des Fensters, Fahrtrichtung Osten. Das Fenster
      * wird bei Bedarf angelegt.
      */
-    LKWSYMBOL()
+    LKWSymbol()
     {
         super();
-        laenge = OBERFLAECHE.RasterGroesseGeben() * 3 / 2;
+        laenge = Oberflaeche.RasterGroesseGeben() * 3 / 2;
         anzeige = new Canvas()
         {
             /**

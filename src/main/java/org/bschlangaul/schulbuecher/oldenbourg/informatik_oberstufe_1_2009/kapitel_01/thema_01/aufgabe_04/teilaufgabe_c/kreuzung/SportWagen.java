@@ -7,17 +7,17 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapi
  *
  * @version V1.0
  */
-class SPORTWAGEN extends FAHRZEUG
+class SportWagen extends Fahrzeug
 {
     private float a;
 
     /**
      * Erzeugt die Anzeige.
      */
-    SPORTWAGEN()
+    SportWagen()
     {
         super();
-        symbol = new SPORTWAGENSYMBOL();
+        symbol = new SportwagenSymbol();
         switch ((new java.util.Random()).nextInt(7))
         {
         case 0:
