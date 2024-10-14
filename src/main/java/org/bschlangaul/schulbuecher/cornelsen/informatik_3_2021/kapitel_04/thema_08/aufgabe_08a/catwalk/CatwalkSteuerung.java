@@ -2,6 +2,8 @@ package org.bschlangaul.schulbuecher.cornelsen.informatik_3_2021.kapitel_04.them
 
 import java.util.Random;
 
+import org.bschlangaul.schulbuecher.cornelsen.shared.graphics_and_games.Figur;
+
 /**
  * Steuerung der Leuchten auf dem Catwalk
  *
@@ -35,7 +37,7 @@ class CatwalkSteuerung extends Figur
      * Lässt die Farben eine Spalte weiter laufen
      */
     @Override
-    void AktionAusführen()
+    public void AktionAusführen()
     {
         for (int spalte = 0; spalte < laufsteg.SpaltenanzahlGeben()
                 - 1; spalte = spalte + 1)

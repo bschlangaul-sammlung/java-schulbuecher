@@ -1,5 +1,7 @@
 package org.bschlangaul.schulbuecher.cornelsen.informatik_3_2021.kapitel_04.thema_08.aufgabe_10a.spielwelt;
 
+import org.bschlangaul.schulbuecher.cornelsen.shared.graphics_and_games.Figur;
+
 /**
  * Fliegenpilz, der darauf wartet gesammelt zu werden
  *
@@ -55,7 +57,7 @@ class Fliegenpilz extends Figur
      * Prüfen auf Berührung
      */
     @Override
-    void AktionAusführen()
+    public void AktionAusführen()
     {
         GepflücktWerden();
     }

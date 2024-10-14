@@ -2,6 +2,8 @@ package org.bschlangaul.schulbuecher.cornelsen.informatik_3_2021.kapitel_04.them
 
 import java.util.Random;
 
+import org.bschlangaul.schulbuecher.cornelsen.shared.graphics_and_games.Kreis;
+
 /**
  * Zahlenraten - Spiel.
  *

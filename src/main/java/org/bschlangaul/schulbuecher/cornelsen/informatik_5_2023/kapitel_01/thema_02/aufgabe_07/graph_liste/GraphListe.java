@@ -2,6 +2,8 @@ package org.bschlangaul.schulbuecher.cornelsen.informatik_5_2023.kapitel_01.them
 
 import java.util.ArrayList;
 
+import org.bschlangaul.schulbuecher.cornelsen.shared.graph_visualisierung.KantenSymbol;
+
 /**
  * Verwaltet einen ungerichteten, gewichteten Graphen mittels Adjazenzlisten
  *

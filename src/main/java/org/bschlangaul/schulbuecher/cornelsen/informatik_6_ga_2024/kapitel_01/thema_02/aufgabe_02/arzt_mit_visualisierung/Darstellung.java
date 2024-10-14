@@ -3,6 +3,10 @@ package org.bschlangaul.schulbuecher.cornelsen.informatik_6_ga_2024.kapitel_01.t
 import java.util.ArrayList;
 import java.util.Random;
 
+import org.bschlangaul.schulbuecher.cornelsen.shared.graphics_and_games.Rechteck;
+import org.bschlangaul.schulbuecher.cornelsen.shared.graphics_and_games.Text;
+import org.bschlangaul.schulbuecher.cornelsen.shared.graphics_and_games.Zeichenfenster;
+
 /**
  * Stellt die Warteschlange im Wartezimmer dar
  *
