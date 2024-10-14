@@ -1,30 +1,37 @@
- 
+
 import java.util.ArrayList;
 /**
  * Verwaltet einen ungerichteten, gewichteten Graphen mittels Adjazenzmatrix
- * 
- * @author Albert Wiedemann 
+ *
+ * @author Albert Wiedemann
  * @version 1.0
  */
 class GraphMatrix extends Ereignisbehandlung
 {
-    /** Feld der Knoten des Graphen */
-    private ArrayList<Knoten> knoten;   
+    /**
+     * Feld der Knoten des Graphen */
+    private ArrayList<Knoten> knoten;
     /** 2-dim Feld der Adjazenzmatrix */
     private ArrayList<ArrayList<Integer>> matrix;
-    /** Feld der Kantensymbole des Graphen */
+    /**
+     * Feld der Kantensymbole des Graphen */
     private ArrayList<KantenSymbol> kanten;
-    /** Markierung für die besuchten Knoten */
+    /**
+     * Markierung für die besuchten Knoten */
     private ArrayList<Knoten> besuchteKnoten;
-    /** Signal für gedrückte Taste */
+    /**
+     * Signal für gedrückte Taste */
     private boolean weiter;
-    /** aktueller Weg zum Zielknoten */
+    /**
+     * aktueller Weg zum Zielknoten */
     private ArrayList<Knoten> aktuellerWeg;
-    /** optimaler Weg zum Zielknoten */
+    /**
+     * optimaler Weg zum Zielknoten */
     private ArrayList<Knoten> optimalerWeg;
-    /** Länge des optimalen Wegs */
+    /**
+     * Länge des optimalen Wegs */
     private int optimaleLänge;
-    
+
     /**
      * Baut die Datenstruktur auf
      */
@@ -40,7 +47,7 @@ class GraphMatrix extends Ereignisbehandlung
         optimalerWeg = new ArrayList<Knoten>();
         optimaleLänge = Integer.MAX_VALUE;
     }
-    
+
     /**
      * Die Aktionsmethode für gedrückte Tasten.
      * @param taste die gedrückte Taste
@@ -49,7 +56,7 @@ class GraphMatrix extends Ereignisbehandlung
     {
         weiter = true;
     }
-    
+
     /**
      * Die Aktionsmethode für gedrückte Sondertasten.
      * @param taste KeyCode der gedrückten Taste
@@ -58,7 +65,7 @@ class GraphMatrix extends Ereignisbehandlung
     {
         weiter = true;
     }
-    
+
     /**
      * Wartet auf einen Tastendruck
      */
@@ -77,7 +84,7 @@ class GraphMatrix extends Ereignisbehandlung
         }
         weiter = false;
     }
-    
+
     /**
      * Einfügen eines neuen Knoten in den Graphen
      * @param bezeichner Bezeichner des neuen Knotens, der dem Graphen hinzugefügt wird.
@@ -103,7 +110,7 @@ class GraphMatrix extends Ereignisbehandlung
      * Wenn ein Knoten mit diesem Bezeichner nicht bekannt ist, wird null zurückgegeben
      * @param bezeichner Bezeichner des Knoten der gesucht wird
      * @return Referenz auf das Knotenobjekt oder null
-     */   
+     */
     private Knoten KnotenGeben(String bezeichner)
     {
         for (Knoten k: knoten)
@@ -121,7 +128,7 @@ class GraphMatrix extends Ereignisbehandlung
      * Wenn ein Knoten mit diesem Bezeichner nicht bekannt ist, wird -1 zurückgegeben
      * @param bezeichner Bezeichner des Knoten, der gesucht wird
      * @return Indexnummer des Knotens im Knotenfeld; 0 <= res <= knoten.size()-1 bzw. -1
-     */   
+     */
     int KnotenNummerGeben(String bezeichner)
     {
         for (int index=0; index < knoten.size(); index++)
@@ -133,12 +140,12 @@ class GraphMatrix extends Ereignisbehandlung
         }
         return -1;
     }
-    
+
     /**
      * Gibt die Bezeichnung eines Knotens mit der internen Knotennummer
      * @param Indexnummer des Knotens im Knotenarray; 0<= x <= knoten.size()
      * @return Bezeichner des Knotens
-     */   
+     */
     String KnotenBezeichnerGeben(int knotenNummer)
     {
         if ((knotenNummer < knoten.size()) && (knotenNummer >= 0))
@@ -174,18 +181,18 @@ class GraphMatrix extends Ereignisbehandlung
     /**
      * Gibt die Anzahl der Knoten des Graphen zurück
      * @return  Anzahl der Knoten
-     */   
+     */
     int KnotenAnzahlGeben()
     {
         return knoten.size();
     }
-    
+
     /**
      * Setzt die Farbe der Kante von Knoten k1 zu Knoten k2
      * @param k1 der eine Endknoten
      * @param k2 der andere Endknoten
      * @param farbe die neue Kantenfarbe
-     */ 
+     */
     void KantenfarbeSetzen(Knoten k1, Knoten k2, String farbe)
     {
         for (KantenSymbol k: kanten)
@@ -197,7 +204,7 @@ class GraphMatrix extends Ereignisbehandlung
             }
         }
     }
-    
+
     /**
      * Löscht die Kanten und Knoten des Graphen
      * Die Anzeige wird auch gelöscht
@@ -209,7 +216,7 @@ class GraphMatrix extends Ereignisbehandlung
         optimalerWeg.clear();
         optimaleLänge = Integer.MAX_VALUE;
     }
-    
+
     /**
      * Zeigt den optimalen Weg an.
      */
@@ -226,7 +233,7 @@ class GraphMatrix extends Ereignisbehandlung
             letzter = aktuell;
         }
     }
-    
+
     /**
      * Setzt den Rekursionsschritt bei einem Knoten um.
      * Alle Wege werden gesucht.
@@ -256,7 +263,7 @@ class GraphMatrix extends Ereignisbehandlung
         knoten.get(aktuell).FarbeSetzen("weiß");
         besuchteKnoten.remove(knoten.get(aktuell));
     }
-    
+
     /**
      * Setzt den Rekursionsschritt bei einem Knoten um.
      * Der optimale Weg wird gespeichert.

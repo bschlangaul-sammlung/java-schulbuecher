@@ -4,13 +4,14 @@
  * Die Methoden die ein Objekt dieser Klasse anbietet, leiten den Aufruf an den
  * Wurzelknoten weiter, wenn der Baum nicht leer ist.
  * (Implementierung mit Entwurfsmuster Kompositum)
- * 
- * @author (Peter Brichzin) 
+ *
+ * @author (Peter Brichzin)
  * @version (23.5.24)
  */
 class BinBaum
 {
-    /** Die Wurzel des Baums */
+    /**
+     * Die Wurzel des Baums */
     private Baumelement wurzel;
 
     /**
@@ -23,21 +24,21 @@ class BinBaum
     }
 
     /**
-     * Fügt ein Datenelement sortiert in den geordneten Binärbaum ein, 
-     * d.h. die Eigenschaft, dass der Baum geordnet ist bleibt bei jedem 
+     * Fügt ein Datenelement sortiert in den geordneten Binärbaum ein,
+     * d.h. die Eigenschaft, dass der Baum geordnet ist bleibt bei jedem
      * Einfügevorgang erhalten.
      * @param datenNeu neues Datenelement
      */
     void Einfügen(User datenNeu)
     {
         wurzel = wurzel.Einfügen(datenNeu);
-        
+
         //Visualisierung des Baums
         BaumZeichnen();
     }
 
     /**
-     * Sucht ein Datenelement, das über seinen Schlüssel 
+     * Sucht ein Datenelement, das über seinen Schlüssel
      * identifiziert wird, und gibt es aus.
      * @param suchSchlüssel Schlüssel, nach dem gesucht wird
      * @return gesuchtes Datenelement bzw. null, falls die Suche erfolglos ist
@@ -48,18 +49,18 @@ class BinBaum
     }
 
     /**
-     * Überprüft, ob ein Datenelement mit dem eingegebenen Schlüssel vorhanden ist. 
-     * @param suchSchlüssel Schlüssel, nach dem gesucht wird 
+     * Überprüft, ob ein Datenelement mit dem eingegebenen Schlüssel vorhanden ist.
+     * @param suchSchlüssel Schlüssel, nach dem gesucht wird
      * @return true im Erfolgsfall, false sonst.
      */
-    boolean IstVorhanden(int suchSchlüssel) 
+    boolean IstVorhanden(int suchSchlüssel)
     {
         return wurzel.IstVorhanden(suchSchlüssel);
     }
 
     /**
      * Berechnet die Höhe des Baums und gibt diesen Wert zurück
-     * @return Höhe des Baums 
+     * @return Höhe des Baums
      */
     int HöheGeben()
     {
@@ -68,10 +69,10 @@ class BinBaum
 
     /**
      * Gibt die Tiefe des Knotens an, in dem ein Datenelement mit dem Schlüssel suchSchlüssel gespeichert ist.
-     * @param suchSchlüssel Schlüssel, nach dem gesucht wird 
+     * @param suchSchlüssel Schlüssel, nach dem gesucht wird
      * @return Tiefe als positive Zahl, bzw. -1 falls der suchSchlüssel nicht vorhanden ist.
      */
-    int TiefeGeben(int suchSchlüssel) 
+    int TiefeGeben(int suchSchlüssel)
     {
         return wurzel.TiefeGeben(suchSchlüssel, 0);
     }

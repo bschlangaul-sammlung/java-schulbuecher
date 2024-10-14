@@ -1,13 +1,14 @@
 
 /**
  * Rahmenklasse zum Zeichen von Mustern aus Quadraten
- * 
+ *
  * @author Albert Wiedemann
  * @version 1.0
  */
 class RekursiveGrafik
 {
-    /** Die Turtle zum Zeichnen */
+    /**
+     * Die Turtle zum Zeichnen */
     Turtle turtle;
 
     /**
@@ -19,7 +20,7 @@ class RekursiveGrafik
         turtle.FarbeSetzen("blau");
         turtle.PositionSetzen(400, 200);
     }
-    
+
     /**
      * Zeichnet ein Quadrat mit gegebener Seitenlänge an der Stelle der Turtle
      * @param länge Seitenlänge des Quadrats
@@ -32,7 +33,7 @@ class RekursiveGrafik
             turtle.Drehen(-90);
         }
     }
-    
+
     /**
      * Zeichnet ein Element der Perlenkette
      * @param anzahl (Rest-)anzahl der Quadrate
@@ -50,7 +51,7 @@ class RekursiveGrafik
             QuadratZeichnen(10);
         }
     }
-    
+
     /**
      * Zeichnet ein Element der Quadratmuster
      * @param anzahl (Rest-)anzahl der Quadrate
@@ -63,7 +64,7 @@ class RekursiveGrafik
             QuadratmusterZeichnen(anzahl - 1);
         }
     }
-    
+
     /**
      * Zeichnet Quadratmuster im Kreis
      * @param gesamtanzahlQuadrate insgesamte Anzahl der Quadrate
@@ -86,7 +87,7 @@ class RekursiveGrafik
             MusterZeichnen(gesamtanzahlQuadrate, nochZuZeichnendeQuadrate - 1);
         }
     }
-    
+
     /**
      * Zeichnet Quadratmuster im Kreis mit variablem Radius
      * @param anzahlQuadrate Anzahl der Quadrate
@@ -110,7 +111,7 @@ class RekursiveGrafik
             MusterZeichnen2(anzahlQuadrate, quadratNummer - 1, radius);
         }
     }
-    
+
     /**
      * Zeichnet eine Folge immer kleinerer Quadratkreise
      * @param anzahlQuadrate Anzahl der Quadrate

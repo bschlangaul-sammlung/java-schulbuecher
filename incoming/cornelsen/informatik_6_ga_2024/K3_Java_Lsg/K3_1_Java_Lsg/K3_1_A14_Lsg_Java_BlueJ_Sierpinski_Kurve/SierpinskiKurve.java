@@ -1,17 +1,20 @@
 
 /**
  * Zeichnet die Sierpinski-Kurve
- * 
- * @author Albert Wiedemann 
+ *
+ * @author Albert Wiedemann
  * @version 1.0
  */
 class SierpinskiKurve
 {
-    /** Die Turtle */
+    /**
+     * Die Turtle */
     private Turtle t;
-    /** Linienlänge */
+    /**
+     * Linienlänge */
     private double länge;
-    /** Länge der Kurzen Linien */
+    /**
+     * Länge der Kurzen Linien */
     private double länge2;
 
     /**
@@ -48,7 +51,7 @@ class SierpinskiKurve
         t.WinkelSetzen(45);
         t.Gehen(länge2);
     }
-    
+
     /**
      * Zeichnet das Element A der Sierpinski-Kurve
      * @param tiefe Rekursionstiefe
@@ -69,7 +72,7 @@ class SierpinskiKurve
             ElementAZeichnen(tiefe - 1);
         }
     }
-    
+
     /**
      * Zeichnet das Element B der Sierpinski-Kurve
      * @param tiefe Rekursionstiefe
@@ -90,7 +93,7 @@ class SierpinskiKurve
             ElementBZeichnen(tiefe - 1);
         }
     }
-    
+
     /**
      * Zeichnet das Element C der Sierpinski-Kurve
      * @param tiefe Rekursionstiefe
@@ -111,7 +114,7 @@ class SierpinskiKurve
             ElementCZeichnen(tiefe - 1);
         }
     }
-    
+
     /**
      * Zeichnet das Element D der Sierpinski-Kurve
      * @param tiefe Rekursionstiefe

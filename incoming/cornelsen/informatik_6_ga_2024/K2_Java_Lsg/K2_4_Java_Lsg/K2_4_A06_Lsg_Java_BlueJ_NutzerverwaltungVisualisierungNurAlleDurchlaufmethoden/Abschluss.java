@@ -1,13 +1,14 @@
 /**
  * Klasse Abschluss als Bestandteil eines geordneten Binärbaums.
  * (Implementierung mit dem Entwurfsmuster Kompositum)
- * 
+ *
  * @author Peter Brichzin
  * @version 23.5.24
  */
 class Abschluss extends Baumelement
 {
-    /** Das Darstellungssymbol des Knotens und der Kanten */
+    /**
+     * Das Darstellungssymbol des Knotens und der Kanten */
     private KnotenSymbol knotenSymbol;
     private KantenSymbol kantenSymbol;
 
@@ -23,16 +24,16 @@ class Abschluss extends Baumelement
     }
 
     /**
-     * Fügt ein Datenelement in die bestehende Datenstruktur ein, indem es einen neuen Knoten 
+     * Fügt ein Datenelement in die bestehende Datenstruktur ein, indem es einen neuen Knoten
      * (mit zwei Abschluss-Objekten als Nachfolger) erzeugt und eine Referenz auf diesen Knoten
      * zurückgibt. Das Abschluss-Objekt, dass diese Methode ausführt, wird dabei aus dem Baum entfernt.
-     * @param datenNeu einzufügendes Datenelement 
+     * @param datenNeu einzufügendes Datenelement
      * @return Referenz auf den neu erzeugten Knoten
      */
     @Override Baumelement Einfügen(User datenNeu)
     {
-        // Dieses Abschlussobjekt ist am Ende des Methodenaufrufs nicht mehr Teil der 
-        // Struktur, deshalb muss das KnotenSymbol ggf. auch das Kantensymbol entfernt werden. 
+        // Dieses Abschlussobjekt ist am Ende des Methodenaufrufs nicht mehr Teil der
+        // Struktur, deshalb muss das KnotenSymbol ggf. auch das Kantensymbol entfernt werden.
         knotenSymbol.Entfernen();
         if(kantenSymbol != null)
         {
@@ -45,10 +46,10 @@ class Abschluss extends Baumelement
     /**
      * Sucht ein Datenelement, das über seinen Schlüssel identifiziert wird
      * und gibt dieses aus.
-     * @param suchSchlüssel Schlüssel nach dem gesucht wird als Zeichenkette 
+     * @param suchSchlüssel Schlüssel nach dem gesucht wird als Zeichenkette
      * @return null, da die Suche erfolglos ist (Abschluss-Objekt kennzeichnet den Ende eines Astes!).
      */
-    @Override User Suchen(String suchSchlüssel) 
+    @Override User Suchen(String suchSchlüssel)
     {
         return null;
     }
@@ -56,7 +57,7 @@ class Abschluss extends Baumelement
     /**
      * Berechnet die Höhe des Baums und gibt diesen Wert zurück
      * @param aktTiefe Tiefe des aktuellen Knotens
-     * @return die übergebene Höhe -1, da hier beim Abschluss das Ende eines Astes erreicht ist und 
+     * @return die übergebene Höhe -1, da hier beim Abschluss das Ende eines Astes erreicht ist und
      * die Abschlusselemente bei der Höhenberechnung nicht einbezogen werden.
      */
     @Override int HöheGeben(int aktTiefe)
@@ -66,11 +67,11 @@ class Abschluss extends Baumelement
 
     /**
      * Überprüft, ob ein Datenelement mit dem eingegebenen Schlüssel (in Form einer
-     * Zeichenkette) vorhanden ist. 
-     * @param suchSchlüssel Schlüssel, nach dem gesucht wird als Zeichenkette 
+     * Zeichenkette) vorhanden ist.
+     * @param suchSchlüssel Schlüssel, nach dem gesucht wird als Zeichenkette
      * @return false, da die Suche erfolglos ist (Abschluss-Objekt kennzeichnet den Ende eines Astes!).
      */
-    @Override boolean IstVorhanden(String suchSchlüssel) 
+    @Override boolean IstVorhanden(String suchSchlüssel)
     {
         return false;
     }
@@ -95,7 +96,7 @@ class Abschluss extends Baumelement
     }
 
     /**
-     * Gibt alle in den Datenelementen eines Baums gespeicherten Informationen Inorder aus.     
+     * Gibt alle in den Datenelementen eines Baums gespeicherten Informationen Inorder aus.
      * Hier ist das Ende eines Asts erreicht, es muss nichts mehr ausgegeben werden.
      */
     @Override void InorderAusgeben()
@@ -104,7 +105,7 @@ class Abschluss extends Baumelement
     }
 
     /**
-     * Gibt den Baum Preorder auf der Konsole aus und visualisiert dabei die 
+     * Gibt den Baum Preorder auf der Konsole aus und visualisiert dabei die
      * Struktur durch Einrücken.
      * Hier ist das Ende eines Asts erreicht, es muss nichts mehr ausgegeben werden.
      */
@@ -114,11 +115,11 @@ class Abschluss extends Baumelement
     }
 
     /**
-     * Gibt den Baum Preorder auf der Konsole aus und visualisiert dabei die 
+     * Gibt den Baum Preorder auf der Konsole aus und visualisiert dabei die
      * Struktur inklusiv Abschluss-Objekte durch Einrücken.
      */
     @Override void StrukturAusgeben2(int tiefe)
-    {   
+    {
         // lokales Attribut s: Zeichnkette, mit 4*tiefe des Knotens Leerzeichen, die für die Einrückung sorgt
         String s;
         s = "";
@@ -151,8 +152,8 @@ class Abschluss extends Baumelement
         knotenSymbol.PositionSetzen(xmin + (xmax - xmin) / 2, y);
 
         // Eine Kante wird nur gezeichnet, wenn es einen Vorgänger gibt (d.h. der Baum nicht leer ist)
-        if(symbolVorgänger != null) 
-        { 
+        if(symbolVorgänger != null)
+        {
             if(kantenSymbol == null)
             {
                 kantenSymbol = new KantenSymbol(symbolVorgänger, knotenSymbol, false, "", 3, "schwarz");

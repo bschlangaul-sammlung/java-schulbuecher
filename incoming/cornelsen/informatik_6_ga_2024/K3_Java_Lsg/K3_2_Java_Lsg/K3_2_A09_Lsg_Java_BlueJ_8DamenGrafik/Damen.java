@@ -2,21 +2,25 @@
 import java.util.*;
 /**
  * Löst das Problem der 8 Damen
- * 
+ *
  * @author Albert Wiedemann
  * @version 1.0
  */
 class Damen extends Ereignisbehandlung
 {
-    /** Die Brettinformation zum Suchen der Lösung */
+    /**
+     * Die Brettinformation zum Suchen der Lösung */
     private ArrayList<Integer> schachbrett;
-    /** Das Brett zum Anzeigen der Lösung */
+    /**
+     * Das Brett zum Anzeigen der Lösung */
     private Schachbrett brett;
-    /** Die Damen zum Anzeigen der Lösung */
+    /**
+     * Die Damen zum Anzeigen der Lösung */
     private ArrayList<Dame> damen;
-    /** Signal für gedrückte Taste */
+    /**
+     * Signal für gedrückte Taste */
     private boolean weiter;
-    
+
     /**
      * Legt das Schachbrett an
      */
@@ -38,7 +42,7 @@ class Damen extends Ereignisbehandlung
         }
         SchrittAusführen(0);
     }
-     
+
     /**
      * Die Aktionsmethode für gedrückte Tasten.
      * @param taste die gedrückte Taste
@@ -47,7 +51,7 @@ class Damen extends Ereignisbehandlung
     {
         weiter = true;
     }
-    
+
     /**
      * Die Aktionsmethode für gedrückte Sondertasten.
      * @param taste KeyCode der gedrückten Taste
@@ -56,7 +60,7 @@ class Damen extends Ereignisbehandlung
     {
         weiter = true;
     }
-    
+
     /**
      * Testet, ob das angegebene Element des Schachbretts durch eine der bisher aufgestellten Damen bedroht ist.
      * @param zeile Zeile das Feldelements
@@ -75,7 +79,7 @@ class Damen extends Ereignisbehandlung
         }
         return false;
     }
-    
+
     /**
      * Gibt die gefundene Lösung aus.
      */
@@ -94,7 +98,7 @@ class Damen extends Ereignisbehandlung
         }
         weiter = false;
     }
-    
+
     /**
      * Macht einen Rekursionsschritt auf dem Weg zur Lösung
      * @param spalte die Spalte, für die eine Position der Dame gesucht wird.

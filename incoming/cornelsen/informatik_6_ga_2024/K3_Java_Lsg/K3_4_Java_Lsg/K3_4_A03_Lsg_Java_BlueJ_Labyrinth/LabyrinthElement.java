@@ -1,19 +1,23 @@
 
 /**
  * Oberklasse aller Bausteine des Labyrinths
- * 
+ *
  * @author Albert Wiedemann
  * @version 1.0
  */
 class LabyrinthElement
 {
-    /** Die Seitenlänge elens Elementquadrats */
+    /**
+     * Die Seitenlänge elens Elementquadrats */
     static final int seitenlänge = 20;
-    /** Das Darstellungsrechteck */
+    /**
+     * Das Darstellungsrechteck */
     protected Rechteck darstellung;
-    /** x-Position des Quadrats in Zellenangben */
+    /**
+     * x-Position des Quadrats in Zellenangben */
     protected int x;
-    /** y-Position des Quadrats in Zellenangben */
+    /**
+     * y-Position des Quadrats in Zellenangben */
     protected int y;
 
     /**
@@ -29,7 +33,7 @@ class LabyrinthElement
         darstellung.PositionSetzen(x * seitenlänge, y * seitenlänge);
         darstellung.GrößeSetzen(seitenlänge, seitenlänge);
     }
-    
+
     /**
      * Gibt die x-Position des Elements zurück.
      * @return x-Position
@@ -38,7 +42,7 @@ class LabyrinthElement
     {
         return x;
     }
-    
+
     /**
      * Gibt die y-Position des Elements zurück.
      * @return y-Position
@@ -47,7 +51,7 @@ class LabyrinthElement
     {
         return y;
     }
-    
+
     /**
      * Setzt die Sichtbarkeit des Elements
      * @param sichtbar wenn wahr, ist das Element sichtbar

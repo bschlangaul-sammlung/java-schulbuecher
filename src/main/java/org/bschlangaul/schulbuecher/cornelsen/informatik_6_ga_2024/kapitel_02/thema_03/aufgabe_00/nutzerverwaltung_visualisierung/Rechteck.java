@@ -1,33 +1,58 @@
+package org.bschlangaul.schulbuecher.cornelsen.informatik_6_ga_2024.kapitel_02.thema_03.aufgabe_00.nutzerverwaltung_visualisierung;
 
 /**
  * Wrapperklasse für ein Rechteck auf der Zeichenfläche.
- * 
- * @author Albert Wiedemann 
+ *
+ * @author Albert Wiedemann
+ *
  * @version 1.0
  */
 public class Rechteck
 {
-    /** x-Position der linken oberen Ecke. */
+    /**
+     * x-Position der linken oberen Ecke.
+     */
     protected int x;
-    /** y-Position der linken oberen Ecke. */
+
+    /**
+     * y-Position der linken oberen Ecke.
+     */
     protected int y;
-    /** Breite des Rechtecks. */
+
+    /**
+     * Breite des Rechtecks.
+     */
     protected int breite;
-    /** Höhe des Rechtecks. */
+
+    /**
+     * Höhe des Rechtecks.
+     */
     protected int höhe;
-    /** Farbe des Rechtecks. */
+
+    /**
+     * Farbe des Rechtecks.
+     */
     protected String farbe;
-    /** Sichtbarkeit des Rechtecks. */
+
+    /**
+     * Sichtbarkeit des Rechtecks.
+     */
     protected boolean sichtbar;
-    /** Drehwinkel (mathematisch positiver Drehsinn) des Rechtecks in Grad. */
+
+    /**
+     * Drehwinkel (mathematisch positiver Drehsinn) des Rechtecks in Grad.
+     */
     protected int winkel;
-    /** Referenz auf das Delegate-Objekt. */
+
+    /**
+     * Referenz auf das Delegate-Objekt.
+     */
     Zeichenfenster.GrafikSymbol symbol;
 
     /**
      * Der Konstruktor erzeugt das Delegate-Objekt
      */
-    Rechteck ()
+    Rechteck()
     {
         x = 10;
         y = 10;
@@ -36,16 +61,18 @@ public class Rechteck
         farbe = "rot";
         sichtbar = true;
         winkel = 0;
-        symbol = Zeichenfenster.SymbolErzeugen(Zeichenfenster.SymbolArt.rechteck);
+        symbol = Zeichenfenster
+                .SymbolErzeugen(Zeichenfenster.SymbolArt.rechteck);
         symbol.PositionSetzen(x, y);
         symbol.GrößeSetzen(breite, höhe);
         symbol.FarbeSetzen(farbe);
         symbol.SichtbarkeitSetzen(sichtbar);
         symbol.WinkelSetzen(winkel);
     }
-    
+
     /**
      * Setzt die Position (der linken oberen Ecke) des Rechtecks.
+     *
      * @param x x-Position der linken oberen Ecke
      * @param y y-Position der linken oberen Ecke
      */
@@ -55,9 +82,10 @@ public class Rechteck
         this.y = y;
         symbol.PositionSetzen(x, y);
     }
-    
+
     /**
      * Verschiebt das Rechteck um die angegebenen Werte.
+     *
      * @param deltaX Verschiebung in x-Richtung
      * @param deltaY Verschiebung in y-Richtung
      */
@@ -67,9 +95,10 @@ public class Rechteck
         y += deltaY;
         symbol.PositionSetzen(x, y);
     }
-    
+
     /**
      * Dreht das Rechteck
+     *
      * @param grad Drehwinkel (mathematisch positiver Drehsinn) im Gradmass
      */
     void Drehen(int grad)
@@ -77,93 +106,95 @@ public class Rechteck
         winkel += grad;
         symbol.WinkelSetzen(winkel);
     }
-        
+
     /**
      * Setzt die Größe des Rechtecks.
+     *
      * @param breite (neue) Breite
      * @param höhe (neue) Höhe
      */
-    void GrößeSetzen (int breite, int höhe)
+    void GrößeSetzen(int breite, int höhe)
     {
         this.breite = breite;
         this.höhe = höhe;
         symbol.GrößeSetzen(breite, höhe);
     }
-    
+
     /**
-     * Setzt die Farbe des Rechtecks.
-     * Erlaubte Farben sind:
-     * "weiß", "weiss", "rot", "grün", "gruen", "blau", "gelb",
-     * "magenta", "cyan", "hellgelb", "hellgrün", "hellgruen",
-     * "orange", "braun", "grau", "schwarz"
-     * Alle anderen Eingaben werden auf die Farbe schwarz abgebildet.
+     * Setzt die Farbe des Rechtecks. Erlaubte Farben sind: "weiß", "weiss",
+     * "rot", "grün", "gruen", "blau", "gelb", "magenta", "cyan", "hellgelb",
+     * "hellgrün", "hellgruen", "orange", "braun", "grau", "schwarz" Alle
+     * anderen Eingaben werden auf die Farbe schwarz abgebildet.
+     *
      * @param farbe (neue) Farbe
      */
-    void FarbeSetzen (String farbe)
+    void FarbeSetzen(String farbe)
     {
         this.farbe = farbe;
         symbol.FarbeSetzen(farbe);
     }
-        
+
     /**
-     * Setzt den Drehwinkel des Rechtecks.
-     * Die Winkelangabe ist in Grad,positive Werte drehen gegen den Uhrzeigersinn,
-     * negative Werte drehen im Uhrzeigersinn (mathematisch positiver Drehsinn).
+     * Setzt den Drehwinkel des Rechtecks. Die Winkelangabe ist in Grad,positive
+     * Werte drehen gegen den Uhrzeigersinn, negative Werte drehen im
+     * Uhrzeigersinn (mathematisch positiver Drehsinn).
+     *
      * @param winkel der (neue) Drehwinkel des Rechtecks
      */
-    void WinkelSetzen (int winkel)
+    void WinkelSetzen(int winkel)
     {
         this.winkel = winkel;
         symbol.WinkelSetzen(winkel);
     }
-    
+
     /**
-     * Schaltet die Sichtbarkeit des Rechtecks ein oder aus.
-     * Erlaubte Parameterwerte: true, false
+     * Schaltet die Sichtbarkeit des Rechtecks ein oder aus. Erlaubte
+     * Parameterwerte: true, false
+     *
      * @param sichtbar (neue) Sichtbarkeit des Rechtecks
      */
-    void SichtbarkeitSetzen (boolean sichtbar)
+    void SichtbarkeitSetzen(boolean sichtbar)
     {
         this.sichtbar = sichtbar;
         symbol.SichtbarkeitSetzen(sichtbar);
     }
-        
+
     /**
      * Entfernt das Rechteck aus dem Zeichenfenster.
      */
-    void Entfernen ()
+    void Entfernen()
     {
         symbol.Entfernen();
     }
-    
+
     /**
      * Bringt das Rechteck eine Ebene nach vorn.
      */
-    void NachVornBringen ()
+    void NachVornBringen()
     {
         symbol.NachVornBringen();
     }
-    
+
     /**
      * Bringt das Rechteck in die vorderste Ebene.
      */
-    void GanzNachVornBringen ()
+    void GanzNachVornBringen()
     {
         symbol.GanzNachVornBringen();
     }
-    
+
     /**
      * Bringt das Rechteck eine Ebene nach hinten.
      */
-    void NachHintenBringen ()
+    void NachHintenBringen()
     {
         symbol.NachHintenBringen();
     }
-    
+
     /**
      * Bringt das Rechteck in die hinterste Ebene.
      */
-    void GanzNachHintenBringen ()
+    void GanzNachHintenBringen()
     {
         symbol.GanzNachHintenBringen();
     }

@@ -2,23 +2,29 @@
 import java.util.*;
 /**
  * Verwaltet das Labyrinth
- * 
- * @author Albert Wiedemann 
+ *
+ * @author Albert Wiedemann
  * @version 1.0
  */
 class Labyrinth
 {
-    /** Feld der Labyrinthelemente */
+    /**
+     * Feld der Labyrinthelemente */
     private ArrayList<ArrayList<LabyrinthElement>> elemente;
-    /** Zufallsgenrator */
+    /**
+     * Zufallsgenrator */
     private Random zufall;
-    /** x-Koordinate des Ausgangs */
+    /**
+     * x-Koordinate des Ausgangs */
     private int xAusgang;
-    /** y-Koordinate des Ausgangs */
+    /**
+     * y-Koordinate des Ausgangs */
     private int yAusgang;
-    /** x-Koordinate des Startpunkts */
+    /**
+     * x-Koordinate des Startpunkts */
     private int xStart;
-    /** y-Koordinate des Startpunkts */
+    /**
+     * y-Koordinate des Startpunkts */
     private int yStart;
 
     /**
@@ -43,7 +49,7 @@ class Labyrinth
         xStart = -1;
         yStart = -1;
     }
-    
+
     /**
      * Generiert das Labyrinth
      */
@@ -58,7 +64,7 @@ class Labyrinth
         int x = zufall.nextInt(xmax - 2) + 1;
         int y = zufall.nextInt(ymax - 2) + 1;
         elemente.get(x).set(y, new Gang (x, y));
-        
+
         while(true)
         {
             do
@@ -141,7 +147,7 @@ class Labyrinth
             }
         }
     }
-    
+
     /**
      * Setzt die Sichtbarkeit des Labyrinths
      * @param sichtbar wenn wahr, ist das Labyrinth sichtbar
@@ -156,7 +162,7 @@ class Labyrinth
             }
         }
     }
-    
+
     /**
      * Meldet die x-Koordinate des Ausgangs zurück
      * @return x-Koordinate des Ausgangs
@@ -165,7 +171,7 @@ class Labyrinth
     {
         return xAusgang;
     }
-    
+
     /**
      * Meldet die y-Koordinate des Ausgangs zurück
      * @return y-Koordinate des Ausgangs
@@ -174,7 +180,7 @@ class Labyrinth
     {
         return yAusgang;
     }
-    
+
     /**
      * Startpunkt ermitteln
      */
@@ -212,7 +218,7 @@ class Labyrinth
             {
                 xStart = x3;
                 yStart = y3;
-                
+
             }
         }
         else if (Math.abs(x2 - xAusgang) + Math.abs(y2 - yAusgang) > Math.abs(x3 - xAusgang) + Math.abs(y3 - yAusgang))
@@ -224,10 +230,10 @@ class Labyrinth
         {
             xStart = x3;
             yStart = y3;
-            
+
         }
     }
-    
+
     /**
      * Meldet die x-Koordinate des Ausgangs zurück
      * @return x-Koordinate des Ausgangs
@@ -236,7 +242,7 @@ class Labyrinth
     {
         return xStart;
     }
-    
+
     /**
      * Meldet die y-Koordinate des Ausgangs zurück
      * @return y-Koordinate des Ausgangs

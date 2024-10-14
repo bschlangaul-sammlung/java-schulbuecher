@@ -2,15 +2,16 @@
 import java.util.*;
 /**
  * Verwaltet das Schachbrett und die Damen
- * 
+ *
  * @author Albert Wiedemann
  * @version 1.0
  */
 class Schachbrett
 {
-    /** Referenz auf die Felder des Brettes */
+    /**
+     * Referenz auf die Felder des Brettes */
     private ArrayList<ArrayList<Rechteck>> brett;
-    
+
     /**
      * Legt das Schachbrett und die Damen an.
      */
@@ -29,7 +30,7 @@ class Schachbrett
             }
         }
     }
-    
+
     /**
      * Steuert die Sichtbarkeit des Schachbretts
      * @param sichtbar wenn wahr, wird das Brett angezeigt

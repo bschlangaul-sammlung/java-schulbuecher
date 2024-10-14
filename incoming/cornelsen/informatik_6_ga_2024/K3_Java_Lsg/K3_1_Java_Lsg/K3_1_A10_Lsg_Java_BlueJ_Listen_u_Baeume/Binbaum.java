@@ -1,17 +1,18 @@
 /**
- * Die Klasse Binbaum ist die Grundstruktur eines geordneten Binärbaums. 
- * Konkret wird hier der Binärbaum genutzt um ein einfaches Wörterbuch umzusetzen, 
+ * Die Klasse Binbaum ist die Grundstruktur eines geordneten Binärbaums.
+ * Konkret wird hier der Binärbaum genutzt um ein einfaches Wörterbuch umzusetzen,
  * deshalb sind die Daten von der Klasse Woerterbucheintrag.
  * Die Methoden die ein Objekt dieser Klasse anbietet, leiten den Aufruf an den
  * Wurzelknoten weiter, wenn der Baum nicht leer ist.
  * (Implementierung mit Entwurfsmuster Kompositum)
- * 
- * @author (Peter Brichzin) 
+ *
+ * @author (Peter Brichzin)
  * @version (23.5.24)
  */
 class Binbaum
 {
-    /** Die wurzel des Bauns */
+    /**
+     * Die wurzel des Bauns */
     private Baumelement wurzel;
 
     /**
@@ -24,8 +25,8 @@ class Binbaum
     }
 
     /**
-     * Fügt ein Datenelement sortiert in den geordneten Binärbaum ein, 
-     * d.h. die Eigenschaft, dass der Baum geordnet ist bleibt bei jedem 
+     * Fügt ein Datenelement sortiert in den geordneten Binärbaum ein,
+     * d.h. die Eigenschaft, dass der Baum geordnet ist bleibt bei jedem
      * Einfügevorgang erhalten.
      * @param datenNeu neues Datenelement
      */
@@ -35,7 +36,7 @@ class Binbaum
     }
 
     /**
-     * Sucht ein Datenelement, das über seinen Schlüssel 
+     * Sucht ein Datenelement, das über seinen Schlüssel
      * identifiziert wird, und gibt es aus.
      * @param suchSchlüssel Schlüssel, nach dem gesucht wird
      * @return gesuchtes Datenelement bzw. null, falls die Suche erfolglos ist
@@ -47,18 +48,18 @@ class Binbaum
 
     /**
      * Überprüft, ob ein Datenelement mit dem eingegebenen Schlüssel (in Form einer
-     * Zeichenkette) vorhanden ist. 
-     * @param suchSchlüssel Schlüssel, nach dem gesucht wird als Zeichenkette 
+     * Zeichenkette) vorhanden ist.
+     * @param suchSchlüssel Schlüssel, nach dem gesucht wird als Zeichenkette
      * @return true, im Erfolgsfall, false sonst.
      */
-    boolean IstVorhanden(String suchSchlüssel) 
+    boolean IstVorhanden(String suchSchlüssel)
     {
         return wurzel.IstVorhanden(suchSchlüssel);
     }
 
     /**
      * Berechnet die Höhe des Baums und gibt diesen Wert zurück
-     * @return Höhe des Baums 
+     * @return Höhe des Baums
      */
     int HöheGeben()
     {
@@ -67,10 +68,10 @@ class Binbaum
 
     /**
      * Gibt die Tiefe des Knotens an, in dem ein Datenelement mit dem Schlüssel suchSchlüssel gespeichert ist.
-     * @param suchSchlüssel Schlüssel, nach dem gesucht wird als Zeichenkette 
+     * @param suchSchlüssel Schlüssel, nach dem gesucht wird als Zeichenkette
      * @return Tiefe als positive Zahl, bzw. -1 falls der suchSchlüssel nicht vorhanden ist.
      */
-    int TiefeGeben(String suchSchlüssel) 
+    int TiefeGeben(String suchSchlüssel)
     {
         return wurzel.TiefeGeben(suchSchlüssel, 0);
     }

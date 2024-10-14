@@ -1,21 +1,25 @@
 
 /**
  * Beschreibt einen Knoten
- * 
+ *
  * @author Albert Wiedemann
  * @version 1.0
  */
 class Knoten
 {
-    /** x-Koordinate des Knotens */
+    /**
+     * x-Koordinate des Knotens */
     private int x;
-    /** y-Koordinate des Knotens */
+    /**
+     * y-Koordinate des Knotens */
     private int y;
-    /** Das Darstellungssymbol des Knotens */
+    /**
+     * Das Darstellungssymbol des Knotens */
     private KnotenSymbol symbol;
-    /** Vorgänger für die Wegesuche */
+    /**
+     * Vorgänger für die Wegesuche */
     private Knoten vorgänger;
-    
+
     /**
      * Besetzt die Attribute und legt das Knotensymbol an.
      * @param x x-Koordinate
@@ -28,7 +32,7 @@ class Knoten
         symbol = new KnotenSymbol(x * LabyrinthElement.seitenlänge + LabyrinthElement.seitenlänge / 2, y * LabyrinthElement.seitenlänge + LabyrinthElement.seitenlänge / 2, (LabyrinthElement.seitenlänge - 4) / 2, "weiß", "");
         vorgänger = null;
     }
-    
+
     /**
      * Meldet die x-Koordinate des Knotens zurück.
      * @return x-Koordinate
@@ -37,7 +41,7 @@ class Knoten
     {
         return x;
     }
-    
+
     /**
      * Meldet die y-Koordinate des Knotens zurück.
      * @return y-Koordinate
@@ -46,7 +50,7 @@ class Knoten
     {
         return y;
     }
-    
+
     /**
      * Meldet das Symbol des Knotens zurück.
      * @return Knotensymbol
@@ -55,7 +59,7 @@ class Knoten
     {
         return symbol;
     }
-    
+
     /**
      * Meldet den Vorgänger des Knotens zurück.
      * @return Vorgänger
@@ -64,7 +68,7 @@ class Knoten
     {
         return vorgänger;
     }
-    
+
     /**
      * Setzt den Vorgänger für den Weg zum Ausgang
      * @param v der Vorgänger
@@ -73,7 +77,7 @@ class Knoten
     {
         vorgänger = v;
     }
-    
+
     /**
      * Setzt die Farbe der Darstellung
      * @param f die (neue) Farbe

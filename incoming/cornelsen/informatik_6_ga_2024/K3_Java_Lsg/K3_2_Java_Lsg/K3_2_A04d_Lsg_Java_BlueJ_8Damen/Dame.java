@@ -2,17 +2,20 @@
 
 /**
  * Stellt eine Dame auf der Grafikoberfläche dar.
- * 
- * @author Albert Wiedemann 
+ *
+ * @author Albert Wiedemann
  * @version 1.0
  */
 class Dame
 {
-    /** x-Position der Dame */
+    /**
+     * x-Position der Dame */
     private int x;
-    /** y-Position der Dame */
+    /**
+     * y-Position der Dame */
     private int y;
-    /** Das Basisrechteck */
+    /**
+     * Das Basisrechteck */
     private Rechteck basis;
     /** 1. Zacke der Krone */
     private Dreieck zacke1;
@@ -22,13 +25,17 @@ class Dame
     private Dreieck zacke3;
     /** 4. Zacke der Krone */
     private Dreieck zacke4;
-    /** Kreis auf der 1. Zacke */
+    /**
+     * Kreis auf der 1. Zacke */
     private Kreis kreis1;
-    /** Kreis auf der 2. Zacke */
+    /**
+     * Kreis auf der 2. Zacke */
     private Kreis kreis2;
-    /** Kreis auf der 3. Zacke */
+    /**
+     * Kreis auf der 3. Zacke */
     private Kreis kreis3;
-    /** Kreis auf der 4. Zacke */
+    /**
+     * Kreis auf der 4. Zacke */
     private Kreis kreis4;
 
     /**
@@ -67,9 +74,9 @@ class Dame
         kreis4.RadiusSetzen(2);
         PositionSetzen(0, 0);
     }
-    
+
     /**
-     * Ordnet die Teile gemäß der Position an. 
+     * Ordnet die Teile gemäß der Position an.
      */
     void Anordnen()
     {
@@ -83,7 +90,7 @@ class Dame
         kreis3.PositionSetzen(x + 30, y + 13);
         kreis4.PositionSetzen(x + 40, y + 13);
     }
-    
+
     /**
      * Setzt die Position auf dem Schachbrett
      * Das Brett hat links oben die Koordinaten (50|50)
@@ -96,7 +103,7 @@ class Dame
         y = 400 - zeile * 50;
         Anordnen();
     }
-    
+
     /**
      * Steuert die Sichtbarkeit der Dame
      * @param sichtbar wenn wahr, wird die Dame angezeigt

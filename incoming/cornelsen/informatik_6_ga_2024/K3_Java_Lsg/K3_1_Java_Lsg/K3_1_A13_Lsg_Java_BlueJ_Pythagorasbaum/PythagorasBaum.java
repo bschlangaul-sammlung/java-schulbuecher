@@ -1,25 +1,31 @@
 
 /**
  * Zeichnet den Pythagorasbaum.
- * 
- * @author Albert Wiedemann 
+ *
+ * @author Albert Wiedemann
  * @version 1.0
  */
 class PythagorasBaum
 {
-    /** die Turtle */
+    /**
+     * die Turtle */
     Turtle turtle;
-    /** Seite a des rechtwinkeligen Ausgangsdreiecks */
+    /**
+     * Seite a des rechtwinkeligen Ausgangsdreiecks */
     double a;
-    /** Seite b des rechtwinkeligen Ausgangsdreiecks */
+    /**
+     * Seite b des rechtwinkeligen Ausgangsdreiecks */
     double b;
-    /** Seite c^2 des rechtwinkeligen Ausgangsdreiecks */
+    /**
+     * Seite c^2 des rechtwinkeligen Ausgangsdreiecks */
     double c2;
-    /** Seitenverhältnis für die Berechnung der C-Punkte der angefügten Dreiecke */
+    /**
+     * Seitenverhältnis für die Berechnung der C-Punkte der angefügten Dreiecke */
     double bc;
-    /** Seitenverhältnis für die Berechnung der C-Punkte der angefügten Dreiecke */
+    /**
+     * Seitenverhältnis für die Berechnung der C-Punkte der angefügten Dreiecke */
     double abc;
-    
+
     /**
      * Besetzt die Konstanten und baut den Baum auf.
      * @param tiefe die Rekursionstiefe
@@ -39,7 +45,7 @@ class PythagorasBaum
         ViereckZeichnen(400.0, 100.0, 500.0, 100.0, 500.0, 200.0, 400.0, 200.0);
         SchrittAusführen(400.0, 200.0, 500.0, 200.0, tiefe);
     }
-    
+
     /**
      * Berechnet die Richtung von Startpunkt zum Zielpunkt.
      * @param xStart x-Koordinate des Startpunkts
@@ -73,8 +79,8 @@ class PythagorasBaum
             richtung = 180 - ((int) Math.round(Math.atan(dy / dx) * 180.0 / Math.PI));
         }
         return richtung;
-    }  
-    
+    }
+
     /**
      * Berechnet die Weglänge von Startpunkt zum Zielpunkt.
      * @param xStart x-Koordinate des Startpunkts

@@ -1,18 +1,19 @@
 
 /**
  * Die Klasse User dient zur Speicherung von
- * Usern in einem Online-Shop.  
- * 
- * @author (Peter Brichzin) 
+ * Usern in einem Online-Shop.
+ *
+ * @author (Peter Brichzin)
  * @version (23.5.24)
  */
-class User 
+class User
 {
-    /** id - Schlüssel dieses Datenelements */    
+    /**
+     * id - Schlüssel dieses Datenelements */
     private int id;
-    /**  Nachname  */  
+    /**  Nachname  */
     private String nachname;
-    /**  Vorname  */  
+    /**  Vorname  */
     private String vorname;
 
     /**
@@ -53,7 +54,7 @@ class User
         else
         {
             return false;
-        }       
+        }
     }
 
     /**
@@ -64,14 +65,14 @@ class User
     boolean IstGrößerAls(User dVergleich)
     {
 
-        if(id > dVergleich.IdGeben())                                                                                                                                                                                                                                                            
+        if(id > dVergleich.IdGeben())
         {
             return true;
         }
         else
         {
             return false;
-        }       
+        }
     }
 
     /**

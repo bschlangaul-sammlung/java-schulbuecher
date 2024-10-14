@@ -2,21 +2,25 @@
 import java.util.*;
 /**
  * Theseus erhält einen Weg, auf dem er zum Ausgang findet
- * 
- * @author Albert Wiedemann 
+ *
+ * @author Albert Wiedemann
  * @version 1.0
  */
 class Theseus extends Figur
 {
-    /** Der Weg zum Ausgang */
+    /**
+     * Der Weg zum Ausgang */
     private ArrayList<Knoten> weg;
-    /** Bereits zurückgelegt Schritte auf dem Weg zum Ausgang */
+    /**
+     * Bereits zurückgelegt Schritte auf dem Weg zum Ausgang */
     int schritte;
-    /** x-Koordinate des Wanderers in Labyrinthelementen */
+    /**
+     * x-Koordinate des Wanderers in Labyrinthelementen */
     int x;
-    /** y-Koordinate des Wanderers in Labyrinthelementen */
+    /**
+     * y-Koordinate des Wanderers in Labyrinthelementen */
     int y;
-    
+
     /**
      * Legt die Figur und die Startposition fest.
      */
@@ -31,7 +35,7 @@ class Theseus extends Figur
         GrößeSetzen(LabyrinthElement.seitenlänge);
         PositionSetzen(x * LabyrinthElement.seitenlänge + LabyrinthElement.seitenlänge / 2, y  * LabyrinthElement.seitenlänge + LabyrinthElement.seitenlänge / 2);
     }
-    
+
     /**
      * Legt das Aussehen von Theseus fest.
      */
@@ -44,7 +48,7 @@ class Theseus extends Figur
         FigurteilFestlegenEllipse(-20, -40, 40, 40, "rot");
         FigurteilFestlegenEllipse(5, -27, 15, 15, "gelb");
     }
-    
+
     /**
      * Legt den Weg um Ausgang fest.
      * @param weg der Weg zum Ausgang
@@ -54,7 +58,7 @@ class Theseus extends Figur
         this.weg = weg;
         schritte = 1;
     }
-    
+
     /**
      * Bewegt Theseus ein Feld in Richtung Ausgang
      */

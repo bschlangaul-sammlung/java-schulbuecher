@@ -1,15 +1,17 @@
 
 /**
  * Zeichnet die Hilbert-Kurve
- * 
- * @author Albert Wiedemann 
+ *
+ * @author Albert Wiedemann
  * @version 1.0
  */
 class Hilbert
 {
-    /** Die Turtle */
+    /**
+     * Die Turtle */
     private Turtle t;
-    /** Linienlänge */
+    /**
+     * Linienlänge */
     private double länge;
 
     /**
@@ -25,7 +27,7 @@ class Hilbert
         t.StiftSenken();
         Element(false, tiefe);
     }
-    
+
     /**
      * Dreht um 90° nach links oder rechts
      * @param links wenn wahr, dann Linksdrehung
@@ -41,7 +43,7 @@ class Hilbert
             t.Drehen(-90);
         }
     }
-    
+
     /**
      * Zeichnet ein Element der Kurve
      * @param links wenn wahr, dann Linksdrehung

@@ -1,22 +1,25 @@
- 
+
 import java.util.ArrayList;
 /**
  * Verwaltet einen ungerichteten, gewichteten Graphen mittels Adjazenzmatrix
- * 
- * @author Albert Wiedemann 
+ *
+ * @author Albert Wiedemann
  * @version 1.0
  */
 class GraphMatrix
 {
-    /** Feld der Knoten des Graphen */
-    private ArrayList<Knoten> knoten;   
+    /**
+     * Feld der Knoten des Graphen */
+    private ArrayList<Knoten> knoten;
     /** 2-dim Feld der Adjazenzmatrix */
     private ArrayList<ArrayList<Integer>> matrix;
-    /** Feld der Kantensymbole des Graphen */
+    /**
+     * Feld der Kantensymbole des Graphen */
     private ArrayList<KantenSymbol> kanten;
-    /** Markierung für die besuchten Knoten */
+    /**
+     * Markierung für die besuchten Knoten */
     private ArrayList<Integer> besuchteKnoten;
-    
+
     /**
      * Baut die Datenstruktur auf
      */
@@ -28,7 +31,7 @@ class GraphMatrix
         kanten = new ArrayList<KantenSymbol>();
         besuchteKnoten = new ArrayList<Integer>();
     }
-    
+
     /**
      * Einfügen eines neuen Knoten in den Graphen
      * @param bezeichner Bezeichner des neuen Knotens, der dem Graphen hinzugefügt wird.
@@ -56,7 +59,7 @@ class GraphMatrix
      * Wenn ein Knoten mit diesem Bezeichner nicht bekannt ist wird null zurückgegeben
      * @param bezeichner Bezeichner des Knoten der gesucht wird
      * @return Referenz auf das Knotenobjekt oder null
-     */   
+     */
     private Knoten KnotenGeben(String bezeichner)
     {
         for (Knoten k: knoten)
@@ -74,7 +77,7 @@ class GraphMatrix
      * Wenn ein Knoten mit diesem Bezeichner nicht bekannt ist wird -1 zurückgegeben
      * @param bezeichner Bezeichner des Knoten der gesucht wird
      * @return Indexnummer des Knotens im Knotenfeld; 0 <= res <= knoten.size()-1 bzw. -1
-     */   
+     */
     int KnotenNummerGeben(String bezeichner)
     {
         for (int index=0; index < knoten.size(); index++)
@@ -86,12 +89,12 @@ class GraphMatrix
         }
         return -1;
     }
-    
+
     /**
      * Gibt die Bezeichnung eines Knotens mit der internen Knotennummer
      * @param Indexnummer des Knotens im Knotenarray; 0<= x <= knoten.size()
      * @return Bezeichner des Knotens
-     */   
+     */
     String KnotenBezeichnerGeben(int knotenNummer)
     {
         if ((knotenNummer < knoten.size()) && (knotenNummer >= 0))
@@ -127,23 +130,23 @@ class GraphMatrix
     /**
      * Gibt die Anzahl der Knoten des Graphen zurück
      * @return  Anzahl der Knoten
-     */   
+     */
     int KnotenAnzahlGeben()
     {
         return knoten.size();
     }
-    
+
     /**
      * Gibt die Gewichtung einer Kante zurück
      * Die Kante ist durch einen Anfangsknoten und einen Endknoten festgelegt
      * @param von Bezeichner des Anfangsknotens
      * @param nach Bezeichner des Endknotens
      * @return Gewichtung der Kante
-     */ 
+     */
     int KanteGewichtGeben(String von, String nach)
     {
         int vonNummer, nachNummer;
-        
+
         vonNummer = KnotenNummerGeben(von);
         nachNummer = KnotenNummerGeben(nach);
         if ((vonNummer!=-1) && (nachNummer!=-1))
@@ -155,7 +158,7 @@ class GraphMatrix
             return -1;
         }
     }
-    
+
     /**
      * Löscht die Kanten und Knoten des Graphen
      * Die Anzeige wird auch gelöscht
@@ -174,7 +177,7 @@ class GraphMatrix
         kanten.clear();
         matrix.clear();
     }
-     
+
     /**
      * Setzt den Rekursionsschritt bei einem Knoten um.
      * @param aktuell die Nummer des aktuell zu besuchenden Knotens
@@ -205,7 +208,7 @@ class GraphMatrix
             return false;
         }
     }
-   
+
     /**
      * Führt die Tiefensuche vom Startknoten aus durch
      * @param startKnoten die Nummer des Startknotens

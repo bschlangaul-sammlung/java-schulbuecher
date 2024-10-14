@@ -2,15 +2,16 @@
 import java.util.*;
 /**
  * Löst das Problem der 8 Damen
- * 
+ *
  * @author Albert Wiedemann
  * @version 1.0
  */
 class Damen
 {
-    /** Die Information über dei Position der Damen */
+    /**
+     * Die Information über dei Position der Damen */
     private ArrayList<Integer> schachbrett;
-    
+
     /**
      * Legt das Schachbrett an
      */
@@ -23,7 +24,7 @@ class Damen
         }
         SchrittAusführen(0);
     }
-    
+
     /**
      * Testet, ob das angegebene Element des Schachbretts durch eine der bisher aufgestellten Damen bedroht ist.
      * @param zeile Zeile das Feldelements
@@ -42,7 +43,7 @@ class Damen
         }
         return false;
     }
-    
+
     /**
      * Gibt die gefundene Lösung aus.
      */
@@ -55,7 +56,7 @@ class Damen
         }
         System.out.println();
     }
-    
+
     /**
      * Macht einen Rekursionsschritt auf dem Weg zur Lösung
      * @param spalte die Spalte, für die eine Position der Dame gesucht wird.

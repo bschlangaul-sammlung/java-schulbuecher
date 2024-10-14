@@ -1,17 +1,19 @@
 
 /**
  * Beschreibt eine Kante für die Graphendarstellung mit Adjazenzlisten
- * 
+ *
  * @author Albert Wiedemann
  * @version 1.0
  */
 class Kante
 {
-    /** Gewicht der Kante */
+    /**
+     * Gewicht der Kante */
     private int gewicht;
-    /** Zielknoten der Kante */
+    /**
+     * Zielknoten der Kante */
     private Knoten ziel;
-    
+
     /**
      * Legt ein Adjazenzlistenelement an.
      * @param gewicht das Gewicht der Kante
@@ -22,7 +24,7 @@ class Kante
         this.gewicht = gewicht;
         this.ziel = ziel;
     }
-    
+
     /**
      * Meldet das Gewicht der Kante zurück
      * @return Gewicht
@@ -31,7 +33,7 @@ class Kante
     {
         return gewicht;
     }
-    
+
     /**
      * Meldet den Zielknoten der Kante zurück
      * @return Zielknoten

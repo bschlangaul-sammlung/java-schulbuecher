@@ -1,25 +1,26 @@
 /**
  * Die Klasse Adressbucheintrag dient zur Speicherung von
- * Adressbucheinträgen. 
- * 
+ * Adressbucheinträgen.
+ *
  * @author Peter Brichzin
  * @version 31.5.24
  */
 
 class Adressbucheintrag implements Datenelement
 {
-    /** 
-     * Name der Person, bewusst wird nicht unterschieden zwischen Nach- und Vornamen, 
-     * da vertraute Personen nur mit dem Vornamen, nicht vertraute mit dem Nachnamen 
+    /**
+     * Name der Person, bewusst wird nicht unterschieden zwischen Nach- und Vornamen,
+     * da vertraute Personen nur mit dem Vornamen, nicht vertraute mit dem Nachnamen
      * gespeichert werden.
      * Schlüssel dieses Datenelements
-     */    
-    private String name; 
+     */
+    private String name;
 
-    /**  Telefonnummer  */  
+    /**  Telefonnummer  */
     private String telefonnummer;
 
-    /** E-Mail Adresse  */  
+    /**
+     * E-Mail Adresse  */
     private String eMail;
 
     /**
@@ -70,7 +71,7 @@ class Adressbucheintrag implements Datenelement
         else
         {
             return false;
-        }       
+        }
     }
 
     /**
@@ -80,14 +81,14 @@ class Adressbucheintrag implements Datenelement
      */
     public boolean IstGrößerAls(Datenelement dvergleich)
     {
-        if(name.compareTo(dvergleich.SchlüsselAlsStringGeben()) > 0)                                                                                                                                                                                                                                                            
+        if(name.compareTo(dvergleich.SchlüsselAlsStringGeben()) > 0)
         {
             return true;
         }
         else
         {
             return false;
-        }       
+        }
     }
 
     /**
@@ -97,14 +98,14 @@ class Adressbucheintrag implements Datenelement
      */
     public boolean SchlüsselIstGleich (String vergleichsSchlüssel)
     {
-        if(name.compareTo(vergleichsSchlüssel) == 0)                                                                                                                                                                                                                                                            
+        if(name.compareTo(vergleichsSchlüssel) == 0)
         {
             return true;
         }
         else
         {
             return false;
-        }     
+        }
     }
 
     /**
@@ -114,29 +115,29 @@ class Adressbucheintrag implements Datenelement
      */
     public boolean SchlüsselIstGrößerAls(String vergleichsSchlüssel)
     {
-        if(name.compareTo(vergleichsSchlüssel) > 0)                                                                                                                                                                                                                                                            
+        if(name.compareTo(vergleichsSchlüssel) > 0)
         {
             return true;
         }
         else
         {
             return false;
-        }     
+        }
     }
 
     /**
-     * Gibt den Schlüssel des Datenelements als String aus, auch wenn der Datentyp vom 
+     * Gibt den Schlüssel des Datenelements als String aus, auch wenn der Datentyp vom
      * String abweicht. Diese Methode wird beim Entfernen eines Knotens benötigt.
      * @return Schlüssel als String.
      */
     public String SchlüsselAlsStringGeben()
     {
         return name;
-    }   
+    }
 
     /**
      * Geben-Methode zum Attribut namen
-     * 
+     *
      * @return      den Namen
      */
     String NameGeben()
@@ -146,9 +147,9 @@ class Adressbucheintrag implements Datenelement
 
     /**
      * Setzen-Methode zum Attribut namen
-     * 
-     * @param   nameNeu 
-     * 
+     *
+     * @param   nameNeu
+     *
      */
     void NameSetzen(String nameNeu)
     {
@@ -157,9 +158,9 @@ class Adressbucheintrag implements Datenelement
 
     /**
      * Setzen-Methode zum Attribut telefonnummer
-     * 
-     * @param   telefonnummerNeu 
-     * 
+     *
+     * @param   telefonnummerNeu
+     *
      */
     void TelefonnummerSetzen(String telefonnummerNeu)
     {
@@ -168,9 +169,9 @@ class Adressbucheintrag implements Datenelement
 
     /**
      * Setzen-Methode zum Attribut eMail
-     * 
+     *
      * @param   eMailNeu
-     * 
+     *
      */
     void EMailSetzen(String eMailNeu)
     {

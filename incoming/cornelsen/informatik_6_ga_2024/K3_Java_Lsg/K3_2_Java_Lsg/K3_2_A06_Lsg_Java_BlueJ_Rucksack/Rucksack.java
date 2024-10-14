@@ -2,25 +2,31 @@
 import java.util.*;
 /**
  * Lösung für das klassische Rucksackproblem
- * 
+ *
  * @author Albert Wiedemann
  * @version 1.0
  */
 class Rucksack
 {
-    /** Feld der Gewichte der Vorräte. */
+    /**
+     * Feld der Gewichte der Vorräte. */
     private ArrayList<Integer> gewichte;
-    /** Feld der Nährwerte der Vorräte */
+    /**
+     * Feld der Nährwerte der Vorräte */
     private ArrayList<Integer> nährwerte;
-    /** Feld der Nummern der aktuellen Vorräte */
+    /**
+     * Feld der Nummern der aktuellen Vorräte */
     private ArrayList<Integer> aktuelleVorräte;
-    /** Feld der Nummern der optimalen Vorräte */
+    /**
+     * Feld der Nummern der optimalen Vorräte */
     private ArrayList<Integer> optimaleVorräte;
-    /** Optimaler Nährwert */
+    /**
+     * Optimaler Nährwert */
     private int optimalerNährwert;
-    /** Maximales Gewicht im Rucksack */
+    /**
+     * Maximales Gewicht im Rucksack */
     private final int maximalGewicht;
-    
+
     /**
      * Legt die Vorratsdaten und die Attribute an.
      */
@@ -51,7 +57,7 @@ class Rucksack
         SchrittAusführen(0, 0, 0);
         OptimalenVorratAusgeben();
     }
-    
+
     /**
      * Speichert den aktuellen Vorrat als optimalen Vorrat.
      * @param nährwert: der Gesamtnährwert des gespeicherten Vorrats.
@@ -65,7 +71,7 @@ class Rucksack
         }
         optimalerNährwert = nährwert;
     }
-    
+
     /**
      * Gibt den optimalen Vorrakt auf die Konsole aus.
      */
@@ -78,7 +84,7 @@ class Rucksack
             System.out.println("Nummer " + i + ": Gewicht " + gewichte.get(i) + "kg, Nährwert: " + nährwerte.get(i) + "MJ");
         }
     }
-    
+
     /**
      * Fügt den nächsten Vorrat zu den bisherigen Vorräten hinzu
      * @param startIndex der Index, ab dem die Vorräte ergänzt werden können.

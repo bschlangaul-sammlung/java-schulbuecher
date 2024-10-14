@@ -3,19 +3,23 @@ import java.util.*;
 import java.io.*;
 /**
  * Ermittelt günstige Paarungen von Coaches und Kandidaten für den Songwettbewerb
- * 
+ *
  * @author Albert Wiedemann
  * @version 1.0
  */
 class Songwettbewerb
 {
-    /** Die Wunschlisten der Kandidaten für ihre Coaches */
+    /**
+     * Die Wunschlisten der Kandidaten für ihre Coaches */
     private ArrayList<ArrayList<Integer>> kandidatenWunschlisteCoaches;
-    /** Die Wunschlisten der Coaches für ihre Kandidaten */
+    /**
+     * Die Wunschlisten der Coaches für ihre Kandidaten */
     private ArrayList<ArrayList<Integer>> coachesWunschlisteKandidaten;
-    /** Das Feld der zugeordneten Coaches (-1 bedeutert, dass dem Kandidaten noch kein Coach zugeordnet wurde) */
+    /**
+     * Das Feld der zugeordneten Coaches (-1 bedeutert, dass dem Kandidaten noch kein Coach zugeordnet wurde) */
     private ArrayList<Integer> coachFürKandidat;
-    /** Anzahl der Kandidaten und Coaches = maximaler Wunschwert */
+    /**
+     * Anzahl der Kandidaten und Coaches = maximaler Wunschwert */
     int anzahl;
 
     /**
@@ -37,7 +41,7 @@ class Songwettbewerb
         }
         SchrittAusführen(0);
     }
-    
+
     /**
      * Liest die Wunschlistendaten aus der angegebenen Datei
      * @param name der Dateiname
@@ -116,7 +120,7 @@ class Songwettbewerb
         System.out.print(text.substring(text.length() - 4));
         System.out.println();
     }
-    
+
     /**
      * Sucht für den angegebenen Kandidaten den Coach, den der Kandidat mit dem gegebenen Wunschwert haben möchte)
      * @param kandidat der Kandidat, für den der Coach gesucht wird
@@ -133,7 +137,7 @@ class Songwettbewerb
         }
         return -1;
     }
-    
+
     /**
      * Sucht denjenigen Kandidaten, dem der Coach zur Zeit zugeordnet ist.
      * @param coach Coach, dessen Kandidat gesucht wird
@@ -150,7 +154,7 @@ class Songwettbewerb
         }
         return -1;
     }
-    
+
     /**
      * Testet, ob die Aufstellung nach Hinzufügen des Paares Kandidat/Coach stabil bleibt
      * @param aktuellerKandidat der Kandidat

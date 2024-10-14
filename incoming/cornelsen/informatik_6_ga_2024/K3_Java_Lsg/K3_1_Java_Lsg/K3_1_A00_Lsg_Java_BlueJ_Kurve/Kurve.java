@@ -1,13 +1,14 @@
 
 /**
  * Zeichnet die Levy-C-Kurve
- * 
- * @author Albert Wiedemann 
+ *
+ * @author Albert Wiedemann
  * @version 1.0
  */
 class Kurve
 {
-    /** Die Turtle */
+    /**
+     * Die Turtle */
     private Turtle t;
 
     /**
@@ -20,7 +21,7 @@ class Kurve
         t.PositionSetzen(350, 250);
         t.StiftSenken();
     }
-    
+
     /**
      * Zeichnet die Levy-C-Kurve mit der gegebenen Tiefe in der angegebenen Farbe.
      * @param tiefe Rekursionstiefe
@@ -40,7 +41,7 @@ class Kurve
         SchrittAusführen(150, tiefe);
         t.Drehen(90);
     }
-    
+
     /**
      * Zeichnet die Levy-C-Kurve mit den Tiefen 0 bis 3
      */
@@ -60,7 +61,7 @@ class Kurve
         t.PositionSetzen(350, 250);
         SchrittAusführen (150, 3);
     }
-    
+
     /**
      * Zeichnet ein Element der Kurve durch Ausführen des nächsten Rekursionsschrittes
      * @param länge die Linienlänge

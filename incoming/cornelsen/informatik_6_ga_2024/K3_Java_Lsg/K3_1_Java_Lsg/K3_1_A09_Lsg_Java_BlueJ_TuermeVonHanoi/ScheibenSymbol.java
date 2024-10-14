@@ -1,22 +1,28 @@
 /**
  * Stellt eine Scheibe des Turms auf dem Bildschirm dar
- * 
- * @author Albert Wiedemann 
+ *
+ * @author Albert Wiedemann
  * @version 1.0
  */
 class ScheibenSymbol
 {
-    /** Basisgröße der Scheiben */
+    /**
+     * Basisgröße der Scheiben */
     static final int basis = 20;
-    /** Der Außenrand */
+    /**
+     * Der Außenrand */
     private Rechteck außen;
-    /** Der Innenrand */
+    /**
+     * Der Innenrand */
     private Rechteck innen;
-    /** Breite der Scheibe */
+    /**
+     * Breite der Scheibe */
     private int breite;
-    /** x-Position der Scheibe */
+    /**
+     * x-Position der Scheibe */
     private int x;
-    /** y-Position der Scheibe */
+    /**
+     * y-Position der Scheibe */
     private int y;
 
     /**
@@ -36,7 +42,7 @@ class ScheibenSymbol
         innen.GrößeSetzen(basis * nummer - 2, basis - 2);
         PositionSetzen(1, 1);
     }
-    
+
     /**
      * Setzt die Position bei der Lage in einem Turm.
      * @param turmNummer Nummer des Turms
@@ -50,7 +56,7 @@ class ScheibenSymbol
         außen.PositionSetzen(x, y);
         innen.PositionSetzen(x + 1, y + 1);
     }
-    
+
     /**
      * Bewegt die Scheibe um zwei Punkte nach oben.
      */
@@ -60,7 +66,7 @@ class ScheibenSymbol
         außen.PositionSetzen(x, y);
         innen.PositionSetzen(x + 1, y + 1);
     }
-    
+
     /**
      * Bewegt die Scheibe um zwei Punkte nach unten.
      */
@@ -70,7 +76,7 @@ class ScheibenSymbol
         außen.PositionSetzen(x, y);
         innen.PositionSetzen(x + 1, y + 1);
     }
-    
+
     /**
      * Bewegt die Scheibe um zwei Punkte nach links.
      */
@@ -80,7 +86,7 @@ class ScheibenSymbol
         außen.PositionSetzen(x, y);
         innen.PositionSetzen(x + 1, y + 1);
     }
-    
+
     /**
      * Bewegt die Scheibe um zwei Punkte nach rechts.
      */

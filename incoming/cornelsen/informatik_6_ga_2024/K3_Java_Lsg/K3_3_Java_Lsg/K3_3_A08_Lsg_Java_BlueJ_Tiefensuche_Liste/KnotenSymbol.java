@@ -1,29 +1,37 @@
 
 /**
  * Verwaltet ein Knotensymbol in einem Graph
- * 
+ *
  * @author Albert Wiedemann
  * @version 1.0
  */
 class KnotenSymbol
 {
-    /** Außenkreis des Darstellungssymbols */
+    /**
+     * Außenkreis des Darstellungssymbols */
     private Kreis außen;
-    /** Innenkreis des Darstellungssymbols */
+    /**
+     * Innenkreis des Darstellungssymbols */
     private Kreis innen;
-    /** Text des Darstellungssymbols */
+    /**
+     * Text des Darstellungssymbols */
     private Text text;
-    /** Der Bezeichner */
+    /**
+     * Der Bezeichner */
     private String bezeichner;
-    /** Radius */
+    /**
+     * Radius */
     private int r;
-    /** x-Koordinate */
+    /**
+     * x-Koordinate */
     private int x;
-    /** y-Koordinate */
+    /**
+     * y-Koordinate */
     private int y;
-    /** Farbe */
+    /**
+     * Farbe */
     private String farbe;
-    
+
     /**
      * Legt das Symbol an und besetzt die Attribute.
      * @param x x-Koordinate
@@ -46,7 +54,7 @@ class KnotenSymbol
         text.TextGrößeSetzen(18);
         DarstellungAktualisieren();
     }
-    
+
     /**
      * Aktualisiert das Symbol
      */
@@ -60,7 +68,7 @@ class KnotenSymbol
         text.PositionSetzen(x - bezeichner.length() / 2 * 10 - bezeichner.length() % 2 * 5, y + 6);
         text.TextSetzen(bezeichner);
     }
-    
+
     /**
      * Setzt die Farbe der Darstellung
      * @param f die (neue) Farbe
@@ -70,7 +78,7 @@ class KnotenSymbol
         farbe = f;
         DarstellungAktualisieren();
     }
-    
+
     /**
      * Setzt die Position der Darstellung
      * @param x x-Koordinate
@@ -82,7 +90,7 @@ class KnotenSymbol
         this.y = y;
         DarstellungAktualisieren();
     }
-    
+
     /**
      * Setzt die Farbe der Darstellung
      * @param bezeichner der (neue) Bezeichner
@@ -92,7 +100,7 @@ class KnotenSymbol
         this.bezeichner = bezeichner;
         DarstellungAktualisieren();
     }
-    
+
     /**
      * Meldet die x-Koordinate des Symbols zurück.
      * @return x-Koordinate
@@ -101,7 +109,7 @@ class KnotenSymbol
     {
         return x;
     }
-    
+
     /**
      * Meldet die y-Koordinate des Symbols zurück.
      * @return y-Koordinate
@@ -110,7 +118,7 @@ class KnotenSymbol
     {
         return y;
     }
-    
+
     /**
      * Meldet den Bezeichner des Symbols zurück.
      * @return Bezeichner
@@ -119,7 +127,7 @@ class KnotenSymbol
     {
         return bezeichner;
     }
-    
+
     /**
      * Entfernt das Knotensymbol aus der Anzeige
      */

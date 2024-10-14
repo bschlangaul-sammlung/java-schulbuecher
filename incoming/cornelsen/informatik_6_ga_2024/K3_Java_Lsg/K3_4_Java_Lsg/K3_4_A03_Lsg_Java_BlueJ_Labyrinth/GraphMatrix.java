@@ -2,23 +2,27 @@
 import java.util.ArrayList;
 /**
  * Verwaltet einen ungerichteten, gewichteten Graphen mittels Adjazenzmatrix
- * 
- * @author Albert Wiedemann 
+ *
+ * @author Albert Wiedemann
  * @version 1.0
  */
 class GraphMatrix
 {
-    /** Feld der Knoten des Graphen */
-    private ArrayList<Knoten> knoten;   
+    /**
+     * Feld der Knoten des Graphen */
+    private ArrayList<Knoten> knoten;
     /** 2-dim Feld der Adjazenzmatrix */
     private ArrayList<ArrayList<Integer>> matrix;
-    /** Feld der Kantensymbole des Graphen */
-    private ArrayList<KantenSymbol> kanten;   
-    /** Markierung für die besuchten Knoten */
+    /**
+     * Feld der Kantensymbole des Graphen */
+    private ArrayList<KantenSymbol> kanten;
+    /**
+     * Markierung für die besuchten Knoten */
     private ArrayList<Integer> besuchteKnoten;
-    /** Von der Tiefensuche gefundener Weg */
+    /**
+     * Von der Tiefensuche gefundener Weg */
     private ArrayList<Knoten> weg;
-    
+
     /**
      * Baut die Datenstruktur auf
      */
@@ -30,7 +34,7 @@ class GraphMatrix
         besuchteKnoten = new ArrayList<Integer>();
         weg = new ArrayList<Knoten>();
     }
-    
+
     /**
      * Einfügen eines neuen Knoten in den Graphen
      * @param x x-Koordinate des Knotens
@@ -56,7 +60,7 @@ class GraphMatrix
      * @param x x-Koordinate des Knotens
      * @param y y-Koordinate des Knotens
      * @return Referenz auf das Knotenobjekt oder null
-     */   
+     */
     Knoten KnotenGeben(int x, int y)
     {
         for (Knoten k: knoten)
@@ -75,7 +79,7 @@ class GraphMatrix
      * @param x x-Koordinate des Knotens
      * @param y y-Koordinate des Knotens
      * @return Indexnummer des Knotens im Knotenfeld; 0 <= res <= knoten.size()-1 bzw. -1
-     */   
+     */
     private int KnotenNummerGeben(int x, int y)
     {
         for (int index=0; index < knoten.size(); index++)
@@ -113,12 +117,12 @@ class GraphMatrix
     /**
      * Gibt die Anzahl der Knoten des Graphen zurück
      * @return  Anzahl der Knoten
-     */   
+     */
     int KnotenAnzahlGeben()
     {
         return knoten.size();
     }
-    
+
     /**
      * Gibt die Gewichtung einer Kante zurück
      * Die Kante ist durch einen Anfangsknoten und einen Endknoten festgelegt
@@ -127,7 +131,7 @@ class GraphMatrix
      * @param x2 x-Koordinate des Endknotens
      * @param y2 y-Koordinate des Endknotens
      * @return Gewichtung der Kante
-     */ 
+     */
     int KanteGewichtGeben(int x1, int y1, int x2, int y2)
     {
         int vonNummer, nachNummer;
@@ -142,7 +146,7 @@ class GraphMatrix
             return -1;
         }
     }
-    
+
     /**
      * Löscht die Kanten und Knoten des Graphen
      * Die Anzeige wird auch gelöscht
@@ -161,7 +165,7 @@ class GraphMatrix
         kanten.clear();
         matrix.clear();
     }
-    
+
     /**
      * Setzt die Sichtbarkeit des Graphen
      * @param sichtbar wenn wahr, ist das Labyrinth sichtbar
@@ -177,7 +181,7 @@ class GraphMatrix
             k.SymbolGeben().SichtbarkeitSetzen(sichtbar);
         }
     }
-   
+
     /**
      * Führt die Tiefensuche vom Startknoten aus durch
      * @param x1 x-Koordinate des Startknotens
@@ -193,7 +197,7 @@ class GraphMatrix
         KnotenBesuchen(KnotenNummerGeben(x1, y1), KnotenNummerGeben(x2, y2));
         return weg;
     }
-     
+
     /**
      * Setzt den Rekursionsschritt bei einem Knoten um.
      * @param aktuell die Nummer des aktuell zu besuchenden Knotens

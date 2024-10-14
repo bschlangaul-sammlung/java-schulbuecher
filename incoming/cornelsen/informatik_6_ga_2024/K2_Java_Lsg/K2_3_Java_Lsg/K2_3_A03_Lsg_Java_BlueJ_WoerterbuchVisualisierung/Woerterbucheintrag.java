@@ -1,19 +1,20 @@
 /**
  * Die Klasse Woerterbucheintrag dient zur Speicherung von
- * Wörterbucheinträgen für ein Englisch-Deutsches 
- * Wörterbuch. Dabei kann jedem englischen Wort mehrere 
- * deutsche Bedeutungen zugeordnet werden, wobei alle Bedeutungen in 
+ * Wörterbucheinträgen für ein Englisch-Deutsches
+ * Wörterbuch. Dabei kann jedem englischen Wort mehrere
+ * deutsche Bedeutungen zugeordnet werden, wobei alle Bedeutungen in
  * einer einzigen Zeichenkette Bedeutung gespeichert werden.
- * 
+ *
  * @author Peter Brichzin
  * @version 23.05.24
  */
-class Woerterbucheintrag 
+class Woerterbucheintrag
 {
-    /** Englisches Wort; Schlüssel dieses Datenelements */    
-    private String wort; 
     /**
-     * Deutsche Bedeutung; mehrere Bedeutungen werden als eine Zeichenkette zusammengefasst */  
+     * Englisches Wort; Schlüssel dieses Datenelements */
+    private String wort;
+    /**
+     * Deutsche Bedeutung; mehrere Bedeutungen werden als eine Zeichenkette zusammengefasst */
     private String bedeutung;
 
     /**
@@ -43,14 +44,14 @@ class Woerterbucheintrag
      */
     boolean IstGleich(Woerterbucheintrag dvergleich)
     {
-        if(wort.compareTo(dvergleich.WortGeben()) == 0)                                                                                                                                                                                                                                                            
+        if(wort.compareTo(dvergleich.WortGeben()) == 0)
         {
             return true;
         }
         else
         {
             return false;
-        }       
+        }
     }
 
     /**
@@ -60,14 +61,14 @@ class Woerterbucheintrag
      */
     boolean IstGrößerAls(Woerterbucheintrag dvergleich)
     {
-        if(wort.compareTo(dvergleich.WortGeben()) > 0)                                                                                                                                                                                                                                                            
+        if(wort.compareTo(dvergleich.WortGeben()) > 0)
         {
             return true;
         }
         else
         {
             return false;
-        }       
+        }
     }
 
     /**
@@ -77,14 +78,14 @@ class Woerterbucheintrag
      */
     boolean SchlüsselIstGleich(String vergleichsSchlüssel)
     {
-        if(wort.compareTo(vergleichsSchlüssel) == 0)                                                                                                                                                                                                                                                            
+        if(wort.compareTo(vergleichsSchlüssel) == 0)
         {
             return true;
         }
         else
         {
             return false;
-        } 
+        }
     }
 
     /**
@@ -94,43 +95,43 @@ class Woerterbucheintrag
      */
     boolean SchlüsselIstGrößerAls(String vergleichsSchlüssel)
     {
-        if(wort.compareTo(vergleichsSchlüssel) > 0)                                                                                                                                                                                                                                                            
+        if(wort.compareTo(vergleichsSchlüssel) > 0)
         {
             return true;
         }
         else
         {
             return false;
-        }     
+        }
     }
 
     /**
      * Vergleicht zwei Schlüssel, die als Zeichenketten vorliegen, bezüglich der Ordnungsrelation.
      * @param vergleichsSchluessel Schlüssel  mit dem der Schlüssel des Objekt verglichen wird.
-     * @return true, wenn das aktuelle Element einen kleineren Schlüssel 
+     * @return true, wenn das aktuelle Element einen kleineren Schlüssel
      * hat, als das angegebene Vergleichselement.
      */
     boolean SchlüsselIstKleinerAls(String vergleichsSchlüssel)
     {
-        if(wort.compareTo(vergleichsSchlüssel) < 0)                                                                                                                                                                                                                                                            
+        if(wort.compareTo(vergleichsSchlüssel) < 0)
         {
             return true;
         }
         else
         {
             return false;
-        }     
+        }
     }
 
     /**
-     * Gibt den Schlüssel des Datenelements als String aus, auch wenn der Datentyp vom 
+     * Gibt den Schlüssel des Datenelements als String aus, auch wenn der Datentyp vom
      * String abweicht. Diese Methode wird beim Entfernen eines Knotens benötigt.
      * @return Schlüssel als String.
      */
     String SchlüsselAlsStringGeben()
     {
         return wort;
-    }   
+    }
 
     /**
      * Geben-Methode zum Attribut wort

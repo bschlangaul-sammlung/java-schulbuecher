@@ -1,27 +1,35 @@
 
 /**
  * Wrapperklasse für ein Dreieck auf der Zeichenfläche.
- * 
- * @author Albert Wiedemann 
+ *
+ * @author Albert Wiedemann
  * @version 1.0
  */
 public class Dreieck
 {
-    /** x-Position der Spitze. */
+    /**
+     * x-Position der Spitze. */
     protected int x;
-    /** y-Position der Spitze. */
+    /**
+     * y-Position der Spitze. */
     protected int y;
-    /** Breite des umgebenden Rechtecks. */
+    /**
+     * Breite des umgebenden Rechtecks. */
     protected int breite;
-    /** Höhe des umgebenden Rechtecks. */
+    /**
+     * Höhe des umgebenden Rechtecks. */
     protected int höhe;
-    /** Farbe des Dreiecks. */
+    /**
+     * Farbe des Dreiecks. */
     protected String farbe;
-    /** Sichtbarkeit des Dreiecks. */
+    /**
+     * Sichtbarkeit des Dreiecks. */
     protected boolean sichtbar;
-    /** Drehwinkel (mathematisch positiver Drehsinn) des Dreiecks in Grad. */
+    /**
+     * Drehwinkel (mathematisch positiver Drehsinn) des Dreiecks in Grad. */
     protected int winkel;
-    /** Referenz auf das Delegate-Objekt. */
+    /**
+     * Referenz auf das Delegate-Objekt. */
     Zeichenfenster.GrafikSymbol symbol;
 
     /**
@@ -43,7 +51,7 @@ public class Dreieck
         symbol.SichtbarkeitSetzen(sichtbar);
         symbol.WinkelSetzen(winkel);
     }
-    
+
     /**
      * Setzt die Position (der Spitze) des Dreiecks.
      * @param x x-Position der Spitze
@@ -55,7 +63,7 @@ public class Dreieck
         this.y = y;
         symbol.PositionSetzen(x - breite / 2, y);
     }
-    
+
     /**
      * Verschiebt das Dreieck um die angegebenen Werte.
      * @param deltaX Verschiebung in x-Richtung
@@ -67,7 +75,7 @@ public class Dreieck
         y += deltaY;
         symbol.PositionSetzen(x - breite / 2, y);
     }
-    
+
     /**
      * Dreht das Dreieck
      * @param grad Drehwinkel (mathematisch positiver Drehsinn) im Gradmass
@@ -77,7 +85,7 @@ public class Dreieck
         winkel += grad;
         symbol.WinkelSetzen(winkel);
     }
-        
+
     /**
      * Setzt die Größe des Dreiecks.
      * @param breite (neue) Breite
@@ -90,7 +98,7 @@ public class Dreieck
         symbol.GrößeSetzen(breite, höhe);
         symbol.PositionSetzen(x - breite / 2, y);
     }
-    
+
     /**
      * Setzt die Farbe des Dreiecks.
      * Erlaubte Farben sind:
@@ -105,7 +113,7 @@ public class Dreieck
         this.farbe = farbe;
         symbol.FarbeSetzen(farbe);
     }
-        
+
     /**
      * Setzt den Drehwinkel des Dreiecks.
      * Die Winkelangabe ist in Grad,positive Werte drehen gegen den Uhrzeigersinn,
@@ -117,7 +125,7 @@ public class Dreieck
         this.winkel = winkel;
         symbol.WinkelSetzen(winkel);
     }
-    
+
     /**
      * Schaltet die Sichtbarkeit des Dreiecks ein oder aus.
      * Erlaubte Parameterwerte: true, false
@@ -128,7 +136,7 @@ public class Dreieck
         this.sichtbar = sichtbar;
         symbol.SichtbarkeitSetzen(sichtbar);
     }
-        
+
     /**
      * Entfernt das Dreieck aus dem Zeichenfenster.
      */
@@ -136,7 +144,7 @@ public class Dreieck
     {
         symbol.Entfernen();
     }
-    
+
     /**
      * Bringt das Dreieck eine Ebene nach vorn.
      */
@@ -144,7 +152,7 @@ public class Dreieck
     {
         symbol.NachVornBringen();
     }
-    
+
     /**
      * Bringt das Dreieck in die vorderste Ebene.
      */
@@ -152,7 +160,7 @@ public class Dreieck
     {
         symbol.GanzNachVornBringen();
     }
-    
+
     /**
      * Bringt das Dreieck eine Ebene nach hinten.
      */
@@ -160,7 +168,7 @@ public class Dreieck
     {
         symbol.NachHintenBringen();
     }
-    
+
     /**
      * Bringt das Dreieck in die hinterste Ebene.
      */

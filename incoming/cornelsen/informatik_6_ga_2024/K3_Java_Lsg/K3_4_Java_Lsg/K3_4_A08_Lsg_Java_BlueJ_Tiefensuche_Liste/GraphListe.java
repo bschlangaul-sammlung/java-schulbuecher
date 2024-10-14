@@ -1,26 +1,32 @@
- 
+
 import java.util.ArrayList;
 /**
  * Verwaltet einen ungerichteten, gewichteten Graphen mittels Adjazenzlisten
- * 
- * @author Albert Wiedemann 
+ *
+ * @author Albert Wiedemann
  * @version 1.0
  */
 class GraphListe
 {
-    /** Feld der Knoten des Graphen */
-    private ArrayList<Knoten> knoten;   
-    /** Feld der Kantensymbole des Graphen */
-    private ArrayList<KantenSymbol> kanten;   
-    /** Markierung für die besuchten Knoten */
+    /**
+     * Feld der Knoten des Graphen */
+    private ArrayList<Knoten> knoten;
+    /**
+     * Feld der Kantensymbole des Graphen */
+    private ArrayList<KantenSymbol> kanten;
+    /**
+     * Markierung für die besuchten Knoten */
     private ArrayList<Knoten> besuchteKnoten;
-    /** Der in Bearbeitung befindliche Weg */
+    /**
+     * Der in Bearbeitung befindliche Weg */
     private ArrayList<Knoten> aktuellerWeg;
-    /** Der (bisher) beste Weg */
+    /**
+     * Der (bisher) beste Weg */
     private ArrayList<Knoten> optimalerWeg;
-    /** Länge des besten Weges */
+    /**
+     * Länge des besten Weges */
     private int optimaleLänge;
-    
+
     /**
      * Baut die Datenstruktur auf
      */
@@ -33,7 +39,7 @@ class GraphListe
         optimalerWeg = new ArrayList<Knoten>();
         optimaleLänge = Integer.MAX_VALUE;
     }
-    
+
     /**
      * Einfügen eines neuen Knoten in den Graphen
      * @param bezeichner Bezeichner des neuen Knotens, der dem Graphen hinzugefügt wird.
@@ -50,7 +56,7 @@ class GraphListe
      * Wenn ein Knoten mit diesem Bezeichner nicht bekannt ist, wird null zurückgegeben
      * @param bezeichner Bezeichner des Knoten der gesucht wird
      * @return Referenz auf das Knotenobjekt oder null
-     */   
+     */
     Knoten KnotenGeben(String bezeichner)
     {
         for (Knoten k: knoten)
@@ -68,7 +74,7 @@ class GraphListe
      * Wenn ein Knoten mit diesem Bezeichner nicht bekannt ist, wird -1 zurückgegeben
      * @param bezeichner Bezeichner des Knoten der gesucht wird
      * @return Indexnummer des Knotens im Knotenfeld; 0 <= res <= knoten.size()-1 bzw. -1
-     */   
+     */
     private int KnotenNummerGeben(String bezeichner)
     {
         for (int index=0; index < knoten.size(); index++)
@@ -80,12 +86,12 @@ class GraphListe
         }
         return -1;
     }
-    
+
     /**
      * Gibt die Bezeichnung eines Knotens mit der internen Knotennummer
      * @param Indexnummer des Knotens im Knotenarray; 0<= x <= knoten.size()
      * @return Bezeichner des Knotens
-     */   
+     */
     String KnotenBezeichnerGeben(int knotenNummer)
     {
         if ((knotenNummer < knoten.size()) && (knotenNummer >= 0))
@@ -121,7 +127,7 @@ class GraphListe
     /**
      * Gibt die Adjazenzlisten der Knoten auf der Konsole aus
      * Für jeden Knoten wird die Liste der Ziele mit Gewichten ausgegeben
-     */   
+     */
     void Ausgeben()
     {
         for (Knoten k: knoten)
@@ -133,29 +139,29 @@ class GraphListe
             }
             System.out.println();
         }
-    }    
+    }
 
     /**
      * Gibt die Anzahl der Knoten des Graphen zurück
      * @return  Anzahl der Knoten
-     */   
+     */
     int KnotenAnzahlGeben()
     {
         return knoten.size();
     }
-    
+
     /**
      * Gibt die Gewichtung einer Kante zurück
      * Die Kante ist durch einen Anfangsknoten und einen Endknoten festgelegt
      * @param von Bezeichner des Anfangsknotens
      * @param nach Bezeichner des Endknotens
      * @return Gewichtung der Kante
-     */ 
+     */
     int KanteGewichtGeben(String von, String nach)
     {
         int vonNummer;
         Knoten nachKnoten;
-        
+
         vonNummer = KnotenNummerGeben(von);
         nachKnoten = KnotenGeben(nach);
         if ((vonNummer !=- 1) && (nachKnoten != null))
@@ -174,7 +180,7 @@ class GraphListe
             return -1;
         }
     }
-    
+
     /**
      * Löscht die Kanten und Knoten des Graphen
      * Die Anzeige wird auch gelöscht
@@ -192,7 +198,7 @@ class GraphListe
         knoten.clear();
         kanten.clear();
     }
-    
+
     void Umwandeln(ArrayList<ArrayList<Integer>> matrix)
     {
         for (int zeile = 0; zeile <= matrix.size(); zeile += 1)
@@ -202,11 +208,11 @@ class GraphListe
                 int gewichtung = matrix.get(zeile).get(spalte);
                 knoten.get(zeile).AdjazenzlisteGeben().add(new Kante(gewichtung, knoten.get(spalte)));
                 knoten.get(spalte).AdjazenzlisteGeben().add(new Kante(gewichtung, knoten.get(zeile)));
-                kanten.add(new KantenSymbol(knoten.get(zeile).SymbolGeben(), knoten.get(spalte).SymbolGeben(), false, "" + gewichtung, 3, "blau")); 
+                kanten.add(new KantenSymbol(knoten.get(zeile).SymbolGeben(), knoten.get(spalte).SymbolGeben(), false, "" + gewichtung, 3, "blau"));
             }
         }
     }
-     
+
     /**
      * Setzt den Rekursionsschritt bei einem Knoten um.
      * @param aktuell der aktuell besuchte Knoten
@@ -228,7 +234,7 @@ class GraphListe
                     optimalerWeg.add(kn);
                 }
             }
-            
+
         }
         else
         {
@@ -243,7 +249,7 @@ class GraphListe
         besuchteKnoten.remove(aktuell);
         aktuellerWeg.remove(aktuell);
     }
-   
+
     /**
      * Führt die Tiefensuche vom Startknoten aus durch
      * @param startKnoten der Startknoten

@@ -1,24 +1,31 @@
 /**
  * Verwaltet den Kran
- * 
- * @author Albert Wiedemann 
+ *
+ * @author Albert Wiedemann
  * @version 1.0
  */
 class Kran
 {
-    /** Der Querträger */
+    /**
+     * Der Querträger */
     private Rechteck träger;
-    /** Das Seil */
+    /**
+     * Das Seil */
     private Rechteck seil;
-    /** Der Fanghaken */
+    /**
+     * Der Fanghaken */
     private Rechteck haken;
-     /** Das linke Rad */
+     /**
+     * Das linke Rad */
     private Kreis rad1;
-     /** Das rechte Rad */
+     /**
+     * Das rechte Rad */
     private Kreis rad2;
-    /** x-Position des Krans */
+    /**
+     * x-Position des Krans */
     private int x;
-    /** y-Position des Fanghakens */
+    /**
+     * y-Position des Fanghakens */
     private int y;
 
     /**
@@ -45,7 +52,7 @@ class Kran
         rad2.RadiusSetzen(5);
         PositionSetzen(0);
     }
-    
+
     /**
      * Setzt die Position bei der Lage in einem Turm.
      * @param turmNummer Nummer des Turms
@@ -60,7 +67,7 @@ class Kran
         rad1.PositionSetzen(x, 60);
         rad2.PositionSetzen(x + 30, 60);
     }
-    
+
     /**
      * Bewegt die Scheibe um zwei Punkte nach oben.
      */
@@ -74,7 +81,7 @@ class Kran
         rad1.PositionSetzen(x, 60);
         rad2.PositionSetzen(x + 30, 60);
     }
-    
+
     /**
      * Bewegt die Scheibe um zwei Punkte nach unten.
      */
@@ -88,7 +95,7 @@ class Kran
         rad1.PositionSetzen(x, 60);
         rad2.PositionSetzen(x + 30, 60);
     }
-    
+
     /**
      * Bewegt die Scheibe um zwei Punkte nach links.
      */
@@ -101,7 +108,7 @@ class Kran
         rad1.PositionSetzen(x, 60);
         rad2.PositionSetzen(x + 30, 60);
     }
-    
+
     /**
      * Bewegt die Scheibe um zwei Punkte nach rechts.
      */
@@ -114,7 +121,7 @@ class Kran
         rad1.PositionSetzen(x, 60);
         rad2.PositionSetzen(x + 30, 60);
     }
-    
+
     /**
      * Gibt die x-Position des Krans bezogen auf die Seilmitte
      * @return Kranposition
@@ -123,7 +130,7 @@ class Kran
     {
         return x + 15;
     }
-    
+
     /**
      * Gibt die y-Position der Unterkante des Kranhakens
      * @return Kranhöhe

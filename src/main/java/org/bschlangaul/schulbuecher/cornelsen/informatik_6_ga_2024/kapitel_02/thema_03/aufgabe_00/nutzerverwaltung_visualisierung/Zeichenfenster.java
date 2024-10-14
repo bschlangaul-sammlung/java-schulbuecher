@@ -1,3 +1,4 @@
+package org.bschlangaul.schulbuecher.cornelsen.informatik_6_ga_2024.kapitel_02.thema_03.aufgabe_00.nutzerverwaltung_visualisierung;
 
 import java.awt.*;
 import java.awt.geom.*;
@@ -6,72 +7,116 @@ import java.awt.image.*;
 import javax.swing.*;
 import javax.swing.event.*;
 import java.util.*;
+
 /**
- * Die Klasse stellt ein Fenster mit einer Malfläche zur Verfügung,
- * auf der Objekte der Klassen Rechteck, Kreis und Dreieck sowie Turtle dargestellt
- * werden können.
- * Die Zeichenfläche wird beim ersten Anlegen eines Zeichenobjekts automatisch
- * nach dem Muster Singleton angelegt.
- * 
- * @author Albert Wiedemann 
+ * Die Klasse stellt ein Fenster mit einer Malfläche zur Verfügung, auf der
+ * Objekte der Klassen Rechteck, Kreis und Dreieck sowie Turtle dargestellt
+ * werden können. Die Zeichenfläche wird beim ersten Anlegen eines
+ * Zeichenobjekts automatisch nach dem Muster Singleton angelegt.
+ *
+ * @author Albert Wiedemann
+ *
  * @version 1.0
  */
 class Zeichenfenster
 {
-    /** Interface für die Aktionsausführung. */
+    /**
+     * Interface für die Aktionsausführung.
+     */
     interface AktionsEmpfaenger
     {
-        /** Methode wird vom Taktgeber aufgerufen. */
+        /**
+         * Methode wird vom Taktgeber aufgerufen.
+         */
         void Ausführen();
-        void Taste (char taste);
-        void SonderTaste (int taste);
-        void Geklickt (int x, int y, int anzahl);
+
+        void Taste(char taste);
+
+        void SonderTaste(int taste);
+
+        void Geklickt(int x, int y, int anzahl);
     }
-    
-    /** Aufzählung der erzeugbaren Objektarten. */
-    static enum SymbolArt {kreis, dreieck, rechteck, turtle, figur, text;};
-    
-    /** Einziges Objekt der Zeichenfläche. */
+
+    /**
+     * Aufzählung der erzeugbaren Objektarten.
+     */
+    static enum SymbolArt
+    {
+        kreis, dreieck, rechteck, turtle, figur, text;
+    };
+
+    /**
+     * Einziges Objekt der Zeichenfläche.
+     */
     private static Zeichenfenster zeichenfläche = null;
-    
-    /** Fenster für die Zeichenfläche. */
+
+    /**
+     * Fenster für die Zeichenfläche.
+     */
     private JFrame fenster;
-    /** Die eigentliche Darstellungskomponente. */
+
+    /**
+     * Die eigentliche Darstellungskomponente.
+     */
     private JComponent malfläche;
-    /** Stop-Knopf für den Taktgeber. */
+
+    /**
+     * Stop-Knopf für den Taktgeber.
+     */
     private JButton stop;
-    /** Start-Knopf für den Taktgeber. */
+
+    /**
+     * Start-Knopf für den Taktgeber.
+     */
     private JButton start;
-    /** Einsteller für die Taktrate*/
+
+    /**
+     * Einsteller für die Taktrate
+     */
     private JSlider slider;
-    /** Feld aller zu zeichnenden Objekte. */
+
+    /**
+     * Feld aller zu zeichnenden Objekte.
+     */
     private ArrayList<GrafikSymbol> alleSymbole;
-    /** Feld aller zu zeichnenden Objekte. */
+
+    /**
+     * Feld aller zu zeichnenden Objekte.
+     */
     private ArrayList<AktionsEmpfaenger> aktionsEmpfänger;
-    /** Timerobjekt für die zentrale Zeitverwaltung */
+
+    /**
+     * Timerobjekt für die zentrale Zeitverwaltung
+     */
     private javax.swing.Timer timer;
 
     /**
      * Legt das Fenster und die Malfläche an
      */
-    private Zeichenfenster ()
+    private Zeichenfenster()
     {
         alleSymbole = new ArrayList<GrafikSymbol>();
         aktionsEmpfänger = new ArrayList<AktionsEmpfaenger>();
         fenster = new JFrame("Zeichenfenster");
         fenster.setLocation(50, 50);
         fenster.setSize(800, 600);
-        fenster.setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE); //Close-Button kann nicht versteckt oder abgestellt werden.
-        
+        fenster.setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE); // Close-Button
+                                                                               // kann
+                                                                               // nicht
+                                                                               // versteckt
+                                                                               // oder
+                                                                               // abgestellt
+                                                                               // werden.
+
         malfläche = new JComponent()
         {
-            public void paint (Graphics g)
+            public void paint(Graphics g)
             {
-                g.setColor(new Color (230, 230, 230));
+                g.setColor(new Color(230, 230, 230));
                 g.fillRect(0, 0, getWidth() - 1, getHeight() - 1);
                 synchronized (malfläche)
                 {
-                    for (GrafikSymbol s: alleSymbole)
+                    for (GrafikSymbol s : alleSymbole)
                     {
                         if (s.sichtbar)
                         {
@@ -82,59 +127,63 @@ class Zeichenfenster
             }
         };
         malfläche.setOpaque(true);
-        malfläche.addMouseListener(new MouseAdapter ()
+        malfläche.addMouseListener(new MouseAdapter()
         {
             /**
-             * Gibt den Ort eines Mouseclicks an die eigentliche Aktionsmethode weiter.
+             * Gibt den Ort eines Mouseclicks an die eigentliche Aktionsmethode
+             * weiter.
+             *
              * @param e das zugrestellte Ereignis
              */
             public void mousePressed(MouseEvent e)
             {
                 malfläche.requestFocus();
-                ArrayList<AktionsEmpfaenger> empfänger = new ArrayList<AktionsEmpfaenger>(aktionsEmpfänger);
-                for (AktionsEmpfaenger em: empfänger)
+                ArrayList<AktionsEmpfaenger> empfänger = new ArrayList<AktionsEmpfaenger>(
+                        aktionsEmpfänger);
+                for (AktionsEmpfaenger em : empfänger)
                 {
                     em.Geklickt(e.getX(), e.getY(), e.getClickCount());
                 }
             }
-        }
-        );
-        malfläche.addKeyListener(new KeyAdapter ()
+        });
+        malfläche.addKeyListener(new KeyAdapter()
         {
             /**
              * Gibt die Taste an die eigentliche Aktionsmethode weiter.
+             *
              * @param e das zugestellte Ereignis
              */
             public void keyPressed(KeyEvent e)
             {
-                ArrayList<AktionsEmpfaenger> empfänger = new ArrayList<AktionsEmpfaenger>(aktionsEmpfänger);
+                ArrayList<AktionsEmpfaenger> empfänger = new ArrayList<AktionsEmpfaenger>(
+                        aktionsEmpfänger);
                 if ((int) e.getKeyChar() == KeyEvent.CHAR_UNDEFINED)
                 {
                     switch (e.getKeyCode())
                     {
-                        case KeyEvent.VK_ENTER:
-                            for (AktionsEmpfaenger em: empfänger)
-                            {
-                                em.Taste((char) KeyEvent.VK_ENTER);
-                            }
-                            break;
-                        default:
-                            for (AktionsEmpfaenger em: empfänger)
-                            {
-                                em.SonderTaste(e.getKeyCode());
-                            }
+                    case KeyEvent.VK_ENTER:
+                        for (AktionsEmpfaenger em : empfänger)
+                        {
+                            em.Taste((char) KeyEvent.VK_ENTER);
+                        }
+                        break;
+
+                    default:
+                        for (AktionsEmpfaenger em : empfänger)
+                        {
+                            em.SonderTaste(e.getKeyCode());
+                        }
                     }
                 }
                 else
                 {
-                    for (AktionsEmpfaenger em: empfänger)
+                    for (AktionsEmpfaenger em : empfänger)
                     {
                         em.Taste(e.getKeyChar());
                     }
                 }
             }
-        }
-        );
+        });
         malfläche.addComponentListener(new ComponentAdapter()
         {
             /**
@@ -144,7 +193,7 @@ class Zeichenfenster
             {
                 synchronized (malfläche)
                 {
-                    for (GrafikSymbol s: alleSymbole)
+                    for (GrafikSymbol s : alleSymbole)
                     {
                         if (s instanceof TurtleIntern)
                         {
@@ -153,17 +202,16 @@ class Zeichenfenster
                     }
                 }
             }
-        }
-        );
+        });
         fenster.add(malfläche, BorderLayout.CENTER);
         JPanel panel = new JPanel();
         panel.setMinimumSize(new Dimension(200, 60));
-        panel.setSize(200,60);
+        panel.setSize(200, 60);
         panel.setVisible(true);
         panel.setLayout(new GridLayout(1, 2));
         JPanel panel2 = new JPanel();
         panel2.setMinimumSize(new Dimension(100, 60));
-        panel2.setSize(100,60);
+        panel2.setSize(100, 60);
         panel2.setVisible(true);
         panel2.setLayout(new GridLayout(1, 1));
         stop = new JButton();
@@ -172,30 +220,28 @@ class Zeichenfenster
         start.setSize(80, 30);
         start.setText("Start");
         start.setVisible(true);
-        start.addActionListener(new ActionListener ()
+        start.addActionListener(new ActionListener()
         {
-            public void actionPerformed (ActionEvent evt)
+            public void actionPerformed(ActionEvent evt)
             {
                 TaktgeberStartenIntern();
                 malfläche.requestFocus();
             }
-        }
-        );
+        });
         panel2.add(start);
         stop.setLocation(100, 10);
         stop.setSize(80, 30);
         stop.setText("Stop");
         stop.setVisible(true);
         stop.setEnabled(false);
-        stop.addActionListener(new ActionListener ()
+        stop.addActionListener(new ActionListener()
         {
-            public void actionPerformed (ActionEvent evt)
+            public void actionPerformed(ActionEvent evt)
             {
                 TaktgeberStoppenIntern();
                 malfläche.requestFocus();
             }
-        }
-        );
+        });
         panel2.add(stop);
         panel.add(panel2);
         slider = new JSlider(0, 1000, 100);
@@ -209,41 +255,41 @@ class Zeichenfenster
         slider.setValue(1000);
         slider.addChangeListener(new ChangeListener()
         {
-            public void stateChanged​(ChangeEvent e)
+            public void stateChanged(ChangeEvent e)
             {
                 timer.setDelay(slider.getValue());
                 malfläche.requestFocus();
             }
-        }
-        );
+        });
         panel.add(slider);
-        
+
         fenster.add(panel, BorderLayout.SOUTH);
         fenster.setVisible(true);
         malfläche.requestFocus();
 
-        timer = new javax.swing.Timer (1000, new ActionListener ()
+        timer = new javax.swing.Timer(1000, new ActionListener()
         {
             /**
-             * Vom Timer aufgerufen.
-             * Erzeugt den nächsten Taktimpuls
+             * Vom Timer aufgerufen. Erzeugt den nächsten Taktimpuls
+             *
              * @param evt der Timerevent
              */
-            public void actionPerformed (ActionEvent evt)
+            public void actionPerformed(ActionEvent evt)
             {
-                ArrayList<AktionsEmpfaenger> empfänger = new ArrayList<AktionsEmpfaenger>(aktionsEmpfänger);
-                for (AktionsEmpfaenger e: empfänger)
+                ArrayList<AktionsEmpfaenger> empfänger = new ArrayList<AktionsEmpfaenger>(
+                        aktionsEmpfänger);
+                for (AktionsEmpfaenger e : empfänger)
                 {
                     e.Ausführen();
                 }
             }
-        }
-        );
+        });
     }
-    
+
     /**
      * Meldet die aktuelle Breite der Malfläche.
-     * @returns Breite der Malfläche
+     *
+     * @return Breite der Malfläche
      */
     static int MalflächenBreiteGeben()
     {
@@ -253,10 +299,11 @@ class Zeichenfenster
         }
         return zeichenfläche.malfläche.getWidth();
     }
-    
+
     /**
      * Meldet die aktuelle Höhe der Malfläche.
-     * @returns Höhe der Malfläche
+     *
+     * @return Höhe der Malfläche
      */
     static int MalflächenHöheGeben()
     {
@@ -266,9 +313,10 @@ class Zeichenfenster
         }
         return zeichenfläche.malfläche.getHeight();
     }
-    
+
     /**
      * Trägt einen neuen Aktionsempfänger ein.
+     *
      * @param neu der neue Aktionsempfänger
      */
     static void AktionsEmpfängerEintragen(AktionsEmpfaenger neu)
@@ -279,9 +327,10 @@ class Zeichenfenster
         }
         zeichenfläche.aktionsEmpfänger.add(neu);
     }
-    
+
     /**
      * Löscht einen Aktionsempfänger aus der Liste.
+     *
      * @param alt der zu löschende Aktionsempfänger
      */
     static void AktionsEmpfängerEntfernen(AktionsEmpfaenger alt)
@@ -292,14 +341,16 @@ class Zeichenfenster
         }
         zeichenfläche.aktionsEmpfänger.remove(alt);
     }
-    
+
     /**
-     * Erzeugt ein neues darzustelledes Symbol.
-     * Die möglichen Symbole sind im Aufzählungstyp SymbolArt beschrieben.
+     * Erzeugt ein neues darzustelledes Symbol. Die möglichen Symbole sind im
+     * Aufzählungstyp SymbolArt beschrieben.
+     *
      * @param art Art des zu erzeugenden Symbols.
+     *
      * @return Referenz auf das Delegate-Objekt.
      */
-    static GrafikSymbol SymbolErzeugen (SymbolArt art)
+    static GrafikSymbol SymbolErzeugen(SymbolArt art)
     {
         if (zeichenfläche == null)
         {
@@ -307,11 +358,11 @@ class Zeichenfenster
         }
         return zeichenfläche.SymbolAnlegen(art);
     }
-    
+
     /**
      * Startet den Taktgeber.
      */
-    static void TaktgeberStarten ()
+    static void TaktgeberStarten()
     {
         if (zeichenfläche == null)
         {
@@ -319,11 +370,11 @@ class Zeichenfenster
         }
         zeichenfläche.TaktgeberStartenIntern();
     }
-    
+
     /**
      * Stoppt den Taktgeber.
      */
-    static void TaktgeberStoppen ()
+    static void TaktgeberStoppen()
     {
         if (zeichenfläche == null)
         {
@@ -331,49 +382,57 @@ class Zeichenfenster
         }
         zeichenfläche.TaktgeberStoppenIntern();
     }
-    
+
     /**
      * Ablaufgeschwindigkeit des Zeitgebers einstellen.
-     * 
+     *
      * @param dauer: Angabe in Millisekunden
      */
-    static void TaktdauerSetzen (int dauer)
+    static void TaktdauerSetzen(int dauer)
     {
         if (zeichenfläche == null)
         {
             zeichenfläche = new Zeichenfenster();
         }
-        zeichenfläche.slider.setValue(dauer < 0 ? 0 : (dauer > 1000 ? 1000: dauer));
+        zeichenfläche.slider
+                .setValue(dauer < 0 ? 0 : (dauer > 1000 ? 1000 : dauer));
     }
-    
+
     /**
      * Erzeugt das neue Symbol tatsächlich.
+     *
      * @param art Art des zu erzeugenden Symbols.
+     *
      * @return Referenz auf das Delegate-Objekt.
      */
-    private GrafikSymbol SymbolAnlegen (SymbolArt art)
+    private GrafikSymbol SymbolAnlegen(SymbolArt art)
     {
         GrafikSymbol neu = null;
         switch (art)
         {
-            case rechteck:
-                neu = new RechteckIntern();
-                break;
-            case kreis:
-                neu = new EllipseIntern();
-                break;
-            case dreieck:
-                neu = new DreieckIntern();
-                break;
-            case turtle:
-                neu = new TurtleIntern();
-                break;
-            case figur:
-                neu = new FigurIntern();
-                break;
-            case text:
-                neu = new TextIntern();
-                break;
+        case rechteck:
+            neu = new RechteckIntern();
+            break;
+
+        case kreis:
+            neu = new EllipseIntern();
+            break;
+
+        case dreieck:
+            neu = new DreieckIntern();
+            break;
+
+        case turtle:
+            neu = new TurtleIntern();
+            break;
+
+        case figur:
+            neu = new FigurIntern();
+            break;
+
+        case text:
+            neu = new TextIntern();
+            break;
         }
         synchronized (zeichenfläche.malfläche)
         {
@@ -382,7 +441,7 @@ class Zeichenfenster
         malfläche.repaint();
         return neu;
     }
-    
+
     /**
      * Startet den Taktgeber.
      */
@@ -392,7 +451,7 @@ class Zeichenfenster
         stop.setEnabled(true);
         timer.start();
     }
-    
+
     /**
      * Stoppt den Taktgeber.
      */
@@ -402,40 +461,76 @@ class Zeichenfenster
         stop.setEnabled(false);
         timer.stop();
     }
-    
+
     /**
-     * Oberklasse für alle verfügbaren Grafiksymbole.
-     * Alle Grafiksymbole werden über ihr umgebendes Rechteck beschrieben.
+     * Oberklasse für alle verfügbaren Grafiksymbole. Alle Grafiksymbole werden
+     * über ihr umgebendes Rechteck beschrieben.
      */
     abstract class GrafikSymbol
     {
-        /** x-Position der linken oberen Ecke. */
-        protected int x;
-        /** y-Position der linken oberen Ecke. */
-        protected int y;
-        /** Breite des umgebenden Rechtecks. */
-        protected int b;
-        /** Höhe des umgebenden Rechtecks. */
-        protected int h;
-        /** Farbe des Symbols. */
-        protected Color c;
-        /** Sichtbarkeit des Symbols. */
-        protected boolean sichtbar;
-        /** Drehwinkel (mathematisch positiver Drehsinn) des Symbols. */
-        protected int winkel;
-        /** Die Form des Grafiksymbols. */
-        protected Area form;
-        /** Farbe Hellgelb. */
-        protected final Color hellgelb = new Color(255,255,128);
-        /** Farbe Hellgrün. */
-        protected final Color hellgrün = new Color(128,255,128);
-        /** Farbe Orange. */
-        protected final Color orange = new Color(255,128,0);
-        /** Farbe Braun. */
-        protected final Color braun = new Color(128,64,0);
-        
         /**
-         * Der Konstruktor erzeugt ein rotes Symbol in der linken oberen Ecke des Fensters.
+         * x-Position der linken oberen Ecke.
+         */
+        protected int x;
+
+        /**
+         * y-Position der linken oberen Ecke.
+         */
+        protected int y;
+
+        /**
+         * Breite des umgebenden Rechtecks.
+         */
+        protected int b;
+
+        /**
+         * Höhe des umgebenden Rechtecks.
+         */
+        protected int h;
+
+        /**
+         * Farbe des Symbols.
+         */
+        protected Color c;
+
+        /**
+         * Sichtbarkeit des Symbols.
+         */
+        protected boolean sichtbar;
+
+        /**
+         * Drehwinkel (mathematisch positiver Drehsinn) des Symbols.
+         */
+        protected int winkel;
+
+        /**
+         * Die Form des Grafiksymbols.
+         */
+        protected Area form;
+
+        /**
+         * Farbe Hellgelb.
+         */
+        protected final Color hellgelb = new Color(255, 255, 128);
+
+        /**
+         * Farbe Hellgrün.
+         */
+        protected final Color hellgrün = new Color(128, 255, 128);
+
+        /**
+         * Farbe Orange.
+         */
+        protected final Color orange = new Color(255, 128, 0);
+
+        /**
+         * Farbe Braun.
+         */
+        protected final Color braun = new Color(128, 64, 0);
+
+        /**
+         * Der Konstruktor erzeugt ein rotes Symbol in der linken oberen Ecke
+         * des Fensters.
          */
         GrafikSymbol()
         {
@@ -448,10 +543,12 @@ class Zeichenfenster
             winkel = 0;
             FormErzeugen();
         }
-        
+
         /**
          * Normiert den Winkel auf Werte im Bereich [0; 360[
+         *
          * @param winkel der Eingabewinkel
+         *
          * @return der normierte Winkel
          */
         int WinkelNormieren(int winkel)
@@ -462,121 +559,142 @@ class Zeichenfenster
             }
             return winkel % 360;
         }
-        
+
         /**
          * Setzt die Position (der linken oberen Ecke) des Objekts.
+         *
          * @param x x-Position der linken oberen Ecke
          * @param y y-Position der linken oberen Ecke
          */
-        void PositionSetzen (int x, int y)
+        void PositionSetzen(int x, int y)
         {
             this.x = x;
             this.y = y;
             FormErzeugen();
             zeichenfläche.malfläche.repaint();
         }
-        
+
         /**
          * Setzt die Größe des Objekts.
+         *
          * @param breite (neue) Breite des Objekts
          * @param höhe (neue) Höhe des Objekts
          */
-        void GrößeSetzen (int breite, int höhe)
+        void GrößeSetzen(int breite, int höhe)
         {
             b = breite;
             h = höhe;
             FormErzeugen();
             zeichenfläche.malfläche.repaint();
         }
-    
+
         /**
          * Bestimmt die RGB-Farbe für den gegeben String.
+         *
          * @param farbe die Farbe als String
+         *
          * @return die Farbe als RGB-Farbe
          */
-        Color FarbeCodieren (String farbe)
+        Color FarbeCodieren(String farbe)
         {
             farbe = farbe.toLowerCase();
             switch (farbe)
             {
-                case "weiß":
-                case "weiss":
-                    return Color.WHITE;
-                case "rot":
-                    return Color.RED;
-                case "grün":
-                case "gruen":
-                    return Color.GREEN;
-                case "blau":
-                    return Color.BLUE;
-                case "gelb":
-                    return Color.YELLOW;
-                case "magenta":
-                    return Color.MAGENTA;
-                case "cyan":
-                    return Color.CYAN;
-                case "hellgelb":
-                    return hellgelb;
-                case "hellgrün":
-                case "hellgruen":
-                    return hellgrün;
-                case "orange":
-                    return orange;
-                case "braun":
-                    return braun;
-                case "grau":
-                    return Color.GRAY;
-                case "schwarz":
-                    return Color.BLACK;
-                default:
-                    return Color.BLACK;
+            case "weiß":
+            case "weiss":
+                return Color.WHITE;
+
+            case "rot":
+                return Color.RED;
+
+            case "grün":
+            case "gruen":
+                return Color.GREEN;
+
+            case "blau":
+                return Color.BLUE;
+
+            case "gelb":
+                return Color.YELLOW;
+
+            case "magenta":
+                return Color.MAGENTA;
+
+            case "cyan":
+                return Color.CYAN;
+
+            case "hellgelb":
+                return hellgelb;
+
+            case "hellgrün":
+            case "hellgruen":
+                return hellgrün;
+
+            case "orange":
+                return orange;
+
+            case "braun":
+                return braun;
+
+            case "grau":
+                return Color.GRAY;
+
+            case "schwarz":
+                return Color.BLACK;
+
+            default:
+                return Color.BLACK;
             }
         }
 
         /**
          * Setzt die Farbe des Objekts.
+         *
          * @param farbe (neue) Farbe des Objekts
          */
-        void FarbeSetzen (String farbe)
+        void FarbeSetzen(String farbe)
         {
             FarbeSetzen(FarbeCodieren(farbe));
         }
-        
+
         /**
          * Setzt die Farbe des Objekts.
+         *
          * @param c (neue) Farbe des Objekts
          */
-        void FarbeSetzen (Color c)
+        void FarbeSetzen(Color c)
         {
             this.c = c;
             zeichenfläche.malfläche.repaint();
         }
-        
+
         /**
          * Setzt die Sichtbarkeit des Objekts.
+         *
          * @param sichtbar (neue) Sichtbarkeit des Objekts
          */
-        void SichtbarkeitSetzen (boolean sichtbar)
+        void SichtbarkeitSetzen(boolean sichtbar)
         {
             this.sichtbar = sichtbar;
             zeichenfläche.malfläche.repaint();
         }
-        
+
         /**
          * Setzt den Drehwinkel des Objekts.
+         *
          * @param winkel der (neue) Drehwinkel des Objekts
          */
-        void WinkelSetzen (int winkel)
+        void WinkelSetzen(int winkel)
         {
             this.winkel = WinkelNormieren(winkel);
             FormErzeugen();
             zeichenfläche.malfläche.repaint();
         }
-        
+
         /**
          * Entfernt das Objekt aus dem Zeichenfenster.
          */
-        void Entfernen ()
+        void Entfernen()
         {
             synchronized (zeichenfläche.malfläche)
             {
@@ -584,28 +702,29 @@ class Zeichenfenster
                 zeichenfläche.malfläche.repaint();
             }
         }
-        
+
         /**
          * Bringt das Objekt eine Ebene nach vorn.
          */
-        void NachVornBringen ()
+        void NachVornBringen()
         {
             synchronized (zeichenfläche.malfläche)
             {
                 int index = zeichenfläche.alleSymbole.indexOf(this);
                 if (index < zeichenfläche.alleSymbole.size() - 1)
                 {
-                    zeichenfläche.alleSymbole.set(index, zeichenfläche.alleSymbole.get(index + 1));
+                    zeichenfläche.alleSymbole.set(index,
+                            zeichenfläche.alleSymbole.get(index + 1));
                     zeichenfläche.alleSymbole.set(index + 1, this);
                     zeichenfläche.malfläche.repaint();
                 }
             }
         }
-        
+
         /**
          * Bringt das Objekt in die vorderste Ebene.
          */
-        void GanzNachVornBringen ()
+        void GanzNachVornBringen()
         {
             synchronized (zeichenfläche.malfläche)
             {
@@ -618,28 +737,29 @@ class Zeichenfenster
                 }
             }
         }
-        
+
         /**
          * Bringt das Objekt eine Ebene nach hinten.
          */
-        void NachHintenBringen ()
+        void NachHintenBringen()
         {
             synchronized (zeichenfläche.malfläche)
             {
                 int index = zeichenfläche.alleSymbole.indexOf(this);
                 if (index > 0)
                 {
-                    zeichenfläche.alleSymbole.set(index, zeichenfläche.alleSymbole.get(index - 1));
+                    zeichenfläche.alleSymbole.set(index,
+                            zeichenfläche.alleSymbole.get(index - 1));
                     zeichenfläche.alleSymbole.set(index - 1, this);
                     zeichenfläche.malfläche.repaint();
                 }
             }
         }
-        
+
         /**
          * Bringt das Objekt in die hinterste Ebene.
          */
-        void GanzNachHintenBringen ()
+        void GanzNachHintenBringen()
         {
             synchronized (zeichenfläche.malfläche)
             {
@@ -652,32 +772,37 @@ class Zeichenfenster
                 }
             }
         }
-        
+
         /**
          * Testet, ob der angegebene Punkt innerhalb der Figur ist.
+         *
          * @param x x-Koordinate des zu testenden Punktes
          * @param y y-Koordinate des zu testenden Punktes
+         *
          * @return wahr, wenn der Punkt innerhalb der Figur ist
          */
-        boolean IstInnerhalb (int x, int y)
+        boolean IstInnerhalb(int x, int y)
         {
             return form.contains(x, y);
         }
-        
+
         /**
          * Testet, ob die beiden Figuren überlappen.
+         *
          * @param wen die andere Form
+         *
          * @return wahr, wenn die beiden Formen überlappen.
          */
-        boolean Schneidet (Area wen)
+        boolean Schneidet(Area wen)
         {
             Area area = new Area(form);
-            area.intersect (wen);
+            area.intersect(wen);
             return !area.isEmpty();
         }
-        
+
         /**
          * Zeichnet das Objekt
+         *
          * @param g das Grafikobjekt zum Zeichnen
          */
         void Zeichnen(Graphics g)
@@ -685,40 +810,45 @@ class Zeichenfenster
             g.setColor(c);
             ((Graphics2D) g).fill(form);
         }
-        
+
         /**
-         * Berechnet den Drehwinkel gemäß den Konventionen des Graphik-Frameworks.
-         * Für Java: Winkel in Radians, positive Drehrichtng im Uhrzeiger.
+         * Berechnet den Drehwinkel gemäß den Konventionen des
+         * Graphik-Frameworks. Für Java: Winkel in Radians, positive Drehrichtng
+         * im Uhrzeiger.
+         *
          * @param winkel: Der Winkel in Grad, mathematischer Drehsinn
+         *
          * @return Winkel für Graphik-Framework
          */
-        double DrehwinkelGeben (int winkel)
+        double DrehwinkelGeben(int winkel)
         {
-            return - Math.PI * (winkel > 180 ? winkel - 360 : winkel)  / 180.0;
+            return -Math.PI * (winkel > 180 ? winkel - 360 : winkel) / 180.0;
         }
-        
+
         /**
          * Erstellt die Form des Objekts.
          */
         abstract void FormErzeugen();
     }
-    
+
     /**
      * Objekte dieser Klasse verwalten ein Rechteck.
      */
     private class RechteckIntern extends GrafikSymbol
-    {        
+    {
         /**
          * Erstellt die Form des Rechtecks.
          */
-        @Override void FormErzeugen()
+        @Override
+        void FormErzeugen()
         {
             AffineTransform a = new AffineTransform();
-            a.rotate(DrehwinkelGeben (winkel), this.x + b / 2, this.y + h / 2);
-            form = new Area(new Path2D.Double (new Rectangle2D.Double(this.x, this.y, b, h), a));
+            a.rotate(DrehwinkelGeben(winkel), this.x + b / 2, this.y + h / 2);
+            form = new Area(new Path2D.Double(
+                    new Rectangle2D.Double(this.x, this.y, b, h), a));
         }
     }
-    
+
     /**
      * Objekte dieser Klasse verwalten eine Ellipse.
      */
@@ -727,14 +857,16 @@ class Zeichenfenster
         /**
          * Erstellt die Form der Ellipse.
          */
-        @Override void FormErzeugen()
+        @Override
+        void FormErzeugen()
         {
             AffineTransform a = new AffineTransform();
-            a.rotate(DrehwinkelGeben (winkel), this.x + b / 2, this.y + h / 2);
-            form = new Area(new Path2D.Double (new Ellipse2D.Double(this.x, this.y, b, h), a));
+            a.rotate(DrehwinkelGeben(winkel), this.x + b / 2, this.y + h / 2);
+            form = new Area(new Path2D.Double(
+                    new Ellipse2D.Double(this.x, this.y, b, h), a));
         }
     }
-    
+
     /**
      * Objekte dieser Klasse verwalten ein Dreieck.
      */
@@ -743,76 +875,89 @@ class Zeichenfenster
         /**
          * Erstellt die Form des Dreiecks.
          */
-        @Override void FormErzeugen()
+        @Override
+        void FormErzeugen()
         {
-            Polygon rand = new Polygon (new int [] {x + b / 2, x + b, x, x + b / 2},
-                                        new int [] {y, y + h, y + h, y}, 4);
+            Polygon rand = new Polygon(
+                    new int[]
+                    { x + b / 2, x + b, x, x + b / 2 },
+                    new int[]
+                    { y, y + h, y + h, y }, 4);
             AffineTransform a = new AffineTransform();
-            a.rotate(DrehwinkelGeben (winkel), this.x + b / 2, this.y + h / 2);
-            form = new Area(new Path2D.Double (rand, a));
+            a.rotate(DrehwinkelGeben(winkel), this.x + b / 2, this.y + h / 2);
+            form = new Area(new Path2D.Double(rand, a));
         }
     }
-    
+
     /**
      * Objekte dieser Klasse verwalten einen Text.
      */
     class TextIntern extends GrafikSymbol
     {
-        /** Der aktuelle Text. */
+        /**
+         * Der aktuelle Text.
+         */
         private String text;
-        /** Die aktuelle Textgröße. */
+
+        /**
+         * Die aktuelle Textgröße.
+         */
         float size;
 
         /**
          * Belegt text und size mit Defaultwerten.
          */
-        TextIntern ()
+        TextIntern()
         {
             super();
             text = "Text";
             size = 12;
             c = Color.black;
         }
-        
+
         /**
-         * Erstellt die Form des Textes.
-         * Dummy, legt ein leeres Area an.
+         * Erstellt die Form des Textes. Dummy, legt ein leeres Area an.
          */
-        @Override void FormErzeugen()
+        @Override
+        void FormErzeugen()
         {
             form = new Area();
         }
-        
+
         /**
          * Testet, ob der angegebene Punkt innerhalb der Figur ist.
+         *
          * @param x x-Koordinate des zu testenden Punktes
          * @param y y-Koordinate des zu testenden Punktes
+         *
          * @return falsch
          */
-        @Override boolean IstInnerhalb (int x, int y)
+        @Override
+        boolean IstInnerhalb(int x, int y)
         {
             return false;
         }
-        
+
         /**
          * Setzt den aktuellen Text.
+         *
          * @param t der neue Text
          */
-        void TextSetzen (String t)
+        void TextSetzen(String t)
         {
             text = t;
             zeichenfläche.malfläche.repaint();
         }
-        
+
         /**
          * Setzt die Größe des Textes.
          */
-        void TextGrößeSetzen (int größe)
+        void TextGrößeSetzen(int größe)
         {
             size = größe;
             zeichenfläche.malfläche.repaint();
         }
-        
+
         /**
          * Vergrößert den Text.
          */
@@ -832,7 +977,7 @@ class Zeichenfenster
             }
             zeichenfläche.malfläche.repaint();
         }
-        
+
         /**
          * Verkleinert den Text.
          */
@@ -856,18 +1001,20 @@ class Zeichenfenster
             }
             zeichenfläche.malfläche.repaint();
         }
-        
+
         /**
          * Zeichnet das Objekt als Dreieck in der gegebenen Farbe.
+         *
          * @param g das Grafikobjekt zum Zeichnen
          */
-        @Override void Zeichnen(Graphics g)
+        @Override
+        void Zeichnen(Graphics g)
         {
             g.setColor(c);
             Font f = g.getFont();
             Font f2 = f.deriveFont(size);
             g.setFont(f2);
-            
+
             if (winkel == 0)
             {
                 g.drawString(text, x, y);
@@ -876,46 +1023,57 @@ class Zeichenfenster
             {
                 Graphics2D g2 = (Graphics2D) g;
                 AffineTransform alt = g2.getTransform();
-                //g2.rotate(DrehwinkelGeben (winkel), x + b / 2, y + h / 2);
-                //g2.rotate(DrehwinkelGeben (winkel), x + text.length() * size / 4, y + size / 2);
-                Rectangle2D bounds = f2.getStringBounds(text, g2.getFontRenderContext());
-                g2.rotate(DrehwinkelGeben (winkel), x + bounds.getWidth() / 2, y - bounds.getHeight() / 2);
+                // g2.rotate(DrehwinkelGeben (winkel), x + b / 2, y + h / 2);
+                // g2.rotate(DrehwinkelGeben (winkel), x + text.length() * size
+                // / 4, y + size / 2);
+                Rectangle2D bounds = f2.getStringBounds(text,
+                        g2.getFontRenderContext());
+                g2.rotate(DrehwinkelGeben(winkel), x + bounds.getWidth() / 2,
+                        y - bounds.getHeight() / 2);
                 g.drawString(text, x, y);
                 g2.setTransform(alt);
             }
             g.setFont(f);
         }
     }
-    
+
     /**
      * Oberklasse für alle Elemente einer Figur (Figur, Turtle).
      */
     private abstract class FigurenElement
     {
         double xe;
+
         double ye;
+
         double breite;
+
         double höhe;
+
         Color c;
+
         /**
          * Zeichnet das Figurenelement.
+         *
          * @param g das Grafikobjekt
          * @param größe die aktuelle Größe der Figur
          * @param x die x-Koordinate des Aufhängepunkts der Figur
          * @param y die y-Koordinate des Aufhängepunkts der Figur
          */
         abstract void ElementZeichnen(Graphics2D g, double größe, int x, int y);
-        
+
         /**
          * Fügt den Pfadteil deiser Komponente zum umgebenden Pfad hinzu.
+         *
          * @param p der Gesamtpfad
          * @param größe die aktuelle Größe der Figur
          * @param x die x-Koordinate des Aufhängepunkts der Figur
          * @param y die y-Koordinate des Aufhängepunkts der Figur
          */
-        abstract void ElementZuForm (Path2D.Double p, double größe, int x, int y);
+        abstract void ElementZuForm(Path2D.Double p, double größe, int x,
+                int y);
     }
-    
+
     /**
      * Ein rechteckiges Figurenelement.
      */
@@ -923,13 +1081,17 @@ class Zeichenfenster
     {
         /**
          * Der Konstruktor speichert die Rahmendaten.
-         * @param x x-Koordinate der linken oberen Ecke des Rechtecks relativ zum Aufhängepunkt.
-         * @param y y-Koordinate der linken oberen Ecke des Rechtecks relativ zum Aufhängepunkt.
+         *
+         * @param x x-Koordinate der linken oberen Ecke des Rechtecks relativ
+         *     zum Aufhängepunkt.
+         * @param y y-Koordinate der linken oberen Ecke des Rechtecks relativ
+         *     zum Aufhängepunkt.
          * @param breite Breite des Rechtecks
          * @param höhe Höhe des Rechtecks
          * @param c Farbe des Rechtecks
          */
-        FigurenElementRechteck (double x, double y, double breite, double höhe, Color c)
+        FigurenElementRechteck(double x, double y, double breite, double höhe,
+                Color c)
         {
             this.xe = x;
             this.ye = y;
@@ -937,33 +1099,41 @@ class Zeichenfenster
             this.höhe = höhe;
             this.c = c;
         }
-        
+
         /**
          * Zeichnet das Figurenelement.
+         *
          * @param g das Grafikobjekt
          * @param größe die aktuelle Größe der Figur
          * @param x die x-Koordinate des Aufhängepunkts der Figur
          * @param y die y-Koordinate des Aufhängepunkts der Figur
          */
-        @Override void ElementZeichnen(Graphics2D g, double größe, int x, int y)
+        @Override
+        void ElementZeichnen(Graphics2D g, double größe, int x, int y)
         {
             g.setColor(c);
-            g.fill(new Rectangle2D.Double (x+größe*xe/100.0, y+größe*ye/100.0, größe*breite/100.0, größe*höhe/100.0));
+            g.fill(new Rectangle2D.Double(x + größe * xe / 100.0,
+                    y + größe * ye / 100.0, größe * breite / 100.0,
+                    größe * höhe / 100.0));
         }
-        
+
         /**
          * Fügt den Pfadteil dieser Komponente zum umgebenden Pfad hinzu.
+         *
          * @param p der Gesamtpfad
          * @param größe die aktuelle Größe der Figur
          * @param x die x-Koordinate des Aufhängepunkts der Figur
          * @param y die y-Koordinate des Aufhängepunkts der Figur
          */
-        @Override void ElementZuForm (Path2D.Double p, double größe, int x, int y)
+        @Override
+        void ElementZuForm(Path2D.Double p, double größe, int x, int y)
         {
-            p.append(new Rectangle2D.Double (x+größe*xe/100.0, y+größe*ye/100.0, größe*breite/100.0, größe*höhe/100.0), false);
+            p.append(new Rectangle2D.Double(x + größe * xe / 100.0,
+                    y + größe * ye / 100.0, größe * breite / 100.0,
+                    größe * höhe / 100.0), false);
         }
     }
-    
+
     /**
      * Ein elliptisches Figurenelement.
      */
@@ -971,13 +1141,17 @@ class Zeichenfenster
     {
         /**
          * Der Konstruktor speichert die Rahmendaten.
-         * @param x x-Koordinate der linken oberen Ecke des umgebenden Rechtecks relativ zum Aufhängepunkt.
-         * @param y y-Koordinate der linken oberen Ecke des umgebenden Rechtecks relativ zum Aufhängepunkt.
+         *
+         * @param x x-Koordinate der linken oberen Ecke des umgebenden Rechtecks
+         *     relativ zum Aufhängepunkt.
+         * @param y y-Koordinate der linken oberen Ecke des umgebenden Rechtecks
+         *     relativ zum Aufhängepunkt.
          * @param breite Breite der Ellipse
          * @param höhe Höhe der Ellipse
          * @param c Farbe der Ellipse
          */
-        FigurenElementEllipse (double x, double y, double breite, double höhe, Color c)
+        FigurenElementEllipse(double x, double y, double breite, double höhe,
+                Color c)
         {
             this.xe = x;
             this.ye = y;
@@ -985,51 +1159,64 @@ class Zeichenfenster
             this.höhe = höhe;
             this.c = c;
         }
-        
+
         /**
          * Zeichnet das Figurenelement.
+         *
          * @param g das Grafikobjekt
          * @param größe die aktuelle Größe der Figur
          * @param x die x-Koordinate des Aufhängepunkts der Figur
          * @param y die y-Koordinate des Aufhängepunkts der Figur
          */
-        @Override void ElementZeichnen(Graphics2D g, double größe, int x, int y)
+        @Override
+        void ElementZeichnen(Graphics2D g, double größe, int x, int y)
         {
             g.setColor(c);
-            g.fill(new Ellipse2D.Double (x+größe*xe/100.0, y+größe*ye/100.0, größe*breite/100.0, größe*höhe/100.0));
+            g.fill(new Ellipse2D.Double(x + größe * xe / 100.0,
+                    y + größe * ye / 100.0, größe * breite / 100.0,
+                    größe * höhe / 100.0));
         }
-        
+
         /**
          * Fügt den Pfadteil dieser Komponente zum umgebenden Pfad hinzu.
+         *
          * @param p der Gesamtpfad
          * @param größe die aktuelle Größe der Figur
          * @param x die x-Koordinate des Aufhängepunkts der Figur
          * @param y die y-Koordinate des Aufhängepunkts der Figur
          */
-        @Override void ElementZuForm (Path2D.Double p, double größe, int x, int y)
+        @Override
+        void ElementZuForm(Path2D.Double p, double größe, int x, int y)
         {
-            p.append(new Ellipse2D.Double (x+größe*xe/100.0, y+größe*ye/100.0, größe*breite/100.0, größe*höhe/100.0), false);
+            p.append(new Ellipse2D.Double(x + größe * xe / 100.0,
+                    y + größe * ye / 100.0, größe * breite / 100.0,
+                    größe * höhe / 100.0), false);
         }
     }
-    
+
     /**
      * Ein Figurenelement begrenzt durch das angegebene Polygon.
      */
     private class FigurenElementPolygon extends FigurenElement
     {
-        /** Das Polygonobjekt */
+        /**
+         * Das Polygonobjekt
+         */
         private Polygon poly;
-        
+
         /**
          * Der Konstruktor speichert die Rahmendaten.
-         * @param x x-Koordinaten der Stützpunkte des Polygons relativ zum Aufhängepunkt.
-         * @param y y-Koordinaten der Stützpunkte des Polygons relativ zum Aufhängepunkt.
+         *
+         * @param x x-Koordinaten der Stützpunkte des Polygons relativ zum
+         *     Aufhängepunkt.
+         * @param y y-Koordinaten der Stützpunkte des Polygons relativ zum
+         *     Aufhängepunkt.
          * @param c Farbe der Polygonfläche
          */
-        FigurenElementPolygon (int [] x, int[] y, Color c)
+        FigurenElementPolygon(int[] x, int[] y, Color c)
         {
             int anz = x.length <= y.length ? x.length : y.length;
-            poly = new Polygon (x, y, anz);
+            poly = new Polygon(x, y, anz);
             Rectangle2D bounds = poly.getBounds2D();
             xe = bounds.getX();
             ye = bounds.getY();
@@ -1037,38 +1224,44 @@ class Zeichenfenster
             höhe = bounds.getHeight();
             this.c = c;
         }
-        
+
         /**
          * Zeichnet das Figurenelement.
+         *
          * @param g das Grafikobjekt
          * @param größe die aktuelle Größe der Figur
          * @param x die x-Koordinate des Aufhängepunkts der Figur
          * @param y die y-Koordinate des Aufhängepunkts der Figur
          */
-        @Override void ElementZeichnen(Graphics2D g, double größe, int x, int y)
+        @Override
+        void ElementZeichnen(Graphics2D g, double größe, int x, int y)
         {
             g.setColor(c);
-            AffineTransform at = new AffineTransform(größe/100.0, 0, 0, größe/100.0, x, y);
-            g.fill(new Path2D.Double (poly, at));
+            AffineTransform at = new AffineTransform(größe / 100.0, 0, 0,
+                    größe / 100.0, x, y);
+            g.fill(new Path2D.Double(poly, at));
         }
-        
+
         /**
          * Fügt den Pfadteil dieser Komponente zum umgebenden Pfad hinzu.
+         *
          * @param p der Gesamtpfad
          * @param größe die aktuelle Größe der Figur
          * @param x die x-Koordinate des Aufhängepunkts der Figur
          * @param y die y-Koordinate des Aufhängepunkts der Figur
          */
-        @Override void ElementZuForm (Path2D.Double p, double größe, int x, int y)
+        @Override
+        void ElementZuForm(Path2D.Double p, double größe, int x, int y)
         {
-            AffineTransform at = new AffineTransform(größe/100.0, 0, 0, größe/100.0, x, y);
-            Path2D.Double p2 = new Path2D.Double (poly, at);
+            AffineTransform at = new AffineTransform(größe / 100.0, 0, 0,
+                    größe / 100.0, x, y);
+            Path2D.Double p2 = new Path2D.Double(poly, at);
             p2.closePath();
             p2.setWindingRule(Path2D.WIND_EVEN_ODD);
             p.append(p2, false);
         }
     }
-    
+
     /**
      * Das Objekt dieser Klasse zeichnet den Weg der Turtle.
      */
@@ -1076,18 +1269,33 @@ class Zeichenfenster
     {
         private class LinienElement
         {
-            /** x-Koordinate des Startpunktes. */
+            /**
+             * x-Koordinate des Startpunktes.
+             */
             private double xStart;
-            /** y-Koordinate des Startpunktes. */
+
+            /**
+             * y-Koordinate des Startpunktes.
+             */
             private double yStart;
-            /** x-Koordinate des Endpunktes. */
+
+            /**
+             * x-Koordinate des Endpunktes.
+             */
             private double xEnde;
-            /** y-Koordinate des Endpunktes. */
+
+            /**
+             * y-Koordinate des Endpunktes.
+             */
             private double yEnde;
-            /** Farbe des LinienElements. */
+
+            /**
+             * Farbe des LinienElements.
+             */
             private Color c;
-            
-            LinienElement (double xStart, double yStart, double xEnde, double yEnde, Color c)
+
+            LinienElement(double xStart, double yStart, double xEnde,
+                    double yEnde, Color c)
             {
                 this.xStart = xStart;
                 this.yStart = yStart;
@@ -1095,90 +1303,128 @@ class Zeichenfenster
                 this.yEnde = yEnde;
                 this.c = c;
             }
-            
-            void Zeichnen (Graphics2D g)
+
+            void Zeichnen(Graphics2D g)
             {
                 g.setColor(c);
-                g.draw(new Line2D.Double (xStart, yStart, xEnde, yEnde));
+                g.draw(new Line2D.Double(xStart, yStart, xEnde, yEnde));
             }
         }
-        
+
         /**
          * Verwaltet das Hintergrundfenster für die Turtlezeichnung.
          */
         private class HintergrundBild
         {
-            /** Das aktuelle Hintergrundbild. */
+            /**
+             * Das aktuelle Hintergrundbild.
+             */
             private BufferedImage bild;
-            /** Das zugehörige Zeichenobjekt. */
+
+            /**
+             * Das zugehörige Zeichenobjekt.
+             */
             private Graphics2D g;
-            
+
             /**
              * Der Konstruktor legt das Bild in der Größe der Zeichenfläche an.
              */
             HintergrundBild()
             {
-                bild = new BufferedImage(Zeichenfenster.MalflächenBreiteGeben(), Zeichenfenster.MalflächenBreiteGeben(), BufferedImage.TYPE_INT_ARGB);
+                bild = new BufferedImage(Zeichenfenster.MalflächenBreiteGeben(),
+                        Zeichenfenster.MalflächenBreiteGeben(),
+                        BufferedImage.TYPE_INT_ARGB);
                 g = bild.createGraphics();
-                g.setColor(new Color (0, 0, 0, 0));
+                g.setColor(new Color(0, 0, 0, 0));
                 g.fillRect(0, 0, bild.getWidth(), bild.getHeight());
             }
-            
+
             /**
              * Zeichent die angegebe Linie in das Bild.
+             *
              * @param linie das zu zeichnende Linienelement.
              */
             void LinieZeichnen(LinienElement linie)
             {
                 linie.Zeichnen(g);
             }
-            
+
             /**
              * Zeichnet das Bild in das angegebene Zeichenobjekt.
+             *
              * @param wohin Zeichenobjekt
              */
-            void BildZeichnen (Graphics2D wohin)
+            void BildZeichnen(Graphics2D wohin)
             {
                 wohin.drawImage(bild, null, 0, 0);
             }
         }
-        
-        /** Genaue x-Koordinate der Turtle. */
+
+        /**
+         * Genaue x-Koordinate der Turtle.
+         */
         double xD;
-        /** Genaue y-Koordinate der Turtle. */
+
+        /**
+         * Genaue y-Koordinate der Turtle.
+         */
         double yD;
-        /** Startkoordinate der Turtle. */
+
+        /**
+         * Startkoordinate der Turtle.
+         */
         private int homeX;
-        /** Startkoordinate der Turtle. */
+
+        /**
+         * Startkoordinate der Turtle.
+         */
         private int homeY;
-        /** Startwinkel der Turtle. */
-        private int homeWinkel; 
-        /** Stiftposition. */
+
+        /**
+         * Startwinkel der Turtle.
+         */
+        private int homeWinkel;
+
+        /**
+         * Stiftposition.
+         */
         boolean stiftUnten;
-        /** Die Sichtbarkeit des Turtle-Symbols. */
+
+        /**
+         * Die Sichtbarkeit des Turtle-Symbols.
+         */
         private boolean symbolSichtbar;
-        /** Linienelemente. */
+
+        /**
+         * Linienelemente.
+         */
         private ArrayList<LinienElement> linien;
-        /** Standardfigur für Turtle. */
+
+        /**
+         * Standardfigur für Turtle.
+         */
         private LinkedList<FigurenElement> standardFigur;
-        /** Das Hintergrundbild für die Linien. */
+
+        /**
+         * Das Hintergrundbild für die Linien.
+         */
         private HintergrundBild hintergrund;
 
         /**
          * Legt die Turtle mit Startpunkt (100|200) in Richtung 0˚ an.
          */
-        TurtleIntern ()
+        TurtleIntern()
         {
-            super ();
+            super();
             x = 100;
             y = 200;
             xD = x;
             yD = y;
             h = 40;
             b = 40;
-            homeX=x;
-            homeY=y;
-            homeWinkel=winkel;
+            homeX = x;
+            homeY = y;
+            homeWinkel = winkel;
             c = Color.black;
             stiftUnten = true;
             symbolSichtbar = true;
@@ -1188,73 +1434,84 @@ class Zeichenfenster
             StandardfigurErzeugen();
             FormErzeugen();
         }
-        
+
         /**
          * Baut die Standardfigur aus den Elementen auf.
          */
         private void StandardfigurErzeugen()
         {
-            //Kopf
-            standardFigur.add(new FigurenElementEllipse(50, -12.5, 25, 25, Color.GREEN));
-            //Beine
-            standardFigur.add(new FigurenElementEllipse(22.5, -32.5, 12.5, 17.5, Color.GREEN));
-            standardFigur.add(new FigurenElementEllipse(40.0, -32.5, 12.5, 17.5, Color.GREEN));
-            standardFigur.add(new FigurenElementEllipse(22.5, 15.0, 12.5, 17.5, Color.GREEN));
-            standardFigur.add(new FigurenElementEllipse(40.0, 15.0, 12.5, 17.5, Color.GREEN));
-            //Augen
-            standardFigur.add(new FigurenElementRechteck(67.5, -10.0, 5.0, 7.5, c));
-            standardFigur.add(new FigurenElementRechteck(67.5, 2.5, 5.0, 7.5, c));
-            //Schwanz
+            // Kopf
+            standardFigur.add(
+                    new FigurenElementEllipse(50, -12.5, 25, 25, Color.GREEN));
+            // Beine
+            standardFigur.add(new FigurenElementEllipse(22.5, -32.5, 12.5, 17.5,
+                    Color.GREEN));
+            standardFigur.add(new FigurenElementEllipse(40.0, -32.5, 12.5, 17.5,
+                    Color.GREEN));
+            standardFigur.add(new FigurenElementEllipse(22.5, 15.0, 12.5, 17.5,
+                    Color.GREEN));
+            standardFigur.add(new FigurenElementEllipse(40.0, 15.0, 12.5, 17.5,
+                    Color.GREEN));
+            // Augen
+            standardFigur
+                    .add(new FigurenElementRechteck(67.5, -10.0, 5.0, 7.5, c));
+            standardFigur
+                    .add(new FigurenElementRechteck(67.5, 2.5, 5.0, 7.5, c));
+            // Schwanz
             standardFigur.add(new FigurenElementEllipse(0, -3.75, 25, 7.5, c));
-            //Rumpf
-            standardFigur.add(new FigurenElementEllipse(7.5, -23.75, 57.5, 47.5, braun));
+            // Rumpf
+            standardFigur.add(
+                    new FigurenElementEllipse(7.5, -23.75, 57.5, 47.5, braun));
         }
-        
+
         /**
          * Passt das Hintergrundbild an eine neue Größe der Zeichenfläche an.
          */
         void NeueGrößeSetzen()
         {
             hintergrund = new HintergrundBild();
-            for (LinienElement l: linien)
+            for (LinienElement l : linien)
             {
                 hintergrund.LinieZeichnen(l);
             }
         }
-                
+
         /**
          * Erstellt die Form der Turtle.
          */
-        @Override void FormErzeugen()
+        @Override
+        void FormErzeugen()
         {
             Area area = new Area();
             AffineTransform a = new AffineTransform();
-            a.rotate(DrehwinkelGeben (winkel), this.x, this.y);
+            a.rotate(DrehwinkelGeben(winkel), this.x, this.y);
             double größe = h > b ? b : h;
             if (standardFigur != null)
             {
                 synchronized (standardFigur)
                 {
-                    for (FigurenElement e: standardFigur)
+                    for (FigurenElement e : standardFigur)
                     {
                         Path2D.Double p = new Path2D.Double();
                         e.ElementZuForm(p, größe, x, y);
-                        area.add( new Area(new Path2D.Double (p, a)));
+                        area.add(new Area(new Path2D.Double(p, a)));
                     }
                 }
-               
+
             }
             form = area;
         }
-        
+
         /**
          * Setzt die Position (der linken oberen Ecke) des Objekts.
+         *
          * @param x x-Position der linken oberen Ecke
          * @param y y-Position der linken oberen Ecke
          */
-        @Override void PositionSetzen (int x, int y)
+        @Override
+        void PositionSetzen(int x, int y)
         {
-            super.PositionSetzen (x, y);
+            super.PositionSetzen(x, y);
             xD = x;
             yD = y;
         }
@@ -1272,34 +1529,36 @@ class Zeichenfenster
             FormErzeugen();
             zeichenfläche.malfläche.repaint();
         }
-    
+
         /**
          * Bewegt die Turtle nach vorne.
+         *
          * @param länge Anzahl der Längeneinheiten
          */
         void Gehen(double länge)
-        {   
-            double neuX = xD + Math.cos(DrehwinkelGeben (winkel)) * länge;
-            double neuY = yD + Math.sin(DrehwinkelGeben (winkel)) * länge;            
+        {
+            double neuX = xD + Math.cos(DrehwinkelGeben(winkel)) * länge;
+            double neuY = yD + Math.sin(DrehwinkelGeben(winkel)) * länge;
             if (stiftUnten)
             {
                 synchronized (this)
                 {
                     LinienElement l = new LinienElement(xD, yD, neuX, neuY, c);
-                    linien.add (l);
-                    hintergrund.LinieZeichnen (l);
+                    linien.add(l);
+                    hintergrund.LinieZeichnen(l);
                 }
-            }    
+            }
             xD = neuX;
             yD = neuY;
-            x =(int) Math.round(xD);
-            y =(int) Math.round(yD);
+            x = (int) Math.round(xD);
+            y = (int) Math.round(yD);
             FormErzeugen();
             zeichenfläche.malfläche.repaint();
         }
-    
+
         /**
          * Dreht die Turtle
+         *
          * @param grad Drehwinkel im Gradmass
          */
         void Drehen(int grad)
@@ -1326,7 +1585,7 @@ class Zeichenfenster
         {
             stiftUnten = false;
         }
-    
+
         /**
          * Turtle wechselt in den Modus "zeichnen"
          */
@@ -1334,52 +1593,62 @@ class Zeichenfenster
         {
             stiftUnten = true;
         }
-    
+
         /**
-         * Schaltet die Sichtbarkeit des Turtlesymbols ein oder aus.
-         * Erlaubte Parameterwerte: true, false
+         * Schaltet die Sichtbarkeit des Turtlesymbols ein oder aus. Erlaubte
+         * Parameterwerte: true, false
+         *
          * @param sichtbar (neue) Sichtbarkeit des Turtlesymbols
          */
-        void SichtbarkeitFürSymbolSetzen (boolean sichtbar)
+        void SichtbarkeitFürSymbolSetzen(boolean sichtbar)
         {
             symbolSichtbar = sichtbar;
             zeichenfläche.malfläche.repaint();
         }
-        
+
         /**
          * Testet, ob der angegebene Punkt innerhalb der Figur ist.
+         *
          * @param x x-Koordinate des zu testenden Punktes
          * @param y y-Koordinate des zu testenden Punktes
+         *
          * @return wahr, wenn der Punkt innerhalb der Figur ist
          */
-        
+
         /**
          * Testet, ob die Turtle eine (sichtbare) Figur berührt.
-         * @return true, wenn die Turtlekoordinaten innerhalb einer Grafikfigur sind
+         *
+         * @return true, wenn die Turtlekoordinaten innerhalb einer Grafikfigur
+         *     sind
          */
-        boolean Berührt ()
+        boolean Berührt()
         {
-            for (GrafikSymbol g: zeichenfläche.alleSymbole)
+            for (GrafikSymbol g : zeichenfläche.alleSymbole)
             {
-                if ((g != this) && g.IstInnerhalb(x, y) && g.sichtbar && (!(g instanceof TurtleIntern) || ((TurtleIntern) g).symbolSichtbar))
+                if ((g != this) && g.IstInnerhalb(x, y) && g.sichtbar
+                        && (!(g instanceof TurtleIntern)
+                                || ((TurtleIntern) g).symbolSichtbar))
                 {
                     return true;
                 }
             }
             return false;
         }
-        
+
         /**
-         * Testet, ob die Turtle eine (sichtbare) Figur in der angegebenen Farbe berührt.
-         * Bei Überlappungen 
+         * Testet, ob die Turtle eine (sichtbare) Figur in der angegebenen Farbe
+         * berührt. Bei Überlappungen
+         *
          * @param farbe die Farbe, die die berührte Figur haben muss.
-         * @return true, wenn die Turtlekoordinaten innerhalb einer Grafikfigur in der angegebenen Farbe sind
+         *
+         * @return true, wenn die Turtlekoordinaten innerhalb einer Grafikfigur
+         *     in der angegebenen Farbe sind
          */
-        boolean Berührt (String farbe)
+        boolean Berührt(String farbe)
         {
             Color c2 = FarbeCodieren(farbe);
             boolean ok = false;
-            for (GrafikSymbol g: zeichenfläche.alleSymbole)
+            for (GrafikSymbol g : zeichenfläche.alleSymbole)
             {
                 if ((g != this) && g.IstInnerhalb(x, y) && g.sichtbar)
                 {
@@ -1388,14 +1657,14 @@ class Zeichenfenster
                         TurtleIntern t = (TurtleIntern) g;
                         if (t.symbolSichtbar)
                         {
-                            for (FigurenElement e: t.standardFigur)
+                            for (FigurenElement e : t.standardFigur)
                             {
                                 Path2D.Double p = new Path2D.Double();
                                 double größe = t.h > t.b ? t.b : t.h;
-                                e.ElementZuForm(p, größe, t.x, t.y);  
+                                e.ElementZuForm(p, größe, t.x, t.y);
                                 AffineTransform a = new AffineTransform();
-                                a.rotate(DrehwinkelGeben (t.winkel), t.x, t.y);
-                                p = new Path2D.Double (p, a);
+                                a.rotate(DrehwinkelGeben(t.winkel), t.x, t.y);
+                                p = new Path2D.Double(p, a);
                                 if (p.contains(x, y))
                                 {
                                     ok = c2.equals(e.c);
@@ -1406,15 +1675,18 @@ class Zeichenfenster
                     else if (g instanceof FigurIntern)
                     {
                         FigurIntern t = (FigurIntern) g;
-                        LinkedList<FigurenElement> figur = ((t.eigeneFigur == null) || (t.eigeneFigur.size() == 0)) ? t.standardFigur : t.eigeneFigur;
-                        for (FigurenElement e: figur)
+                        LinkedList<FigurenElement> figur = ((t.eigeneFigur == null)
+                                || (t.eigeneFigur.size() == 0))
+                                        ? t.standardFigur
+                                        : t.eigeneFigur;
+                        for (FigurenElement e : figur)
                         {
                             Path2D.Double p = new Path2D.Double();
                             double größe = t.h > t.b ? t.b : t.h;
-                            e.ElementZuForm(p, größe, t.x, t.y);  
+                            e.ElementZuForm(p, größe, t.x, t.y);
                             AffineTransform a = new AffineTransform();
-                            a.rotate(DrehwinkelGeben (t.winkel), t.x, t.y);
-                            p = new Path2D.Double (p, a);
+                            a.rotate(DrehwinkelGeben(t.winkel), t.x, t.y);
+                            p = new Path2D.Double(p, a);
                             if (p.contains(x, y))
                             {
                                 ok = c2.equals(e.c);
@@ -1429,13 +1701,16 @@ class Zeichenfenster
             }
             return ok;
         }
-        
+
         /**
          * Testet, ob die Turtle die (sichtbare, ) angegebene Figur berührt.
+         *
          * @param object das Objekt, das getestet werden soll.
-         * @return true, wenn die Turtlekoordinaten innerhalb einer Grafikfigur in der angegebenen Farbe sind
+         *
+         * @return true, wenn die Turtlekoordinaten innerhalb einer Grafikfigur
+         *     in der angegebenen Farbe sind
          */
-        boolean Berührt (Object object)
+        boolean Berührt(Object object)
         {
             GrafikSymbol s = null;
             if (object instanceof Rechteck)
@@ -1458,32 +1733,36 @@ class Zeichenfenster
             {
                 s = ((Figur) object).symbol;
             }
-            return (s != null) && (s != this) && s.IstInnerhalb(x, y) && s.sichtbar && (!(s instanceof TurtleIntern) || ((TurtleIntern) s).symbolSichtbar);
+            return (s != null) && (s != this) && s.IstInnerhalb(x, y)
+                    && s.sichtbar && (!(s instanceof TurtleIntern)
+                            || ((TurtleIntern) s).symbolSichtbar);
         }
 
         /**
          * Zeichnet das Objekt als Dreieck in der gegebenen Farbe.
+         *
          * @param g das Grafikobjekt zum Zeichnen
          */
-        @Override void Zeichnen(Graphics g)
+        @Override
+        void Zeichnen(Graphics g)
         {
             Graphics2D g2 = (Graphics2D) g;
             synchronized (this)
             {
                 hintergrund.BildZeichnen(g2);
             }
-            
+
             if (symbolSichtbar)
             {
                 g.setColor(Color.black);
                 double größe = h > b ? b : h;
                 AffineTransform alt = g2.getTransform();
-                g2.rotate(DrehwinkelGeben (winkel), x, y);
+                g2.rotate(DrehwinkelGeben(winkel), x, y);
                 if (standardFigur != null)
                 {
                     synchronized (standardFigur)
                     {
-                        for (FigurenElement e: standardFigur)
+                        for (FigurenElement e : standardFigur)
                         {
                             e.ElementZeichnen(g2, größe, x, y);
                         }
@@ -1493,95 +1772,121 @@ class Zeichenfenster
             }
         }
     }
-    
+
     /**
      * Das Objekt dieser Klasse ist ein in der Gestalt definierbarer Akteur.
      */
     class FigurIntern extends GrafikSymbol
     {
-        
-        /** Genaue x-Koordinate der Figur. */
+
+        /**
+         * Genaue x-Koordinate der Figur.
+         */
         double xD;
-        /** Genaue y-Koordinate der Figur. */
+
+        /**
+         * Genaue y-Koordinate der Figur.
+         */
         double yD;
-        /** Startkoordinate der Figur. */
+
+        /**
+         * Startkoordinate der Figur.
+         */
         private int homeX;
-        /** Startkoordinate der Figur. */
+
+        /**
+         * Startkoordinate der Figur.
+         */
         private int homeY;
-        /** Startwinkel der Figur. */
-        private int homeWinkel; 
-        /** Eigene Figur für Figur. */
+
+        /**
+         * Startwinkel der Figur.
+         */
+        private int homeWinkel;
+
+        /**
+         * Eigene Figur für Figur.
+         */
         private LinkedList<FigurenElement> eigeneFigur;
-        /** Standardfigur für Figur. */
+
+        /**
+         * Standardfigur für Figur.
+         */
         private LinkedList<FigurenElement> standardFigur;
 
         /**
          * Legt die Figur mit Startpunkt (100|200) in Richtung 0˚ an.
          */
-        FigurIntern ()
+        FigurIntern()
         {
-            super ();
+            super();
             x = 100;
             y = 200;
             xD = x;
             yD = y;
             h = 40;
             b = 40;
-            homeX=x;
-            homeY=y;
-            homeWinkel=winkel;
+            homeX = x;
+            homeY = y;
+            homeWinkel = winkel;
             c = Color.black;
             eigeneFigur = new LinkedList<FigurenElement>();
             standardFigur = new LinkedList<FigurenElement>();
             StandardfigurErzeugen();
             FormErzeugen();
         }
-        
+
         /**
          * Baut die Standardfigur aus den Elementen auf.
          */
         private void StandardfigurErzeugen()
-        {            
-            int[] x = new int [] {-50, 50, -50};
-            int[] y = new int [] {-50, 0, 50};
-            standardFigur.add (new FigurenElementPolygon (x, y, Color.yellow));
-            standardFigur.add(new FigurenElementEllipse(-10, -10, 20, 20, Color.blue));
+        {
+            int[] x = new int[] { -50, 50, -50 };
+            int[] y = new int[] { -50, 0, 50 };
+            standardFigur.add(new FigurenElementPolygon(x, y, Color.yellow));
+            standardFigur.add(
+                    new FigurenElementEllipse(-10, -10, 20, 20, Color.blue));
         }
-                
+
         /**
          * Erstellt die Form der Figur.
          */
-        @Override void FormErzeugen()
+        @Override
+        void FormErzeugen()
         {
             Area area = new Area();
             AffineTransform a = new AffineTransform();
-            a.rotate(DrehwinkelGeben (winkel), this.x, this.y);
+            a.rotate(DrehwinkelGeben(winkel), this.x, this.y);
             double größe = h > b ? b : h;
             if (standardFigur != null)
             {
-                LinkedList<FigurenElement> figur = ((eigeneFigur == null) || (eigeneFigur.size() == 0)) ? standardFigur : eigeneFigur;
+                LinkedList<FigurenElement> figur = ((eigeneFigur == null)
+                        || (eigeneFigur.size() == 0)) ? standardFigur
+                                : eigeneFigur;
                 synchronized (figur)
                 {
-                    for (FigurenElement e: figur)
+                    for (FigurenElement e : figur)
                     {
                         Path2D.Double p = new Path2D.Double();
                         e.ElementZuForm(p, größe, x, y);
-                        area.add(new Area(new Path2D.Double (p, a)));
+                        area.add(new Area(new Path2D.Double(p, a)));
                     }
                 }
-               
+
             }
             form = area;
         }
-        
+
         /**
          * Setzt die Position (der Mitte) des Objekts.
+         *
          * @param x x-Position der Mitte
          * @param y y-Position der Mitte
          */
-        @Override void PositionSetzen (int x, int y)
+        @Override
+        void PositionSetzen(int x, int y)
         {
-            super.PositionSetzen (x, y);
+            super.PositionSetzen(x, y);
             xD = x;
             yD = y;
         }
@@ -1599,25 +1904,27 @@ class Zeichenfenster
             FormErzeugen();
             zeichenfläche.malfläche.repaint();
         }
-    
+
         /**
          * Bewegt die Figur nach vorne.
+         *
          * @param länge Anzahl der Längeneinheiten
          */
         void Gehen(double länge)
-        {   
-            double neuX = xD + Math.cos(DrehwinkelGeben (winkel)) * länge;
-            double neuY = yD + Math.sin(DrehwinkelGeben (winkel)) * länge;            
+        {
+            double neuX = xD + Math.cos(DrehwinkelGeben(winkel)) * länge;
+            double neuY = yD + Math.sin(DrehwinkelGeben(winkel)) * länge;
             xD = neuX;
             yD = neuY;
-            x =(int) Math.round(xD);
-            y =(int) Math.round(yD);
+            x = (int) Math.round(xD);
+            y = (int) Math.round(yD);
             FormErzeugen();
             zeichenfläche.malfläche.repaint();
         }
-    
+
         /**
          * Dreht die Figur
+         *
          * @param grad Drehwinkel im Gradmass
          */
         void Drehen(int grad)
@@ -1626,34 +1933,41 @@ class Zeichenfenster
             FormErzeugen();
             zeichenfläche.malfläche.repaint();
         }
-        
+
         /**
          * Testet, ob die Figur eine (sichtbare) Grafik-Figur berührt.
-         * @return true, wenn die Figurkoordinaten innerhalb einer Grafikfigur sind
+         *
+         * @return true, wenn die Figurkoordinaten innerhalb einer Grafikfigur
+         *     sind
          */
-        boolean Berührt ()
+        boolean Berührt()
         {
-            for (GrafikSymbol g: zeichenfläche.alleSymbole)
+            for (GrafikSymbol g : zeichenfläche.alleSymbole)
             {
-                if ((g != this) && g.Schneidet(form) && g.sichtbar && (!(g instanceof TurtleIntern) || ((TurtleIntern) g).symbolSichtbar))
+                if ((g != this) && g.Schneidet(form) && g.sichtbar
+                        && (!(g instanceof TurtleIntern)
+                                || ((TurtleIntern) g).symbolSichtbar))
                 {
                     return true;
                 }
             }
             return false;
         }
-        
+
         /**
-         * Testet, ob die Figur eine (sichtbare) Grafik-Figur in der angegebenen Farbe berührt.
-         * Bei Überlappungen 
+         * Testet, ob die Figur eine (sichtbare) Grafik-Figur in der angegebenen
+         * Farbe berührt. Bei Überlappungen
+         *
          * @param farbe die Farbe, die die berührte Figur haben muss.
-         * @return true, wenn die Figurkoordinaten innerhalb einer Grafikfigur in der angegebenen Farbe sind
+         *
+         * @return true, wenn die Figurkoordinaten innerhalb einer Grafikfigur
+         *     in der angegebenen Farbe sind
          */
-        boolean Berührt (String farbe)
+        boolean Berührt(String farbe)
         {
             Color c2 = FarbeCodieren(farbe);
             boolean ok = false;
-            for (GrafikSymbol g: zeichenfläche.alleSymbole)
+            for (GrafikSymbol g : zeichenfläche.alleSymbole)
             {
                 if ((g != this) && g.Schneidet(form) && g.sichtbar)
                 {
@@ -1662,20 +1976,20 @@ class Zeichenfenster
                         TurtleIntern t = (TurtleIntern) g;
                         if (t.symbolSichtbar)
                         {
-                            Area[] areas = new Area [t.standardFigur.size()];
-                            Color[] colors = new Color [t.standardFigur.size()];
+                            Area[] areas = new Area[t.standardFigur.size()];
+                            Color[] colors = new Color[t.standardFigur.size()];
                             AffineTransform a = new AffineTransform();
-                            a.rotate(DrehwinkelGeben (t.winkel), t.x, t.y);
+                            a.rotate(DrehwinkelGeben(t.winkel), t.x, t.y);
                             int pos = 0;
-                            for (FigurenElement e: t.standardFigur)
+                            for (FigurenElement e : t.standardFigur)
                             {
                                 Path2D.Double p = new Path2D.Double();
                                 double größe = t.h > t.b ? t.b : t.h;
-                                e.ElementZuForm(p, größe, t.x, t.y);  
-                                p = new Path2D.Double (p, a);
-                                areas [pos] = new Area(p);
+                                e.ElementZuForm(p, größe, t.x, t.y);
+                                p = new Path2D.Double(p, a);
+                                areas[pos] = new Area(p);
                                 colors[pos] = e.c;
-                                for (int i = pos - 1; i >= 0;i--)
+                                for (int i = pos - 1; i >= 0; i--)
                                 {
                                     areas[i].subtract(areas[pos]);
                                 }
@@ -1683,7 +1997,8 @@ class Zeichenfenster
                             }
                             for (int i = 0; i < areas.length; i++)
                             {
-                                if (Schneidet(areas[i]) && (c2.equals(colors[i])))
+                                if (Schneidet(areas[i])
+                                        && (c2.equals(colors[i])))
                                 {
                                     ok = true;
                                 }
@@ -1693,21 +2008,24 @@ class Zeichenfenster
                     else if (g instanceof FigurIntern)
                     {
                         FigurIntern t = (FigurIntern) g;
-                        LinkedList<FigurenElement> figur = ((t.eigeneFigur == null) || (t.eigeneFigur.size() == 0)) ? t.standardFigur : t.eigeneFigur;
-                        Area[] areas = new Area [figur.size()];
-                        Color[] colors = new Color [figur.size()];
+                        LinkedList<FigurenElement> figur = ((t.eigeneFigur == null)
+                                || (t.eigeneFigur.size() == 0))
+                                        ? t.standardFigur
+                                        : t.eigeneFigur;
+                        Area[] areas = new Area[figur.size()];
+                        Color[] colors = new Color[figur.size()];
                         AffineTransform a = new AffineTransform();
-                        a.rotate(DrehwinkelGeben (t.winkel), t.x, t.y);
+                        a.rotate(DrehwinkelGeben(t.winkel), t.x, t.y);
                         int pos = 0;
-                        for (FigurenElement e: figur)
+                        for (FigurenElement e : figur)
                         {
                             Path2D.Double p = new Path2D.Double();
                             double größe = t.h > t.b ? t.b : t.h;
-                            e.ElementZuForm(p, größe, t.x, t.y);  
-                            p = new Path2D.Double (p, a);
-                            areas [pos] = new Area(p);
+                            e.ElementZuForm(p, größe, t.x, t.y);
+                            p = new Path2D.Double(p, a);
+                            areas[pos] = new Area(p);
                             colors[pos] = e.c;
-                            for (int i = pos - 1; i >= 0;i--)
+                            for (int i = pos - 1; i >= 0; i--)
                             {
                                 areas[i].subtract(areas[pos]);
                             }
@@ -1729,13 +2047,17 @@ class Zeichenfenster
             }
             return ok;
         }
-        
+
         /**
-         * Testet, ob die Figur die (sichtbare, ) angegebene Grafik-Figur berührt.
+         * Testet, ob die Figur die (sichtbare, ) angegebene Grafik-Figur
+         * berührt.
+         *
          * @param object das Objekt, das getestet werden soll.
-         * @return true, wenn die Turtlekoordinaten innerhalb einer Grafikfigur in der angegebenen Farbe sind
+         *
+         * @return true, wenn die Turtlekoordinaten innerhalb einer Grafikfigur
+         *     in der angegebenen Farbe sind
          */
-        boolean Berührt (Object object)
+        boolean Berührt(Object object)
         {
             GrafikSymbol s = null;
             if (object instanceof Rechteck)
@@ -1758,50 +2080,64 @@ class Zeichenfenster
             {
                 s = ((Figur) object).symbol;
             }
-            return (s != null) && (s != this) && s.Schneidet(form) && s.sichtbar && (!(s instanceof TurtleIntern) || ((TurtleIntern) s).symbolSichtbar);
+            return (s != null) && (s != this) && s.Schneidet(form) && s.sichtbar
+                    && (!(s instanceof TurtleIntern)
+                            || ((TurtleIntern) s).symbolSichtbar);
         }
 
         /**
-         * Erzeugt ein neues, rechteckiges Element einer eigenen Darstellung der Figur.
-         * Alle Werte beziehen sich auf eine Figur der Größe 100 und den Koordinaten (0|0) in der Mitte des Quadrats
+         * Erzeugt ein neues, rechteckiges Element einer eigenen Darstellung der
+         * Figur. Alle Werte beziehen sich auf eine Figur der Größe 100 und den
+         * Koordinaten (0|0) in der Mitte des Quadrats
+         *
          * @param x x-Wert der linken oberen Ecke des Rechtecks
          * @param y y-Wert der linken oberen Ecke des Rechtecks
          * @param breite Breite des Rechtecks
          * @param höhe Höhe des Rechtecks
          * @param farbe (Füll)Farbe des Rechtecks
          */
-        void FigurteilFestlegenRechteck (int x, int y, int breite, int höhe, String farbe)
+        void FigurteilFestlegenRechteck(int x, int y, int breite, int höhe,
+                String farbe)
         {
             synchronized (eigeneFigur)
             {
-                eigeneFigur.add(new FigurenElementRechteck(x, y, breite, höhe, FarbeCodieren(farbe)));
+                eigeneFigur.add(new FigurenElementRechteck(x, y, breite, höhe,
+                        FarbeCodieren(farbe)));
             }
             FormErzeugen();
             zeichenfläche.malfläche.repaint();
         }
 
         /**
-         * Erzeugt ein neues, elliptisches Element einer eigenen Darstellung der Figur.
-         * Alle Werte beziehen sich auf eine Figur der Größe 100 und den Koordinaten (0|0) in der Mitte des Quadrats
-         * @param x x-Wert der linken oberen Ecke des umgebenden Rechtecks der Ellipse
-         * @param y y-Wert der linken oberen Ecke des umgebenden Rechtecks der Ellipse
+         * Erzeugt ein neues, elliptisches Element einer eigenen Darstellung der
+         * Figur. Alle Werte beziehen sich auf eine Figur der Größe 100 und den
+         * Koordinaten (0|0) in der Mitte des Quadrats
+         *
+         * @param x x-Wert der linken oberen Ecke des umgebenden Rechtecks der
+         *     Ellipse
+         * @param y y-Wert der linken oberen Ecke des umgebenden Rechtecks der
+         *     Ellipse
          * @param breite Breite des umgebenden Rechtecks der Ellipse
          * @param höhe Höhe des umgebenden Rechtecks der Ellipse
          * @param farbe (Füll)Farbe der Ellipse
          */
-        void FigurteilFestlegenEllipse (int x, int y, int breite, int höhe, String farbe)
+        void FigurteilFestlegenEllipse(int x, int y, int breite, int höhe,
+                String farbe)
         {
             synchronized (eigeneFigur)
             {
-                eigeneFigur.add(new FigurenElementEllipse(x, y, breite, höhe, FarbeCodieren(farbe)));
+                eigeneFigur.add(new FigurenElementEllipse(x, y, breite, höhe,
+                        FarbeCodieren(farbe)));
             }
             FormErzeugen();
             zeichenfläche.malfläche.repaint();
         }
 
         /**
-         * Erzeugt ein neues, dreieckiges Element einer eigenen Darstellung der Figur.
-         * Alle Werte beziehen sich auf eine Figur der Größe 100 und den Koordinaten (0|0) in der Mitte des Quadrats
+         * Erzeugt ein neues, dreieckiges Element einer eigenen Darstellung der
+         * Figur. Alle Werte beziehen sich auf eine Figur der Größe 100 und den
+         * Koordinaten (0|0) in der Mitte des Quadrats
+         *
          * @param x1 x-Wert des ersten Punkts des Dreiecks
          * @param y1 y-Wert des ersten Punkts des Dreiecks
          * @param x2 x-Wert des zweiten Punkts des Dreiecks
@@ -1810,21 +2146,23 @@ class Zeichenfenster
          * @param y3 y-Wert des dritten Punkts des Dreiecks
          * @param farbe (Füll)Farbe der Ellipse
          */
-        void FigurteilFestlegenDreieck (int x1, int y1, int x2, int y2, int x3, int y3, String farbe)
+        void FigurteilFestlegenDreieck(int x1, int y1, int x2, int y2, int x3,
+                int y3, String farbe)
         {
             synchronized (eigeneFigur)
             {
-                int[] x = new int [] {x1, x2, x3};
-                int[] y = new int [] {y1, y2, y3};
-                eigeneFigur.add(new FigurenElementPolygon(x, y, FarbeCodieren(farbe)));
+                int[] x = new int[] { x1, x2, x3 };
+                int[] y = new int[] { y1, y2, y3 };
+                eigeneFigur.add(
+                        new FigurenElementPolygon(x, y, FarbeCodieren(farbe)));
             }
             FormErzeugen();
             zeichenfläche.malfläche.repaint();
         }
-        
+
         /**
-         * Löscht die Vereinbarung für die eigene Darstellung Figur.
-         * Die Figur wird wieder durch die Originalfigur dargestellt.
+         * Löscht die Vereinbarung für die eigene Darstellung Figur. Die Figur
+         * wird wieder durch die Originalfigur dargestellt.
          */
         void EigeneFigurLöschen()
         {
@@ -1835,9 +2173,11 @@ class Zeichenfenster
 
         /**
          * Zeichnet das Objekt als Dreieck in der gegebenen Farbe.
+         *
          * @param g das Grafikobjekt zum Zeichnen
          */
-        @Override void Zeichnen(Graphics g)
+        @Override
+        void Zeichnen(Graphics g)
         {
             Graphics2D g2 = (Graphics2D) g;
             // Outline
@@ -1849,13 +2189,15 @@ class Zeichenfenster
             // Füllung
             double größe = h > b ? b : h;
             AffineTransform alt = g2.getTransform();
-            g2.rotate(DrehwinkelGeben (winkel), x, y);
+            g2.rotate(DrehwinkelGeben(winkel), x, y);
             if (standardFigur != null)
             {
-                LinkedList<FigurenElement> figur = ((eigeneFigur == null) || (eigeneFigur.size() == 0)) ? standardFigur : eigeneFigur;
+                LinkedList<FigurenElement> figur = ((eigeneFigur == null)
+                        || (eigeneFigur.size() == 0)) ? standardFigur
+                                : eigeneFigur;
                 synchronized (figur)
                 {
-                    for (FigurenElement e: figur)
+                    for (FigurenElement e : figur)
                     {
                         e.ElementZeichnen(g2, größe, x, y);
                     }

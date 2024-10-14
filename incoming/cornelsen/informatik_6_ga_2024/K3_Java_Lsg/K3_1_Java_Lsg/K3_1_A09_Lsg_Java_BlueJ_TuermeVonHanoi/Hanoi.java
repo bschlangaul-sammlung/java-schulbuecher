@@ -1,15 +1,16 @@
 
 /**
  * Steuert die "Türme von Hanoi"
- * 
+ *
  * @author Albert Wiedemann
  * @version 1.0
  */
 class Hanoi
 {
-    /** Das Darstellungsobjekt */
+    /**
+     * Das Darstellungsobjekt */
     private Darstellung darstellung;
-    
+
     /**
      * Legt die Darstellung an und startet den Ablauf
      * @param anzahl Anzahl der Scheiben auf dem Ausgangsturm
@@ -20,7 +21,7 @@ class Hanoi
         darstellung.Starten();
         TurmBewegen(anzahl, 0, 2);
     }
-       
+
     /**
      * Rekursive Steuermethode zur Bewegung des zu bewegenden (Teil-)Turms.
      * @param anzahlScheiben Anzahl der Scheiben des Turms
@@ -38,7 +39,7 @@ class Hanoi
             TurmBewegen(anzahlScheiben - 1, frei, nach);
         }
     }
-    
+
     /**
      * Bewegt die oberste Platte des Turms mit der Nummer von auf den Turm mit der Nummer nach
      * @param von Nummer des Ausgangsturms

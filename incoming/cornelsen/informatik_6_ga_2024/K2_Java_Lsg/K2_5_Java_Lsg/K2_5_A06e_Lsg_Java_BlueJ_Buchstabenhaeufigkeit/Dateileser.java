@@ -5,13 +5,14 @@ import java.util.ArrayList;
 
 /**
  * Mit der Klasse Dateileser kann ein Text aus einer Datei ausgelesen werden.
- * 
+ *
  * @author Peter Brichzin
  * @version 30.5.2024
  */
 class Dateileser
 {
-    /** Referenz auf die Datei, aus der gelesen wird */
+    /**
+     * Referenz auf die Datei, aus der gelesen wird */
     private File datei;
 
     /**
@@ -38,7 +39,7 @@ class Dateileser
      */
     String TextAuslesen()
     {
-        String text; 
+        String text;
         text = "";
         try
         {

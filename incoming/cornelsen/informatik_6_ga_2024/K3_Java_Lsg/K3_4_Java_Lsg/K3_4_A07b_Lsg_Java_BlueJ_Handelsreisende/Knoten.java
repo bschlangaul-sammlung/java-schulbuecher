@@ -1,17 +1,19 @@
 
 /**
  * Beschreibt einen Knoten
- * 
+ *
  * @author Albert Wiedemann
  * @version 1.0
  */
 class Knoten
 {
-    /** Der Bezeichner des Knotens */
+    /**
+     * Der Bezeichner des Knotens */
     private String bezeichner;
-    /** Das Darstellungssymbol des Knotens */
+    /**
+     * Das Darstellungssymbol des Knotens */
     private KnotenSymbol symbol;
-    
+
     /**
      * Besetzt die Attribute und legt das Knotensymbol an.
      * @param bezeichner Bezeichner
@@ -23,7 +25,7 @@ class Knoten
         this.bezeichner = bezeichner;
         symbol = new KnotenSymbol(x, y, 20, "weiß", bezeichner);
     }
-    
+
     /**
      * Meldet den Bezeichner des Knotens zurück.
      * @return Bezeichner
@@ -32,7 +34,7 @@ class Knoten
     {
         return bezeichner;
     }
-    
+
     /**
      * Meldet das Symbol des Knotens zurück.
      * @return Bezeichner
@@ -41,7 +43,7 @@ class Knoten
     {
         return symbol;
     }
-    
+
     /**
      * Setzt die Farbe der Darstellung
      * @param f die (neue) Farbe

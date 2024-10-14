@@ -1,27 +1,35 @@
 
 /**
  * Wrapperklasse für ein Rechteck auf der Zeichenfläche.
- * 
- * @author Albert Wiedemann 
+ *
+ * @author Albert Wiedemann
  * @version 1.0
  */
 public class Rechteck
 {
-    /** x-Position der linken oberen Ecke. */
+    /**
+     * x-Position der linken oberen Ecke. */
     protected int x;
-    /** y-Position der linken oberen Ecke. */
+    /**
+     * y-Position der linken oberen Ecke. */
     protected int y;
-    /** Breite des Rechtecks. */
+    /**
+     * Breite des Rechtecks. */
     protected int breite;
-    /** Höhe des Rechtecks. */
+    /**
+     * Höhe des Rechtecks. */
     protected int höhe;
-    /** Farbe des Rechtecks. */
+    /**
+     * Farbe des Rechtecks. */
     protected String farbe;
-    /** Sichtbarkeit des Rechtecks. */
+    /**
+     * Sichtbarkeit des Rechtecks. */
     protected boolean sichtbar;
-    /** Drehwinkel (mathematisch positiver Drehsinn) des Rechtecks in Grad. */
+    /**
+     * Drehwinkel (mathematisch positiver Drehsinn) des Rechtecks in Grad. */
     protected int winkel;
-    /** Referenz auf das Delegate-Objekt. */
+    /**
+     * Referenz auf das Delegate-Objekt. */
     Zeichenfenster.GrafikSymbol symbol;
 
     /**
@@ -43,7 +51,7 @@ public class Rechteck
         symbol.SichtbarkeitSetzen(sichtbar);
         symbol.WinkelSetzen(winkel);
     }
-    
+
     /**
      * Setzt die Position (der linken oberen Ecke) des Rechtecks.
      * @param x x-Position der linken oberen Ecke
@@ -55,7 +63,7 @@ public class Rechteck
         this.y = y;
         symbol.PositionSetzen(x, y);
     }
-    
+
     /**
      * Verschiebt das Rechteck um die angegebenen Werte.
      * @param deltaX Verschiebung in x-Richtung
@@ -67,7 +75,7 @@ public class Rechteck
         y += deltaY;
         symbol.PositionSetzen(x, y);
     }
-    
+
     /**
      * Dreht das Rechteck
      * @param grad Drehwinkel (mathematisch positiver Drehsinn) im Gradmass
@@ -77,7 +85,7 @@ public class Rechteck
         winkel += grad;
         symbol.WinkelSetzen(winkel);
     }
-        
+
     /**
      * Setzt die Größe des Rechtecks.
      * @param breite (neue) Breite
@@ -89,7 +97,7 @@ public class Rechteck
         this.höhe = höhe;
         symbol.GrößeSetzen(breite, höhe);
     }
-    
+
     /**
      * Setzt die Farbe des Rechtecks.
      * Erlaubte Farben sind:
@@ -104,7 +112,7 @@ public class Rechteck
         this.farbe = farbe;
         symbol.FarbeSetzen(farbe);
     }
-        
+
     /**
      * Setzt den Drehwinkel des Rechtecks.
      * Die Winkelangabe ist in Grad,positive Werte drehen gegen den Uhrzeigersinn,
@@ -116,7 +124,7 @@ public class Rechteck
         this.winkel = winkel;
         symbol.WinkelSetzen(winkel);
     }
-    
+
     /**
      * Schaltet die Sichtbarkeit des Rechtecks ein oder aus.
      * Erlaubte Parameterwerte: true, false
@@ -127,7 +135,7 @@ public class Rechteck
         this.sichtbar = sichtbar;
         symbol.SichtbarkeitSetzen(sichtbar);
     }
-        
+
     /**
      * Entfernt das Rechteck aus dem Zeichenfenster.
      */
@@ -135,7 +143,7 @@ public class Rechteck
     {
         symbol.Entfernen();
     }
-    
+
     /**
      * Bringt das Rechteck eine Ebene nach vorn.
      */
@@ -143,7 +151,7 @@ public class Rechteck
     {
         symbol.NachVornBringen();
     }
-    
+
     /**
      * Bringt das Rechteck in die vorderste Ebene.
      */
@@ -151,7 +159,7 @@ public class Rechteck
     {
         symbol.GanzNachVornBringen();
     }
-    
+
     /**
      * Bringt das Rechteck eine Ebene nach hinten.
      */
@@ -159,7 +167,7 @@ public class Rechteck
     {
         symbol.NachHintenBringen();
     }
-    
+
     /**
      * Bringt das Rechteck in die hinterste Ebene.
      */

@@ -1,29 +1,37 @@
 
 /**
  * Wrapperklasse für die Turtle auf der Zeichenfläche.
- * 
- * @author Albert Wiedemann 
+ *
+ * @author Albert Wiedemann
  * @version 1.0
  */
 public class Figur
 {
-    /** x-Position der Figur. */
+    /**
+     * x-Position der Figur. */
     private int x;
-    /** y-Position der Figur. */
+    /**
+     * y-Position der Figur. */
     private int y;
-    /** Größe der Figur. */
+    /**
+     * Größe der Figur. */
     private int größe;
-    /** Farbe der Figur. */
+    /**
+     * Farbe der Figur. */
     private String farbe;
-    /** Sichtbarkeit der Figur. */
+    /**
+     * Sichtbarkeit der Figur. */
     private boolean sichtbar;
-    /** Drehwinkel (mathemtisch positiver Drehsinn) der Turtle in Grad. */
+    /**
+     * Drehwinkel (mathemtisch positiver Drehsinn) der Turtle in Grad. */
     private int winkel;
-    /** Referenz auf das echte Figursymbol. */
+    /**
+     * Referenz auf das echte Figursymbol. */
     Zeichenfenster.FigurIntern symbol;
-    /** Referenz auf das Aktionsempfängerobjekt. */
+    /**
+     * Referenz auf das Aktionsempfängerobjekt. */
     Zeichenfenster.AktionsEmpfaenger aktionsEmpfänger;
-    
+
     /**
      * Konstruktor der Figur
      * Erzeugt eine Figur und versetzt sie in einen gültigen Startzustand.
@@ -43,17 +51,17 @@ public class Figur
             {
                 AktionAusführen();
             }
-            
+
             public void Taste (char taste)
             {
                 TasteGedrückt(taste);
             }
-            
+
             public void SonderTaste (int taste)
             {
                 SonderTasteGedrückt(taste);
             }
-            
+
             public void Geklickt (int x, int y, int anzahl)
             {
                 MausGeklickt(x, y, anzahl);
@@ -61,7 +69,7 @@ public class Figur
         };
         Zeichenfenster.AktionsEmpfängerEintragen(aktionsEmpfänger);
     }
-    
+
     /**
      * Methode wird aufgerufen, wenn die Figur handeln soll.
      * Die vordefinierte Methode tut nichts.
@@ -69,30 +77,30 @@ public class Figur
     void AktionAusführen()
     {
     }
-    
+
     /**
      * Die eigentliche Aktionsmethode für gedrückte Tasten.
-     * <br>Muss bei Bedarf von einer Unterklasse überschrieben werden. 
+     * <br>Muss bei Bedarf von einer Unterklasse überschrieben werden.
      * @param taste die gedrückte Taste
      */
     void TasteGedrückt (char taste)
     {
         //System. out. println ("Taste: " + taste);
     }
-    
+
     /**
      * Die eigentliche Aktionsmethode für gedrückte Sondertasten.
-     * <br>Muss bei Bedarf von einer Unterklasse überschrieben werden. 
+     * <br>Muss bei Bedarf von einer Unterklasse überschrieben werden.
      * @param taste KeyCode der gedrückten Taste
      */
     void SonderTasteGedrückt (int taste)
     {
         //System. out. println ("Sondertaste: " + taste);
     }
-    
+
     /**
      * Die eigentliche Aktionsmethode für einen Mausklick.
-     * <br>Muss bei Bedarf von einer Unterklasse überschrieben werden. 
+     * <br>Muss bei Bedarf von einer Unterklasse überschrieben werden.
      * @param x x-Position des Mausklicks
      * @param y y-Position des Mausklicks
      * @param anzahl Anzahl der aufeinanderfolgenden Mausklicks
@@ -101,7 +109,7 @@ public class Figur
     {
         //System. out. println ("Maus: (" + x + "|" + y + "), " + anzahl + " mal");
     }
-    
+
     /**
      * Setzt die Position der Figur.
      * @param x x-Position der Figur
@@ -113,7 +121,7 @@ public class Figur
         this.y = y;
         symbol.PositionSetzen(x, y);
     }
-        
+
     /**
      * Setzt die Größe des Figurensymbols.
      * @param größe (neue) Größe
@@ -123,7 +131,7 @@ public class Figur
         this.größe = größe;
         symbol.GrößeSetzen(größe, größe);
     }
-        
+
     /**
      * Setzt den Drehwinkel der Figur.
      * Die Winkelangabe ist in Grad, positive Werte drehen gegen den Uhrzeigersinn,
@@ -139,7 +147,7 @@ public class Figur
         this.winkel = winkel;
         symbol.WinkelSetzen(winkel);
     }
-    
+
     /**
      * Schaltet die Sichtbarkeit der Figur ein oder aus.
      * Erlaubte Parameterwerte: true, false
@@ -150,7 +158,7 @@ public class Figur
         this.sichtbar = sichtbar;
         symbol.SichtbarkeitSetzen(sichtbar);
     }
-        
+
     /**
      * Entfernt die Figur aus dem Zeichenfenster.
      */
@@ -159,7 +167,7 @@ public class Figur
         Zeichenfenster.AktionsEmpfängerEntfernen(aktionsEmpfänger);
         symbol.Entfernen();
     }
-    
+
     /**
      * Bringt die Figur eine Ebene nach vorn.
      */
@@ -167,7 +175,7 @@ public class Figur
     {
         symbol.NachVornBringen();
     }
-    
+
     /**
      * Bringt die Figur in die vorderste Ebene.
      */
@@ -175,7 +183,7 @@ public class Figur
     {
         symbol.GanzNachVornBringen();
     }
-    
+
     /**
      * Bringt die Figur eine Ebene nach hinten.
      */
@@ -183,7 +191,7 @@ public class Figur
     {
         symbol.NachHintenBringen();
     }
-    
+
     /**
      * Bringt die Figur in die hinterste Ebene.
      */
@@ -213,7 +221,7 @@ public class Figur
         x = symbol.x;
         y = symbol.y;
     }
-    
+
     /**
      * Dreht die Figur
      * @param grad Drehwinkel (mathematisch positiver Drehsinn) im Gradmaß
@@ -247,16 +255,16 @@ public class Figur
     {
         return x;
     }
-    
+
     /**
      * Gibt die y-Koordinate der Figur zurück.
      * @return y-Koordinate
-     */ 
+     */
     int YPositionGeben()
     {
         return y;
     }
-    
+
     /**
      * Testet, ob die Figur eine Grafik-Figur berührt.
      * @return true, wenn die Figur und eine Grafikfigur überlappen
@@ -265,7 +273,7 @@ public class Figur
     {
         return symbol.Berührt();
     }
-    
+
     /**
      * Testet, ob die Figur eine Grafik-Figur in der angegebenen Farbe berührt.
      * @param farbe die Farbe, die die berührte Figur haben muss
@@ -329,7 +337,7 @@ public class Figur
     {
         symbol.FigurteilFestlegenDreieck(x1, y1, x2, y2, x3, y3, farbe);
     }
-        
+
     /**
      * Löscht die Vereinbarung für die eigene Darstellung der Figur.
      * Die Figur wird wieder durch die Originalfigur dargestellt.

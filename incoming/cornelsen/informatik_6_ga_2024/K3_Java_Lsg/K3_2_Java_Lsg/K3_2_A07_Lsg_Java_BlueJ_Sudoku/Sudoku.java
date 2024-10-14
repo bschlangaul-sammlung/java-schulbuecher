@@ -2,15 +2,16 @@
 import java.util.*;
 /**
  * Löst ein Sudoku-Rätsel
- * 
+ *
  * @author Albert Wiedemann
  * @version 1.0
  */
 class Sudoku
 {
-    /** Das Sudoku-Feld */
+    /**
+     * Das Sudoku-Feld */
     private ArrayList<ArrayList<ArrayList<Integer>>> feld;
-    
+
     /**
      * Legt das Sudoku-Feld an und besetzt alle Elemente mit "alle Werte möglich" vor.
      */
@@ -30,7 +31,7 @@ class Sudoku
             }
         }
     }
-    
+
     /**
      * Legt das in der Aufgabe dargestellte Rätsel an.
      */
@@ -61,7 +62,7 @@ class Sudoku
         FeldelementFixieren(8, 4, 7);
         FeldelementFixieren(8, 6, 9);
     }
-    
+
     /**
      * Erstellt eine Kopie des gegebenen Feldes
      * @param original das zu kopierende Feld
@@ -85,7 +86,7 @@ class Sudoku
         }
         return res;
     }
-    
+
     /**
      * Gibt das Sudoku-Feld auf der Konsole aus
      * Angegeben werden die eindeutigen Felder, sonst "-"
@@ -136,7 +137,7 @@ class Sudoku
         feld.get(zeile).get(spalte).clear();
         feld.get(zeile).get(spalte).add(wert);
     }
-    
+
     /**
      * Testet alle Möglichkeiten an der aktuellen Stelle
      * @param aktuelleZeile Nummer der Zeile des aktuellen Elements

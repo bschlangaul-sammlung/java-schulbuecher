@@ -1,19 +1,22 @@
 
 /**
  * Beschreibt einen Knoten
- * 
+ *
  * @author Albert Wiedemann
  * @version 1.0
  */
 class Knoten
 {
-    /** Der Bezeichner des Knotens */
+    /**
+     * Der Bezeichner des Knotens */
     private String bezeichner;
-    /** Das Darstellungssymbol des Knotens */
+    /**
+     * Das Darstellungssymbol des Knotens */
     private KnotenSymbol symbol;
-    /** Markierung, dass der Knoten bei der Tiefensuche besucht wurde */
+    /**
+     * Markierung, dass der Knoten bei der Tiefensuche besucht wurde */
     private boolean besucht;
-    
+
     /**
      * Besetzt die Attribute und legt das Knotensymbol an.
      * @param bezeichner Bezeichner
@@ -26,7 +29,7 @@ class Knoten
         symbol = new KnotenSymbol(x, y, 20, "weiß", bezeichner);
         besucht = false;
     }
-    
+
     /**
      * Meldet den Bezeichner des Knotens zurück.
      * @return Bezeichner
@@ -35,7 +38,7 @@ class Knoten
     {
         return bezeichner;
     }
-    
+
     /**
      * Meldet das Symbol des Knotens zurück.
      * @return Bezeichner
@@ -44,7 +47,7 @@ class Knoten
     {
         return symbol;
     }
-    
+
     /**
      * Setzt die Farbe der Darstellung
      * @param f die (neue) Farbe
@@ -53,7 +56,7 @@ class Knoten
     {
         symbol.FarbeSetzen(f);
     }
-    
+
     /**
      * Meldet zurück, ob der Knoten besucht wurde
      * @return besucht
@@ -62,7 +65,7 @@ class Knoten
     {
         return besucht;
     }
-    
+
     /**
      * Setzt das Attribut besucht auf den gegebenen Wert
      * @param besucht der neue Wert des Attributs besucht

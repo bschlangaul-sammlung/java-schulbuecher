@@ -4,13 +4,14 @@
  * Die Methoden die ein Objekt dieser Klasse anbietet, leiten den Aufruf an den
  * Wurzelknoten weiter, wenn der Baum nicht leer ist.
  * (Implementierung mit Entwurfsmuster Kompositum)
- * 
+ *
  * @author Peter Brichzin
  * @version 24.5.24
  */
 class BinBaum
 {
-    /** Die Wurzel des Bauns */
+    /**
+     * Die Wurzel des Bauns */
     private Baumelement wurzel;
 
     /**
@@ -23,8 +24,8 @@ class BinBaum
     }
 
     /**
-     * Fügt ein Datenelement sortiert in den geordneten Binärbaum ein, 
-     * d.h. die Eigenschaft, dass der Baum geordnet ist bleibt bei jedem 
+     * Fügt ein Datenelement sortiert in den geordneten Binärbaum ein,
+     * d.h. die Eigenschaft, dass der Baum geordnet ist bleibt bei jedem
      * Einfügevorgang erhalten.
      * @param datenNeu neues Datenelement
      */
@@ -34,7 +35,7 @@ class BinBaum
     }
 
     /**
-     * Sucht ein Datenelement, das über seinen Schlüssel 
+     * Sucht ein Datenelement, das über seinen Schlüssel
      * identifiziert wird, und gibt es aus.
      * @param suchSchlüssel Schlüssel, nach dem gesucht wird
      * @return gesuchtes Datenelement bzw. null, falls die Suche erfolglos ist

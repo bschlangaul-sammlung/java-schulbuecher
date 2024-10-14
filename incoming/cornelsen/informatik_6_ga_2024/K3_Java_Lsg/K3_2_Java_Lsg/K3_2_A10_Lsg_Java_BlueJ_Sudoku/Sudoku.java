@@ -2,19 +2,22 @@
 import java.util.*;
 /**
  * Löst ein Sudoku-Rätsel
- * 
+ *
  * @author Albert Wiedemann
  * @version 1.0
  */
 class Sudoku
 {
-    /** Das Sudoku-Feld */
+    /**
+     * Das Sudoku-Feld */
     private ArrayList<ArrayList<ArrayList<Integer>>> feld;
-    /** Die Spalten der schon untersuchten Feldelemente */
+    /**
+     * Die Spalten der schon untersuchten Feldelemente */
     private ArrayList<Integer> besuchteSpalten;
-    /** Die Zeilen der schon untersuchten Feldelemente */
+    /**
+     * Die Zeilen der schon untersuchten Feldelemente */
     private ArrayList<Integer> besuchteZeilen;
-    
+
     /**
      * Legt das Sudoku-Feld an und besetzt alle Elemente mit "alle Werte möglich" vor.
      */
@@ -36,7 +39,7 @@ class Sudoku
         besuchteSpalten = new ArrayList<Integer>();
         besuchteZeilen = new ArrayList<Integer>();
     }
-    
+
     /**
      * Legt das in der Aufgabe dargestellte Rätsel an.
      */
@@ -67,7 +70,7 @@ class Sudoku
         FeldelementFixieren(8, 4, 7);
         FeldelementFixieren(8, 6, 9);
     }
-    
+
     /**
      * Erstellt eine Kopie des gegebenen Feldes
      * @param original das zu kopierende Feld
@@ -91,7 +94,7 @@ class Sudoku
         }
         return res;
     }
-    
+
     /**
      * Gibt das Sudoku-Feld auf der Konsole aus
      * Angegeben werden die eindeutigen Felder, sonst "-"
@@ -142,7 +145,7 @@ class Sudoku
         feld.get(zeile).get(spalte).clear();
         feld.get(zeile).get(spalte).add(wert);
     }
-    
+
     /**
      * Meldet wahr zurück, wenn ein Feldelement schon untersucht wird.
      * @param zeile Zeilennummer des zu untersuchenden Elements
@@ -160,7 +163,7 @@ class Sudoku
         }
         return false;
     }
-    
+
     /**
      * Testet alle Möglichkeiten an der Stelle mit der kleinsten Auswahl
      */

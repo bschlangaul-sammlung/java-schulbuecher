@@ -2,31 +2,41 @@
 import java.util.*;
 /**
  * Verwaltet die Vísualisierung
- * 
+ *
  * @author Albert Wiedemann
  * @version 1.0
  */
 class Darstellung extends Ereignisbehandlung
 {
-    /** Abstand der Türme */
+    /**
+     * Abstand der Türme */
     static int turmAbstand = 250;
-    /** Position des Bodens */
+    /**
+     * Position des Bodens */
     static int bodenPosition = 400;
-    /** Boden */
+    /**
+     * Boden */
     private Rechteck boden;
-    /** Laufschiene */
+    /**
+     * Laufschiene */
     private Rechteck schiene;
-    /** Erster Turm */
+    /**
+     * Erster Turm */
     private Rechteck turm1;
-    /** Zweiter Turm */
+    /**
+     * Zweiter Turm */
     private Rechteck turm2;
-    /** Dritter Turm */
+    /**
+     * Dritter Turm */
     private Rechteck turm3;
-    /** Der Laufkran */
+    /**
+     * Der Laufkran */
     private Kran kran;
-    /** Die Scheibenstapel */
+    /**
+     * Die Scheibenstapel */
     private ArrayList<ArrayList<ScheibenSymbol>> türme;
-    /** Tickzähler für die Wartezeit */
+    /**
+     * Tickzähler für die Wartezeit */
     private int wartezeitZähler;
 
     /**
@@ -68,19 +78,19 @@ class Darstellung extends Ereignisbehandlung
             ScheibenSymbol neu = new ScheibenSymbol(scheibenAnzahl - i);
             neu.PositionSetzen(0, i);
             türme.get(0).add(neu);
-            
+
         }
     }
-    
+
     /**
      * Die eigentliche Aktionsmethode des Zeitgebers.
-     * Erniedrigt den Zähler für die Wartezeit 
+     * Erniedrigt den Zähler für die Wartezeit
      */
     @Override void TaktImpulsAusführen ()
     {
         wartezeitZähler -= 1;
     }
-    
+
     /**
      * Bremst den Ablauf, um eine beobachtbare Bewegung zu erhalten.
      * @param ticks die Anzahl der abzuwartenden Ticks der Ereignisbehandlung
@@ -100,7 +110,7 @@ class Darstellung extends Ereignisbehandlung
         }
         while (wartezeitZähler > 0);
     }
-    
+
     /**
      * Senkt den Kran, gegebenenfalls mit Scheibe, auf die gewünschte Höhe ab.
      * @param zielHöhe die gewünschte Höhe
@@ -122,7 +132,7 @@ class Darstellung extends Ereignisbehandlung
             }
         }
     }
-    
+
     /**
      * Hebt den Kran, gegebenenfalls mit Scheibe, auf die Fahrhöhe an.
      * @param scheibe Referenz der bewegten Scheibe.
@@ -143,7 +153,7 @@ class Darstellung extends Ereignisbehandlung
             }
         }
     }
-    
+
     /**
      * Fährt den Kran, gegebenenfalls mit Scheibe, auf die gewünschte Position nach links.
      * @param zielPosition die gewünschte Position
@@ -165,7 +175,7 @@ class Darstellung extends Ereignisbehandlung
             }
         }
     }
-    
+
     /**
      * Fährt den Kran, gegebenenfalls mit Scheibe, auf die gewünschte Position nach rechts.
      * @param zielPosition die gewünschte Position
@@ -225,7 +235,7 @@ class Darstellung extends Ereignisbehandlung
         türme.get(ziel).add(scheibe);
         Anheben (null);
     }
-    
+
     /**
      * Verschiebt die oberste Scheibe ohne Animation vom Startturm zum Zielturm.
      * @param start Nummer des Startturms

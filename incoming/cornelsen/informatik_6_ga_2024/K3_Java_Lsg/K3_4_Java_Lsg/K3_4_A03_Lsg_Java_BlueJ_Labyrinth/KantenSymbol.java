@@ -1,31 +1,41 @@
 
 /**
  * Verwaltet ein Kantensymbol in einem Graph
- * 
+ *
  * @author Albert Wiedemann
  * @version 1.0
  */
 class KantenSymbol
 {
-    /** Außenrechteck des Darstellungssymbols */
+    /**
+     * Außenrechteck des Darstellungssymbols */
     private Rechteck außen;
-    /** Innenrechteck des Darstellungssymbols */
+    /**
+     * Innenrechteck des Darstellungssymbols */
     private Rechteck innen;
-    /** Richtungspfeil des Darstellungssymbols */
+    /**
+     * Richtungspfeil des Darstellungssymbols */
     private Dreieck pfeil;
-    /** Gewichtsangabe des Darstellungssymbols */
+    /**
+     * Gewichtsangabe des Darstellungssymbols */
     private Text text;
-    /** Breite des Darstellungssymbols */
+    /**
+     * Breite des Darstellungssymbols */
     private int breite;
-    /** Gerichtete Kante */
+    /**
+     * Gerichtete Kante */
     private boolean gerichtet;
-    /** Gewicht der Kante */
+    /**
+     * Gewicht der Kante */
     private String gewicht;
-    /** Farbe */
+    /**
+     * Farbe */
     private String farbe;
-    /** Startknoten */
+    /**
+     * Startknoten */
     private KnotenSymbol von;
-    /** Endknoten */
+    /**
+     * Endknoten */
     private KnotenSymbol nach;
 
     /**
@@ -54,7 +64,7 @@ class KantenSymbol
         text.TextSetzen(gewicht);
         DarstellungAktualisieren();
     }
-    
+
     /**
      * Aktualisiert das Symbol
      */
@@ -94,7 +104,7 @@ class KantenSymbol
             pfeil.GrößeSetzen(breite - delta, breite);
             pfeil.WinkelSetzen(270);
         }
-        
+
         double winkel = 0;
         if (x1 == x2)
         {
@@ -140,7 +150,7 @@ class KantenSymbol
             text.PositionSetzen(xm + (int) (delta * Math.cos(w)), ym - (int) (delta * Math.sin(w)) + 10);
         }
     }
-    
+
     /**
      * Entfernt das Kantensymbol aus der Anzeige
      */
@@ -151,7 +161,7 @@ class KantenSymbol
         pfeil.Entfernen();
         text.Entfernen();
     }
-    
+
     /**
      * Setzt die Farbe der Darstellung
      * @param f die (neue) Farbe
@@ -161,7 +171,7 @@ class KantenSymbol
         farbe = f;
         DarstellungAktualisieren();
     }
-    
+
     /**
      * Meldet den Startknoten
      * @return Startknoten
@@ -170,7 +180,7 @@ class KantenSymbol
     {
         return von;
     }
-    
+
     /**
      * Meldet den Zielknoten
      * @return Zielknoten
@@ -179,7 +189,7 @@ class KantenSymbol
     {
         return nach;
     }
-    
+
     /**
      * Setzt die Sichtbarkeit des Symbols
      * @param sichtbar wenn wahr, ist das Symbol sichtbar

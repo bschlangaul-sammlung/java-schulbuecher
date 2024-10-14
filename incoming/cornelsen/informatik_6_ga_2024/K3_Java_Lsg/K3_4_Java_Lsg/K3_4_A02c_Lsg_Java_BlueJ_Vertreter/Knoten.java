@@ -1,21 +1,25 @@
 
 /**
  * Beschreibt einen Knoten
- * 
+ *
  * @author Albert Wiedemann
  * @version 1.0
  */
 class Knoten
 {
-    /** Der Bezeichner des Knotens */
+    /**
+     * Der Bezeichner des Knotens */
     private String bezeichner;
-    /** Das Darstellungssymbol des Knotens */
+    /**
+     * Das Darstellungssymbol des Knotens */
     private KnotenSymbol symbol;
-    /** Wahr, wenn an diesem Knoten ein Kunde vorhanden ist */
+    /**
+     * Wahr, wenn an diesem Knoten ein Kunde vorhanden ist */
     private boolean kundeVorhanden;
-    /** Wahr, wenn an diesem Knoten ein Geschäft vorhanden ist */
+    /**
+     * Wahr, wenn an diesem Knoten ein Geschäft vorhanden ist */
     private boolean ladenVorhanden;
-    
+
     /**
      * Besetzt die Attribute und legt das Knotensymbol an.
      * @param bezeichner Bezeichner
@@ -31,7 +35,7 @@ class Knoten
         kundeVorhanden = kunde;
         ladenVorhanden = laden;
     }
-    
+
     /**
      * Meldet den Bezeichner des Knotens zurück.
      * @return Bezeichner
@@ -40,7 +44,7 @@ class Knoten
     {
         return bezeichner;
     }
-    
+
     /**
      * Meldet das Symbol des Knotens zurück.
      * @return Bezeichner
@@ -49,7 +53,7 @@ class Knoten
     {
         return symbol;
     }
-    
+
     /**
      * Setzt die Farbe der Darstellung
      * @param f die (neue) Farbe
@@ -58,7 +62,7 @@ class Knoten
     {
         symbol.FarbeSetzen(f);
     }
-    
+
     /**
      * Meldet zurück, ob an diesem Knoten ein Kunde vorhanden ist
      * @return wahr, wenn an diesem Knoten ein Kunde vorhanden ist
@@ -67,7 +71,7 @@ class Knoten
     {
         return kundeVorhanden;
     }
-    
+
     /**
      * Meldet zurück, ob an diesem Knoten ein Laden vorhanden ist
      * @return wahr, wenn an diesem Knoten ein Laden vorhanden ist

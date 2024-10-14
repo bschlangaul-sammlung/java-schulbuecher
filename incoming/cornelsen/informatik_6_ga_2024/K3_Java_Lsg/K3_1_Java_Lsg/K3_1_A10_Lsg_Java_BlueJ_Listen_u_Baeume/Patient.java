@@ -1,12 +1,13 @@
 /**
  * Beschreibung der Klasse Patient
- * 
- * @author Klaus Reinold 
+ *
+ * @author Klaus Reinold
  * @version 1.0
  */
 class Patient
 {
-    /** Name des Patienten */
+    /**
+     * Name des Patienten */
     private String name;
 
     /**
@@ -34,17 +35,17 @@ class Patient
     {
         return name;
     }
-    
+
     /**
      * Gibt zurück, ob der Name gleich den übergebenen Wert ist.
      * @param gesuchterWert gesuchter Wert
-     * @return Wahrheitswert, der angibt, ob der Name der gesuchte ist. 
+     * @return Wahrheitswert, der angibt, ob der Name der gesuchte ist.
      */
     boolean SchlüsselIstGleich(String gesuchterWert)
     {
         return name == gesuchterWert;
     }
-    
+
     /**
      * Vergleich zweier Datenelemente bezüglich einer Ordnungsrelation
      * @param dvergleich Datenelement zum Vergleich

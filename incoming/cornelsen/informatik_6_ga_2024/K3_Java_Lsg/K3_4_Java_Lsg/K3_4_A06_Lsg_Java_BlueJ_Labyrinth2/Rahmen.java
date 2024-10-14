@@ -1,17 +1,20 @@
 
 /**
  * Rahmenklasse für die Wegesuche aus dem Labyrith.
- * 
+ *
  * @author Albert Wiedemann
  * @version 1.0
  */
 class Rahmen
 {
-    /** Das Labyrinth */
+    /**
+     * Das Labyrinth */
     private Labyrinth l;
-    /** Der zugehörige Graph */
+    /**
+     * Der zugehörige Graph */
     private GraphMatrix g;
-    /** Der verirrte Theseus */
+    /**
+     * Der verirrte Theseus */
     private Theseus t;
 
     /**
@@ -25,7 +28,7 @@ class Rahmen
         l.GraphErzeugen(g);
         t = null;
     }
-    
+
     /**
      * Zeigt nur den Graphen an.
      */
@@ -38,7 +41,7 @@ class Rahmen
             t.SichtbarkeitSetzen(false);
         }
     }
-    
+
     /**
      * Zeigt nur das Labyrinth an.
      */
@@ -51,7 +54,7 @@ class Rahmen
             t.SichtbarkeitSetzen(true);
         }
     }
-    
+
     /**
      * Positioniert den verirrten Theseus auf einen geeigneten Startpunkt
      */
@@ -65,7 +68,7 @@ class Rahmen
         l.StartpunktGenerieren();
         t = new Theseus(l.XStartGeben(), l.YStartGeben());
     }
-    
+
     /**
      * Ermittelt den Weg aus dem Labyrinth und bereitet den Gang zu Ausgang vor.
      */
@@ -76,7 +79,7 @@ class Rahmen
             t.WegSetzen(g.TiefensucheAusführen(l.XStartGeben(), l.YStartGeben(), l.XAusgangGeben(), l.YAusgangGeben()));
         }
     }
-    
+
     /**
      * Setzt Theseus auf eine Startposition und setzt den Weg zum Ausgang
      */

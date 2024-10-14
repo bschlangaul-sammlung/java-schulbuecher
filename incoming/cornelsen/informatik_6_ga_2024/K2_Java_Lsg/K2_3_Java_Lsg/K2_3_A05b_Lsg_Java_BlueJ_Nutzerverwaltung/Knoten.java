@@ -1,26 +1,28 @@
 /**
- * Klasse Knoten zur Verwaltung von Usern als Datenelement 
+ * Klasse Knoten zur Verwaltung von Usern als Datenelement
  * innerhalb eines geordneten Binärbaums.
  * (Implementierung ohne Entwurfsmuster Kompositum)
- * 
+ *
  * @author Peter Brichzin
  * @version 23.5.24
  */
-class Knoten 
+class Knoten
 {
-    /** Referenz auf das Datenelement */
+    /**
+     * Referenz auf das Datenelement */
     private User daten;
 
-    /** Referenz auf den linken und rechten Nachfolger */
+    /**
+     * Referenz auf den linken und rechten Nachfolger */
     private Knoten linkerNachfolger;
     private Knoten rechterNachfolger;
 
     /**
-     * Konstruktor für Objekte der Klasse Knoten ohne linken und rechten Nachfolger, 
+     * Konstruktor für Objekte der Klasse Knoten ohne linken und rechten Nachfolger,
      * d.h. die entsprechenden Referenzattribute haben den "Wert" null.
      * @param datenNeu Referenz auf das Datenelement, das vom Knoten verwaltet wird.
      */
-    Knoten(User datenNeu) 
+    Knoten(User datenNeu)
     {
         daten = datenNeu;
         linkerNachfolger = null;
@@ -28,46 +30,46 @@ class Knoten
     }
 
     /**
-     * Fügt einen Usern als Datenelement, falls sein Schlüssel noch nicht vorhanden ist,  
-     * in die bestehende Datenstruktur ein. D.h. die Eigenschaft geordneter Binärbaum 
+     * Fügt einen Usern als Datenelement, falls sein Schlüssel noch nicht vorhanden ist,
+     * in die bestehende Datenstruktur ein. D.h. die Eigenschaft geordneter Binärbaum
      * bleibt erhalten.
-     * @param datenNeu einzufügender User als Datenelement 
+     * @param datenNeu einzufügender User als Datenelement
      */
-    void Einfügen(User datenNeu) 
+    void Einfügen(User datenNeu)
     {
         // Falls es ein Datenelement mit dem gleichen Schlüssel schon gibt: Einfügen abbrechen.
-        if(daten.IstGleich(datenNeu)) 
+        if(daten.IstGleich(datenNeu))
         {
             System.out.println("Die Daten existieren schon!");
         }
         // Abfrage, ob im rechten oder linken Teilbaum eingefügt werden muss
         else
         {
-            if(daten.IstGrößerAls(datenNeu)) 
+            if(daten.IstGrößerAls(datenNeu))
             {
-                // wenn es einen linken Nachfolger gibt, 
+                // wenn es einen linken Nachfolger gibt,
                 // dannn wird das Datenelement im linkem Teilbaum eingefügt,
                 // sonst wird ein Knoten mit einer Referenz auf das Datenelement erzeugt und als linker Nachfolger zugewiesen
-                if(linkerNachfolger != null) 
+                if(linkerNachfolger != null)
                 {
                     linkerNachfolger.Einfügen(datenNeu);
                 }
-                else 
+                else
                 {
                     linkerNachfolger = new Knoten(datenNeu);
                 }
             }
-            else 
+            else
             {
-                // wenn es einen rechten Nachfolger gibt, 
+                // wenn es einen rechten Nachfolger gibt,
                 // dannn wird das Datenelement im rechten Teilbaum eingefügt,
                 // sonst wird ein Knoten mit einer Referenz auf das Datenelement erzeugt und als rechter Nachfolger zugewiesen
-                if(rechterNachfolger != null) 
+                if(rechterNachfolger != null)
                 {
                     rechterNachfolger.Einfügen(datenNeu);
                 }
                 // sonst Datenelement im rechten Teilbaum einfügen
-                else 
+                else
                 {
                     rechterNachfolger = new Knoten(datenNeu);
                 }
@@ -76,10 +78,10 @@ class Knoten
     }
 
     /**
-     * Geben-Methode zu den Daten 
+     * Geben-Methode zu den Daten
      * @return Referenz auf die Daten
      */
-    User DatenGeben() 
+    User DatenGeben()
     {
         return daten;
     }
@@ -88,7 +90,7 @@ class Knoten
      * Geben-Methode zum linken Nachfolger
      * @return Referenz auf LinkerNachfolger
      */
-    Knoten LinkerNachfolgerGeben() 
+    Knoten LinkerNachfolgerGeben()
     {
         return linkerNachfolger;
     }
@@ -98,7 +100,7 @@ class Knoten
      *
      * @return Referenz auf RechterNachfolger
      */
-    Knoten RechterNachfolgerGeben() 
+    Knoten RechterNachfolgerGeben()
     {
         return rechterNachfolger;
     }

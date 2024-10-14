@@ -1,25 +1,32 @@
 
 /**
  * Wrapperklasse für einen Kreis auf der Zeichenfläche.
- * 
- * @author Albert Wiedemann 
+ *
+ * @author Albert Wiedemann
  * @version 1.0
  */
 public class Kreis
 {
-    /** x-Position des Kreismittelpunktes. */
+    /**
+     * x-Position des Kreismittelpunktes. */
     protected int x;
-    /** y-Position des Kreismittelpunktes. */
+    /**
+     * y-Position des Kreismittelpunktes. */
     protected int y;
-    /** Radius des Kreises. */
+    /**
+     * Radius des Kreises. */
     protected int radius;
-    /** Farbe des Kreises. */
+    /**
+     * Farbe des Kreises. */
     protected String farbe;
-    /** Sichtbarkeit des Kreises. */
+    /**
+     * Sichtbarkeit des Kreises. */
     protected boolean sichtbar;
-    /** Drehwinkel (mathematisch positiver Drehsinn) des Kreises in Grad. */
+    /**
+     * Drehwinkel (mathematisch positiver Drehsinn) des Kreises in Grad. */
     protected int winkel;
-    /** Referenz auf das Delegate-Objekt. */
+    /**
+     * Referenz auf das Delegate-Objekt. */
     Zeichenfenster.GrafikSymbol symbol;
 
     /**
@@ -40,7 +47,7 @@ public class Kreis
         symbol.SichtbarkeitSetzen(sichtbar);
         symbol.WinkelSetzen(winkel);
     }
-    
+
     /**
      * Setzt die Position (des Mittelpunkts) des Kreises.
      * @param x x-Position des Mittelpunkts
@@ -52,7 +59,7 @@ public class Kreis
         this.y = y;
         symbol.PositionSetzen(x - radius, y - radius);
     }
-    
+
     /**
      * Verschiebt den Kreis um die angegebenen Werte.
      * @param deltaX Verschiebung in x-Richtung
@@ -64,7 +71,7 @@ public class Kreis
         y += deltaY;
         symbol.PositionSetzen(x - radius, y - radius);
     }
-    
+
     /**
      * Dreht den Kreis
      * @param grad Drehwinkel (mathematisch positiver Drehsinn) im Gradmass
@@ -74,7 +81,7 @@ public class Kreis
         winkel += grad;
         symbol.WinkelSetzen(winkel);
     }
-        
+
     /**
      * Setzt den Radius des Kreises.
      * @param radius (neuer) Radius
@@ -85,7 +92,7 @@ public class Kreis
         symbol.GrößeSetzen(radius * 2, radius * 2);
         symbol.PositionSetzen(x - radius, y - radius);
     }
-    
+
     /**
      * Setzt die Farbe des Kreises.
      * Erlaubte Farben sind:
@@ -100,7 +107,7 @@ public class Kreis
         this.farbe = farbe;
         symbol.FarbeSetzen(farbe);
     }
-        
+
     /**
      * Setzt den Drehwinkel des Kreises.
      * Die Winkelangabe ist in Grad,positive Werte drehen gegen den Uhrzeigersinn,
@@ -112,7 +119,7 @@ public class Kreis
         this.winkel = winkel;
         symbol.WinkelSetzen(winkel);
     }
-    
+
     /**
      * Schaltet die Sichtbarkeit des Kreises ein oder aus.
      * Erlaubte Parameterwerte: true, false
@@ -123,7 +130,7 @@ public class Kreis
         this.sichtbar = sichtbar;
         symbol.SichtbarkeitSetzen(sichtbar);
     }
-        
+
     /**
      * Entfernt den Kreis aus dem Zeichenfenster.
      */
@@ -131,7 +138,7 @@ public class Kreis
     {
         symbol.Entfernen();
     }
-    
+
     /**
      * Bringt den Kreis eine Ebene nach vorn.
      */
@@ -139,7 +146,7 @@ public class Kreis
     {
         symbol.NachVornBringen();
     }
-    
+
     /**
      * Bringt den Kreis in die vorderste Ebene.
      */
@@ -147,7 +154,7 @@ public class Kreis
     {
         symbol.GanzNachVornBringen();
     }
-    
+
     /**
      * Bringt den Kreis eine Ebene nach hinten.
      */
@@ -155,7 +162,7 @@ public class Kreis
     {
         symbol.NachHintenBringen();
     }
-    
+
     /**
      * Bringt den Kreis in die hinterste Ebene.
      */

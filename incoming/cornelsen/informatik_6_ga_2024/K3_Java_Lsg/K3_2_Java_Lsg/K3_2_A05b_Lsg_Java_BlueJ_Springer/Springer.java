@@ -2,19 +2,22 @@
 import java.util.*;
 /**
  * Löst das Probelm der Springerreise
- * 
+ *
  * @author Albert Wiedemann
  * @version 1.0
  */
 class Springer
 {
-    /** Das Schachbrett mit den Nummern der Springerzüge. */
+    /**
+     * Das Schachbrett mit den Nummern der Springerzüge. */
     private ArrayList<ArrayList<Integer>> schachbrett;
-    /** x-Koordinate der Startposition */
+    /**
+     * x-Koordinate der Startposition */
     private int xStart;
-    /** y-Koordinate der Startposition */
+    /**
+     * y-Koordinate der Startposition */
     private int yStart;
-    
+
     /**
      * Legt das Schachbrett an
      * @param startX x-Position für den Startpunkt der Springerreise
@@ -35,7 +38,7 @@ class Springer
         }
         SchrittAusführen(startY, startX, 1);
     }
-    
+
     /**
      * Gibt die gefundene Lösung aus.
      */
@@ -60,7 +63,7 @@ class Springer
         }
         System.out.println();
     }
-    
+
     /**
      * Macht einen Rekursionsschritt auf dem Weg zur Lösung
      * @param zeile die Zeile, auf die der Springer gesetzt wird.
