@@ -27,9 +27,9 @@ Ohne suffix `_vorlage` handelt es sich um die Lösung
 
 ## Quellen
 
-### Buchner-Verlag
+### `buchner`
 
-#### `informatik_9_2021`
+#### `buchner/informatik_9_2021`
 
 ```yml
 folder: buchner/informatik_9_2021
@@ -41,24 +41,38 @@ release_date: 2021
 author: Dieter Bergmann, André Greubel
 approval_number: 272/21-G+
 approval_date: 01.09.2021
+publisher_website: https://www.ccbuchner.de/produkt/informatik-gymnasium-bayern-9-ntg-7198
 ```
 
-#### `informatik_10_2022`
+#### `buchner/informatik_10_2022`
 
 ```yml
-folder: buchner/informatik_10_2022
 reference_title: Informatik 10
 reference_subtitle: Gymnasium Bayern (NTG)
 isbn: 978-3-661-38010-0
 publisher: Buchner
 release_date: 2022
 author: >-
-    Dieter Bergmann, André Greubel, Verena Haller, Peter Mahns, Thomas
-    Rau, Julia Reitberger, Wolfgang Riffelmacher, Ulrich Schneider, Anja
-    Stube, Hilmar Vogel und Barbara Wieczorek
+  Dieter Bergmann, André Greubel, Verena Haller, Peter Mahns, Thomas
+  Rau, Julia Reitberger, Wolfgang Riffelmacher, Ulrich Schneider, Anja
+  Stube, Hilmar Vogel, Barbara Wieczorek
+publisher_website: https://www.ccbuchner.de/produkt/informatik-gymnasium-bayern-10-ntg-7201
+approval_number: 335/22-G+
 ```
 
-### Cornelsen
+#### `buchner/informatik_11_2022`
+
+```yml
+reference_title: Informatik 11
+publisher: Buchner
+release_date: 2023
+publisher_website: https://www.ccbuchner.de/produkt/informatik-gymnasium-bayern-11-8541
+isb: 978-3-661-38011-7
+approval_number: 51/24-G+
+author: Tobias Dorsch, André Greubel, Peter Knoll, Verena Murr, Robert Stöhr, Anja Stube, Hilmar Vogel, Barbara Wieczorek
+```
+
+### `cornelsen`
 
 Viele Java-Projekte des Cornelsen-Verlags verwenden die sogenannte
 `GraphicsAndGames`-API. Die Autoren des Cornelsen-Verlags binden dabei
@@ -87,8 +101,9 @@ Vorlagen von `GraphicsAndGames`:
 * [10. Jahrgangsstufe](https://informatikschulbuch.de/jahrgangsstufe-10/objektorientierte-modellierung-und-programmierungjgst10/)
 * [11. Jahrgangsstufe](https://informatikschulbuch.de/jahrgangsstufe-11/vernetze-strukturen-grapen-kapitel-1-informatik-5/)
 
+#### `cornelsen/informatik-3_2017`
+
 ```yml
-folder: cornelsen/informatik-3_2017
 reference_title: Informatik 3
 reference_subtitle: >-
   Funktionale Modellierung, Datenmodellierung, Objektorientierte
@@ -99,6 +114,42 @@ author: Peter Brichzin, Franz Jetzinger
 release_date: 2017
 approval_number: 76/21-G+
 approval_date: 28.05.2021
+```
+
+#### `cornelsen/informatik_5_2023`
+
+```yml
+reference_title: Informatik 5 (Bayern | NTG)
+reference_subtitle: >-
+  Graphen | Codierung | Kommunikation in Netzwerken | Künstliche Intelligenz
+isbn: 978-3-637-02473-1
+publisher: Cornelsen
+author: >-
+   Peter Brichzin, Florian Janus, Franz Jetzinger, Johannes Neumeyer,
+   Klaus Reinold, Dr. Stefan Seeger, Albert Wiedemann
+release_date: 2023
+edition: 1
+approval_number: 164/23-G+
+approval_date: 24.07.2023
+publisher_website: https://www.cornelsen.de/produkte/9783637024731
+```
+
+#### `cornelsen/informatik_6_ga_2024`
+
+```yml
+reference_title: Informatik 6 Bayern | NTG | Grundlegendes Niveau
+reference_subtitle: >-
+  Listen | Bäume | Rekursion - Nebenläufigkeit und Threads - Informationssicherheit - Softwareprojekte
+isbn: 978-3-637-02476-2
+publisher: Cornelsen
+author: >-
+  Peter Brichzin, Florian Janus, Franz Jetzinger, Johannes Neumeyer,
+  Klaus Reinold, Dr. Stefan Seegerer, Albert Wiedemann, Dennis Stanglemair
+release_date: 2024
+approval_number: 132/24-G+
+approval_date: 06.08.2024
+publisher_website: https://www.cornelsen.de/produkte/9783637024762
+
 ```
 
 ### ISB
