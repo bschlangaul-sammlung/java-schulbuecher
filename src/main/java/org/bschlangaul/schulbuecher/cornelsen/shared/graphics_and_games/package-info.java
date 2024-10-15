@@ -7,7 +7,11 @@
  * </p>
  *
  * <p>
- * Die Klassen dieses Pakets sind in vielen Aufgaben mitgeliefert.
+ * Die Klassen dieses Pakets sind in vielen Aufgaben bzw. Projekten des
+ * Cornelsen-Verlags mitgeliefert. Die Klasse Zelle findet sich nicht in den
+ * Vorlagen des Vorlags. Einige Klassen, Attribute, Konstrukturen und Methoden
+ * mussten auf public gesetzt werden, damit von diesem Paket aus verwendet
+ * werden können.
  * </p>
  *
  * <a href=

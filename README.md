@@ -3,6 +3,16 @@
 Java-Code-Beispiele und Java-Projekte aus verschiedenen Schulbüchern in einem
 großen Java-Paket.
 
+## Veränderungen / Anpassungen
+
+- Der Code wurde neu formatiert, um einen einheitlichen Coding-Style (Einrückung
+  entspricht vier Leerzeichen, öffnende Klammer startet in einer neuen Zeile) zu folgen.
+- Klassennamen, die allschließlich Großbuchstaben verwenden, wurden umbenannt,
+  damit sie der in der Java-Welt etablierten `UpperCamelCase`-Konvention
+  entsprechen.
+- Zusätzliche main-Methoden erlauben das einfache Starten der Projekte in der
+  IDE.
+
 ## Ordner-Struktur / Namensschema der Pakete
 
 `kapitel_01` -> `thema_01` -> `aufgabe_01` -> `teilaufgabe_a`
@@ -47,6 +57,33 @@ author: >-
 
 ### Cornelsen
 
+Viele Java-Projekte des Cornelsen-Verlags verwenden die sogenannte
+`GraphicsAndGames`-API. Die Autoren des Cornelsen-Verlags binden dabei
+`GraphicsAndGames` nicht als JAR-Archiv ein, sondern kopieren alle Klassen von
+`GraphicsAndGames` in die einzelnen Projekte. Es bedarf daher oft eine gewisse
+Einlesezeit, um überhaupt den Code, der zu der entsprechenden Aufgabe gehört, zu
+finden. In diesem Repository sind alle `GraphicsAndGames`-Klassen in des Paket
+`org/bschlangaul/schulbuecher/cornelsen/shared/graphics_and_games` ausgelagert.
+Neben den Klassen `Dreieck`, `Ereignisbehandlung`, `Figur`, `Kreis`, `Rechteck`,
+`Text`, `Turtle` und `Zeichenfenster`, die offiziell in der
+[Javadoc](http://gng4java.informatikschulbuch.de/package-summary.html)-Dokumentation
+aufgelistet sind, sind dem Paket
+`org/bschlangaul/schulbuecher/cornelsen/shared/graphics_and_games` noch weitere
+Klassen (momentan nur `Zelle`) zugeordet, die auch in mehreren Projekten vorkommen.
+
+Um Klassen von `GraphicsAndGames` zu verwenden, kann folgender `import`
+verwendet werden.
+
+```java
+import org.bschlangaul.schulbuecher.cornelsen.shared.graphics_and_games.*;
+```
+
+Vorlagen von `GraphicsAndGames`:
+
+* [9. Jahrgangsstufe](https://informatikschulbuch.de/jahrgangsstufe-9-uebersicht/objektorientierte-modellierung-und-programmierung/)
+* [10. Jahrgangsstufe](https://informatikschulbuch.de/jahrgangsstufe-10/objektorientierte-modellierung-und-programmierungjgst10/)
+* [11. Jahrgangsstufe](https://informatikschulbuch.de/jahrgangsstufe-11/vernetze-strukturen-grapen-kapitel-1-informatik-5/)
+
 ```yml
 folder: cornelsen/informatik-3_2017
 reference_title: Informatik 3
@@ -74,8 +111,6 @@ folder: isb/handreichung_11
 ```yml
 folder: isb/handreichung_12
 ```
-
-
 
 ```yml
 folder: oldenbourg/informatik-oberstufe-1_2009

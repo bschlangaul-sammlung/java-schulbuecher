@@ -12,32 +12,32 @@ public class Kreis
     /**
      * x-Position des Kreismittelpunktes.
      */
-    protected int x;
+    public int x;
 
     /**
      * y-Position des Kreismittelpunktes.
      */
-    protected int y;
+    public int y;
 
     /**
      * Radius des Kreises.
      */
-    protected int radius;
+    public int radius;
 
     /**
      * Farbe des Kreises.
      */
-    protected String farbe;
+    public String farbe;
 
     /**
      * Sichtbarkeit des Kreises.
      */
-    protected boolean sichtbar;
+    public boolean sichtbar;
 
     /**
      * Drehwinkel (mathematisch positiver Drehsinn) des Kreises in Grad.
      */
-    protected int winkel;
+    public int winkel;
 
     /**
      * Referenz auf das Delegate-Objekt.

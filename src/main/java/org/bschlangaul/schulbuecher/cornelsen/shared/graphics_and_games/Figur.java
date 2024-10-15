@@ -7,38 +7,37 @@ package org.bschlangaul.schulbuecher.cornelsen.shared.graphics_and_games;
  *
  * @version 1.0
  */
-@SuppressWarnings("unused")
 public class Figur
 {
     /**
      * x-Position der Figur.
      */
-    private int x;
+    public int x;
 
     /**
      * y-Position der Figur.
      */
-    private int y;
+    public int y;
 
     /**
      * Größe der Figur.
      */
-    private int größe;
+    public int größe;
 
     /**
      * Farbe der Figur.
      */
-    private String farbe;
+    public String farbe;
 
     /**
      * Sichtbarkeit der Figur.
      */
-    private boolean sichtbar;
+    public boolean sichtbar;
 
     /**
      * Drehwinkel (mathemtisch positiver Drehsinn) der Turtle in Grad.
      */
-    private int winkel;
+    public int winkel;
 
     /**
      * Referenz auf das echte Figursymbol.

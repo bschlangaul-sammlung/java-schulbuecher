@@ -12,37 +12,37 @@ public class Dreieck
     /**
      * x-Position der Spitze.
      */
-    protected int x;
+    public int x;
 
     /**
      * y-Position der Spitze.
      */
-    protected int y;
+    public int y;
 
     /**
      * Breite des umgebenden Rechtecks.
      */
-    protected int breite;
+    public int breite;
 
     /**
      * Höhe des umgebenden Rechtecks.
      */
-    protected int höhe;
+    public int höhe;
 
     /**
      * Farbe des Dreiecks.
      */
-    protected String farbe;
+    public String farbe;
 
     /**
      * Sichtbarkeit des Dreiecks.
      */
-    protected boolean sichtbar;
+    public boolean sichtbar;
 
     /**
      * Drehwinkel (mathematisch positiver Drehsinn) des Dreiecks in Grad.
      */
-    protected int winkel;
+    public int winkel;
 
     /**
      * Referenz auf das Delegate-Objekt.

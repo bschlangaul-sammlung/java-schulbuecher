@@ -12,37 +12,37 @@ public class Text
     /**
      * x-Position der linken Seite der Grundlinie.
      */
-    private int x;
+    public int x;
 
     /**
      * y-Position der Grundlinie.
      */
-    private int y;
+    public int y;
 
     /**
      * Farbe des Textes.
      */
-    private String farbe;
+    public String farbe;
 
     /**
      * Sichtbarkeit des Textes.
      */
-    private boolean sichtbar;
+    public boolean sichtbar;
 
     /**
      * Drehwinkel (mathematisch positiver Drehsinn) des Textes in Grad.
      */
-    private int winkel;
+    public int winkel;
 
     /**
      * Größe des Textes in Punkten.
      */
-    private int textgröße;
+    public int textgröße;
 
     /**
      * Referenz auf das Delegate-Objekt.
      */
-    private Zeichenfenster.TextIntern symbol;
+    public Zeichenfenster.TextIntern symbol;
 
     /**
      * Der Konstruktor erzeugt das Delegate-Objekt

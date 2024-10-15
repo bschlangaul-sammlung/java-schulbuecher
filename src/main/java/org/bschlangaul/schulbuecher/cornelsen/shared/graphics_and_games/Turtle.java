@@ -7,43 +7,42 @@ package org.bschlangaul.schulbuecher.cornelsen.shared.graphics_and_games;
  *
  * @version 1.0
  */
-@SuppressWarnings("unused")
 public class Turtle
 {
     /**
      * x-Position der Turtle.
      */
-    private int x;
+    public int x;
 
     /**
      * y-Position der Turtle.
      */
-    private int y;
+    public int y;
 
     /**
      * Größe der Turtle.
      */
-    private int größe;
+    public int größe;
 
     /**
      * Farbe der Turtle.
      */
-    private String farbe;
+    public String farbe;
 
     /**
      * Sichtbarkeit der Turtles.
      */
-    private boolean sichtbar;
+    public boolean sichtbar;
 
     /**
      * Drehwinkel (mathemtisch positiver Drehsinn) der Turtle in Grad.
      */
-    private int winkel;
+    public int winkel;
 
     /**
      * Stiftposition
      */
-    private boolean stiftUnten;
+    public boolean stiftUnten;
 
     /**
      * Referenz auf das echte Turtlesybol.

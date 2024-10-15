@@ -12,37 +12,37 @@ public class Rechteck
     /**
      * x-Position der linken oberen Ecke.
      */
-    protected int x;
+    public int x;
 
     /**
      * y-Position der linken oberen Ecke.
      */
-    protected int y;
+    public int y;
 
     /**
      * Breite des Rechtecks.
      */
-    protected int breite;
+    public int breite;
 
     /**
      * Höhe des Rechtecks.
      */
-    protected int höhe;
+    public int höhe;
 
     /**
      * Farbe des Rechtecks.
      */
-    protected String farbe;
+    public String farbe;
 
     /**
      * Sichtbarkeit des Rechtecks.
      */
-    protected boolean sichtbar;
+    public boolean sichtbar;
 
     /**
      * Drehwinkel (mathematisch positiver Drehsinn) des Rechtecks in Grad.
      */
-    protected int winkel;
+    public int winkel;
 
     /**
      * Referenz auf das Delegate-Objekt.
