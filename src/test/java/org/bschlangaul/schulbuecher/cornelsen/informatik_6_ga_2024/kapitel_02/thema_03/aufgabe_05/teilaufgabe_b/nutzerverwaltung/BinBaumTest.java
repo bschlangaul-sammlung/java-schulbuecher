@@ -27,7 +27,7 @@ public class BinBaumTest
 
     /**
      * Setzt das Testgerüst fuer den Test.
-     *
+     * <p>
      * Wird vor jeder Testfall-Methode aufgerufen.
      */
     @BeforeEach

@@ -21,7 +21,7 @@ abstract class Listenelement
      *
      * @param dNeu übergebenes Datenelement
      *
-     * @return: hinterstes Datenelement
+     * @return hinterstes Datenelement
      */
     abstract Patient EndeGeben(Patient dNeu);
 

@@ -9,7 +9,6 @@ package org.bschlangaul.schulbuecher.cornelsen.informatik_6_ga_2024.kapitel_03.t
  *
  * @version (23.5.24)
  */
-
 abstract class Baumelement
 {
     /**
@@ -65,7 +64,7 @@ abstract class Baumelement
      * Gibt die Tiefe des Knotens an, in dem ein Datenelement mit dem Schlüssel
      * suchSchluessel gespeichert ist.
      *
-     * @param suchSchluessel Schlüssel, nach dem gesucht wird als Zeichenkette
+     * @param suchSchlüssel Schlüssel, nach dem gesucht wird als Zeichenkette
      * @param tiefe dei Teife des aktuellen Knotens
      *
      * @return Tiefe als positive Zahl, bzw. -1 falls der suchSchluessel nicht

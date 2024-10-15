@@ -1,13 +1,14 @@
 package org.bschlangaul.schulbuecher.isb.handreichung_11.kapitel_01.thema_02.baeume.baum5;
 
+import java.text.Collator;
+
 /**
  * Datenelemente mit einer Zeichenkette als Wert.
  *
  * @author Arbeitskreis
+ *
  * @version 1.0
  */
-import java.text.Collator;
-
 class StringDaten implements DatenElement
 {
     /**

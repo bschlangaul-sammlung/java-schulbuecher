@@ -55,7 +55,7 @@ class User
      * @param dVergleich Datenelement mit dem das Objekt verglichen wird.
      *
      * @return true, wenn die beiden Datenelemente gleichen Schlüssel haben.
-     *
+     *     <p>
      *     Hinweis: für den lexikografischen Vergleich wird die Methode
      *     compareTo(String vergleichsZeichenkette) der Klasse String genutzt.
      *     Das Ergebnis ist eine negative ganze Zahl, wenn das ausführende

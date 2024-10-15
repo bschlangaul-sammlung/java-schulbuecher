@@ -1,13 +1,14 @@
 package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_2_2010.kapitel_02.thema_08.aufgabe_04b;
 
+import java.util.Random;
+
 /**
  * Beschreibt den Verbraucher.
  *
  * @author Albert Wiedemann
+ *
  * @version 1.0
  */
-import java.util.Random;
-
 class Verbraucher extends Thread
 {
     /**

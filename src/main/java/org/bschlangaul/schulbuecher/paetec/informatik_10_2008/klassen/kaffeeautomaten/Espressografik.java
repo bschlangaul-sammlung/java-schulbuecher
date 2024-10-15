@@ -104,9 +104,6 @@ public class Espressografik
     /**
      * Die Display-Anzeige wird mit einem Standardwert initialisiert.
      */
-    /**
-     * Die Display-Anzeige wird mit einem Standardwert initialisiert.
-     */
     public Espressografik()
     {
         fenster = new Zeichenfenster(400, 600);

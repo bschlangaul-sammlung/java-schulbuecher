@@ -129,10 +129,9 @@ class PLANABSCHNITT
         }
         g.drawString(beschriftung, xs, ys);
     }
-    /**
+    /*
      * Bestimmt das Trefferrechteck für den Mausklick. Ersetzt durch
      * Trefferpolygon.
-     *
      * @return Rechteck mit Breite 6 um die Linie
      */
     /*

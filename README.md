@@ -12,6 +12,9 @@ großen Java-Paket.
   entsprechen.
 - Zusätzliche main-Methoden erlauben das einfache Starten der Projekte in der
   IDE.
+- UTF-8
+- HTML-Entities -> UTF-8
+- Javadoc-Fehler ausbessern
 
 ## Ordner-Struktur / Namensschema der Pakete
 

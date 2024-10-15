@@ -1,13 +1,14 @@
 package org.bschlangaul.schulbuecher.isb.handreichung_10.konzept_02.supermarkt.supermarkt_14;
 
+import java.util.Random;
+
 /**
  * Kontrolle des Supermarkts.
  *
  * @author Albert Wiedemann
+ *
  * @version 1.0
  */
-import java.util.Random;
-
 class SUPERMARKT implements TAKTKLIENT
 {
     private KASSE[] kassen;

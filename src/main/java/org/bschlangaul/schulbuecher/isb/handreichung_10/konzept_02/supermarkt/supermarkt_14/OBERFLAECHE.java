@@ -1,11 +1,5 @@
 package org.bschlangaul.schulbuecher.isb.handreichung_10.konzept_02.supermarkt.supermarkt_14;
 
-/**
- * Erzeugt die Bedienelemente und verwaltet das Ausgabefenster.
- *
- * @author Albert Wiedemann
- * @version 1.0
- */
 import java.awt.Button;
 import java.awt.Color;
 import java.awt.Frame;
@@ -17,6 +11,13 @@ import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
+/**
+ * Erzeugt die Bedienelemente und verwaltet das Ausgabefenster.
+ *
+ * @author Albert Wiedemann
+ *
+ * @version 1.0
+ */
 class OBERFLAECHE
 {
     /**

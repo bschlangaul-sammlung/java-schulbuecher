@@ -10,8 +10,6 @@ import java.util.ArrayList;
 /**
  * Verwaltet die Verbindung des Programms zu Datenbank.
  *
- * @author
- *
  * @version 1.0
  */
 class DATENBANKVERBINDUNG implements STATUSERZEUGER

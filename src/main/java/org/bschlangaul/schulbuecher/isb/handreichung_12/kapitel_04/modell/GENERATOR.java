@@ -1,13 +1,14 @@
 package org.bschlangaul.schulbuecher.isb.handreichung_12.kapitel_04.modell;
 
+import java.util.Random;
+
 /**
  * Generiert zufällige Bezeichner vom Typ String gegebener Länge.
  *
  * @author ISB-Arbeitskreis, Umsetzungshilfen Informatik 12
+ *
  * @version 1.0
  */
-import java.util.Random;
-
 public class GENERATOR
 {
     /* Der Zufallsgenerator */

@@ -1,11 +1,5 @@
 package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapitel_01.thema_04.aufgabe_03.teilaufgabe_b.supermarkt;
 
-/**
- * Erzeugt die Bedienelemente und verwaltet das Ausgabefenster.
- *
- * @author Klaus Reinold und Barbara Leidorn
- * @version 1.0
- */
 import java.awt.Button;
 import java.awt.Color;
 import java.awt.Frame;
@@ -17,6 +11,13 @@ import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
+/**
+ * Erzeugt die Bedienelemente und verwaltet das Ausgabefenster.
+ *
+ * @author Klaus Reinold und Barbara Leidorn
+ *
+ * @version 1.0
+ */
 class OBERFLAECHE
 {
     /**

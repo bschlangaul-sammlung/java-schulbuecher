@@ -1,13 +1,14 @@
 package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapitel_01.thema_03.aufgabe_12.snake;
 
+import java.util.Random;
+
 /**
  * Klasse zur Verwaltung der Hindernisse
  *
  * @author Klaus Reinold
+ *
  * @version 1.0
  */
-import java.util.Random;
-
 class HINDERNIS
 {
     /**

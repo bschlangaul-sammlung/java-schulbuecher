@@ -1,13 +1,14 @@
 package org.bschlangaul.schulbuecher.isb.handreichung_10.konzept_02.supermarkt.supermarkt_13;
 
+import java.util.Random;
+
 /**
  * Verwaltet einen Kunden, der sich zufllig anstellt.
  *
  * @author Albert Wiedemann
+ *
  * @version 1.0
  */
-import java.util.Random;
-
 class KUNDEZUFALL extends KUNDE
 {
     private Random zufall;

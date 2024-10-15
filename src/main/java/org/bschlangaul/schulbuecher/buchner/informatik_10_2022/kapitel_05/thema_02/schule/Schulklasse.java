@@ -29,20 +29,19 @@ public class Schulklasse
         schuelerliste[5] = new Schueler("Ali", 16);
         schuelerliste[6] = new Schueler("Damian", 16);
         schuelerliste[7] = new Schueler("Luan", 16);
-        /**
-         * Bearbeitung Aufgabe A3a)
-         */
+
+        // Bearbeitung Aufgabe A3a)
+
         Schueler fritz = new Schueler("Fritz Feld");
         schuelerliste[6] = fritz;
         Schueler anna = new Schueler("Anna Array");
         schuelerliste[8] = anna;
-        /**
-         * Bearbeitung Aufgabe A3b)
-         */
+
+        // Bearbeitung Aufgabe A3b)
+
         System.out.println(schuelerliste[7].nenneName());
-        /**
-         * Bearbeitung Aufgabe A3c)
-         */
+        // Bearbeitung Aufgabe A3c)
+
         System.out.println(schuelerliste.length);
     }
 }

@@ -8,8 +8,6 @@ import java.sql.Statement;
 /**
  * Verwaltet die Verbindung des Programms zu Datenbank.
  *
- * @author
- *
  * @version 1.0
  */
 class DATENBANKVERBINDUNG

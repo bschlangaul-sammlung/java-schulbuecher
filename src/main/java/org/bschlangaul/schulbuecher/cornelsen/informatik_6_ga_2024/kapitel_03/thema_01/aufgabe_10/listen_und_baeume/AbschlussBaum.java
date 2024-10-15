@@ -81,8 +81,8 @@ class AbschlussBaum extends Baumelement
     }
 
     /**
-     * Gibt die Tiefe des Knotens an, in dem ein Datenelement mit dem
-     * Schl&uumlssel suchSchluessel gespeichert ist.
+     * Gibt die Tiefe des Knotens an, in dem ein Datenelement mit dem Schlüssel
+     * suchSchluessel gespeichert ist.
      *
      * @param suchSchlüssel Schlüssel, nach dem gesucht wird als Zeichenkette
      *

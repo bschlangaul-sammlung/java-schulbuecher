@@ -1,7 +1,7 @@
 
 /**
  * Seite 143
- *
+ * <p>
  * Krümel und Monster (Teil 5) - Mehrfachauswahl
  * <ol>
  * <li>a Überschreibe in der Klasse MONSTER die Methode

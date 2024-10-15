@@ -67,7 +67,7 @@ class Woerterbucheintrag
     /**
      * Vergleicht zwei Datenelemente bezüglich der Ordnungsrelation.
      *
-     * @param vergleichselement Datenelement mit dem das Objekt verglichen wird.
+     * @param dvergleich Datenelement mit dem das Objekt verglichen wird.
      *
      * @return true, wenn das aktuelle Element einen größeren Schlüssel hat, als
      *     das angegebene Vergleichselement.
@@ -88,7 +88,7 @@ class Woerterbucheintrag
      * Vergleicht zwei Schlüssel, die als Zeichenketten vorliegen, auf
      * Gleichheit.
      *
-     * @param vergleichsSchluessel Schlüssel mit dem der Schlüssel des Objekt
+     * @param vergleichsSchlüssel Schlüssel mit dem der Schlüssel des Objekt
      *     verglichen wird.
      *
      * @return true, wenn die beiden Schlüssel gleich sind.
@@ -102,7 +102,7 @@ class Woerterbucheintrag
      * Vergleicht zwei Schlüssel, die als Zeichenketten vorliegen, bezüglich der
      * Ordnungsrelation.
      *
-     * @param vergleichsSchluessel Schlüssel mit dem der Schlüssel des Objekt
+     * @param vergleichsSchlüssel Schlüssel mit dem der Schlüssel des Objekt
      *     verglichen wird.
      *
      * @return true, wenn das aktuelle Element einen größeren Schlüssel hat, als
@@ -124,7 +124,7 @@ class Woerterbucheintrag
      * Vergleicht zwei Schlüssel, die als Zeichenketten vorliegen, bezüglich der
      * Ordnungsrelation.
      *
-     * @param vergleichsSchluessel Schlüssel mit dem der Schlüssel des Objekt
+     * @param vergleichsSchlüssel Schlüssel mit dem der Schlüssel des Objekt
      *     verglichen wird.
      *
      * @return true, wenn das aktuelle Element einen kleineren Schlüssel hat,

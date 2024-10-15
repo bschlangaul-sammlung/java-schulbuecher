@@ -1,13 +1,12 @@
 package org.bschlangaul.schulbuecher.isb.handreichung_10.konzept_02.supermarkt.supermarkt_08;
 
-/**
- * Write a description of class WARTESCHLANGE here.
- *
- * @author Albert Wiedemann
- * @version 1.0
- */
 import java.util.ArrayList;
 
+/**
+ * @author Albert Wiedemann
+ *
+ * @version 1.0
+ */
 class WARTESCHLANGE
 {
     ArrayList<KUNDE> kunden;

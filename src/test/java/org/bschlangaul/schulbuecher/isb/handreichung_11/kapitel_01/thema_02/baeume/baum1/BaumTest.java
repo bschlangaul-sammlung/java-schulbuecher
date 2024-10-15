@@ -26,7 +26,7 @@ public class BaumTest
 
     /**
      * Sets up the test fixture.
-     *
+     * <p>
      * Called before every test case method.
      */
     protected void setUp()

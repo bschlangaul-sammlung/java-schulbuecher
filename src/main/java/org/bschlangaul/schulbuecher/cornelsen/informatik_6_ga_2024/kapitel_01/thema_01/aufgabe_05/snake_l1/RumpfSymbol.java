@@ -1,18 +1,18 @@
 package org.bschlangaul.schulbuecher.cornelsen.informatik_6_ga_2024.kapitel_01.thema_01.aufgabe_05.snake_l1;
 
-/**
- * Das Symbol des Schlangenrumpfs.
- * Das Fenster wird bei Bedarf generiert.
- *
- * @author Albert Wiedemann
- * @version 1.0
- */
 import java.awt.Color;
 import java.awt.Graphics;
 
 import javax.swing.JComponent;
 import javax.swing.JFrame;
 
+/**
+ * Das Symbol des Schlangenrumpfs. Das Fenster wird bei Bedarf generiert.
+ *
+ * @author Albert Wiedemann
+ *
+ * @version 1.0
+ */
 class RumpfSymbol
 {
     /**

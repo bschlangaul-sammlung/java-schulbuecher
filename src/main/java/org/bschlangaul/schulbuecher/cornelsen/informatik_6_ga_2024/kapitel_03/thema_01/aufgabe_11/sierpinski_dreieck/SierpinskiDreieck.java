@@ -29,15 +29,11 @@ class SierpinskiDreieck
     /**
      * Ermittelt den Rekursionsschritt
      *
-     * @x x-Position der Dreiecksspitze
-     *
-     * @y y-Position der Dreiecksspitze
-     *
-     * @breite die Breite des Umgebungsdreiecks
-     *
-     * @höhe die Höhe des Umgebungsdreiecks
-     *
-     * @tiefe restliche Rekursionstiefe
+     * @param x x-Position der Dreiecksspitze
+     * @param y y-Position der Dreiecksspitze
+     * @param breite die Breite des Umgebungsdreiecks
+     * @param höhe die Höhe des Umgebungsdreiecks
+     * @param tiefe restliche Rekursionstiefe
      */
     void SchrittAusführen(int x, int y, int breite, int höhe, int tiefe)
     {

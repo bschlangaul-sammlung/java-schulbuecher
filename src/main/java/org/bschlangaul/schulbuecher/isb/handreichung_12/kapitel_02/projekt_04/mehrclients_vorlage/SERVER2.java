@@ -74,12 +74,12 @@ public class SERVER2
             clientBotschaft = vomClient.readLine();
             serverAntwort = serververhalten.HoleAntwort(clientBotschaft);
             zumClient.println(serverAntwort);
-            /**
-             * Quelltextergänzung: falls die serverAntwort mit dem Ausdruck
-             * "Server[stopClient]:" beginnt, soll die Verbindung zum Client
-             * beendet und wieder auf eine neue eingehende Verbindung gewartet
-             * werden.
-             */
+
+            // Quelltextergänzung: falls die serverAntwort mit dem Ausdruck
+            // "Server[stopClient]:" beginnt, soll die Verbindung zum Client
+            // beendet und wieder auf eine neue eingehende Verbindung gewartet
+            // werden.
+
         }
         while (!serverAntwort.startsWith("Server[stopServer]:"));
         ClientVerbindungBeenden();

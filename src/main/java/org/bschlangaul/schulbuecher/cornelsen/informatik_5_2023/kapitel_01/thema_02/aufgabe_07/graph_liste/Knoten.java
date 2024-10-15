@@ -22,7 +22,7 @@ class Knoten
      * Das Darstellungssymbol des Knotens
      */
     private KnotenSymbol symbol;
-    /**
+    /*
      * Die Adjazenzliste
      */
     // Zu ergänzen

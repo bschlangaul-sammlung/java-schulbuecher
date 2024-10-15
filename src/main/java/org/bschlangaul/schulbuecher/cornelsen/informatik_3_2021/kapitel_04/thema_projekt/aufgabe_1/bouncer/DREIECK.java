@@ -1,18 +1,15 @@
 package org.bschlangaul.schulbuecher.cornelsen.informatik_3_2021.kapitel_04.thema_projekt.aufgabe_1.bouncer;
 
-/**
- * @author mike_gans@yahoo.de and michael andonie
- *
- * @Version 4.0 (2019-08-06)
- *
- * @version 4.0 Umstieg auf EA 4
- *
- */
 import ea.edu.Dreieck;
 import ea.edu.EduActor;
 
 /**
  * Diese Klasse stellt ein einfaches Dreieck dar.
+ *
+ * @author mike_gans@yahoo.de and michael andonie
+ *
+ * @version 4.0 (2019-08-06)
+ * @version 4.0 Umstieg auf EA 4
  */
 public class DREIECK extends Dreieck
 {

@@ -1,13 +1,14 @@
 package org.bschlangaul.schulbuecher.isb.handreichung_11.kapitel_01.thema_02.baeume.woerterbuch;
 
+import java.text.Collator;
+
 /**
  * Datenelemente für ein Wörterbuch.
  *
  * @author Arbeitskreis
+ *
  * @version 1.0
  */
-import java.text.Collator;
-
 class WORT implements DATENELEMENT
 {
     /**

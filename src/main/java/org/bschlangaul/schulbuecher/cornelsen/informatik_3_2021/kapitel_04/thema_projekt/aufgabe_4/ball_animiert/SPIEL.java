@@ -153,39 +153,6 @@ public class SPIEL extends Spiel implements TastenReagierbar, Ticker,
     {
         return ea.Random.nextInteger(bis - von) + von;
     }
-    /**
-     * Wartet um die Angegebene Anzahl an Millisekunden BLOCKIEREND bis zur
-     * Ausfuehrung des naechsten Befehls.
-     * <p>
-     * <b> !!! V O R S I C H T !!! Nur verwenden bei reiner Grafik ohne
-     * Engine-Alpha Automatismen !!! <br />
-     *
-     * Geht NICHT mit tick(), tasteReagieren(...), mausReagieren(...), ... !!!
-     * </b>
-     *
-     * @param sekunden Die zu wartende Zeit in Sekunden
-     */
-    // public static void warte( double sekunden )
-    // {
-    // try{ Thread.sleep( (int)(sekunden*1000) ); }
-    // catch ( InterruptedException e ) { e.printStackTrace(); }
-    // }
-    // ===== T i c k e r a n p a s s e n
-    // ===========================================================
-    /**
-     * Setzt das Ticker-Intervall.
-     *
-     * @param sekunden Die Zeit in Sekunden zwischen zwei Aufrufen der
-     *     tick()-Methode.
-     *
-     * @see SPIEL#starteTickerNeu(double)
-     *
-     * @see SPIEL#tick()
-     */
-    // public void setzeTickerintervall( double sekunden )
-    // {
-    // super.registriereTicker( sekunden , this );
-    // }
 
     /**
      * Stoppt die Ticker-Funktion. Die tick()-Methode wird nicht weiter

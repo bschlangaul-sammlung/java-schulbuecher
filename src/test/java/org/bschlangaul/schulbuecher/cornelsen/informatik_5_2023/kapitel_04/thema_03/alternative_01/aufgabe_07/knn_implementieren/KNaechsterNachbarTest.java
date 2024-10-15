@@ -26,7 +26,7 @@ public class KNaechsterNachbarTest
 
     /**
      * Setzt das Testgerüst fuer den Test.
-     *
+     * <p>
      * Wird vor jeder Testfall-Methode aufgerufen.
      */
     @BeforeEach
@@ -38,7 +38,7 @@ public class KNaechsterNachbarTest
 
     /**
      * Gibt das Testgerüst wieder frei.
-     *
+     * <p>
      * Wird nach jeder Testfall-Methode aufgerufen.
      */
     @AfterEach

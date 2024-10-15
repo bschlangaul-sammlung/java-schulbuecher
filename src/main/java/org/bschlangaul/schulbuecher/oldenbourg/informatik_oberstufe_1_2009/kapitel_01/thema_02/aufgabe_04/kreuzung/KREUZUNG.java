@@ -1,17 +1,19 @@
 package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapitel_01.thema_02.aufgabe_04.kreuzung;
 
+import java.util.Random;
+
 /**
- * Die Klasse KREUZUNG beschreibt eine Kreuzung, die aus vier Kfz- und acht Fussgängerampeln
- * besteht. Alle Ampeln sind um den Koordinatenursprung positioniert. Die Lichtsignale können
- * verschiedene Phasen durchlaufen, wobei mit der Grünphase in Ost/West Richtung und gleichzeitig
- * der Rotphase in Nord/Süd Richtung begonnen wird.
+ * Die Klasse KREUZUNG beschreibt eine Kreuzung, die aus vier Kfz- und acht
+ * Fussgängerampeln besteht. Alle Ampeln sind um den Koordinatenursprung
+ * positioniert. Die Lichtsignale können verschiedene Phasen durchlaufen, wobei
+ * mit der Grünphase in Ost/West Richtung und gleichzeitig der Rotphase in
+ * Nord/Süd Richtung begonnen wird.
  *
  *
  * @author Peter Cody
+ *
  * @version 1.0
  */
-import java.util.Random;
-
 class KREUZUNG implements TAKTKLIENT
 {
     /**

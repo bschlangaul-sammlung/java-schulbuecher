@@ -35,7 +35,7 @@ public class BinBaumTest
 
     /**
      * Setzt das Testgerüst fuer den Test.
-     *
+     * <p>
      * Wird vor jeder Testfall-Methode aufgerufen.
      */
     @BeforeEach
@@ -56,7 +56,7 @@ public class BinBaumTest
 
     /**
      * Gibt das Testgerüst wieder frei.
-     *
+     * <p>
      * Wird nach jeder Testfall-Methode aufgerufen.
      */
     @AfterEach

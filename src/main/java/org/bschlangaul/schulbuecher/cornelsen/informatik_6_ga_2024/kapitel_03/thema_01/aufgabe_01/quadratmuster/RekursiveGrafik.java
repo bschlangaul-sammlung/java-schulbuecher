@@ -127,7 +127,6 @@ class RekursiveGrafik
      * Zeichnet eine Folge immer kleinerer Quadratkreise
      *
      * @param anzahlQuadrate Anzahl der Quadrate
-     * @param quadratNummer Nummer des aktuellen Quadrats
      * @param radius der Radius des Kreises mit den Quadraten
      */
     void QuadratkreiseZeichnen(int anzahlQuadrate, int radius)
