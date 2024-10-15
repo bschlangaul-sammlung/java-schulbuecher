@@ -12,6 +12,9 @@ doc:
 
 docs: doc
 
+docs_open:
+	xdg-open target/reports/apidocs/index.html
+
 build:
 	mvn clean
 	mvn compile
