@@ -152,7 +152,7 @@ publisher_website: https://www.cornelsen.de/produkte/9783637024762
 
 ```
 
-### `isb` (Staatsinstitut für Schulqualität und Bildungsforschung)#
+### `isb` (Staatsinstitut für Schulqualität und Bildungsforschung)
 
 #### `isb/handreichung_10_2008`
 
@@ -244,6 +244,8 @@ approval_number: 61/10-G
 approval_date: 06.07.2010
 ```
 
+### `paetec` (Duden Paetec)
+
 #### `paetec/informatik_10_2008`
 
 ```yml
@@ -281,8 +283,6 @@ mvn install:install-file \
 
 # Formatierung
 
-eclipse-formatter.xml
-
 ```
-mvn formatter:format
+mvn package
 ```
