@@ -5,8 +5,6 @@ package org.bschlangaul.schulbuecher.isb.handreichung_11.kapitel_02.softwaretech
  * nur genau ein Konto, "kontoId" wird daher nicht genutzt. Abprüfungen wegen
  * überziehung werden nicht gemacht.
  *
- * @author
- *
  * @version 1.0
  */
 class KONTO

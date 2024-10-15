@@ -34,8 +34,6 @@ public class Kennzeichen_KI
     /**
      * Methode OrtZuKennzeichenAusgeben gibt den Ort zum eingegebenen
      * Kennzeichen aus.
-     *
-     * @param kennzeichen
      */
     void OrtZuKennzeichenAusgeben(String kennzeichen)
     {

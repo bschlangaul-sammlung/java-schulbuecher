@@ -5,8 +5,6 @@ import java.util.Random;
 /**
  * Der Börsenplatz.
  *
- * @author
- *
  * @version 1.0
  */
 class BOERSE implements STATUSERZEUGER

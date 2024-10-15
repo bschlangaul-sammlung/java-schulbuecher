@@ -88,8 +88,6 @@ class CLIENTPROZESS extends Thread
      * wird das Beendensignal an den Client gesendet! der Thread wird in diesem
      * Fall nicht vom Server gestartet und braucht deshalb auch nicht beendet
      * werden.
-     *
-     * @param startbotschaft
      */
     public void ClientVerbindungStarten(String startbotschaft)
             throws IOException

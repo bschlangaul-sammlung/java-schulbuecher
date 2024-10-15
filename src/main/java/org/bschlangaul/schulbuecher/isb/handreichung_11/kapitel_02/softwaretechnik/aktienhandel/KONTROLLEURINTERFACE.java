@@ -3,8 +3,6 @@ package org.bschlangaul.schulbuecher.isb.handreichung_11.kapitel_02.softwaretech
 /**
  * Beschreibt die für die Oberfläche nötigen Methoden des Kontrolleurs.
  *
- * @author
- *
  * @version 1.0
  */
 interface KONTROLLEURINTERFACE

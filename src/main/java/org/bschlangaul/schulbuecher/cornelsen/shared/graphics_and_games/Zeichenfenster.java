@@ -1636,15 +1636,6 @@ public class Zeichenfenster
         }
 
         /**
-         * Testet, ob der angegebene Punkt innerhalb der Figur ist.
-         *
-         * @param x x-Koordinate des zu testenden Punktes
-         * @param y y-Koordinate des zu testenden Punktes
-         *
-         * @return wahr, wenn der Punkt innerhalb der Figur ist
-         */
-
-        /**
          * Testet, ob die Turtle eine (sichtbare) Figur berührt.
          *
          * @return true, wenn die Turtlekoordinaten innerhalb einer Grafikfigur

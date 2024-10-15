@@ -129,17 +129,14 @@ public class Warteschlange<Typ>
         return speicher.toString();
     }
 }
-/**
+/*
  * Das haben wir auch ausprobiert. Aber bei dieser Alternative kann man im
  * Objektinspektor von BlueJ Aenderungen nur dann beobachten, wenn man das
  * entsprechende Fenster immer wieder neu aufmacht. Deshalb haben wir uns gegen
  * diese Moeglichkeit entschieden. Allerdings hat man den Nachteil der
  * verwirrenden null-Referenzen hier nicht (siehe Kommentar zur momentanen
- * Implementation).
- * <p>
- * private String[] einfacheRepraesentation;
- * <p>
- * private void einfacheRepraesentationAktualisieren() { einfacheRepraesentation
- * = new String[speicher.size()]; int i = 0; for (Typ element : speicher) {
+ * Implementation). <p> private String[] einfacheRepraesentation; <p> private
+ * void einfacheRepraesentationAktualisieren() { einfacheRepraesentation = new
+ * String[speicher.size()]; int i = 0; for (Typ element : speicher) {
  * einfacheRepraesentation[i] = element.toString(); i++; } }
  */

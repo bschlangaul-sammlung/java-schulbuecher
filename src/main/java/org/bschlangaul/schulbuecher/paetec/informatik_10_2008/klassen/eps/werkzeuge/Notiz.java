@@ -12,8 +12,6 @@ import javax.swing.JOptionPane;
  * dann "geht es weiter im Programmablauf".
  *
  * @author Ute Heuer
- *
- * @version
  */
 public class Notiz
 {

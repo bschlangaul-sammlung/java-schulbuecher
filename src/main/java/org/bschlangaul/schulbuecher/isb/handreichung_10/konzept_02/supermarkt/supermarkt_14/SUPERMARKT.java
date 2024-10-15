@@ -86,7 +86,7 @@ class SUPERMARKT implements TAKTKLIENT
     }
 
     /**
-     *ffnet die angegebene Kasse.
+     * Öffnet die angegebene Kasse.
      *
      * @param nr Nummer der zu ffnenden Kasse.
      */
@@ -99,7 +99,7 @@ class SUPERMARKT implements TAKTKLIENT
     }
 
     /**
-     * Schlie§t die angegebene Kasse nach Bedienung der Restschlange.
+     * Schließt die angegebene Kasse nach Bedienung der Restschlange.
      *
      * @param nr Nummer der zu schlie§enden Kasse.
      */

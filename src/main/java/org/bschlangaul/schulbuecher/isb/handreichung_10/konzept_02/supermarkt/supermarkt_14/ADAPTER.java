@@ -1,7 +1,7 @@
 package org.bschlangaul.schulbuecher.isb.handreichung_10.konzept_02.supermarkt.supermarkt_14;
 
 /**
- * Gibt die Botschaften der Oberflche an den Supermarkt weiter
+ * Gibt die Botschaften der Oberfläche an den Supermarkt weiter
  *
  * @author Albert Wiedemann
  *
@@ -23,7 +23,7 @@ class ADAPTER
     }
 
     /**
-     *ffnet die angegebene Kasse.
+     * Öffnet die angegebene Kasse.
      *
      * @param nr Nummer der zu ffnenden Kasse.
      */
@@ -33,7 +33,7 @@ class ADAPTER
     }
 
     /**
-     * Schlie§t die angegebene Kasse nach Bedienung der Restschlange.
+     * Schließt die angegebene Kasse nach Bedienung der Restschlange.
      *
      * @param nr Nummer der zu schlie§enden Kasse.
      */

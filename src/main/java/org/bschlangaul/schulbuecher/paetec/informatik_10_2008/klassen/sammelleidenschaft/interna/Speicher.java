@@ -7,8 +7,6 @@ import java.util.Iterator;
  * Speicher
  *
  * @author Heuer
- *
- * @version
  */
 public class Speicher<T> implements Iterable<T>
 {
