@@ -16,8 +16,6 @@ import java.awt.event.WindowEvent;
 
 /**
  * @version 1.0 vom 08.01.2009
- *
- * @author
  */
 class FENSTER extends Frame
 {

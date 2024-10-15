@@ -6,8 +6,6 @@ import java.util.ArrayList;
  * Berechnet die kürzeste Entfernung von Start nach Ziel. Verwendet den
  * Algorithmus nach E. Dijkstra
  *
- * @author
- *
  * @version 1.0
  */
 class DIJKSTRA implements STATUSERZEUGER

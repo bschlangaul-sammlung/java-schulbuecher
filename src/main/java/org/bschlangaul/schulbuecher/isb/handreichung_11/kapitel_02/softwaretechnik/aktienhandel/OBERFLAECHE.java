@@ -24,8 +24,6 @@ import javax.swing.border.TitledBorder;
 /**
  * Verwaltet die graphische Bedienoberfläche.
  *
- * @author
- *
  * @version 1.0
  */
 class OBERFLAECHE implements OBERFLAECHENINTERFACE, STATUSBEOBACHTER

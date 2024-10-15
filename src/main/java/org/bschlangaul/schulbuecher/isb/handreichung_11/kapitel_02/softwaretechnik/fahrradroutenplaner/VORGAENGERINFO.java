@@ -3,8 +3,6 @@ package org.bschlangaul.schulbuecher.isb.handreichung_11.kapitel_02.softwaretech
 /**
  * Verwaltet die Vorgängerinformation für dem Dijkstra-Algorithmus.
  *
- * @author
- *
  * @version 1.0
  */
 class VORGAENGERINFO implements DATENELEMENT

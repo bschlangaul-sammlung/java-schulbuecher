@@ -19,8 +19,6 @@ import javax.swing.JScrollPane;
 /**
  * Beschreibt die Bedienoberfläche.
  *
- * @author
- *
  * @version 1.0
  */
 class OBERFLAECHE implements STATUSBEOBACHTER

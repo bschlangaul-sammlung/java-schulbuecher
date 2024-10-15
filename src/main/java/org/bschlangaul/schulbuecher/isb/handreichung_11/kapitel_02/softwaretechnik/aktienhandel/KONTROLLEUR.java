@@ -5,8 +5,6 @@ import java.util.ArrayList;
 /**
  * Zusändig für die Weitergabe der Ereignisse.
  *
- * @author
- *
  * @version 1.0
  */
 class KONTROLLEUR implements KONTROLLEURINTERFACE

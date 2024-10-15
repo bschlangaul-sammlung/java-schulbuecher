@@ -8,8 +8,6 @@ import javax.swing.JComponent;
 /**
  * Klasse zur grafischen Ausgabe der Landkarte mit Orten und kürzestem Weg
  *
- * @author
- *
  * @version 1.0
  */
 class KARTE extends JComponent implements STATUSBEOBACHTER

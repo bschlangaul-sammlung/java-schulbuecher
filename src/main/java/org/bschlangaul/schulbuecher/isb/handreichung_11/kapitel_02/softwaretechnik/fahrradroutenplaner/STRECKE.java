@@ -3,8 +3,6 @@ package org.bschlangaul.schulbuecher.isb.handreichung_11.kapitel_02.softwaretech
 /**
  * Beschreibt die Strecke zwischen zwei Orten.
  *
- * @author
- *
  * @version 1.0
  */
 class STRECKE implements DATENELEMENT

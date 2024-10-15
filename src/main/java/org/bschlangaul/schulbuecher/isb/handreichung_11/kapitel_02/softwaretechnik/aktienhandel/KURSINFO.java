@@ -3,8 +3,6 @@ package org.bschlangaul.schulbuecher.isb.handreichung_11.kapitel_02.softwaretech
 /**
  * Verwaltet den Kurs einer Aktie mit dem Datum.
  *
- * @author
- *
  * @version 1.0
  */
 class KURSINFO

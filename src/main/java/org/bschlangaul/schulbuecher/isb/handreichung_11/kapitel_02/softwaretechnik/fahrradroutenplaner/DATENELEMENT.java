@@ -3,8 +3,6 @@ package org.bschlangaul.schulbuecher.isb.handreichung_11.kapitel_02.softwaretech
 /**
  * Beschreibt die Eigenschaften eines in der Liste verwalteten Datenelements.
  *
- * @author
- *
  * @version 1.0
  */
 interface DATENELEMENT

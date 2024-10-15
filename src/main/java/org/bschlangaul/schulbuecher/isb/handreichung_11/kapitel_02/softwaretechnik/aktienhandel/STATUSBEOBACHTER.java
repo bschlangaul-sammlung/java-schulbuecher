@@ -3,8 +3,6 @@ package org.bschlangaul.schulbuecher.isb.handreichung_11.kapitel_02.softwaretech
 /**
  * Das Interface für einen Beobachter von Statusmeldungen.
  *
- * @author
- *
  * @version 1.0
  */
 interface STATUSBEOBACHTER

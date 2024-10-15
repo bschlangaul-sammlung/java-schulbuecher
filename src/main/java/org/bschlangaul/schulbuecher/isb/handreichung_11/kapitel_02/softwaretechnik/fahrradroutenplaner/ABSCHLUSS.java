@@ -3,8 +3,6 @@ package org.bschlangaul.schulbuecher.isb.handreichung_11.kapitel_02.softwaretech
 /**
  * Abschlussknoten einer Liste von Datenelementen.
  *
- * @author
- *
  * @version 1.0
  */
 class ABSCHLUSS extends LISTENELEMENT

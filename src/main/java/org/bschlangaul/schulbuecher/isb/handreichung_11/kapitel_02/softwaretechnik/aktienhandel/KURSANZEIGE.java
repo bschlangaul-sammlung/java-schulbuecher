@@ -9,8 +9,6 @@ import javax.swing.JFrame;
 /**
  * Fenster zur Anzeige eines Aktienkurses.
  *
- * @author
- *
  * @version 1.0
  */
 class KURSANZEIGE

@@ -20,8 +20,6 @@ import java.awt.event.WindowEvent;
  * Fenster zur Darstellung des Spiels
  *
  * @version 1.0 vom 17.01.2009
- *
- * @author
  */
 class FENSTER extends Frame
 {

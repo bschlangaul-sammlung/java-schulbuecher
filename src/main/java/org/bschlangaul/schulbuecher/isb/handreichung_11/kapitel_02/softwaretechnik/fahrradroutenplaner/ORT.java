@@ -3,8 +3,6 @@ package org.bschlangaul.schulbuecher.isb.handreichung_11.kapitel_02.softwaretech
 /**
  * Verwaltet die Information für einen Ort.
  *
- * @author
- *
  * @version 1.0
  */
 class ORT implements DATENELEMENT
