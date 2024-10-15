@@ -152,22 +152,75 @@ publisher_website: https://www.cornelsen.de/produkte/9783637024762
 
 ```
 
-### ISB
+### `isb` (Staatsinstitut für Schulqualität und Bildungsforschung)#
+
+#### `isb/handreichung_10_2008`
 
 ```yml
-folder: isb/handreichung_10
+reference_title: Handreichung Informatik 10
+reference_subtitle: Informatik am Naturwissenschaftlich-technologischen Gymnasium
+  Jahrgangsstufe 10
+author: Elke Frey, Christian Heidrich, Christian Scheungrab, Matthias Spohrer, Albert Wiedemann
+year: 2008
+publisher: >-
+  Staatsinstitut für Schulqualität und Bildungsforschung München (ISB)
 ```
 
-```yml
-folder: isb/handreichung_11
-```
+#### `isb/handreichung_11_2009`
 
 ```yml
-folder: isb/handreichung_12
+reference_title: Handreichung Informatik 11
+reference_subtitle: Informatik am Naturwissenschaftlich-technologischen Gymnasium
+  Jahrgangsstufe 11
+author: Dr. Petra Schwaiger, Dr. Andrea Bierschneider-Jacobs, Ulrich Freiberger, Albert Wiedemann, Stefan Winter
+year: 2009
+publisher: >-
+  Staatsinstitut für Schulqualität und Bildungsforschung München (ISB)
+
 ```
 
+#### `isb/handreichung_12_2010`
+
 ```yml
-folder: oldenbourg/informatik-oberstufe-1_2009
+reference_title: Handreichung Informatik 12
+reference_subtitle:  >-
+  Informatik am Naturwissenschaftlich-technologischen Gymnasium
+  Jahrgangsstufe 12
+publisher: >-
+  Staatsinstitut für Schulqualität und Bildungsforschung München (ISB)
+year: 2010
+author: >-
+  Dr. Petra Schwaiger, Dr. Siglinde Voß, Andreas Wagner, Albert
+  Wiedemann, Stefan Winter
+```
+
+### `klett`
+
+#### `klett/informatik_2_2021`
+
+```yml
+reference_title: Informatik 2
+reference_subtitle: >-
+  Tabellenkalkulationssysteme, Datenbanken, Objektorientiere
+  Programmierung, Datenschutz |
+  Ausgabe Bayern ab 2018 |
+  Klassen 9/10
+author: >-
+  Prof. Dr. Peter Hubwieser, Alexander Ruf, Dr. Matthias Spohrer, Dr.
+  Siglinde Voß, Ferdinand Winhard
+release_date: 2021
+isbn: 978-3-12-731141-9
+publisher: Klett
+publisher_website: https://www.klett.de/produkt/isbn/978-3-12-731141-9
+approval_number: 170/21-G+
+approval_date: 29.06.2021
+```
+
+### `oldenbourg`
+
+#### `oldenbourg/informatik_oberstufe_1_2009`
+
+```yml
 reference_title: Informatik Oberstufe 1
 reference_subtitle: Datenstrukturen und Softwareentwicklung
 publisher: Oldenbourg
@@ -178,8 +231,9 @@ approval_number: 83/09-G
 approval_date: 02.07.2009
 ```
 
+#### `oldenbourg/informatik_oberstufe_2_2010`
+
 ```yml
-folder: oldenbourg/informatik-oberstufe-2_2010
 reference_title: Informatik Oberstufe 2
 reference_subtitle: Maschinenkommunikation, Theoretische Informatik
 publisher: Oldenbourg
@@ -190,8 +244,15 @@ approval_number: 61/10-G
 approval_date: 06.07.2010
 ```
 
+#### `paetec/informatik_10_2008`
+
 ```yml
-folder: paetec/informatik_10_2008
+reference_title: Informatik 10
+reference_subtitle: Gymnasium Bayern - 10. Jahrgangsstufe
+author:  Matthias Ehmann, Frank Fiedler, Franz Xaver Forman, Manuel Friedrich, Ute Heuer, Susanne Ritzer
+isbn: 978-3-835-56002-4
+year: 2008
+publisher: Duden Paetec
 ```
 
 ## Abhängigkeiten

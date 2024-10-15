@@ -1,8 +1,0 @@
-package org.bschlangaul.schulbuecher.isb.handreichung_11.kapitel_03.anwendungsorientierte_aufgaben.it_kompetent.verwaltung_der_kundendaten;
-
-abstract class DATENELEMENT
-{
-    abstract void Ausgeben();
-
-    abstract int Vergleichen(DATENELEMENT vergleichsObjekt);
-}
