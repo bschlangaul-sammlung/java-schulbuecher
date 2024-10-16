@@ -262,6 +262,26 @@ year: 2008
 publisher: Duden Paetec
 ```
 
+## `package-info.java`
+
+### `kapitel_xx`
+
+```java
+/**
+ * Kapitel 1 <em>Die rekursive Datenstruktur Liste</em> (Seite 13)
+ */
+package org.bschlangaul.schulbuecher.cornelsen.informatik_6_ga_2024.kapitel_01;
+```
+
+### `thema_xx`
+
+```java
+/**
+ * Thema 1.1 <em>Prototyp 1: Die rekursive Warteschlange</em> (Seite 14)
+ */
+package org.bschlangaul.schulbuecher.cornelsen.informatik_6_ga_2024.kapitel_01.thema_01;
+```
+
 ## Abhängigkeiten
 
 `dpkg -L greenfoot`

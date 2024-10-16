@@ -20,7 +20,6 @@ class User
     private String nachname;
 
     /**
-     *
      * Vorname
      */
     private String vorname;
