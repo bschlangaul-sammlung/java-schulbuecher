@@ -19,6 +19,7 @@ großen Java-Paket.
 - `*` Imports in einzelne Imports auflösen
 - Unnötige Imports entfernt
 - Rechtschreibfehler ausbessert
+- Unterdrücken von Warnungen `@SupressWarning("unused")`
 
 ## Ordner-Struktur / Namensschema der Pakete
 
