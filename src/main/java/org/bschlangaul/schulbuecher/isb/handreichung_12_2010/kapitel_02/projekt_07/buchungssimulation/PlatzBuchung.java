@@ -10,7 +10,7 @@ package org.bschlangaul.schulbuecher.isb.handreichung_12_2010.kapitel_02.projekt
  *
  * @version 1.0
  */
-public class PLATZBUCHUNG
+public class PlatzBuchung
 {
     // Zustände
     private static final int wartend = 0;
@@ -24,7 +24,7 @@ public class PLATZBUCHUNG
      * Referenz auf den Server, dort muss nachgefragt werden, ob noch Plätze
      * frei sind
      */
-    private SERVER5 server;
+    private Server5 server;
 
     /**
      * Konstruktor der Klasse
@@ -32,7 +32,7 @@ public class PLATZBUCHUNG
      * @param server der Platzbuchungsserver, dessen Methoden
      *     PlaetzeVerfuegbar() und PlaetzeBuchen(int anzahl) benötigt werden.
      */
-    public PLATZBUCHUNG(SERVER5 server)
+    public PlatzBuchung(Server5 server)
     {
         this.server = server;
     }

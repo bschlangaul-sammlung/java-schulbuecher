@@ -1,4 +1,4 @@
-package org.bschlangaul.schulbuecher.isb.handreichung_12_2010.kapitel_02.zusaetzliches_projekt_03.platzbuchung_mit_maxclientanzahl;
+package org.bschlangaul.schulbuecher.isb.handreichung_12_2010.kapitel_02.projekt_07.buchungssimulation;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -8,12 +8,13 @@ import java.net.Socket;
 
 /**
  * Clientimplementierung mit Möglichkeit zum Beenden der Clientverbindung<br/>
+ * Benutzereingaben &quot;plaetze?&quot; und &quot;buche&quot; werden simuliert
  *
  * @author ISB-Arbeitskreis, Umsetzungshilfen Informatik 12
  *
  * @version 1.0
  */
-public class CLIENT2
+public class Client3
 {
     /**
      * bidirektionale Schnittstelle zur Netzwerkprotokoll-Implementierung
@@ -46,6 +47,11 @@ public class CLIENT2
     private String clientEingabe;
 
     /**
+     * Stringeingaben für die Simulation
+     */
+    private String[] eingaben = { "plaetze?", "buche" };
+
+    /**
      * Konstruktor
      *
      * @exception IOException eine Ausnahme tritt möglicherweise auf falls:<br/>
@@ -53,7 +59,7 @@ public class CLIENT2
      *     (beispielsweise bei falscher IP-Adresse oder falschem Port)<br/>
      *     - die Verbindung zum Server gestört bzw. unterbrochen wurde.
      */
-    public CLIENT2() throws IOException
+    public Client3() throws IOException
     {
         VerbindungHerstellen();
         // Tastatureingabe, Senden und Empfangen
@@ -67,8 +73,9 @@ public class CLIENT2
             {
                 break;
             }
-            // Eingabe vom Client lesen
-            clientEingabe = tastatur.readLine();
+            // Eingabe simulieren
+            int index = (int) Math.round(Math.random());
+            clientEingabe = eingaben[index];
             // auf die Clientkonsole ausgeben
             System.out.println("Client: " + clientEingabe);
             // und zum Server schicken
@@ -122,7 +129,7 @@ public class CLIENT2
     {
         try
         {
-            new CLIENT2();
+            new Client3();
         }
         catch (Exception e)
         {

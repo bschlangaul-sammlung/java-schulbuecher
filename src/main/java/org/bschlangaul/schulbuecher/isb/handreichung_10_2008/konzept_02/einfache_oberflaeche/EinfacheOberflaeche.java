@@ -16,7 +16,7 @@ import java.awt.event.WindowEvent;
  *
  * @version 1.0
  */
-class EINACHEOBERFLAECHE
+class EinfacheOberflaeche
 {
     Frame fenster;
 
@@ -29,7 +29,7 @@ class EINACHEOBERFLAECHE
     /**
      * Erzeugt die Oberflächenelemente.
      */
-    EINACHEOBERFLAECHE()
+    EinfacheOberflaeche()
     {
         fenster = new Frame("Testfenster");
         fenster.setSize(300, 200);

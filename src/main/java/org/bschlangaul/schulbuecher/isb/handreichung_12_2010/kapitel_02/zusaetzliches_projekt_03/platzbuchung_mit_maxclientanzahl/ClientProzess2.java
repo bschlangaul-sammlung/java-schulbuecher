@@ -14,7 +14,7 @@ import java.net.Socket;
  *
  * @version 1.0
  */
-class CLIENTPROZESSZ2 extends Thread
+class ClientProzess2 extends Thread
 {
     /**
      * bidirektionale Schnittstelle zur Netzwerkprotokoll-Implementierung des
@@ -36,7 +36,7 @@ class CLIENTPROZESSZ2 extends Thread
      * Referenz auf die Klasse, die das Zustandsdiagramm des Servers
      * implementiert
      */
-    private PLATZBUCHUNG2 serververhalten;
+    private Platzbuchung2 serververhalten;
 
     /**
      * Botschaft von Client zum Server
@@ -53,7 +53,7 @@ class CLIENTPROZESSZ2 extends Thread
      * wird in der Methode ClientVerbindungStarten() gebraucht weil das
      * Serververhalten eine Referenz auf den Server benötigt.
      */
-    SERVERZ5 server;
+    ServerZ5 server;
 
     /**
      * Konstruktor des Clientprozesses
@@ -70,7 +70,7 @@ class CLIENTPROZESSZ2 extends Thread
      * @param startbotschaft ist die Startbotschaft gleich "toomuchclients" so
      *     wird das Clientstopsignal gesendet.
      */
-    public CLIENTPROZESSZ2(Socket clientSocket, SERVERZ5 server,
+    public ClientProzess2(Socket clientSocket, ServerZ5 server,
             String startbotschaft) throws IOException
     {
         this.clientSocket = clientSocket;
@@ -89,7 +89,7 @@ class CLIENTPROZESSZ2 extends Thread
         vomClient = new BufferedReader(
                 new InputStreamReader(clientSocket.getInputStream()));
         // Protokoll-Klasse zur Ermittlung der Serverantworten
-        serververhalten = new PLATZBUCHUNG2(this.server);
+        serververhalten = new Platzbuchung2(this.server);
         // Begrüßung
         serverAntwort = serververhalten.HoleAntwort(startbotschaft);
         zumClient.println(serverAntwort);

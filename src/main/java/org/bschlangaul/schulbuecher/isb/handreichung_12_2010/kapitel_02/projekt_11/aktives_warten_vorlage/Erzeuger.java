@@ -30,6 +30,7 @@ public class Erzeuger extends Thread
      * simuliert durch Warten das Produzieren eines Produkts
      *
      */
+    @SuppressWarnings("unused")
     private void produzieren()
     {
         // erzeugen(), braucht Zeit;

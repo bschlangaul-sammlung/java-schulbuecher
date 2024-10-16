@@ -15,7 +15,7 @@ import java.net.Socket;
  *
  * @version 1.0
  */
-public class SERVERZ3
+public class ServerZ3
 {
     /**
      * bidirektionale Schnittstelle zur Netzwerkprotokoll-Implementierung des
@@ -46,7 +46,7 @@ public class SERVERZ3
      *     Port nicht frei ist)<br/>
      *     - die Clientverbindung gestört bzw. unterbrochen wurde.
      */
-    public SERVERZ3() throws IOException
+    public ServerZ3() throws IOException
     {
         ServerStarten();
         while (true)
@@ -84,7 +84,7 @@ public class SERVERZ3
     {
         if (clientanzahl < maximaleclientanzahl)
         {
-            CLIENTPROZESSZ1 clientprozess = new CLIENTPROZESSZ1(clientSocket,
+            ClientProzessZ1 clientprozess = new ClientProzessZ1(clientSocket,
                     this, "");
             clientprozess.start();
             clientanzahl = clientanzahl + 1;
@@ -92,7 +92,7 @@ public class SERVERZ3
         }
         else
         {
-            new CLIENTPROZESSZ1(clientSocket, this, "toomuchclients");
+            new ClientProzessZ1(clientSocket, this, "toomuchclients");
             System.out.println(
                     "zu viele Verbindungen, Clientverbindung wird zurueckgesetzt");
         }
@@ -102,7 +102,7 @@ public class SERVERZ3
      * reduziert die Anzahl der Verbindungen um 1. In dieser Version <b>noch
      * nicht synchronisiert!</b>
      */
-    public void ClientProzessEntfernen(CLIENTPROZESSZ1 clientprozess)
+    public void ClientProzessEntfernen(ClientProzessZ1 clientprozess)
     {
         clientanzahl = clientanzahl - 1;
         System.out.println(clientanzahl + " Verbindungen");
@@ -131,7 +131,7 @@ public class SERVERZ3
     {
         try
         {
-            new SERVERZ3();
+            new ServerZ3();
         }
         catch (Exception e)
         {

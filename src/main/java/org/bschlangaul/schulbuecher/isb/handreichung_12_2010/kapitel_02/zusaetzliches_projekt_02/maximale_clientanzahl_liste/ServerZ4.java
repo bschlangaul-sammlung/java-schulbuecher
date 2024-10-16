@@ -1,4 +1,4 @@
-package org.bschlangaul.schulbuecher.isb.handreichung_12_2010.kapitel_02.zusaetzliches_projekt_03.platzbuchung_mit_maxclientanzahl;
+package org.bschlangaul.schulbuecher.isb.handreichung_12_2010.kapitel_02.zusaetzliches_projekt_02.maximale_clientanzahl_liste;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -9,15 +9,14 @@ import java.util.ArrayList;
 
 /**
  * Serverimplementierung, Auslagerung der Clientprozesse in einen Thread<br/>
- * Dieser Server lässt nur eine bestimmte Anzahl an Clients zu. Die Prozesse der
- * verbundenen Clients werden in einer Liste verwaltet. Es können Plätze gebucht
- * werden.
+ * Dieser Server lässt nur eine bestimmte Anzahl an Clients zu. Der Zugriff auf
+ * die Ressourde clientanzahl ist <b>noch nicht synchronisiert!</b>
  *
  * @author ISB-Arbeitskreis, Umsetzungshilfen Informatik 12
  *
  * @version 1.0
  */
-public class SERVERZ5
+public class ServerZ4
 {
     /**
      * bidirektionale Schnittstelle zur Netzwerkprotokoll-Implementierung des
@@ -39,12 +38,7 @@ public class SERVERZ5
      * Liste der serverseitigen Prozesse, die über die Clientverbindung
      * kommunizieren.
      */
-    private ArrayList<CLIENTPROZESSZ2> clientprozesse = new ArrayList<CLIENTPROZESSZ2>();
-
-    /**
-     * Anzahl der Plätze, die noch vorhanden sind
-     */
-    private int plaetzevorhanden = 1;
+    private ArrayList<ClientProzessZ1> clientprozesse = new ArrayList<ClientProzessZ1>();
 
     /**
      * Konstruktor des Servers
@@ -54,7 +48,7 @@ public class SERVERZ5
      *     Port nicht frei ist)<br/>
      *     - die Clientverbindung gestört bzw. unterbrochen wurde.
      */
-    public SERVERZ5() throws IOException
+    public ServerZ4() throws IOException
     {
         ServerStarten();
         while (true)
@@ -93,7 +87,7 @@ public class SERVERZ5
     {
         if (clientprozesse.size() < maximaleclientanzahl)
         {
-            CLIENTPROZESSZ2 clientprozess = new CLIENTPROZESSZ2(clientSocket,
+            ClientProzessZ1 clientprozess = new ClientProzessZ1(clientSocket,
                     this, "");
             clientprozess.start();
             clientprozesse.add(clientprozess);
@@ -101,7 +95,7 @@ public class SERVERZ5
         }
         else
         {
-            new CLIENTPROZESSZ2(clientSocket, this, "toomuchclients");
+            new ClientProzessZ1(clientSocket, this, "toomuchclients");
             System.out.println(
                     "zu viele Verbindungen, Clientverbindung wird zurueckgesetzt");
         }
@@ -115,7 +109,7 @@ public class SERVERZ5
      *     soll.
      */
     public synchronized void ClientProzessEntfernen(
-            CLIENTPROZESSZ2 clientprozess)
+            ClientProzessZ1 clientprozess)
     {
         clientprozesse.remove(clientprozess);
         System.out.println("Clientverbindung beendet ");
@@ -137,38 +131,6 @@ public class SERVERZ5
     }
 
     /**
-     * gibt die Anzahl der noch verfügbaren Plätze zurück
-     *
-     * @return Anzahl der verfügbaren Plätze
-     */
-    public synchronized int PlaetzeVerfuegbar()
-    {
-        return plaetzevorhanden;
-    }
-
-    /**
-     * die angegebene Anzahl an Plätzen buchen
-     *
-     * @param anzahl, die Anzahl der zu buchenden Plätze
-     *
-     * @return gibt false zurück, falls die Buchung aus Platzmangel nicht
-     *     durchgeführt werden konnte
-     */
-    public synchronized boolean PlaetzeBuchen(int anzahl)
-    {
-        if (anzahl <= plaetzevorhanden)
-        {
-            plaetzevorhanden = plaetzevorhanden - anzahl;
-            System.out.println(plaetzevorhanden + " Plaetze vorhanden.");
-            return true;
-        }
-        else
-        {
-            return false;
-        }
-    }
-
-    /**
      * Hauptprogramm zum Erzeugen des Serverobjekts
      *
      * @param args keine Parameter beim Programmaufruf erforderlich
@@ -177,7 +139,7 @@ public class SERVERZ5
     {
         try
         {
-            new SERVERZ5();
+            new ServerZ4();
         }
         catch (Exception e)
         {

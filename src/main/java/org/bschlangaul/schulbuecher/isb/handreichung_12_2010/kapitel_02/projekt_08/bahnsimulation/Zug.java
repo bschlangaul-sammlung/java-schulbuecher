@@ -8,7 +8,7 @@ package org.bschlangaul.schulbuecher.isb.handreichung_12_2010.kapitel_02.projekt
  *
  * @version 1.0
  */
-public class ZUG
+public class Zug
 {
     /**
      * die Platznummer im Zug
@@ -25,7 +25,7 @@ public class ZUG
      *
      * @param name der Name des Zuges.
      */
-    public ZUG(String name)
+    public Zug(String name)
     {
         this.name = name;
     }

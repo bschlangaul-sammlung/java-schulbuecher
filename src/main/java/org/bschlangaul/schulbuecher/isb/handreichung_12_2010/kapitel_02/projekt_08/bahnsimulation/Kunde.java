@@ -7,12 +7,12 @@ package org.bschlangaul.schulbuecher.isb.handreichung_12_2010.kapitel_02.projekt
  *
  * @version 1.0
  */
-class KUNDE extends Thread
+class Kunde extends Thread
 {
     /**
      * Referenzen auf die Züge mit Möglichkeit der Information und Buchung
      */
-    private ZUG[] zuege;
+    private Zug[] zuege;
 
     /**
      * Konstruktor der Klasse
@@ -20,7 +20,7 @@ class KUNDE extends Thread
      * @param name Name des Kunden
      * @param zuege Referenzen auf buchbare Züge
      */
-    public KUNDE(String name, ZUG[] zuege)
+    public Kunde(String name, Zug[] zuege)
     {
         super(name);
         this.zuege = zuege;

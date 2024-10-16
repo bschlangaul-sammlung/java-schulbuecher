@@ -29,6 +29,7 @@ public class Verbraucher extends Thread
      * simuliert durch Warten das Verarbeiten eines Produkts
      *
      */
+    @SuppressWarnings("unused")
     private void verarbeiten()
     {
         try

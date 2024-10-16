@@ -1,4 +1,4 @@
-package org.bschlangaul.schulbuecher.isb.handreichung_12_2010.kapitel_02.zusaetzliches_projekt_02.maximale_clientanzahl_liste;
+package org.bschlangaul.schulbuecher.isb.handreichung_12_2010.kapitel_02.projekt_10.chatserver;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -13,7 +13,7 @@ import java.net.Socket;
  *
  * @version 1.0
  */
-public class CLIENT2
+public class ChatClient
 {
     /**
      * bidirektionale Schnittstelle zur Netzwerkprotokoll-Implementierung
@@ -36,45 +36,40 @@ public class CLIENT2
     private BufferedReader tastatur = null;
 
     /**
-     * Botschaft vom Server
-     */
-    private String serverBotschaft;
-
-    /**
-     * Eingabe von Client an Server
-     */
-    private String clientEingabe;
-
-    /**
-     * Konstruktor
+     * Konstruktor der Klasse CHATCLIENT<br/>
+     * empfängt alle Serverbotschaften und gibt diese auf der Konsole aus.
      *
      * @exception IOException eine Ausnahme tritt möglicherweise auf falls:<br/>
      *     - die Clientverbindung nicht hergestellt werden konnte
      *     (beispielsweise bei falscher IP-Adresse oder falschem Port)<br/>
      *     - die Verbindung zum Server gestört bzw. unterbrochen wurde.
      */
-    public CLIENT2() throws IOException
+    public ChatClient(String[] args) throws IOException
     {
+        String serverBotschaft;
         VerbindungHerstellen();
-        // Tastatureingabe, Senden und Empfangen
+        serverBotschaft = vomServer.readLine();
+        System.out.println(serverBotschaft);
+        // falls die maximale Anzahl von Clients erreicht ist, wird hier beendet
+        if (serverBotschaft.startsWith("Server[stopClient]:"))
+        {
+            ServerVerbindungBeenden();
+            System.exit(0);
+        }
+        // der Clientsender liest die Tastatureingaben und sendet diese an den
+        // Server
+        new ClientSender(zumServer, tastatur).start();
         while ((serverBotschaft = vomServer.readLine()) != null)
         {
-            // Serverbotschaft anzeigen.
+            // Serverbotschaft ausgeben.
             System.out.println(serverBotschaft);
-            // Wiederholung verlassen..
-            if ((serverBotschaft.startsWith("Server[stopClient]:"))
-                    || (serverBotschaft.startsWith("Server[stopServer]:")))
+            // Server[stopClient]: zu Beginn der Botschaft beendet den Client.
+            if (serverBotschaft.startsWith("Server[stopClient]:"))
             {
                 break;
             }
-            // Eingabe vom Client lesen
-            clientEingabe = tastatur.readLine();
-            // auf die Clientkonsole ausgeben
-            System.out.println("Client: " + clientEingabe);
-            // und zum Server schicken
-            zumServer.println(clientEingabe);
         }
-        VerbindungBeenden();
+        ServerVerbindungBeenden();
     }
 
     /**
@@ -105,11 +100,9 @@ public class CLIENT2
      * @exception IOException tritt auf, falls eine Verbindung oder ein Stream
      *     nicht beendet werden kann.
      */
-    private void VerbindungBeenden() throws IOException
+    private void ServerVerbindungBeenden() throws IOException
     {
-        zumServer.close();
         vomServer.close();
-        tastatur.close();
         clientSocket.close();
     }
 
@@ -120,14 +113,6 @@ public class CLIENT2
      */
     public static void main(String[] args) throws IOException
     {
-        try
-        {
-            new CLIENT2();
-        }
-        catch (Exception e)
-        {
-            System.out.println("Fehler im Clientprogramm.");
-            System.exit(1);
-        }
+        new ChatClient(args);
     }
 }

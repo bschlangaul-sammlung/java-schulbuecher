@@ -10,7 +10,7 @@ package org.bschlangaul.schulbuecher.isb.handreichung_12_2010.kapitel_02.zusaetz
  *
  * @version 1.0
  */
-public class WETTERVERHALTENZ2
+public class WetterVerhaltenZ2
 {
     /**
      * Konstante für den Zustand wartend

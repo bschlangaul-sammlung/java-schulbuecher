@@ -7,7 +7,7 @@ package org.bschlangaul.schulbuecher.isb.handreichung_12_2010.kapitel_02.projekt
  *
  * @version 1.0
  */
-public class SIMULATION
+public class Simulation
 {
     /**
      * erzeugt zwei Informationen über Züge und zwei Kunden die zufällig in den
@@ -18,12 +18,12 @@ public class SIMULATION
     public static void main(String[] args)
     {
         // Züge erzeugen
-        ZUG[] zuege = new ZUG[2];
-        zuege[0] = new ZUG("DB");
-        zuege[1] = new ZUG("Vogtlandbahn");
+        Zug[] zuege = new Zug[2];
+        zuege[0] = new Zug("DB");
+        zuege[1] = new Zug("Vogtlandbahn");
         // Kunden erzeugen...
-        KUNDE t1 = new KUNDE("Kunde 1", zuege);
-        KUNDE t2 = new KUNDE("Kunde 2", zuege);
+        Kunde t1 = new Kunde("Kunde 1", zuege);
+        Kunde t2 = new Kunde("Kunde 2", zuege);
         // Kunden fragen an und reservieren....
         t1.start();
         t2.start();

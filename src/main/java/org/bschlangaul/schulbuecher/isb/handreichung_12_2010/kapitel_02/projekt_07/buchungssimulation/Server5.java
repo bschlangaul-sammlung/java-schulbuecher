@@ -16,7 +16,7 @@ import java.net.Socket;
  *
  * @version 1.0
  */
-public class SERVER5
+public class Server5
 {
     /**
      * bidirektionale Schnittstelle zur Netzwerkprotokoll-Implementierung des
@@ -53,7 +53,7 @@ public class SERVER5
      *     Port nicht frei ist)<br/>
      *     - die Clientverbindung gestört bzw. unterbrochen wurde.
      */
-    public SERVER5() throws IOException
+    public Server5() throws IOException
     {
         ServerStarten();
         while (true)
@@ -70,7 +70,7 @@ public class SERVER5
         System.out.println("warte auf Client, hoere auf Port " + port);
         Socket clientSocket = serverSocket.accept(); // warten auf die
                                                      // Verbindung
-        CLIENTPROZESS2 clientprozess = new CLIENTPROZESS2(clientSocket, this);
+        ClientProzess2 clientprozess = new ClientProzess2(clientSocket, this);
         clientprozess.start();
         System.out.println("Clientprozess gestartet...");
     }
@@ -155,7 +155,7 @@ public class SERVER5
     {
         try
         {
-            new SERVER5();
+            new Server5();
         }
         catch (Exception e)
         {

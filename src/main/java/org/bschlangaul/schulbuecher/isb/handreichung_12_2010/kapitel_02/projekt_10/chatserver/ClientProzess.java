@@ -17,12 +17,12 @@ import java.net.Socket;
  *
  * @version 1.0
  */
-class CLIENTPROZESS extends Thread
+class ClientProzess extends Thread
 {
     /**
      * Referenz auf den Server
      */
-    private CHATSERVER server;
+    private ChatServer server;
 
     /**
      * Socket des Clients
@@ -75,7 +75,7 @@ class CLIENTPROZESS extends Thread
      * @param startbotschaft ist die Startbotschaft gleich "toomuchclients" so
      *     wird das Clientstopsignal gesendet.
      */
-    public CLIENTPROZESS(Socket clientSocket, CHATSERVER server,
+    public ClientProzess(Socket clientSocket, ChatServer server,
             String startbotschaft) throws IOException
     {
         this.clientSocket = clientSocket;

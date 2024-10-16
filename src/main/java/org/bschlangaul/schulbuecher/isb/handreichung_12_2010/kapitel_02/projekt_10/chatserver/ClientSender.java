@@ -12,7 +12,7 @@ import java.io.PrintWriter;
  *
  * @version 1.0
  */
-class CLIENTSENDER extends Thread
+class ClientSender extends Thread
 {
     /**
      * Referenz auf das Leseobjekt für die Tastatur
@@ -30,7 +30,7 @@ class CLIENTSENDER extends Thread
      * @param zumServer Schreibkanal zum Server
      * @param tastatur Lesekanal von der Tastatur
      */
-    public CLIENTSENDER(PrintWriter zumServer, BufferedReader tastatur)
+    public ClientSender(PrintWriter zumServer, BufferedReader tastatur)
     {
         this.tastatur = tastatur;
         this.zumServer = zumServer;

@@ -16,7 +16,7 @@ import java.util.ArrayList;
  *
  * @version 1.0
  */
-public class CHATSERVER
+public class ChatServer
 {
     /**
      * bidirektionale Schnittstelle zur Netzwerkprotokoll-Implementierung des
@@ -38,7 +38,7 @@ public class CHATSERVER
      * Liste der serverseitigen Prozesse, die über die Clientverbindung
      * kommunizieren.
      */
-    private ArrayList<CLIENTPROZESS> clientprozesse = new ArrayList<CLIENTPROZESS>();
+    private ArrayList<ClientProzess> clientprozesse = new ArrayList<ClientProzess>();
 
     /**
      * Konstruktor des Servers
@@ -48,7 +48,7 @@ public class CHATSERVER
      *     Port nicht frei ist)<br/>
      *     - die Clientverbindung gestört bzw. unterbrochen wurde.
      */
-    public CHATSERVER(String[] args) throws IOException
+    public ChatServer(String[] args) throws IOException
     {
         ServerStarten();
         while (true)
@@ -96,7 +96,7 @@ public class CHATSERVER
     {
         if (clientprozesse.size() < maximaleclientanzahl)
         {
-            CLIENTPROZESS clientprozess = new CLIENTPROZESS(clientSocket, this,
+            ClientProzess clientprozess = new ClientProzess(clientSocket, this,
                     "");
             clientprozess.start();
             System.out.println("neuer Client will sich anmelden / "
@@ -104,7 +104,7 @@ public class CHATSERVER
         }
         else
         {
-            new CLIENTPROZESS(clientSocket, this, "toomuchclients");
+            new ClientProzess(clientSocket, this, "toomuchclients");
             System.out.println(
                     "zu viele Verbindungen, Clientverbindung wird zurückgesetzt");
         }
@@ -122,7 +122,7 @@ public class CHATSERVER
      *     Clientprozess beendet.
      */
     public synchronized boolean ClientProzessHinzufuegen(
-            CLIENTPROZESS clientprozess)
+            ClientProzess clientprozess)
     {
         if (clientprozesse.size() < maximaleclientanzahl)
         {
@@ -150,7 +150,7 @@ public class CHATSERVER
      *
      * @param clientprozess der Clientprozess, der entfernt werden soll.
      */
-    public synchronized void ClientProzessEntfernen(CLIENTPROZESS clientprozess)
+    public synchronized void ClientProzessEntfernen(ClientProzess clientprozess)
     {
         if (clientprozesse.remove(clientprozess))
         {
@@ -169,9 +169,9 @@ public class CHATSERVER
      * @return CLIENTPROZESS clientprozess oder null, falls kein Clientprozess
      *     mit einem solchen Spitznamen gefunden wurde.
      */
-    private synchronized CLIENTPROZESS ClientProzessGeben(String spitzname)
+    private synchronized ClientProzess ClientProzessGeben(String spitzname)
     {
-        for (CLIENTPROZESS clientprozess : clientprozesse)
+        for (ClientProzess clientprozess : clientprozesse)
         {
             if (spitzname.equals(clientprozess.SpitznameHolen()))
             {
@@ -197,7 +197,7 @@ public class CHATSERVER
      * @param clientprozess der Empfänger der Nachricht
      * @param nachricht der Text der Nachricht
      */
-    public void PrivateNachrichtSenden(CLIENTPROZESS clientprozess,
+    public void PrivateNachrichtSenden(ClientProzess clientprozess,
             String nachricht)
     {
         clientprozess.Senden(nachricht);
@@ -212,7 +212,7 @@ public class CHATSERVER
      */
     public boolean PrivateNachrichtSenden(String spitzname, String nachricht)
     {
-        CLIENTPROZESS clientprozess = ClientProzessGeben(spitzname);
+        ClientProzess clientprozess = ClientProzessGeben(spitzname);
         if (clientprozess != null)
         {
             PrivateNachrichtSenden(clientprozess, nachricht);
@@ -229,7 +229,7 @@ public class CHATSERVER
      */
     public void AnAlleSenden(String nachricht)
     {
-        for (CLIENTPROZESS clientprozess : clientprozesse)
+        for (ClientProzess clientprozess : clientprozesse)
         {
             clientprozess.Senden(nachricht);
         }
@@ -242,6 +242,6 @@ public class CHATSERVER
      */
     public static void main(String[] args) throws IOException
     {
-        new CHATSERVER(args);
+        new ChatServer(args);
     }
 }

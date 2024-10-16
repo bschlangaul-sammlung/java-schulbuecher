@@ -9,12 +9,12 @@ import java.awt.Frame;
  *
  * @version 1.0
  */
-class MEINFENSTER extends Frame
+class MeinFenster extends Frame
 {
     /**
      * Constructor for objects of class MeinFenster
      */
-    MEINFENSTER()
+    MeinFenster()
     {
         super();
     }
@@ -22,7 +22,7 @@ class MEINFENSTER extends Frame
     /**
      * Constructor for objects of class MeinFenster
      */
-    MEINFENSTER(String titel)
+    MeinFenster(String titel)
     {
         super(titel);
         setSize(200, 100);

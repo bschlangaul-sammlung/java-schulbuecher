@@ -1,25 +1,25 @@
 package org.bschlangaul.schulbuecher.isb.handreichung_10_2008.konzept_02.einfache_oberflaeche;
 
-import java.awt.Label;
+import java.awt.Button;
 
 /**
- * Testtext.
+ * Testknopf.
  *
  * @author Albert Wiedemann
  *
  * @version 1.0
  */
-class MEINTEXT extends Label
+class MeinKnopf extends Button
 {
     /**
-     * Constructor for objects of class MeinText
+     * Constructor for objects of class MeinKnopf
      */
-    MEINTEXT()
+    MeinKnopf()
     {
         super();
-        setText("Beispiel");
-        setSize(100, 20);
-        setLocation(10, 30);
+        setLabel("Eingabe");
+        setSize(100, 30);
+        setLocation(10, 60);
         setVisible(true);
     }
 }

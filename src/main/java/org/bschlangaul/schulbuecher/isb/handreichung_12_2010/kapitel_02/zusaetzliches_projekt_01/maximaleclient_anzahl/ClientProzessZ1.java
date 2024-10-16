@@ -16,7 +16,7 @@ import java.net.Socket;
  *
  * @version 1.0
  */
-class CLIENTPROZESSZ1 extends Thread
+class ClientProzessZ1 extends Thread
 {
     /**
      * bidirektionale Schnittstelle zur Netzwerkprotokoll-Implementierung des
@@ -38,7 +38,7 @@ class CLIENTPROZESSZ1 extends Thread
      * Referenz auf die Klasse, die das Zustandsdiagramm des Servers
      * implementiert
      */
-    private WETTERVERHALTENZ2 serververhalten;
+    private WetterVerhaltenZ2 serververhalten;
 
     /**
      * Botschaft von Client zum Server
@@ -55,7 +55,7 @@ class CLIENTPROZESSZ1 extends Thread
      * wird zum Beenden des Clientprozesses gebraucht um die Methode
      * ClientProzessEntfernen() des Servers aufzurufen.
      */
-    private SERVERZ3 server;
+    private ServerZ3 server;
 
     /**
      * Konstruktor des Clientprozesses
@@ -72,7 +72,7 @@ class CLIENTPROZESSZ1 extends Thread
      * @param startbotschaft ist die Startbotschaft gleich "toomuchclients" so
      *     wird das Clientstopsignal gesendet.
      */
-    public CLIENTPROZESSZ1(Socket clientSocket, SERVERZ3 server,
+    public ClientProzessZ1(Socket clientSocket, ServerZ3 server,
             String startbotschaft) throws IOException
     {
         this.clientSocket = clientSocket;
@@ -91,7 +91,7 @@ class CLIENTPROZESSZ1 extends Thread
         vomClient = new BufferedReader(
                 new InputStreamReader(clientSocket.getInputStream()));
         // Protokoll-Klasse zur Ermittlung der Serverantworten
-        serververhalten = new WETTERVERHALTENZ2();
+        serververhalten = new WetterVerhaltenZ2();
         // Begrüßung
         serverAntwort = serververhalten.HoleAntwort(startbotschaft);
         zumClient.println(serverAntwort);
