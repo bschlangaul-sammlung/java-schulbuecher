@@ -1,7 +1,19 @@
 # java-schulbuecher
 
-Java-Code-Beispiele und Java-Projekte aus verschiedenen Schulbüchern in einem
-großen Java-Paket.
+Bei diesem Repository handelt es sich um einen Versuch viele verschiedene
+Java-Code-Beispiele, Java-Aufgaben bzw. Java-Projekte aus verschiedenen
+Schulbüchern in einem großen Java-Paket zu vereinigen. Dieses Repository enthält
+sowohl die Lösungen (ohne Suffix `_vorlage`) der Java-Aufgaben als auch die
+Vorlagen (Suffix `_vorlage`), die den Schülern zur Verfügung gestellt werden.
+
+## Ziele
+
+- Vereinheitlichung
+  - einheitlicher Coding-Style
+  - einheitliche Paket bzw. Ordner-Struktur
+- Steigerung der Code-Qualität
+  - ein Syntax-Fehler in einer Aufgabe fällt sofort auf, weil das ganze Projekt dann nicht mehr kompiliert.
+  - Linting kann über die ganze Code-Basis angewendet werden.
 
 ## Veränderungen / Anpassungen
 
@@ -102,9 +114,9 @@ import org.bschlangaul.schulbuecher.cornelsen.shared.graphics_and_games.*;
 
 Vorlagen von `GraphicsAndGames`:
 
-* [9. Jahrgangsstufe](https://informatikschulbuch.de/jahrgangsstufe-9-uebersicht/objektorientierte-modellierung-und-programmierung/)
-* [10. Jahrgangsstufe](https://informatikschulbuch.de/jahrgangsstufe-10/objektorientierte-modellierung-und-programmierungjgst10/)
-* [11. Jahrgangsstufe](https://informatikschulbuch.de/jahrgangsstufe-11/vernetze-strukturen-grapen-kapitel-1-informatik-5/)
+- [9. Jahrgangsstufe](https://informatikschulbuch.de/jahrgangsstufe-9-uebersicht/objektorientierte-modellierung-und-programmierung/)
+- [10. Jahrgangsstufe](https://informatikschulbuch.de/jahrgangsstufe-10/objektorientierte-modellierung-und-programmierungjgst10/)
+- [11. Jahrgangsstufe](https://informatikschulbuch.de/jahrgangsstufe-11/vernetze-strukturen-grapen-kapitel-1-informatik-5/)
 
 #### `cornelsen/informatik-3_2017`
 
@@ -130,8 +142,8 @@ reference_subtitle: >-
 isbn: 978-3-637-02473-1
 publisher: Cornelsen
 author: >-
-   Peter Brichzin, Florian Janus, Franz Jetzinger, Johannes Neumeyer,
-   Klaus Reinold, Dr. Stefan Seeger, Albert Wiedemann
+  Peter Brichzin, Florian Janus, Franz Jetzinger, Johannes Neumeyer,
+  Klaus Reinold, Dr. Stefan Seeger, Albert Wiedemann
 release_date: 2023
 edition: 1
 approval_number: 164/23-G+
@@ -154,7 +166,6 @@ release_date: 2024
 approval_number: 132/24-G+
 approval_date: 06.08.2024
 publisher_website: https://www.cornelsen.de/produkte/9783637024762
-
 ```
 
 ### `isb` (Staatsinstitut für Schulqualität und Bildungsforschung)
@@ -163,7 +174,8 @@ publisher_website: https://www.cornelsen.de/produkte/9783637024762
 
 ```yml
 reference_title: Handreichung Informatik 10
-reference_subtitle: Informatik am Naturwissenschaftlich-technologischen Gymnasium
+reference_subtitle:
+  Informatik am Naturwissenschaftlich-technologischen Gymnasium
   Jahrgangsstufe 10
 author: Elke Frey, Christian Heidrich, Christian Scheungrab, Matthias Spohrer, Albert Wiedemann
 year: 2008
@@ -175,20 +187,20 @@ publisher: >-
 
 ```yml
 reference_title: Handreichung Informatik 11
-reference_subtitle: Informatik am Naturwissenschaftlich-technologischen Gymnasium
+reference_subtitle:
+  Informatik am Naturwissenschaftlich-technologischen Gymnasium
   Jahrgangsstufe 11
 author: Dr. Petra Schwaiger, Dr. Andrea Bierschneider-Jacobs, Ulrich Freiberger, Albert Wiedemann, Stefan Winter
 year: 2009
 publisher: >-
   Staatsinstitut für Schulqualität und Bildungsforschung München (ISB)
-
 ```
 
 #### `isb/handreichung_12_2010`
 
 ```yml
 reference_title: Handreichung Informatik 12
-reference_subtitle:  >-
+reference_subtitle: >-
   Informatik am Naturwissenschaftlich-technologischen Gymnasium
   Jahrgangsstufe 12
 publisher: >-
@@ -256,7 +268,7 @@ approval_date: 06.07.2010
 ```yml
 reference_title: Informatik 10
 reference_subtitle: Gymnasium Bayern - 10. Jahrgangsstufe
-author:  Matthias Ehmann, Frank Fiedler, Franz Xaver Forman, Manuel Friedrich, Ute Heuer, Susanne Ritzer
+author: Matthias Ehmann, Frank Fiedler, Franz Xaver Forman, Manuel Friedrich, Ute Heuer, Susanne Ritzer
 isbn: 978-3-835-56002-4
 year: 2008
 publisher: Duden Paetec
