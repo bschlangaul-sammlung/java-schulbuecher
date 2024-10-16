@@ -15,6 +15,10 @@ großen Java-Paket.
 - UTF-8
 - HTML-Entities -> UTF-8
 - Javadoc-Fehler ausbessern
+- Deprecations beheben, z. B. `new Integer()` -> `Integer.valueOf()` oder `Integer.parseInt()`
+- `*` Imports in einzelne Imports auflösen
+- Unnötige Imports entfernt
+- Rechtschreibfehler ausbessert
 
 ## Ordner-Struktur / Namensschema der Pakete
 
