@@ -14,10 +14,10 @@ class SIMULATION
      */
     private SIMULATION()
     {
-        TAKTGEBER t;
+        TaktGeber t;
         SUPERMARKT s;
         ADAPTER a;
-        t = new TAKTGEBER();
+        t = new TaktGeber();
         s = new SUPERMARKT(t);
         a = new ADAPTER(s, t);
         OBERFLAECHE.AdapterSetzen(a);

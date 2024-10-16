@@ -13,7 +13,7 @@ import javax.swing.Timer;
  *
  * @version 1.0
  */
-class TAKTGEBER
+class TaktGeber
 {
     /**
      * Timerobjekt für die zentrale Zeitverwaltung
@@ -23,15 +23,15 @@ class TAKTGEBER
     /**
      * zu steuernde Objekte, mssen von jedem Takt benachrichtigt werden.
      */
-    private ArrayList<TAKTKLIENT> klienten;
+    private ArrayList<TaktKlient> klienten;
 
     /**
      * Legt den eigentlichen Zeitgeber an. Der Impulsabstand betrgt eine
      * Sekunde
      */
-    TAKTGEBER()
+    TaktGeber()
     {
-        klienten = new ArrayList<TAKTKLIENT>();
+        klienten = new ArrayList<TaktKlient>();
         timer = new Timer(1000, new ActionListener()
         {
             /**
@@ -41,7 +41,7 @@ class TAKTGEBER
              */
             public void actionPerformed(ActionEvent evt)
             {
-                for (TAKTKLIENT klient : klienten)
+                for (TaktKlient klient : klienten)
                 {
                     klient.TaktImpulsAusfuehren();
                 }
@@ -80,7 +80,7 @@ class TAKTGEBER
      *
      * @param k der neuen Klient
      */
-    void Registrieren(TAKTKLIENT k)
+    void Registrieren(TaktKlient k)
     {
         klienten.add(k);
     }

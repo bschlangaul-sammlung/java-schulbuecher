@@ -9,7 +9,7 @@ import java.util.Random;
  *
  * @version 1.0
  */
-class SUPERMARKT implements TAKTKLIENT
+class SUPERMARKT implements TaktKlient
 {
     private KASSE[] kassen;
 
@@ -22,7 +22,7 @@ class SUPERMARKT implements TAKTKLIENT
     /**
      * Legt die Kassen und ihre Warteschlangen an.
      */
-    SUPERMARKT(TAKTGEBER t)
+    SUPERMARKT(TaktGeber t)
     {
         kassen = new KASSE[3];
         for (int i = 0; i < kassen.length; i++)

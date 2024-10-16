@@ -1,5 +1,7 @@
 package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapitel_01.thema_02.aufgabe_04.supermarkt;
 
+import org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.shared.TaktGeber;
+
 /**
  * Gibt die Botschaften der Oberfläche an den Supermarkt weiter
  *
@@ -11,7 +13,7 @@ class ADAPTER
 {
     SUPERMARKT s;
 
-    TAKTGEBER t;
+    TaktGeber t;
 
     /**
      * Setzt die Empfänger der Botschaften
@@ -19,7 +21,7 @@ class ADAPTER
      * @param s der zu bedienende Supermarkt
      * @param t der zu bedienende Taktgeber
      */
-    ADAPTER(SUPERMARKT s, TAKTGEBER t)
+    ADAPTER(SUPERMARKT s, TaktGeber t)
     {
         this.s = s;
         this.t = t;

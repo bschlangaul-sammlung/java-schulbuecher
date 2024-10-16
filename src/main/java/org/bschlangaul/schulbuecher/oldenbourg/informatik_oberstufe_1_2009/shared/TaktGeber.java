@@ -2,6 +2,7 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.shar
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 import javax.swing.Timer;
 
@@ -26,6 +27,11 @@ public class TaktGeber implements ActionListener
     TaktKlient klient;
 
     /**
+     * zu steuernde Objekte, mssen von jedem Takt benachrichtigt werden.
+     */
+    private ArrayList<TaktKlient> klienten;
+
+    /**
      * Standardkonstruktor für Objekte der Klasse Taktgeber. Erzeugt den
      * Taktgeber und trägt die Kreuzung als Klient ein.
      *
@@ -35,6 +41,23 @@ public class TaktGeber implements ActionListener
     {
         timer = new Timer(1000, this);
         this.klient = klient;
+
+        klienten = new ArrayList<TaktKlient>();
+        timer = new Timer(1000, new ActionListener()
+        {
+            /**
+             * vom Timer aufgerufen benachrichtigt alle eingetragenen Objekte
+             *
+             * @param evt der Timerevent
+             */
+            public void actionPerformed(ActionEvent evt)
+            {
+                for (TaktKlient klient : klienten)
+                {
+                    klient.TaktImpulsAusfuehren();
+                }
+            }
+        });
     }
 
     /**

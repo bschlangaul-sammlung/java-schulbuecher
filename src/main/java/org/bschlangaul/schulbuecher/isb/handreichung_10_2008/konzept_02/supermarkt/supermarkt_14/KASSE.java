@@ -7,7 +7,7 @@ package org.bschlangaul.schulbuecher.isb.handreichung_10_2008.konzept_02.superma
  *
  * @version 1.0
  */
-class KASSE implements TAKTKLIENT
+class KASSE implements TaktKlient
 {
     private enum Zustaende
     {
@@ -31,7 +31,7 @@ class KASSE implements TAKTKLIENT
     /**
      * Baut die Kasse auf und trägt as zugehörige Darstellungssymbol ein.
      */
-    KASSE(WARTESCHLANGE w, TAKTGEBER t)
+    KASSE(WARTESCHLANGE w, TaktGeber t)
     {
         darstellung = new RECHTECK();
         kunde = null;

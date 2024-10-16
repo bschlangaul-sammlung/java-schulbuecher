@@ -2,6 +2,8 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapi
 
 import java.util.Random;
 
+import org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.shared.TaktKlient;
+
 /**
  * Kontrolle des Supermarkts.
  *
@@ -9,7 +11,7 @@ import java.util.Random;
  *
  * @version 1.0
  */
-class SUPERMARKT implements TAKTKLIENT
+class SUPERMARKT implements TaktKlient
 {
     private KASSE[] kassen;
 

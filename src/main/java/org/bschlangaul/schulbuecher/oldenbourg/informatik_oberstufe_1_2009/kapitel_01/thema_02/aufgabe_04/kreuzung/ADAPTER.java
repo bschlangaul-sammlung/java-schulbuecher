@@ -1,5 +1,7 @@
 package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapitel_01.thema_02.aufgabe_04.kreuzung;
 
+import org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.shared.TaktGeber;
+
 /**
  * Gibt die Botschaften der Oberfläche an die Kreuzung weiter
  *
@@ -11,7 +13,7 @@ class ADAPTER
 {
     KREUZUNG k;
 
-    TAKTGEBER t;
+    TaktGeber t;
 
     /**
      * Setzt die Empfänger der Botschaften
@@ -19,7 +21,7 @@ class ADAPTER
      * @param k die zu bedienende Kreuzung
      * @param t der zu bedienende Taktgeber
      */
-    ADAPTER(KREUZUNG k, TAKTGEBER t)
+    ADAPTER(KREUZUNG k, TaktGeber t)
     {
         this.k = k;
         this.t = t;

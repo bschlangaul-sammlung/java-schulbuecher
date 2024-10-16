@@ -7,7 +7,7 @@ package org.bschlangaul.schulbuecher.isb.handreichung_10_2008.konzept_02.superma
  *
  * @version 1.0
  */
-interface TAKTKLIENT
+interface TaktKlient
 {
     /**
      * Empfngt die Taktimpulse.

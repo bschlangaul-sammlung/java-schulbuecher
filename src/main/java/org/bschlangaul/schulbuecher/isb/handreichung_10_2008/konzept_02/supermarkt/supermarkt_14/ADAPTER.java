@@ -11,12 +11,12 @@ class ADAPTER
 {
     SUPERMARKT s;
 
-    TAKTGEBER t;
+    TaktGeber t;
 
     /**
      * Besetzt die Attribute
      */
-    ADAPTER(SUPERMARKT s, TAKTGEBER t)
+    ADAPTER(SUPERMARKT s, TaktGeber t)
     {
         this.t = t;
         this.s = s;

@@ -1,5 +1,7 @@
 package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapitel_01.thema_02.aufgabe_04.kreuzung;
 
+import org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.shared.TaktGeber;
+
 /**
  * Baut die Teile der Simulation zusammen und schafft die Rahmenbedingungen.
  *
@@ -14,11 +16,11 @@ class SIMULATION
      */
     SIMULATION()
     {
-        TAKTGEBER t;
+        TaktGeber t;
         KREUZUNG k;
         ADAPTER a;
         k = new KREUZUNG();
-        t = new TAKTGEBER(k);
+        t = new TaktGeber(k);
         a = new ADAPTER(k, t);
         OBERFLAECHE.AdapterSetzen(a);
     }
