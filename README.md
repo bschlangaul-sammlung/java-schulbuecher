@@ -170,6 +170,10 @@ publisher_website: https://www.cornelsen.de/produkte/9783637024762
 
 ### `isb` (Staatsinstitut für Schulqualität und Bildungsforschung)
 
+#### `isb/abitur`
+
+z. B. `isb/abitur/pruefung_2024/inf1/aufgabe_i/teilaufgabe_04/schwerionen_zerfall/Datenknoten.java`
+
 #### `isb/handreichung_10_2008`
 
 ```yml
