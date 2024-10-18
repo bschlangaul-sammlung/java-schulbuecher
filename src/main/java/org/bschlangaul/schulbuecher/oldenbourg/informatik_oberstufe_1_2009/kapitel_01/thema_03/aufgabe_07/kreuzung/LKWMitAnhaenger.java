@@ -1,23 +1,25 @@
 package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapitel_01.thema_03.aufgabe_07.kreuzung;
 
 /**
- * Beschreibt einen durchschnittlichen Personenwagen.
+ * Beschreibt einen Lastwagen mit Anhänger.
  *
  * @author Ali Chwarizmi, Heidrun Namweiden
  *
  * @version V1.0
  */
-class PKW extends Fahrzeug
+class LKWMitAnhaenger extends Fahrzeug
 {
-    private float a;
+    private float a1;
+
+    private float a2;
 
     /**
      * Erzeugt die Anzeige.
      */
-    public PKW()
+    public LKWMitAnhaenger()
     {
         super();
-        symbol = new PKWSymbol();
+        symbol = new LKWMitAnhaengerSymbol();
         switch ((new java.util.Random()).nextInt(7))
         {
         case 0:
@@ -52,7 +54,8 @@ class PKW extends Fahrzeug
             break;
         }
         PositionSetzen(0, 0);
-        a = 4.0f;
+        a1 = 3.0f;
+        a2 = 2.0f;
     }
 
     /**
@@ -68,7 +71,14 @@ class PKW extends Fahrzeug
         weg = 0;
         for (int i = 0; i < 10; i++) // Maximaler Weg
         {
-            vneu = a * 0.1f + v;
+            if (v <= 5.5f)
+            {
+                vneu = a1 * 0.1f + v;
+            }
+            else
+            {
+                vneu = a2 * 0.1f + v;
+            }
             if (vneu > vmax)
             {
                 vneu = vmax;
@@ -128,6 +138,6 @@ class PKW extends Fahrzeug
      */
     public float LaengeGeben()
     {
-        return 4.5f;
+        return 13.0f;
     }
 }

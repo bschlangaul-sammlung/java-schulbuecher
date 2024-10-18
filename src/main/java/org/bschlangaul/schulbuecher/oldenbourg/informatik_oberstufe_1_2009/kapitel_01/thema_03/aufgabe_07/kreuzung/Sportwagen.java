@@ -1,23 +1,23 @@
 package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapitel_01.thema_03.aufgabe_07.kreuzung;
 
 /**
- * Beschreibt einen durchschnittlichen Personenwagen.
+ * Beschreibt einen Sportwagen.
  *
  * @author Ali Chwarizmi, Heidrun Namweiden
  *
  * @version V1.0
  */
-class PKW extends Fahrzeug
+class Sportwagen extends Fahrzeug
 {
     private float a;
 
     /**
      * Erzeugt die Anzeige.
      */
-    public PKW()
+    public Sportwagen()
     {
         super();
-        symbol = new PKWSymbol();
+        symbol = new SportwagenSymbol();
         switch ((new java.util.Random()).nextInt(7))
         {
         case 0:
@@ -52,7 +52,7 @@ class PKW extends Fahrzeug
             break;
         }
         PositionSetzen(0, 0);
-        a = 4.0f;
+        a = 6.0f;
     }
 
     /**
@@ -128,6 +128,6 @@ class PKW extends Fahrzeug
      */
     public float LaengeGeben()
     {
-        return 4.5f;
+        return 3.5f;
     }
 }
