@@ -9,6 +9,7 @@ import greenfoot.Actor;
  *
  * @version 2022-09-12
  */
+@SuppressWarnings("unused")
 public class Auto extends Actor
 {
     private int gang;

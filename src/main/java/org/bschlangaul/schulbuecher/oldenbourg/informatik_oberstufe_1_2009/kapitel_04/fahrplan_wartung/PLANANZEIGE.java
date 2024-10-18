@@ -42,8 +42,6 @@ class PLANANZEIGE extends Canvas
      */
     PLANANZEIGE(BAHNHOFSLISTE b, ABSCHNITTSLISTE a)
     {
-        int index;
-        BAHNHOF bhf;
         this.b = b;
         aktBahnhof = null;
         aktAbschnitt = null;

@@ -31,7 +31,8 @@ class DATENBANKVERBINDUNG
     {
         try
         {
-            Class.forName("com.mysql.jdbc.Driver").newInstance();
+            Class.forName("com.mysql.jdbc.Driver").getDeclaredConstructor()
+                    .newInstance();
             conn = DriverManager.getConnection(
                     "jdbc:mysql://localhost/fahrplan?user=fahr&password=plan");
         }

@@ -23,8 +23,7 @@ public class Schueler extends Actor
      */
     void aktualisiereBild()
     {
-        BildHilfe bildHilfe = new BildHilfe();
-        setImage(bildHilfe.erstelleSchuelerBild(geschlecht, alter));
+        setImage(BildHilfe.erstelleSchuelerBild(geschlecht, alter));
     }
 
     void initialisiereGeschlecht()

@@ -38,7 +38,8 @@ class DATENBANKVERBINDUNG implements MELDUNGSERZEUGER
         allebeobachter = new ArrayList<MELDUNGSBEOBACHTER>();
         try
         {
-            Class.forName("com.mysql.jdbc.Driver").newInstance();
+            Class.forName("com.mysql.jdbc.Driver").getDeclaredConstructor()
+                    .newInstance();
             conn = DriverManager.getConnection(
                     "jdbc:mysql://localhost/adressverwaltung?user=adress&password=verwaltung");
         }
@@ -101,6 +102,7 @@ class DATENBANKVERBINDUNG implements MELDUNGSERZEUGER
      *
      * @param text der Fehler
      */
+    @SuppressWarnings("unused")
     private void FehlerMelden(String text)
     {
         for (MELDUNGSBEOBACHTER b : allebeobachter)
@@ -237,10 +239,9 @@ class DATENBANKVERBINDUNG implements MELDUNGSERZEUGER
         try
         {
             Statement st = conn.createStatement();
-            int res = st.executeUpdate("UPDATE person SET Name = '"
-                    + person.NameGeben() + "', Vorname = '"
-                    + person.VornameGeben() + "' WHERE Personennummer = "
-                    + person.NummerGeben());
+            st.executeUpdate("UPDATE person SET Name = '" + person.NameGeben()
+                    + "', Vorname = '" + person.VornameGeben()
+                    + "' WHERE Personennummer = " + person.NummerGeben());
             st.close();
             return true;
         }
@@ -265,7 +266,7 @@ class DATENBANKVERBINDUNG implements MELDUNGSERZEUGER
             Statement st;
             ResultSet rs;
             st = conn.createStatement();
-            int res = st.executeUpdate(
+            st.executeUpdate(
                     "INSERT INTO person (Name, Vorname, Adressnummer) VALUES ('"
                             + person.NameGeben() + "',  '"
                             + person.VornameGeben() + "',  "
@@ -299,9 +300,8 @@ class DATENBANKVERBINDUNG implements MELDUNGSERZEUGER
         try
         {
             Statement st = conn.createStatement();
-            int res = st
-                    .executeUpdate("DELETE FROM person WHERE Personennummer = "
-                            + person.NummerGeben());
+            st.executeUpdate("DELETE FROM person WHERE Personennummer = "
+                    + person.NummerGeben());
             st.close();
             return true;
         }
@@ -324,7 +324,7 @@ class DATENBANKVERBINDUNG implements MELDUNGSERZEUGER
         try
         {
             Statement st = conn.createStatement();
-            int res = st.executeUpdate("UPDATE adresse SET Strasse = '"
+            st.executeUpdate("UPDATE adresse SET Strasse = '"
                     + person.StrasseGeben() + "', Hausnummer = '"
                     + person.HausnummerGeben() + "', PLZ = '"
                     + person.PlzGeben() + "', Ort = '" + person.OrtGeben()
@@ -353,7 +353,7 @@ class DATENBANKVERBINDUNG implements MELDUNGSERZEUGER
             Statement st;
             ResultSet rs;
             st = conn.createStatement();
-            int res = st.executeUpdate(
+            st.executeUpdate(
                     "INSERT INTO adresse (Strasse, Hausnummer, PLZ, Ort) VALUES ('"
                             + person.StrasseGeben() + "',  '"
                             + person.HausnummerGeben() + "',  '"
@@ -364,9 +364,8 @@ class DATENBANKVERBINDUNG implements MELDUNGSERZEUGER
             {
                 int nummer = rs.getInt(1);
                 person.AdressNummerSetzen(nummer);
-                res = st.executeUpdate("UPDATE person SET Adressnummer = "
-                        + nummer + " WHERE Personennummer = "
-                        + person.NummerGeben());
+                st.executeUpdate("UPDATE person SET Adressnummer = " + nummer
+                        + " WHERE Personennummer = " + person.NummerGeben());
             }
             else
             {
@@ -395,7 +394,7 @@ class DATENBANKVERBINDUNG implements MELDUNGSERZEUGER
         try
         {
             Statement st = conn.createStatement();
-            int res = st.executeUpdate("UPDATE person SET Adressnummer = "
+            st.executeUpdate("UPDATE person SET Adressnummer = "
                     + person.AdressNummerGeben() + " WHERE Personennummer = "
                     + person.NummerGeben());
             st.close();
@@ -420,7 +419,7 @@ class DATENBANKVERBINDUNG implements MELDUNGSERZEUGER
         try
         {
             Statement st = conn.createStatement();
-            int res = st.executeUpdate(
+            st.executeUpdate(
                     "UPDATE telefon SET Nummer = '" + telefon.NummerGeben()
                             + "', Art = '" + telefon.ArtGeben() + "', Notiz = '"
                             + telefon.NotizGeben() + "' WHERE Personennummer = "
@@ -463,7 +462,7 @@ class DATENBANKVERBINDUNG implements MELDUNGSERZEUGER
                 lfnr = -1;
             }
             telefon.LaufendeNummerSetzen(lfnr);
-            int res = st.executeUpdate(
+            st.executeUpdate(
                     "INSERT INTO telefon (Personennummer, Lfnr, Nummer, Art, Notiz) VALUES ("
                             + telefon.PersonenNummerGeben() + ", " + lfnr
                             + ", '" + telefon.NummerGeben() + "', '"
@@ -491,10 +490,9 @@ class DATENBANKVERBINDUNG implements MELDUNGSERZEUGER
         try
         {
             Statement st = conn.createStatement();
-            int res = st
-                    .executeUpdate("DELETE FROM telefon WHERE Personennummer = "
-                            + telefon.PersonenNummerGeben() + " AND Lfnr = "
-                            + telefon.LaufendeNummerGeben());
+            st.executeUpdate("DELETE FROM telefon WHERE Personennummer = "
+                    + telefon.PersonenNummerGeben() + " AND Lfnr = "
+                    + telefon.LaufendeNummerGeben());
             st.close();
             return true;
         }
@@ -517,8 +515,8 @@ class DATENBANKVERBINDUNG implements MELDUNGSERZEUGER
         try
         {
             Statement st = conn.createStatement();
-            int res = st.executeUpdate("UPDATE email SET EMail = '"
-                    + email.AdresseGeben() + "', Notiz = '" + email.NotizGeben()
+            st.executeUpdate("UPDATE email SET EMail = '" + email.AdresseGeben()
+                    + "', Notiz = '" + email.NotizGeben()
                     + "' WHERE Personennummer = " + email.PersonenNummerGeben()
                     + " AND Lfnr = " + email.LaufendeNummerGeben());
             st.close();
@@ -558,7 +556,7 @@ class DATENBANKVERBINDUNG implements MELDUNGSERZEUGER
                 lfnr = -1;
             }
             email.LaufendeNummerSetzen(lfnr);
-            int res = st.executeUpdate(
+            st.executeUpdate(
                     "INSERT INTO email (Personennummer, Lfnr, EMail, Notiz) VALUES ("
                             + email.PersonenNummerGeben() + ", " + lfnr + ", '"
                             + email.AdresseGeben() + "', '" + email.NotizGeben()
@@ -585,10 +583,9 @@ class DATENBANKVERBINDUNG implements MELDUNGSERZEUGER
         try
         {
             Statement st = conn.createStatement();
-            int res = st
-                    .executeUpdate("DELETE FROM email WHERE Personennummer = "
-                            + email.PersonenNummerGeben() + " AND Lfnr = "
-                            + email.LaufendeNummerGeben());
+            st.executeUpdate("DELETE FROM email WHERE Personennummer = "
+                    + email.PersonenNummerGeben() + " AND Lfnr = "
+                    + email.LaufendeNummerGeben());
             st.close();
             return true;
         }

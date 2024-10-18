@@ -38,7 +38,8 @@ class DATENBANKVERBINDUNG implements MELDUNGSERZEUGER
         allebeobachter = new ArrayList<MELDUNGSBEOBACHTER>();
         try
         {
-            Class.forName("com.mysql.jdbc.Driver").newInstance();
+            Class.forName("com.mysql.jdbc.Driver").getDeclaredConstructor()
+                    .newInstance();
             conn = DriverManager.getConnection(
                     "jdbc:mysql://localhost/ferienwohnung?user=ferien&password=wohnung");
             LogeintragMelden("Verbindung aufgebaut.");
@@ -116,6 +117,7 @@ class DATENBANKVERBINDUNG implements MELDUNGSERZEUGER
      *
      * @param text der Fehler
      */
+    @SuppressWarnings("unused")
     private void FehlerMelden(String text)
     {
         for (MELDUNGSBEOBACHTER b : allebeobachter)
@@ -188,7 +190,6 @@ class DATENBANKVERBINDUNG implements MELDUNGSERZEUGER
     OBJEKTINFO ObjektHolen(int nummer)
     {
         OBJEKTINFO res;
-        int index;
         Statement st;
         ResultSet rs;
         res = null;
@@ -308,8 +309,7 @@ class DATENBANKVERBINDUNG implements MELDUNGSERZEUGER
         try
         {
             Statement st = conn.createStatement();
-            int res = st.executeUpdate(
-                    "INSERT INTO land (Name) VALUES ('" + name + "')");
+            st.executeUpdate("INSERT INTO land (Name) VALUES ('" + name + "')");
             st.close();
             LogeintragMelden("Neues Land eingetragen: " + name);
         }
@@ -340,7 +340,7 @@ class DATENBANKVERBINDUNG implements MELDUNGSERZEUGER
         try
         {
             Statement st = conn.createStatement();
-            int res = st.executeUpdate("UPDATE objekt SET Name = '" + name
+            st.executeUpdate("UPDATE objekt SET Name = '" + name
                     + "', Groesse = " + groesse + ", Anzahlzimmer = " + zimmer
                     + ", Anzahlpersonen = " + personen + ", Landnummer = "
                     + land + ", Ausstattung = '" + ausstattungen + "', Preis = "
@@ -412,7 +412,7 @@ class DATENBANKVERBINDUNG implements MELDUNGSERZEUGER
         try
         {
             Statement st = conn.createStatement();
-            int res = st.executeUpdate(
+            st.executeUpdate(
                     "DELETE FROM objekt WHERE WohnungsNummer = " + nummer);
             st.close();
             LogeintragMelden("Objekt gel\u00F6scht: " + nummer);
@@ -460,7 +460,7 @@ class DATENBANKVERBINDUNG implements MELDUNGSERZEUGER
         try
         {
             Statement st = conn.createStatement();
-            int res = st.executeUpdate("UPDATE kunde SET Name = '" + name
+            st.executeUpdate("UPDATE kunde SET Name = '" + name
                     + "', Vorname = '" + vorname + "' "
                     + " WHERE Benutzername = '" + benutzername + "'");
             st.close();
@@ -483,7 +483,7 @@ class DATENBANKVERBINDUNG implements MELDUNGSERZEUGER
         try
         {
             Statement st = conn.createStatement();
-            int res = st.executeUpdate(
+            st.executeUpdate(
                     "DELETE FROM kunde WHERE Benutzername = " + benutzername);
             st.close();
             LogeintragMelden("Kunde gel\u00F6scht: " + benutzername);
@@ -505,8 +505,8 @@ class DATENBANKVERBINDUNG implements MELDUNGSERZEUGER
         try
         {
             Statement st = conn.createStatement();
-            int res = st.executeUpdate("UPDATE kunde SET Passwort = '" + pass
-                    + "' " + " WHERE Benutzername = '" + benutzername + "'");
+            st.executeUpdate("UPDATE kunde SET Passwort = '" + pass + "' "
+                    + " WHERE Benutzername = '" + benutzername + "'");
             st.close();
             LogeintragMelden("Passwort ge\u00E4ndert: " + benutzername + " ("
                     + pass + ")");
@@ -670,7 +670,7 @@ class DATENBANKVERBINDUNG implements MELDUNGSERZEUGER
         try
         {
             Statement st = conn.createStatement();
-            int res = st.executeUpdate(
+            st.executeUpdate(
                     "DELETE FROM reservierungen WHERE Nummer = " + nummer);
             st.close();
             LogeintragMelden("Buchung gel\u00F6scht: " + nummer);
@@ -691,7 +691,7 @@ class DATENBANKVERBINDUNG implements MELDUNGSERZEUGER
         try
         {
             Statement st = conn.createStatement();
-            int res = st.executeUpdate(
+            st.executeUpdate(
                     "UPDATE reservierungen SET Art = 'gebucht' WHERE Nummer = "
                             + nummer);
             st.close();

@@ -30,6 +30,7 @@ class OBERFLAECHE
             abschnittAendern, abschnittLoeschen, umsteigenSetzen,
             umsteigenLoeschen;
 
+    @SuppressWarnings("unused")
     private TextField x1Abschnitt, y1Abschnitt, x2Abschnitt, y2Abschnitt;
 
     private Choice linienAuswahl, bahnhofFuerAbschnitt, umsteigenVon,

@@ -45,7 +45,8 @@ class DATENBANKVERBINDUNG implements MELDUNGSERZEUGER
         format = new SimpleDateFormat("yyyy-MM-dd");
         try
         {
-            Class.forName("com.mysql.jdbc.Driver").newInstance();
+            Class.forName("com.mysql.jdbc.Driver").getDeclaredConstructor()
+                    .newInstance();
             conn = DriverManager.getConnection(
                     "jdbc:mysql://localhost/ferienwohnung?user=ferien&password=wohnung");
             LogeintragMelden("Verbindung aufgebaut.");
@@ -123,6 +124,7 @@ class DATENBANKVERBINDUNG implements MELDUNGSERZEUGER
      *
      * @param text der Fehler
      */
+    @SuppressWarnings("unused")
     private void FehlerMelden(String text)
     {
         for (MELDUNGSBEOBACHTER b : allebeobachter)
@@ -402,7 +404,7 @@ class DATENBANKVERBINDUNG implements MELDUNGSERZEUGER
         try
         {
             Statement st = conn.createStatement();
-            int res = st.executeUpdate(
+            st.executeUpdate(
                     "DELETE FROM reservierungen WHERE Nummer = " + nummer);
             st.close();
             LogeintragMelden("Reservierung gel\u00F6scht: " + nummer);
@@ -423,7 +425,7 @@ class DATENBANKVERBINDUNG implements MELDUNGSERZEUGER
         try
         {
             Statement st = conn.createStatement();
-            int res = st.executeUpdate(
+            st.executeUpdate(
                     "UPDATE reservierungen SET Art = 'gebucht' WHERE Nummer = "
                             + nummer);
             st.close();
@@ -446,8 +448,8 @@ class DATENBANKVERBINDUNG implements MELDUNGSERZEUGER
         try
         {
             Statement st = conn.createStatement();
-            int res = st.executeUpdate("UPDATE kunde SET Passwort = '" + pass
-                    + "' " + " WHERE Benutzername = '" + benutzername + "'");
+            st.executeUpdate("UPDATE kunde SET Passwort = '" + pass + "' "
+                    + " WHERE Benutzername = '" + benutzername + "'");
             st.close();
             LogeintragMelden("Passwort ge\u00E4ndert: " + benutzername);
         }

@@ -12,6 +12,7 @@ class GEMEINSCHAFTSPRAXIS
 {
     private LISTE liste;
 
+    @SuppressWarnings("unused")
     private FENSTER oberflaeche;
 
     /**

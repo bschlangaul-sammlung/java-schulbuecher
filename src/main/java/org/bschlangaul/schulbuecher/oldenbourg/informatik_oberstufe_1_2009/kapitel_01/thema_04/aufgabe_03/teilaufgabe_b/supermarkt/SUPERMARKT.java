@@ -19,6 +19,7 @@ class SUPERMARKT implements TaktKlient
 
     private int wartezeit;
 
+    @SuppressWarnings("unused")
     private int mittlereWartezeit;
 
     private Random zzgenerator;

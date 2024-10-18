@@ -32,6 +32,7 @@ import javax.swing.event.ListSelectionListener;
  *
  * @version 1.0
  */
+@SuppressWarnings({ "rawtypes", "unchecked" })
 class OBERFLAECHE implements OBERFLACHENINTERFACE, MELDUNGSBEOBACHTER
 {
     private JFrame fenster;
@@ -73,6 +74,7 @@ class OBERFLAECHE implements OBERFLACHENINTERFACE, MELDUNGSBEOBACHTER
     /**
      * Baut die Fensterstruktur auf.
      */
+
     OBERFLAECHE(KONTROLLEURINTERFACE k)
     {
         String[] tage = { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10",

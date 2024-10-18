@@ -102,7 +102,7 @@ class KASSENSYMBOL
     {
         int x = 400;
         int y = 100 * kassennummer;
-        anzeige.setLocation(x, 100 * kassennummer);;
+        anzeige.setLocation(x, y);
     }
 
     /**

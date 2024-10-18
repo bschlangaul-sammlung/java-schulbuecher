@@ -36,7 +36,6 @@ public class Buch extends Actor
      */
     void aktualisiereBild()
     {
-        BildHilfe bildHilfe = new BildHilfe();
-        setImage(bildHilfe.erstelleBuchBild(this));
+        setImage(BildHilfe.erstelleBuchBild(this));
     }
 }

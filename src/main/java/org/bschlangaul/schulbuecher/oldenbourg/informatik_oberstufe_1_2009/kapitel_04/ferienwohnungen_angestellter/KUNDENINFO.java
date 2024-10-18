@@ -15,6 +15,7 @@ class KUNDENINFO
 
     private String vorname;
 
+    @SuppressWarnings("unused")
     private String pass;
 
     /**

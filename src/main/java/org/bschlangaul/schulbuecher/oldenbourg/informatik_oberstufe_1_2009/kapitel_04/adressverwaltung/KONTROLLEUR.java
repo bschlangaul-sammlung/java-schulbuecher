@@ -7,6 +7,7 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapi
  *
  * @version 1.0
  */
+@SuppressWarnings("unused")
 class KONTROLLEUR implements KONTROLLEURINTERFACE
 {
     private OBERFLACHENINTERFACE oberflaeche;

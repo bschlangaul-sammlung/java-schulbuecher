@@ -31,6 +31,7 @@ import javax.swing.event.ListSelectionListener;
  *
  * @version 1.0
  */
+@SuppressWarnings({ "rawtypes", "unchecked" })
 class OBERFLAECHE implements OBERFLACHENINTERFACE, MELDUNGSBEOBACHTER
 {
     private JFrame fenster;

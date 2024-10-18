@@ -15,6 +15,7 @@ import java.awt.Graphics;
  *
  * @version 1.0
  */
+@SuppressWarnings("unused")
 public class LAMPE
 {
     private enum Farbe

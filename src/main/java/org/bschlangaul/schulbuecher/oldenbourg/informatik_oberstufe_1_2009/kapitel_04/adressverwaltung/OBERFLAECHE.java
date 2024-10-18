@@ -30,6 +30,7 @@ import javax.swing.event.ChangeListener;
  *
  * @version 1.0
  */
+@SuppressWarnings({ "rawtypes", "unchecked" })
 class OBERFLAECHE implements OBERFLACHENINTERFACE, MELDUNGSBEOBACHTER
 {
     private JFrame fenster;
