@@ -7,7 +7,7 @@ package org.bschlangaul.schulbuecher.isb.handreichung_12_2010.kapitel_04.sortier
  *
  * @version 1.0
  */
-interface OBERFLAECHENINTERFACE
+interface OberflaecheInterface
 {
     /**
      * Trägt die Suchzeit für Sortieren durch Auswählen ein.

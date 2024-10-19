@@ -7,17 +7,17 @@ package org.bschlangaul.schulbuecher.isb.handreichung_12_2010.kapitel_04.modell.
  *
  * @version 1.0
  */
-class KNOTEN extends LISTENELEMENT
+class Knoten extends ListenElement
 {
     /**
      * Der Nachfolger des Knoten
      */
-    private LISTENELEMENT nachfolger;
+    private ListenElement nachfolger;
 
     /**
      * Das Datenelement des Knoten
      */
-    private KNOTENINFO daten;
+    private KnotenInfo daten;
 
     /**
      * Belegt Nachfolger und Datenelement.
@@ -25,7 +25,7 @@ class KNOTEN extends LISTENELEMENT
      * @param daten das zu verwaltende Datenelement
      * @param nachfolger der Nachfolgerknoten
      */
-    KNOTEN(KNOTENINFO daten, LISTENELEMENT nachfolger)
+    Knoten(KnotenInfo daten, ListenElement nachfolger)
     {
         this.daten = daten;
         this.nachfolger = nachfolger;
@@ -36,7 +36,7 @@ class KNOTEN extends LISTENELEMENT
      *
      * @return Knoteninformation
      */
-    KNOTENINFO AnfangGeben()
+    KnotenInfo AnfangGeben()
     {
         return daten;
     }
@@ -48,7 +48,7 @@ class KNOTEN extends LISTENELEMENT
      *
      * @return Konoteninformation
      */
-    KNOTENINFO KnotenSuchen(int nummer)
+    KnotenInfo KnotenSuchen(int nummer)
     {
         if (daten.IstKnoten(nummer))
         {
@@ -67,7 +67,7 @@ class KNOTEN extends LISTENELEMENT
      *
      * @return Konoteninformation
      */
-    KNOTENINFO MinimumSuchen(KNOTENINFO akt)
+    KnotenInfo MinimumSuchen(KnotenInfo akt)
     {
         if ((akt == null) || daten.IstKleiner(akt))
         {
@@ -86,7 +86,7 @@ class KNOTEN extends LISTENELEMENT
      *
      * @return (neuer) Nachfolger des Vorgängers
      */
-    LISTENELEMENT KnotenEntfernen(KNOTENINFO daten)
+    ListenElement KnotenEntfernen(KnotenInfo daten)
     {
         if (this.daten == daten)
         {

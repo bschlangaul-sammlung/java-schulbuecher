@@ -9,12 +9,12 @@ import org.bschlangaul.schulbuecher.isb.handreichung_12_2010.kapitel_04.modell.D
  *
  * @version 1.0
  */
-public class LISTE
+public class Liste
 {
     /**
      * Referenz auf das erste Element der Liste.
      */
-    private LISTENELEMENT anfang;
+    private ListenElement anfang;
 
     /**
      * Zähler für die Anzahl der Vergleiche
@@ -24,9 +24,9 @@ public class LISTE
     /**
      * Legt eine leere Liste an.
      */
-    public LISTE()
+    public Liste()
     {
-        anfang = new ABSCHLUSS();
+        anfang = new Abschluss();
     }
 
     /**

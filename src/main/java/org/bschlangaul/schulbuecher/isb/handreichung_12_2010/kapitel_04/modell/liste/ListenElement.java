@@ -9,12 +9,12 @@ import org.bschlangaul.schulbuecher.isb.handreichung_12_2010.kapitel_04.modell.D
  *
  * @version 1.0
  */
-abstract class LISTENELEMENT
+abstract class ListenElement
 {
     /**
      * Keine Aufgabe, nur zur Dokumentation aufgeführt.
      */
-    LISTENELEMENT()
+    ListenElement()
     {
     }
 
@@ -25,7 +25,7 @@ abstract class LISTENELEMENT
      *
      * @return der (neue) Nachfolger für das Vorgängerelement
      */
-    abstract LISTENELEMENT Einfuegen(DatenElement neu);
+    abstract ListenElement Einfuegen(DatenElement neu);
 
     /**
      * Sucht ein Datenelement mit dem in der Referenz angegebenen Schlüssel.

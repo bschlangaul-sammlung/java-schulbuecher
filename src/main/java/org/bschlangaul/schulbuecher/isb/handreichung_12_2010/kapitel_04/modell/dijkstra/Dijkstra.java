@@ -7,7 +7,7 @@ package org.bschlangaul.schulbuecher.isb.handreichung_12_2010.kapitel_04.modell.
  *
  * @version 1.0
  */
-public class DIJKSTRA
+public class Dijkstra
 {
     /**
      * Adjazenzmatrix des Graphen
@@ -17,29 +17,29 @@ public class DIJKSTRA
     /**
      * Liste der abgearbeiteten Knoten
      */
-    private LISTE fertig;
+    private Liste fertig;
 
     /**
      * Liste der unbearbeiteten Knoten
      */
-    private LISTE rest;
+    private Liste rest;
 
     /**
      * Liste der erreichten Knoten
      */
-    private LISTE inarbeit;
+    private Liste inarbeit;
 
     /**
      * Legt die Hilfsdaten an.
      *
      * @param m Adjazenzmatrix
      */
-    public DIJKSTRA(int[][] m)
+    public Dijkstra(int[][] m)
     {
         matrix = m;
-        fertig = new LISTE();
-        rest = new LISTE();
-        inarbeit = new LISTE();
+        fertig = new Liste();
+        rest = new Liste();
+        inarbeit = new Liste();
     }
 
     /**
@@ -54,16 +54,16 @@ public class DIJKSTRA
     {
         int akt;
         int laenge;
-        KNOTENINFO info;
+        KnotenInfo info;
         for (int i = 0; i < matrix.length; i++)
         {
             if (i == von)
             {
-                fertig.Einfuegen(new KNOTENINFO(i));
+                fertig.Einfuegen(new KnotenInfo(i));
             }
             else
             {
-                rest.Einfuegen(new KNOTENINFO(i));
+                rest.Einfuegen(new KnotenInfo(i));
             }
         }
         akt = von;

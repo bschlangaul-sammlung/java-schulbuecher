@@ -1,4 +1,4 @@
-package org.bschlangaul.schulbuecher.isb.handreichung_12_2010.kapitel_04.sortieren;
+package org.bschlangaul.schulbuecher.isb.handreichung_12_2010.kapitel_04.sortieren_zaehlen;
 
 /**
  * Schnittstelle des Kontrolleurs für die Oberfläche.
@@ -7,16 +7,16 @@ package org.bschlangaul.schulbuecher.isb.handreichung_12_2010.kapitel_04.sortier
  *
  * @version 1.0
  */
-interface KONTROLLEURINTERFACE
+interface KontrolleurInterface
 {
     /**
      * Ausführen der Laufzeitmessungen.
      *
-     * @param anzahlElemente Anzahl der zu sortierenden Datenelemente
+     * @param anzahlElement Anzahl der zu sortierenden Datenelemente
      * @param auswahl gibt an, ob mit Auswahlsort sortiert werden soll
      * @param mischen gibt an, ob mit Mergesort sortiert werden soll
      */
-    void SortierenAusfuehren(int anzahlElemente, boolean auswahl,
+    void SortierenAusfuehren(int anzahlElement, boolean auswahl,
             boolean mischen);
 
     /**

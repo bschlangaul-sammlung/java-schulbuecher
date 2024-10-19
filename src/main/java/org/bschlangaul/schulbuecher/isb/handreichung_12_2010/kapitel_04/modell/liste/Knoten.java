@@ -9,7 +9,7 @@ import org.bschlangaul.schulbuecher.isb.handreichung_12_2010.kapitel_04.modell.D
  *
  * @version 1.0
  */
-class KNOTEN extends LISTENELEMENT
+class Knoten extends ListenElement
 {
     /**
      * Referenz auf das Datenelement
@@ -19,7 +19,7 @@ class KNOTEN extends LISTENELEMENT
     /**
      * Referenz auf den Nachfolgerknoten
      */
-    private LISTENELEMENT nachfolger;
+    private ListenElement nachfolger;
 
     /**
      * Legt einen neuen Knoten mit gegebenem Datenelement und gegebenem
@@ -28,7 +28,7 @@ class KNOTEN extends LISTENELEMENT
      * @param d Referenz auf das von diesem Knoten verwaltete Datenelement
      * @param nf Referenz auf das Nachfolgerelement
      */
-    KNOTEN(DatenElement d, LISTENELEMENT nf)
+    Knoten(DatenElement d, ListenElement nf)
     {
         daten = d;
         nachfolger = nf;
@@ -41,7 +41,7 @@ class KNOTEN extends LISTENELEMENT
      *
      * @return der (neue) Nachfolger für das Vorgängerelement
      */
-    LISTENELEMENT Einfuegen(DatenElement neu)
+    ListenElement Einfuegen(DatenElement neu)
     {
         if (neu.Vergleichen(daten) > 0)
         {
@@ -50,7 +50,7 @@ class KNOTEN extends LISTENELEMENT
         }
         else
         {
-            return new KNOTEN(neu, this);
+            return new Knoten(neu, this);
         }
     }
 
@@ -64,7 +64,7 @@ class KNOTEN extends LISTENELEMENT
      */
     DatenElement Suchen(DatenElement schluessel)
     {
-        LISTE.ZaehlerErhoehen();
+        Liste.ZaehlerErhoehen();
         if (schluessel.Vergleichen(daten) == 0)
         {
             return daten;

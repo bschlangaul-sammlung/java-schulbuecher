@@ -9,12 +9,12 @@ import org.bschlangaul.schulbuecher.isb.handreichung_12_2010.kapitel_04.modell.D
  *
  * @version 1.0
  */
-class ABSCHLUSS extends LISTENELEMENT
+class Abschluss extends ListenElement
 {
     /**
      * Für das Anlegen des Abschlusses brauchts nichts getan zu werden.
      */
-    ABSCHLUSS()
+    Abschluss()
     {
     }
 
@@ -25,9 +25,9 @@ class ABSCHLUSS extends LISTENELEMENT
      *
      * @return der neue Nachfolger für das Vorgängerelement
      */
-    LISTENELEMENT Einfuegen(DatenElement neu)
+    ListenElement Einfuegen(DatenElement neu)
     {
-        return new KNOTEN(neu, this);
+        return new Knoten(neu, this);
     }
 
     /**

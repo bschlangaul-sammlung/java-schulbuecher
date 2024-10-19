@@ -7,19 +7,19 @@ package org.bschlangaul.schulbuecher.isb.handreichung_12_2010.kapitel_04.modell.
  *
  * @version 1.0
  */
-class LISTE
+class Liste
 {
     /**
      * Der Startknoten der Liste
      */
-    private LISTENELEMENT anfang;
+    private ListenElement anfang;
 
     /**
      * Legt eine leere Liste an.
      */
-    LISTE()
+    Liste()
     {
-        anfang = new ABSCHLUSS();
+        anfang = new Abschluss();
     }
 
     /**
@@ -27,9 +27,9 @@ class LISTE
      *
      * @param daten Referenz auf die Einzufügende Knoteninformation
      */
-    void Einfuegen(KNOTENINFO daten)
+    void Einfuegen(KnotenInfo daten)
     {
-        anfang = new KNOTEN(daten, anfang);
+        anfang = new Knoten(daten, anfang);
     }
 
     /**
@@ -37,7 +37,7 @@ class LISTE
      *
      * @return Knoteninformation
      */
-    KNOTENINFO AnfangGeben()
+    KnotenInfo AnfangGeben()
     {
         return anfang.AnfangGeben();
     }
@@ -49,7 +49,7 @@ class LISTE
      *
      * @return Konoteninformation
      */
-    KNOTENINFO KnotenSuchen(int nummer)
+    KnotenInfo KnotenSuchen(int nummer)
     {
         return anfang.KnotenSuchen(nummer);
     }
@@ -59,7 +59,7 @@ class LISTE
      *
      * @return Knoteninformation
      */
-    KNOTENINFO MinimumSuchen()
+    KnotenInfo MinimumSuchen()
     {
         return anfang.MinimumSuchen(null);
     }
@@ -69,7 +69,7 @@ class LISTE
      *
      * @param daten Datenelement, dess Knoten gelöscht werden soll
      */
-    void KnotenEntfernen(KNOTENINFO daten)
+    void KnotenEntfernen(KnotenInfo daten)
     {
         anfang = anfang.KnotenEntfernen(daten);
     }

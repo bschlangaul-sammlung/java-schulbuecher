@@ -7,12 +7,12 @@ package org.bschlangaul.schulbuecher.isb.handreichung_12_2010.kapitel_04.modell;
  *
  * @version 1.0
  */
-public class TESTSORTIEREN
+public class TestSortieren
 {
     /**
      * Erzeugerelement für die Schlüsselwerte
      */
-    private GENERATOR g;
+    private Generator g;
 
     /**
      * Die Vergleichsanzahlen
@@ -34,13 +34,13 @@ public class TESTSORTIEREN
      *
      * @param anzahl Anzahl der zu sortierenden Datenelemente
      */
-    public TESTSORTIEREN(int anzahl)
+    public TestSortieren(int anzahl)
     {
-        g = new GENERATOR(10);
+        g = new Generator(10);
         daten = new DatenElement[anzahl];
         for (int i = 0; i < anzahl; i++)
         {
-            daten[i] = new STRINGDATEN(g.BezeichnerGenerieren());
+            daten[i] = new StringDaten(g.BezeichnerGenerieren());
         }
     }
 
@@ -120,7 +120,7 @@ public class TESTSORTIEREN
                 else
                 {
                     anzahl2 += 1;
-                    if (((STRINGDATEN) von[posUnten])
+                    if (((StringDaten) von[posUnten])
                             .Vergleichen(von[posOben]) <= 0)
                     {
                         nach[pos] = von[posUnten];

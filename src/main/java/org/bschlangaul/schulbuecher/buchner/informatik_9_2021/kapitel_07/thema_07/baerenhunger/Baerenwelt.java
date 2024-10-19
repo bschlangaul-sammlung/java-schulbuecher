@@ -15,22 +15,22 @@ public class Baerenwelt extends World
 
     Boden boden;
 
-    /*
+    /**
      * Erzeugt die Welt, färbt den Hintergrund und platziert ein Bären-Objekt
      * unten in die Mitte.
      */
     public Baerenwelt()
     {
         super(800, 600, 1);
-        /* erzeugt den Hintergrund und färbt ihn vollstaendig türkis */
+        // erzeugt den Hintergrund und färbt ihn vollstaendig türkis
         GreenfootImage hintergrund = getBackground();
         hintergrund.setColor(Color.CYAN);
         hintergrund.fill();
-        /* erzeugt den Boden am unteren Rand der Welt */
+        // erzeugt den Boden am unteren Rand der Welt
         boden = new Boden();
         int bodenHoehe = boden.getImage().getHeight();
         addObject(boden, 400, 600 - bodenHoehe / 2);
-        /* erzeugt den Bären und platziert ihn mittig oberhalb des Bodens */
+        // erzeugt den Bären und platziert ihn mittig oberhalb des Bodens
         baer = new Baer();
         int baerHoehe = baer.getImage().getHeight();
         addObject(baer, 400, 600 - bodenHoehe - baerHoehe / 2);

@@ -8,7 +8,7 @@ package org.bschlangaul.schulbuecher.isb.handreichung_12_2010.kapitel_04.modell;
  *
  * @version 1.0
  */
-class TIEFENSUCHE
+class TiefenSuche
 {
     /**
      * Adjazenzmatrix des Graphen
@@ -28,7 +28,7 @@ class TIEFENSUCHE
      *
      * @param m Adjazenzmatrix
      */
-    TIEFENSUCHE(int[][] m)
+    TiefenSuche(int[][] m)
     {
         matrix = m;
         besucht = new boolean[m.length];

@@ -1,6 +1,6 @@
-package org.bschlangaul.schulbuecher.isb.handreichung_12_2010.kapitel_04.sortieren;
+package org.bschlangaul.schulbuecher.isb.handreichung_12_2010.kapitel_04.sortieren_zaehlen;
 
-import org.bschlangaul.schulbuecher.isb.handreichung_12_2010.kapitel_04.modell.TESTSORTIEREN;
+import org.bschlangaul.schulbuecher.isb.handreichung_12_2010.kapitel_04.modell.TestSortieren;
 
 /**
  * Kontrolleur des Programms.
@@ -9,17 +9,17 @@ import org.bschlangaul.schulbuecher.isb.handreichung_12_2010.kapitel_04.modell.T
  *
  * @version 1.0
  */
-class KONTROLLEUR implements KONTROLLEURINTERFACE
+class Kontrolleur implements KontrolleurInterface
 {
     /**
      * Die ereigniserzeugende Oberfläche
      */
-    private OBERFLAECHENINTERFACE oberflaeche;
+    private OberflaechenInterface oberflaeche;
 
     /**
      * Besetzt das Attribut vor.
      */
-    KONTROLLEUR()
+    Kontrolleur()
     {
         oberflaeche = null;
     }
@@ -29,7 +29,7 @@ class KONTROLLEUR implements KONTROLLEURINTERFACE
      *
      * @param o die ereigniserzeugende Oberfläche
      */
-    void OberflaecheSetzen(OBERFLAECHENINTERFACE o)
+    void OberflaecheSetzen(OberflaechenInterface o)
     {
         oberflaeche = o;
     }
@@ -44,20 +44,20 @@ class KONTROLLEUR implements KONTROLLEURINTERFACE
     public void SortierenAusfuehren(int anzahlElemente, boolean auswahl,
             boolean mischen)
     {
-        TESTSORTIEREN test;
-        oberflaeche.AuswahlSortierzeitSetzen("---");
-        oberflaeche.MischSortierzeitSetzen("---");
-        test = new TESTSORTIEREN(anzahlElemente);
-        test.DurchschnittsTestZeit(auswahl, mischen);
+        TestSortieren test;
+        oberflaeche.AuswahlSortieranzahlSetzen("---");
+        oberflaeche.MischSortieranzahlSetzen("---");
+        test = new TestSortieren(anzahlElemente);
+        test.DurchschnittsTestAnzahl(auswahl, mischen);
         if (auswahl)
         {
-            oberflaeche
-                    .AuswahlSortierzeitSetzen("" + test.ZeitFuerAuswahlGeben());
+            oberflaeche.AuswahlSortieranzahlSetzen(
+                    "" + test.AnzahlFuerAuswahlGeben());
         }
         if (mischen)
         {
-            oberflaeche
-                    .MischSortierzeitSetzen("" + test.ZeitFuerMergesortGeben());
+            oberflaeche.MischSortieranzahlSetzen(
+                    "" + test.AnzahlFuerMergesortGeben());
         }
     }
 

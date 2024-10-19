@@ -8,7 +8,7 @@ package org.bschlangaul.schulbuecher.isb.handreichung_12_2010.kapitel_04.modell;
  *
  * @version 1.0
  */
-public class STRINGDATEN implements DatenElement
+public class StringDaten implements DatenElement
 {
     /**
      * Der Schlüssel des Datenelements
@@ -20,7 +20,7 @@ public class STRINGDATEN implements DatenElement
      *
      * @param s der Schlüssel des Datenelements
      */
-    public STRINGDATEN(String s)
+    public StringDaten(String s)
     {
         schluessel = s;
     }
@@ -36,6 +36,6 @@ public class STRINGDATEN implements DatenElement
      */
     public int Vergleichen(DatenElement schluessel)
     {
-        return this.schluessel.compareTo(((STRINGDATEN) schluessel).schluessel);
+        return this.schluessel.compareTo(((StringDaten) schluessel).schluessel);
     }
 }

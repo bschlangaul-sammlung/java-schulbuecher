@@ -7,7 +7,7 @@ package org.bschlangaul.schulbuecher.isb.handreichung_12_2010.kapitel_04.modell.
  *
  * @version 1.0
  */
-class KNOTENINFO
+class KnotenInfo
 {
     /**
      * Knotennummer
@@ -29,7 +29,7 @@ class KNOTENINFO
      *
      * @param n Nummer des Knotens
      */
-    KNOTENINFO(int n)
+    KnotenInfo(int n)
     {
         nummer = n;
         vorgaenger = -1;
@@ -104,7 +104,7 @@ class KNOTENINFO
      * @return true, wenn die eigene Länge kleiner ist als die des
      *     Vergleichsknotens
      */
-    boolean IstKleiner(KNOTENINFO k)
+    boolean IstKleiner(KnotenInfo k)
     {
         return laenge < k.laenge;
     }

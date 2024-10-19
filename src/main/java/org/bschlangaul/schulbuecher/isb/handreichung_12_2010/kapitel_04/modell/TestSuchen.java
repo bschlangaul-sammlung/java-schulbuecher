@@ -2,7 +2,7 @@ package org.bschlangaul.schulbuecher.isb.handreichung_12_2010.kapitel_04.modell;
 
 import java.util.Random;
 
-import org.bschlangaul.schulbuecher.isb.handreichung_12_2010.kapitel_04.modell.dijkstra.DIJKSTRA;
+import org.bschlangaul.schulbuecher.isb.handreichung_12_2010.kapitel_04.modell.dijkstra.Dijkstra;
 
 /**
  * Führt die gewünschten Laufzeittests durch.
@@ -11,7 +11,7 @@ import org.bschlangaul.schulbuecher.isb.handreichung_12_2010.kapitel_04.modell.d
  *
  * @version 1.0
  */
-public class TESTSUCHEN
+public class TestSuchen
 {
     /**
      * Anzahl der Datenelemente im Graphen
@@ -43,10 +43,10 @@ public class TESTSUCHEN
      *
      * @param anzahl Anzahl der zu sortierenden Datenelemente
      */
-    public TESTSUCHEN(int anzahl)
+    public TestSuchen(int anzahl)
     {
         this.anzahl = anzahl;
-        matrix = new GENERIEREN(anzahl)
+        matrix = new Generieren(anzahl)
                 .AdjazenzmatrixGenerieren((anzahl - 1) * 2);
     }
 
@@ -78,8 +78,8 @@ public class TESTSUCHEN
                 while (start == ziel);
                 if (tiefe)
                 {
-                    TIEFENSUCHE t;
-                    t = new TIEFENSUCHE(matrix);
+                    TiefenSuche t;
+                    t = new TiefenSuche(matrix);
                     start = System.nanoTime();
                     t.WegSuchen(this.start, this.ziel);
                     ende = System.nanoTime();
@@ -87,8 +87,8 @@ public class TESTSUCHEN
                 }
                 if (dijkstra)
                 {
-                    DIJKSTRA t;
-                    t = new DIJKSTRA(matrix);
+                    Dijkstra t;
+                    t = new Dijkstra(matrix);
                     start = System.nanoTime();
                     t.WegSuchen(this.start, this.ziel);
                     ende = System.nanoTime();

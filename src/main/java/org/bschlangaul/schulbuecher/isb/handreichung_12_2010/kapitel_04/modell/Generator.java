@@ -9,7 +9,7 @@ import java.util.Random;
  *
  * @version 1.0
  */
-public class GENERATOR
+public class Generator
 {
     /**
      * Der Zufallsgenerator
@@ -32,7 +32,7 @@ public class GENERATOR
      *
      * @param laenge Die Länge der zu generierenden Bezeichner
      */
-    public GENERATOR(int laenge)
+    public Generator(int laenge)
     {
         zufall = new Random();
         this.laenge = laenge;

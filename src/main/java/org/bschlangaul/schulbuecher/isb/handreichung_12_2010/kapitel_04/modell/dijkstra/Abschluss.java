@@ -1,20 +1,31 @@
 package org.bschlangaul.schulbuecher.isb.handreichung_12_2010.kapitel_04.modell.dijkstra;
 
 /**
- * Allgemeines Element der Knoteninfoliste.
+ * Beschreibt das Abschlusselement der Liste.
  *
  * @author ISB-Arbeitskreis, Umsetzungshilfen Informatik 12
  *
  * @version 1.0
  */
-abstract class LISTENELEMENT
+class Abschluss extends ListenElement
 {
+    /**
+     * Constructor for objects of class ABSCHLUSS
+     */
+    Abschluss()
+    {
+        super();
+    }
+
     /**
      * Gibt die Knoteninformation des ersten Elements der Liste.
      *
      * @return Knoteninformation
      */
-    abstract KNOTENINFO AnfangGeben();
+    KnotenInfo AnfangGeben()
+    {
+        return null;
+    }
 
     /**
      * Sucht den Knnoten mit der angegebenen Nummer.
@@ -23,7 +34,10 @@ abstract class LISTENELEMENT
      *
      * @return Konoteninformation
      */
-    abstract KNOTENINFO KnotenSuchen(int nummer);
+    KnotenInfo KnotenSuchen(int nummer)
+    {
+        return null;
+    }
 
     /**
      * Sucht den Knnoten mit der kleinsten Weglänge.
@@ -32,7 +46,10 @@ abstract class LISTENELEMENT
      *
      * @return Konoteninformation
      */
-    abstract KNOTENINFO MinimumSuchen(KNOTENINFO akt);
+    KnotenInfo MinimumSuchen(KnotenInfo akt)
+    {
+        return akt;
+    }
 
     /**
      * Löscht den Knoten für das gegebene Datenelement
@@ -41,5 +58,8 @@ abstract class LISTENELEMENT
      *
      * @return (neuer) Nachfolger des Vorgängers
      */
-    abstract LISTENELEMENT KnotenEntfernen(KNOTENINFO daten);
+    ListenElement KnotenEntfernen(KnotenInfo daten)
+    {
+        return this;
+    }
 }

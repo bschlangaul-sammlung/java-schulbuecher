@@ -7,18 +7,18 @@ package org.bschlangaul.schulbuecher.isb.handreichung_12_2010.kapitel_04.sortier
  *
  * @version 1.0
  */
-class SORTIERENTESTEN
+class SortierenTesten
 {
     /**
      * Legt die Ausgangsobjekte an. Kann nur über die Startmethode verwendet
      * werden.
      */
-    private SORTIERENTESTEN()
+    private SortierenTesten()
     {
-        KONTROLLEUR k;
-        OBERFLAECHE o;
-        k = new KONTROLLEUR();
-        o = new OBERFLAECHE(k);
+        Kontrolleur k;
+        Oberflaeche o;
+        k = new Kontrolleur();
+        o = new Oberflaeche(k);
         k.OberflaecheSetzen(o);
     }
 
@@ -29,6 +29,6 @@ class SORTIERENTESTEN
      */
     public static void main(String[] args)
     {
-        new SORTIERENTESTEN();
+        new SortierenTesten();
     }
 }

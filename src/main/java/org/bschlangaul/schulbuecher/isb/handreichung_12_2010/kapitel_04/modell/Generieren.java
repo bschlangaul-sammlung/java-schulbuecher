@@ -9,7 +9,7 @@ import java.util.Random;
  *
  * @version 1.0
  */
-class GENERIEREN
+class Generieren
 {
     /**
      * Maximale Entfernung zweier Knoten
@@ -31,7 +31,7 @@ class GENERIEREN
      *
      * @param anzahl Anzahl der Knoten
      */
-    GENERIEREN(int anzahl)
+    Generieren(int anzahl)
     {
         matrix = new int[anzahl][anzahl];
         zufall = new Random();

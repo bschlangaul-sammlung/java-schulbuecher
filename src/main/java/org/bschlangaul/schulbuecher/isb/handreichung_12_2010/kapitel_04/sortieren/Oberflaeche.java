@@ -1,4 +1,4 @@
-package org.bschlangaul.schulbuecher.isb.handreichung_12_2010.kapitel_04.sortieren_zaehlen;
+package org.bschlangaul.schulbuecher.isb.handreichung_12_2010.kapitel_04.sortieren;
 
 import java.awt.BorderLayout;
 import java.awt.Dimension;
@@ -22,15 +22,15 @@ import javax.swing.JTextField;
  *
  * @version 1.0
  */
-class OBERFLAECHE implements OBERFLAECHENINTERFACE
+class Oberflaeche implements OberflaecheInterface
 {
     private JFrame fenster;
 
     private JTextField datenAnzahl;
 
-    private JLabel sortieranzahlAuswahl;
+    private JLabel sortierzeitAuswahl;
 
-    private JLabel sortieranzahlMischen;
+    private JLabel sortierzeitMischen;
 
     private JCheckBox auswahlSortieren;
 
@@ -40,14 +40,14 @@ class OBERFLAECHE implements OBERFLAECHENINTERFACE
 
     private JButton beenden;
 
-    private KONTROLLEURINTERFACE kontrolleur;
+    private KontrolleurInterface kontrolleur;
 
     /**
      * Legt die Oberflächenelemente an und setzt den Kontrolleur.
      *
      * @param kontrolleur der verwaltende Kontrolleur
      */
-    OBERFLAECHE(KONTROLLEURINTERFACE kontrolleur)
+    Oberflaeche(KontrolleurInterface kontrolleur)
     {
         this.kontrolleur = kontrolleur;
         FensterAufbauen();
@@ -76,14 +76,14 @@ class OBERFLAECHE implements OBERFLAECHENINTERFACE
         l = new JLabel(" ");
         p.add(l);
         l = new JLabel(
-                "Vergleichsanzahl f\u00FCr Sortieren durch Ausw\u00E4hlen");
+                "Zeit f\u00FCr Sortieren durch Ausw\u00E4hlen [Nanosekunden]");
         p.add(l);
-        sortieranzahlAuswahl = new JLabel("---");
-        p.add(sortieranzahlAuswahl);
-        l = new JLabel("Vergleichsanzahl f\u00FCr Sortieren durch Mischen");
+        sortierzeitAuswahl = new JLabel("---");
+        p.add(sortierzeitAuswahl);
+        l = new JLabel("Zeit f\u00FCr Sortieren durch Mischen [Nanosekunden]");
         p.add(l);
-        sortieranzahlMischen = new JLabel("---");
-        p.add(sortieranzahlMischen);
+        sortierzeitMischen = new JLabel("---");
+        p.add(sortierzeitMischen);
         p = new JPanel();
         content.add(p, BorderLayout.SOUTH);
         p.setLayout(new FlowLayout());
@@ -139,18 +139,22 @@ class OBERFLAECHE implements OBERFLAECHENINTERFACE
     }
 
     /**
-     * Trägt die Vergleichsanzahl für Sortieren durch Auswählen ein.
+     * Trägt die Suchzeit für Sortieren durch Auswählen ein.
+     *
+     * @param zeit benötigte Sortierzeit
      */
-    public void AuswahlSortieranzahlSetzen(String anzahl)
+    public void AuswahlSortierzeitSetzen(String zeit)
     {
-        sortieranzahlAuswahl.setText(anzahl);
+        sortierzeitAuswahl.setText(zeit);
     }
 
     /**
-     * Trägt die Vergleichsanzahl für Sortieren durch Mischen ein.
+     * Trägt die Suchzeit für Sortieren durch Mischen ein.
+     *
+     * @param zeit benötigte Sortierzeit
      */
-    public void MischSortieranzahlSetzen(String anzahl)
+    public void MischSortierzeitSetzen(String zeit)
     {
-        sortieranzahlMischen.setText(anzahl);
+        sortierzeitMischen.setText(zeit);
     }
 }
