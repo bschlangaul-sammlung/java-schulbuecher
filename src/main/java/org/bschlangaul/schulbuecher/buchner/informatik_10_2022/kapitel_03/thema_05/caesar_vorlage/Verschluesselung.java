@@ -7,6 +7,7 @@ package org.bschlangaul.schulbuecher.buchner.informatik_10_2022.kapitel_03.thema
  *
  * @version 2022-09-21
  */
+@SuppressWarnings("unused")
 class Verschluesselung
 {
     static int zaehleBuchstabeImWort(String wort)
@@ -84,7 +85,7 @@ class Verschluesselung
         textAusgeben(geheimesWort);
         return geheimesWort;
     }
-    /* Der Programmtext ab hier muss weder gelesen noch verstanden werden. */
+    // Der Programmtext ab hier muss weder gelesen noch verstanden werden.
 
     private static String allesInGroßbuchstabenUmwandeln(String wort)
     {

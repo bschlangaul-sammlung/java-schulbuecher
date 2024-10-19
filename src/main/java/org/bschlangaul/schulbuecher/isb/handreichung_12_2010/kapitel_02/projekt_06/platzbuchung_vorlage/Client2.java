@@ -1,4 +1,4 @@
-package org.bschlangaul.schulbuecher.isb.handreichung_12_2010.kapitel_02.projekt_06.platzbuchung;
+package org.bschlangaul.schulbuecher.isb.handreichung_12_2010.kapitel_02.projekt_06.platzbuchung_vorlage;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -13,7 +13,7 @@ import java.net.Socket;
  *
  * @version 1.0
  */
-public class CLIENT2
+public class Client2
 {
     /**
      * bidirektionale Schnittstelle zur Netzwerkprotokoll-Implementierung
@@ -53,7 +53,7 @@ public class CLIENT2
      *     (beispielsweise bei falscher IP-Adresse oder falschem Port)<br/>
      *     - die Verbindung zum Server gestört bzw. unterbrochen wurde.
      */
-    public CLIENT2() throws IOException
+    public Client2() throws IOException
     {
         VerbindungHerstellen();
         // Tastatureingabe, Senden und Empfangen
@@ -122,7 +122,7 @@ public class CLIENT2
     {
         try
         {
-            new CLIENT2();
+            new Client2();
         }
         catch (Exception e)
         {

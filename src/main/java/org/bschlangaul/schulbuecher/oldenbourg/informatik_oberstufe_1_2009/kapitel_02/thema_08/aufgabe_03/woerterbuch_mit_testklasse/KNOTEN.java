@@ -222,8 +222,8 @@ public class KNOTEN extends BAUMELEMENT
      * kleiner als der suchSchluessel --> Entfernen im rechten Teilbaum
      * (rekursiver Aufruf) 3. Fall: Der eigene Knoten enthält den zu
      * entfernenden Wert: Der rechte Teilbaum wird am rechten unteren Ende des
-     * Linken Teilbaums "eingeh"auml;ngt" Da der (veränderte) linke Nachfolger
-     * ist der Rückgabewert und entfernt dadurch (wie gewünscht) den aufrufenden
+     * Linken Teilbaums "eingehängt" Da der (veränderte) linke Nachfolger ist
+     * der Rückgabewert und entfernt dadurch (wie gewünscht) den aufrufenden
      * Knotenden
      *
      * @param suchSchluessel Schlüssel, identifiziert das zu entfernende

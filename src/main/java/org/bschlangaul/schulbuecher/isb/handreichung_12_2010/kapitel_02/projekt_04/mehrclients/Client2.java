@@ -14,7 +14,7 @@ import java.net.Socket;
  *
  * @version 1.0
  */
-public class CLIENT2
+public class Client2
 {
     /**
      * bidirektionale Schnittstelle zur Netzwerkprotokoll-Implementierung
@@ -54,7 +54,7 @@ public class CLIENT2
      *     (beispielsweise bei falscher IP-Adresse oder falschem Port)<br/>
      *     - die Verbindung zum Server gestört bzw. unterbrochen wurde.
      */
-    public CLIENT2() throws IOException
+    public Client2() throws IOException
     {
         VerbindungHerstellen();
         // Tastatureingabe, Senden und Empfangen
@@ -123,7 +123,7 @@ public class CLIENT2
     {
         try
         {
-            new CLIENT2();
+            new Client2();
         }
         catch (Exception e)
         {

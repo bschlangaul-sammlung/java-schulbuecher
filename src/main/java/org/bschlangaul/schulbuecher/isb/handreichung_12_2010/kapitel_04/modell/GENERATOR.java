@@ -11,14 +11,20 @@ import java.util.Random;
  */
 public class GENERATOR
 {
-    /* Der Zufallsgenerator */
+    /**
+     * Der Zufallsgenerator
+     */
     private Random zufall;
 
-    /* Der Zeichenvorrat für die Bezeichner */
+    /**
+     * Der Zeichenvorrat für die Bezeichner
+     */
     private char[] zeichen = { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i',
             'j' };
 
-    /* Die Länge der zu generierenden Bezeichner */
+    /**
+     * Die Länge der zu generierenden Bezeichner
+     */
     private int laenge;
 
     /**

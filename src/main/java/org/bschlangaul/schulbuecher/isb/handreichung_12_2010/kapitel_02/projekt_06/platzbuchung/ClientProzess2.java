@@ -1,4 +1,4 @@
-package org.bschlangaul.schulbuecher.isb.handreichung_12_2010.kapitel_02.projekt_05.mehrclients_parallel;
+package org.bschlangaul.schulbuecher.isb.handreichung_12_2010.kapitel_02.projekt_06.platzbuchung;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -8,13 +8,16 @@ import java.net.Socket;
 
 /**
  * serverseitig laufender Prozess je Client zur Bearbeitung der Kommunikation
- * einer Clientverbindung<br/>
+ * einer Clientverbindung bei der Platzbuchung<br/>
+ * Vorlage für die Aufgabe 2 des Kapitels 2.3.3<br/>
+ * Die Stellen, an denen eine Quelltextergänzung notwendig ist, sind mit
+ * "Quelltextergänzung" gekennzeichnet.
  *
  * @author ISB-Arbeitskreis, Umsetzungshilfen Informatik 12
  *
  * @version 1.0
  */
-class CLIENTPROZESS extends Thread
+class ClientProzess2 extends Thread
 {
     /**
      * bidirektionale Schnittstelle zur Netzwerkprotokoll-Implementierung des
@@ -36,7 +39,7 @@ class CLIENTPROZESS extends Thread
      * Referenz auf die Klasse, die das Zustandsdiagramm des Servers
      * implementiert
      */
-    private WETTERVERHALTEN2 serververhalten;
+    private Platzbuchung serververhalten;
 
     /**
      * Botschaft von Client zum Server
@@ -49,6 +52,13 @@ class CLIENTPROZESS extends Thread
     private String serverAntwort = null;
 
     /**
+     * Referenz auf den Server,<br/>
+     * wird in der Methode ClientVerbindungStarten() gebraucht weil das
+     * Serververhalten eine Referenz auf den Server benötigt.
+     */
+    Server4 server;
+
+    /**
      * Konstruktor des Clientprozesses
      *
      * @exception IOException eine Ausnahme tritt auf falls:<br />
@@ -59,9 +69,11 @@ class CLIENTPROZESS extends Thread
      * @param clientSocket die Socketverbindung, über die die Kommunikation
      *     stattfindet.
      */
-    public CLIENTPROZESS(Socket clientSocket) throws IOException
+    public ClientProzess2(Socket clientSocket, Server4 server)
+            throws IOException
     {
         this.clientSocket = clientSocket;
+        this.server = server;
         ClientVerbindungStarten();
     }
 
@@ -75,7 +87,7 @@ class CLIENTPROZESS extends Thread
         vomClient = new BufferedReader(
                 new InputStreamReader(clientSocket.getInputStream()));
         // Protokoll-Klasse zur Ermittlung der Serverantworten
-        serververhalten = new WETTERVERHALTEN2();
+        serververhalten = new Platzbuchung(this.server);
         // Begrüßung
         serverAntwort = serververhalten.HoleAntwort("");
         zumClient.println(serverAntwort);

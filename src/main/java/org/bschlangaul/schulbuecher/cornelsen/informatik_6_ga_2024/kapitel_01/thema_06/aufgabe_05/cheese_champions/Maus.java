@@ -85,7 +85,7 @@ class Maus implements Datenelement
     }
 
     /**
-     * Identifikation eines Datenelements aufgrund seines Schl&uuml;ssels
+     * Identifikation eines Datenelements aufgrund seines Schlüssels
      *
      * @param s Schlüssel vom Typ String
      *

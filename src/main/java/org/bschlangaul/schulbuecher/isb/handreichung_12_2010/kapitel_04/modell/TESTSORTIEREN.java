@@ -27,7 +27,7 @@ public class TESTSORTIEREN
     /**
      * Die Ausgangsdaten
      */
-    private DATENELEMENT[] daten;
+    private DatenElement[] daten;
 
     /**
      * Legt die benötigten Objekte an und besetzt die Attributwerte.
@@ -37,7 +37,7 @@ public class TESTSORTIEREN
     public TESTSORTIEREN(int anzahl)
     {
         g = new GENERATOR(10);
-        daten = new DATENELEMENT[anzahl];
+        daten = new DatenElement[anzahl];
         for (int i = 0; i < anzahl; i++)
         {
             daten[i] = new STRINGDATEN(g.BezeichnerGenerieren());
@@ -50,10 +50,10 @@ public class TESTSORTIEREN
      *
      * @param d das zu sortierende Feld
      */
-    private void Auswahlsort(DATENELEMENT[] d)
+    private void Auswahlsort(DatenElement[] d)
     {
         int pos;
-        DATENELEMENT hilf;
+        DatenElement hilf;
         anzahl1 = 0;
         for (int i = 0; i < d.length - 1; i++)
         {
@@ -82,7 +82,7 @@ public class TESTSORTIEREN
      * @param topIndex der Index, bis zu dem (ausschließlich) sortiert werden
      *     soll
      */
-    private void Mischen(DATENELEMENT[] von, DATENELEMENT[] nach, int minIndex,
+    private void Mischen(DatenElement[] von, DatenElement[] nach, int minIndex,
             int topIndex)
     {
         int mitte;
@@ -142,9 +142,9 @@ public class TESTSORTIEREN
      *
      * @param d das zu sortierende Feld
      */
-    private void Mergesort(DATENELEMENT[] d)
+    private void Mergesort(DatenElement[] d)
     {
-        DATENELEMENT[] nach;
+        DatenElement[] nach;
         nach = d.clone();
         anzahl2 = 0;
         Mischen(d, nach, 0, d.length);
@@ -165,7 +165,7 @@ public class TESTSORTIEREN
     private long ZeitFuerAuswahlsortMessen()
     {
         long start, ende, min;
-        DATENELEMENT[] d;
+        DatenElement[] d;
         min = Long.MAX_VALUE;
         for (int i = 1; i <= 100; i++)
         {
@@ -188,7 +188,7 @@ public class TESTSORTIEREN
     private long ZeitFuerMergesortMessen()
     {
         long start, ende, min;
-        DATENELEMENT[] d;
+        DatenElement[] d;
         min = Long.MAX_VALUE;
         for (int i = 1; i <= 100; i++)
         {

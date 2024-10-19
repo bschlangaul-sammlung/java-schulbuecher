@@ -11,7 +11,9 @@ import org.bschlangaul.schulbuecher.isb.handreichung_12_2010.kapitel_04.modell.T
  */
 class KONTROLLEUR implements KONTROLLEURINTERFACE
 {
-    /* Die ereigniserzeugende Oberfläche */
+    /**
+     * Die ereigniserzeugende Oberfläche
+     */
     private OBERFLAECHENINTERFACE oberflaeche;
 
     /**

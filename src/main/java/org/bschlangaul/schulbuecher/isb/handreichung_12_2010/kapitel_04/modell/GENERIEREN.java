@@ -11,13 +11,19 @@ import java.util.Random;
  */
 class GENERIEREN
 {
-    /* Maxoimale Entfernung zweier Knoten */
+    /**
+     * Maximale Entfernung zweier Knoten
+     */
     private final static int maxEntfernung = 100;
 
-    /* Adjazenzmatrix */
+    /**
+     * Adjazenzmatrix
+     */
     private int[][] matrix;
 
-    /* Zufallsgenerator für die Weglngen */
+    /**
+     * Zufallsgenerator für die Weglngen
+     */
     private Random zufall;
 
     /**

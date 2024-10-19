@@ -10,10 +10,14 @@ package org.bschlangaul.schulbuecher.isb.handreichung_12_2010.kapitel_04.modell;
  */
 class TIEFENSUCHE
 {
-    /* Adjazenzmatrix des Graphen */
+    /**
+     * Adjazenzmatrix des Graphen
+     */
     int[][] matrix;
 
-    /* Merker für die besuchten Knoten */
+    /**
+     * Merker für die besuchten Knoten
+     */
     boolean[] besucht;
 
     /* Länge des (bisher gefundenen) kürzesten Wegs */

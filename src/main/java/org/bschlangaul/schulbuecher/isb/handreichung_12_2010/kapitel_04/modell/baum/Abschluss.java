@@ -1,6 +1,6 @@
 package org.bschlangaul.schulbuecher.isb.handreichung_12_2010.kapitel_04.modell.baum;
 
-import org.bschlangaul.schulbuecher.isb.handreichung_12_2010.kapitel_04.modell.DATENELEMENT;
+import org.bschlangaul.schulbuecher.isb.handreichung_12_2010.kapitel_04.modell.DatenElement;
 
 /**
  * Beschreibt ein Abschlusselement des Baums.
@@ -9,12 +9,12 @@ import org.bschlangaul.schulbuecher.isb.handreichung_12_2010.kapitel_04.modell.D
  *
  * @version 1.0
  */
-class ABSCHLUSS extends BAUMELEMENT
+class Abschluss extends BaumElement
 {
     /**
      * Für das Anlegen des Abschlusses brauchts nichts getan zu werden.
      */
-    ABSCHLUSS()
+    Abschluss()
     {
     }
 
@@ -25,9 +25,9 @@ class ABSCHLUSS extends BAUMELEMENT
      *
      * @return der neue Nachfolger für das Vorgängerelement
      */
-    BAUMELEMENT Einfuegen(DATENELEMENT neu)
+    BaumElement Einfuegen(DatenElement neu)
     {
-        return new KNOTEN(neu, this, this);
+        return new Knoten(neu, this, this);
     }
 
     /**
@@ -39,7 +39,7 @@ class ABSCHLUSS extends BAUMELEMENT
      *
      * @return null
      */
-    DATENELEMENT Suchen(DATENELEMENT schluessel)
+    DatenElement Suchen(DatenElement schluessel)
     {
         return null;
     }

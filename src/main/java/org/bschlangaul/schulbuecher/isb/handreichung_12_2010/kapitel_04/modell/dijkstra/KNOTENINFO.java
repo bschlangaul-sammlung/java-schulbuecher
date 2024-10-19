@@ -9,13 +9,19 @@ package org.bschlangaul.schulbuecher.isb.handreichung_12_2010.kapitel_04.modell.
  */
 class KNOTENINFO
 {
-    /* Knotennummer */
+    /**
+     * Knotennummer
+     */
     int nummer;
 
-    /* Vorgängerknoten für Wegangabe */
+    /**
+     * Vorgängerknoten für Wegangabe
+     */
     private int vorgaenger;
 
-    /* Weglänge bis zu diesem Knoten */
+    /**
+     * Weglänge bis zu diesem Knoten
+     */
     private int laenge;
 
     /**

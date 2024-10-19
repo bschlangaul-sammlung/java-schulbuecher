@@ -495,10 +495,10 @@ public class Zeichenfenster extends Canvas implements Fenster
         zeichenInstanz.setColor(Color.BLACK);
         Font schriftart = new Font("SansSerif", Font.PLAIN, 10);
         zeichenInstanz.setFont(schriftart);
-        /* Koordinatenachsen zeichnen */
+        // Koordinatenachsen zeichnen
         zeichenInstanz.drawLine(5, 0, 5, fensterhoehe);
         zeichenInstanz.drawLine(0, 5, fensterbreite, 5);
-        /* Skala und Striche der y-Achse */
+        // Skala und Striche der y-Achse
         for (int i = 50; i < fensterhoehe; i += 50)
         {
             zeichenInstanz.setColor(Color.LIGHT_GRAY);
@@ -507,7 +507,7 @@ public class Zeichenfenster extends Canvas implements Fenster
             zeichenInstanz.drawLine(0, i, 11, i);
             zeichenInstanz.drawString(i + "", 15, (i + 5));
         }
-        /* Skala und Striche der x-Achse */
+        // Skala und Striche der x-Achse
         for (int i = 50; i < fensterbreite; i += 50)
         {
             zeichenInstanz.setColor(Color.LIGHT_GRAY);

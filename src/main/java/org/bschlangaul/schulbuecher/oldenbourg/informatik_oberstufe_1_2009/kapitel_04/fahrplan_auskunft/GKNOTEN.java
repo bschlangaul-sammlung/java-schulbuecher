@@ -9,14 +9,18 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapi
  */
 class GKNOTEN implements DATENELEMENT
 {
-    /* Graphdaten */
+    /**
+     * Graphdaten
+     */
     private BAHNHOF bahnhof;
 
     private int linie;
 
     private LISTE verbindungen;
 
-    /* Temporäre Daten der aktuellen Route */
+    /**
+     * Temporäre Daten der aktuellen Route
+     */
     private float gesamtlaenge;
 
     private GKNOTEN vorgaenger;

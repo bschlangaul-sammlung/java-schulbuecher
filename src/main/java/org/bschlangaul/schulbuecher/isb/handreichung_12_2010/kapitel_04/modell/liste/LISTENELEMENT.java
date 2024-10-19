@@ -1,6 +1,6 @@
 package org.bschlangaul.schulbuecher.isb.handreichung_12_2010.kapitel_04.modell.liste;
 
-import org.bschlangaul.schulbuecher.isb.handreichung_12_2010.kapitel_04.modell.DATENELEMENT;
+import org.bschlangaul.schulbuecher.isb.handreichung_12_2010.kapitel_04.modell.DatenElement;
 
 /**
  * Beschreibt ein abstraktes Element der Liste.
@@ -25,7 +25,7 @@ abstract class LISTENELEMENT
      *
      * @return der (neue) Nachfolger für das Vorgängerelement
      */
-    abstract LISTENELEMENT Einfuegen(DATENELEMENT neu);
+    abstract LISTENELEMENT Einfuegen(DatenElement neu);
 
     /**
      * Sucht ein Datenelement mit dem in der Referenz angegebenen Schlüssel.
@@ -35,5 +35,5 @@ abstract class LISTENELEMENT
      *
      * @return das gefundene Datenelement oder null
      */
-    abstract DATENELEMENT Suchen(DATENELEMENT schluessel);
+    abstract DatenElement Suchen(DatenElement schluessel);
 }

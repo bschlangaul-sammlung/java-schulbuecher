@@ -9,7 +9,9 @@ package org.bschlangaul.schulbuecher.isb.handreichung_12_2010.kapitel_04.modell.
  */
 class LISTE
 {
-    /* der Startknoten der Liste */
+    /**
+     * Der Startknoten der Liste
+     */
     private LISTENELEMENT anfang;
 
     /**

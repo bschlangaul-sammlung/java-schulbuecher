@@ -1,6 +1,6 @@
 package org.bschlangaul.schulbuecher.isb.handreichung_12_2010.kapitel_04.modell.baum;
 
-import org.bschlangaul.schulbuecher.isb.handreichung_12_2010.kapitel_04.modell.DATENELEMENT;
+import org.bschlangaul.schulbuecher.isb.handreichung_12_2010.kapitel_04.modell.DatenElement;
 
 /**
  * Beschreibt ein abstraktes Element des Baums.
@@ -9,7 +9,7 @@ import org.bschlangaul.schulbuecher.isb.handreichung_12_2010.kapitel_04.modell.D
  *
  * @version 1.0
  */
-abstract class BAUMELEMENT
+abstract class BaumElement
 {
     /**
      * Fügt ein neues Datenelement sortiert in den Baum ein.
@@ -18,7 +18,7 @@ abstract class BAUMELEMENT
      *
      * @return der (neue) Nachfolger für das Vorgängerelement
      */
-    abstract BAUMELEMENT Einfuegen(DATENELEMENT neu);
+    abstract BaumElement Einfuegen(DatenElement neu);
 
     /**
      * Sucht ein Datenelement mit dem in der Referenz angegebenen Schlüssel.
@@ -28,5 +28,5 @@ abstract class BAUMELEMENT
      *
      * @return das gefundene Datenelement oder null
      */
-    abstract DATENELEMENT Suchen(DATENELEMENT schluessel);
+    abstract DatenElement Suchen(DatenElement schluessel);
 }

@@ -1,4 +1,4 @@
-package org.bschlangaul.schulbuecher.isb.handreichung_12_2010.kapitel_02.projekt_05.mehrclients_parallel;
+package org.bschlangaul.schulbuecher.isb.handreichung_12_2010.kapitel_02.projekt_06.platzbuchung;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -8,12 +8,15 @@ import java.net.Socket;
 
 /**
  * Serverimplementierung, Auslagerung der Clientprozesse in einen Thread<br/>
+ * Lösung für die Aufgabe 2 des Kapitels 2.3.3<br/>
+ * Der Zugriff auf die Ressource plaetzevorhanden ist <b>nicht
+ * synchronisiert</b>!
  *
  * @author ISB-Arbeitskreis, Umsetzungshilfen Informatik 12
  *
  * @version 1.0
  */
-public class SERVER3
+public class Server4
 {
     /**
      * bidirektionale Schnittstelle zur Netzwerkprotokoll-Implementierung des
@@ -27,6 +30,11 @@ public class SERVER3
     private int port;
 
     /**
+     * speichert die aktuelle Anzahl der noch vorhandenen Plätze
+     */
+    private int plaetzevorhanden = 3;
+
+    /**
      * Konstruktor des Servers
      *
      * @exception IOException eine Ausnahme tritt auf falls:<br/>
@@ -34,7 +42,7 @@ public class SERVER3
      *     Port nicht frei ist)<br/>
      *     - die Clientverbindung gestört bzw. unterbrochen wurde.
      */
-    public SERVER3() throws IOException
+    public Server4() throws IOException
     {
         ServerStarten();
         while (true)
@@ -51,9 +59,41 @@ public class SERVER3
         System.out.println("warte auf Client, hoere auf Port " + port);
         Socket clientSocket = serverSocket.accept(); // warten auf die
                                                      // Verbindung
-        CLIENTPROZESS clientprozess = new CLIENTPROZESS(clientSocket);
+        ClientProzess2 clientprozess = new ClientProzess2(clientSocket, this);
         clientprozess.start();
         System.out.println("Clientprozess gestartet...");
+    }
+
+    /**
+     * gibt die Anzahl der noch verfügbaren Plätze zurück
+     *
+     * @return Anzahl der verfügbaren Plätze
+     */
+    public int PlaetzeVerfuegbar()
+    {
+        return plaetzevorhanden;
+    }
+
+    /**
+     * die angegebene Anzahl an Plätzen buchen
+     *
+     * @param anzahl, die Anzahl der zu buchenden Plätze
+     *
+     * @return gibt false zurück, falls die Buchung aus Platzmangel nicht
+     *     durchgeführt werden konnte
+     */
+    public boolean PlaetzeBuchen(int anzahl)
+    {
+        if (anzahl <= plaetzevorhanden)
+        {
+            plaetzevorhanden = plaetzevorhanden - anzahl;
+            System.out.println(plaetzevorhanden + " Plaetze vorhanden.");
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 
     /**
@@ -75,11 +115,11 @@ public class SERVER3
      *
      * @param args keine Parameter beim Programmaufruf erforderlich
      */
-    public static void main(String[] args)
+    public static void main(String[] args) throws IOException
     {
         try
         {
-            new SERVER3();
+            new Server4();
         }
         catch (Exception e)
         {

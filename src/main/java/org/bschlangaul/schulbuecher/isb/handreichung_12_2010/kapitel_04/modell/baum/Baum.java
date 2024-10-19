@@ -1,6 +1,6 @@
 package org.bschlangaul.schulbuecher.isb.handreichung_12_2010.kapitel_04.modell.baum;
 
-import org.bschlangaul.schulbuecher.isb.handreichung_12_2010.kapitel_04.modell.DATENELEMENT;
+import org.bschlangaul.schulbuecher.isb.handreichung_12_2010.kapitel_04.modell.DatenElement;
 
 /**
  * Ein sortierter Binärbaum nach Standardimplementierung.
@@ -9,20 +9,24 @@ import org.bschlangaul.schulbuecher.isb.handreichung_12_2010.kapitel_04.modell.D
  *
  * @version 1.0
  */
-public class BAUM
+public class Baum
 {
-    /* Referenz auf die Wurzel des Baums. */
-    private BAUMELEMENT anfang;
+    /**
+     * Referenz auf die Wurzel des Baums.
+     */
+    private BaumElement anfang;
 
-    /* Zauml;hler für die Anzahl der Vergleiche */
+    /**
+     * Zähler für die Anzahl der Vergleiche
+     */
     private static int zaehler;
 
     /**
      * Legt einen leeren Baum an.
      */
-    public BAUM()
+    public Baum()
     {
-        anfang = new ABSCHLUSS();
+        anfang = new Abschluss();
     }
 
     /**
@@ -30,7 +34,7 @@ public class BAUM
      *
      * @param neu Referenz auf des neue Datenelement
      */
-    public void Einfuegen(DATENELEMENT neu)
+    public void Einfuegen(DatenElement neu)
     {
         anfang = anfang.Einfuegen(neu);
     }
@@ -43,7 +47,7 @@ public class BAUM
      *
      * @return das gefundene Datenelement oder null
      */
-    public DATENELEMENT Suchen(DATENELEMENT schluessel)
+    public DatenElement Suchen(DatenElement schluessel)
     {
         zaehler = 0;
         return anfang.Suchen(schluessel);

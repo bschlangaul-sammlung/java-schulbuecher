@@ -7,7 +7,7 @@ package org.bschlangaul.schulbuecher.isb.handreichung_12_2010.kapitel_04.modell;
  *
  * @version 1.0
  */
-public interface DATENELEMENT
+public interface DatenElement
 {
     /**
      * Vergleicht den Schlüssel des Datenelements mit dem in der Referenz
@@ -18,5 +18,5 @@ public interface DATENELEMENT
      *
      * @return das Vergleichsergebnis
      */
-    int Vergleichen(DATENELEMENT schluessel);
+    int Vergleichen(DatenElement schluessel);
 }

@@ -1,4 +1,4 @@
-package org.bschlangaul.schulbuecher.isb.handreichung_12_2010.kapitel_02.projekt_04.mehrclients;
+package org.bschlangaul.schulbuecher.isb.handreichung_12_2010.kapitel_02.projekt_03.wetterauskunft;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -8,14 +8,13 @@ import java.net.ServerSocket;
 import java.net.Socket;
 
 /**
- * Serverimplementierung mit Möglichkeit zum Beenden der Clientverbindung<br/>
- * Lösung der Aufgabe 1 des Kapitels 2.3.3<br/>
+ * Erste Serverimplementierung, keine Parallelität
  *
  * @author ISB-Arbeitskreis, Umsetzungshilfen Informatik 12
  *
- * @version 1.0
+ * @version 1.0, modifiziertes Serververhalten (Kapitel 2.2.2.2, Aufgabe 2)
  */
-public class SERVER2
+public class Server
 {
     /**
      * bidirektionale Schnittstelle zur Netzwerkprotokoll-Implementierung des
@@ -43,7 +42,7 @@ public class SERVER2
      * Referenz auf die Klasse, die das Zustandsdiagramm des Servers
      * implementiert
      */
-    private WETTERVERHALTEN2 serververhalten;
+    private WetterVerhalten serververhalten;
 
     /**
      * Botschaft von Client zum Server
@@ -63,7 +62,7 @@ public class SERVER2
      *     Port nicht frei ist)<br/>
      *     - die Clientverbindung gestört bzw. unterbrochen wurde.
      */
-    public SERVER2() throws IOException
+    public Server() throws IOException
     {
         ServerStarten();
         ClientVerbindungStarten(); // auf Client warten und verbinden
@@ -72,13 +71,8 @@ public class SERVER2
             clientBotschaft = vomClient.readLine();
             serverAntwort = serververhalten.HoleAntwort(clientBotschaft);
             zumClient.println(serverAntwort);
-            if (serverAntwort.startsWith("Server[stopClient]:"))
-            {
-                ClientVerbindungBeenden(); // Verbindung schließen
-                ClientVerbindungStarten(); // auf neue Verbindung warten
-            }
         }
-        while (!serverAntwort.startsWith("Server[stopServer]:"));
+        while (!serverAntwort.equals("Auf Wiedersehen!"));
         ClientVerbindungBeenden();
         ServerStoppen();
     }
@@ -106,7 +100,7 @@ public class SERVER2
     }
 
     /**
-     * wartet auf eine Clientverbindung und erzeugt die nötigen Lese- und
+     * wartet auf eine Clientverbindung warten und erzeugt die nötigen Lese- und
      * Schreibobjekte nach dem eine Verbindung hergestellt wurde
      */
     private void ClientVerbindungStarten() throws IOException
@@ -116,8 +110,8 @@ public class SERVER2
         vomClient = new BufferedReader(
                 new InputStreamReader(clientSocket.getInputStream()));
         // Protokoll-Klasse zur Ermittlung der Serverantworten
-        serververhalten = new WETTERVERHALTEN2();
-        // Begrüßung
+        serververhalten = new WetterVerhalten();
+        // Begrueßung
         serverAntwort = serververhalten.HoleAntwort("");
         zumClient.println(serverAntwort);
         System.out.println("Client verbunden");
@@ -143,7 +137,7 @@ public class SERVER2
     {
         try
         {
-            new SERVER2();
+            new Server();
         }
         catch (Exception e)
         {

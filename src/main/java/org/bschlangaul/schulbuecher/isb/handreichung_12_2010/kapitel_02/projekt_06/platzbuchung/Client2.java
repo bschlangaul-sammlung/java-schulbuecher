@@ -1,4 +1,4 @@
-package org.bschlangaul.schulbuecher.isb.handreichung_12_2010.kapitel_02.projekt_03.wetterauskunft;
+package org.bschlangaul.schulbuecher.isb.handreichung_12_2010.kapitel_02.projekt_06.platzbuchung;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -7,13 +7,13 @@ import java.io.PrintWriter;
 import java.net.Socket;
 
 /**
- * Erste Clientimplementierung des Projekts wie gehts?
+ * Clientimplementierung mit Möglichkeit zum Beenden der Clientverbindung<br/>
  *
  * @author ISB-Arbeitskreis, Umsetzungshilfen Informatik 12
  *
  * @version 1.0
  */
-public class CLIENT
+public class Client2
 {
     /**
      * bidirektionale Schnittstelle zur Netzwerkprotokoll-Implementierung
@@ -53,15 +53,20 @@ public class CLIENT
      *     (beispielsweise bei falscher IP-Adresse oder falschem Port)<br/>
      *     - die Verbindung zum Server gestört bzw. unterbrochen wurde.
      */
-    public CLIENT() throws IOException
+    public Client2() throws IOException
     {
         VerbindungHerstellen();
         // Tastatureingabe, Senden und Empfangen
-        while (((serverBotschaft = vomServer.readLine()) != null)
-                && (!serverBotschaft.equals("Auf Wiedersehen!")))
+        while ((serverBotschaft = vomServer.readLine()) != null)
         {
             // Serverbotschaft anzeigen.
-            System.out.println("Server: " + serverBotschaft);
+            System.out.println(serverBotschaft);
+            // Wiederholung verlassen..
+            if ((serverBotschaft.startsWith("Server[stopClient]:"))
+                    || (serverBotschaft.startsWith("Server[stopServer]:")))
+            {
+                break;
+            }
             // Eingabe vom Client lesen
             clientEingabe = tastatur.readLine();
             // auf die Clientkonsole ausgeben
@@ -83,7 +88,7 @@ public class CLIENT
     {
         // Ipadresse und Port ermitteln
         tastatur = new BufferedReader(new InputStreamReader(System.in));
-        System.out.println("IP-Adresse des Servers eingeben:");
+        System.out.println("IP-Adresse eingeben:");
         String ipadresse = tastatur.readLine();
         System.out.println("Port eingeben:");
         int port = Integer.parseInt(tastatur.readLine());
@@ -113,11 +118,11 @@ public class CLIENT
      *
      * @param args keine Parameter beim Programmaufruf erforderlich
      */
-    public static void main(String[] args)
+    public static void main(String[] args) throws IOException
     {
         try
         {
-            new CLIENT();
+            new Client2();
         }
         catch (Exception e)
         {

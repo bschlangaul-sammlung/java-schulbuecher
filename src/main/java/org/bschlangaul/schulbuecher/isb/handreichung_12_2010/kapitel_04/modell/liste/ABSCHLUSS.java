@@ -1,6 +1,6 @@
 package org.bschlangaul.schulbuecher.isb.handreichung_12_2010.kapitel_04.modell.liste;
 
-import org.bschlangaul.schulbuecher.isb.handreichung_12_2010.kapitel_04.modell.DATENELEMENT;
+import org.bschlangaul.schulbuecher.isb.handreichung_12_2010.kapitel_04.modell.DatenElement;
 
 /**
  * Beschreibt ein Abschlusselement der Liste.
@@ -25,7 +25,7 @@ class ABSCHLUSS extends LISTENELEMENT
      *
      * @return der neue Nachfolger für das Vorgängerelement
      */
-    LISTENELEMENT Einfuegen(DATENELEMENT neu)
+    LISTENELEMENT Einfuegen(DatenElement neu)
     {
         return new KNOTEN(neu, this);
     }
@@ -39,7 +39,7 @@ class ABSCHLUSS extends LISTENELEMENT
      *
      * @return null
      */
-    DATENELEMENT Suchen(DATENELEMENT schluessel)
+    DatenElement Suchen(DatenElement schluessel)
     {
         return null;
     }

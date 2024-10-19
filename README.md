@@ -24,14 +24,15 @@ Vorlagen (Suffix `_vorlage`), die den Schülern zur Verfügung gestellt werden.
   entsprechen.
 - Zusätzliche main-Methoden erlauben das einfache Starten der Projekte in der
   IDE.
-- UTF-8
-- HTML-Entities -> UTF-8
+- Die Quelltexte sind in UTF-8 codiert.
+- HTML-Entities (z. B. `&auml;`, `auml;`, `"auml;`, `&aauml;` → `ä`) wurden nach UTF-8 konvertiert
 - Javadoc-Fehler ausbessern
 - Deprecations beheben, z. B. `new Integer()` -> `Integer.valueOf()` oder `Integer.parseInt()`
 - `*` Imports in einzelne Imports auflösen
 - Unnötige Imports entfernt
 - Rechtschreibfehler ausbessert
 - Unterdrücken von Warnungen `@SupressWarning("unused")`
+- Vereinheitlichung der Kommentare: Block-Kommentar `/**\n *\n */`, Inline-Kommentar `// `
 
 ## Ordner-Struktur / Namensschema der Pakete
 

@@ -9,16 +9,24 @@ package org.bschlangaul.schulbuecher.isb.handreichung_12_2010.kapitel_04.modell.
  */
 public class DIJKSTRA
 {
-    /* Adjazenzmatrix des Graphen */
+    /**
+     * Adjazenzmatrix des Graphen
+     */
     private int[][] matrix;
 
-    /* Liste der abgearbeiteten Knoten */
+    /**
+     * Liste der abgearbeiteten Knoten
+     */
     private LISTE fertig;
 
-    /* Liste der unbearbeiteten Knoten */
+    /**
+     * Liste der unbearbeiteten Knoten
+     */
     private LISTE rest;
 
-    /* Liste der erreichten Knoten */
+    /**
+     * Liste der erreichten Knoten
+     */
     private LISTE inarbeit;
 
     /**

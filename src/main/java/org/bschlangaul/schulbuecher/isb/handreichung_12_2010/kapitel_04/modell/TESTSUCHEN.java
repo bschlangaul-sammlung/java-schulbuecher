@@ -13,19 +13,29 @@ import org.bschlangaul.schulbuecher.isb.handreichung_12_2010.kapitel_04.modell.d
  */
 public class TESTSUCHEN
 {
-    /* Anzahl der Datenelemente im Graphen */
+    /**
+     * Anzahl der Datenelemente im Graphen
+     */
     private int anzahl;
 
-    /* Die Laufzeitsummen */
+    /**
+     * Die Laufzeitsummen
+     */
     private long zeitTiefe, zeitDijkstra;
 
-    /* Die Adjazenzmatrix */
+    /**
+     * Die Adjazenzmatrix
+     */
     private int[][] matrix;
 
-    /* Startort */
+    /**
+     * Startort
+     */
     private int start;
 
-    /* Zielort */
+    /**
+     * Zielort
+     */
     private int ziel;
 
     /**

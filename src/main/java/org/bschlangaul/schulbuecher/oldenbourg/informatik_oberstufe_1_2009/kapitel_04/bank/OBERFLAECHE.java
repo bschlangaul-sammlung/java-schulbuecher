@@ -19,7 +19,7 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
 /**
- * Realisiert die Bedienoberfl&auml;che. In dieser Version wird erst nach der
+ * Realisiert die Bedienoberfläche. In dieser Version wird erst nach der
  * Anmeldung zwischen Kunden und Angestellten unterschieden.
  *
  * @author Albert Wiedemann
@@ -289,9 +289,9 @@ class OBERFLAECHE implements OBERFLAECHENINTERFACE, MELDUNGSBEOBACHTER
     }
 
     /**
-     * Setzt die Oberfl&auml;che auf den angegebenen Status.
+     * Setzt die Oberfläche auf den angegebenen Status.
      *
-     * @param status der neue Status der Oberfl&auml;che
+     * @param status der neue Status der Oberfläche
      */
     public void StatusSetzen(Status status)
     {
@@ -467,8 +467,8 @@ class OBERFLAECHE implements OBERFLAECHENINTERFACE, MELDUNGSBEOBACHTER
     }
 
     /**
-     * Zeigt einen großen Text (logs, Ausz&uuml;ge) an. Blockiert, bis das
-     * Fenster wieder unsichtbar wird.
+     * Zeigt einen großen Text (logs, Auszüge) an. Blockiert, bis das Fenster
+     * wieder unsichtbar wird.
      *
      * @param text der anzuzeigende Fehlertext
      */
@@ -571,7 +571,7 @@ class OBERFLAECHE implements OBERFLAECHENINTERFACE, MELDUNGSBEOBACHTER
     }
 
     /**
-     * Erzeugt das Auswahlpanel f&uuml;r die Kontenwahl des Kunden
+     * Erzeugt das Auswahlpanel für die Kontenwahl des Kunden
      */
     private void KundenauswahlpanelAufbauen()
     {
@@ -677,7 +677,7 @@ class OBERFLAECHE implements OBERFLAECHENINTERFACE, MELDUNGSBEOBACHTER
     }
 
     /**
-     * Erzeugt das Arbeitspanel f&uuml;r die Kontenbearbeitung des Kunden
+     * Erzeugt das Arbeitspanel für die Kontenbearbeitung des Kunden
      */
     private void KundenarbeitspanelAufbauen()
     {
@@ -801,8 +801,7 @@ class OBERFLAECHE implements OBERFLAECHENINTERFACE, MELDUNGSBEOBACHTER
     }
 
     /**
-     * Erzeugt das Auswahlpanel f&uuml;r die Arbeitsabl&auml;ufe des
-     * Angestellten
+     * Erzeugt das Auswahlpanel für die Arbeitsabläufe des Angestellten
      */
     private void AngestelltenauswahlpanelAufbauen()
     {
@@ -1169,7 +1168,7 @@ class OBERFLAECHE implements OBERFLAECHENINTERFACE, MELDUNGSBEOBACHTER
     }
 
     /**
-     * Fehlermeldungen beim Ausf&uuml;hren von Aktionen anzeigen
+     * Fehlermeldungen beim Ausführen von Aktionen anzeigen
      *
      * @param text anzuzeigende Fehlermeldung
      */
@@ -1179,7 +1178,7 @@ class OBERFLAECHE implements OBERFLAECHENINTERFACE, MELDUNGSBEOBACHTER
     }
 
     /**
-     * Fehlermeldungen beim Ausf&uuml;hren von Aktionen
+     * Fehlermeldungen beim Ausführen von Aktionen
      */
     public void FehlermeldungEmpfangen(String text)
     {
@@ -1187,7 +1186,7 @@ class OBERFLAECHE implements OBERFLAECHENINTERFACE, MELDUNGSBEOBACHTER
     }
 
     /**
-     * Aktionslog f&uuml;r den Ablauf
+     * Aktionslog für den Ablauf
      *
      * @param text der Text des Logeintrags
      */

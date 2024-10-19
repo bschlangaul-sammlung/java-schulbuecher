@@ -1,6 +1,6 @@
 package org.bschlangaul.schulbuecher.isb.handreichung_12_2010.kapitel_04.modell.baum;
 
-import org.bschlangaul.schulbuecher.isb.handreichung_12_2010.kapitel_04.modell.DATENELEMENT;
+import org.bschlangaul.schulbuecher.isb.handreichung_12_2010.kapitel_04.modell.DatenElement;
 
 /**
  * Beschreibt einen Knoten des Baums.
@@ -9,18 +9,22 @@ import org.bschlangaul.schulbuecher.isb.handreichung_12_2010.kapitel_04.modell.D
  *
  * @version 1.0
  */
-class KNOTEN extends BAUMELEMENT
+class Knoten extends BaumElement
 {
-    /* Referenz auf das Datenelement */
-    private DATENELEMENT daten;
+    /**
+     * Referenz auf das Datenelement
+     */
+    private DatenElement daten;
 
-    /* Referenz auf den linken Nachfolgerknoten (mit den kleineren Werten) */
-    private BAUMELEMENT linksnachfolger;
+    /**
+     * Referenz auf den linken Nachfolgerknoten (mit den kleineren Werten)
+     */
+    private BaumElement linksnachfolger;
 
     /*
      * Referenz auf den rechten Nachfolgerknoten (mit den größeren Werten)
      */
-    private BAUMELEMENT rechtsnachfolger;
+    private BaumElement rechtsnachfolger;
 
     /**
      * Legt einen neuen Knoten mit gegebenem Datenelement und gegebenen
@@ -30,7 +34,7 @@ class KNOTEN extends BAUMELEMENT
      * @param lnf Referenz auf das linke Nachfolgerelement
      * @param rnf Referenz auf das rechte Nachfolgerelement
      */
-    KNOTEN(DATENELEMENT d, BAUMELEMENT lnf, BAUMELEMENT rnf)
+    Knoten(DatenElement d, BaumElement lnf, BaumElement rnf)
     {
         daten = d;
         linksnachfolger = lnf;
@@ -44,7 +48,7 @@ class KNOTEN extends BAUMELEMENT
      *
      * @return der (neue) Nachfolger für das Vorgängerelement
      */
-    BAUMELEMENT Einfuegen(DATENELEMENT neu)
+    BaumElement Einfuegen(DatenElement neu)
     {
         if (neu.Vergleichen(daten) > 0)
         {
@@ -65,10 +69,10 @@ class KNOTEN extends BAUMELEMENT
      *
      * @return das gefundene Datenelement oder null
      */
-    DATENELEMENT Suchen(DATENELEMENT schluessel)
+    DatenElement Suchen(DatenElement schluessel)
     {
         int vergleich;
-        BAUM.ZaehlerErhoehen();
+        Baum.ZaehlerErhoehen();
         vergleich = schluessel.Vergleichen(daten);
         if (vergleich == 0)
         {

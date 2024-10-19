@@ -1,4 +1,4 @@
-package org.bschlangaul.schulbuecher.isb.handreichung_12_2010.kapitel_02.projekt_03.wetterauskunft;
+package org.bschlangaul.schulbuecher.isb.handreichung_12_2010.kapitel_02.projekt_04.mehrclients_vorlage;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -8,13 +8,16 @@ import java.net.ServerSocket;
 import java.net.Socket;
 
 /**
- * Erste Serverimplementierung, keine Parallelität
+ * Serverimplementierung mit Möglichkeit zum Beenden der Clientverbindung<br/>
+ * Vorlage für die Aufgabe 1 des Kapitels 2.3.3<br/>
+ * Die Stellen, an denen eine Quelltextergänzung notwendig ist, sind mit
+ * "Quelltextergänzung" gekennzeichnet.
  *
  * @author ISB-Arbeitskreis, Umsetzungshilfen Informatik 12
  *
- * @version 1.0, modifiziertes Serververhalten (Kapitel 2.2.2.2, Aufgabe 2)
+ * @version 1.0
  */
-public class SERVER
+public class Server2
 {
     /**
      * bidirektionale Schnittstelle zur Netzwerkprotokoll-Implementierung des
@@ -42,7 +45,7 @@ public class SERVER
      * Referenz auf die Klasse, die das Zustandsdiagramm des Servers
      * implementiert
      */
-    private WETTERVERHALTEN serververhalten;
+    private WetterVerhalten2 serververhalten;
 
     /**
      * Botschaft von Client zum Server
@@ -62,7 +65,7 @@ public class SERVER
      *     Port nicht frei ist)<br/>
      *     - die Clientverbindung gestört bzw. unterbrochen wurde.
      */
-    public SERVER() throws IOException
+    public Server2() throws IOException
     {
         ServerStarten();
         ClientVerbindungStarten(); // auf Client warten und verbinden
@@ -71,8 +74,14 @@ public class SERVER
             clientBotschaft = vomClient.readLine();
             serverAntwort = serververhalten.HoleAntwort(clientBotschaft);
             zumClient.println(serverAntwort);
+
+            // Quelltextergänzung: falls die serverAntwort mit dem Ausdruck
+            // "Server[stopClient]:" beginnt, soll die Verbindung zum Client
+            // beendet und wieder auf eine neue eingehende Verbindung gewartet
+            // werden.
+
         }
-        while (!serverAntwort.equals("Auf Wiedersehen!"));
+        while (!serverAntwort.startsWith("Server[stopServer]:"));
         ClientVerbindungBeenden();
         ServerStoppen();
     }
@@ -110,8 +119,8 @@ public class SERVER
         vomClient = new BufferedReader(
                 new InputStreamReader(clientSocket.getInputStream()));
         // Protokoll-Klasse zur Ermittlung der Serverantworten
-        serververhalten = new WETTERVERHALTEN();
-        // Begrueßung
+        serververhalten = new WetterVerhalten2();
+        // Begrüßung
         serverAntwort = serververhalten.HoleAntwort("");
         zumClient.println(serverAntwort);
         System.out.println("Client verbunden");
@@ -137,7 +146,7 @@ public class SERVER
     {
         try
         {
-            new SERVER();
+            new Server2();
         }
         catch (Exception e)
         {

@@ -1,6 +1,6 @@
 package org.bschlangaul.schulbuecher.isb.handreichung_12_2010.kapitel_04.modell.liste;
 
-import org.bschlangaul.schulbuecher.isb.handreichung_12_2010.kapitel_04.modell.DATENELEMENT;
+import org.bschlangaul.schulbuecher.isb.handreichung_12_2010.kapitel_04.modell.DatenElement;
 
 /**
  * Eine sortierte Liste nach Standardimplementierung.
@@ -11,10 +11,14 @@ import org.bschlangaul.schulbuecher.isb.handreichung_12_2010.kapitel_04.modell.D
  */
 public class LISTE
 {
-    /* Referenz auf das erste Element der Liste. */
+    /**
+     * Referenz auf das erste Element der Liste.
+     */
     private LISTENELEMENT anfang;
 
-    /* Zauml;hler für die Anzahl der Vergleiche */
+    /**
+     * Zähler für die Anzahl der Vergleiche
+     */
     private static int zaehler;
 
     /**
@@ -30,7 +34,7 @@ public class LISTE
      *
      * @param neu Referenz auf des neue Datenelement
      */
-    public void Einfuegen(DATENELEMENT neu)
+    public void Einfuegen(DatenElement neu)
     {
         anfang = anfang.Einfuegen(neu);
     }
@@ -43,7 +47,7 @@ public class LISTE
      *
      * @return das gefundene Datenelement oder null
      */
-    public DATENELEMENT Suchen(DATENELEMENT schluessel)
+    public DatenElement Suchen(DatenElement schluessel)
     {
         zaehler = 0;
         return anfang.Suchen(schluessel);

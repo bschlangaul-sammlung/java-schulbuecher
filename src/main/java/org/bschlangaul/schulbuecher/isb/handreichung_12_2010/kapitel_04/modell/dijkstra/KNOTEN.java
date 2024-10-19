@@ -9,10 +9,14 @@ package org.bschlangaul.schulbuecher.isb.handreichung_12_2010.kapitel_04.modell.
  */
 class KNOTEN extends LISTENELEMENT
 {
-    /* der Nachfolger des Knoten */
+    /**
+     * Der Nachfolger des Knoten
+     */
     private LISTENELEMENT nachfolger;
 
-    /* das Datenelement des Knoten */
+    /**
+     * Das Datenelement des Knoten
+     */
     private KNOTENINFO daten;
 
     /**

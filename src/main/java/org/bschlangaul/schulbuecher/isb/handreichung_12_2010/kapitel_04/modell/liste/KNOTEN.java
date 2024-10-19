@@ -1,6 +1,6 @@
 package org.bschlangaul.schulbuecher.isb.handreichung_12_2010.kapitel_04.modell.liste;
 
-import org.bschlangaul.schulbuecher.isb.handreichung_12_2010.kapitel_04.modell.DATENELEMENT;
+import org.bschlangaul.schulbuecher.isb.handreichung_12_2010.kapitel_04.modell.DatenElement;
 
 /**
  * Beschreibt einen Knoten der Liste.
@@ -11,10 +11,14 @@ import org.bschlangaul.schulbuecher.isb.handreichung_12_2010.kapitel_04.modell.D
  */
 class KNOTEN extends LISTENELEMENT
 {
-    /* Referenz auf das Datenelement */
-    private DATENELEMENT daten;
+    /**
+     * Referenz auf das Datenelement
+     */
+    private DatenElement daten;
 
-    /* Referenz auf den Nachfolgerknoten */
+    /**
+     * Referenz auf den Nachfolgerknoten
+     */
     private LISTENELEMENT nachfolger;
 
     /**
@@ -24,7 +28,7 @@ class KNOTEN extends LISTENELEMENT
      * @param d Referenz auf das von diesem Knoten verwaltete Datenelement
      * @param nf Referenz auf das Nachfolgerelement
      */
-    KNOTEN(DATENELEMENT d, LISTENELEMENT nf)
+    KNOTEN(DatenElement d, LISTENELEMENT nf)
     {
         daten = d;
         nachfolger = nf;
@@ -37,7 +41,7 @@ class KNOTEN extends LISTENELEMENT
      *
      * @return der (neue) Nachfolger für das Vorgängerelement
      */
-    LISTENELEMENT Einfuegen(DATENELEMENT neu)
+    LISTENELEMENT Einfuegen(DatenElement neu)
     {
         if (neu.Vergleichen(daten) > 0)
         {
@@ -58,7 +62,7 @@ class KNOTEN extends LISTENELEMENT
      *
      * @return das gefundene Datenelement oder null
      */
-    DATENELEMENT Suchen(DATENELEMENT schluessel)
+    DatenElement Suchen(DatenElement schluessel)
     {
         LISTE.ZaehlerErhoehen();
         if (schluessel.Vergleichen(daten) == 0)

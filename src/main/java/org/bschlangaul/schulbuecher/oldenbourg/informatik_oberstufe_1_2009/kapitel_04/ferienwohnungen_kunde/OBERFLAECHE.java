@@ -89,7 +89,7 @@ class OBERFLAECHE implements OBERFLACHENINTERFACE, MELDUNGSBEOBACHTER
         JButton button;
         kontrolleur = k;
         konvert = new SimpleDateFormat("dd-MM-yyyy");
-        /* Fenster und Basispanele aufbauen */
+        // Fenster und Basispanele aufbauen
         fenster = new JFrame("Ferienwohnungen");
         content = (JPanel) fenster.getContentPane();
         content.setLayout(new BorderLayout());
@@ -98,7 +98,7 @@ class OBERFLAECHE implements OBERFLACHENINTERFACE, MELDUNGSBEOBACHTER
         cards = new CardLayout();
         start.setLayout(cards);
         auswahl = new JTabbedPane();
-        /* Anmeldekarte aufbauen */
+        // Anmeldekarte aufbauen
         panel2 = new JPanel();
         panel2.setLayout(new BoxLayout(panel2, BoxLayout.Y_AXIS));
         panel2.add(new JLabel("Anmeldung"));
@@ -126,9 +126,9 @@ class OBERFLAECHE implements OBERFLACHENINTERFACE, MELDUNGSBEOBACHTER
         panel.setLayout(new BorderLayout());
         panel.add(panel2, BorderLayout.NORTH);
         start.add(panel, "Anmeldung");
-        /* Benutzerkarte aufbauen */
+        // Benutzerkarte aufbauen
         start.add(auswahl, "Auswahl");
-        /* Reservierungsauswahl */
+        // Reservierungsauswahl
         panel2 = new JPanel();
         panel2.setLayout(new BorderLayout());
         panel = new JPanel();
@@ -351,7 +351,7 @@ class OBERFLAECHE implements OBERFLACHENINTERFACE, MELDUNGSBEOBACHTER
         panel3.add(panel2, BorderLayout.SOUTH);
         panel.add(panel3, BorderLayout.SOUTH);
         auswahl.addTab("Objektauswahl und Reservierung", panel);
-        /* Buchungen erledigen */
+        // Buchungen erledigen
         panel = new JPanel();
         panel.setLayout(new BorderLayout());
         reservierungsListe = new JList();
@@ -402,7 +402,7 @@ class OBERFLAECHE implements OBERFLACHENINTERFACE, MELDUNGSBEOBACHTER
         panel2.add(loeschen);
         panel.add(panel2, BorderLayout.SOUTH);
         auswahl.addTab("Buchen und Reservierungen bearbeiten", panel);
-        /* Benutzerprofil bearbeiten */
+        // Benutzerprofil bearbeiten
         panel = new JPanel();
         panel2 = new JPanel();
         panel2.setLayout(new BorderLayout());
@@ -433,7 +433,7 @@ class OBERFLAECHE implements OBERFLACHENINTERFACE, MELDUNGSBEOBACHTER
         });
         panel.add(panel2, BorderLayout.NORTH);
         auswahl.addTab("Eigene Daten", panel);
-        /* Feststehende Statusanzeig am Fuß des Fensters */
+        // Feststehende Statusanzeig am Fuß des Fensters
         panel = new JPanel();
         panel.setLayout(new BorderLayout());
         content.add(panel, BorderLayout.SOUTH);

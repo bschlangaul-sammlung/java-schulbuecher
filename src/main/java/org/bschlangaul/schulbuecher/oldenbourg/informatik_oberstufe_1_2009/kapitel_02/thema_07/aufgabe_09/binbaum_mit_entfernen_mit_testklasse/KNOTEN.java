@@ -372,7 +372,7 @@ public class KNOTEN
      */
     public void StrukturAusgeben(int tiefe)
     {
-        // lokales Attribut zur Einrückung abh&aauml;ngig von der Tiefe
+        // lokales Attribut zur Einrückung abhängig von der Tiefe
         String einrueckung;
         einrueckung = "";
         for (int i = 1; i < tiefe; i = i + 1)
@@ -402,7 +402,7 @@ public class KNOTEN
      */
     public void StrukturAusgeben2(int tiefe)
     {
-        // lokales Attribut zur Einrückung abh&aauml;ngig von der Tiefe
+        // lokales Attribut zur Einrückung abhängig von der Tiefe
         String einrueckung;
         einrueckung = "";
         for (int i = 1; i < tiefe; i = i + 1)

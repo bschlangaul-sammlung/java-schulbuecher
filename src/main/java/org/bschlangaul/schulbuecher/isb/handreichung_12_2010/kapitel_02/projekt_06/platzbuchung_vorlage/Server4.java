@@ -16,7 +16,7 @@ import java.net.Socket;
  *
  * @version 1.0
  */
-public class SERVER4
+public class Server4
 {
     /**
      * bidirektionale Schnittstelle zur Netzwerkprotokoll-Implementierung des
@@ -32,6 +32,7 @@ public class SERVER4
     /**
      * speichert die aktuelle Anzahl der noch vorhandenen Plätze
      */
+    @SuppressWarnings("unused")
     private int plaetzevorhanden = 3;
 
     /**
@@ -42,7 +43,7 @@ public class SERVER4
      *     Port nicht frei ist)<br/>
      *     - die Clientverbindung gestört bzw. unterbrochen wurde.
      */
-    public SERVER4() throws IOException
+    public Server4() throws IOException
     {
         ServerStarten();
         while (true)
@@ -59,7 +60,7 @@ public class SERVER4
         System.out.println("warte auf Client, hoere auf Port " + port);
         Socket clientSocket = serverSocket.accept(); // warten auf die
                                                      // Verbindung
-        CLIENTPROZESS2 clientprozess = new CLIENTPROZESS2(clientSocket, this);
+        ClientProzess2 clientprozess = new ClientProzess2(clientSocket, this);
         clientprozess.start();
         System.out.println("Clientprozess gestartet...");
     }
@@ -112,7 +113,7 @@ public class SERVER4
     {
         try
         {
-            new SERVER4();
+            new Server4();
         }
         catch (Exception e)
         {
