@@ -15,7 +15,7 @@ class Knoten extends ListenElement
     private DatenElement daten;
 
     /**
-     * Verwaltung des nachfolgenden Knoten in der Warteschlange.
+     * Verwaltung des nachfolgenden Knoten in der Liste.
      */
     private ListenElement nachfolger;
 
