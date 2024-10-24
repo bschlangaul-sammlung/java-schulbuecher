@@ -285,32 +285,51 @@ publisher: Duden Paetec
 
 ```java
 /**
- * Kapitel 1 <em>Die rekursive Datenstruktur Liste</em> (Seite 13)
+ * Kapitel <b>I</b> <em>Die rekursive Datenstruktur Liste</em> (Seite 13)
  */
-package org.bschlangaul.schulbuecher.cornelsen.informatik_6_ga_2024.kapitel_01;
+package kapitel_xx;
 ```
 
 ### `thema_xx`
 
 ```java
 /**
- * Thema 1.1 <em>Prototyp 1: Die rekursive Warteschlange</em> (Seite 14)
+ * Thema <b>1.1</b> <em>Einführung der Datenstruktur Schlange</em> (Seite 5)
  */
-package org.bschlangaul.schulbuecher.cornelsen.informatik_6_ga_2024.kapitel_01.thema_01;
+package thema_xx;
 ```
 
-### `aufgabe_xx.teilaufgabe_xx`
+### `aufgabe_xx`
+
+Vorsicht mit Satzzeichen innerhalb von `<em>`.
 
 ```java
 /**
- * Aufgabe 3a (Seite 10): <em>Patientenverwaltung im Wartezimmer - Teil 1</em>.
+ * Aufgabe <b>3</b> (Seite 10): <em>Patientenverwaltung im Wartezimmer - Teil
+ * 1</em>.
  *
- * <p>
- * Setzen Sie das erweiterte Klassendiagramm aus Abbildung 7 in ein Programm um.
- * Implementieren Sie die Methoden und testen Sie ausführlich!
- * </p>
+ * <ol>
+ * <li>
+ * Setzen Sie das erweiterte Klassendiagramm aus Abbildung 7 in ein Programm
+ * um. Implementieren Sie die Methoden und testen Sie ausführlich!
+ * </li>
+ *
+ * <li>
+ * Entwickeln Sie eine geeignete Oberfläche für die Ein- und Ausgabe!
+ * </li>
+ * </ol>
  */
-package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapitel_01.thema_01.aufgabe_03.teilaufgabe_a.arzt;
+package aufgabe_xx;
+```
+
+### `teilaufgabe_xx`
+
+```java
+/**
+ * Teilaufgabe 4<b>b</b>: Stellen Sie ähnliche
+ * Überlegungen wie bei a) und b) für die vorliegende Kreuzungssimulation an.
+ */
+package teilaufgabe_xx;
 ```
 
 ## Abhängigkeiten
