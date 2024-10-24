@@ -1,24 +1,28 @@
-package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapitel_01.thema_01.aufgabe_03.teilaufgabe_a.arzt;
+package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapitel_01.thema_01.aufgabe_03.teilaufgabe_b.wartezimmer_oberflaeche;
 
 /**
  * Beschreibung der Warteschlange
+ *
+ * @author Klaus Reinold
+ *
+ * @version 0.9
  */
-class WARTESCHLANGE
+class Warteschlange
 {
     /**
      * Verwaltung des ersten Patienten in der Warteschlange.
      */
-    private PATIENT anfang;
+    private Patient anfang;
 
     /**
      * Verwaltung des letzten Patienten in der Warteschlange.
      */
-    private PATIENT ende;
+    private Patient ende;
 
     /**
      * Konstruktor der WARTESCHLANGE
      */
-    WARTESCHLANGE()
+    Warteschlange()
     {
         anfang = null;
         ende = null;
@@ -29,7 +33,7 @@ class WARTESCHLANGE
      *
      * @param patientNeu neuer Patient
      */
-    void Einfuegen(PATIENT patientNeu)
+    void Einfuegen(Patient patientNeu)
     {
         if (ende != null)
         {
@@ -47,9 +51,9 @@ class WARTESCHLANGE
      *
      * @return bisheriger erster Patient
      */
-    PATIENT Entfernen()
+    Patient Entfernen()
     {
-        PATIENT p;
+        Patient p;
         p = anfang;
         if (anfang != null)
         {

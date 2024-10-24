@@ -22,7 +22,7 @@ import java.awt.event.WindowEvent;
  *
  * @author Klaus Reinold
  */
-class FENSTER extends Frame
+class Fenster extends Frame
 {
     /** überschrift */
     private Label labelUeberschrift = new Label();
@@ -68,7 +68,7 @@ class FENSTER extends Frame
      * Verwaltete Warteschlange, an die Botschaften über Ereignisse
      * weitergeleitet werden
      */
-    WARTESCHLANGE w;
+    Warteschlange w;
     // Ende Attribute
 
     /**
@@ -77,7 +77,7 @@ class FENSTER extends Frame
      *
      * @param title Fenstertitel
      */
-    FENSTER(String title)
+    Fenster(String title)
     {
         // Frame-Initialisierung
         super(title);
@@ -97,8 +97,8 @@ class FENSTER extends Frame
         setLocation(x, y);
         Panel fenster = new Panel(null);
         add(fenster);
-        final WARTESCHLANGE w;
-        w = new WARTESCHLANGE();
+        final Warteschlange w;
+        w = new Warteschlange();
         // Anfang Komponenten
         labelUeberschrift.setBounds(8, 8, 289, 24);
         labelUeberschrift.setText("Warteschlangenverwaltung");
@@ -115,7 +115,7 @@ class FENSTER extends Frame
         {
             public void actionPerformed(ActionEvent evt)
             {
-                w.Einfuegen(new PATIENT(textfeld_Einfuegen.getText()));
+                w.Einfuegen(new Patient(textfeld_Einfuegen.getText()));
             }
         });
         fenster.add(knopfEinfuegen);
@@ -128,7 +128,7 @@ class FENSTER extends Frame
         {
             public void actionPerformed(ActionEvent evt)
             {
-                PATIENT entfernter;
+                Patient entfernter;
                 entfernter = w.Entfernen();
                 if (entfernter != null)
                 {

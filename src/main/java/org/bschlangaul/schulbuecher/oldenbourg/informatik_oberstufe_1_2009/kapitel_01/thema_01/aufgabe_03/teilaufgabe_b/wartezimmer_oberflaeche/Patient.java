@@ -7,7 +7,7 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapi
  *
  * @version 0.9
  */
-class PATIENT
+class Patient
 {
     /**
      * Name des Patienten
@@ -17,14 +17,14 @@ class PATIENT
     /**
      * Verwaltung des nachfolgenden Patienten in der Warteschlange.
      */
-    private PATIENT nachfolger;
+    private Patient nachfolger;
 
     /**
      * Konstruktor des Patienten
      *
      * @param s Name des Patienten
      */
-    PATIENT(String s)
+    Patient(String s)
     {
         name = s;
     }
@@ -34,7 +34,7 @@ class PATIENT
      *
      * @param nf neuer Nachfolger
      */
-    void NachfolgerSetzen(PATIENT nf)
+    void NachfolgerSetzen(Patient nf)
     {
         nachfolger = nf;
     }
@@ -44,7 +44,7 @@ class PATIENT
      *
      * @return Nachfolger
      */
-    PATIENT NachfolgerGeben()
+    Patient NachfolgerGeben()
     {
         return nachfolger;
     }
