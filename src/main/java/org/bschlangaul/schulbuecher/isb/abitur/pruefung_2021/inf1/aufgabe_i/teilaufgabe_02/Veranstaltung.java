@@ -1,12 +1,12 @@
 package org.bschlangaul.schulbuecher.isb.abitur.pruefung_2021.inf1.aufgabe_i.teilaufgabe_02;
 
-/**
- * Heißt in der Musterlösung {@code Veranstaltung}
- */
-public class Veranstaltung {
+public class Veranstaltung
+{
 
     int tag;
+
     int zeitfenster;
+
     String name;
 
     public Veranstaltung(int tag, int zeitfenster, String name)
@@ -45,7 +45,5 @@ public class Veranstaltung {
     {
         this.name = name;
     }
-
-
 
 }
