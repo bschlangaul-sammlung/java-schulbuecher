@@ -7,22 +7,22 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapi
  *
  * @version 1.0
  */
-class RANGIERBAHNHOF
+class RangierBahnhof
 {
     /**
      * Feld der Abstellgleise
      */
-    private ABSTELLGLEIS[] gleise;
+    private Abstellgleis[] gleise;
 
     /**
      * Erzeugt die drei Abstellgleise
      */
-    RANGIERBAHNHOF()
+    RangierBahnhof()
     {
-        gleise = new ABSTELLGLEIS[3];
+        gleise = new Abstellgleis[3];
         for (int i = 0; i < 3; i = i + 1)
         {
-            gleise[i] = new ABSTELLGLEIS();
+            gleise[i] = new Abstellgleis();
         }
     }
 
@@ -32,7 +32,7 @@ class RANGIERBAHNHOF
      * @param w Waggon
      * @param gleisnummer Nummer von 0 bis 2
      */
-    void WaggonEinfuegen(WAGGON w, int gleisnummer)
+    void WaggonEinfuegen(Waggon w, int gleisnummer)
     {
         gleise[gleisnummer].Einfuegen(w);
     }
@@ -42,7 +42,7 @@ class RANGIERBAHNHOF
      *
      * @param gleisnummer Nummer von 0 bis 2
      */
-    WAGGON WaggonEntfernen(int gleisnummer)
+    Waggon WaggonEntfernen(int gleisnummer)
     {
         return gleise[gleisnummer].Entfernen();
     }

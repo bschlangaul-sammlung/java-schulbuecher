@@ -24,7 +24,7 @@ import java.awt.event.WindowEvent;
  *
  *     Komponenten wurden mit JavaEditor erstellt.
  */
-class FENSTER extends Frame
+class Fenster extends Frame
 {
     // Anfang Attribute
     private Label titel = new Label();
@@ -56,13 +56,13 @@ class FENSTER extends Frame
 
     private Label labelInfo = new Label();
 
-    private SPIEL spiel;
+    private Spiel spiel;
 
     /**
      * Erzeugt ein Spiel in einem Fenster und die zur Anzeige erforderlichen
      * Komponenten
      */
-    FENSTER()
+    Fenster()
     {
         // Frame-Initialisierung
         super("Cheese Champions");
@@ -82,7 +82,7 @@ class FENSTER extends Frame
         setLocation(x, y);
         Panel cp = new Panel(null);
         add(cp);
-        spiel = new SPIEL();
+        spiel = new Spiel();
         // Anfang Komponenten
         titel.setBounds(88, 8, 212, 29);
         titel.setText("Cheese Champions");
@@ -103,7 +103,7 @@ class FENSTER extends Frame
             public void actionPerformed(ActionEvent evt)
             {
                 spiel.Einfuegen(
-                        new MAUS(Integer.parseInt(mausnummer.getText())));
+                        new Maus(Integer.parseInt(mausnummer.getText())));
                 texfeldZiel.setText(spiel.StapelAusgeben('z'));
             }
         });
@@ -169,6 +169,6 @@ class FENSTER extends Frame
 
     public static void main(String args[])
     {
-        new FENSTER();
+        new Fenster();
     }
 }

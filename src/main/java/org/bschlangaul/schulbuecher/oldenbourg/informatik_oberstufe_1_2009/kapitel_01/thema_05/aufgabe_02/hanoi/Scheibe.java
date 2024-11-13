@@ -11,7 +11,7 @@ import java.util.Random;
  *
  * @version 1.0
  */
-class SCHEIBE implements DATENELEMENT
+class Scheibe implements DatenElement
 {
     /**
      * Höhe einer Scheibe
@@ -39,7 +39,7 @@ class SCHEIBE implements DATENELEMENT
      *
      * @param breiteNeu Breite der Scheibe
      */
-    SCHEIBE(int breiteNeu)
+    Scheibe(int breiteNeu)
     {
         hoehe = 10;
         breite = breiteNeu;
@@ -47,7 +47,7 @@ class SCHEIBE implements DATENELEMENT
         c = new Canvas();
         c.setBackground(new Color(zgenerator.nextInt(3) * 127,
                 zgenerator.nextInt(3) * 127, zgenerator.nextInt(3) * 127));
-        (FENSTER.PanelGeben()).add(c, 0);
+        (Fenster.PanelGeben()).add(c, 0);
     }
 
     /**
@@ -75,7 +75,7 @@ class SCHEIBE implements DATENELEMENT
      *
      * @param dvergleich Datenelement zum Vergleich
      */
-    public boolean IstKleinerAls(DATENELEMENT dvergleich)
+    public boolean IstKleinerAls(DatenElement dvergleich)
     {
         return true;
     }
@@ -96,6 +96,6 @@ class SCHEIBE implements DATENELEMENT
      */
     void Entfernen()
     {
-        (FENSTER.PanelGeben()).remove(c);
+        (Fenster.PanelGeben()).remove(c);
     }
 }

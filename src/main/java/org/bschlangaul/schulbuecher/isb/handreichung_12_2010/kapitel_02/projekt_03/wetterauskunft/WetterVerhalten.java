@@ -103,7 +103,7 @@ public class WetterVerhalten
             }
             else
             {
-                ausgabe = "F\u00fcr diese Stadt liegen leider keine Wetterdaten vor!";
+                ausgabe = "Für diese Stadt liegen leider keine Wetterdaten vor!";
             }
             ausgabe = ausgabe
                     + " Wollen Sie eine weitere Stadt abfragen? (Ja)?";

@@ -165,13 +165,11 @@ class KONTROLLEUR implements KONTROLLEURINTERFACE
                         + " bis "
                         + ausgabeKonvertierung.format(r.EndeDatumGeben());
             }
-            oberflaeche.ObjektinfoSetzen(
-                    o.NameGeben() + " (" + o.ArtGeben() + ") in "
-                            + LandSuchen(o.LandNummerGeben()) + " Wochenpreis: "
-                            + o.PreisGeben() + "Û",
+            oberflaeche.ObjektinfoSetzen(o.NameGeben() + " (" + o.ArtGeben()
+                    + ") in " + LandSuchen(o.LandNummerGeben())
+                    + " Wochenpreis: " + o.PreisGeben() + "Û",
                     "" + o.GroesseGeben() + "qm verteilt auf "
-                            + o.ZimmerAnzahlGeben()
-                            + " Zimmer f\u00FCr maximal "
+                            + o.ZimmerAnzahlGeben() + " Zimmer für maximal "
                             + o.PersonenAnzahlGeben() + " Personen",
                     "Ausstattung: " + o.AusstattungenAlsTextGeben(),
                     reserviert);

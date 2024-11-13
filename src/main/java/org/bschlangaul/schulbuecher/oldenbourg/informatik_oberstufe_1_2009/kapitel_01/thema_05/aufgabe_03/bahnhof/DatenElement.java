@@ -7,7 +7,7 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapi
  *
  * @version 1.0
  */
-interface DATENELEMENT
+interface DatenElement
 {
     /**
      * Ausgabe von Information über ein Ausgabefenster
@@ -19,7 +19,7 @@ interface DATENELEMENT
      *
      * @param dvergleich Datenelement zum Vergleich
      */
-    boolean IstKleinerAls(DATENELEMENT dvergleich);
+    boolean IstKleinerAls(DatenElement dvergleich);
 
     /**
      * Identifikation eines Datenelements aufgrund seines Schlüssels

@@ -7,17 +7,17 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapi
  *
  * @version 1.0
  */
-class KNOTEN extends LISTENELEMENT
+class Knoten extends ListenElement
 {
     /**
      * Datenelement des Knotens
      */
-    private DATENELEMENT daten;
+    private DatenElement daten;
 
     /**
      * Verwaltung des nachfolgenden Knoten in der Warteschlange.
      */
-    private LISTENELEMENT nachfolger;
+    private ListenElement nachfolger;
 
     /**
      * Konstruktor des Knotens
@@ -25,7 +25,7 @@ class KNOTEN extends LISTENELEMENT
      * @param d neues Datenelement
      * @param l Nachfolger des Knotens
      */
-    KNOTEN(DATENELEMENT d, LISTENELEMENT l)
+    Knoten(DatenElement d, ListenElement l)
     {
         daten = d;
         nachfolger = l;
@@ -36,7 +36,7 @@ class KNOTEN extends LISTENELEMENT
      *
      * @param dneu neues Datenelement
      */
-    KNOTEN HintenEinfuegen(DATENELEMENT dneu)
+    Knoten HintenEinfuegen(DatenElement dneu)
     {
         nachfolger = nachfolger.HintenEinfuegen(dneu);
         return this;
@@ -50,12 +50,12 @@ class KNOTEN extends LISTENELEMENT
      *
      * @return Weitergabe des künftigen Nachfolgers
      */
-    KNOTEN EinfuegenVor(DATENELEMENT dneu, DATENELEMENT d_vergleich)
+    Knoten EinfuegenVor(DatenElement dneu, DatenElement d_vergleich)
     {
         if (daten == d_vergleich)
         {
-            KNOTEN kneu;
-            kneu = new KNOTEN(dneu, this);
+            Knoten kneu;
+            kneu = new Knoten(dneu, this);
             return kneu;
         }
         else
@@ -72,7 +72,7 @@ class KNOTEN extends LISTENELEMENT
      *
      * @return Weitergabe des künftigen Nachfolgers
      */
-    KNOTEN SortiertEinfuegen(DATENELEMENT dneu)
+    Knoten SortiertEinfuegen(DatenElement dneu)
     {
         if (daten.IstKleinerAls(dneu))
         {
@@ -81,8 +81,8 @@ class KNOTEN extends LISTENELEMENT
         }
         else
         {
-            KNOTEN kneu;
-            kneu = new KNOTEN(dneu, this);
+            Knoten kneu;
+            kneu = new Knoten(dneu, this);
             return kneu;
         }
     }
@@ -95,7 +95,7 @@ class KNOTEN extends LISTENELEMENT
      *
      * @return Weitergabe des künftigen Nachfolgers
      */
-    LISTENELEMENT KnotenEntfernen(DATENELEMENT dvergleich)
+    ListenElement KnotenEntfernen(DatenElement dvergleich)
     {
         if (daten == dvergleich)
         {
@@ -115,7 +115,7 @@ class KNOTEN extends LISTENELEMENT
      *
      * @return hinterstes Datenelement
      */
-    DATENELEMENT EndeGeben(DATENELEMENT d)
+    DatenElement EndeGeben(DatenElement d)
     {
         return nachfolger.EndeGeben(daten);
     }
@@ -125,7 +125,7 @@ class KNOTEN extends LISTENELEMENT
      *
      * @return bisheriger letzter Knoten
      */
-    LISTENELEMENT EndeEntfernen(DATENELEMENT d)
+    ListenElement EndeEntfernen(DatenElement d)
     {
         if (daten == d)
         {
@@ -156,7 +156,7 @@ class KNOTEN extends LISTENELEMENT
      *
      * @return gesuchtes Datenelement
      */
-    DATENELEMENT Suchen(String vergleichswert)
+    DatenElement Suchen(String vergleichswert)
     {
         if (daten.SchluesselIstGleich(vergleichswert))
         {
@@ -183,7 +183,7 @@ class KNOTEN extends LISTENELEMENT
      *
      * @return Datenelement
      */
-    DATENELEMENT DatenelementGeben()
+    DatenElement DatenelementGeben()
     {
         return daten;
     }
@@ -193,7 +193,7 @@ class KNOTEN extends LISTENELEMENT
      *
      * @return Nachfolger
      */
-    LISTENELEMENT NachfolgerGeben()
+    ListenElement NachfolgerGeben()
     {
         return nachfolger;
     }

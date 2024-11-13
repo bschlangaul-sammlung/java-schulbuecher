@@ -7,7 +7,7 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapi
  *
  * @version 1.0
  */
-public class HANOITURM
+public class HanoiTurm
 {
     /**
      * Position des Turms
@@ -17,18 +17,18 @@ public class HANOITURM
     /**
      * Nutzung der Datenstruktur Stapel
      */
-    private STAPEL stapel;
+    private Stapel stapel;
 
     /**
      * Konstruktor Setzt die Position des Hanoiturms und erzeugt den Stapel x
      * neue x-Position des Turms auf dem Fenster y neue y-Position des Turms auf
      * dem Fenster
      */
-    public HANOITURM(int x, int y)
+    public HanoiTurm(int x, int y)
     {
         xpos = x;
         ypos = y;
-        stapel = new STAPEL();
+        stapel = new Stapel();
     }
 
     /**
@@ -37,7 +37,7 @@ public class HANOITURM
      *
      * @param s einzufügende Scheibe
      */
-    public void Einfuegen(SCHEIBE s)
+    public void Einfuegen(Scheibe s)
     {
         stapel.VorneEinfuegen(s);
         s.PositionSetzen(xpos, ypos - 10 * stapel.LaengeGeben());
@@ -48,11 +48,11 @@ public class HANOITURM
      *
      * @return oberste Scheibe
      */
-    public SCHEIBE Entfernen()
+    public Scheibe Entfernen()
     {
-        DATENELEMENT d;
+        DatenElement d;
         d = stapel.AnfangEntfernen();
-        return (SCHEIBE) d;
+        return (Scheibe) d;
     }
 
     /**
@@ -63,9 +63,9 @@ public class HANOITURM
     {
         if (stapel.LaengeGeben() != 0)
         {
-            DATENELEMENT d;
+            DatenElement d;
             d = stapel.AnfangEntfernen();
-            ((SCHEIBE) d).Entfernen();
+            ((Scheibe) d).Entfernen();
             Loeschen();
         }
     }

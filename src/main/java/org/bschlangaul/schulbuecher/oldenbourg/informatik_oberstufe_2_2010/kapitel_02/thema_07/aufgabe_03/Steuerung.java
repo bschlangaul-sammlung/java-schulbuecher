@@ -39,7 +39,7 @@ class Steuerung implements Beobachter
         anzeige = new Label();
         anzeige.setLocation(10, 25);
         anzeige.setSize(180, 20);
-        anzeige.setText("Viel Gl\u00FCck");
+        anzeige.setText("Viel Glück");
         fenster.add(anzeige);
         start = new Button();
         start.setLocation(60, 55);

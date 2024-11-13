@@ -139,7 +139,7 @@ class OBERFLAECHE implements OBERFLACHENINTERFACE, MELDUNGSBEOBACHTER
         panel.add(ausstattung[1]);
         ausstattung[2] = new JCheckBox("Trockner");
         panel.add(ausstattung[2]);
-        ausstattung[3] = new JCheckBox("K\u00FChlschrank");
+        ausstattung[3] = new JCheckBox("Kühlschrank");
         panel.add(ausstattung[3]);
         ausstattung[4] = new JCheckBox("Gefrierschrank");
         panel.add(ausstattung[4]);

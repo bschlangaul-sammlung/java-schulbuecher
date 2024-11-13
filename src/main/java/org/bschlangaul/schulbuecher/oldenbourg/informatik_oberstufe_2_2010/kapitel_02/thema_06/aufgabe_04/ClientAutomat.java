@@ -61,7 +61,7 @@ class ClientAutomat
 
             case aktionWaehlen:
                 text = ein.TextLesen(
-                        "Bitte die gew\u00FCnschte Aktion (schicken, holen, beenden) eingeben.");
+                        "Bitte die gewünschte Aktion (schicken, holen, beenden) eingeben.");
                 if (text.equals("schicken"))
                 {
                     verb.ZeileSenden("schicken");
@@ -81,7 +81,7 @@ class ClientAutomat
                 }
                 else
                 {
-                    System.out.println("Ung\u00FCltige Eingabe: " + text);
+                    System.out.println("Ungültige Eingabe: " + text);
                 }
                 break;
 
@@ -118,7 +118,7 @@ class ClientAutomat
                 in.Schliessen();
                 verb.ZeileSenden("*");
                 VerstandenTesten();
-                System.out.println("Datei\u00FCbertragung beendet.");
+                System.out.println("Dateiübertragung beendet.");
                 in = null;
                 zustand = Zustaende.beenden;
                 break;
@@ -154,7 +154,7 @@ class ClientAutomat
                 }
                 out.Schliessen();
                 verb.ZeileSenden("verstanden");
-                System.out.println("Datei\u00FCbertragung beendet.");
+                System.out.println("Dateiübertragung beendet.");
                 out = null;
                 zustand = Zustaende.beenden;
                 break;

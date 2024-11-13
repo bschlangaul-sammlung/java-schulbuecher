@@ -7,19 +7,19 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapi
  *
  * @version 1.0
  */
-class ABSTELLGLEIS
+class Abstellgleis
 {
     /**
      * zugehöriger Stapel
      */
-    STAPEL stapel;
+    Stapel stapel;
 
     /**
      * Konstruktor erzeugt einen Stapel
      */
-    ABSTELLGLEIS()
+    Abstellgleis()
     {
-        stapel = new STAPEL();
+        stapel = new Stapel();
     }
 
     /**
@@ -27,7 +27,7 @@ class ABSTELLGLEIS
      *
      * @param w Waggon
      */
-    void Einfuegen(WAGGON w)
+    void Einfuegen(Waggon w)
     {
         stapel.VorneEinfuegen(w);
     }
@@ -37,8 +37,8 @@ class ABSTELLGLEIS
      *
      * @return Waggon
      */
-    WAGGON Entfernen()
+    Waggon Entfernen()
     {
-        return ((WAGGON) stapel.AnfangEntfernen());
+        return ((Waggon) stapel.AnfangEntfernen());
     }
 }

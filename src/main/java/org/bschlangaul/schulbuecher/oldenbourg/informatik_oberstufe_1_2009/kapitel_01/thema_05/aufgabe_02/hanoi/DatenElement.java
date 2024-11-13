@@ -1,4 +1,4 @@
-package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapitel_01.thema_05.aufgabe_05.cheese_champions;
+package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapitel_01.thema_05.aufgabe_02.hanoi;
 
 /**
  * Beschreibung zum Interface DATENELEMENT
@@ -7,19 +7,19 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapi
  *
  * @version 1.0
  */
-interface DATENELEMENT
+interface DatenElement
 {
     /**
      * Ausgabe von Information über ein Ausgabefenster
      */
-    String InformationAusgeben();
+    void InformationAusgeben();
 
     /**
      * Vergleich zweier Datenelemente bezüglich einer Ordnungsrelation
      *
      * @param dvergleich Datenelement zum Vergleich
      */
-    boolean IstKleinerAls(DATENELEMENT dvergleich);
+    boolean IstKleinerAls(DatenElement dvergleich);
 
     /**
      * Identifikation eines Datenelements aufgrund seines Schlüssels

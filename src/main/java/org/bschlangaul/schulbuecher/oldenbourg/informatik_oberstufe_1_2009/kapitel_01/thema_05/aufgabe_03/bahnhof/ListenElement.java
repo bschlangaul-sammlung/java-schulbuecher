@@ -1,4 +1,4 @@
-package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapitel_01.thema_05.aufgabe_05.cheese_champions;
+package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapitel_01.thema_05.aufgabe_03.bahnhof;
 
 /**
  * Beschreibung der abstrakten Klasse LISTENELEMENT
@@ -7,14 +7,14 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapi
  *
  * @version 1.0
  */
-abstract class LISTENELEMENT
+abstract class ListenElement
 {
     /**
      * Fügt ein Datenelement am Ende der Liste ein
      *
      * @param dneu neues Datenelement
      */
-    abstract KNOTEN HintenEinfuegen(DATENELEMENT dneu);
+    abstract Knoten HintenEinfuegen(DatenElement dneu);
 
     /**
      * Fügt ein Datenelement vor einem bestimmten anderen Datenelement ein
@@ -24,7 +24,7 @@ abstract class LISTENELEMENT
      *
      * @return Weitergabe des künftigen Nachfolgers
      */
-    abstract KNOTEN EinfuegenVor(DATENELEMENT dneu, DATENELEMENT d_vergleich);
+    abstract Knoten EinfuegenVor(DatenElement dneu, DatenElement d_vergleich);
 
     /**
      * Fügt ein Datenelement sortiert in die Liste ein
@@ -33,7 +33,7 @@ abstract class LISTENELEMENT
      *
      * @return Weitergabe des künftigen Nachfolgers
      */
-    abstract KNOTEN SortiertEinfuegen(DATENELEMENT dneu);
+    abstract Knoten SortiertEinfuegen(DatenElement dneu);
 
     /**
      * Entfernt einen Knoten, der über sein Datenelement identifiziert wird, aus
@@ -43,27 +43,27 @@ abstract class LISTENELEMENT
      *
      * @return Weitergabe des künftigen Nachfolgers
      */
-    abstract LISTENELEMENT KnotenEntfernen(DATENELEMENT dvergleich);
+    abstract ListenElement KnotenEntfernen(DatenElement dvergleich);
 
     /**
      * Gibt das Datenelement des letzten Knotens aus
      *
      * @return hinterstes Datenelement
      */
-    abstract DATENELEMENT EndeGeben(DATENELEMENT d);
+    abstract DatenElement EndeGeben(DatenElement d);
 
     /**
      * Gibt den letzten Knoten aus und entfernt ihn aus der Liste
      *
      * @return bisheriger letzter Knoten
      */
-    abstract LISTENELEMENT EndeEntfernen(DATENELEMENT d);
+    abstract ListenElement EndeEntfernen(DatenElement d);
 
     /**
      * Gibt Information über das Datenelement und den Nachfolger des Knotens
      * aus.
      */
-    abstract String InformationAusgeben();
+    abstract void InformationAusgeben();
 
     /**
      * Sucht ein Datenelement, das über seinen Schlüssel identifiziert wird, und
@@ -73,7 +73,7 @@ abstract class LISTENELEMENT
      *
      * @return gesuchtes Datenelement
      */
-    abstract DATENELEMENT Suchen(String vergleichswert);
+    abstract DatenElement Suchen(String vergleichswert);
 
     /**
      * Gibt die Länge der Restliste aus
@@ -87,12 +87,12 @@ abstract class LISTENELEMENT
      *
      * @return Datenelement
      */
-    abstract DATENELEMENT DatenelementGeben();
+    abstract DatenElement DatenelementGeben();
 
     /**
      * Gibt eine Referenz auf den Nachfolger aus
      *
      * @return Nachfolger
      */
-    abstract LISTENELEMENT NachfolgerGeben();
+    abstract ListenElement NachfolgerGeben();
 }

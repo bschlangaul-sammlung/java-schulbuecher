@@ -1,28 +1,28 @@
 package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapitel_01.thema_05.aufgabe_02.hanoi;
 
 /**
- * 1 * Klasse zur Verwaltung eines Spiels
+ * Klasse zur Verwaltung eines Spiels
  *
  * @author Klaus Reinold
  *
  * @version 1.0
  */
-class SPIEL
+class Spiel
 {
     /**
      * Erster Hanoiturm
      */
-    HANOITURM hanoiturm1;
+    HanoiTurm hanoiturm1;
 
     /**
      * Zweiter Hanoiturm
      */
-    HANOITURM hanoiturm2;
+    HanoiTurm hanoiturm2;
 
     /**
      * Dritter Hanoiturm
      */
-    HANOITURM hanoiturm3;
+    HanoiTurm hanoiturm3;
 
     /**
      * Sorgt für die Verzögerung bei der Anzeige
@@ -37,11 +37,11 @@ class SPIEL
      *
      * @param scheibenzahl Anzahl der Scheiben
      */
-    SPIEL(int scheibenzahl)
+    Spiel(int scheibenzahl)
     {
-        hanoiturm1 = new HANOITURM(90, 200);
-        hanoiturm2 = new HANOITURM(190, 200);
-        hanoiturm3 = new HANOITURM(290, 200);
+        hanoiturm1 = new HanoiTurm(90, 200);
+        hanoiturm2 = new HanoiTurm(190, 200);
+        hanoiturm3 = new HanoiTurm(290, 200);
         if (scheibenzahl <= 3)
         {
             taktdauer = 2000;
@@ -59,7 +59,7 @@ class SPIEL
         }
         for (int i = 0; i < scheibenzahl; i++)
         {
-            hanoiturm1.Einfuegen(new SCHEIBE(100 - 10 * i));
+            hanoiturm1.Einfuegen(new Scheibe(100 - 10 * i));
         }
         SchiebeTurm(scheibenzahl, hanoiturm1, hanoiturm2, hanoiturm3);
     }
@@ -72,8 +72,8 @@ class SPIEL
      * @param nachTurm Ziel-Hanoiturm
      * @param freierTurm freier Hanoiturm
      */
-    void SchiebeTurm(int hoehe, HANOITURM vonTurm, HANOITURM nachTurm,
-            HANOITURM freierTurm)
+    void SchiebeTurm(int hoehe, HanoiTurm vonTurm, HanoiTurm nachTurm,
+            HanoiTurm freierTurm)
     {
         if (hoehe > 0)
         {

@@ -399,12 +399,12 @@ public class TextdateiWerkstatt
     // return pfad.replace("%20", " ").replace("%25", "%").replace("%c3%84",
     // "\u00C4").replace("%c3%96", "\u00D6").replace("%c3%9c",
     // "\u00DC").replace("%c3%a4", "\u00E4").replace("%c3%b6",
-    // "\u00F6").replace("%c3%bc", "\u00FC").replace("%3d", "=")
+    // "\u00F6").replace("%c3%bc", "ü").replace("%3d", "=")
     // .replace("%5b", "[").replace("%5d", "]").replace("%7b", "{")
     // .replace("%7d", "}").replace("%60", "`").replace("%C3%84",
     // "\u00C4").replace("%C3%96", "\u00D6").replace("%C3%9C",
     // "\u00DC").replace("%C3%A4", "\u00E4").replace("%C3%C6",
-    // "\u00F6").replace("%C3%BC", "\u00FC").replace("%3D",
+    // "\u00F6").replace("%C3%BC", "ü").replace("%3D",
     // "=").replace("%5B", "[").replace("%5D", "]").replace(
     // "%7B", "{").replace("%7D", "}");
     // }

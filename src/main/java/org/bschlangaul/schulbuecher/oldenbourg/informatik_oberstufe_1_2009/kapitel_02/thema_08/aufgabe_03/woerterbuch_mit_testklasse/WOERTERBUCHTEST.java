@@ -27,49 +27,49 @@ public class WOERTERBUCHTEST
     public void TiefeGebenTesten()
     {
         System.out.println(
-                "Test der Tiefe des Datenelements mit dem Schl\u00fce\u00dfel clip:");
+                "Test der Tiefe des Datenelements mit dem Schlüe\u00dfel clip:");
         System.out.println(woerterbuch.TiefeGeben("clip"));
         System.out.println(
                 "Testergebnis: " + (woerterbuch.TiefeGeben("clip") == 0));
         System.out.println("------------------------------------------------");
         System.out.println(
-                "Test der Tiefe des Datenelements mit dem Schl\u00fce\u00dfel car:");
+                "Test der Tiefe des Datenelements mit dem Schlüe\u00dfel car:");
         System.out.println(woerterbuch.TiefeGeben("car"));
         System.out.println(
                 "Testergebnis: " + (woerterbuch.TiefeGeben("car") == 1));
         System.out.println("------------------------------------------------");
         System.out.println(
-                "Test der Tiefe des Datenelements mit dem Schl\u00fce\u00dfel cat:");
+                "Test der Tiefe des Datenelements mit dem Schlüe\u00dfel cat:");
         System.out.println(woerterbuch.TiefeGeben("cat"));
         System.out.println(
                 "Testergebnis: " + (woerterbuch.TiefeGeben("cat") == 2));
         System.out.println("------------------------------------------------");
         System.out.println(
-                "Test der Tiefe des Datenelements mit dem Schl\u00fce\u00dfel cave:");
+                "Test der Tiefe des Datenelements mit dem Schlüe\u00dfel cave:");
         System.out.println(woerterbuch.TiefeGeben("cave"));
         System.out.println(
                 "Testergebnis: " + (woerterbuch.TiefeGeben("cave") == 3));
         System.out.println("------------------------------------------------");
         System.out.println(
-                "Test der Tiefe des Datenelements mit dem Schl\u00fce\u00dfel cook:");
+                "Test der Tiefe des Datenelements mit dem Schlüe\u00dfel cook:");
         System.out.println(woerterbuch.TiefeGeben("cook"));
         System.out.println(
                 "Testergebnis: " + (woerterbuch.TiefeGeben("cook") == 3));
         System.out.println("------------------------------------------------");
         System.out.println(
-                "Test der Tiefe des Datenelements mit dem Schl\u00fce\u00dfel cell:");
+                "Test der Tiefe des Datenelements mit dem Schlüe\u00dfel cell:");
         System.out.println(woerterbuch.TiefeGeben("cell"));
         System.out.println(
                 "Testergebnis: " + (woerterbuch.TiefeGeben("cell") == -1));
         System.out.println("------------------------------------------------");
         System.out.println(
-                "Test der Tiefe des Datenelements mit dem Schl\u00fce\u00dfel cable:");
+                "Test der Tiefe des Datenelements mit dem Schlüe\u00dfel cable:");
         System.out.println(woerterbuch.TiefeGeben("cable"));
         System.out.println(
                 "Testergebnis: " + (woerterbuch.TiefeGeben("cable") == -1));
         System.out.println("------------------------------------------------");
         System.out.println(
-                "Test der Tiefe des Datenelements mit dem Schl\u00fce\u00dfel cut:");
+                "Test der Tiefe des Datenelements mit dem Schlüe\u00dfel cut:");
         System.out.println(woerterbuch.TiefeGeben("cut"));
         System.out.println(
                 "Testergebnis: " + (woerterbuch.TiefeGeben("cut") == -1));
@@ -99,8 +99,7 @@ public class WOERTERBUCHTEST
         WOERTERBUCHEINTRAG wb3;
         KNOTEN knoten;
         wb1 = new WOERTERBUCHEINTRAG("cute", "nett, pfiffig");
-        wb2 = new WOERTERBUCHEINTRAG("cut",
-                "Schnitt, \u00d6ffnung, k\u00fcrzen");
+        wb2 = new WOERTERBUCHEINTRAG("cut", "Schnitt, \u00d6ffnung, kürzen");
         wb3 = new WOERTERBUCHEINTRAG("cup", "Tasse, Becher");
         knoten = new KNOTEN(wb1, new KNOTEN(wb2), new KNOTEN(wb3));
         woerterbuch.RechtsEinfuegen(knoten);

@@ -670,7 +670,7 @@ class OBERFLAECHE implements OBERFLAECHENINTERFACE, MELDUNGSBEOBACHTER
                 else
                 {
                     FehlertextZeigen(
-                            "Die beiden Angaben f\u00FCr die PIN m\u00FCssen \u00FCbereinstimmen.");
+                            "Die beiden Angaben für die PIN müssen übereinstimmen.");
                 }
             }
         });
@@ -775,7 +775,7 @@ class OBERFLAECHE implements OBERFLAECHENINTERFACE, MELDUNGSBEOBACHTER
         b = new Button();
         b.setSize(200, 30);
         b.setLocation(110, 200);
-        b.setLabel("Kontoausz\u00FCge anzeigen");
+        b.setLabel("Kontoauszüge anzeigen");
         b.setVisible(true);
         kundeArbeitPanel.add(b);
         b.addActionListener(new ActionListener()
@@ -1024,7 +1024,7 @@ class OBERFLAECHE implements OBERFLAECHENINTERFACE, MELDUNGSBEOBACHTER
         kontoAuszuege = new Button();
         kontoAuszuege.setSize(200, 30);
         kontoAuszuege.setLocation(250, 270);
-        kontoAuszuege.setLabel("Kontoausz\u00FCge erstellen");
+        kontoAuszuege.setLabel("Kontoauszüge erstellen");
         kontoAuszuege.setVisible(true);
         kontoAuszuege.setEnabled(false);
         angestellterAuswahlPanel.add(kontoAuszuege);

@@ -292,7 +292,7 @@ class KONTROLLEUR implements KONTROLLEURINTERFACE
                 p.HausnummerGeben(), p.PlzGeben(), p.OrtGeben());
         if (verb.AdressdatenUebernehmen(aktPerson))
         {
-            oberflaeche.StatusSetzen("Adressdaten \u00FCbernommen.");
+            oberflaeche.StatusSetzen("Adressdaten übernommen.");
             verb.AdressenBereinigen();
             EintragAuswaehlenBearbeiten(aktPerson);
         }

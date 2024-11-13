@@ -104,7 +104,7 @@ public class ABSCHLUSS extends BAUMELEMENT
     public BAUMELEMENT Entfernen(String suchSchluessel)
     {
         System.out.println(
-                "Suchschl\u00fcssel nicht vorhanden, entfernen nicht m\u00f6glich!!");
+                "Suchschlüssel nicht vorhanden, entfernen nicht m\u00f6glich!!");
         return this;
     }
 

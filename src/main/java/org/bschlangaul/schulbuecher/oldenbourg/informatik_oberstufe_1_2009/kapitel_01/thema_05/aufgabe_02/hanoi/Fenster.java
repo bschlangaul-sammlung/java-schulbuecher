@@ -16,12 +16,11 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
 /**
- *
  * Fenster zur Darstellung des Spiels
  *
  * @version 1.0 vom 17.01.2009
  */
-class FENSTER extends Frame
+class Fenster extends Frame
 {
     // Anfang Attribute
     private Choice choice1 = new Choice();
@@ -42,20 +41,20 @@ class FENSTER extends Frame
 
     private Canvas canvas5 = new Canvas();
 
-    private static FENSTER f = null;
+    private static Fenster f = null;
 
     private static Panel cp = new Panel(null);
 
-    private SPIEL s;
+    private Spiel s;
 
     /**
      * Konstruktor Initialisiert und positioniert die Komponenten. Legt
      * Ereignisbehandlung fest.
      */
-    private FENSTER()
+    private Fenster()
     {
         // Frame-Initialisierung
-        super("T\u00FCrme von Hanoi");
+        super("Türme von Hanoi");
         addWindowListener(new WindowAdapter()
         {
             public void windowClosing(WindowEvent evt)
@@ -87,7 +86,7 @@ class FENSTER extends Frame
         label1.setFont(new Font("MS Sans Serif", Font.PLAIN, 13));
         cp.add(label1);
         label2.setBounds(110, 8, 150, 24);
-        label2.setText("T\u00FCrme von Hanoi");
+        label2.setText("Türme von Hanoi");
         label2.setFont(new Font("MS Sans Serif", Font.PLAIN, 19));
         cp.add(label2);
         button1.setBounds(256, 248, 89, 25);
@@ -100,7 +99,7 @@ class FENSTER extends Frame
                 {
                     s.Loeschen();
                 }
-                s = new SPIEL(Integer.parseInt(choice1.getSelectedItem()));
+                s = new Spiel(Integer.parseInt(choice1.getSelectedItem()));
             }
         });
         cp.add(button1);
@@ -132,8 +131,13 @@ class FENSTER extends Frame
     {
         if (f == null)
         {
-            f = new FENSTER();
+            f = new Fenster();
         }
         return cp;
+    }
+
+    public static void main(String[] args)
+    {
+        new Fenster();
     }
 }

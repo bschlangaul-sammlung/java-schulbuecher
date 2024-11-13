@@ -7,17 +7,17 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapi
  *
  * @version 1.0
  */
-class ABSCHLUSS extends LISTENELEMENT
+class Abschluss extends ListenElement
 {
     /**
      * Fügt ein Datenelement am Ende der Liste ein
      *
      * @param dneu neues Datenelement
      */
-    public KNOTEN HintenEinfuegen(DATENELEMENT dneu)
+    public Knoten HintenEinfuegen(DatenElement dneu)
     {
-        KNOTEN kneu;
-        kneu = new KNOTEN(dneu, this);
+        Knoten kneu;
+        kneu = new Knoten(dneu, this);
         return kneu;
     }
 
@@ -29,7 +29,7 @@ class ABSCHLUSS extends LISTENELEMENT
      *
      * @return Weitergabe des künftigen Nachfolgers
      */
-    public KNOTEN EinfuegenVor(DATENELEMENT dneu, DATENELEMENT d_vergleich)
+    public Knoten EinfuegenVor(DatenElement dneu, DatenElement d_vergleich)
     {
         return HintenEinfuegen(dneu);
     }
@@ -41,7 +41,7 @@ class ABSCHLUSS extends LISTENELEMENT
      *
      * @return Weitergabe des künftigen Nachfolgers
      */
-    public KNOTEN SortiertEinfuegen(DATENELEMENT dneu)
+    public Knoten SortiertEinfuegen(DatenElement dneu)
     {
         return HintenEinfuegen(dneu);
     }
@@ -54,7 +54,7 @@ class ABSCHLUSS extends LISTENELEMENT
      *
      * @return Weitergabe des künftigen Nachfolgers
      */
-    public LISTENELEMENT KnotenEntfernen(DATENELEMENT dvergleich)
+    public ListenElement KnotenEntfernen(DatenElement dvergleich)
     {
         return null;
     }
@@ -64,7 +64,7 @@ class ABSCHLUSS extends LISTENELEMENT
      *
      * @return hinterstes Datenelement (Vorgänger von Abschluss)
      */
-    public DATENELEMENT EndeGeben(DATENELEMENT d)
+    public DatenElement EndeGeben(DatenElement d)
     {
         return d;
     }
@@ -74,7 +74,7 @@ class ABSCHLUSS extends LISTENELEMENT
      *
      * @return bisheriger letzter Knoten
      */
-    public LISTENELEMENT EndeEntfernen(DATENELEMENT d)
+    public ListenElement EndeEntfernen(DatenElement d)
     {
         return this;
     }
@@ -95,7 +95,7 @@ class ABSCHLUSS extends LISTENELEMENT
      *
      * @return gesuchtes Datenelement
      */
-    public DATENELEMENT Suchen(String vergleichswert)
+    public DatenElement Suchen(String vergleichswert)
     {
         return null;
     }
@@ -115,7 +115,7 @@ class ABSCHLUSS extends LISTENELEMENT
      *
      * @return Datenelement
      */
-    public DATENELEMENT DatenelementGeben()
+    public DatenElement DatenelementGeben()
     {
         return null;
     }
@@ -125,7 +125,7 @@ class ABSCHLUSS extends LISTENELEMENT
      *
      * @return Nachfolger
      */
-    public LISTENELEMENT NachfolgerGeben()
+    public ListenElement NachfolgerGeben()
     {
         return this;
     }

@@ -7,7 +7,7 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapi
  *
  * @version 1.0
  */
-class MAUS implements DATENELEMENT
+class Maus implements DatenElement
 {
     /**
      * nummer der Maus
@@ -29,7 +29,7 @@ class MAUS implements DATENELEMENT
      *
      * @param nummerNeu Nummer der Maus
      */
-    MAUS(int nummerNeu)
+    Maus(int nummerNeu)
     {
         nummer = nummerNeu;
         siegeszahl = 0;
@@ -65,9 +65,9 @@ class MAUS implements DATENELEMENT
      *
      * @param dvergleich Datenelement zum Vergleich
      */
-    public boolean IstKleinerAls(DATENELEMENT dvergleich)
+    public boolean IstKleinerAls(DatenElement dvergleich)
     {
-        return (nummer < ((MAUS) dvergleich).nummer);
+        return (nummer < ((Maus) dvergleich).nummer);
     }
 
     /**

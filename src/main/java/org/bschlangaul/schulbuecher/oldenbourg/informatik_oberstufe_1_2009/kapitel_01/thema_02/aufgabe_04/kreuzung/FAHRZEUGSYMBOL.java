@@ -64,7 +64,7 @@ class FAHRZEUGSYMBOL
         {
             return java.awt.Color.red;
         }
-        else if ((farbe == "gruen") || (farbe == "gr\u00FCn"))
+        else if ((farbe == "gruen") || (farbe == "grün"))
         {
             return java.awt.Color.green;
         }

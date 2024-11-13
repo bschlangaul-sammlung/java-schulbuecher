@@ -25,7 +25,7 @@ class OBJEKTINFO
         {
             if (this == Kuehlschrank)
             {
-                return "K\u00FChlschrank";
+                return "Kühlschrank";
             }
             else
             {

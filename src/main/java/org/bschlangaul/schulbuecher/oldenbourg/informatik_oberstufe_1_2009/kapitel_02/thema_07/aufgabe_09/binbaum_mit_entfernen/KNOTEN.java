@@ -56,7 +56,7 @@ public class KNOTEN
         {
             linkerNachfolger = null;
             System.out.println(
-                    "Linker Nachfolger wurde nicht eingef\u00FCgt, um die Ordnng des Bin\u00E4rbaums zu erhalten!");
+                    "Linker Nachfolger wurde nicht eingefügt, um die Ordnng des Bin\u00E4rbaums zu erhalten!");
         }
         if (datenNeu.IstKleinerAls(reNachfolgerNeu.DatenGeben()))
         {
@@ -66,7 +66,7 @@ public class KNOTEN
         {
             rechterNachfolger = null;
             System.out.println(
-                    "Rechter Nachfolger wurde nicht eingef\u00FCgt, um die Ordnng des Bin\u00E4rbaums zu erhalten!");
+                    "Rechter Nachfolger wurde nicht eingefügt, um die Ordnng des Bin\u00E4rbaums zu erhalten!");
         }
     }
 

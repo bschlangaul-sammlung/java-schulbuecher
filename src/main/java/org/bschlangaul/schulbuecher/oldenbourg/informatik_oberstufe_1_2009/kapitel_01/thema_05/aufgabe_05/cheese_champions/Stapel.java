@@ -8,13 +8,13 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapi
  *
  * @version 1.0
  */
-class STAPEL extends LISTE
+class Stapel extends Liste
 {
     /**
      * Konstruktor des Stapels
      *
      */
-    STAPEL()
+    Stapel()
     {
         super();
     }
@@ -25,7 +25,7 @@ class STAPEL extends LISTE
      *
      * @param dneu neues Datenelement
      */
-    void HintenEinfuegen(DATENELEMENT dneu)
+    void HintenEinfuegen(DatenElement dneu)
     {
     }
 
@@ -36,7 +36,7 @@ class STAPEL extends LISTE
      * @param dneu neues Datenelement
      * @param d_vergleich Datenelement, vor dem eingefügt werden soll
      */
-    void EinfuegenVor(DATENELEMENT dneu, DATENELEMENT d_vergleich)
+    void EinfuegenVor(DatenElement dneu, DatenElement d_vergleich)
     {
     }
 
@@ -46,7 +46,7 @@ class STAPEL extends LISTE
      *
      * @param dneu neues Datenelement
      */
-    void SortiertEinfuegen(DATENELEMENT dneu)
+    void SortiertEinfuegen(DatenElement dneu)
     {
     }
 
@@ -57,7 +57,7 @@ class STAPEL extends LISTE
      *
      * @param dvergleich gesuchtes Datenelement
      */
-    void KnotenEntfernen(DATENELEMENT dvergleich)
+    void KnotenEntfernen(DatenElement dvergleich)
     {
     }
 
@@ -68,7 +68,7 @@ class STAPEL extends LISTE
      *
      * @return Datenelement des bisher letzten Knotens
      */
-    DATENELEMENT EndeEntfernen()
+    DatenElement EndeEntfernen()
     {
         return null;
     }
@@ -82,7 +82,7 @@ class STAPEL extends LISTE
      *
      * @return gesuchtes Datenelement
      */
-    DATENELEMENT Suchen(String vergleichswert)
+    DatenElement Suchen(String vergleichswert)
     {
         return null;
     }

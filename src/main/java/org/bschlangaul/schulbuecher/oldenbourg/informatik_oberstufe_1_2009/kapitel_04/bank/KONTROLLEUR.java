@@ -90,7 +90,7 @@ class KONTROLLEUR implements KONTROLLEURINTERFACE
             else
             {
                 FehlermeldungAbsetzen(
-                        "Falsche PIN f\u00FCr den Kunden '" + name + "'.");
+                        "Falsche PIN für den Kunden '" + name + "'.");
             }
         }
     }
@@ -235,8 +235,8 @@ class KONTROLLEUR implements KONTROLLEURINTERFACE
             }
             else
             {
-                FehlermeldungAbsetzen("Falsche PIN f\u00FCr den Angestellten '"
-                        + name + "'.");
+                FehlermeldungAbsetzen(
+                        "Falsche PIN für den Angestellten '" + name + "'.");
             }
         }
     }

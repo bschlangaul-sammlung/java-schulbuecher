@@ -246,8 +246,8 @@ class DATENBANKVERBINDUNG implements MELDUNGSERZEUGER
             st.executeUpdate("INSERT INTO person (name, pin, klasse) VALUES ('"
                     + a.NameGeben() + "', '" + a.PinGeben() + "', 'a')");
             st.close();
-            LogeintragMelden("Neuer Angestellter eingef\u00FCgt: "
-                    + a.NameGeben() + ".");
+            LogeintragMelden(
+                    "Neuer Angestellter eingefügt: " + a.NameGeben() + ".");
         }
         catch (Exception e)
         {
@@ -269,8 +269,7 @@ class DATENBANKVERBINDUNG implements MELDUNGSERZEUGER
             st.executeUpdate("INSERT INTO person (name, pin, klasse) VALUES ('"
                     + k.NameGeben() + "', '" + k.PinGeben() + "', 'k')");
             st.close();
-            LogeintragMelden(
-                    "Neuer Kunde eingef\u00FCgt: " + k.NameGeben() + ".");
+            LogeintragMelden("Neuer Kunde eingefügt: " + k.NameGeben() + ".");
         }
         catch (Exception e)
         {
@@ -292,7 +291,7 @@ class DATENBANKVERBINDUNG implements MELDUNGSERZEUGER
             st.executeUpdate("UPDATE person SET pin=" + nummer + " WHERE name='"
                     + name + "'");
             st.close();
-            LogeintragMelden("PIN gesetzt f\u00FCr Person: " + name + ".");
+            LogeintragMelden("PIN gesetzt für Person: " + name + ".");
         }
         catch (Exception e)
         {
@@ -320,7 +319,7 @@ class DATENBANKVERBINDUNG implements MELDUNGSERZEUGER
                             + konto.KontonummerGeben() + ", "
                             + konto.ZinssatzGeben() + ")");
             st.close();
-            LogeintragMelden("Neues Sparkonto eingef\u00FCgt mit Nummer: "
+            LogeintragMelden("Neues Sparkonto eingefügt mit Nummer: "
                     + konto.KontonummerGeben() + ".");
         }
         catch (Exception e)
@@ -349,7 +348,7 @@ class DATENBANKVERBINDUNG implements MELDUNGSERZEUGER
                             + konto.KontonummerGeben() + ", "
                             + konto.UeberziehungsrahmenGeben() + ")");
             st.close();
-            LogeintragMelden("Neues Girokonto eingef\u00FCgt mit Nummer: "
+            LogeintragMelden("Neues Girokonto eingefügt mit Nummer: "
                     + konto.KontonummerGeben() + ".");
         }
         catch (Exception e)
@@ -445,7 +444,7 @@ class DATENBANKVERBINDUNG implements MELDUNGSERZEUGER
             if ((!rs.next())
                     || (konto.KontostandGeben() != rs.getDouble("kontostand")))
             {
-                FehlerMelden("Inkonsistez bei Kontostandsetzen f\u00FCr Konto: "
+                FehlerMelden("Inkonsistez bei Kontostandsetzen für Konto: "
                         + konto.KontonummerGeben() + ", interner Stand: "
                         + konto.KontostandGeben() + ", gespeicherter Stand: "
                         + rs.getDouble("kontostand") + ".");
@@ -508,7 +507,7 @@ class DATENBANKVERBINDUNG implements MELDUNGSERZEUGER
             }
             rs.close();
             st.close();
-            LogeintragMelden("Ausz\u00FCge angefordert f\u00FCr Konto: "
+            LogeintragMelden("Auszüge angefordert für Konto: "
                     + konto.KontonummerGeben() + ".");
             return resultat;
         }

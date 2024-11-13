@@ -25,10 +25,10 @@ public class WOERTERBUCH
         Einfuegen("clip", "Klammer, abschneiden, anstecken");
         Einfuegen("car", "Auto, Fahrzeug, Waggon");
         Einfuegen("cat", "Katze");
-        Einfuegen("care", "F\u00fcrsorge, Sorgfalt");
+        Einfuegen("care", "Fürsorge, Sorgfalt");
         Einfuegen("cave", "H\u00f6hle, aush\u00f6hlen, einbrechen");
         Einfuegen("crab", "Krabbe, Krebs, Griesgram");
-        Einfuegen("coin", "M\u00fcnze, auspr\u00e4gen, erfinden");
+        Einfuegen("coin", "Münze, auspr\u00e4gen, erfinden");
     }
 
     /**

@@ -7,22 +7,22 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapi
  *
  * @version 1.0
  */
-class SPIEL
+class Spiel
 {
     /**
      * Stapel, von dem die Mäuse losgelaufen sind
      */
-    private STAPEL ursprungsstapel;
+    private Stapel ursprungsstapel;
 
     /**
      * Stapel, an dem die Mäuse angekommen sind
      */
-    private STAPEL zielstapel;
+    private Stapel zielstapel;
 
     /**
      * Stapel für die Mäuse in der Sackgasse
      */
-    private STAPEL sackgassenstapel;
+    private Stapel sackgassenstapel;
 
     /**
      * Spiel beendet oder nicht
@@ -32,11 +32,11 @@ class SPIEL
     /**
      * Erzeugt drei Stapel und setzt beendet auf false.
      */
-    SPIEL()
+    Spiel()
     {
-        ursprungsstapel = new STAPEL();
-        zielstapel = new STAPEL();
-        sackgassenstapel = new STAPEL();
+        ursprungsstapel = new Stapel();
+        zielstapel = new Stapel();
+        sackgassenstapel = new Stapel();
         beendet = false;
     }
 
@@ -45,7 +45,7 @@ class SPIEL
      *
      * @param m einzufügende Maus
      */
-    void Einfuegen(MAUS m)
+    void Einfuegen(Maus m)
     {
         zielstapel.VorneEinfuegen(m);
     }
@@ -58,8 +58,8 @@ class SPIEL
         if ((zielstapel.LaengeGeben() != 0)
                 && (sackgassenstapel.LaengeGeben() != 0))
         {
-            MAUS mausZiel = (MAUS) zielstapel.AnfangEntfernen();
-            MAUS mausSackgasse = (MAUS) sackgassenstapel.AnfangEntfernen();
+            Maus mausZiel = (Maus) zielstapel.AnfangEntfernen();
+            Maus mausSackgasse = (Maus) sackgassenstapel.AnfangEntfernen();
             if (mausZiel.IstKleinerAls(mausSackgasse))
             {
                 zielstapel.VorneEinfuegen(mausZiel);
@@ -67,7 +67,7 @@ class SPIEL
                 if (sackgassenstapel.LaengeGeben() != 0)
                 {
                     mausSackgasse.SiegeszahlErhoehen();
-                    mausSackgasse = (MAUS) sackgassenstapel.AnfangEntfernen();
+                    mausSackgasse = (Maus) sackgassenstapel.AnfangEntfernen();
                     mausSackgasse.NiederlagenzahlErhoehen();
                     sackgassenstapel.VorneEinfuegen(mausSackgasse);
                 }
@@ -79,7 +79,7 @@ class SPIEL
                 if (ursprungsstapel.LaengeGeben() != 0)
                 {
                     mausZiel.SiegeszahlErhoehen();
-                    MAUS mausUrsprung = (MAUS) ursprungsstapel
+                    Maus mausUrsprung = (Maus) ursprungsstapel
                             .AnfangEntfernen();
                     mausUrsprung.NiederlagenzahlErhoehen();
                     ursprungsstapel.VorneEinfuegen(mausUrsprung);
@@ -91,12 +91,12 @@ class SPIEL
             if ((zielstapel.LaengeGeben() != 0)
                     && (sackgassenstapel.LaengeGeben() == 0))
             {
-                MAUS mausZiel = (MAUS) zielstapel.AnfangEntfernen();
+                Maus mausZiel = (Maus) zielstapel.AnfangEntfernen();
                 sackgassenstapel.VorneEinfuegen(mausZiel);
                 if (ursprungsstapel.LaengeGeben() != 0)
                 {
                     mausZiel.SiegeszahlErhoehen();
-                    MAUS mausUrsprung = (MAUS) ursprungsstapel
+                    Maus mausUrsprung = (Maus) ursprungsstapel
                             .AnfangEntfernen();
                     mausUrsprung.NiederlagenzahlErhoehen();
                     ursprungsstapel.VorneEinfuegen(mausUrsprung);
@@ -106,13 +106,13 @@ class SPIEL
             {
                 if (sackgassenstapel.LaengeGeben() != 0)
                 {
-                    MAUS mausSackgasse = (MAUS) sackgassenstapel
+                    Maus mausSackgasse = (Maus) sackgassenstapel
                             .AnfangEntfernen();
                     ursprungsstapel.VorneEinfuegen(mausSackgasse);
                     if (sackgassenstapel.LaengeGeben() != 0)
                     {
                         mausSackgasse.SiegeszahlErhoehen();
-                        mausSackgasse = (MAUS) sackgassenstapel
+                        mausSackgasse = (Maus) sackgassenstapel
                                 .AnfangEntfernen();
                         mausSackgasse.NiederlagenzahlErhoehen();
                         sackgassenstapel.VorneEinfuegen(mausSackgasse);
@@ -157,12 +157,12 @@ class SPIEL
      */
     boolean UrsprungsstapelSortiert()
     {
-        MAUS oben;
-        MAUS unten;
+        Maus oben;
+        Maus unten;
         if (ursprungsstapel.LaengeGeben() > 1)
         {
-            oben = (MAUS) ursprungsstapel.AnfangEntfernen();
-            unten = (MAUS) ursprungsstapel.AnfangEntfernen();
+            oben = (Maus) ursprungsstapel.AnfangEntfernen();
+            unten = (Maus) ursprungsstapel.AnfangEntfernen();
             if (unten.IstKleinerAls(oben))
             {
                 return false;

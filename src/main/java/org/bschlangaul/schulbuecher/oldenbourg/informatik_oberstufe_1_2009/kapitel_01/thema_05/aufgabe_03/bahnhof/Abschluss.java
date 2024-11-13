@@ -1,4 +1,4 @@
-package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapitel_01.thema_05.aufgabe_05.cheese_champions;
+package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapitel_01.thema_05.aufgabe_03.bahnhof;
 
 /**
  * Beschreibung der Klasse ABSCHLUSS
@@ -7,17 +7,17 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapi
  *
  * @version 1.0
  */
-class ABSCHLUSS extends LISTENELEMENT
+class Abschluss extends ListenElement
 {
     /**
      * Fügt ein Datenelement am Ende der Liste ein
      *
      * @param dneu neues Datenelement
      */
-    KNOTEN HintenEinfuegen(DATENELEMENT dneu)
+    Knoten HintenEinfuegen(DatenElement dneu)
     {
-        KNOTEN kneu;
-        kneu = new KNOTEN(dneu, this);
+        Knoten kneu;
+        kneu = new Knoten(dneu, this);
         return kneu;
     }
 
@@ -29,7 +29,7 @@ class ABSCHLUSS extends LISTENELEMENT
      *
      * @return Weitergabe des künftigen Nachfolgers
      */
-    KNOTEN EinfuegenVor(DATENELEMENT dneu, DATENELEMENT d_vergleich)
+    Knoten EinfuegenVor(DatenElement dneu, DatenElement d_vergleich)
     {
         return HintenEinfuegen(dneu);
     }
@@ -41,7 +41,7 @@ class ABSCHLUSS extends LISTENELEMENT
      *
      * @return Weitergabe des künftigen Nachfolgers
      */
-    KNOTEN SortiertEinfuegen(DATENELEMENT dneu)
+    Knoten SortiertEinfuegen(DatenElement dneu)
     {
         return HintenEinfuegen(dneu);
     }
@@ -54,7 +54,7 @@ class ABSCHLUSS extends LISTENELEMENT
      *
      * @return Weitergabe des künftigen Nachfolgers
      */
-    LISTENELEMENT KnotenEntfernen(DATENELEMENT dvergleich)
+    ListenElement KnotenEntfernen(DatenElement dvergleich)
     {
         return null;
     }
@@ -64,7 +64,7 @@ class ABSCHLUSS extends LISTENELEMENT
      *
      * @return hinterstes Datenelement (Vorgänger von Abschluss)
      */
-    DATENELEMENT EndeGeben(DATENELEMENT d)
+    DatenElement EndeGeben(DatenElement d)
     {
         return d;
     }
@@ -74,7 +74,7 @@ class ABSCHLUSS extends LISTENELEMENT
      *
      * @return bisheriger letzter Knoten
      */
-    LISTENELEMENT EndeEntfernen(DATENELEMENT d)
+    ListenElement EndeEntfernen(DatenElement d)
     {
         return this;
     }
@@ -83,9 +83,8 @@ class ABSCHLUSS extends LISTENELEMENT
      * Gibt Information über das Datenelement und den Nachfolger des Knotens
      * aus.
      */
-    String InformationAusgeben()
+    void InformationAusgeben()
     {
-        return "";
     }
 
     /**
@@ -96,7 +95,7 @@ class ABSCHLUSS extends LISTENELEMENT
      *
      * @return gesuchtes Datenelement
      */
-    DATENELEMENT Suchen(String vergleichswert)
+    DatenElement Suchen(String vergleichswert)
     {
         return null;
     }
@@ -116,7 +115,7 @@ class ABSCHLUSS extends LISTENELEMENT
      *
      * @return Datenelement
      */
-    DATENELEMENT DatenelementGeben()
+    DatenElement DatenelementGeben()
     {
         return null;
     }
@@ -126,7 +125,7 @@ class ABSCHLUSS extends LISTENELEMENT
      *
      * @return Nachfolger
      */
-    LISTENELEMENT NachfolgerGeben()
+    ListenElement NachfolgerGeben()
     {
         return this;
     }

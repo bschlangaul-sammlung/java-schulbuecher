@@ -20,7 +20,7 @@ public class WOERTERBUCHTEST
         woerterbuch = new WOERTERBUCH();
         woerterbuch.Einfuegen("code", "Chiffre");
         woerterbuch.Einfuegen("cobalt", "Kobalt");
-        woerterbuch.Einfuegen("cube", "W\u00fcrfel");
+        woerterbuch.Einfuegen("cube", "Würfel");
         woerterbuch.Einfuegen("creek", "Bach");
         woerterbuch.Einfuegen("cup", "Tasse");
         woerterbuch.Einfuegen("cable", "Kabel");

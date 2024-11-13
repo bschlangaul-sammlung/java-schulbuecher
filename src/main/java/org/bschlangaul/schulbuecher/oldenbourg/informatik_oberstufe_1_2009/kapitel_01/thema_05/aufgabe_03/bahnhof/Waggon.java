@@ -7,7 +7,7 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapi
  *
  * @version 1.0
  */
-class WAGGON implements DATENELEMENT
+class Waggon implements DatenElement
 {
     private String zielort;
 
@@ -19,7 +19,7 @@ class WAGGON implements DATENELEMENT
      * @param ort Zielort
      * @param distanz Abstand vom Zielort
      */
-    WAGGON(String ort, int distanz)
+    Waggon(String ort, int distanz)
     {
         zielort = ort;
         distanz_zum_zielort = distanz;
@@ -48,9 +48,9 @@ class WAGGON implements DATENELEMENT
      *
      * @param dvergleich Datenelement zum Vergleich
      */
-    public boolean IstKleinerAls(DATENELEMENT dvergleich)
+    public boolean IstKleinerAls(DatenElement dvergleich)
     {
-        return distanz_zum_zielort < ((WAGGON) dvergleich).distanz_zum_zielort;
+        return distanz_zum_zielort < ((Waggon) dvergleich).distanz_zum_zielort;
     }
 
     /**

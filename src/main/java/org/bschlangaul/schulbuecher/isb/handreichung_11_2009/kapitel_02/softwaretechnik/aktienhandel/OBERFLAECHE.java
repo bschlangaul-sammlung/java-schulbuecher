@@ -152,7 +152,7 @@ class OBERFLAECHE implements OBERFLAECHENINTERFACE, STATUSBEOBACHTER
         panel = new JPanel();
         panel.setBackground(new Color(180, 180, 255));
         panel.setLayout(new GridLayout(1, 2, 10, 10));
-        panel.add(new JLabel("St\u00FCckzahl: "));
+        panel.add(new JLabel("Stückzahl: "));
         anzahl = new JTextField("0", 10);
         panel.add(anzahl);
         einkaufPanel.add(panel, BorderLayout.NORTH);

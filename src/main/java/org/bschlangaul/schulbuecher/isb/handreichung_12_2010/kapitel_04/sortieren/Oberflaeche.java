@@ -76,11 +76,11 @@ class Oberflaeche implements OberflaecheInterface
         l = new JLabel(" ");
         p.add(l);
         l = new JLabel(
-                "Zeit f\u00FCr Sortieren durch Ausw\u00E4hlen [Nanosekunden]");
+                "Zeit für Sortieren durch Ausw\u00E4hlen [Nanosekunden]");
         p.add(l);
         sortierzeitAuswahl = new JLabel("---");
         p.add(sortierzeitAuswahl);
-        l = new JLabel("Zeit f\u00FCr Sortieren durch Mischen [Nanosekunden]");
+        l = new JLabel("Zeit für Sortieren durch Mischen [Nanosekunden]");
         p.add(l);
         sortierzeitMischen = new JLabel("---");
         p.add(sortierzeitMischen);
@@ -92,7 +92,7 @@ class Oberflaeche implements OberflaecheInterface
         p.add(auswahlSortieren);
         mischSortieren = new JCheckBox("Sortieren durch Mischen testen", true);
         p.add(mischSortieren);
-        testen = new JButton("Test ausf\u00FChren");
+        testen = new JButton("Test ausführen");
         p.add(testen);
         testen.addActionListener(new ActionListener()
         {

@@ -454,8 +454,7 @@ public class Text extends Formulargrafik
             if (fonts[i].equals("Arial") || fonts[i].equals("Helvetica"))
                 return fonts[i];
             if (testFont.canDisplay('\u00E4') && testFont.canDisplay('\u00F6')
-                    && testFont.canDisplay('\u00FC')
-                    && testFont.canDisplay('\u00C4')
+                    && testFont.canDisplay('ü') && testFont.canDisplay('\u00C4')
                     && testFont.canDisplay('\u00D6')
                     && testFont.canDisplay('\u00DC')
                     && testFont.canDisplay('\u00DF') && testFont.canDisplay('?')

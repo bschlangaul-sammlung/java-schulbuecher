@@ -75,12 +75,11 @@ class Oberflaeche implements OberflaechenInterface
         p.add(l);
         l = new JLabel(" ");
         p.add(l);
-        l = new JLabel(
-                "Vergleichsanzahl f\u00FCr Sortieren durch Ausw\u00E4hlen");
+        l = new JLabel("Vergleichsanzahl für Sortieren durch Ausw\u00E4hlen");
         p.add(l);
         sortieranzahlAuswahl = new JLabel("---");
         p.add(sortieranzahlAuswahl);
-        l = new JLabel("Vergleichsanzahl f\u00FCr Sortieren durch Mischen");
+        l = new JLabel("Vergleichsanzahl für Sortieren durch Mischen");
         p.add(l);
         sortieranzahlMischen = new JLabel("---");
         p.add(sortieranzahlMischen);
@@ -92,7 +91,7 @@ class Oberflaeche implements OberflaechenInterface
         p.add(auswahlSortieren);
         mischSortieren = new JCheckBox("Sortieren durch Mischen testen", true);
         p.add(mischSortieren);
-        testen = new JButton("Test ausf\u00FChren");
+        testen = new JButton("Test ausführen");
         p.add(testen);
         testen.addActionListener(new ActionListener()
         {
