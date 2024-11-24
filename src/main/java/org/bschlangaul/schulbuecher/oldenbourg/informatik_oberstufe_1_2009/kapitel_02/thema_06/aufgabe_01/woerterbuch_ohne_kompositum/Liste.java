@@ -7,18 +7,18 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapi
  *
  * @version 1.0
  */
-public class LISTE
+public class Liste
 {
     /**
      * Verwaltung des ersten Knotens in der Warteschlange.
      */
-    private KNOTEN anfang;
+    private Knoten anfang;
 
     /**
      * Konstruktor der Liste
      *
      */
-    public LISTE()
+    public Liste()
     {
         anfang = null;
     }
@@ -28,10 +28,10 @@ public class LISTE
      *
      * @param dneu neues Datenelement
      */
-    public void VorneEinfuegen(DATENELEMENT dneu)
+    public void VorneEinfuegen(DatenElement dneu)
     {
-        KNOTEN kneu;
-        kneu = new KNOTEN(dneu, anfang);
+        Knoten kneu;
+        kneu = new Knoten(dneu, anfang);
         anfang = kneu;
     }
 
@@ -40,7 +40,7 @@ public class LISTE
      *
      * @param dneu neues Datenelement
      */
-    public void HintenEinfuegen(DATENELEMENT dneu)
+    public void HintenEinfuegen(DatenElement dneu)
     {
         if (anfang != null)
         {
@@ -58,7 +58,7 @@ public class LISTE
      * @param dneu neues Datenelement
      * @param d_vergleich Datenelement, vor dem eingefügt werden soll
      */
-    public void EinfuegenVor(DATENELEMENT dneu, DATENELEMENT d_vergleich)
+    public void EinfuegenVor(DatenElement dneu, DatenElement d_vergleich)
     {
         if (anfang != null)
         {
@@ -75,7 +75,7 @@ public class LISTE
      *
      * @param dneu neues Datenelement
      */
-    public void SortiertEinfuegen(DATENELEMENT dneu)
+    public void SortiertEinfuegen(DatenElement dneu)
     {
         if (anfang != null)
         {
@@ -92,7 +92,7 @@ public class LISTE
      *
      * @param dvergleich gesuchtes Datenelement
      */
-    public void KnotenEntfernen(DATENELEMENT dvergleich)
+    public void KnotenEntfernen(DatenElement dvergleich)
     {
         if (anfang != null)
         {
@@ -105,11 +105,11 @@ public class LISTE
      *
      * @return Datenelement des bisher ersten Knotens
      */
-    public DATENELEMENT AnfangEntfernen()
+    public DatenElement AnfangEntfernen()
     {
         if (anfang != null)
         {
-            DATENELEMENT d;
+            DatenElement d;
             d = anfang.DatenelementGeben();
             anfang = anfang.NachfolgerGeben();
             return d;
@@ -125,11 +125,11 @@ public class LISTE
      *
      * @return Datenelement des bisher letzten Knotens
      */
-    public DATENELEMENT EndeEntfernen()
+    public DatenElement EndeEntfernen()
     {
         if (anfang != null)
         {
-            DATENELEMENT d;
+            DatenElement d;
             d = anfang.EndeGeben();
             anfang = anfang.EndeEntfernen();
             return d;
@@ -148,7 +148,7 @@ public class LISTE
      *
      * @return gesuchtes Datenelement
      */
-    public DATENELEMENT Suchen(String vergleichswert)
+    public DatenElement Suchen(String vergleichswert)
     {
         if (anfang == null)
         {

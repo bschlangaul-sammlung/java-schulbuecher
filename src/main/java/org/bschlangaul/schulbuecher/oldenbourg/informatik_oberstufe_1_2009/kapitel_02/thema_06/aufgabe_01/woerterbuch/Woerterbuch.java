@@ -1,26 +1,26 @@
 package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapitel_02.thema_06.aufgabe_01.woerterbuch;
 
 /**
- * Englisch-deutsches Wörterbuch als Liste Implementiert.
+ * Englisch-deutsches Wörterbuch als Liste implementiert.
  *
  * @author (Peter Brichzin)
  *
  * @version (20.3.09)
  */
-public class WOERTERBUCH
+public class Woerterbuch
 {
     /**
      * Implementierung des Wörterbuchs als Liste
      */
-    private LISTE woerterbuch;
+    private Liste woerterbuch;
 
     /**
      * Konstruktor für Objekte der Klasse WOERTERBUCH, erzeugt ein englischen
      * Wörterbuch mit 15 Einträgen.
      */
-    public WOERTERBUCH()
+    public Woerterbuch()
     {
-        woerterbuch = new LISTE();
+        woerterbuch = new Liste();
         SortiertEinfuegen("cup", "Tasse, Becher");
         SortiertEinfuegen("cube",
                 "Wuerfel, dritte Potenz, in die dritte Potenz heben, in Wuerfel schneiden");
@@ -50,8 +50,8 @@ public class WOERTERBUCH
      */
     public void SortiertEinfuegen(String wort, String bedeutung)
     {
-        WOERTERBUCHEINTRAG neuerWoerterbucheintrag;
-        neuerWoerterbucheintrag = new WOERTERBUCHEINTRAG(wort, bedeutung);
+        WoerterbuchEintrag neuerWoerterbucheintrag;
+        neuerWoerterbucheintrag = new WoerterbuchEintrag(wort, bedeutung);
         if (Suchen(wort) == null)
         {
             woerterbuch.SortiertEinfuegen(neuerWoerterbucheintrag);
@@ -69,7 +69,7 @@ public class WOERTERBUCH
      *
      * @return gesuchter Wörterbucheintrag
      */
-    public DATENELEMENT Suchen(String gesuchtesWort)
+    public DatenElement Suchen(String gesuchtesWort)
     {
         return woerterbuch.Suchen(gesuchtesWort);
     }
@@ -93,8 +93,8 @@ public class WOERTERBUCH
      */
     public void BedeutungSetzen(String gesuchtesWort, String bedeutungNeu)
     {
-        WOERTERBUCHEINTRAG woerterbucheintrag;
-        woerterbucheintrag = (WOERTERBUCHEINTRAG) Suchen(gesuchtesWort);
+        WoerterbuchEintrag woerterbucheintrag;
+        woerterbucheintrag = (WoerterbuchEintrag) Suchen(gesuchtesWort);
         if (woerterbucheintrag == null)
         {
             System.out.println("Eintrag existiert nicht!");

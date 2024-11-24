@@ -1,4 +1,4 @@
-package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapitel_02.thema_06.aufgabe_01.woerterbuch;
+package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapitel_02.thema_06.aufgabe_01.woerterbuch_ohne_kompositum;
 
 /**
  * Die Klasse WOERTERBUCHEINTRAG dient zur Speicherung von Wörterbucheinträgen
@@ -10,7 +10,7 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapi
  *
  * @version (20.3.09)
  */
-public class WOERTERBUCHEINTRAG implements DATENELEMENT
+public class WoerterbuchEintrag implements DatenElement
 {
     /**
      * Englisches Wort; Schlüssel dieses Datenelements
@@ -30,7 +30,7 @@ public class WOERTERBUCHEINTRAG implements DATENELEMENT
      * @param bedeutungNeu die deutsche(n) Bedeutung(en).
      *
      */
-    public WOERTERBUCHEINTRAG(String wortNeu, String bedeutungNeu)
+    public WoerterbuchEintrag(String wortNeu, String bedeutungNeu)
     {
         wort = wortNeu;
         bedeutung = bedeutungNeu;
@@ -53,11 +53,11 @@ public class WOERTERBUCHEINTRAG implements DATENELEMENT
      * @return true, wenn das aktuelle Element einen kleineren Schlüssel hat,
      *     als das angegebene Vergleichselement.
      */
-    public boolean IstKleinerAls(DATENELEMENT dvergleich)
+    public boolean IstKleinerAls(DatenElement dvergleich)
     {
         // überprüfung, ob der Eingabewert vom Typ WOERTERBUCHEINTRAG (WBE) ist
-        WOERTERBUCHEINTRAG vergleichsWBE;
-        vergleichsWBE = (WOERTERBUCHEINTRAG) dvergleich;
+        WoerterbuchEintrag vergleichsWBE;
+        vergleichsWBE = (WoerterbuchEintrag) dvergleich;
         if (wort.compareTo(vergleichsWBE.WortGeben()) < 0)
         {
             return true;

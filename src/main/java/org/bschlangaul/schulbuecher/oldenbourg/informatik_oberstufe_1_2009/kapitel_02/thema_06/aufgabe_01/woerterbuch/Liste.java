@@ -7,20 +7,20 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapi
  *
  * @version 1.0
  */
-public class LISTE
+public class Liste
 {
     /**
      * Verwaltung des ersten Knotens in der Warteschlange.
      */
-    private LISTENELEMENT anfang;
+    private ListenElement anfang;
 
     /**
      * Konstruktor der Liste
      *
      */
-    public LISTE()
+    public Liste()
     {
-        anfang = new ABSCHLUSS();
+        anfang = new Abschluss();
     }
 
     /**
@@ -28,10 +28,10 @@ public class LISTE
      *
      * @param dneu neues Datenelement
      */
-    public void VorneEinfuegen(DATENELEMENT dneu)
+    public void VorneEinfuegen(DatenElement dneu)
     {
-        KNOTEN kneu;
-        kneu = new KNOTEN(dneu, anfang);
+        Knoten kneu;
+        kneu = new Knoten(dneu, anfang);
         anfang = kneu;
     }
 
@@ -40,7 +40,7 @@ public class LISTE
      *
      * @param dneu neues Datenelement
      */
-    public void HintenEinfuegen(DATENELEMENT dneu)
+    public void HintenEinfuegen(DatenElement dneu)
     {
         anfang = anfang.HintenEinfuegen(dneu);
     }
@@ -51,7 +51,7 @@ public class LISTE
      * @param dneu neues Datenelement
      * @param d_vergleich Datenelement, vor dem eingefügt werden soll
      */
-    public void EinfuegenVor(DATENELEMENT dneu, DATENELEMENT d_vergleich)
+    public void EinfuegenVor(DatenElement dneu, DatenElement d_vergleich)
     {
         anfang = anfang.EinfuegenVor(dneu, d_vergleich);
     }
@@ -61,7 +61,7 @@ public class LISTE
      *
      * @param dneu neues Datenelement
      */
-    public void SortiertEinfuegen(DATENELEMENT dneu)
+    public void SortiertEinfuegen(DatenElement dneu)
     {
         anfang = anfang.SortiertEinfuegen(dneu);
     }
@@ -71,7 +71,7 @@ public class LISTE
      *
      * @param dvergleich gesuchtes Datenelement
      */
-    public void KnotenEntfernen(DATENELEMENT dvergleich)
+    public void KnotenEntfernen(DatenElement dvergleich)
     {
         anfang = anfang.KnotenEntfernen(dvergleich);
     }
@@ -81,9 +81,9 @@ public class LISTE
      *
      * @return Datenelement des bisher ersten Knotens
      */
-    public DATENELEMENT AnfangEntfernen()
+    public DatenElement AnfangEntfernen()
     {
-        DATENELEMENT d;
+        DatenElement d;
         d = anfang.DatenelementGeben();
         anfang = anfang.NachfolgerGeben();
         return d;
@@ -94,9 +94,9 @@ public class LISTE
      *
      * @return Datenelement des bisher letzten Knotens
      */
-    public DATENELEMENT EndeEntfernen()
+    public DatenElement EndeEntfernen()
     {
-        DATENELEMENT d;
+        DatenElement d;
         d = anfang.EndeGeben(null);
         anfang = anfang.EndeEntfernen(d);
         return d;
@@ -110,7 +110,7 @@ public class LISTE
      *
      * @return gesuchtes Datenelement
      */
-    public DATENELEMENT Suchen(String vergleichswert)
+    public DatenElement Suchen(String vergleichswert)
     {
         return anfang.Suchen(vergleichswert);
     }

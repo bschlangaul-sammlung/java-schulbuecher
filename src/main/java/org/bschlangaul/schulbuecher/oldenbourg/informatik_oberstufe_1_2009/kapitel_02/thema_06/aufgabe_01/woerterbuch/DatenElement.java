@@ -1,4 +1,4 @@
-package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapitel_02.thema_06.aufgabe_01.woerterbuch_ohne_kompositum;
+package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapitel_02.thema_06.aufgabe_01.woerterbuch;
 
 /**
  * Beschreibung zum Interface DATENELEMENT
@@ -7,7 +7,7 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapi
  *
  * @version 1.0
  */
-public interface DATENELEMENT
+public interface DatenElement
 {
     /**
      * Ausgabe von Information über ein Ausgabefenster
@@ -19,7 +19,7 @@ public interface DATENELEMENT
      *
      * @param dvergleich Datenelement zum Vergleich
      */
-    public boolean IstKleinerAls(DATENELEMENT dvergleich);
+    public boolean IstKleinerAls(DatenElement dvergleich);
 
     /**
      * Identifikation eines Datenelements aufgrund seines Schlüssels
