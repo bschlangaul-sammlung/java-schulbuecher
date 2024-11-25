@@ -1,4 +1,4 @@
-package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapitel_02.thema_07.aufgabe_08.binbaum_woerterbuch;
+package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapitel_02.thema_07.aufgabe_09.binbaum_mit_entfernen_mit_testklasse;
 
 /**
  * Englisch-deutsches Wörterbuch als geordneter Binärbaum (ohne Composite
@@ -8,27 +8,27 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapi
  *
  * @version (20.3.09)
  */
-public class WOERTERBUCH
+public class Woerterbuch
 {
     /**
      * Implementierung des Wörterbuchs als geordneter Binärbaum
      */
-    private BINBAUM woerterbuch;
+    private BinBaum woerterbuch;
 
     /**
      * Konstruktor für Objekte der Klasse WOERTERBUCH, erzeugt ein englischen
      * Wörterbuch mit 7 Einträgen, wie in Abbildung 6 bzw. 8 von Kapitel 7.
      */
-    public WOERTERBUCH()
+    public Woerterbuch()
     {
-        woerterbuch = new BINBAUM();
+        woerterbuch = new BinBaum();
         Einfuegen("clip", "Klammer, abschneiden, anstecken");
         Einfuegen("car", "Auto, Fahrzeug, Waggon");
         Einfuegen("cat", "Katze");
-        Einfuegen("care", "Fuersorge, Sorgfalt");
-        Einfuegen("cave", "Hoehle, aushoehlen, einbrechen");
+        Einfuegen("care", "Fürsorge, Sorgfalt");
+        Einfuegen("cave", "H\u00f6hle, aush\u00f6hlen, einbrechen");
         Einfuegen("crab", "Krabbe, Krebs, Griesgram");
-        Einfuegen("coin", "Muenze, auspraegen, erfinden");
+        Einfuegen("coin", "Münze, auspr\u00e4gen, erfinden");
     }
 
     /**
@@ -42,8 +42,8 @@ public class WOERTERBUCH
      */
     public void Einfuegen(String wort, String bedeutung)
     {
-        WOERTERBUCHEINTRAG neuerWoerterbucheintrag;
-        neuerWoerterbucheintrag = new WOERTERBUCHEINTRAG(wort, bedeutung);
+        WoerterbuchEintrag neuerWoerterbucheintrag;
+        neuerWoerterbucheintrag = new WoerterbuchEintrag(wort, bedeutung);
         woerterbuch.Einfuegen(neuerWoerterbucheintrag);
     }
 
@@ -54,9 +54,30 @@ public class WOERTERBUCH
      *
      * @return gesuchter Wörterbucheintrag
      */
-    public DATENELEMENT Suchen(String gesuchtesWort)
+    public DatenElement Suchen(String gesuchtesWort)
     {
         return woerterbuch.Suchen(gesuchtesWort);
+    }
+
+    /**
+     * Entfernt den Knoten, dessen Datenelement den eingegebenen Schlüssel hat.
+     * Falls es keinen Knoten mit dem eingegebenen Schlüssel gibt, wird dies
+     * über die Standardausgabe mitgeteilt.
+     *
+     * @param suchSchluessel Schlüssel, nach dem gesucht wird als Zeichenkette
+     */
+    public void KnotenEntfernen(String suchSchluessel)
+    {
+        woerterbuch.KnotenEntfernen(suchSchluessel);
+    }
+
+    /**
+     * Gibt alle Einträge des Wörterbuchs aus.
+     */
+    public void InformationAusgeben()
+    {
+        woerterbuch.StrukturAusgeben();
+        System.out.println("---------------------------------");
     }
 
     /**
@@ -69,8 +90,8 @@ public class WOERTERBUCH
      */
     public void BedeutungSetzen(String gesuchtesWort, String bedeutungNeu)
     {
-        WOERTERBUCHEINTRAG woerterbucheintrag;
-        woerterbucheintrag = (WOERTERBUCHEINTRAG) Suchen(gesuchtesWort);
+        WoerterbuchEintrag woerterbucheintrag;
+        woerterbucheintrag = (WoerterbuchEintrag) Suchen(gesuchtesWort);
         if (woerterbucheintrag == null)
         {
             System.out.println("Eintrag existiert nicht!");

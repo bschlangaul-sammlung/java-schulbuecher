@@ -8,20 +8,20 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapi
  *
  * @version (20.3.09)
  */
-public class WOERTERBUCH
+public class Woerterbuch
 {
     /**
      * Implementierung des Wörterbuchs als geordneter Binärbaum
      */
-    private BINBAUM woerterbuch;
+    private BinBaum woerterbuch;
 
     /**
      * Konstruktor für Objekte der Klasse WOERTERBUCH, erzeugt ein englischen
      * Wörterbuch mit 7 Einträgen, wie in Abbildung 6 bzw. 8 von Kapitel 7.
      */
-    public WOERTERBUCH()
+    public Woerterbuch()
     {
-        woerterbuch = new BINBAUM();
+        woerterbuch = new BinBaum();
         Einfuegen("clip", "Klammer, abschneiden, anstecken");
         Einfuegen("car", "Auto, Fahrzeug, Waggon");
         Einfuegen("cat", "Katze");
@@ -42,8 +42,8 @@ public class WOERTERBUCH
      */
     public void Einfuegen(String wort, String bedeutung)
     {
-        WOERTERBUCHEINTRAG neuerWoerterbucheintrag;
-        neuerWoerterbucheintrag = new WOERTERBUCHEINTRAG(wort, bedeutung);
+        WoerterbuchEintrag neuerWoerterbucheintrag;
+        neuerWoerterbucheintrag = new WoerterbuchEintrag(wort, bedeutung);
         woerterbuch.Einfuegen(neuerWoerterbucheintrag);
     }
 
@@ -54,7 +54,7 @@ public class WOERTERBUCH
      *
      * @return gesuchter Wörterbucheintrag
      */
-    public DATENELEMENT Suchen(String gesuchtesWort)
+    public DatenElement Suchen(String gesuchtesWort)
     {
         return woerterbuch.Suchen(gesuchtesWort);
     }
@@ -81,8 +81,8 @@ public class WOERTERBUCH
      */
     public void BedeutungSetzen(String gesuchtesWort, String bedeutungNeu)
     {
-        WOERTERBUCHEINTRAG woerterbucheintrag;
-        woerterbucheintrag = (WOERTERBUCHEINTRAG) Suchen(gesuchtesWort);
+        WoerterbuchEintrag woerterbucheintrag;
+        woerterbucheintrag = (WoerterbuchEintrag) Suchen(gesuchtesWort);
         if (woerterbucheintrag == null)
         {
             System.out.println("Eintrag existiert nicht!");

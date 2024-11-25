@@ -1,4 +1,4 @@
-package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapitel_02.thema_07.aufgabe_09.binbaum_mit_entfernen_mit_testklasse;
+package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapitel_02.thema_07.aufgabe_09.binbaum_mit_entfernen;
 
 /**
  * Das Interface DATENELEMENT dient als Schnittstelle zum Speichern von Daten in
@@ -12,14 +12,8 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapi
  *
  * @version (20.07.08)
  */
-public interface DATENELEMENT
+public interface DatenElement
 {
-    /**
-     * Gibt Information über das Datenelement zu Kontrollzwecken auf das
-     * Terminalfenster aus.
-     */
-    void InformationAusgeben();
-
     /**
      * Vergleicht zwei Datenelemente bezüglich der Ordnungsrelation.
      *
@@ -28,7 +22,7 @@ public interface DATENELEMENT
      * @return true, wenn das aktuelle Element einen kleineren Schlüssel hat,
      *     als das eingegebene Datenelement dvergleich.
      */
-    boolean IstKleinerAls(DATENELEMENT dvergleich);
+    boolean IstKleinerAls(DatenElement dvergleich);
 
     /**
      * Vergleicht zwei Datenelemente auf Gleichheit.
@@ -37,7 +31,7 @@ public interface DATENELEMENT
      *
      * @return true, wenn die beiden Datenelemente gleichen Schlüssel haben.
      */
-    boolean IstGleich(DATENELEMENT dvergleich);
+    boolean IstGleich(DatenElement dvergleich);
 
     /**
      * Vergleicht zwei Datenelemente bezüglich der Ordnungsrelation.
@@ -47,7 +41,7 @@ public interface DATENELEMENT
      * @return true, wenn das aktuelle Element einen größeren Schlüssel hat, als
      *     das eingegebene Datenelement dvergleich.
      */
-    boolean IstGroesserAls(DATENELEMENT dvergleich);
+    boolean IstGroesserAls(DatenElement dvergleich);
 
     /**
      * Vergleicht zwei Schlüssel, die als Zeichenketten vorliegen, auf

@@ -7,17 +7,17 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapi
  *
  * @version (eine Versionsnummer oder ein Datum)
  */
-public class WOERTERBUCHTEST
+public class WoerterbuchTest
 {
     // Instanzvariablen - ersetzen Sie das folgende Beispiel mit Ihren Variablen
-    WOERTERBUCH woerterbuch;
+    Woerterbuch woerterbuch;
 
     /**
      * Konstruktor für Objekte der Klasse WOERTERBUCHTEST
      */
-    public WOERTERBUCHTEST()
+    public WoerterbuchTest()
     {
-        woerterbuch = new WOERTERBUCH();
+        woerterbuch = new Woerterbuch();
         woerterbuch.Einfuegen("code", "Chiffre");
         woerterbuch.Einfuegen("cobalt", "Kobalt");
         woerterbuch.Einfuegen("cube", "Würfel");
@@ -78,7 +78,7 @@ public class WOERTERBUCHTEST
      *
      * @return woerterbuch
      */
-    public WOERTERBUCH WoerterbuchGeben()
+    public Woerterbuch WoerterbuchGeben()
     {
         return woerterbuch;
     }

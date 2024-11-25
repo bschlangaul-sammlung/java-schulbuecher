@@ -10,14 +10,14 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapi
  *
  * @version (30.07.08)
  */
-public class BINBAUM
+public class BinBaum
 {
-    private KNOTEN wurzel;
+    private Knoten wurzel;
 
     /**
      * Konstruktor für Objekte der Klasse BINBAUM: Ein leerer Baum wird erzeugt.
      */
-    public BINBAUM()
+    public BinBaum()
     {
         wurzel = null;
     }
@@ -29,7 +29,7 @@ public class BINBAUM
      *
      * @param datenNeu neues Datenelement
      */
-    public void Einfuegen(DATENELEMENT datenNeu)
+    public void Einfuegen(DatenElement datenNeu)
     {
         if (wurzel != null)
         {
@@ -37,7 +37,7 @@ public class BINBAUM
         }
         else
         {
-            wurzel = new KNOTEN(datenNeu);
+            wurzel = new Knoten(datenNeu);
         }
     }
 
@@ -49,7 +49,7 @@ public class BINBAUM
      *
      * @return gesuchtes Datenelement bzw. null, falls die Suche erfolglos ist
      */
-    public DATENELEMENT Suchen(String suchSchluessel)
+    public DatenElement Suchen(String suchSchluessel)
     {
         if (wurzel != null)
         {

@@ -1,4 +1,4 @@
-package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapitel_02.thema_07.aufgabe_09.binbaum_mit_entfernen;
+package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapitel_02.thema_07.aufgabe_08.binbaum_woerterbuch;
 
 /**
  * Klasse KNOTEN als Bestandteil eines geordneten Binärbaums. (Implementierung
@@ -8,15 +8,15 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapi
  *
  * @version (27.7.08)
  */
-public class KNOTEN
+public class Knoten
 {
     // Referenz auf das Datenelement
-    private DATENELEMENT daten;
+    private DatenElement daten;
 
     // Referenz auf den linken und rechten Nachfolger
-    private KNOTEN linkerNachfolger;
+    private Knoten linkerNachfolger;
 
-    private KNOTEN rechterNachfolger;
+    private Knoten rechterNachfolger;
 
     /**
      * Konstruktor für Objekte der Klasse KNOTEN ohne linken und rechten
@@ -26,7 +26,7 @@ public class KNOTEN
      * @param datenNeu Referenz auf das Datenelement, das vom Knoten verwaltet
      *     wird.
      */
-    public KNOTEN(DATENELEMENT datenNeu)
+    public Knoten(DatenElement datenNeu)
     {
         daten = datenNeu;
         linkerNachfolger = null;
@@ -44,8 +44,8 @@ public class KNOTEN
      * @param reNachfolgerNeu Referenz auf ein Knoten, der linker Nachfolger
      *     wird.
      */
-    public KNOTEN(DATENELEMENT datenNeu, KNOTEN liNachfolgerNeu,
-            KNOTEN reNachfolgerNeu)
+    public Knoten(DatenElement datenNeu, Knoten liNachfolgerNeu,
+            Knoten reNachfolgerNeu)
     {
         daten = datenNeu;
         if (datenNeu.IstGroesserAls(liNachfolgerNeu.DatenGeben()))
@@ -78,7 +78,7 @@ public class KNOTEN
      *
      * @return gesuchtes Datenelement bzw. null, falls die Suche erfolglos ist
      */
-    public DATENELEMENT Suchen(String suchSchluessel)
+    public DatenElement Suchen(String suchSchluessel)
     {
         if (daten.SchluesselIstGleich(suchSchluessel))
         {
@@ -140,7 +140,7 @@ public class KNOTEN
      *
      * @param datenNeu einzufügendes Datenelement
      */
-    public void Einfuegen(DATENELEMENT datenNeu)
+    public void Einfuegen(DatenElement datenNeu)
     {
         // Falls es ein Datenelement mit dem gleichen Schlüssel schon gibt,
         // Einfuegen abbrechen.
@@ -164,7 +164,7 @@ public class KNOTEN
                 }
                 else
                 {
-                    linkerNachfolger = new KNOTEN(datenNeu);
+                    linkerNachfolger = new Knoten(datenNeu);
                 }
             }
             else
@@ -181,7 +181,7 @@ public class KNOTEN
                 // sonst Datenelement im rechten Teilbaum einfügen
                 else
                 {
-                    rechterNachfolger = new KNOTEN(datenNeu);
+                    rechterNachfolger = new Knoten(datenNeu);
                 }
             }
         }
@@ -253,153 +253,14 @@ public class KNOTEN
             }
         }
     }
-    // **************************************************************************
 
-    /**
-     * Die Methode Entfernen überprüt, welcher der folgenden 3 Fälle vorliegt
-     * und ruft dann zum eigentlichen Entfernen entweder die Methode Entfernen2
-     * auf bzw. gibt die Aufforderung zum Entfernen an den linken oder rechten
-     * Nachbarn weiter. 1. Fall: Der eigene Schlüssel ist größer als der
-     * suchSchluessel --> Entfernen im rechten Teilbaum (rekursiver Aufruf) 2.
-     * Fall: Der eigene Schlüssel ist kleiner als der suchSchluessel -->
-     * Entfernen im rechten Teilbaum (rekursiver Aufruf) 3. Fall: Der eigene
-     * Knoten enthält den zu entfernenden Wert --> Knoten wird mit Hilfe der
-     * Methode Entfernen2 entfernt. Entfernt einen Knoten, dessen Datenelement
-     * den eingegebenen Schlüssel (in Form einer Zeichenkette) hat.
-     *
-     * @param suchSchluessel Schlüssel nach dem gesucht wird als Zeichenkette
-     *
-     * @return this im 1. und 2. Fall Rückgabewert der Methode Entfernen2 im 3.
-     *     Fall
-     *
-     *
-     */
-    public KNOTEN Entfernen(String suchSchluessel)
-    {
-        // 1. Fall: Der eigene Schlüssel ist größer als der suchSchluessel
-        // --> Entfernen im linken Teilbaum (rekursiver Aufruf)
-        if (daten.SchluesselIstGroesserAls(suchSchluessel))
-        {
-            linkerNachfolger = linkerNachfolger.Entfernen(suchSchluessel);
-            return this;
-        }
-        // 2. Fall: Der eigene Schlüssel ist kleiner als der suchSchluessel
-        // --> Entfernen im rechten Teilbaum (rekursiver Aufruf)
-        else if (daten.SchluesselIstKleinerAls(suchSchluessel))
-        {
-            rechterNachfolger = rechterNachfolger.Entfernen(suchSchluessel);
-            return this;
-        }
-        else
-        // 3. Fall: Der eigene Knoten enthält den zu entfernenden Wert
-        {
-            return Entfernen2(suchSchluessel); // Knoten wird entfernt
-        }
-    }
-
-    /**
-     * Wird die Methode Entfernen2 aufgerufen, ist der zu entfernende Knoten
-     * bereits idetifiziert. Beim eigentlichen Entfernen können nun 3
-     * prinzipiell unterschiedliche Fälle auftreten: und ruft dann entweder zum
-     * eigentlichen Entfernen die Methode Entfernen2 auf bzw. gibt die
-     * Aufforderung zum Entfernen an den linken oder rechten Nachbarn weiter.
-     * Fall A: Der zu entfernende Knoten ist ein Blatt --> Knoten wird entfernt,
-     * indem null zurückgegeben wird. Fall B: Der zu entfernende Knoten hat
-     * genau einen Nachfolger, B1: einen rechten Nachfolger --> Der Knoten wird
-     * ersetzt durch seinen rechten Nachfolger --> Rückgabewert ist eine
-     * Referenz auf den rechten Nachfolger B2: einen linken Nachfolger --> Der
-     * Knoten wird ersetzt durch seinen linken Nachfolger --> Rückgabewert ist
-     * eine Referenz auf den linken Nachfolger Fall C: Der zu entfernende Knoten
-     * hat genau zwei Nachfolger --> Suche das Minimum im rechten Teilbaum -->
-     * Ersetze damit die eigenen Daten --> Entferne im rechten Teilbaum das
-     * gefundene Minium (es ist ja schon als eigener Datensatz vorhanden) -->
-     * Gib eine this als Referenz zurück (- Der eigene Knoten wird nicht
-     * entfernt, sondern er hat nun eine andere Bedeutung, weil die Daten
-     * ersetzt wurden Entfernt einen Knoten, dessen Datenelement den
-     * eingegebenen Schlüssel (in Form einer Zeichenkette) hat.
-     *
-     * @param suchSchluessel Schlüssel nach dem gesucht wird als Zeichenkette
-     *
-     * @return Fall A: null Fall B: rechterNachfolger bzw. linkerNachfolger Fall
-     *     C: this
-     *
-     *
-     */
-    public KNOTEN Entfernen2(String suchSchluessel)
-    {
-        // Fall A: Der zu entfernende Knoten ist ein Blatt
-        if (linkerNachfolger == null && rechterNachfolger == null)
-        {
-            return null; // Knoten wird einfach entfernt
-        }
-        else
-        // Fall B1: Der zu entfernende Knoten hat genau einen Nachfolger, einen
-        // rechten
-        if (linkerNachfolger == null && rechterNachfolger != null)
-        {
-            return rechterNachfolger; // Knoten kann entfernt werden und
-                                      // wird in Struktur durch seinen
-                                      // rechten Nachfolger ersetzt
-        }
-        else
-        // Fall B2: Der zu entfernende Knoten hat genau einen Nachfolger, einen
-        // linken
-        if (linkerNachfolger != null && rechterNachfolger == null)
-        {
-            return linkerNachfolger; // Knoten kann entfernt werden und
-                                     // wird in Struktur durch seinen
-                                     // rechten Nachfolger ersetzt
-        }
-        else
-        // Fall C: Der zu entfernende Knoten hat genau zwei Nachfolger
-        {
-            // Suche das Minimum im rechten Teilbaum und ersetze damit die
-            // eigenen Daten
-            DatenSetzen(rechterNachfolger.MinimumGeben());
-            // Entferne das Minimum im rechten Teilbaum und haenge den
-            // veraenderten
-            // rechten Teilbaum als neuen rechten Teilbaum ein.
-            rechterNachfolger = rechterNachfolger
-                    .Entfernen(daten.SchluesselAlsStringGeben());
-            return this;
-        }
-    }
-
-    /**
-     * SetzenMethode für die im Referenzattribut daten gespeicherten Daten
-     *
-     * @param datenNeu neue Daten
-     */
-    public void DatenSetzen(DATENELEMENT datenNeu)
+    public void DatenSetzen(DatenElement datenNeu)
     {
         daten = datenNeu;
     }
 
-    /**
-     * GebenMethode für die im Referenzattribut daten gespeicherten Daten
-     *
-     * @return daten
-     */
-    public DATENELEMENT DatenGeben()
+    public DatenElement DatenGeben()
     {
         return daten;
-    }
-
-    /**
-     * Sucht bzgl.der Ordnungsrelation das Datenelement mit dem kleinsten
-     * Schlüssel und gibt dieses zurück
-     *
-     * @return minimales Datenelement
-     */
-    public DATENELEMENT MinimumGeben()
-    {
-        if (linkerNachfolger == null)
-        {
-            return daten;
-        }
-        else
-        {
-            return linkerNachfolger.MinimumGeben();
-        }
     }
 }

@@ -8,15 +8,15 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapi
  *
  * @version (27.7.08)
  */
-public class KNOTEN
+public class Knoten
 {
     // Referenz auf das Datenelement
-    private DATENELEMENT daten;
+    private DatenElement daten;
 
     // Referenz auf den linken und rechten Nachfolger
-    private KNOTEN linkerNachfolger;
+    private Knoten linkerNachfolger;
 
-    private KNOTEN rechterNachfolger;
+    private Knoten rechterNachfolger;
 
     /**
      * Konstruktor für Objekte der Klasse KNOTEN ohne linken und rechten
@@ -26,7 +26,7 @@ public class KNOTEN
      * @param datenNeu Referenz auf das Datenelement, das vom Knoten verwaltet
      *     wird.
      */
-    public KNOTEN(DATENELEMENT datenNeu)
+    public Knoten(DatenElement datenNeu)
     {
         daten = datenNeu;
         linkerNachfolger = null;
@@ -44,8 +44,8 @@ public class KNOTEN
      * @param reNachfolgerNeu Referenz auf ein Knoten, der linker Nachfolger
      *     wird.
      */
-    public KNOTEN(DATENELEMENT datenNeu, KNOTEN liNachfolgerNeu,
-            KNOTEN reNachfolgerNeu)
+    public Knoten(DatenElement datenNeu, Knoten liNachfolgerNeu,
+            Knoten reNachfolgerNeu)
     {
         daten = datenNeu;
         if (datenNeu.IstGroesserAls(liNachfolgerNeu.DatenGeben()))
@@ -78,7 +78,7 @@ public class KNOTEN
      *
      * @return gesuchtes Datenelement bzw. null, falls die Suche erfolglos ist
      */
-    public DATENELEMENT Suchen(String suchSchluessel)
+    public DatenElement Suchen(String suchSchluessel)
     {
         if (daten.SchluesselIstGleich(suchSchluessel))
         {
@@ -140,7 +140,7 @@ public class KNOTEN
      *
      * @param datenNeu einzufügendes Datenelement
      */
-    public void Einfuegen(DATENELEMENT datenNeu)
+    public void Einfuegen(DatenElement datenNeu)
     {
         // Falls es ein Datenelement mit dem gleichen Schlüssel schon gibt,
         // Einfuegen abbrechen.
@@ -164,7 +164,7 @@ public class KNOTEN
                 }
                 else
                 {
-                    linkerNachfolger = new KNOTEN(datenNeu);
+                    linkerNachfolger = new Knoten(datenNeu);
                 }
             }
             else
@@ -181,7 +181,7 @@ public class KNOTEN
                 // sonst Datenelement im rechten Teilbaum einfügen
                 else
                 {
-                    rechterNachfolger = new KNOTEN(datenNeu);
+                    rechterNachfolger = new Knoten(datenNeu);
                 }
             }
         }
@@ -275,7 +275,7 @@ public class KNOTEN
      *
      *
      */
-    public KNOTEN Entfernen(String suchSchluessel)
+    public Knoten Entfernen(String suchSchluessel)
     {
         // 1. Fall: Der eigene Schlüssel ist größer als der suchSchluessel
         // --> Entfernen im linken Teilbaum (rekursiver Aufruf)
@@ -326,7 +326,7 @@ public class KNOTEN
      *
      *
      */
-    public KNOTEN Entfernen2(String suchSchluessel)
+    public Knoten Entfernen2(String suchSchluessel)
     {
         // Fall A: Der zu entfernende Knoten ist ein Blatt
         if (linkerNachfolger == null && rechterNachfolger == null)
@@ -433,7 +433,7 @@ public class KNOTEN
      *
      * @param datenNeu neue Daten
      */
-    public void DatenSetzen(DATENELEMENT datenNeu)
+    public void DatenSetzen(DatenElement datenNeu)
     {
         daten = datenNeu;
     }
@@ -443,7 +443,7 @@ public class KNOTEN
      *
      * @return daten
      */
-    public DATENELEMENT DatenGeben()
+    public DatenElement DatenGeben()
     {
         return daten;
     }
@@ -454,7 +454,7 @@ public class KNOTEN
      *
      * @return minimales Datenelement
      */
-    public DATENELEMENT MinimumGeben()
+    public DatenElement MinimumGeben()
     {
         if (linkerNachfolger == null)
         {

@@ -1,4 +1,4 @@
-package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapitel_02.thema_07.aufgabe_08.binbaum_woerterbuch;
+package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapitel_02.thema_07.aufgabe_09.binbaum_mit_entfernen_mit_testklasse;
 
 /**
  * Die Klasse WOERTERBUCHEINTRAG dient zur Speicherung von Wörterbucheinträgen
@@ -10,7 +10,7 @@ package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapi
  *
  * @version (20.07.08)
  */
-public class WOERTERBUCHEINTRAG implements DATENELEMENT
+public class WoerterbuchEintrag implements DatenElement
 {
     /**
      * Englisches Wort; Schlüssel dieses Datenelements
@@ -30,7 +30,7 @@ public class WOERTERBUCHEINTRAG implements DATENELEMENT
      * @param bedeutungNeu die deutsche(n) Bedeutung(en).
      *
      */
-    public WOERTERBUCHEINTRAG(String wortNeu, String bedeutungNeu)
+    public WoerterbuchEintrag(String wortNeu, String bedeutungNeu)
     {
         wort = wortNeu;
         bedeutung = bedeutungNeu;
@@ -53,11 +53,11 @@ public class WOERTERBUCHEINTRAG implements DATENELEMENT
      * @return true, wenn das aktuelle Element einen kleineren Schlüssel hat,
      *     als das angegebene Vergleichselement.
      */
-    public boolean IstKleinerAls(DATENELEMENT dvergleich)
+    public boolean IstKleinerAls(DatenElement dvergleich)
     {
         // überprüfung, ob der Eingabewert vom Typ WOERTERBUCHEINTRAG (WBE) ist
-        WOERTERBUCHEINTRAG vergleichsWBE;
-        vergleichsWBE = (WOERTERBUCHEINTRAG) dvergleich;
+        WoerterbuchEintrag vergleichsWBE;
+        vergleichsWBE = (WoerterbuchEintrag) dvergleich;
         if (wort.compareTo(vergleichsWBE.WortGeben()) < 0)
         {
             return true;
@@ -75,11 +75,11 @@ public class WOERTERBUCHEINTRAG implements DATENELEMENT
      *
      * @return true, wenn die beiden Datenelemente gleichen Schlüssel haben.
      */
-    public boolean IstGleich(DATENELEMENT dvergleich)
+    public boolean IstGleich(DatenElement dvergleich)
     {
         // überprüfung, ob der Eingabewert vom Typ WOERTERBUCHEINTRAG (WBE) ist
-        WOERTERBUCHEINTRAG vergleichsWBE;
-        vergleichsWBE = (WOERTERBUCHEINTRAG) dvergleich;
+        WoerterbuchEintrag vergleichsWBE;
+        vergleichsWBE = (WoerterbuchEintrag) dvergleich;
         if (wort == vergleichsWBE.WortGeben())
         {
             return true;
@@ -98,11 +98,11 @@ public class WOERTERBUCHEINTRAG implements DATENELEMENT
      * @return true, wenn das aktuelle Element einen größeren Schlüssel hat, als
      *     das angegebene Vergleichselement.
      */
-    public boolean IstGroesserAls(DATENELEMENT dvergleich)
+    public boolean IstGroesserAls(DatenElement dvergleich)
     {
         // überprüfung, ob der Eingabewert vom Typ WOERTERBUCHEINTRAG (WBE) ist
-        WOERTERBUCHEINTRAG vergleichsWBE;
-        vergleichsWBE = (WOERTERBUCHEINTRAG) dvergleich;
+        WoerterbuchEintrag vergleichsWBE;
+        vergleichsWBE = (WoerterbuchEintrag) dvergleich;
         if (wort.compareTo(vergleichsWBE.WortGeben()) > 0)
         {
             return true;
@@ -147,6 +147,40 @@ public class WOERTERBUCHEINTRAG implements DATENELEMENT
         {
             return false;
         }
+    }
+
+    /**
+     * Vergleicht zwei Schlüssel, die als Zeichenketten vorliegen, bezüglich der
+     * Ordnungsrelation.
+     *
+     * @param vergleichsSchluessel Schlüssel mit dem der Schlüssel des Objekt
+     *     verglichen wird.
+     *
+     * @return true, wenn das aktuelle Element einen kleineren Schlüssel hat,
+     *     als das angegebene Vergleichselement.
+     */
+    public boolean SchluesselIstKleinerAls(String vergleichsSchluessel)
+    {
+        if (wort.compareTo(vergleichsSchluessel) < 0)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    /**
+     * Gibt den Schlüssel des Datenelements als String aus, auch wenn der
+     * Datentyp vom String abweicht. Diese Methode wird beim Entfernen eines
+     * Knotens benötigt.
+     *
+     * @return Schlüssel als String.
+     */
+    public String SchluesselAlsStringGeben()
+    {
+        return wort;
     }
 
     /**
