@@ -24,7 +24,7 @@ public class WoerterbuchTest
         woerterbuch.Einfuegen("creek", "Bach");
         woerterbuch.Einfuegen("cup", "Tasse");
         woerterbuch.Einfuegen("cable", "Kabel");
-        woerterbuch.Einfuegen("can", "Dose, k\u00f6nnen");
+        woerterbuch.Einfuegen("can", "Dose, können");
         woerterbuch.Einfuegen("canvas", "Leinwand");
     }
 

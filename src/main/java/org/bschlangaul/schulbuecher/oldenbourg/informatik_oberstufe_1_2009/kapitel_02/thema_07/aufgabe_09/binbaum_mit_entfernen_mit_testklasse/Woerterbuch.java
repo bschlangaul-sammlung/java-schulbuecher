@@ -26,9 +26,9 @@ public class Woerterbuch
         Einfuegen("car", "Auto, Fahrzeug, Waggon");
         Einfuegen("cat", "Katze");
         Einfuegen("care", "Fürsorge, Sorgfalt");
-        Einfuegen("cave", "H\u00f6hle, aush\u00f6hlen, einbrechen");
+        Einfuegen("cave", "Höhle, aushöhlen, einbrechen");
         Einfuegen("crab", "Krabbe, Krebs, Griesgram");
-        Einfuegen("coin", "Münze, auspr\u00e4gen, erfinden");
+        Einfuegen("coin", "Münze, ausprägen, erfinden");
     }
 
     /**

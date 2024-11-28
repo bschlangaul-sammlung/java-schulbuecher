@@ -23,16 +23,16 @@ public class Woerterbuch
         woerterbuch = new BinBaum();
         Einfuegen("clip", "Klammer, abschneiden, anstecken");
         Einfuegen("car", "Auto, Fahrzeug, Waggon");
-        Einfuegen("call", "Gespr\u00e4ch, nennen, rufen");
+        Einfuegen("call", "Gespräch, nennen, rufen");
         Einfuegen("cat", "Katze");
-        Einfuegen("can", "Dose, k\u00f6nnen");
+        Einfuegen("can", "Dose, können");
         Einfuegen("care", "Fürsorge, Sorgfalt");
-        Einfuegen("cave", "H\u00f6hle, aush\u00f6hlen, einbrechen");
+        Einfuegen("cave", "Höhle, aushöhlen, einbrechen");
         Einfuegen("crab", "Krabbe, Griesgram, einbrennen");
-        Einfuegen("coin", "Münze, auspr\u00e4gen, erfinden");
+        Einfuegen("coin", "Münze, ausprägen, erfinden");
         Einfuegen("cube", "Würfel");
         Einfuegen("cook", "Koch, kochen");
-        Einfuegen("crow", "Kr\u00e4he, Jauchzer, frohlocken");
+        Einfuegen("crow", "Krähe, Jauchzer, frohlocken");
     }
 
     /**
