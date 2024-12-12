@@ -2,7 +2,6 @@ package org.bschlangaul.schulbuecher.isb.abitur.pruefung_2012.inf1.aufgabe_i.tei
 
 public class Abschluss extends BaumElement
 {
-
     void k2()
     {
 

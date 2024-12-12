@@ -3,5 +3,4 @@ package org.bschlangaul.schulbuecher.isb.abitur.pruefung_2012.inf1.aufgabe_i.tei
 abstract class BaumElement
 {
     abstract void k2();
-
 }
