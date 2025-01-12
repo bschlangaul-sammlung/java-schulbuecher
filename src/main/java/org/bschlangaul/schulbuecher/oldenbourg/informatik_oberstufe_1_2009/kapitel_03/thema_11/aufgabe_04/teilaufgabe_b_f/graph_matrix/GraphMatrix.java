@@ -1,4 +1,4 @@
-package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapitel_03.thema_11.aufgabe_04.teilaufgabe_b.graph_matrix;
+package org.bschlangaul.schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapitel_03.thema_11.aufgabe_04.teilaufgabe_b_f.graph_matrix;
 
 /**
  * Klasse GRAPH_MATRIX Klasse für einen ungerichteten, gewichteten Graphen Als

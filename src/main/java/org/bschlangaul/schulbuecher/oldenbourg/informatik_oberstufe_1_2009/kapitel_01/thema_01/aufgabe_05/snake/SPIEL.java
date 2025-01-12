@@ -75,7 +75,9 @@ class SPIEL implements TaktKlient
         // Zeile)
         zgenerator = new Random();
         spielfeld[zgenerator.nextInt(kaestchenzahl_rechts)][zgenerator
-                .nextInt(kaestchenzahl_unten - 1) + 1] = 'f'; // f wie Futter
+                .nextInt(kaestchenzahl_unten - 1) + 1] = 'f'; // f
+                                                              // wie
+                                                              // Futter
         snake = new SNAKE(this);
     }
 

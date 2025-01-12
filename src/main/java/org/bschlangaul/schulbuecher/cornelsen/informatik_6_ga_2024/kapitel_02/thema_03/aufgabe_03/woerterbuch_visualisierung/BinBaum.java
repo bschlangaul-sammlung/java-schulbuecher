@@ -105,7 +105,7 @@ class BinBaum
                 / (HöheGeben() + 2);
         int breite = Zeichenfenster.MalflächenBreiteGeben();
 
-// y= 20 für die 0te Ebene, damit der Knoten sichtbar ist
+        // y= 20 für die 0te Ebene, damit der Knoten sichtbar ist
         wurzel.KnotenZeichnen(0, breite, 25, höhenschritt, null);
     }
 }

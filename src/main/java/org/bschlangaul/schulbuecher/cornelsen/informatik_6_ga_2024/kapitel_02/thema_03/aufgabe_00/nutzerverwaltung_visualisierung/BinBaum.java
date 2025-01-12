@@ -55,7 +55,8 @@ class BinBaum
     void BaumZeichnen()
     {
         int höhenschritt = Zeichenfenster.MalflächenHöheGeben()
-                / (HöheGeben() + 2); // +2 statt +1, damit unten ein Rand bleibt
+                / (HöheGeben() + 2); // +2 statt +1, damit unten ein
+                                     // Rand bleibt
         int breite = Zeichenfenster.MalflächenBreiteGeben();
 
         // y= 20 für die 0te Ebene, damit der Knoten sichtbar ist

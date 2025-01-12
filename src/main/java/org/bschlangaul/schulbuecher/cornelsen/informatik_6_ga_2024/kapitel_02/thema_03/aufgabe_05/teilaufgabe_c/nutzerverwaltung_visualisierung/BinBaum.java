@@ -99,7 +99,8 @@ class BinBaum
     void BaumZeichnen()
     {
         int höhenschritt = Zeichenfenster.MalflächenHöheGeben()
-                / (HöheGeben() + 2); // +2 statt +1, damit unten ein Rand bleibt
+                / (HöheGeben() + 2); // +2 statt +1, damit unten ein
+                                     // Rand bleibt
         int breite = Zeichenfenster.MalflächenBreiteGeben();
 
         int maxAnzahlKnotenUntersteEbene = (int) Math.pow(2, HöheGeben());

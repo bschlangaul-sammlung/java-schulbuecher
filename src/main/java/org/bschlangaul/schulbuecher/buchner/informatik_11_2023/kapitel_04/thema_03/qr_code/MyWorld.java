@@ -351,7 +351,8 @@ public class MyWorld extends World
         // Check if enough databytes in QR-Code Version
         int dataUsedBits;
         int dataCapacityBits = QrCode.getNumDataCodewords(version,
-                errorCorrectionLevel) * 8; // Number of data bits available
+                errorCorrectionLevel) * 8; // Number of data bits
+                                           // available
         dataUsedBits = QrSegment.getTotalBits(qrseg, version);
         if (!(dataUsedBits != -1 && dataUsedBits <= dataCapacityBits))
         {

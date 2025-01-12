@@ -104,7 +104,6 @@ public class GraphMatrix
      * @param von Bezeichner des Anfangsknotens
      * @param nach Bezeichner des Endknotens
      * @param gewichtung Gewichtung der Kante als Ganzzahl
-     *
      */
     public void KanteEinfuegen(String von, String nach, int gewichtung)
     {
@@ -122,7 +121,6 @@ public class GraphMatrix
     /**
      * Gibt die Adjazenzmatrix des Graphen in der Konsole aus Nach Zeilen und
      * Spalten formatiert Als Spaltenbreite wurde hier 4 Zeichen gewählt.
-     *
      */
     public void Ausgeben()
     {
