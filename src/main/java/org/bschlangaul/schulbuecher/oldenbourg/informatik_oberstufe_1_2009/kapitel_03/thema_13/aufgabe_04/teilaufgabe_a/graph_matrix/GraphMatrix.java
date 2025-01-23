@@ -205,7 +205,7 @@ public class GraphMatrix
         // in der Matrix die Zeile des aktiven Knotens nach Kanten durchforsten
         for (int abzweigNummer = 0; abzweigNummer < anzahlKnoten; abzweigNummer++)
         {
-            // es gibt eine Kante und deren Zeilknoten ist noch nicht besucht
+            // es gibt eine Kante und deren Zielknoten ist noch nicht besucht
             if ((matrix[knotenNummer][abzweigNummer] > 0)
                     && !(besucht[abzweigNummer]))
             {

@@ -113,7 +113,7 @@ public class GraphListe
         while (kante != null)
         {
             abzweig = kante.ZielGeben();
-            // es gibt eine Kante und deren Zeilknoten ist noch nicht besucht
+            // es gibt eine Kante und deren Zielknoten ist noch nicht besucht
             if (!abzweig.BesuchtGeben())
             {
                 Besuchen(abzweig);
@@ -178,7 +178,7 @@ public class GraphListe
             while (kante != null)
             {
                 abzweig = kante.ZielGeben();
-                // es gibt eine Kante und deren Zeilknoten ist noch nicht
+                // es gibt eine Kante und deren Zielknoten ist noch nicht
                 // besucht
                 if (!abzweig.BesuchtGeben())
                 {
@@ -282,7 +282,7 @@ public class GraphListe
                 while (kante != null)
                 {
                     abzweig = kante.ZielGeben();
-                    // es gibt eine Kante und deren Zeilknoten ist noch nicht
+                    // es gibt eine Kante und deren Zielknoten ist noch nicht
                     // besucht
                     if (!abzweig.BesuchtGeben())
                     {
