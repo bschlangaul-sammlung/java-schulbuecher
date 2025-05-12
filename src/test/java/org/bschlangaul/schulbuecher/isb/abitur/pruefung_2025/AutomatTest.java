@@ -9,10 +9,10 @@ import org.junit.jupiter.api.Test;
 public class AutomatTest
 {
 
-    private Automat automat;
+    private static Automat automat;
 
     @BeforeAll
-    public void setUp()
+    public static void setUp()
     {
         automat = new Automat();
     }
