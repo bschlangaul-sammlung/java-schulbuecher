@@ -6,17 +6,20 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
-public class AutomatTest {
+public class AutomatTest
+{
 
     private static Automat automat;
 
     @BeforeAll
-    public static void setUp() {
+    public static void setUp()
+    {
         automat = new Automat();
     }
 
     @Test
-    public void testLengthValidation() {
+    public void testLengthValidation()
+    {
         // Test: length must be exactly 4
         assertFalse(automat.prüfen("ABC"));
         assertFalse(automat.prüfen("ABCDE"));
@@ -25,7 +28,8 @@ public class AutomatTest {
     }
 
     @Test
-    public void testFirstCharAtoD() {
+    public void testFirstCharAtoD()
+    {
         // Valid cases for A-D
         assertTrue(automat.prüfen("A103"));
         assertTrue(automat.prüfen("B103"));
@@ -40,7 +44,8 @@ public class AutomatTest {
     }
 
     @Test
-    public void testFirstCharEtoH() {
+    public void testFirstCharEtoH()
+    {
         // Valid cases for E-H
         assertTrue(automat.prüfen("E123"));
         assertTrue(automat.prüfen("F123"));
@@ -52,7 +57,8 @@ public class AutomatTest {
     }
 
     @Test
-    public void testSecondCharIs1() {
+    public void testSecondCharIs1()
+    {
         // Valid: second is 1, third is 0, 1, or 2
         assertTrue(automat.prüfen("A101"));
 
@@ -61,7 +67,8 @@ public class AutomatTest {
     }
 
     @Test
-    public void testFourthChar() {
+    public void testFourthChar()
+    {
         // Valid: fourth is 1-6
         assertTrue(automat.prüfen("A101"));
         assertTrue(automat.prüfen("A102"));
@@ -76,13 +83,15 @@ public class AutomatTest {
     }
 
     @Test
-    public void firstLetter() {
+    public void firstLetter()
+    {
         // Valid: fourth is 1-6
         assertFalse(automat.prüfen("X101"));
     }
 
     @Test
-    public void testCombinedRules() {
+    public void testCombinedRules()
+    {
         // Testing multiple rules together
         assertTrue(automat.prüfen("A103"));
         assertTrue(automat.prüfen("E123"));
