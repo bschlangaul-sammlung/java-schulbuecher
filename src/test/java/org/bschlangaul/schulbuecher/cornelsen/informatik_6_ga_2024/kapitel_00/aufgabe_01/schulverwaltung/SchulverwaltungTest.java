@@ -15,7 +15,7 @@ public class SchulverwaltungTest
     private Schulverwaltung schulver1;
 
     /**
-     * Setzt das Testgerüst fuer den Test.
+     * Setzt das Testgerüst für den Test.
      * <p>
      * Wird vor jeder Testfall-Methode aufgerufen.
      */
