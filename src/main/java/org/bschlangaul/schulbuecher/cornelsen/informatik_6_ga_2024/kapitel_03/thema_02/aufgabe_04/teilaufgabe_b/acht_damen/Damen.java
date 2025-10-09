@@ -116,4 +116,8 @@ class Damen
             }
         }
     }
+
+    public static void main(String[] args) {
+        new Damen();
+    }
 }
