@@ -1,6 +1,6 @@
 package org.bschlangaul.schulbuecher.cornelsen.informatik_6_ga_2024.kapitel_03.thema_02.aufgabe_06.rucksack;
 
-import java.util.*;
+import java.util.ArrayList;
 
 /**
  * Lösung für das klassische Rucksackproblem
@@ -128,5 +128,9 @@ class Rucksack
                 aktuelleVorräte.remove(aktuelleVorräte.size() - 1);
             }
         }
+    }
+
+    public static void main(String[] args) {
+        new Rucksack();
     }
 }
