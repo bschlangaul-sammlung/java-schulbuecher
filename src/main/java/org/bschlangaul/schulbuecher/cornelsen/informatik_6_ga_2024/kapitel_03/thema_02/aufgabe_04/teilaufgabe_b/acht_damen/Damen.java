@@ -117,7 +117,8 @@ class Damen
         }
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args)
+    {
         new Damen();
     }
 }

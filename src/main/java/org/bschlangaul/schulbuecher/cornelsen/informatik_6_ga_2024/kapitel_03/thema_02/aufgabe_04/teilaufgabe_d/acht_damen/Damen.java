@@ -173,7 +173,8 @@ class Damen extends Ereignisbehandlung
         damen.get(spalte).SichtbarkeitSetzen(false);
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args)
+    {
         new Damen();
     }
 }

@@ -1,6 +1,6 @@
 {
     "java.configuration.updateBuildConfiguration": "automatic",
-    "java.format.settings.url": ".eclipse-formatter/school.xml",
+    "java.format.settings.url": "https://raw.githubusercontent.com/engine-pi/engine-pi/refs/heads/main/engine-pi/src/main/resources/eclipse-formatter.xml",
     "editor.tabSize": 4,
     "editor.insertSpaces": true,
     "makefile.configureOnOpen": false
