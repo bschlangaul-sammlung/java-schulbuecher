@@ -12,15 +12,15 @@ public class Arztpraxis
 
     private String name;
 
+    private ArrayList<Patient> kinderarzt;
+
     private ArrayList<Patient> allgemeinarzt1;
 
     private ArrayList<Patient> allgemeinarzt2;
 
-    private ArrayList<Patient> kinderarzt;
-
     public Arztpraxis()
     {
-        name = "Dr. Hinkebein";
+        name = "Zuse-Praxis";
         kinderarzt = new ArrayList<Patient>();
         allgemeinarzt1 = new ArrayList<Patient>();
         allgemeinarzt2 = new ArrayList<Patient>();

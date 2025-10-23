@@ -19,7 +19,7 @@ public class Supermarkt
 
     public Supermarkt()
     {
-        name = "Aldi";
+        name = "Zuckerberg-Markt";
         kassenschlange = new ArrayList<Person>();
         // e
         kassenschlange2 = new ArrayList<Person>();
