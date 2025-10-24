@@ -1,5 +1,9 @@
-package org.bschlangaul.schulbuecher.cornelsen.informatik_6_ga_2024.kapitel_03.thema_03.aufgabe_00;
+package org.bschlangaul.schulbuecher.cornelsen.shared.graph_visualisierung;
 
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -12,7 +16,7 @@ import java.sql.Statement;
  *
  * @version 1.0
  */
-class Lesen
+public class Lesen
 {
 
     /**
@@ -22,12 +26,19 @@ class Lesen
      * @param name Name (und Pfad) der Datenbankcontainerdatei
      * @param g das Graphenobjekt, in dem die Daten eingetragen werden sollen
      */
-    boolean LesenDatenbank(String name, GraphMatrix g)
+    public boolean LesenDatenbank(String name, GraphMatrix g)
     {
-        Connection verbindung;
         try
         {
-            verbindung = DriverManager.getConnection("jdbc:sqlite:" + name);
+            // Eingefügt, damit die Datei in main/resources/graph-datases
+            // abgelegt werden kann.
+            Path source = Paths.get(
+                    getClass().getResource("/graph-databases/" + name).toURI());
+            Path target = Paths.get(System.getProperty("java.io.tmpdir"), name);
+            Files.copy(source, target, StandardCopyOption.REPLACE_EXISTING);
+            Connection verbindung;
+            verbindung = DriverManager
+                    .getConnection("jdbc:sqlite:" + target.toString());
             Statement anweisung = verbindung.createStatement();
             ResultSet daten = anweisung.executeQuery(
                     "SELECT bezeichner, x, y FROM knoten ORDER BY bezeichner");
