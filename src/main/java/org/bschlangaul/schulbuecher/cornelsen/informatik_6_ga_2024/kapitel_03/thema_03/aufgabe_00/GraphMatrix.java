@@ -2,7 +2,6 @@ package org.bschlangaul.schulbuecher.cornelsen.informatik_6_ga_2024.kapitel_03.t
 
 import java.util.ArrayList;
 
-import org.bschlangaul.schulbuecher.cornelsen.shared.graph_visualisierung.KantenSymbol;
 import org.bschlangaul.schulbuecher.cornelsen.shared.graph_visualisierung.Knoten;
 
 /**
