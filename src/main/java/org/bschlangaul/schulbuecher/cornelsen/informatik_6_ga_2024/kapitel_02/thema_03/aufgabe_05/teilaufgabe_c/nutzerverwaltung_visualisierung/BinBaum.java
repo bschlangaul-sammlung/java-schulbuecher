@@ -96,6 +96,7 @@ class BinBaum
     /**
      * Zeichnet den Baum
      */
+    @SuppressWarnings("unused")
     void BaumZeichnen()
     {
         int höhenschritt = Zeichenfenster.MalflächenHöheGeben()

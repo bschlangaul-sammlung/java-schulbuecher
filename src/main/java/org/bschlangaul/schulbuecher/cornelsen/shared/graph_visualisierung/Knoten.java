@@ -9,10 +9,14 @@ package org.bschlangaul.schulbuecher.cornelsen.shared.graph_visualisierung;
  */
 public class Knoten
 {
-    /** Der Bezeichner des Knotens */
+    /**
+     * Der Bezeichner des Knotens
+     */
     private String bezeichner;
 
-    /** Das Darstellungssymbol des Knotens */
+    /**
+     * Das Darstellungssymbol des Knotens
+     */
     private KnotenSymbol symbol;
 
     /**

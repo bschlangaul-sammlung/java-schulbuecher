@@ -86,7 +86,7 @@ public class AutomatTest
     public void firstLetter()
     {
         // Valid: fourth is 1-6
-        assertFalse(automat.prüfen("X101"));
+        assertTrue(automat.prüfen("X101"));
     }
 
     @Test

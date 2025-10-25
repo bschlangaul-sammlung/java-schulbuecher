@@ -92,7 +92,7 @@ class Beispiele
     /**
      * Führt die Tiefensuche vom Startknoten aus durch
      *
-     * @param startKnoten der Bezeichner des Startknotens
+     * @param nameStartKnoten der Bezeichner des Startknotens
      */
     void TiefensucheAusführen(String nameStartKnoten)
     {

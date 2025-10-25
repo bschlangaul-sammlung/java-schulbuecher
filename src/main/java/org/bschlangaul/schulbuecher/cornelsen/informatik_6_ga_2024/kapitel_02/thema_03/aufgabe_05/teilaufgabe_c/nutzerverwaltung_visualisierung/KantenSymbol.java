@@ -46,6 +46,7 @@ class KantenSymbol
     /**
      * Gewicht der Kante
      */
+    @SuppressWarnings("unused")
     private String gewicht;
 
     /**

@@ -52,12 +52,12 @@ public class GraphMatrix extends Ereignisbehandlung
         knoten.add(new Knoten(bezeichner, x, y));
         for (int index = 0; index < matrix.size(); index++)
         {
-            matrix.get(index).add(new Integer(-1));
+            matrix.get(index).add(Integer.valueOf(-1));
         }
         matrix.add(new ArrayList<Integer>());
         for (int index = 0; index < matrix.size(); index++)
         {
-            matrix.get(matrix.size() - 1).add(new Integer(-1));
+            matrix.get(matrix.size() - 1).add(Integer.valueOf(-1));
         }
     }
 
@@ -69,7 +69,7 @@ public class GraphMatrix extends Ereignisbehandlung
      *
      * @return Referenz auf das Knotenobjekt oder null
      */
-    private Knoten KnotenGeben(String bezeichner)
+    public Knoten KnotenGeben(String bezeichner)
     {
         for (Knoten k : knoten)
         {
@@ -87,7 +87,7 @@ public class GraphMatrix extends Ereignisbehandlung
      *
      * @param bezeichner Bezeichner des Knoten der gesucht wird
      *
-     * @return Indexnummer des Knotens im Knotenfeld; 0 <= res <=
+     * @return Indexnummer des Knotens im Knotenfeld; 0 &lt;= res &lt;=
      *     knoten.size()-1 bzw. -1
      */
     public int KnotenNummerGeben(String bezeichner)
@@ -105,7 +105,8 @@ public class GraphMatrix extends Ereignisbehandlung
     /**
      * Gibt die Bezeichnung eines Knotens mit der internen Knotennummer
      *
-     * @param Indexnummer des Knotens im Knotenarray; 0<= x <= knoten.size()
+     * @param knotenNummer Indexnummer des Knotens im Knotenarray; 0 &lt;= x
+     *     &lt;= knoten.size()
      *
      * @return Bezeichner des Knotens
      */
@@ -179,5 +180,4 @@ public class GraphMatrix extends Ereignisbehandlung
             return -1;
         }
     }
-
 }

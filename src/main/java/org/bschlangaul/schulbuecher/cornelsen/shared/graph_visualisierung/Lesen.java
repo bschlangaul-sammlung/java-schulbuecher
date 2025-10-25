@@ -30,7 +30,7 @@ public class Lesen
     {
         try
         {
-            // Eingefügt, damit die Datei in main/resources/graph-datases
+            // Eingefügt, damit die Datei in main/resources/graph-databases
             // abgelegt werden kann.
             Path source = Paths.get(
                     getClass().getResource("/graph-databases/" + name).toURI());

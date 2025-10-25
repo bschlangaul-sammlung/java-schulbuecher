@@ -6,6 +6,7 @@ format:
 	mvn formatter:format
 
 doc:
+	mvn clean
 	rm -rf target/reports/apidocs
 	mvn javadoc:javadoc
 	xdg-open target/reports/apidocs/index.html
