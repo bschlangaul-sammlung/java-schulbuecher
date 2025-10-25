@@ -121,7 +121,7 @@ public class Knoten
         Abmessungen abmessungen = graph.AbmessungenAusgeben();
 
         System.out
-                .println(String.format("g.addNode(\"%s\", %s, %s)", bezeichner,
+                .println(String.format("g.addNode(\"%s\", %s, %s);", bezeichner,
                         // In der Engine Pi misst ein Meter standardmäßig 32
                         // Pixel, wir teilen durch 32 und zwar mit Kommazahlen,
                         // damit wir einen double-Wert erhalten.

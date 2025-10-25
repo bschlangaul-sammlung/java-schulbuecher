@@ -237,18 +237,18 @@ public class KantenSymbol
         double g = Double.parseDouble(gewicht);
         if (!gerichtet && g != 1)
         {
-            System.out.println(String.format("g.addEdge(\"%s\", \"%s\", %s)",
+            System.out.println(String.format("g.addEdge(\"%s\", \"%s\", %s);",
                     von.BezeichnerGeben(), nach.BezeichnerGeben(), gewicht));
         }
         else if (!gerichtet && g == 1)
         {
-            System.out.println(String.format("g.addEdge(\"%s\", \"%s\")",
+            System.out.println(String.format("g.addEdge(\"%s\", \"%s\");",
                     von.BezeichnerGeben(), nach.BezeichnerGeben()));
         }
         else
         {
             System.out.println(String.format(
-                    "g.addEdge(\"%s\", \"%s\", %s, %b)", von.BezeichnerGeben(),
+                    "g.addEdge(\"%s\", \"%s\", %s, %b);", von.BezeichnerGeben(),
                     nach.BezeichnerGeben(), gewicht, gerichtet));
         }
 

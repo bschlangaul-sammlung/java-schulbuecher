@@ -251,11 +251,12 @@ public class GraphMatrix extends Ereignisbehandlung
      */
     public void JavaCodeAusgeben()
     {
+        System.out.println("// Anlegen der Knoten");
         for (Knoten k : knoten)
         {
             k.JavaCodeAusgeben(this);
         }
-
+        System.out.println("// Anlegen der Kanten");
         for (KantenSymbol k : kanten)
         {
             k.JavaCodeAusgeben();
@@ -266,11 +267,11 @@ public class GraphMatrix extends Ereignisbehandlung
     {
         GraphMatrix g = new GraphMatrix();
         Lesen l = new Lesen();
-        // l.LesenDatenbank("Abiturfahrt.grdb", g);
+        l.LesenDatenbank("Abiturfahrt.grdb", g);
         // l.LesenDatenbank("Autobahn.grdb", g);
         // l.LesenDatenbank("ICENetz.grdb", g);
         // l.LesenDatenbank("Beispielgraph.grdb", g);
-        l.LesenDatenbank("Beispielgraph2.grdb", g);
+        // l.LesenDatenbank("Beispielgraph2.grdb", g);
         g.JavaCodeAusgeben();
     }
 }
