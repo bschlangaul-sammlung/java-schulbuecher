@@ -260,8 +260,6 @@ public class GraphMatrix extends Ereignisbehandlung
         {
             k.JavaCodeAusgeben();
         }
-
-        System.out.println(AbmessungenAusgeben());
     }
 
     public static void main(String[] args)
@@ -273,8 +271,6 @@ public class GraphMatrix extends Ereignisbehandlung
         // l.LesenDatenbank("ICENetz.grdb", g);
         // l.LesenDatenbank("Beispielgraph.grdb", g);
         l.LesenDatenbank("Beispielgraph2.grdb", g);
-
         g.JavaCodeAusgeben();
-
     }
 }

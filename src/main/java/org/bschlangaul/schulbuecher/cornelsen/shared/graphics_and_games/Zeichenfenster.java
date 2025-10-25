@@ -123,9 +123,9 @@ public class Zeichenfenster
      * Legt das Fenster und die Malfläche an.
      *
      * <p>
-     * Das Fenster hat die Abmessungen von 800x600, wobei die Schaltflächen am
-     * unteren Rand eine Leiste von 40 Pixeln Höhe bilden. Also die Höhe der
-     * Mahlfläche ist effektiv 560 Pixel groß.
+     * Das Fenster hat eine Abmessungen von {@code 800x600} Pixeln, wobei die
+     * Schaltflächen am unteren Rand eine Leiste von 40 Pixeln Höhe bilden. Also
+     * die Höhe der Malfläche ist effektiv 560 Pixel groß.
      * </p>
      */
     private Zeichenfenster()

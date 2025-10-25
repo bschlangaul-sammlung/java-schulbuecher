@@ -234,8 +234,23 @@ public class KantenSymbol
      */
     public void JavaCodeAusgeben()
     {
-        System.out.println(
-                String.format("(\"%s\", \"%s\", %s, %b)", von.BezeichnerGeben(),
-                        nach.BezeichnerGeben(), gewicht, gerichtet));
+        double g = Double.parseDouble(gewicht);
+        if (!gerichtet && g != 1)
+        {
+            System.out.println(String.format("g.addEdge(\"%s\", \"%s\", %s)",
+                    von.BezeichnerGeben(), nach.BezeichnerGeben(), gewicht));
+        }
+        else if (!gerichtet && g == 1)
+        {
+            System.out.println(String.format("g.addEdge(\"%s\", \"%s\")",
+                    von.BezeichnerGeben(), nach.BezeichnerGeben()));
+        }
+        else
+        {
+            System.out.println(String.format(
+                    "g.addEdge(\"%s\", \"%s\", %s, %b)", von.BezeichnerGeben(),
+                    nach.BezeichnerGeben(), gewicht, gerichtet));
+        }
+
     }
 }
