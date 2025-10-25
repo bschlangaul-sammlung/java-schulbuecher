@@ -5,6 +5,16 @@ import java.util.ArrayList;
 import org.bschlangaul.schulbuecher.cornelsen.shared.graphics_and_games.Ereignisbehandlung;
 
 /**
+ * <p>
+ * Diese Klasse wurde nachträglich hinzugefügt. Sie ist nicht im originalen
+ * Projekt zu finden.
+ * </p>
+ */
+record Abmessungen(int minX, int maxX, int minY, int maxY)
+{
+}
+
+/**
  * Verwaltet einen ungerichteten, gewichteten Graphen mittels Adjazenzmatrix
  *
  * @author Albert Wiedemann
@@ -179,5 +189,92 @@ public class GraphMatrix extends Ereignisbehandlung
         {
             return -1;
         }
+    }
+
+    /**
+     * Berechnet die Abmessungen des Graphen. Dabei werden die Positionen aller
+     * Knoten durchgegangen und die minimalen und maximalen Werte sowohl der
+     * x-Koordinate als auch der y-Koordinate bestimmt.
+     *
+     * <p>
+     * Diese Methode wurde nachträglich hinzugefügt. Sie ist nicht im originalen
+     * Projekt zu finden.
+     * </p>
+     */
+    public Abmessungen AbmessungenAusgeben()
+    {
+        // Das Fenster hat eine maximale Breite von 800 Pixel? Lieber auf
+        // Nummer sicher gehen und den größten darstellbaren Ganzzahl-Wert
+        // verwenden.
+        int minX = Integer.MAX_VALUE;
+        // Vielleicht sind auch negative Werte möglich?
+        int maxX = Integer.MIN_VALUE;
+        // Das Fenster hat eine maximale Höhe von 560 Pixel? Lieber auf Nummer
+        // sicher gehen und den größten darstellbaren Ganzzahl-Wert verwenden.
+        int minY = Integer.MAX_VALUE;
+        // Vielleicht sind auch negative Werte möglich?
+        int maxY = Integer.MIN_VALUE;
+        for (Knoten k : knoten)
+        {
+
+            if (k.XGeben() < minX)
+            {
+                minX = k.XGeben();
+            }
+
+            if (k.XGeben() > maxX)
+            {
+                maxX = k.XGeben();
+            }
+
+            if (k.YGeben() < minY)
+            {
+                minY = k.YGeben();
+            }
+
+            if (k.YGeben() > maxY)
+            {
+                maxY = k.YGeben();
+            }
+        }
+        return new Abmessungen(minX, maxX, minY, maxY);
+    }
+
+    /**
+     * Gibt Java-Code aus, um den Graphen über ein andere Implementation
+     * darstellen zu können. So kann die sqlite-Datenbank umgangen werden.
+     *
+     * <p>
+     * Diese Methode wurde nachträglich hinzugefügt. Sie ist nicht im originalen
+     * Projekt zu finden.
+     * </p>
+     */
+    public void JavaCodeAusgeben()
+    {
+        for (Knoten k : knoten)
+        {
+            k.JavaCodeAusgeben(this);
+        }
+
+        for (KantenSymbol k : kanten)
+        {
+            k.JavaCodeAusgeben();
+        }
+
+        System.out.println(AbmessungenAusgeben());
+    }
+
+    public static void main(String[] args)
+    {
+        GraphMatrix g = new GraphMatrix();
+        Lesen l = new Lesen();
+        // l.LesenDatenbank("Abiturfahrt.grdb", g);
+        // l.LesenDatenbank("Autobahn.grdb", g);
+        // l.LesenDatenbank("ICENetz.grdb", g);
+        // l.LesenDatenbank("Beispielgraph.grdb", g);
+        l.LesenDatenbank("Beispielgraph2.grdb", g);
+
+        g.JavaCodeAusgeben();
+
     }
 }

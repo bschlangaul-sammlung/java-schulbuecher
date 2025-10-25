@@ -5,7 +5,7 @@ import org.bschlangaul.schulbuecher.cornelsen.shared.graphics_and_games.Rechteck
 import org.bschlangaul.schulbuecher.cornelsen.shared.graphics_and_games.Text;
 
 /**
- * Verwaltet ein Kantensymbol in einem Graph
+ * Verwaltet ein Kantensymbol in einem Graph.
  *
  * @author Albert Wiedemann
  *
@@ -14,53 +14,53 @@ import org.bschlangaul.schulbuecher.cornelsen.shared.graphics_and_games.Text;
 public class KantenSymbol
 {
     /**
-     * Außenrechteck des Darstellungssymbols
+     * Das Außenrechteck des Darstellungssymbols.
      */
     private Rechteck außen;
 
     /**
-     * Innenrechteck des Darstellungssymbols
+     * Das Innenrechteck des Darstellungssymbols.
      */
     private Rechteck innen;
 
     /**
-     * Richtungspfeil des Darstellungssymbols
+     * Der Richtungspfeil des Darstellungssymbols.
      */
     private Dreieck pfeil;
 
     /**
-     * Gewichtsangabe des Darstellungssymbols
+     * Die Gewichtsangabe des Darstellungssymbols.
      */
     private Text text;
 
     /**
-     * Breite des Darstellungssymbols
+     * Die Breite des Darstellungssymbols.
      */
     private int breite;
 
     /**
-     * Gerichtete Kante
+     * Handelt es sich um eine gerichtete Kante.
      */
     private boolean gerichtet;
 
     /**
-     * Gewicht der Kante
+     * Das Gewicht der Kante.
      */
     @SuppressWarnings("unused")
     private String gewicht;
 
     /**
-     * Farbe
+     * Die Farbe der Kante.
      */
     private String farbe;
 
     /**
-     * Startknoten
+     * Der Startknoten.
      */
     private KnotenSymbol von;
 
     /**
-     * Endknoten
+     * Der Endknoten.
      */
     private KnotenSymbol nach;
 
@@ -224,5 +224,18 @@ public class KantenSymbol
     public KnotenSymbol ZielsymbolGeben()
     {
         return nach;
+    }
+
+    /**
+     * <p>
+     * Diese Methode wurde nachträglich hinzugefügt. Sie ist nicht im originalen
+     * Projekt zu finden.
+     * </p>
+     */
+    public void JavaCodeAusgeben()
+    {
+        System.out.println(
+                String.format("(\"%s\", \"%s\", %s, %b)", von.BezeichnerGeben(),
+                        nach.BezeichnerGeben(), gewicht, gerichtet));
     }
 }

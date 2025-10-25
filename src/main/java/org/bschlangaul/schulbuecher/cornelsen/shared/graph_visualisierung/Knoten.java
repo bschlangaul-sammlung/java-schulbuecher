@@ -20,6 +20,26 @@ public class Knoten
     private KnotenSymbol symbol;
 
     /**
+     * Die x-Koordinate in Pixel.
+     *
+     * <p>
+     * Dieses Attribut wurde nachträglich hinzugefügt, es ist nicht im
+     * originalen Projekt zu finden.
+     * </p>
+     */
+    private int x;
+
+    /**
+     * Die y-Koordinate in Pixel.
+     *
+     * <p>
+     * Dieses Attribut wurde nachträglich hinzugefügt, es ist nicht im
+     * originalen Projekt zu finden.
+     * </p>
+     */
+    private int y;
+
+    /**
      * Besetzt die Attribute und legt das Knotensymbol an.
      *
      * @param bezeichner Bezeichner
@@ -29,6 +49,8 @@ public class Knoten
     public Knoten(String bezeichner, int x, int y)
     {
         this.bezeichner = bezeichner;
+        this.x = x;
+        this.y = y;
         symbol = new KnotenSymbol(x, y, 20, "weiß", bezeichner);
     }
 
@@ -60,5 +82,46 @@ public class Knoten
     public void FarbeSetzen(String f)
     {
         symbol.FarbeSetzen(f);
+    }
+
+    /**
+     * <p>
+     * Diese Methode wurde nachträglich hinzugefügt. Sie ist nicht im originalen
+     * Projekt zu finden.
+     * </p>
+     */
+    public int XGeben()
+    {
+        return x;
+    }
+
+    /**
+     * <p>
+     * Diese Methode wurde nachträglich hinzugefügt. Sie ist nicht im originalen
+     * Projekt zu finden.
+     * </p>
+     */
+    public int YGeben()
+    {
+        return y;
+    }
+
+    /**
+     * Gibt Java-Code aus, um den Graphen über ein andere Implementation der
+     * Graphmatrix darstellen zu können. So kann die sqlite-Datenbank umgangen
+     * werden.
+     *
+     * <p>
+     * Diese Methode wurde nachträglich hinzugefügt. Sie ist nicht im originalen
+     * Projekt zu finden.
+     * </p>
+     */
+    public void JavaCodeAusgeben(GraphMatrix graph)
+    {
+        Abmessungen abmessungen = graph.AbmessungenAusgeben();
+        // In der Engine Pi misst ein Meter standardmäßig 32 Pixel.
+        System.out.println(String.format("graph.addNode(\"%s\", %s, %s)", bezeichner,
+                (x - abmessungen.minX()) / 32.0,
+                (y - abmessungen.minY()) / 32.0));
     }
 }

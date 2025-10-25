@@ -120,7 +120,13 @@ public class Zeichenfenster
     private javax.swing.Timer timer;
 
     /**
-     * Legt das Fenster und die Malfläche an
+     * Legt das Fenster und die Malfläche an.
+     *
+     * <p>
+     * Das Fenster hat die Abmessungen von 800x600, wobei die Schaltflächen am
+     * unteren Rand eine Leiste von 40 Pixeln Höhe bilden. Also die Höhe der
+     * Mahlfläche ist effektiv 560 Pixel groß.
+     * </p>
      */
     private Zeichenfenster()
     {
@@ -129,13 +135,8 @@ public class Zeichenfenster
         fenster = new JFrame("Zeichenfenster");
         fenster.setLocation(50, 50);
         fenster.setSize(800, 600);
-        fenster.setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE); // Close-Button
-                                                                               // kann
-                                                                               // nicht
-                                                                               // versteckt
-                                                                               // oder
-                                                                               // abgestellt
-                                                                               // werden.
+        // Close-Button kann nicht versteckt oder abgestellt werden.
+        fenster.setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);
 
         malfläche = new JComponent()
         {
