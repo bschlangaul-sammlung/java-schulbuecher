@@ -251,6 +251,5 @@ public class KantenSymbol
                     "g.addEdge(\"%s\", \"%s\", %s, %b);", von.BezeichnerGeben(),
                     nach.BezeichnerGeben(), gewicht, gerichtet));
         }
-
     }
 }
