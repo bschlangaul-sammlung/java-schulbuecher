@@ -308,4 +308,10 @@ class Spiel extends EreignisBehandlung
             // System.out.println("Taste: " + (0 + (int) welche));
         }
     }
+
+    public static void main(String[] args)
+    {
+        // rechts unten ist Start-Button ... oftmals nicht sichtbar?
+        new Spiel();
+    }
 }

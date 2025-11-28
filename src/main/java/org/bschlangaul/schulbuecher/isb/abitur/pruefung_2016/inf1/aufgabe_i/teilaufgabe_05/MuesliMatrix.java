@@ -27,7 +27,6 @@ public class MuesliMatrix
             }
         }
 
-
         matrix = new int[][] {
                 //
                 new int[]
