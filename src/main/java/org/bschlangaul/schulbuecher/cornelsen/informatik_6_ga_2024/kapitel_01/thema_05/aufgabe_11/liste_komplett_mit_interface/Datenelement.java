@@ -7,7 +7,6 @@ package org.bschlangaul.schulbuecher.cornelsen.informatik_6_ga_2024.kapitel_01.t
  *
  * @version 1.0
  */
-
 public interface Datenelement
 {
     /**
@@ -30,5 +29,4 @@ public interface Datenelement
      * @param dvergleich Datenelement zum Vergleich
      */
     boolean IstKleinerAls(Datenelement dvergleich);
-
 }

@@ -9,7 +9,6 @@ package org.bschlangaul.schulbuecher.cornelsen.informatik_6_ga_2024.kapitel_01.t
  */
 class Abschluss extends Listenelement
 {
-
     /**
      * Gibt die Länge zurück.
      *

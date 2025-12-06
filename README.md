@@ -45,6 +45,12 @@ Ohne suffix `_vorlage` handelt es sich um die Lösung
 
 ## Quellen
 
+`package-info.java` bei Büchern
+
+`reference_title, release_date: reference_subtitle`, zum Beispiel:
+
+`Informatik 5 (Bayern | NTG), 2023: Graphen | Codierung | Kommunikation in Netzwerken | Künstliche Intelligenz`
+
 ### `buchner`
 
 #### `buchner/informatik_9_2021`
@@ -119,32 +125,44 @@ Vorlagen von `GraphicsAndGames`:
 - [10. Jahrgangsstufe](https://informatikschulbuch.de/jahrgangsstufe-10/objektorientierte-modellierung-und-programmierungjgst10/)
 - [11. Jahrgangsstufe](https://informatikschulbuch.de/jahrgangsstufe-11/vernetze-strukturen-grapen-kapitel-1-informatik-5/)
 
-#### `cornelsen/informatik-3_2017`
+#### `cornelsen/informatik-3_2021`
 
 ```yml
+ref: Informatik-3_Cornelsen_2021
 reference_title: Informatik 3
 reference_subtitle: >-
+  Gymnasium Bayern - Ausgabe 2017 · Band 3
   Funktionale Modellierung, Datenmodellierung, Objektorientierte
   Modellierung (Jgst. 9)
 isbn: 978-3-637-02467-0
 publisher: Cornelsen
 author: Peter Brichzin, Franz Jetzinger
-release_date: 2017
+release_date: 2021
 approval_number: 76/21-G+
 approval_date: 28.05.2021
+publisher_website: https://www.cornelsen.de/produkte/9783637024670
+publisher_decription: |
+  - Einführungsvideos online für alle Werkzeuge
+  - Handlungsorientierte Einstiegsaufgaben nach dem PRIMM-Konzept (Predict, Run, Investigate, Modify, Make) mit Vorlagen für einen altersgerechten Unterricht von Anfang an
+  - Sowohl kleine Aufgaben für mehr Abwechslung als auch größere themenzentrierte Aufgabenblöcke
+  - Eine große Auswahl neuer kompetenzorientierter Aufgaben, praktisch gegliedert nach Kompetenzerwartungen
+  - Zahlreiche Datenbanken mit schülernahen und echten Datensätzen. Die notwendigen Vorlagen für den eigenen Datenbankserver oder SQL-Abfragen lassen sich direkt im Browser durchführen.
+  - Eine eigene kleine Game-Engine (Graphics and Games) für Programmieranfänger/-innen für interessante, schüleraktivierende und flexible Beispiele.
+  - Die gleiche Plattform für alle Programmiersprachen: alle Vorlagen und Lösungen für Java, Stride, Python und Swift mit Möglichkeit der Adaption an weitere Sprachen. Dadurch werden die Gemeinsamkeiten der Sprachen und das Modellieren betont.
 ```
 
 #### `cornelsen/informatik_5_2023`
 
 ```yml
+ref: Informatik-5_Cornelsen_2023
 reference_title: Informatik 5 (Bayern | NTG)
 reference_subtitle: >-
   Graphen | Codierung | Kommunikation in Netzwerken | Künstliche Intelligenz
 isbn: 978-3-637-02473-1
 publisher: Cornelsen
 author: >-
-  Peter Brichzin, Florian Janus, Franz Jetzinger, Johannes Neumeyer,
-  Klaus Reinold, Dr. Stefan Seeger, Albert Wiedemann
+   Peter Brichzin, Florian Janus, Franz Jetzinger, Johannes Neumeyer,
+   Klaus Reinold, Dr. Stefan Seeger, Albert Wiedemann
 release_date: 2023
 edition: 1
 approval_number: 164/23-G+
@@ -155,6 +173,7 @@ publisher_website: https://www.cornelsen.de/produkte/9783637024731
 #### `cornelsen/informatik_6_ga_2024`
 
 ```yml
+ref: Informatik-6_gA_Cornelsen_2024
 reference_title: Informatik 6 Bayern | NTG | Grundlegendes Niveau
 reference_subtitle: >-
   Listen | Bäume | Rekursion - Nebenläufigkeit und Threads - Informationssicherheit - Softwareprojekte
@@ -167,6 +186,51 @@ release_date: 2024
 approval_number: 132/24-G+
 approval_date: 06.08.2024
 publisher_website: https://www.cornelsen.de/produkte/9783637024762
+table_of_contents: |
+  1 Die rekursive Datenstruktur Liste (Seite 13)
+    1.1 Prototyp 1: Die rekursive Warteschlange (Seite 14)
+    1.2 Prototyp 2: Trennung von Struktur und Daten (Seite 18)
+    *1.3 Prototyp 2+: Bessere Trennung hilft beim Recycling (Seite 24)
+    1.4 Prototyp 3: Rekursive Methoden der Liste (Seite 26)
+    Einschub: Programme testen (Seite 30)
+    Einschub: Prototyping (Seite 31)
+    1.5 Endprodukt: Liste mit Entwurfsmuster Kompositum (Seite 32)
+    1.6 Stapel und Warteschlange: Spezialformen der Liste (Seite 42)
+
+  2 Die rekursive Datenstruktur Baum
+    2.1 Effiziente Suchen unterstützen: Datenstruktur Baum (Seite 52)
+    2.2 Suchen und Einfügen: Rekursion im geordneten Binärbaum (Seite 58)
+    2.3 Entwurfsmuster nutzen: Binärbaum implementieren (Seite 62)
+    2.4 Binärbäume durchlaufen: Information aller Daten abfragen (Seite 70)
+    2.5 Üben und Vertiefen: Weiterführende Aufgaben (Seite 74)
+
+  3 Rekursion
+    3.1 Methoden rufen sich selbst auf: Rekursion (Seite 88)
+    3.2 Anwendung der Rekursion: Backtracking (Seite 96)
+    3.3 Alle Knoten eines Graphen besuchen: Tiefensuche (Seite 102)
+    3.4 Anwendungen der Tiefensuche: Optimale Lösungen (Seite 108)
+
+  4 Nebenläufigkeit und Threads
+    4.1 Nebenläufigkeit: Prozesse und Threads (Seite 118)
+    4.2 Wechselseitiger Ausschluss (Seite 122)
+    4.3 Eine gemeinsame Ressource: Effiziente Synchronisierung (Seite 128)
+    4.4 Mehrere gemeinsame Ressourcen: Deadlocks verhindern (Seite 134)
+
+  5 Informationssicherheit
+    5.1 Schwachstellen analysieren: Gefahren für IT-Systeme
+    5.2 Systeme schützen: Maßnahmen der IT-Sicherheit
+
+  6 Softwareentwicklung
+    6.1 Im Team arbeiten: Agile Methoden
+    6.2 Projekte organisieren: Das Wasserfallmodell
+    6.3 Das Rad nicht neu erfinden: Bibliotheken nutzen
+    6.4 Grafische Benutzeroberflächen
+    6.5 Daten persistent speichern: Datenbank oder Datei
+    6.6 Das Entwurfsmuster MVC
+    6.7 Debuggen und Testen
+    6.8 Softwarequalität aus Entwicklersicht
+    6.9 Versionsverwaltungssysteme
+    6.10 Projektvorschläge
 ```
 
 ### `isb` (Staatsinstitut für Schulqualität und Bildungsforschung)
