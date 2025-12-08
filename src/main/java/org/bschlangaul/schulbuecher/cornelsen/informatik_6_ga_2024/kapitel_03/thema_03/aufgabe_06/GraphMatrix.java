@@ -59,12 +59,12 @@ class GraphMatrix extends
         knoten.add(new Knoten(bezeichner, x, y));
         for (int index = 0; index < matrix.size(); index++)
         {
-            matrix.get(index).add(new Integer(-1));
+            matrix.get(index).add(Integer.valueOf(-1));
         }
         matrix.add(new ArrayList<Integer>());
         for (int index = 0; index < matrix.size(); index++)
         {
-            matrix.get(matrix.size() - 1).add(new Integer(-1));
+            matrix.get(matrix.size() - 1).add(Integer.valueOf(-1));
         }
     }
 
