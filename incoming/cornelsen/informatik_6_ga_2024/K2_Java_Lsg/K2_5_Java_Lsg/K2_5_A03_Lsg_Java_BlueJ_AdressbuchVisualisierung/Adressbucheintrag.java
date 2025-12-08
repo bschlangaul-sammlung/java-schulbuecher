@@ -76,7 +76,7 @@ public class Adressbucheintrag
 
     /**
      * Vergleicht zwei Datenelemente bezüglich der Ordnungsrelation.
-     * @param vergleichselement Datenelement mit dem das Objekt verglichen wird.
+     * @param dvergleich Datenelement mit dem das Objekt verglichen wird.
      * @return true, wenn das aktuelle Element einen größeren Schlüssel hat, als das angegebene Vergleichselement.
      */
     boolean IstGrößerAls(Adressbucheintrag dvergleich)

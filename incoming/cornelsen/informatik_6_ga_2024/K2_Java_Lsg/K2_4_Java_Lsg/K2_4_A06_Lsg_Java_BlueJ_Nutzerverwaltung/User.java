@@ -1,18 +1,18 @@
 /**
  * Die Klasse User dient zur Speicherung von Usern
- * in einem Online-Shop.  
- * 
+ * in einem Online-Shop.
+ *
  * @author Peter Brichzin
  * @version 23.5.24
  */
 
-class User 
+class User
 {
-    /**  Nachname - Schlüssel dieses Datenelements  */  
+    /**  Nachname - Schlüssel dieses Datenelements  */
     private String nachname;
-    /**  Vorname  */  
+    /**  Vorname  */
     private String vorname;
-    /**  Alter  */  
+    /**  Alter  */
     private int alter;
 
     /**
@@ -51,15 +51,15 @@ class User
      * Vergleicht zwei Datenelemente auf Gleichheit.
      * @param dvergleich Datenelement mit dem das Objekt verglichen wird.
      * @return true, wenn die beiden Datenelemente gleichen Schlüssel haben.
-     * 
-     * Hinweis: für den lexikografischen Vergleich wird die Methode 
+     *
+     * Hinweis: für den lexikografischen Vergleich wird die Methode
      * compareTo(String vergleichsZeichenkette) der Klasse String genutzt.
-     * Das Ergebnis ist eine negative ganze Zahl, wenn das ausführende 
-     * Zeichenketten-Objekt lexikografisch vor dem Eingabewert liegt. 
-     * Das Ergebnis ist eine positive ganze Zahl, das ausführende 
+     * Das Ergebnis ist eine negative ganze Zahl, wenn das ausführende
+     * Zeichenketten-Objekt lexikografisch vor dem Eingabewert liegt.
+     * Das Ergebnis ist eine positive ganze Zahl, das ausführende
      * Zeichenketten-Objekt lexikografisch hinter dem Eingabewert liegt.
-     * Das Ergebnis ist 0, wenn die Zeichenketten gleich sind; 
-     * 
+     * Das Ergebnis ist 0, wenn die Zeichenketten gleich sind;
+     *
      */
     boolean IstGleich(User dVergleich)
     {
@@ -70,25 +70,25 @@ class User
         else
         {
             return false;
-        }       
+        }
     }
 
     /**
      * Vergleicht zwei Datenelemente bezüglich der Ordnungsrelation.
-     * @param vergleichselement Datenelement mit dem das Objekt verglichen wird.
-     * @return true, wenn das aktuelle Element einen größeren Schlüssel 
+     * @param dVergleich Datenelement mit dem das Objekt verglichen wird.
+     * @return true, wenn das aktuelle Element einen größeren Schlüssel
      * hat, als das angegebene Vergleichselement.
      */
     boolean IstGrößerAls(User dVergleich)
     {
-        if(nachname.compareTo(dVergleich.NachnameGeben()) > 0)                                                                                                                                                                                                                                                            
+        if(nachname.compareTo(dVergleich.NachnameGeben()) > 0)
         {
             return true;
         }
         else
         {
             return false;
-        }       
+        }
     }
 
     /**
@@ -98,32 +98,32 @@ class User
      */
     boolean SchlüsselIstGleich(String vergleichsSchlüssel)
     {
-        if(nachname.compareTo(vergleichsSchlüssel) == 0)                                                                                                                                                                                                                                                            
+        if(nachname.compareTo(vergleichsSchlüssel) == 0)
         {
             return true;
         }
         else
         {
             return false;
-        }       
+        }
     }
 
     /**
      * Vergleicht zwei Schlüssel, die als Zeichenketten vorliegen, bezüglich der Ordnungsrelation.
      * @param vergleichsSchlüssel Schlüssel  mit dem der Schlüssel des Objekt verglichen wird.
-     * @return true, wenn das aktuelle Element einen größeren Schlüssel 
+     * @return true, wenn das aktuelle Element einen größeren Schlüssel
      * hat, als das angegebene Vergleichselement.
      */
     boolean SchlüsselIstGrößerAls(String vergleichsSchlüssel)
     {
-        if(nachname.compareTo(vergleichsSchlüssel) > 0)                                                                                                                                                                                                                                                            
+        if(nachname.compareTo(vergleichsSchlüssel) > 0)
         {
             return true;
         }
         else
         {
             return false;
-        }      
+        }
     }
 
     /**
@@ -143,9 +143,9 @@ class User
     {
         return vorname;
     }
-    
+
     /**
-     * Gibt den Schlüssel als Zeichenkette zurück, macht dadurch das Projekt ein 
+     * Gibt den Schlüssel als Zeichenkette zurück, macht dadurch das Projekt ein
      * wenig übertragbarer
      * @return      Schlüssel
      */
@@ -153,10 +153,10 @@ class User
     {
         return nachname;
     }
-    
+
         /**
      * Geben-Methode zum Attribut vorname
-     * 
+     *
      * @return      alter
      */
     public int AlterGeben()

@@ -58,7 +58,7 @@ class Textzeichen
      * Vergleicht zwei Datenelemente bezüglich der Ordnungsrelation.
      * Durch die Methode SchlüsselAlsStringGeben() wird das Zeichen in eine
      * Zeichenkette für den Vergleich umgewandelt.
-     * @param vergleichselement Datenelement mit dem das Objekt verglichen wird.
+     * @param dvergleich Datenelement mit dem das Objekt verglichen wird.
      * @return true, wenn das aktuelle Element einen größeren Schlüssel hat, als das angegebene Vergleichselement.
      */
     boolean IstGrößerAls(Textzeichen dvergleich)

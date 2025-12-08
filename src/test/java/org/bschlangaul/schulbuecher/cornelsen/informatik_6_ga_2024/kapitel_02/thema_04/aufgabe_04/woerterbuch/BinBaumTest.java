@@ -1,24 +1,34 @@
-import static org.junit.jupiter.api.Assertions.*;
+package org.bschlangaul.schulbuecher.cornelsen.informatik_6_ga_2024.kapitel_02.thema_04.aufgabe_04.woerterbuch;
+
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
 
 /**
  * Die Test-Klasse BinbaumTest.
  *
- * @author  Peter Brichzin
+ * @author Peter Brichzin
+ *
  * @version 28.5.24
  */
+@SuppressWarnings("unused")
 public class BinBaumTest
 {
     private Woerterbucheintrag woerterb1;
+
     private Woerterbucheintrag woerterb2;
+
     private Woerterbucheintrag woerterb3;
+
     private Woerterbucheintrag woerterb4;
+
     private Woerterbucheintrag woerterb5;
+
     private Woerterbucheintrag woerterb6;
+
     private Woerterbucheintrag woerterb7;
+
     private Woerterbucheintrag woerterb8;
+
     private BinBaum binBaum1;
 
     /**
@@ -29,7 +39,7 @@ public class BinBaumTest
     }
 
     /**
-     *  Setzt das Testgerüst fuer den Test.
+     * Setzt das Testgerüst fuer den Test.
      *
      * Wird vor jeder Testfall-Methode aufgerufen.
      */

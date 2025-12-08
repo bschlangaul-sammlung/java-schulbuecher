@@ -10,6 +10,7 @@ import org.junit.jupiter.api.BeforeEach;
  *
  * @version 23.5.24
  */
+@SuppressWarnings("unused")
 public class BinBaumTest
 {
     private User user1;
