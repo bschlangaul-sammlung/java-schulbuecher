@@ -1,4 +1,5 @@
-import static org.junit.jupiter.api.Assertions.*;
+package org.bschlangaul.schulbuecher.cornelsen.informatik_6_ga_2024.kapitel_02.thema_05.aufgabe_05.woerterbuch;
+
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -6,25 +7,40 @@ import org.junit.jupiter.api.Test;
 /**
  * Die Test-Klasse BinbaumTest.
  *
- * @author  (Peter Brichzin)
+ * @author (Peter Brichzin)
+ *
  * @version (28.5.24)
  */
 public class BinBaumTest
 {
     private Woerterbucheintrag woerterb1;
+
     private Woerterbucheintrag woerterb2;
+
     private Woerterbucheintrag woerterb3;
+
     private Woerterbucheintrag woerterb4;
+
     private Woerterbucheintrag woerterb5;
+
     private Woerterbucheintrag woerterb6;
+
     private Woerterbucheintrag woerterb7;
+
     private Woerterbucheintrag woerterb8;
+
     private Woerterbucheintrag woerterb9;
+
     private Woerterbucheintrag woerterb10;
+
     private Woerterbucheintrag woerterb11;
+
     private Woerterbucheintrag woerterb12;
+
     private Baumelement teilbaum;
+
     private BinBaum binBaum1;
+
     private BinBaum binBaum2;
 
     /**
@@ -35,7 +51,7 @@ public class BinBaumTest
     }
 
     /**
-     *  Setzt das Testgerüst fuer den Test.
+     * Setzt das Testgerüst fuer den Test.
      *
      * Wird vor jeder Testfall-Methode aufgerufen.
      */
@@ -71,7 +87,8 @@ public class BinBaumTest
         binBaum2.Einfügen(woerterb2);
         binBaum2.Einfügen(woerterb4);
         binBaum2.Einfügen(woerterb5);
-        teilbaum = new Knoten(woerterb6, new Knoten(woerterb7), new Knoten(woerterb8));
+        teilbaum = new Knoten(woerterb6, new Knoten(woerterb7),
+                new Knoten(woerterb8));
 
     }
 
@@ -111,7 +128,8 @@ public class BinBaumTest
         System.out.println("");
         System.out.println("---------------------------------------");
 
-        System.out.println("Test von Fall 1: zu entfernender Knoten ist ein Blatt");
+        System.out.println(
+                "Test von Fall 1: zu entfernender Knoten ist ein Blatt");
         System.out.println("Baum nach entfernen von cook:");
         System.out.println("");
         binBaum1.KnotenEntfernen("cook");
@@ -119,7 +137,8 @@ public class BinBaumTest
         System.out.println("");
         System.out.println("---------------------------------------");
 
-        System.out.println("Test von Fall 2: zu entfernender Knoten hat genau einen Nachfolger");
+        System.out.println(
+                "Test von Fall 2: zu entfernender Knoten hat genau einen Nachfolger");
         System.out.println("Baum nach entfernen von car:");
         System.out.println("");
         binBaum1.KnotenEntfernen("car");
@@ -127,7 +146,8 @@ public class BinBaumTest
         System.out.println("");
         System.out.println("---------------------------------------");
 
-        System.out.println("Test von Fall 3: zu entfernender Knoten hat genau zwei Nachfolger");
+        System.out.println(
+                "Test von Fall 3: zu entfernender Knoten hat genau zwei Nachfolger");
         System.out.println("Baum nach entfernen von crab:");
         System.out.println("");
         binBaum1.KnotenEntfernen("crab");
@@ -145,7 +165,8 @@ public class BinBaumTest
         System.out.println("");
         System.out.println("---------------------------------------");
 
-        System.out.println("Test von Fall 1: zu entfernender Knoten ist ein Blatt");
+        System.out.println(
+                "Test von Fall 1: zu entfernender Knoten ist ein Blatt");
         System.out.println("Baum nach entfernen von cook:");
         System.out.println("");
         binBaum1.KnotenEntfernen2("cook");
@@ -153,7 +174,8 @@ public class BinBaumTest
         System.out.println("");
         System.out.println("---------------------------------------");
 
-        System.out.println("Test von Fall 2: zu entfernender Knoten hat genau einen Nachfolger");
+        System.out.println(
+                "Test von Fall 2: zu entfernender Knoten hat genau einen Nachfolger");
         System.out.println("Baum nach entfernen von car:");
         System.out.println("");
         binBaum1.KnotenEntfernen2("car");
@@ -161,7 +183,8 @@ public class BinBaumTest
         System.out.println("");
         System.out.println("---------------------------------------");
 
-        System.out.println("Test von Fall 3: zu entfernender Knoten hat genau zwei Nachfolger");
+        System.out.println(
+                "Test von Fall 3: zu entfernender Knoten hat genau zwei Nachfolger");
         System.out.println("Baum nach entfernen von crab:");
         System.out.println("");
         binBaum1.KnotenEntfernen2("crab");

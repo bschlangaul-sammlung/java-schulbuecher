@@ -1,12 +1,17 @@
+package org.bschlangaul.schulbuecher.cornelsen.informatik_6_ga_2024.kapitel_02.thema_05.aufgabe_06.teilaufgabe_e.buchstabenhaeufigkeit;
+
 /**
- * Klasse ermöglicht eine Analyse der absoluten Häufigkeiten von Zeichen in einem Text
- * 
+ * Klasse ermöglicht eine Analyse der absoluten Häufigkeiten von Zeichen in
+ * einem Text
+ *
  * @author Peter Brichzin
+ *
  * @version 30.5.24
  */
 class Haeufigkeitsanalyse
 {
     private BinBaum textzeichen;
+
     private Dateileser dateileser;
 
     /**
@@ -26,7 +31,7 @@ class Haeufigkeitsanalyse
      */
     void TextAnalysieren(String text)
     {
-        for(int i=0; i< text.length(); i = i+1)
+        for (int i = 0; i < text.length(); i = i + 1)
         {
             textzeichen.Einfügen(new Textzeichen(text.charAt(i)));
         }
@@ -42,11 +47,11 @@ class Haeufigkeitsanalyse
     void TextAnalysieren2(String text)
     {
         String angepassterText;
-        //Groß und Kleinschreibung ignorieren
+        // Groß und Kleinschreibung ignorieren
         angepassterText = text.toLowerCase();
-        //Leerzeichen ignorieren
+        // Leerzeichen ignorieren
         angepassterText = angepassterText.replace(" ", "");
-        //Satzzeichen ignorieren
+        // Satzzeichen ignorieren
         angepassterText = angepassterText.replace(",", "");
         angepassterText = angepassterText.replace(".", "");
         angepassterText = angepassterText.replace(";", "");
@@ -59,7 +64,7 @@ class Haeufigkeitsanalyse
         angepassterText = angepassterText.replace("«", "");
         angepassterText = angepassterText.replace("»", "");
 
-        for(int i=0; i< angepassterText.length(); i = i+1)
+        for (int i = 0; i < angepassterText.length(); i = i + 1)
         {
             textzeichen.Einfügen(new Textzeichen(angepassterText.charAt(i)));
         }
@@ -67,8 +72,8 @@ class Haeufigkeitsanalyse
     }
 
     /**
-     * Analysiere der absoluten Häufigkeiten von Zeichen in einen Text, der 
-     * aus einer Datei eingelesen wird, und Ausgabe des Ergebnisses auf der Konsole.
+     * Analysiere der absoluten Häufigkeiten von Zeichen in einen Text, der aus
+     * einer Datei eingelesen wird, und Ausgabe des Ergebnisses auf der Konsole.
      *
      * @param dateiname Dateiname
      */
@@ -79,9 +84,9 @@ class Haeufigkeitsanalyse
     }
 
     /**
-     * Analysiere der absoluten Häufigkeiten von Zeichen OHNE Leer- und Satzzeichen
-     * in einen Text, der aus einer Datei eingelesen wird, 
-     * und Ausgabe des Ergebnisses auf der Konsole.
+     * Analysiere der absoluten Häufigkeiten von Zeichen OHNE Leer- und
+     * Satzzeichen in einen Text, der aus einer Datei eingelesen wird, und
+     * Ausgabe des Ergebnisses auf der Konsole.
      *
      * @param dateiname Dateiname
      */
