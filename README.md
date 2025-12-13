@@ -334,13 +334,15 @@ approval_date: 06.07.2010
 
 #### `paetec/informatik_10_2008`
 
+Informatik 10, 2008: Gymnasium Bayern - 10. Jahrgangsstufe
+
 ```yml
 reference_title: Informatik 10
 reference_subtitle: Gymnasium Bayern - 10. Jahrgangsstufe
 author: Matthias Ehmann, Frank Fiedler, Franz Xaver Forman, Manuel Friedrich, Ute Heuer, Susanne Ritzer
 isbn: 978-3-835-56002-4
 year: 2008
-publisher: Duden Paetec
+publisher: Duden Paetec / Buchner
 ```
 
 ## `package-info.java`
