@@ -149,6 +149,65 @@ publisher_decription: |
   - Zahlreiche Datenbanken mit schülernahen und echten Datensätzen. Die notwendigen Vorlagen für den eigenen Datenbankserver oder SQL-Abfragen lassen sich direkt im Browser durchführen.
   - Eine eigene kleine Game-Engine (Graphics and Games) für Programmieranfänger/-innen für interessante, schüleraktivierende und flexible Beispiele.
   - Die gleiche Plattform für alle Programmiersprachen: alle Vorlagen und Lösungen für Java, Stride, Python und Swift mit Möglichkeit der Adaption an weitere Sprachen. Dadurch werden die Gemeinsamkeiten der Sprachen und das Modellieren betont.
+
+table_of_contents: |
+  Funktionale Modellierung und Tabellenkalkulation (Seite 7)
+    1.1 Tabellenkalkulationssysteme: Rechnen mit Rechenblättern (Seite 8)
+    1.2 Geschickt kopieren: relative und absolute Zellbezüge (Seite 14)
+    1.3 Funktionen (Seite 20)
+    1.4 Berechnungen analysieren: Das Datenflussdiagramm (Seite 26)
+    1.5 Die Übersicht behalten: Funktionen zusammenfassen (Seite 32)
+    1.6 Eingabewerte mehrfach nutzen: Datenverteiler (Seite 36)
+    1.7 WENN-Funktion (Seite 40)
+    1.8 Logische Funktionen (Seite 44)
+    1.9 Miniprojekte und weiterführende Aufgaben (Seite 48)
+    Teste dich selbst! (Seite 51)
+    Zusammenfassung (Seite 52)
+    Zum Weiterlesen
+      L1 Aus der Praxis: Unternehmensberatung (Seite 54)
+      L2 Geschichte der Tabellenkalkulation (Seite 55)
+      L3 Barcodes (Seite 56)
+      L4 Zahlen unterschiedlich dargestellt (Seite 58)
+  2 Datenmodellierung und Datenbanken (Seite 59)
+    2.1 Einfache Datenbankabfragen (Seite 60)
+    2.2 Tipps und Tricks für Abfragen (Seite 66)
+    2.3 Objektorientierte Datenmodellierung (Seite 70)
+    2.4 Primärschlüssel: natürlich oder künstlich (Seite 76)
+    *2.5 Abfragen mit Aggregatfunktionen (Seite 80)
+    *2.6 Ergebnisse durch Gruppierung zusammenfassen (Seite 84)
+    2.7 Miniprojekte und weiterführende Aufgaben (Seite 87)
+    Teste dich selbst! (Seite 90)
+    Zusammenfassung (Seite 91)
+    Zum Weiterlesen
+      L5 Datenbankmanagementsysteme und ihre Datentypen (Seite 92)
+      L6 Biometrische Daten als Schlüssel (Seite 92)
+      L7 Aus der Praxis: Große Datenbank (Seite 93)
+      L8 Index als schnelle Suchhilfe (Seite 94)
+  3 Datenschutz (Seite 95)
+    3.1 Datenschutzregelungen aus unterschiedlichen Blickwinkeln (Seite 96)
+    3.2 Data Mining (Seite 100)
+    Zum Weiterlesen
+      L9 Aus der Praxis: Hacker (Seite 104)
+  4 Objektorientierte Modellierung und Programmierung (Seite 105)
+    4.1 Vorbereitung auf‘s Programmieren: Arbeiten mit Objekten (Seite 106)
+    4.2 Erste eigene Klasse – Methoden in Unterklassen schreiben (Seite 112)
+    4.3 Wiederholung mit Bedingung (Seite 118)
+    4.4 Die bedingte Anweisung (Seite 124)
+    4.5 Methoden anpassen (Seite 130)
+    4.6 Attribute – Vereinbarung und Initialisierung (Seite 136)
+    4.7 Vielseitig einsetzbar: Weitere Kontrollstrukturen (Seite 140)
+    4.8 Methoden mit Rückgabewert und Variablenkonzept (Seite 146)
+    4.9 Miniprojekte – Modellieren in der Informatik (Seite 152)
+    Teste dich selbst! (Seite 156)
+    Projekte mit einer Game-Engine (Seite 157)
+    Zusammenfassung (Seite 162)
+    Zum Weiterlesen
+      L10 Entwicklung der Programmiersprachen (Seite 164)
+      L11 Kleine Fehler, große Wirkung (Seite 166)
+      L12 Zufallszahlengeneratoren (Seite 167)
+      Lösungen zu „Teste dich selbst!“ (Seite 169)
+      Stichwortverzeichnis (Seite 173)
+      Bildquellenverzeichnis (Seite 176)
 ```
 
 #### `cornelsen/informatik_5_2023`
