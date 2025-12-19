@@ -1,6 +1,6 @@
 
 /**
- * Cheese-Champions (aus 17. Bundeswettbewerb Informatik)
+ * Cheese-Champions (aus 17{@literal .} Bundeswettbewerb Informatik)
  *
  * <p>
  * Prof. Grips will die Durchsetzungsfähigkeit einzelner Mäuse einer
@@ -31,7 +31,7 @@
  *
  * <p>
  * Prof. Grips nummeriert die Mäuse in der Reihenfolge, in der sie in den Gang
- * hineinlaufen, mit 1,2, 3, .. und beobachtet, in welcher Reihenfolge sie beim
+ * hineinlaufen, mit 1, 2, 3, .. und beobachtet, in welcher Reihenfolge sie beim
  * Käse ankommen.
  * </p>
  *
