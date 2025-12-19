@@ -9,15 +9,22 @@ import java.util.ArrayList;
  *
  * @version 1.0
  */
+@SuppressWarnings("unused")
 class Speicher
 {
-    /** Zählt, wie oft der Erzeuger Warten() aufruft */
+    /**
+     * Zählt, wie oft der Erzeuger Warten() aufruft
+     */
     private int wartenErz;
 
-    /** Zählt, wie oft der Verbraucher Warten() aufruft */
+    /**
+     * Zählt, wie oft der Verbraucher Warten() aufruft
+     */
     private int wartenVerb;
 
-    /** Speicherplätze */
+    /**
+     * Speicherplätze
+     */
     private ArrayList<Kiste> kistenspeicher;
 
     /**

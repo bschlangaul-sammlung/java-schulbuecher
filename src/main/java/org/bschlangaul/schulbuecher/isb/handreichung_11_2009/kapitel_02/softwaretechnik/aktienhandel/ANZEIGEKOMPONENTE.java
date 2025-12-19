@@ -5,9 +5,6 @@ import java.awt.Graphics;
 
 import javax.swing.JComponent;
 
-/**
- * Write a description of class ANZEIGECOMPONENTE here.
- */
 class ANZEIGEKOMPONENTE extends JComponent
 {
     private double[] kurse;

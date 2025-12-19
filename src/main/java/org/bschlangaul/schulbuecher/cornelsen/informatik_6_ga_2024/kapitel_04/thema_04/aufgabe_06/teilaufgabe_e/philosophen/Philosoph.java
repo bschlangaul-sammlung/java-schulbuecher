@@ -11,9 +11,12 @@ import org.bschlangaul.schulbuecher.cornelsen.shared.graphics_and_games.Kreis;
  *
  * @version 1.0
  */
+@SuppressWarnings("unused")
 class Philosoph extends Thread
 {
-    /** Id des Philosophen */
+    /**
+     * Id des Philosophen
+     */
     private int id;
 
     /**
@@ -22,19 +25,29 @@ class Philosoph extends Thread
      */
     private int wartezeit;
 
-    /** Teller des Philosophen */
+    /**
+     * Teller des Philosophen
+     */
     private Kreis teller;
 
-    /** Farbe des Tellers */
+    /**
+     * Farbe des Tellers
+     */
     private String tellerfarbe;
 
-    /** Referenz auf die linke Gabel */
+    /**
+     * Referenz auf die linke Gabel
+     */
     private Gabel gabelLinks;
 
-    /** Referenz auf die rechte Gabel */
+    /**
+     * Referenz auf die rechte Gabel
+     */
     private Gabel gabelRechts;
 
-    /** Zufallsgenerator */
+    /**
+     * Zufallsgenerator
+     */
     private Random ran;
 
     /**

@@ -32,11 +32,11 @@ class OBERFLAECHE implements OBERFLAECHENINTERFACE, STATUSBEOBACHTER
 
     private JTextField anzahl, kontostand;
 
-    private JList paketListe, aktienListe;
+    private JList<String> paketListe, aktienListe;
 
     private JTextArea status;
 
-    private JComboBox konten;
+    private JComboBox<String> konten;
 
     private KONTROLLEURINTERFACE kontrolleur;
 
@@ -99,9 +99,8 @@ class OBERFLAECHE implements OBERFLAECHENINTERFACE, STATUSBEOBACHTER
     private void FensterAnlegen()
     {
         JButton button;
-        JLabel label;
         JPanel panel;
-        JPanel hauptPanel, aktienPanel, einkaufPanel, anzahlPanel, kontoPanel;
+        JPanel hauptPanel, aktienPanel, einkaufPanel, kontoPanel;
         fenster = new JFrame("Aktienhandel");
         // In dem Panel hauptPanel findet die gesamte Darstellung statt.
         // Die Unterelemente (wieder eigene Panele mit Borderlayout)
@@ -115,7 +114,7 @@ class OBERFLAECHE implements OBERFLAECHENINTERFACE, STATUSBEOBACHTER
         aktienPanel = new JPanel();
         aktienPanel.setLayout(new BorderLayout());
         aktienPanel.setBorder(new TitledBorder("Aktien auf dem Markt"));
-        aktienListe = new JList();
+        aktienListe = new JList<>();
         aktienListe.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         aktienListe.setSelectedIndex(1);
         aktienPanel.add(new JScrollPane(aktienListe));
@@ -182,7 +181,7 @@ class OBERFLAECHE implements OBERFLAECHENINTERFACE, STATUSBEOBACHTER
         einkaufPanel.add(panel, BorderLayout.SOUTH);
         hauptPanel.add(einkaufPanel);
         // Bereich zum Anzeigen des Aktiendepots als Liste
-        paketListe = new JList();
+        paketListe = new JList<>();
         paketListe.setBorder(new TitledBorder("Aktien im Depot"));
         paketListe.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         paketListe.setSelectedIndex(1);
@@ -203,7 +202,7 @@ class OBERFLAECHE implements OBERFLAECHENINTERFACE, STATUSBEOBACHTER
         panel.setLayout(new GridLayout(1, 2, 10, 10));
         panel.setBackground(new Color(180, 180, 255));
         panel.add(new JLabel("Gew\u00E4hltes Konto:"));
-        konten = new JComboBox();
+        konten = new JComboBox<>();
         panel.add(konten);
         kontoPanel.add(panel, BorderLayout.SOUTH);
         hauptPanel.add(kontoPanel);

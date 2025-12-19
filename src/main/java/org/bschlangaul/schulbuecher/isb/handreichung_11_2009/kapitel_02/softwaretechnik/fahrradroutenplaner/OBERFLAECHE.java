@@ -27,15 +27,15 @@ class OBERFLAECHE implements STATUSBEOBACHTER
 
     private JFrame fenster;
 
-    private JComboBox startOrt;
+    private JComboBox<Object> startOrt;
 
-    private JComboBox zielOrt;
+    private JComboBox<Object> zielOrt;
 
     private JLabel status;
 
-    private JList ortInfos;
+    private JList<String> ortInfos;
 
-    private JList wegInfos;
+    private JList<String> wegInfos;
 
     private KONTROLLEUR kontrolleur;
 
@@ -107,20 +107,20 @@ class OBERFLAECHE implements STATUSBEOBACHTER
         l = new JLabel("Zielort:");
         content.add(l);
         l.setBounds(20, 60, 90, 20);
-        startOrt = new JComboBox(orte);
+        startOrt = new JComboBox<>(orte);
         content.add(startOrt);
         startOrt.setBackground(new Color(0, 153, 51));
         startOrt.setBounds(120, 15, 150, 30);
-        zielOrt = new JComboBox(orte);
+        zielOrt = new JComboBox<>(orte);
         content.add(zielOrt);
         zielOrt.setBackground(new Color(240, 0, 0));
         zielOrt.setBounds(120, 55, 150, 30);
-        ortInfos = new JList(ortInfo);
+        ortInfos = new JList<>(ortInfo);
         scroll = new JScrollPane(ortInfos);
         content.add(scroll);
         scroll.setPreferredSize(new Dimension(400, 400));
         scroll.setBounds(420, 310, 400, 200);
-        wegInfos = new JList(wegInfo);
+        wegInfos = new JList<>(wegInfo);
         scroll = new JScrollPane(wegInfos);
         content.add(scroll);
         scroll.setPreferredSize(new Dimension(400, 400));

@@ -1,12 +1,5 @@
 package org.bschlangaul.schulbuecher.isb.handreichung_11_2009.kapitel_02.softwaretechnik.aktienhandel;
 
-/**
- * Write a description of class AKTIENHANDEL here.
- *
- * @author (your name)
- *
- * @version (a version number or a date)
- */
 class AKTIENHANDEL
 {
     /**

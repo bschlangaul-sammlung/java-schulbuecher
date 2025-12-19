@@ -78,8 +78,6 @@ class DATENBANKVERBINDUNG
     {
         ResultSet sqlResult;
         Statement stmt;
-        String name;
-        name = "";
         try
         {
             stmt = conn.createStatement();
@@ -109,9 +107,7 @@ class DATENBANKVERBINDUNG
     {
         ResultSet sqlResult;
         Statement stmt;
-        String name;
         ORT ort1, ort2;
-        name = "";
         try
         {
             stmt = conn.createStatement();

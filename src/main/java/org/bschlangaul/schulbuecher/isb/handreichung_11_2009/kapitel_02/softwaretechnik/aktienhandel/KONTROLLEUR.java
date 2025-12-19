@@ -3,7 +3,7 @@ package org.bschlangaul.schulbuecher.isb.handreichung_11_2009.kapitel_02.softwar
 import java.util.ArrayList;
 
 /**
- * Zusändig für die Weitergabe der Ereignisse.
+ * Zuständig für die Weitergabe der Ereignisse.
  *
  * @version 1.0
  */

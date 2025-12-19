@@ -3,7 +3,6 @@ package org.bschlangaul.schulbuecher.cornelsen.informatik_6_ga_2024.kapitel_02.t
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
-import java.util.ArrayList;
 
 /**
  * Mit der Klasse Dateileser kann ein Text aus einer Datei ausgelesen werden.

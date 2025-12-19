@@ -231,8 +231,6 @@ class DATENBANKVERBINDUNG implements STATUSERZEUGER
     ArrayList<AKTIENPAKET> AktienpaketeGeben()
     {
         ArrayList<AKTIENPAKET> liste;
-        int paketnr;
-        int anzahl;
         ResultSet sqlResult = null;
         Statement stmt = null;
         liste = new ArrayList<AKTIENPAKET>();
