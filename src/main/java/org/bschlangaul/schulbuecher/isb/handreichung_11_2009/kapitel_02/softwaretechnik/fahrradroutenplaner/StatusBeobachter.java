@@ -1,0 +1,25 @@
+package org.bschlangaul.schulbuecher.isb.handreichung_11_2009.kapitel_02.softwaretechnik.fahrradroutenplaner;
+
+/**
+ * Das Interface für einen Beobachter von Statusmeldungen.
+ *
+ * @version 1.0
+ */
+interface StatusBeobachter
+{
+    /**
+     * Empfängt Statusmeldungen
+     *
+     * @param text Text der Statusmeldungen
+     */
+    void StatusSetzen(String text);
+
+    /**
+     * Empfängt die Vorgängerinformation, Start und Ziel
+     *
+     * @param vorgaenger Liste mit der Vorgängerinformation
+     * @param start Name des Startortes
+     * @param ziel Name des Zielortes
+     */
+    void WegSetzen(Liste vorgaenger, String start, String ziel);
+}
