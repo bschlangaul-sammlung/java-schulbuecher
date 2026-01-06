@@ -57,7 +57,6 @@ class Fenster extends Frame
      * Erzeugt ein Spiel in einem Fenster und die zur Anzeige erforderlichen
      * Komponenten
      */
-
     Fenster()
     {
         // Frame-Initialisierung
@@ -167,4 +166,8 @@ class Fenster extends Frame
         setVisible(true);
     }
 
+    public static void main(String[] args)
+    {
+        new Fenster();
+    }
 }

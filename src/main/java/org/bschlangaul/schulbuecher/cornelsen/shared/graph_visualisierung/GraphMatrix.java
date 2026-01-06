@@ -57,7 +57,7 @@ public class GraphMatrix extends Ereignisbehandlung
      * @param x x-Koordinate für die Anzeige des Knotens
      * @param y y-Koordinate für die Anzeige des Knotens
      */
-    void KnotenEinfügen(String bezeichner, int x, int y)
+    public void KnotenEinfügen(String bezeichner, int x, int y)
     {
         knoten.add(new Knoten(bezeichner, x, y));
         for (int index = 0; index < matrix.size(); index++)

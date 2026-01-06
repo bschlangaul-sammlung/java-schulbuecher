@@ -55,6 +55,8 @@ Ohne suffix `_vorlage` handelt es sich um die Lösung
 
 #### `buchner/informatik_9_2021`
 
+Informatik 9, 2021: Gymnasium Bayern (NTG)
+
 ```yml
 folder: buchner/informatik_9_2021
 reference_title: Informatik 9
@@ -69,6 +71,8 @@ publisher_website: https://www.ccbuchner.de/produkt/informatik-gymnasium-bayern-
 ```
 
 #### `buchner/informatik_10_2022`
+
+Informatik 10, 2022: Gymnasium Bayern (NTG)
 
 ```yml
 reference_title: Informatik 10
@@ -86,8 +90,11 @@ approval_number: 335/22-G+
 
 #### `buchner/informatik_11_2022`
 
+Informatik 11, 2023: Gymnasium Bayern Sek II
+
 ```yml
 reference_title: Informatik 11
+reference_subtitle: Gymnasium Bayern Sek II
 publisher: Buchner
 release_date: 2023
 publisher_website: https://www.ccbuchner.de/produkt/informatik-gymnasium-bayern-11-8541
@@ -126,6 +133,8 @@ Vorlagen von `GraphicsAndGames`:
 - [11. Jahrgangsstufe](https://informatikschulbuch.de/jahrgangsstufe-11/vernetze-strukturen-grapen-kapitel-1-informatik-5/)
 
 #### `cornelsen/informatik-3_2021`
+
+Informatik 3, 2021: Gymnasium Bayern - Ausgabe 2017 · Band 3 Funktionale Modellierung, Datenmodellierung, Objektorientierte Modellierung (Jgst. 9)
 
 ```yml
 ref: Informatik-3_Cornelsen_2021
@@ -212,6 +221,8 @@ table_of_contents: |
 
 #### `cornelsen/informatik_5_2023`
 
+Informatik 5 (Bayern | NTG), 2023: Graphen | Codierung | Kommunikation in Netzwerken | Künstliche Intelligenz
+
 ```yml
 ref: Informatik-5_Cornelsen_2023
 reference_title: Informatik 5 (Bayern | NTG)
@@ -230,6 +241,8 @@ publisher_website: https://www.cornelsen.de/produkte/9783637024731
 ```
 
 #### `cornelsen/informatik_6_ga_2024`
+
+Informatik 6 Bayern | NTG | Grundlegendes Niveau, 2024: Listen | Bäume | Rekursion - Nebenläufigkeit und Threads - Informationssicherheit -  Softwareprojekte
 
 ```yml
 ref: Informatik-6_gA_Cornelsen_2024
@@ -300,6 +313,8 @@ z. B. `isb/abitur/pruefung_2024/inf1/aufgabe_i/teilaufgabe_04/schwerionen_zerfal
 
 #### `isb/handreichung_10_2008`
 
+Handreichung Informatik 10, 2008: Informatik am Naturwissenschaftlich-technologischen Gymnasium Jahrgangsstufe 10
+
 ```yml
 reference_title: Handreichung Informatik 10
 reference_subtitle:
@@ -313,6 +328,8 @@ publisher: >-
 
 #### `isb/handreichung_11_2009`
 
+Handreichung Informatik 11, 2009: Informatik am Naturwissenschaftlich-technologischen Gymnasium Jahrgangsstufe 11
+
 ```yml
 reference_title: Handreichung Informatik 11
 reference_subtitle:
@@ -325,6 +342,8 @@ publisher: >-
 ```
 
 #### `isb/handreichung_12_2010`
+
+Handreichung Informatik 12, 2010: Informatik am Naturwissenschaftlich-technologischen Gymnasium Jahrgangsstufe 12
 
 ```yml
 reference_title: Handreichung Informatik 12
@@ -342,6 +361,8 @@ author: >-
 ### `klett`
 
 #### `klett/informatik_2_2021`
+
+Informatik 2, 2021: Tabellenkalkulationssysteme, Datenbanken, Objektorientiere Programmierung, Datenschutz | Ausgabe Bayern ab 2018 | Klassen 9/10
 
 ```yml
 reference_title: Informatik 2
@@ -365,6 +386,8 @@ approval_date: 29.06.2021
 
 #### `oldenbourg/informatik_oberstufe_1_2009`
 
+Informatik Oberstufe 1, 2009: Datenstrukturen und Softwareentwicklung
+
 ```yml
 reference_title: Informatik Oberstufe 1
 reference_subtitle: Datenstrukturen und Softwareentwicklung
@@ -377,6 +400,8 @@ approval_date: 02.07.2009
 ```
 
 #### `oldenbourg/informatik_oberstufe_2_2010`
+
+Informatik Oberstufe 2, 2010: Maschinenkommunikation, Theoretische Informatik
 
 ```yml
 reference_title: Informatik Oberstufe 2
@@ -393,13 +418,15 @@ approval_date: 06.07.2010
 
 #### `paetec/informatik_10_2008`
 
+Informatik 10, 2008: Gymnasium Bayern - 10. Jahrgangsstufe
+
 ```yml
 reference_title: Informatik 10
 reference_subtitle: Gymnasium Bayern - 10. Jahrgangsstufe
 author: Matthias Ehmann, Frank Fiedler, Franz Xaver Forman, Manuel Friedrich, Ute Heuer, Susanne Ritzer
 isbn: 978-3-835-56002-4
 year: 2008
-publisher: Duden Paetec
+publisher: Duden Paetec / Buchner
 ```
 
 ## `package-info.java`

@@ -157,12 +157,6 @@ class BinBaum
                 / (HöheGeben() + 2); // +2 statt +1, damit unten ein Rand bleibt
         int breite = Zeichenfenster.MalflächenBreiteGeben();
 
-        int maxAnzahlKnotenUntersteEbene = (int) Math.pow(2, HöheGeben());
-        int dx = breite / (maxAnzahlKnotenUntersteEbene + 1); // +1, damit
-                                                              // rechts und
-                                                              // links ein Rand
-                                                              // bleibt
-
         wurzel.KnotenZeichnen(0, breite, 25, höhenschritt, null); // y= 20 für
                                                                   // die 0te
                                                                   // Ebene,
