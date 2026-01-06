@@ -3,7 +3,6 @@ package org.bschlangaul.schulbuecher.cornelsen.informatik_6_ga_2024.kapitel_01.t
 /**
  * Beschreibung des Stapels
  *
- *
  * @author Klaus Reinold
  *
  * @version 1.0
