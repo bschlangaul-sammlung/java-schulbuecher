@@ -1,4 +1,4 @@
-package org.bschlangaul.schulbuecher.isb.k_means.leicht.Projekt;
+package schulbuecher.isb.k_means.leicht.Projekt;
 
 public class PUNKT
 {

@@ -1,4 +1,4 @@
-package org.bschlangaul.schulbuecher.cornelsen.informatik_3_2017.kapitel_04.thema_projekt.aufgabe_7.jump_n_run;
+package schulbuecher.cornelsen.informatik_3_2017.kapitel_04.thema_projekt.aufgabe_7.jump_n_run;
 
 import ea.edu.EduActor;
 import ea.edu.Text;

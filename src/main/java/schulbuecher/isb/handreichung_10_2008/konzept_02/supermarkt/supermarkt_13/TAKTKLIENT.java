@@ -1,0 +1,16 @@
+package schulbuecher.isb.handreichung_10_2008.konzept_02.supermarkt.supermarkt_13;
+
+/**
+ * Methoden der Klienten des Taktgebers.
+ *
+ * @author Albert Wiedemann
+ *
+ * @version 1.0
+ */
+interface TAKTKLIENT
+{
+    /**
+     * Empfngt die Taktimpulse.
+     */
+    void TaktImpulsAusfuehren();
+}

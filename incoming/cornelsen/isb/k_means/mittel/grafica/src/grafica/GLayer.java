@@ -25,7 +25,7 @@
  * @version     1.9.1 (11)
  */
 
-package org.bschlangaul.schulbuecher.isb.k_means.mittel.grafica.src.grafica;
+package schulbuecher.isb.k_means.mittel.grafica.src.grafica;
 
 import java.util.ArrayList;
 import java.util.Arrays;

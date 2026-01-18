@@ -25,7 +25,7 @@
  * @version     1.9.1 (11)
  */
 
-package org.bschlangaul.schulbuecher.isb.k_means.loesung.grafica.src.grafica;
+package schulbuecher.isb.k_means.loesung.grafica.src.grafica;
 
 import processing.core.PVector;
 

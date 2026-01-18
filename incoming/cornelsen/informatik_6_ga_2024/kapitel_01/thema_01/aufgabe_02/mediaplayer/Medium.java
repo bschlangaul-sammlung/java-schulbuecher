@@ -1,4 +1,4 @@
-package org.bschlangaul.schulbuecher.cornelsen.informatik_6.kapitel_01.thema_01.aufgabe_02.mediaplayer;
+package schulbuecher.cornelsen.informatik_6.kapitel_01.thema_01.aufgabe_02.mediaplayer;
 
 /**
  * Beschreibung der Klasse Medium

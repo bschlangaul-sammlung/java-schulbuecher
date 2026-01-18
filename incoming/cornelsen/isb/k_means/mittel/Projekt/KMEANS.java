@@ -1,4 +1,4 @@
-package org.bschlangaul.schulbuecher.isb.k_means.mittel.Projekt;
+package schulbuecher.isb.k_means.mittel.Projekt;
 
 import java.util.Random;
 

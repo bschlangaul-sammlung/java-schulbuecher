@@ -1,4 +1,4 @@
-package org.bschlangaul.schulbuecher.isb.k_means.loesung.Projekt;
+package schulbuecher.isb.k_means.loesung.Projekt;
 
 import processing.core.*;
 import grafica.*;

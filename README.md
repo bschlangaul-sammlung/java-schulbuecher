@@ -123,7 +123,7 @@ Um Klassen von `GraphicsAndGames` zu verwenden, kann folgender `import`
 verwendet werden.
 
 ```java
-import org.bschlangaul.schulbuecher.cornelsen.shared.graphics_and_games.*;
+import schulbuecher.cornelsen.shared.graphics_and_games.*;
 ```
 
 Vorlagen von `GraphicsAndGames`:
