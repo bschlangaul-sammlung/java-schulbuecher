@@ -466,6 +466,8 @@ package thema_xx;
 
 Vorsicht mit Satzzeichen innerhalb von `<em>`.
 
+`aufgabe_00`: `<b>Einstiegs</b>aufgabe`
+
 ```java
 /**
  * Aufgabe <b>3</b> (Seite 10): <em>Patientenverwaltung im Wartezimmer - Teil

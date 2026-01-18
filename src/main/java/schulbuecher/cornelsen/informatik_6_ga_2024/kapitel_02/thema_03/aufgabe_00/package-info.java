@@ -1,9 +1,7 @@
 /**
- * Nutzerverwaltung <b>ohne Kompositum ohne Visualisierung</b>
+ * <b>Einstiegs</b>aufgabe
  *
- * <p>
  * Moritz hat eine Nutzerverwaltung als geordneten Binärbaum umgesetzt.
- * </p>
  *
  * <ul>
  *
@@ -27,4 +25,4 @@
  * Entwurfsmuster genutzt wird.</li>
  * </ul>
  */
-package schulbuecher.cornelsen.informatik_6_ga_2024.kapitel_02.thema_03.aufgabe_00.nutzerverwaltung;
+package schulbuecher.cornelsen.informatik_6_ga_2024.kapitel_02.thema_03.aufgabe_00;

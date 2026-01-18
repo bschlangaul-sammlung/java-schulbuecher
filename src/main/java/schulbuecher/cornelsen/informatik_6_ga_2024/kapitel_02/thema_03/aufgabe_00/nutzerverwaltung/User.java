@@ -7,7 +7,6 @@ package schulbuecher.cornelsen.informatik_6_ga_2024.kapitel_02.thema_03.aufgabe_
  *
  * @version 23.5.24
  */
-
 class User
 {
     /**

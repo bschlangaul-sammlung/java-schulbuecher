@@ -15,10 +15,14 @@ class User
      */
     private int id;
 
-    /** Nachname */
+    /**
+     * Nachname
+     */
     private String nachname;
 
-    /** Vorname */
+    /**
+     * Vorname
+     */
     private String vorname;
 
     /**
