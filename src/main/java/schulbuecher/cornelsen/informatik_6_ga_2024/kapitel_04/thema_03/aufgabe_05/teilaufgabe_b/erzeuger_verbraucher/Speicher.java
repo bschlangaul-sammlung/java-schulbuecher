@@ -11,16 +11,24 @@ import schulbuecher.cornelsen.shared.graphics_and_games.Rechteck;
  */
 class Speicher extends Rechteck
 {
-    /** Gibt an, ob Platz frei ist */
+    /**
+     * Gibt an, ob Platz frei ist
+     */
     private boolean frei;
 
-    /** Die eventuell vorhandene Kiste */
+    /**
+     * Die eventuell vorhandene Kiste
+     */
     private Kiste kiste;
 
-    /** zur Steuerung der Kistendarstellung */
+    /**
+     * zur Steuerung der Kistendarstellung
+     */
     private Kiste kistendarstellung;
 
-    /** zählt die Vergleich mit */
+    /**
+     * zählt die Vergleich mit
+     */
     private int vergleiche;
 
     /**

@@ -11,13 +11,19 @@ import java.util.Random;
  */
 class Boot extends Thread
 {
-    /** Id des Boots */
+    /**
+     * Id des Boots
+     */
     int kennzeichen;
 
-    /** verwaltet die Liegeplätze */
+    /**
+     * verwaltet die Liegeplätze
+     */
     Stegverwaltung steg;
 
-    /** Zufallsgenerator für die Fahr- und Liegezeiten */
+    /**
+     * Zufallsgenerator für die Fahr- und Liegezeiten
+     */
     Random zufallsgenerator;
 
     /**

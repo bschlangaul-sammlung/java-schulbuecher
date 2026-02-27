@@ -2,7 +2,6 @@ package schulbuecher.cornelsen.informatik_6_ga_2024.kapitel_04.thema_02.aufgabe_
 
 public class LCDDisplay
 {
-
     public synchronized void textAusgeben(String text)
     {
         for (char z : text.toCharArray())

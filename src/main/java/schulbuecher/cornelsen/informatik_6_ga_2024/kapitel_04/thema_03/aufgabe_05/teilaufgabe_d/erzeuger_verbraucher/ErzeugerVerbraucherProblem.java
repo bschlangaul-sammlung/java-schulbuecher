@@ -9,13 +9,19 @@ package schulbuecher.cornelsen.informatik_6_ga_2024.kapitel_04.thema_03.aufgabe_
  */
 class ErzeugerVerbraucherProblem
 {
-    /** Speicher beim Erzeuger-Verbraucher-Problem */
+    /**
+     * Speicher beim Erzeuger-Verbraucher-Problem
+     */
     Speicher speicher;
 
-    /** Erzeuger */
+    /**
+     * Erzeuger
+     */
     Erzeuger erzeuger;
 
-    /** Verbraucher */
+    /**
+     * Verbraucher
+     */
     Verbraucher verbraucher;
 
     /**

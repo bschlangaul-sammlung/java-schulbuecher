@@ -9,13 +9,19 @@ package schulbuecher.cornelsen.informatik_6_ga_2024.kapitel_04.thema_03.aufgabe_
  */
 class Erzeuger extends Thread
 {
-    /** Produktionszeit pro Kiste in Millisekunden */
+    /**
+     * Produktionszeit pro Kiste in Millisekunden
+     */
     private int zeit;
 
-    /** Zwischenspeicher */
+    /**
+     * Zwischenspeicher
+     */
     private Speicher speicher;
 
-    /** laufende Nummer der produzierten Kisten */
+    /**
+     * laufende Nummer der produzierten Kisten
+     */
     private int nummer;
 
     /**

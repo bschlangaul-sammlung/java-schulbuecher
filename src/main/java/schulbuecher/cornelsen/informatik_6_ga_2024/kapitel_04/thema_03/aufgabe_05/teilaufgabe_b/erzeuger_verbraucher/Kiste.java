@@ -11,7 +11,9 @@ import schulbuecher.cornelsen.shared.graphics_and_games.Rechteck;
  */
 class Kiste extends Rechteck
 {
-    /** Laufende Nummer der Kiste */
+    /**
+     * Laufende Nummer der Kiste
+     */
     private int nummer;
 
     /**

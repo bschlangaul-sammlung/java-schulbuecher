@@ -11,13 +11,19 @@ import java.util.Random;
  */
 class Verbraucher extends Thread
 {
-    /** Die Produktionszeit pro Kiste in Millisekunden */
+    /**
+     * Die Produktionszeit pro Kiste in Millisekunden
+     */
     private int zeit;
 
-    /** Der Zwischenspeicher */
+    /**
+     * Der Zwischenspeicher
+     */
     private Speicher speicher;
 
-    /** Zufallsgenerator für die unterschiedlichen Zeiten zum Einlagern **/
+    /**
+     * Zufallsgenerator für die unterschiedlichen Zeiten zum Einlagern
+     **/
     private Random zufallsgenerator;
 
     /**

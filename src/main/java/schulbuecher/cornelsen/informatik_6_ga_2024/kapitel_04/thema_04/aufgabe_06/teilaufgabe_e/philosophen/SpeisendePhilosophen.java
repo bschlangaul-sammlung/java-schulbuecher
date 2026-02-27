@@ -14,19 +14,29 @@ import schulbuecher.cornelsen.shared.graphics_and_games.Text;
  */
 class SpeisendePhilosophen
 {
-    /** verwaltet alle Gabeln */
+    /**
+     * verwaltet alle Gabeln
+     */
     private ArrayList<Gabel> gabeln;
 
-    /** verwaltet alle Teller */
+    /**
+     * verwaltet alle Teller
+     */
     private ArrayList<Kreis> teller;
 
-    /** verwaltet alle Tellerfarben */
+    /**
+     * verwaltet alle Tellerfarben
+     */
     private ArrayList<String> tellerfarben;
 
-    /** verwaltet alle Philosophen */
+    /**
+     * verwaltet alle Philosophen
+     */
     private ArrayList<Philosoph> philosophen;
 
-    /** instruierender Text oben im Zeichenfenster */
+    /**
+     * instruierender Text oben im Zeichenfenster
+     */
     private Text anleitung;
 
     /**

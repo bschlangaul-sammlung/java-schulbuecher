@@ -11,16 +11,24 @@ import schulbuecher.cornelsen.shared.graphics_and_games.Figur;
  */
 class Erzeuger extends Thread
 {
-    /** Die Produktionszeit pro Kiste in Millisekunden */
+    /**
+     * Die Produktionszeit pro Kiste in Millisekunden
+     */
     private int zeit;
 
-    /** Der Zwischenspeicher */
+    /**
+     * Der Zwischenspeicher
+     */
     private Speicher speicher;
 
-    /** Die Darstellung des Erzeugers **/
+    /**
+     * Die Darstellung des Erzeugers
+     **/
     private ErzeugerSymbol erzeugerSymbol;
 
-    /** Laufende Nummer der produzierten Kisten */
+    /**
+     * Laufende Nummer der produzierten Kisten
+     */
     private int nummer;
 
     /**

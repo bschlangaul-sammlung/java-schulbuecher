@@ -9,7 +9,9 @@ package schulbuecher.cornelsen.informatik_6_ga_2024.kapitel_04.thema_01.aufgabe_
  */
 public class Lagerist extends Thread
 {
-    /** graphische Darstellung des Lageristen */
+    /**
+     * graphische Darstellung des Lageristen
+     */
     LageristenSymbol symbol;
 
     /**

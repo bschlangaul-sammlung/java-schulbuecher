@@ -9,7 +9,9 @@ package schulbuecher.cornelsen.informatik_6_ga_2024.kapitel_04.thema_03.aufgabe_
  */
 class Parkplatz
 {
-    /** gibt an, ober der Parkplatz belegt ist oder nicht */
+    /**
+     * gibt an, ober der Parkplatz belegt ist oder nicht
+     */
     private boolean frei;
 
     /**

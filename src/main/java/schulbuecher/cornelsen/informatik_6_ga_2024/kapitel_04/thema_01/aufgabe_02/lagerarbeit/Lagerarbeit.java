@@ -9,7 +9,9 @@ package schulbuecher.cornelsen.informatik_6_ga_2024.kapitel_04.thema_01.aufgabe_
  */
 public class Lagerarbeit
 {
-    /** zwei Lageristen */
+    /**
+     * zwei Lageristen
+     */
     Lagerist l1, l2;
 
     /**
@@ -22,5 +24,10 @@ public class Lagerarbeit
 
         l1.start();
         l2.start();
+    }
+
+    public static void main(String[] args)
+    {
+        new Lagerarbeit();
     }
 }

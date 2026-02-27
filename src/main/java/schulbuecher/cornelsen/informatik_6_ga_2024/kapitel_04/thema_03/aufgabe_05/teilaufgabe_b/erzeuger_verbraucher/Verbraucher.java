@@ -11,13 +11,19 @@ import schulbuecher.cornelsen.shared.graphics_and_games.Figur;
  */
 class Verbraucher extends Thread
 {
-    /** Die Produktionszeit pro Kiste in Millisekunden */
+    /**
+     * Die Produktionszeit pro Kiste in Millisekunden
+     */
     private int zeit;
 
-    /** Der Zwischenspeicher */
+    /**
+     * Der Zwischenspeicher
+     */
     private Speicher speicher;
 
-    /** Die Darstellung des Verbrauchers **/
+    /**
+     * Die Darstellung des Verbrauchers
+     **/
     private VerbraucherSymbol verbraucherSymbol;
 
     /**

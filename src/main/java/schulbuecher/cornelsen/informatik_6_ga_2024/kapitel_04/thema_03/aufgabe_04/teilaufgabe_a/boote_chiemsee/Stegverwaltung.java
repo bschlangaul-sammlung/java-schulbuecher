@@ -11,13 +11,19 @@ import java.util.ArrayList;
  */
 class Stegverwaltung
 {
-    /** Boote, die angelegt haben */
+    /**
+     * Boote, die angelegt haben
+     */
     ArrayList<Boot> boote;
 
-    /** Anzahl der Boote, die angelegt haben */
+    /**
+     * Anzahl der Boote, die angelegt haben
+     */
     int bootanzahl;
 
-    /** Hilfsvariable, die einen entstandenen Fehler anzeigt */
+    /**
+     * Hilfsvariable, die einen entstandenen Fehler anzeigt
+     */
     boolean fehler;
 
     /**

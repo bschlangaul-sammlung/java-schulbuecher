@@ -1,6 +1,6 @@
 package schulbuecher.cornelsen.informatik_6_ga_2024.kapitel_04.thema_03.aufgabe_05.teilaufgabe_f.erzeuger_verbraucher;
 
-import java.util.concurrent.*;
+import java.util.concurrent.Semaphore;
 
 /**
  * Zwischenspeicher beim Erzeuger-Verbraucher-Problem
@@ -11,13 +11,19 @@ import java.util.concurrent.*;
  */
 class Speicher
 {
-    /** Gibt an, ob Platz frei ist. */
+    /**
+     * Gibt an, ob Platz frei ist.
+     */
     private boolean frei;
 
-    /** eventuell vorhandene Kiste */
+    /**
+     * eventuell vorhandene Kiste
+     */
     private Kiste kiste;
 
-    /** Semaphor für den Speicher */
+    /**
+     * Semaphor für den Speicher
+     */
     private Semaphore semaphore;
 
     /**

@@ -11,13 +11,19 @@ import schulbuecher.cornelsen.shared.graphics_and_games.Rechteck;
  */
 class Gabel
 {
-    /** gibt an, ob die Gabel aktuell genutzt wird */
+    /**
+     * gibt an, ob die Gabel aktuell genutzt wird
+     */
     private boolean inBenutzung;
 
-    /** Id der Gabel */
+    /**
+     * Id der Gabel
+     */
     private int id;
 
-    /** Darstellung der Gabel */
+    /**
+     * Darstellung der Gabel
+     */
     private Rechteck symbol;
 
     /**
