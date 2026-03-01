@@ -9,4 +9,9 @@ public class Controller
         t1.start();
         t2.start();
     }
+
+    public static void main(String[] args)
+    {
+        Controller.start();
+    }
 }
