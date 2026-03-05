@@ -29,7 +29,7 @@ class Kunde
     public void zeigeEigeneKontoInformationen()
     {
         System.out.println(
-                "Nummer von eigenem Konto: " + eigenesKonto.gibKontonummer());
+            "Nummer von eigenem Konto: " + eigenesKonto.gibKontonummer());
     }
 
     public String gibVorname()

@@ -146,11 +146,11 @@ public class Formular implements Fenster
         frame.add(panel);
         scrollleiste = new JScrollBar(JScrollBar.VERTICAL, 0, 1, 0, 1);
         scrollleiste.addAdjustmentListener(new MeinJustierungsHorcher());
-        scrollleiste.setBounds(panel.getWidth() - 35, 0, 20,
-                panel.getHeight() - 58);
+        scrollleiste
+            .setBounds(panel.getWidth() - 35, 0, 20, panel.getHeight() - 58);
         frame.addWindowListener(new MeinSchliessHorcher());
         frame.getRootPane()
-                .addComponentListener(new MeinKomponentenHorcher(false));
+            .addComponentListener(new MeinKomponentenHorcher(false));
         frame.addComponentListener(new MeinKomponentenHorcher(true));
         frame.addKeyListener(new MeinTastenHorcher());
         panel.setVisible(true);
@@ -284,8 +284,10 @@ public class Formular implements Fenster
         Component c = k.awtKomponenteGeben();
         if (c == null)
             return;
-        c.setBounds(breite / 2 - (c.getWidth() / 2), aktuelleKomponentenhoehe,
-                c.getWidth(), c.getHeight());
+        c.setBounds(breite / 2 - (c.getWidth() / 2),
+            aktuelleKomponentenhoehe,
+            c.getWidth(),
+            c.getHeight());
         k.urspruenglichePositionSichern();
         komponentenliste.addLast(k);
         aktuelleKomponentenhoehe += c.getHeight() + komponentenabstand;
@@ -324,8 +326,10 @@ public class Formular implements Fenster
         {
             breite = frame.getWidth() - 40;
             komponentenErneuern();
-            scrollleiste.setBounds(panel.getWidth() - 35, 0, 20,
-                    panel.getHeight() - 58);
+            scrollleiste.setBounds(panel.getWidth() - 35,
+                0,
+                20,
+                panel.getHeight() - 58);
             scrollleiste.setMaximum(aktuelleKomponentenhoehe - hoehe + 50);
             scrollleiste.setVisible(true);
         }
@@ -357,8 +361,9 @@ public class Formular implements Fenster
             else
             {
                 Font f = ((Text) letzte).awtKomponenteGeben().getFont();
-                return ((Text) letzte).awtKomponenteGeben().getFontMetrics(f)
-                        .getHeight();
+                return ((Text) letzte).awtKomponenteGeben()
+                    .getFontMetrics(f)
+                    .getHeight();
             }
         }
         return 0;
@@ -382,8 +387,10 @@ public class Formular implements Fenster
         for (Formulargrafik k : komponentenliste)
         {
             int yPos = k.urspruenglicheYPosGeben() - wert;
-            k.rahmenSetzen(k.xPositionGeben(), yPos, k.breiteGeben(),
-                    k.hoeheGeben());
+            k.rahmenSetzen(k.xPositionGeben(),
+                yPos,
+                k.breiteGeben(),
+                k.hoeheGeben());
         }
     }
 
@@ -503,9 +510,9 @@ public class Formular implements Fenster
         public void windowClosing(WindowEvent arg0)
         {
             Notiz meldung = new Notiz();// UH
-            if (meldung.jaNeinAntwortLesen(
-                    "Wenn Sie schliessen werden ALLE erzeugten "
-                            + "Objekte entfernt.\n Beabsichtigen Sie dies?"))
+            if (meldung
+                .jaNeinAntwortLesen("Wenn Sie schliessen werden ALLE erzeugten "
+                        + "Objekte entfernt.\n Beabsichtigen Sie dies?"))
             {
                 System.exit(0);
             }
@@ -537,9 +544,10 @@ public class Formular implements Fenster
             this.istFrameListener = istFrameListener;
             hintergrundebene = new JPanel();
             hintergrundebene.setBackground(Color.white);
-            hintergrundebene.setBounds(0, 0,
-                    Toolkit.getDefaultToolkit().getScreenSize().width,
-                    Toolkit.getDefaultToolkit().getScreenSize().height);
+            hintergrundebene.setBounds(0,
+                0,
+                Toolkit.getDefaultToolkit().getScreenSize().width,
+                Toolkit.getDefaultToolkit().getScreenSize().height);
             hintergrundebene.setLayout(null);
             JLabel groesseAendern = new JLabel(
                     "Fenster wird " + "beim Loslassen neu gezeichnet...");
@@ -567,9 +575,9 @@ public class Formular implements Fenster
             else
             {
                 int bildschirmbreite = Toolkit.getDefaultToolkit()
-                        .getScreenSize().width;
+                    .getScreenSize().width;
                 int bildschirmhoehe = Toolkit.getDefaultToolkit()
-                        .getScreenSize().height;
+                    .getScreenSize().height;
                 if (frame.getWidth() >= bildschirmbreite
                         && frame.getHeight() >= bildschirmhoehe)
                 {

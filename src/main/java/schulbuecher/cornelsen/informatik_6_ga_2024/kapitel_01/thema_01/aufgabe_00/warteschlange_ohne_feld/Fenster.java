@@ -140,7 +140,7 @@ class Fenster extends Frame
                 if (entfernter != null)
                 {
                     labelNächster
-                            .setText("Beim Arzt: " + entfernter.NameGeben());
+                        .setText("Beim Arzt: " + entfernter.NameGeben());
                 }
                 else
                 {

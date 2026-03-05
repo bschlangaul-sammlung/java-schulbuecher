@@ -126,7 +126,8 @@ class Fenster extends Frame
                     }
                 }
                 bundesliga.SpielergebnisAufnehmen(choice1.getSelectedItem(),
-                        choice2.getSelectedItem(), sieger);
+                    choice2.getSelectedItem(),
+                    sieger);
                 textArea1.setText(bundesliga.ListeAusgeben());
             }
 

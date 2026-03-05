@@ -33,10 +33,14 @@ class MinusSymbol extends SonderSymbol
                 g.fillOval(größe / 4, größe / 4, größe / 2, größe / 2);
                 g.setColor(Color.blue);
                 g.drawLine(größe / 4, größe / 2, 3 * größe / 4, größe / 2);
-                g.drawLine(größe / 4 + 1, größe / 2 - 1, 3 * größe / 4 - 1,
-                        größe / 2 - 1);
-                g.drawLine(größe / 4 + 1, größe / 2 + 1, 3 * größe / 4 - 1,
-                        größe / 2 + 1);
+                g.drawLine(größe / 4 + 1,
+                    größe / 2 - 1,
+                    3 * größe / 4 - 1,
+                    größe / 2 - 1);
+                g.drawLine(größe / 4 + 1,
+                    größe / 2 + 1,
+                    3 * größe / 4 - 1,
+                    größe / 2 + 1);
             }
         };
         anzeige.setVisible(true);

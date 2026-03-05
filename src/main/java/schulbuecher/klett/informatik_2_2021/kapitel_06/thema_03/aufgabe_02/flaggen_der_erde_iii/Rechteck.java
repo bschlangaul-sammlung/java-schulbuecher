@@ -52,8 +52,9 @@ class Rechteck
     void zeichnen()
     {
         Canvas canvas = Canvas.getCanvas();
-        canvas.draw(this, farbe,
-                new Rectangle2D.Double(linksObenX, linksObenY, laenge, breite));
+        canvas.draw(this,
+            farbe,
+            new Rectangle2D.Double(linksObenX, linksObenY, laenge, breite));
         canvas.wait(10);
     }
 

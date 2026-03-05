@@ -59,31 +59,31 @@ public class GrafikSpeicher
         }
         if (einfacheGrafik instanceof Bild)
             grafikMap.put(einfacheGrafik,
-                    new schulbuecher.paetec.informatik_10_2008.eps.fortgeschrittene_grafik.Bild(
-                            false, fenster));
+                new schulbuecher.paetec.informatik_10_2008.eps.fortgeschrittene_grafik.Bild(
+                        false, fenster));
         else if (einfacheGrafik instanceof Dreieck)
             grafikMap.put(einfacheGrafik,
-                    new schulbuecher.paetec.informatik_10_2008.eps.fortgeschrittene_grafik.Dreieck(
-                            false, fenster));
+                new schulbuecher.paetec.informatik_10_2008.eps.fortgeschrittene_grafik.Dreieck(
+                        false, fenster));
         else if (einfacheGrafik instanceof Ellipse)
             grafikMap.put(einfacheGrafik,
-                    new schulbuecher.paetec.informatik_10_2008.eps.fortgeschrittene_grafik.Ellipse(
-                            false, fenster));
+                new schulbuecher.paetec.informatik_10_2008.eps.fortgeschrittene_grafik.Ellipse(
+                        false, fenster));
         else if (einfacheGrafik instanceof Rechteck)
             grafikMap.put(einfacheGrafik,
-                    new schulbuecher.paetec.informatik_10_2008.eps.fortgeschrittene_grafik.Rechteck(
-                            false, fenster));
+                new schulbuecher.paetec.informatik_10_2008.eps.fortgeschrittene_grafik.Rechteck(
+                        false, fenster));
         else if (einfacheGrafik instanceof Text)// Text mit
                                                 // Standardschriftgroesse
                                                 // anmelden (kann
                                                 // entfernt werden)
             grafikMap.put(einfacheGrafik,
-                    new schulbuecher.paetec.informatik_10_2008.eps.fortgeschrittene_grafik.Text(
-                            false, fenster));
+                new schulbuecher.paetec.informatik_10_2008.eps.fortgeschrittene_grafik.Text(
+                        false, fenster));
         else
             return;
         ((schulbuecher.paetec.informatik_10_2008.eps.fortgeschrittene_grafik.interna.Grafik) grafikMap
-                .get(einfacheGrafik)).fensterGeben().zeichenautomatStarten();
+            .get(einfacheGrafik)).fensterGeben().zeichenautomatStarten();
     }
 
     /**
@@ -98,11 +98,11 @@ public class GrafikSpeicher
         }
         if (einfacheGrafik instanceof Text)
             grafikMap.put(einfacheGrafik,
-                    new schulbuecher.paetec.informatik_10_2008.eps.fortgeschrittene_grafik.Text(
-                            schriftgroesse, false, fenster));
+                new schulbuecher.paetec.informatik_10_2008.eps.fortgeschrittene_grafik.Text(
+                        schriftgroesse, false, fenster));
         else
             return;
         ((schulbuecher.paetec.informatik_10_2008.eps.fortgeschrittene_grafik.interna.Grafik) grafikMap
-                .get(einfacheGrafik)).fensterGeben().zeichenautomatStarten();
+            .get(einfacheGrafik)).fensterGeben().zeichenautomatStarten();
     }
 }

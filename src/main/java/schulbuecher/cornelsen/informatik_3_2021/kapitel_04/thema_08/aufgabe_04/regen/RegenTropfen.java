@@ -24,7 +24,7 @@ class RegenTropfen extends Figur
         FigurTropfenFestlegen();
         zufallsgenerator = new Random();
         PositionSetzen(zufallsgenerator.nextInt(800),
-                zufallsgenerator.nextInt(50) + 25);
+            zufallsgenerator.nextInt(50) + 25);
         WinkelSetzen(270);
     }
 

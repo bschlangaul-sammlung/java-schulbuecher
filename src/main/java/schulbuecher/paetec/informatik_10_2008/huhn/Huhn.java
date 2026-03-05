@@ -132,7 +132,7 @@ public class Huhn
         {
             Dreieck stroh = new Dreieck();
             stroh.positionSetzen(i * 20,
-                    Zeichenfenster.zeichenfensterGeben().hoeheGeben() - 40);
+                Zeichenfenster.zeichenfensterGeben().hoeheGeben() - 40);
             stroh.groesseSetzen(20, 40);
             stroh.farbeSetzen("gelb");
             strohListe.add(stroh);
@@ -224,7 +224,7 @@ public class Huhn
         Bild ei = new Bild();
         ei.dateinameSetzen("ei.jpg");
         ei.positionSetzen(xPosition + breite,
-                Zeichenfenster.zeichenfensterGeben().hoeheGeben() - 50);
+            Zeichenfenster.zeichenfensterGeben().hoeheGeben() - 50);
         ei.groesseSetzen(breite / 3, hoehe / 3);
         ei.anzeigen();
         tonDateiAbspielen("huhn.wav");

@@ -81,7 +81,7 @@ class KundenSymbol
             try
             {
                 aktFarbe = Oberflaeche.FARBE
-                        .valueOf(aktFarbe.getDeclaringClass(), neueFarbe);
+                    .valueOf(aktFarbe.getDeclaringClass(), neueFarbe);
             }
             catch (Exception e)
             {

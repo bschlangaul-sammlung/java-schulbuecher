@@ -92,7 +92,7 @@ class RumpfSymbol
         this.x = x;
         this.y = y;
         anzeige.setLocation(Oberflaeche.FensterBreiteGeben() / 2 + x * größe,
-                Oberflaeche.FensterHöheGeben() / 2 + y * größe);
+            Oberflaeche.FensterHöheGeben() / 2 + y * größe);
     }
 
     /**

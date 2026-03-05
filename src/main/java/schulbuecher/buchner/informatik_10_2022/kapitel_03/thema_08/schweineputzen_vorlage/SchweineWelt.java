@@ -88,7 +88,8 @@ public class SchweineWelt extends World
 
     public void neuesObjektZufaelligPositionieren(Actor actor)
     {
-        addObject(actor, Greenfoot.getRandomNumber(getWidth()),
-                Greenfoot.getRandomNumber(getHeight() - 50));
+        addObject(actor,
+            Greenfoot.getRandomNumber(getWidth()),
+            Greenfoot.getRandomNumber(getHeight() - 50));
     }
 }

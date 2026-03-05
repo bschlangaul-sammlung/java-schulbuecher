@@ -181,7 +181,7 @@ public class Roboterarm
         if (kugel == null)
         {
             if (fliessband.aufErsterKugel(greifer.xPositionGeben(),
-                    greifer.yPositionGeben()))
+                greifer.yPositionGeben()))
             {
                 kugel = fliessband.kugelEntfernen();
             }

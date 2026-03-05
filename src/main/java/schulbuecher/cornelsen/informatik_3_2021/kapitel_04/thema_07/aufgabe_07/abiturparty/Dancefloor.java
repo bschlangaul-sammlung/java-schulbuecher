@@ -52,7 +52,7 @@ class Dancefloor
                 leuchten[spalte][zeile] = new Rechteck();
                 leuchten[spalte][zeile].GrößeSetzen(breite, breite);
                 leuchten[spalte][zeile].PositionSetzen(spalte * breite,
-                        zeile * breite);
+                    zeile * breite);
                 if (farbe == "blau")
                 {
                     farbe = "rot";

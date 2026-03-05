@@ -112,7 +112,7 @@ class GraphMatrix
         else
         {
             System.out.println(
-                    "Es wurde keine Kante erzeugt, da Start- oder Zielknoten nicht existieren.");
+                "Es wurde keine Kante erzeugt, da Start- oder Zielknoten nicht existieren.");
         }
     }
 
@@ -126,7 +126,7 @@ class GraphMatrix
         else
         {
             System.out.println(
-                    "Es wurde keine Kante geloescht, da Start- oder Zielknoten nicht existieren.");
+                "Es wurde keine Kante geloescht, da Start- oder Zielknoten nicht existieren.");
         }
     }
 
@@ -144,7 +144,7 @@ class GraphMatrix
         else
         {
             System.out.println(
-                    "Es wurde kein Knoten erzeugt, da der Graph schon die maximale Anzahl an Knoten enthält.");
+                "Es wurde kein Knoten erzeugt, da der Graph schon die maximale Anzahl an Knoten enthält.");
         }
         return index;
     }

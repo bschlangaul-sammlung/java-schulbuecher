@@ -40,7 +40,7 @@ class KundeKurz extends Kunde
             if (schlangen[i].IstAnstellenMoeglich())
             {
                 if (schlangen[i].KundenanzahlGeben() < beste
-                        .KundenanzahlGeben())
+                    .KundenanzahlGeben())
                 {
                     beste = schlangen[i];
                 }

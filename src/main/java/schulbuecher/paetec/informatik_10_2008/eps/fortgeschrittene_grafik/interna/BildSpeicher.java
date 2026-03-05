@@ -66,13 +66,13 @@ public class BildSpeicher
         if (!istDateiDarstellbar(bilddatei))
         {
             System.err.println(
-                    "Es koennen die Bildformate gif, jpg und png dargestellt werden.\n"
-                            + "Die Datei\n    " + bilddatei
-                            + "\nhat wahrscheinlich ein nicht darstellbares Format.");
+                "Es koennen die Bildformate gif, jpg und png dargestellt werden.\n"
+                        + "Die Datei\n    " + bilddatei
+                        + "\nhat wahrscheinlich ein nicht darstellbares Format.");
             return null;
         }
         bild = new ImageIcon(Bild.class.getResource(ordnerpfad + bilddatei))
-                .getImage();
+            .getImage();
         bildSpeichern(bild, bilddatei);
         return bild;
     }

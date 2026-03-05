@@ -62,7 +62,7 @@ public class Dreieck
         sichtbar = true;
         winkel = 0;
         symbol = Zeichenfenster
-                .SymbolErzeugen(Zeichenfenster.SymbolArt.dreieck);
+            .SymbolErzeugen(Zeichenfenster.SymbolArt.dreieck);
         symbol.PositionSetzen(x - breite / 2, y);
         symbol.GrößeSetzen(breite, höhe);
         symbol.FarbeSetzen(farbe);

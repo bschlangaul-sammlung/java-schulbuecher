@@ -62,20 +62,22 @@ public class Kunstwelt extends World
             img.setColor(zelle.berechneFarbe());
             int x = zelle.getX();
             int y = zelle.getY();
-            System.out.println("pos: (" + x + "|" + y + "), color: "
-                    + zelle.berechneFarbe());
-            img.fillRect(x * getCellSize(), y * getCellSize(), getCellSize(),
-                    getCellSize());
+            System.out.println(
+                "pos: (" + x + "|" + y + "), color: " + zelle.berechneFarbe());
+            img.fillRect(x * getCellSize(),
+                y * getCellSize(),
+                getCellSize(),
+                getCellSize());
         }
         try
         {
-            ImageIO.write(img.getAwtImage(), "PNG",
-                    new File(dateiname + ".png"));
+            ImageIO
+                .write(img.getAwtImage(), "PNG", new File(dateiname + ".png"));
         }
         catch (Exception e)
         {
-            System.err.println(
-                    "Bildname '" + dateiname + ".png ist nicht gültig!");
+            System.err
+                .println("Bildname '" + dateiname + ".png ist nicht gültig!");
         }
         // img.getAwtImage()
     }

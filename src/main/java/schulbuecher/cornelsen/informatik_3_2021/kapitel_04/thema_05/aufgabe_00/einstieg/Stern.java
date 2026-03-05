@@ -49,7 +49,7 @@ class Stern extends Hindernis
                     else
                     {
                         System.out.println(
-                                "unbekannte Richtung in Methode Bewegen, Klasse Hindernis");
+                            "unbekannte Richtung in Methode Bewegen, Klasse Hindernis");
                     }
                 }
             }
@@ -137,7 +137,7 @@ class Stern extends Hindernis
                                     else
                                     {
                                         System.out.println(
-                                                "unbekannte Richtung in Methode Bewegen, Klasse Hindernis");
+                                            "unbekannte Richtung in Methode Bewegen, Klasse Hindernis");
                                     }
                                 }
                             }

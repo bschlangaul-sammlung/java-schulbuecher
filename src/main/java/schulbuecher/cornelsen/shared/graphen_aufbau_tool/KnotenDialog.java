@@ -52,7 +52,7 @@ class KnotenDialog extends JDialog
         setSize(300, 190);
         setVisible(false);
         setLocation(fenster.getX() + fenster.getWidth() / 2 - 150,
-                fenster.getY());
+            fenster.getY());
         JLabel l = new JLabel();
         l.setSize(180, 20);
         l.setLocation(10, 10);
@@ -121,8 +121,9 @@ class KnotenDialog extends JDialog
                 catch (Exception ex)
                 {
                     JOptionPane.showMessageDialog(null,
-                            "Fehler beim Konvertieren der Koordinaten",
-                            "Fehlermeldung", JOptionPane.ERROR_MESSAGE);
+                        "Fehler beim Konvertieren der Koordinaten",
+                        "Fehlermeldung",
+                        JOptionPane.ERROR_MESSAGE);
                     return;
                 }
                 if (empfänger.BezeichnerPrüfen(beschriftung.getText()))
@@ -133,8 +134,9 @@ class KnotenDialog extends JDialog
                 else
                 {
                     JOptionPane.showMessageDialog(null,
-                            "Knotenbezeichner doppelt vergeben",
-                            "Fehlermeldung", JOptionPane.ERROR_MESSAGE);
+                        "Knotenbezeichner doppelt vergeben",
+                        "Fehlermeldung",
+                        JOptionPane.ERROR_MESSAGE);
                 }
             }
         });

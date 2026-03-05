@@ -56,7 +56,7 @@ public class Text
         winkel = 0;
         textgröße = 12;
         symbol = (Zeichenfenster.TextIntern) Zeichenfenster
-                .SymbolErzeugen(Zeichenfenster.SymbolArt.text);
+            .SymbolErzeugen(Zeichenfenster.SymbolArt.text);
         symbol.PositionSetzen(x, y);
         symbol.FarbeSetzen(farbe);
         symbol.SichtbarkeitSetzen(sichtbar);

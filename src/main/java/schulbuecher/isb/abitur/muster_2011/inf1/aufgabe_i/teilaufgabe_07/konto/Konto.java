@@ -19,7 +19,7 @@ public class Konto
     void datenAusgeben()
     {
         System.out.println(
-                "Kontonummer: " + kontonummer + ", Kontostand: " + kontostand);
+            "Kontonummer: " + kontonummer + ", Kontostand: " + kontostand);
     }
 
     boolean kontonummerPruefen(int ktnr)

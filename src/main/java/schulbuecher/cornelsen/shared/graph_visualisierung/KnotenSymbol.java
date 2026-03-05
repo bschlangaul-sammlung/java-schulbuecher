@@ -88,8 +88,8 @@ public class KnotenSymbol
         innen.RadiusSetzen(r - 2);
         innen.FarbeSetzen(farbe);
         text.PositionSetzen(
-                x - bezeichner.length() / 2 * 10 - bezeichner.length() % 2 * 5,
-                y + 6);
+            x - bezeichner.length() / 2 * 10 - bezeichner.length() % 2 * 5,
+            y + 6);
         text.TextSetzen(bezeichner);
     }
 

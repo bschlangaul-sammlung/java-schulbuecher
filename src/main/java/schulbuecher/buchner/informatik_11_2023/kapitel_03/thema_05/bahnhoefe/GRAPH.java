@@ -115,11 +115,11 @@ public class GRAPH
         }
         // Ausgabe der kürzesten Verbindung
         System.out.println(
-                "Kürzeste Verbindung von " + start + " nach " + ende + ":");
+            "Kürzeste Verbindung von " + start + " nach " + ende + ":");
         for (int i = schritt - 1; i >= 0; i--)
         {
-            System.out.print(
-                    knotennamen[reihenfolge[i]].bezeichnerGeben() + " -> ");
+            System.out
+                .print(knotennamen[reihenfolge[i]].bezeichnerGeben() + " -> ");
         }
         System.out.print(" Ende ");
     }
@@ -137,8 +137,8 @@ public class GRAPH
 
     private void reihenfolgeAusgeben(int[] feld)
     {
-        System.out.println(
-                "Der Durchlauf der Breitensuche ergibt die Reihenfolge: ");
+        System.out
+            .println("Der Durchlauf der Breitensuche ergibt die Reihenfolge: ");
         System.out.print(knotennamen[feld[0]].bezeichnerGeben()); // feld[0]
         for (int i = 1; i < feld.length; i++)
         {

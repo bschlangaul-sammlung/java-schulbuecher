@@ -107,7 +107,7 @@ class Fenster extends Frame
         labelUnterueberschrift.setBounds(8, 32, 115, 16);
         labelUnterueberschrift.setText("Praxis Dr. Krankl");
         labelUnterueberschrift
-                .setFont(new Font("MS Sans Serif", Font.BOLD, 13));
+            .setFont(new Font("MS Sans Serif", Font.BOLD, 13));
         fenster.add(labelUnterueberschrift);
         knopfEinfuegen.setBounds(144, 80, 81, 33);
         knopfEinfuegen.setLabel("Einfügen");
@@ -133,7 +133,7 @@ class Fenster extends Frame
                 if (entfernter != null)
                 {
                     labelNaechster
-                            .setText("Der Nächste: " + entfernter.NameGeben());
+                        .setText("Der Nächste: " + entfernter.NameGeben());
                 }
                 else
                 {

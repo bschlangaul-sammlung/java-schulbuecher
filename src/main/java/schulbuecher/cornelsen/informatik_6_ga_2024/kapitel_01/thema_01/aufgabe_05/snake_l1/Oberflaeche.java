@@ -104,27 +104,35 @@ class Oberflaeche
                 g.setColor(Color.lightGray);
                 for (int i = 1; i <= höheFenster / (rasterGröße * 2); i++)
                 {
-                    g.drawLine(0, höheFenster / 2 + i * rasterGröße,
-                            breiteFenster - 1,
-                            höheFenster / 2 + i * rasterGröße);
-                    g.drawLine(0, höheFenster / 2 - i * rasterGröße,
-                            breiteFenster - 1,
-                            höheFenster / 2 - i * rasterGröße);
+                    g.drawLine(0,
+                        höheFenster / 2 + i * rasterGröße,
+                        breiteFenster - 1,
+                        höheFenster / 2 + i * rasterGröße);
+                    g.drawLine(0,
+                        höheFenster / 2 - i * rasterGröße,
+                        breiteFenster - 1,
+                        höheFenster / 2 - i * rasterGröße);
                 }
                 for (int i = 1; i <= breiteFenster / (rasterGröße * 2); i++)
                 {
-                    g.drawLine(breiteFenster / 2 + i * rasterGröße, 0,
-                            breiteFenster / 2 + i * rasterGröße,
-                            höheFenster - 1);
-                    g.drawLine(breiteFenster / 2 - i * rasterGröße, 0,
-                            breiteFenster / 2 - i * rasterGröße,
-                            höheFenster - 1);
+                    g.drawLine(breiteFenster / 2 + i * rasterGröße,
+                        0,
+                        breiteFenster / 2 + i * rasterGröße,
+                        höheFenster - 1);
+                    g.drawLine(breiteFenster / 2 - i * rasterGröße,
+                        0,
+                        breiteFenster / 2 - i * rasterGröße,
+                        höheFenster - 1);
                 }
                 g.setColor(Color.black);
-                g.drawLine(0, höheFenster / 2, breiteFenster - 1,
-                        höheFenster / 2);
-                g.drawLine(breiteFenster / 2, 0, breiteFenster / 2,
-                        höheFenster - 1);
+                g.drawLine(0,
+                    höheFenster / 2,
+                    breiteFenster - 1,
+                    höheFenster / 2);
+                g.drawLine(breiteFenster / 2,
+                    0,
+                    breiteFenster / 2,
+                    höheFenster - 1);
             }
         };
         hintergrund.setVisible(true);

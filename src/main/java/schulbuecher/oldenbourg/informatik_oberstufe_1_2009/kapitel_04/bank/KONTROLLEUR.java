@@ -84,13 +84,13 @@ class KONTROLLEUR implements KONTROLLEURINTERFACE
             if (k.PinGeben() == pin)
             {
                 aktkunde = k;
-                oberflaeche.StatusSetzen(
-                        OBERFLAECHENINTERFACE.Status.kundenkontowahl);
+                oberflaeche
+                    .StatusSetzen(OBERFLAECHENINTERFACE.Status.kundenkontowahl);
             }
             else
             {
                 FehlermeldungAbsetzen(
-                        "Falsche PIN für den Kunden '" + name + "'.");
+                    "Falsche PIN für den Kunden '" + name + "'.");
             }
         }
     }
@@ -116,8 +116,8 @@ class KONTROLLEUR implements KONTROLLEURINTERFACE
         {
             StatusmeldungAbsetzen("Sie arbeiten mit Konto Nummer: " + nummer);
             kontonummer = nummer;
-            oberflaeche.StatusSetzen(
-                    OBERFLAECHENINTERFACE.Status.kundenkontoarbeit);
+            oberflaeche
+                .StatusSetzen(OBERFLAECHENINTERFACE.Status.kundenkontoarbeit);
         }
         else
         {
@@ -166,8 +166,8 @@ class KONTROLLEUR implements KONTROLLEURINTERFACE
     {
         if (!aktkunde.Abheben(betrag))
         {
-            FehlermeldungAbsetzen("Der Betrag von " + betrag
-                    + " kann nicht abgehoben werden.");
+            FehlermeldungAbsetzen(
+                "Der Betrag von " + betrag + " kann nicht abgehoben werden.");
         }
     }
 
@@ -223,7 +223,7 @@ class KONTROLLEUR implements KONTROLLEURINTERFACE
         if (a == null)
         {
             FehlermeldungAbsetzen(
-                    "Der Angestellte '" + name + "' existiert nicht.");
+                "Der Angestellte '" + name + "' existiert nicht.");
         }
         else
         {
@@ -231,12 +231,12 @@ class KONTROLLEUR implements KONTROLLEURINTERFACE
             {
                 aktAngestellter = a;
                 oberflaeche.StatusSetzen(
-                        OBERFLAECHENINTERFACE.Status.angestelltensicht);
+                    OBERFLAECHENINTERFACE.Status.angestelltensicht);
             }
             else
             {
                 FehlermeldungAbsetzen(
-                        "Falsche PIN für den Angestellten '" + name + "'.");
+                    "Falsche PIN für den Angestellten '" + name + "'.");
             }
         }
     }
@@ -272,14 +272,14 @@ class KONTROLLEUR implements KONTROLLEURINTERFACE
         if (aktAngestellter.KundeWaehlen(name))
         {
             oberflaeche.StatusSetzen(
-                    OBERFLAECHENINTERFACE.Status.angestelltensicht_kunde);
+                OBERFLAECHENINTERFACE.Status.angestelltensicht_kunde);
         }
         else
         {
             FehlermeldungAbsetzen(
-                    "Der Kunde " + name + " konnte nicht gew\u00E4hlt werden.");
-            oberflaeche.StatusSetzen(
-                    OBERFLAECHENINTERFACE.Status.angestelltensicht);
+                "Der Kunde " + name + " konnte nicht gew\u00E4hlt werden.");
+            oberflaeche
+                .StatusSetzen(OBERFLAECHENINTERFACE.Status.angestelltensicht);
         }
     }
 
@@ -299,19 +299,19 @@ class KONTROLLEUR implements KONTROLLEURINTERFACE
         {
             if (bank.KundenSuchen(name) != null)
             {
-                FehlermeldungAbsetzen("Der Kunde mit dem Namen " + name
-                        + " existiert schon.");
+                FehlermeldungAbsetzen(
+                    "Der Kunde mit dem Namen " + name + " existiert schon.");
             }
             else if (bank.AngestelltenSuchen(name) != null)
             {
                 FehlermeldungAbsetzen(
-                        "Es existiert schon ein Angestellter mit dem Namen "
-                                + name + ".");
+                    "Es existiert schon ein Angestellter mit dem Namen " + name
+                            + ".");
             }
             else
             {
                 FehlermeldungAbsetzen(
-                        "Der Kunde konnte nicht eingerichtet werden.");
+                    "Der Kunde konnte nicht eingerichtet werden.");
             }
         }
     }
@@ -333,7 +333,7 @@ class KONTROLLEUR implements KONTROLLEURINTERFACE
     public int[] NummerFuerAktKundenGeben()
     {
         return bank
-                .KontonummernFuerKundenGeben(aktAngestellter.AktkundeGeben());
+            .KontonummernFuerKundenGeben(aktAngestellter.AktkundeGeben());
     }
 
     /**
@@ -345,8 +345,8 @@ class KONTROLLEUR implements KONTROLLEURINTERFACE
     {
         int nummer = aktAngestellter.SparkontoEinrichten(zins);
         StatusmeldungAbsetzen("Das neue Konto hat die Nummmer " + nummer);
-        oberflaeche.StatusSetzen(
-                OBERFLAECHENINTERFACE.Status.angestelltensicht_kunde);
+        oberflaeche
+            .StatusSetzen(OBERFLAECHENINTERFACE.Status.angestelltensicht_kunde);
     }
 
     /**
@@ -358,8 +358,8 @@ class KONTROLLEUR implements KONTROLLEURINTERFACE
     {
         int nummer = aktAngestellter.GirokontoEinrichten(kredit);
         StatusmeldungAbsetzen("Das neue Konto hat die Nummmer " + nummer);
-        oberflaeche.StatusSetzen(
-                OBERFLAECHENINTERFACE.Status.angestelltensicht_kunde);
+        oberflaeche
+            .StatusSetzen(OBERFLAECHENINTERFACE.Status.angestelltensicht_kunde);
     }
 
     /**
@@ -371,7 +371,7 @@ class KONTROLLEUR implements KONTROLLEURINTERFACE
     {
         aktAngestellter.KontoSetzen(nummer);
         oberflaeche.StatusSetzen(
-                OBERFLAECHENINTERFACE.Status.angestelltensicht_kundeundkonto);
+            OBERFLAECHENINTERFACE.Status.angestelltensicht_kundeundkonto);
         StatusmeldungAbsetzen("Aktuelles Konto: " + nummer);
     }
 
@@ -383,12 +383,12 @@ class KONTROLLEUR implements KONTROLLEURINTERFACE
         if (!aktAngestellter.KontoLoeschen())
         {
             FehlermeldungAbsetzen(
-                    "Das Konto konnte nicht gel\u00F6scht werden.");
+                "Das Konto konnte nicht gel\u00F6scht werden.");
         }
-        oberflaeche.StatusSetzen(
-                OBERFLAECHENINTERFACE.Status.angestelltensicht_kunde);
-        StatusmeldungAbsetzen("Aktueller Kunde: "
-                + aktAngestellter.AktkundeGeben().NameGeben());
+        oberflaeche
+            .StatusSetzen(OBERFLAECHENINTERFACE.Status.angestelltensicht_kunde);
+        StatusmeldungAbsetzen(
+            "Aktueller Kunde: " + aktAngestellter.AktkundeGeben().NameGeben());
     }
 
     /**
@@ -429,14 +429,14 @@ class KONTROLLEUR implements KONTROLLEURINTERFACE
         String meldung = aktAngestellter.KundenLoeschen();
         if (meldung == null)
         {
-            oberflaeche.StatusSetzen(
-                    OBERFLAECHENINTERFACE.Status.angestelltensicht);
+            oberflaeche
+                .StatusSetzen(OBERFLAECHENINTERFACE.Status.angestelltensicht);
             StatusmeldungAbsetzen("Der aktuelle Kunde wurde gel\u00F6scht.");
         }
         else
         {
             oberflaeche.StatusSetzen(
-                    OBERFLAECHENINTERFACE.Status.angestelltensicht_kunde);
+                OBERFLAECHENINTERFACE.Status.angestelltensicht_kunde);
             StatusmeldungAbsetzen(meldung);
         }
     }
@@ -459,17 +459,16 @@ class KONTROLLEUR implements KONTROLLEURINTERFACE
             else if (bank.KundenSuchen(name) != null)
             {
                 FehlermeldungAbsetzen(
-                        "Es existiert schon ein Kunde mit dem Namen " + name
-                                + ".");
+                    "Es existiert schon ein Kunde mit dem Namen " + name + ".");
             }
             else
             {
                 FehlermeldungAbsetzen(
-                        "Der Angestellte konnte nicht eingerichtet werden.");
+                    "Der Angestellte konnte nicht eingerichtet werden.");
             }
         }
         oberflaeche
-                .StatusSetzen(OBERFLAECHENINTERFACE.Status.angestelltensicht);
+            .StatusSetzen(OBERFLAECHENINTERFACE.Status.angestelltensicht);
     }
 
     /**
@@ -482,7 +481,7 @@ class KONTROLLEUR implements KONTROLLEURINTERFACE
         if (aktAngestellter.AngestelltenLoeschen(name))
         {
             StatusmeldungAbsetzen(
-                    "Der Angestellte: " + name + " wurde gel\u00F6scht.");
+                "Der Angestellte: " + name + " wurde gel\u00F6scht.");
         }
         else
         {
@@ -490,7 +489,7 @@ class KONTROLLEUR implements KONTROLLEURINTERFACE
                     + " konnte nicht gel\u00F6scht werden.");
         }
         oberflaeche
-                .StatusSetzen(OBERFLAECHENINTERFACE.Status.angestelltensicht);
+            .StatusSetzen(OBERFLAECHENINTERFACE.Status.angestelltensicht);
     }
 
     /**

@@ -126,19 +126,19 @@ class GraphMatrix
         for (int i = 0; i < knoten.size(); i++)
         {
             System.out.print(
-                    (knoten.get(i).BezeichnerGeben() + "    ").substring(0, 4));
+                (knoten.get(i).BezeichnerGeben() + "    ").substring(0, 4));
         }
         System.out.println();
         for (int i = 0; i < knoten.size(); i++)
         {
             System.out.print(
-                    (knoten.get(i).BezeichnerGeben() + "    ").substring(0, 4));
+                (knoten.get(i).BezeichnerGeben() + "    ").substring(0, 4));
             for (int j = 0; j < knoten.size(); j++)
             {
                 if (matrix.get(i).get(j) != -1)
                 {
-                    System.out.print(
-                            (matrix.get(i).get(j) + "   ").substring(0, 4));
+                    System.out
+                        .print((matrix.get(i).get(j) + "   ").substring(0, 4));
                 }
                 else
                 {

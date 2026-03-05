@@ -54,7 +54,7 @@ public class Ellipse
     {// uh
         einfachegrafikAnmelden(this, fortgeschrittenesFensterGeben(fenster));// uh
         schulbuecher.paetec.informatik_10_2008.eps.fortgeschrittene_grafik.Ellipse fg = (schulbuecher.paetec.informatik_10_2008.eps.fortgeschrittene_grafik.Ellipse) fortgeschrittenegrafikGeben(
-                this);
+            this);
         wirdAngezeigt = false;
         breite = fg.breiteGeben();
         hoehe = fg.hoeheGeben();
@@ -70,7 +70,7 @@ public class Ellipse
     public void groesseSetzen(int neueBreite, int neueHoehe)
     {
         schulbuecher.paetec.informatik_10_2008.eps.fortgeschrittene_grafik.Ellipse fg = (schulbuecher.paetec.informatik_10_2008.eps.fortgeschrittene_grafik.Ellipse) fortgeschrittenegrafikGeben(
-                this);
+            this);
         fg.groesseSetzen(neueBreite, neueHoehe);
         breite = fg.breiteGeben();
         hoehe = fg.hoeheGeben();
@@ -87,7 +87,7 @@ public class Ellipse
         xPosition = neueXPosition;
         yPosition = neueYPosition;
         schulbuecher.paetec.informatik_10_2008.eps.fortgeschrittene_grafik.Ellipse fg = (schulbuecher.paetec.informatik_10_2008.eps.fortgeschrittene_grafik.Ellipse) fortgeschrittenegrafikGeben(
-                this);
+            this);
         fg.positionSetzen(neueXPosition, neueYPosition);
         if (wirdAngezeigt)
             fg.fensterGeben().zeichnen();
@@ -102,7 +102,7 @@ public class Ellipse
         xPosition += deltaX;
         yPosition += deltaY;
         schulbuecher.paetec.informatik_10_2008.eps.fortgeschrittene_grafik.Ellipse fg = (schulbuecher.paetec.informatik_10_2008.eps.fortgeschrittene_grafik.Ellipse) fortgeschrittenegrafikGeben(
-                this);
+            this);
         fg.verschieben(deltaX, deltaY);
         if (wirdAngezeigt)
             fg.fensterGeben().zeichnen();
@@ -116,7 +116,7 @@ public class Ellipse
     public void farbeSetzen(String neueFarbe)
     {
         schulbuecher.paetec.informatik_10_2008.eps.fortgeschrittene_grafik.Ellipse fg = (schulbuecher.paetec.informatik_10_2008.eps.fortgeschrittene_grafik.Ellipse) fortgeschrittenegrafikGeben(
-                this);
+            this);
         fg.farbeSetzen(neueFarbe);
         farbe = fg.farbeGeben();
         if (wirdAngezeigt)
@@ -129,7 +129,7 @@ public class Ellipse
     public void anzeigen()
     {
         schulbuecher.paetec.informatik_10_2008.eps.fortgeschrittene_grafik.Ellipse fg = (schulbuecher.paetec.informatik_10_2008.eps.fortgeschrittene_grafik.Ellipse) fortgeschrittenegrafikGeben(
-                this);
+            this);
         fg.abmelden();
         fg.anmelden();
         wirdAngezeigt = true;
@@ -142,7 +142,7 @@ public class Ellipse
     public void verstecken()
     {
         schulbuecher.paetec.informatik_10_2008.eps.fortgeschrittene_grafik.Ellipse fg = (schulbuecher.paetec.informatik_10_2008.eps.fortgeschrittene_grafik.Ellipse) fortgeschrittenegrafikGeben(
-                this);
+            this);
         fg.abmelden();
         wirdAngezeigt = false;
         fg.fensterGeben().zeichnen();
@@ -163,7 +163,7 @@ public class Ellipse
     public String toString()
     {
         schulbuecher.paetec.informatik_10_2008.eps.fortgeschrittene_grafik.Ellipse fg = (schulbuecher.paetec.informatik_10_2008.eps.fortgeschrittene_grafik.Ellipse) fortgeschrittenegrafikGeben(
-                this);
+            this);
         return fg.toString();
     }
 }

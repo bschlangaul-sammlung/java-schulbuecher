@@ -57,8 +57,8 @@ abstract class SonderSymbol
         if (anzeige != null)
         {
             anzeige.setLocation(
-                    Oberflaeche.FensterBreiteGeben() / 2 + x * größe,
-                    Oberflaeche.FensterHöheGeben() / 2 + y * größe);
+                Oberflaeche.FensterBreiteGeben() / 2 + x * größe,
+                Oberflaeche.FensterHöheGeben() / 2 + y * größe);
         }
     }
 

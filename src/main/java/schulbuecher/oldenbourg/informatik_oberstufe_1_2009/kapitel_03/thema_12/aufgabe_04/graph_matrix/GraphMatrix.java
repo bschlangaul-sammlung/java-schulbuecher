@@ -143,7 +143,7 @@ public class GraphMatrix
             for (int j = 0; j < anzahlKnoten; j++)
                 if (matrix[i][j] != -1)
                     System.out
-                            .print((matrix[i][j] + "   ").substring(0, breite));
+                        .print((matrix[i][j] + "   ").substring(0, breite));
                 else
                     System.out.print("    ");
             System.out.println();
@@ -193,8 +193,8 @@ public class GraphMatrix
     {
         // aktiven Knoten auf besucht setzen und in der Konsole ausgeben
         besucht[knotenNummer] = true;
-        System.out.print(
-                "besucht " + knoten[knotenNummer].BezeichnungGeben() + "; ");
+        System.out
+            .print("besucht " + knoten[knotenNummer].BezeichnungGeben() + "; ");
         // in der Matrix die Zeile des aktiven Knotens nach Kanten durchforsten
         for (int abzweigNummer = 0; abzweigNummer < anzahlKnoten; abzweigNummer++)
         {
@@ -209,7 +209,7 @@ public class GraphMatrix
         }
         // der aktive Knoten mit der knotenNummer ist fertig bearbeitet
         System.out.println(
-                "fertig mit " + knoten[knotenNummer].BezeichnungGeben() + "; ");
+            "fertig mit " + knoten[knotenNummer].BezeichnungGeben() + "; ");
     }
 
     /**

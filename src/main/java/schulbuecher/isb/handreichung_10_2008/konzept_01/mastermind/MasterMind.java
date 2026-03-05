@@ -66,8 +66,10 @@ public class MasterMind
 
     public void rate()
     {
-        tippe(auswahl1.gibFarbnummer(), auswahl2.gibFarbnummer(),
-                auswahl3.gibFarbnummer(), auswahl4.gibFarbnummer());
+        tippe(auswahl1.gibFarbnummer(),
+            auswahl2.gibFarbnummer(),
+            auswahl3.gibFarbnummer(),
+            auswahl4.gibFarbnummer());
     }
 
     public void tippe(int r0, int r1, int r2, int r3)

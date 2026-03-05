@@ -45,8 +45,8 @@ public class TransformationsSpeicher
             {
                 if (letzteRotation != null)
                 {
-                    aktuelleTransformation.preConcatenate(
-                            letzteRotation.transformationGeben());
+                    aktuelleTransformation
+                        .preConcatenate(letzteRotation.transformationGeben());
                     letzteRotation = null;
                 }
                 aktuelleTransformation.preConcatenate(t.transformationGeben());
@@ -57,7 +57,7 @@ public class TransformationsSpeicher
             if (letzteRotation != null)
             {
                 aktuelleTransformation
-                        .preConcatenate(letzteRotation.transformationGeben());
+                    .preConcatenate(letzteRotation.transformationGeben());
                 letzteRotation = null;
             }
             aktuelleTransformation.preConcatenate(t.transformationGeben());

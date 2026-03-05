@@ -90,7 +90,7 @@ public class Schreiber
     public void textEinlesen()
     {
         ArrayList<String> textspeicher = datei
-                .absatzlisteLesen(einfachesFormular);
+            .absatzlisteLesen(einfachesFormular);
         if (textspeicher == null)
             return;// Bei Abbruch des Dialogs durch den Nutzer wird null
                    // zurueckgegeben

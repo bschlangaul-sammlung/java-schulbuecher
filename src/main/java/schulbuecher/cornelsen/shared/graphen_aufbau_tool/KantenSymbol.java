@@ -113,17 +113,19 @@ class KantenSymbol extends GraphenSymbol
         if (gerichtet)
         {
             g.drawLine(
-                    x2neu + (int) (10.0
-                            * Math.cos((-winkel + 135) / 180.0 * Math.PI)),
-                    y2neu + (int) (10.0
-                            * Math.sin((-winkel + 135) / 180.0 * Math.PI)),
-                    x2neu, y2neu);
+                x2neu + (int) (10.0
+                        * Math.cos((-winkel + 135) / 180.0 * Math.PI)),
+                y2neu + (int) (10.0
+                        * Math.sin((-winkel + 135) / 180.0 * Math.PI)),
+                x2neu,
+                y2neu);
             g.drawLine(
-                    x2neu + (int) (10.0
-                            * Math.cos((-winkel - 135) / 180.0 * Math.PI)),
-                    y2neu + (int) (10.0
-                            * Math.sin((-winkel - 135) / 180.0 * Math.PI)),
-                    x2neu, y2neu);
+                x2neu + (int) (10.0
+                        * Math.cos((-winkel - 135) / 180.0 * Math.PI)),
+                y2neu + (int) (10.0
+                        * Math.sin((-winkel - 135) / 180.0 * Math.PI)),
+                x2neu,
+                y2neu);
         }
 
         g.setStroke(sichern);
@@ -134,29 +136,33 @@ class KantenSymbol extends GraphenSymbol
         {
             double w = ((double) (winkel + 90)) / 180.0 * Math.PI;
             double delta = (double) (breite);
-            g.drawString(gewicht, xm + (int) (delta * Math.cos(w)),
-                    ym - (int) (delta * Math.sin(w)));
+            g.drawString(gewicht,
+                xm + (int) (delta * Math.cos(w)),
+                ym - (int) (delta * Math.sin(w)));
         }
         else if ((0 < winkel) && (winkel <= 90))
         {
             double w = ((double) (winkel + 90)) / 180.0 * Math.PI;
             double delta = (double) (breite);
-            g.drawString(gewicht, xm - (int) (delta * Math.cos(w)),
-                    ym + (int) (delta * Math.sin(w) + 10));
+            g.drawString(gewicht,
+                xm - (int) (delta * Math.cos(w)),
+                ym + (int) (delta * Math.sin(w) + 10));
         }
         else if ((90 < winkel) && (winkel <= 180))
         {
             double w = ((double) (winkel + 90)) / 180.0 * Math.PI;
             double delta = (double) (breite);
-            g.drawString(gewicht, xm - (int) (delta * Math.cos(w)),
-                    ym + (int) (delta * Math.sin(w)));
+            g.drawString(gewicht,
+                xm - (int) (delta * Math.cos(w)),
+                ym + (int) (delta * Math.sin(w)));
         }
         else
         {
             double w = ((double) (winkel + 90)) / 180.0 * Math.PI;
             double delta = (double) (breite);
-            g.drawString(gewicht, xm + (int) (delta * Math.cos(w)),
-                    ym - (int) (delta * Math.sin(w) - 10));
+            g.drawString(gewicht,
+                xm + (int) (delta * Math.cos(w)),
+                ym - (int) (delta * Math.sin(w) - 10));
         }
     }
 

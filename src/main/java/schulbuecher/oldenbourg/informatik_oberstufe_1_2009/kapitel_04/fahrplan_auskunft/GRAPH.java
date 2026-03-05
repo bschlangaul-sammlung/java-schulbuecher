@@ -104,8 +104,8 @@ class GRAPH
             while (inArbeit.AufNaechstesPositionieren())
             {
                 if ((akt == null) || (akt
-                        .GesamtlaengeGeben() > ((GKNOTEN) inArbeit.DatenGeben())
-                                .GesamtlaengeGeben()))
+                    .GesamtlaengeGeben() > ((GKNOTEN) inArbeit.DatenGeben())
+                        .GesamtlaengeGeben()))
                 {
                     akt = (GKNOTEN) inArbeit.DatenGeben();
                 }
@@ -130,12 +130,12 @@ class GRAPH
                     {
                         // Knoten ist schon in Arbeit
                         if (aktZiel.GesamtlaengeGeben() > akt
-                                .GesamtlaengeGeben() + info.LaengeGeben())
+                            .GesamtlaengeGeben() + info.LaengeGeben())
                         {
                             // so geht es schneller
                             aktZiel.VorgaengerSetzen(akt);
-                            aktZiel.GesamtlaengeSetzen(akt.GesamtlaengeGeben()
-                                    + info.LaengeGeben());
+                            aktZiel.GesamtlaengeSetzen(
+                                akt.GesamtlaengeGeben() + info.LaengeGeben());
                         }
                     }
                     else if (rest.Suchen(aktZiel) != null)
@@ -145,7 +145,7 @@ class GRAPH
                         inArbeit.Einfuegen(aktZiel);
                         aktZiel.VorgaengerSetzen(akt);
                         aktZiel.GesamtlaengeSetzen(
-                                akt.GesamtlaengeGeben() + info.LaengeGeben());
+                            akt.GesamtlaengeGeben() + info.LaengeGeben());
                     }
                 }
             }

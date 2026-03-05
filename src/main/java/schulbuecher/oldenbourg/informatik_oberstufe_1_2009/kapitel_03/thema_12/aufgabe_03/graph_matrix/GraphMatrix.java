@@ -143,7 +143,7 @@ public class GraphMatrix
             for (int j = 0; j < anzahlKnoten; j++)
                 if (matrix[i][j] != -1)
                     System.out
-                            .print((matrix[i][j] + "   ").substring(0, breite));
+                        .print((matrix[i][j] + "   ").substring(0, breite));
                 else
                     System.out.print("    ");
             System.out.println();
@@ -213,8 +213,8 @@ public class GraphMatrix
             }
         }
         // der aktive Knoten mit der knotenNummer ist fertig bearbeitet
-        System.out.println(
-                "fertig mit " + knoten[knotenNummer].BezeichnungGeben());
+        System.out
+            .println("fertig mit " + knoten[knotenNummer].BezeichnungGeben());
     }
 
     /**

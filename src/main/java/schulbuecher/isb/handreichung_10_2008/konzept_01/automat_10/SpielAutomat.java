@@ -45,8 +45,9 @@ public class SpielAutomat
 
     public void spiele()
     {
-        setzeFarbmuster(zufall.nextInt(9), zufall.nextInt(9),
-                zufall.nextInt(9));
+        setzeFarbmuster(zufall.nextInt(9),
+            zufall.nextInt(9),
+            zufall.nextInt(9));
         berechneGuthaben();
     }
 
@@ -80,8 +81,9 @@ public class SpielAutomat
         int g;
         do
         {
-            setzeFarbmuster(zufall.nextInt(9), zufall.nextInt(9),
-                    zufall.nextInt(9));
+            setzeFarbmuster(zufall.nextInt(9),
+                zufall.nextInt(9),
+                zufall.nextInt(9));
             g = ermittleGewinn();
         }
         while (g == 0);
@@ -106,8 +108,9 @@ public class SpielAutomat
     {
         for (int i = 1; i <= 10; i++)
         {
-            setzeFarbmuster(zufall.nextInt(9), zufall.nextInt(9),
-                    zufall.nextInt(9));
+            setzeFarbmuster(zufall.nextInt(9),
+                zufall.nextInt(9),
+                zufall.nextInt(9));
             ZeichenFenster.gibFenster().warte(100);
         }
         berechneGuthaben();

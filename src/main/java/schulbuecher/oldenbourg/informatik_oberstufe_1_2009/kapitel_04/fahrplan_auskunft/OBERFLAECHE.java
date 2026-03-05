@@ -84,7 +84,7 @@ class OBERFLAECHE
             public void actionPerformed(ActionEvent e)
             {
                 kontrolleur.RouteBerechnen(startWahl.getSelectedIndex(),
-                        zielWahl.getSelectedIndex());
+                    zielWahl.getSelectedIndex());
             }
         });
         fenster.add(b);

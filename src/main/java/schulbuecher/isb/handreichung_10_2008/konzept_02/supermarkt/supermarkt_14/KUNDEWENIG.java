@@ -37,7 +37,7 @@ class KUNDEWENIG extends KUNDE
             w = kassen[i].WarteschlangeHolen();
             if ((kassen[i].IstOffen())
                     && ((beste == null) || (w.ArtikelanzahlGesamtHolen() < beste
-                            .ArtikelanzahlGesamtHolen())))
+                        .ArtikelanzahlGesamtHolen())))
             {
                 beste = w;
             }

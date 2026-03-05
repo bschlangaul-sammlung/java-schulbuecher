@@ -11,7 +11,9 @@ class KASSE
 {
     enum Zustaende
     {
-        offen, schliessend, geschlossen
+        offen,
+        schliessend,
+        geschlossen
     };
 
     RECHTECK darstellung;

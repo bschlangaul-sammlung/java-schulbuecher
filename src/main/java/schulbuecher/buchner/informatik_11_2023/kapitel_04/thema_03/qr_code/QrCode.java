@@ -221,8 +221,9 @@ public final class QrCode
                 String msg = "Segment too long";
                 if (dataUsedBits != -1)
                     msg = String.format(
-                            "Data length = %d bits, Max capacity = %d bits",
-                            dataUsedBits, dataCapacityBits);
+                        "Data length = %d bits, Max capacity = %d bits",
+                        dataUsedBits,
+                        dataCapacityBits);
                 throw new DataTooLongException(msg);
             }
         }
@@ -252,7 +253,7 @@ public final class QrCode
         assert bb.bitLength() % 8 == 0;
         // Pad with alternating bytes until data capacity is reached
         for (int padByte = 0xEC; bb
-                .bitLength() < dataCapacityBits; padByte ^= 0xEC ^ 0x11)
+            .bitLength() < dataCapacityBits; padByte ^= 0xEC ^ 0x11)
             bb.appendBits(padByte, 8);
         // Pack bits into bytes in big endian
         byte[] dataCodewords = new byte[bb.bitLength() / 8];
@@ -497,8 +498,9 @@ public final class QrCode
         for (int dy = -2; dy <= 2; dy++)
         {
             for (int dx = -2; dx <= 2; dx++)
-                setFunctionModule(x + dx, y + dy,
-                        Math.max(Math.abs(dx), Math.abs(dy)) != 1);
+                setFunctionModule(x + dx,
+                    y + dy,
+                    Math.max(Math.abs(dx), Math.abs(dy)) != 1);
         }
     }
 
@@ -522,9 +524,9 @@ public final class QrCode
             throw new IllegalArgumentException();
         // Calculate parameter numbers
         int numBlocks = NUM_ERROR_CORRECTION_BLOCKS[errorCorrectionLevel
-                .ordinal()][version];
+            .ordinal()][version];
         int blockEccLen = ECC_CODEWORDS_PER_BLOCK[errorCorrectionLevel
-                .ordinal()][version];
+            .ordinal()][version];
         int rawCodewords = getNumRawDataModules(version) / 8;
         int numShortBlocks = numBlocks - rawCodewords % numBlocks;
         int shortBlockLen = rawCodewords / numBlocks;
@@ -533,13 +535,17 @@ public final class QrCode
         byte[] rsDiv = reedSolomonComputeDivisor(blockEccLen);
         for (int i = 0, k = 0; i < numBlocks; i++)
         {
-            byte[] dat = Arrays.copyOfRange(data, k, k + shortBlockLen
-                    - blockEccLen + (i < numShortBlocks ? 0 : 1));
+            byte[] dat = Arrays.copyOfRange(data,
+                k,
+                k + shortBlockLen - blockEccLen + (i < numShortBlocks ? 0 : 1));
             k += dat.length;
             byte[] block = Arrays.copyOf(dat, shortBlockLen + 1);
             byte[] ecc = reedSolomonComputeRemainder(dat, rsDiv);
-            System.arraycopy(ecc, 0, block, block.length - blockEccLen,
-                    ecc.length);
+            System.arraycopy(ecc,
+                0,
+                block,
+                block.length - blockEccLen,
+                ecc.length);
             blocks[i] = block;
         }
         // Interleave (not concatenate) the bytes from every block into a single

@@ -105,8 +105,8 @@ class OBERFLAECHE
                     int x, y;
                     x = Integer.parseInt(xBahnhof.getText());
                     y = Integer.parseInt(yBahnhof.getText());
-                    kontrolleur.NeuenBahnhofEinfuegen(nameBahnhof.getText(), x,
-                            y);
+                    kontrolleur
+                        .NeuenBahnhofEinfuegen(nameBahnhof.getText(), x, y);
                 }
                 catch (Exception ex)
                 {
@@ -180,7 +180,7 @@ class OBERFLAECHE
             public void itemStateChanged(ItemEvent e)
             {
                 kontrolleur.ZielbahnhofWaehlen(
-                        bahnhofFuerAbschnitt.getSelectedIndex());
+                    bahnhofFuerAbschnitt.getSelectedIndex());
             }
         });
         fenster.add(bahnhofFuerAbschnitt);
@@ -221,7 +221,7 @@ class OBERFLAECHE
                 try
                 {
                     kontrolleur.LinienabschnittSetzen(
-                            Integer.parseInt(linienAuswahl.getSelectedItem()));
+                        Integer.parseInt(linienAuswahl.getSelectedItem()));
                 }
                 catch (Exception ex)
                 {
@@ -389,7 +389,7 @@ class OBERFLAECHE
                         kontrolleur.BahnhofGewaehlt();
                         bahnhofAendern.setEnabled(true);
                         bahnhofLoeschen.setEnabled(
-                                kontrolleur.KannAktbahnhofGeloeschtWerden());
+                            kontrolleur.KannAktbahnhofGeloeschtWerden());
                         neuerAbschnitt.setEnabled(true);
                         umsteigenLoeschen.setEnabled(true);
                         umsteigenSetzen.setEnabled(true);

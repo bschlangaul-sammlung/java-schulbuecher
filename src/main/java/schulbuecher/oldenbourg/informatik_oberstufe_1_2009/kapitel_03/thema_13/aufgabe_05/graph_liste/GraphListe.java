@@ -117,8 +117,8 @@ public class GraphListe
             if (!abzweig.BesuchtGeben())
             {
                 Besuchen(abzweig);
-                System.out.print(
-                        "zurück nach " + knoten.BezeichnungGeben() + "; ");
+                System.out
+                    .print("zurück nach " + knoten.BezeichnungGeben() + "; ");
             }
             kante = kante.NachfolgerGeben();
         }

@@ -62,8 +62,10 @@ class Kreis
     void zeichnen()
     {
         Canvas canvas = Canvas.getCanvas();
-        canvas.draw(this, farbe, new Ellipse2D.Double(mitteX - radius,
-                mitteY - radius, radius * 2, radius * 2));
+        canvas.draw(this,
+            farbe,
+            new Ellipse2D.Double(mitteX - radius, mitteY - radius, radius * 2,
+                    radius * 2));
         canvas.wait(10);
     }
 

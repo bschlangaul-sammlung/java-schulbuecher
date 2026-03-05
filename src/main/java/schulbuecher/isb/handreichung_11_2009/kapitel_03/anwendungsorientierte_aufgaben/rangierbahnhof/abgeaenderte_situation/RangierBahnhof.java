@@ -48,7 +48,7 @@ class RangierBahnhof
         gleis3.AlleAusgeben();
         System.out.println();
         System.out.println(
-                "--------------------------------------------------------------");
+            "--------------------------------------------------------------");
     }
 
     /**
@@ -71,7 +71,7 @@ class RangierBahnhof
                 else
                 {
                     if (gleis1.AnfangGeben()
-                            .SchluesselIstKleiner(gleis3.AnfangGeben()))
+                        .SchluesselIstKleiner(gleis3.AnfangGeben()))
                     {
                         waggon = gleis1.Entfernen();
                         gleis3.Einfuegen(waggon);
@@ -122,7 +122,7 @@ class RangierBahnhof
                 else
                 {
                     if (startgleis.AnfangGeben()
-                            .SchluesselIstKleiner(gleis3.AnfangGeben()))
+                        .SchluesselIstKleiner(gleis3.AnfangGeben()))
                     {
                         waggon = startgleis.Entfernen();
                         gleis3.Einfuegen(waggon);

@@ -51,7 +51,7 @@ class Leinwand extends Canvas
         kaestchenzahl_nach_rechts = krechts;
         kaestchenzahl_nach_unten = kunten;
         setSize(kaestchengroesse * kaestchenzahl_nach_rechts,
-                kaestchengroesse * kaestchenzahl_nach_unten);
+            kaestchengroesse * kaestchenzahl_nach_unten);
         darstellung = d;
     }
 
@@ -98,8 +98,10 @@ class Leinwand extends Canvas
                 default:
                     g.setColor(Color.white);
                 }
-                g.fillRect(i * kaestchengroesse + 1, j * kaestchengroesse + 1,
-                        kaestchengroesse - 1, kaestchengroesse - 1);
+                g.fillRect(i * kaestchengroesse + 1,
+                    j * kaestchengroesse + 1,
+                    kaestchengroesse - 1,
+                    kaestchengroesse - 1);
             }
         }
     }

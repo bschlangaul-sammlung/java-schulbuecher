@@ -11,7 +11,9 @@ class KASSE implements TAKTKLIENT
 {
     private enum Zustaende
     {
-        offen, schliessend, geschlossen
+        offen,
+        schliessend,
+        geschlossen
     };
 
     private RECHTECK darstellung;

@@ -104,22 +104,24 @@ class Oberflaeche implements OberflaecheInterface
                     try
                     {
                         kontrolleur.SortierenAusfuehren(
-                                Integer.parseInt(datenAnzahl.getText()),
-                                auswahlSortieren.isSelected(),
-                                mischSortieren.isSelected());
+                            Integer.parseInt(datenAnzahl.getText()),
+                            auswahlSortieren.isSelected(),
+                            mischSortieren.isSelected());
                     }
                     catch (Exception ex)
                     {
                         JOptionPane.showMessageDialog(fenster,
-                                "Bitte korrekte Zahlenwerte angeben.",
-                                "Fehlermeldung", JOptionPane.ERROR_MESSAGE);
+                            "Bitte korrekte Zahlenwerte angeben.",
+                            "Fehlermeldung",
+                            JOptionPane.ERROR_MESSAGE);
                     }
                 }
                 else
                 {
                     JOptionPane.showMessageDialog(fenster,
-                            "'Sortieren durch Ausw\u00E4hlen' oder 'Sortieren durch Mischen' muss aktiviert sein.",
-                            "Fehlermeldung", JOptionPane.ERROR_MESSAGE);
+                        "'Sortieren durch Ausw\u00E4hlen' oder 'Sortieren durch Mischen' muss aktiviert sein.",
+                        "Fehlermeldung",
+                        JOptionPane.ERROR_MESSAGE);
                 }
             }
         });

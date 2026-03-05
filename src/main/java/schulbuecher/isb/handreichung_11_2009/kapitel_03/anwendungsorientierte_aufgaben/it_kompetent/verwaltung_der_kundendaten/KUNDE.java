@@ -26,8 +26,8 @@ class KUNDE extends DATENELEMENT
         System.out.println("Kundennummer: " + kundennummer);
         System.out.println("Schulname: " + schulname);
         System.out.println("Eingesetzte Software: " + software);
-        System.out.println(
-                "----------------------------------------------------");
+        System.out
+            .println("----------------------------------------------------");
     }
 
     /**

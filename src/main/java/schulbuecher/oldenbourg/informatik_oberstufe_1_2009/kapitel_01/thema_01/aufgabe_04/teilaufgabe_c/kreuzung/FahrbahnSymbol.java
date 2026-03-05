@@ -54,29 +54,35 @@ class FahrbahnSymbol
                 switch (ausrichtung)
                 {
                 case 'N':
-                    g.fillRect(2, Oberflaeche.FensterHoeheGeben() / 2
-                            + (y + 2) * breite, breite - 4, breite / 5);
+                    g.fillRect(2,
+                        Oberflaeche.FensterHoeheGeben() / 2 + (y + 2) * breite,
+                        breite - 4,
+                        breite / 5);
                     break;
 
                 case 'S':
                     g.fillRect(2,
-                            Oberflaeche.FensterHoeheGeben() / 2
-                                    + (y - 2) * breite - breite / 5,
-                            breite - 4, breite / 5);
+                        Oberflaeche.FensterHoeheGeben() / 2 + (y - 2) * breite
+                                - breite / 5,
+                        breite - 4,
+                        breite / 5);
                     break;
 
                 case 'O':
                     g.fillRect(
-                            Oberflaeche.FensterBreiteGeben() / 2
-                                    + (x - 2) * breite - breite / 5,
-                            2, breite / 5, breite - 4);
+                        Oberflaeche.FensterBreiteGeben() / 2 + (x - 2) * breite
+                                - breite / 5,
+                        2,
+                        breite / 5,
+                        breite - 4);
                     break;
 
                 case 'W':
-                    g.fillRect(
-                            Oberflaeche.FensterBreiteGeben() / 2
-                                    + (x + 2) * breite,
-                            2, breite / 5, breite - 4);
+                    g.fillRect(Oberflaeche.FensterBreiteGeben() / 2
+                            + (x + 2) * breite,
+                        2,
+                        breite / 5,
+                        breite - 4);
                     break;
                 }
             }
@@ -102,25 +108,27 @@ class FahrbahnSymbol
         case 'N':
             anzeige.setSize(breite, Oberflaeche.FensterHoeheGeben());
             anzeige.setLocation(
-                    Oberflaeche.FensterBreiteGeben() / 2 + x * breite, 0);
+                Oberflaeche.FensterBreiteGeben() / 2 + x * breite,
+                0);
             break;
 
         case 'S':
             anzeige.setSize(breite, Oberflaeche.FensterHoeheGeben());
             anzeige.setLocation(
-                    Oberflaeche.FensterBreiteGeben() / 2 + (x - 1) * breite, 0);
+                Oberflaeche.FensterBreiteGeben() / 2 + (x - 1) * breite,
+                0);
             break;
 
         case 'O':
             anzeige.setSize(Oberflaeche.FensterBreiteGeben(), breite);
             anzeige.setLocation(0,
-                    Oberflaeche.FensterHoeheGeben() / 2 + y * breite);
+                Oberflaeche.FensterHoeheGeben() / 2 + y * breite);
             break;
 
         case 'W':
             anzeige.setSize(Oberflaeche.FensterBreiteGeben(), breite);
             anzeige.setLocation(0,
-                    Oberflaeche.FensterHoeheGeben() / 2 + (y - 1) * breite);
+                Oberflaeche.FensterHoeheGeben() / 2 + (y - 1) * breite);
             break;
         }
         Zeichne();

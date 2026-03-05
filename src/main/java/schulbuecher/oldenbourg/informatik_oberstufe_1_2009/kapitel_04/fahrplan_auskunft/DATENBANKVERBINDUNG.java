@@ -31,10 +31,11 @@ class DATENBANKVERBINDUNG
     {
         try
         {
-            Class.forName("com.mysql.jdbc.Driver").getDeclaredConstructor()
-                    .newInstance();
+            Class.forName("com.mysql.jdbc.Driver")
+                .getDeclaredConstructor()
+                .newInstance();
             conn = DriverManager.getConnection(
-                    "jdbc:mysql://localhost/fahrplan?user=fahr&password=plan");
+                "jdbc:mysql://localhost/fahrplan?user=fahr&password=plan");
         }
         catch (Exception e)
         {
@@ -90,16 +91,16 @@ class DATENBANKVERBINDUNG
             }
             rs.close();
             rs = st.executeQuery(
-                    "SELECT linie, bahnhof1, bahnhof2, laenge FROM abschnitt");
+                "SELECT linie, bahnhof1, bahnhof2, laenge FROM abschnitt");
             while (rs.next())
             {
                 aliste.Einfuegen(
-                        new ABSCHNITT(rs.getInt("linie"), rs.getInt("bahnhof1"),
-                                rs.getInt("bahnhof2"), rs.getFloat("laenge")));
+                    new ABSCHNITT(rs.getInt("linie"), rs.getInt("bahnhof1"),
+                            rs.getInt("bahnhof2"), rs.getFloat("laenge")));
             }
             rs.close();
-            rs = st.executeQuery(
-                    "SELECT Nummer, Linie1, Linie2 FROM umsteigen");
+            rs = st
+                .executeQuery("SELECT Nummer, Linie1, Linie2 FROM umsteigen");
             while (rs.next())
             {
                 uliste.Einfuegen(new UMSTEIGEINFO(rs.getInt("Nummer"),

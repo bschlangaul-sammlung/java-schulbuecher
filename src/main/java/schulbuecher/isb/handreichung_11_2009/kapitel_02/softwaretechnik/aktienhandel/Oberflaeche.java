@@ -136,8 +136,8 @@ class Oberflaeche implements OberflaechenInterface, StatusBeobachter
         {
             public void actionPerformed(ActionEvent event)
             {
-                kontrolleur.KursverlaufAnzeigen(
-                        aktienListe.getSelectedIndex() + 1);
+                kontrolleur
+                    .KursverlaufAnzeigen(aktienListe.getSelectedIndex() + 1);
             }
         });
         aktienPanel.add(panel, BorderLayout.SOUTH);
@@ -165,7 +165,7 @@ class Oberflaeche implements OberflaechenInterface, StatusBeobachter
             public void actionPerformed(ActionEvent event)
             {
                 kontrolleur.AktienKaufen(aktienListe.getSelectedIndex() + 1,
-                        Integer.parseInt(anzahl.getText()));
+                    Integer.parseInt(anzahl.getText()));
             }
         });
         button = new JButton("Aktie verkaufen");
@@ -175,7 +175,7 @@ class Oberflaeche implements OberflaechenInterface, StatusBeobachter
             public void actionPerformed(ActionEvent event)
             {
                 kontrolleur.AktienVerkaufen(aktienListe.getSelectedIndex() + 1,
-                        Integer.parseInt(anzahl.getText()));
+                    Integer.parseInt(anzahl.getText()));
             }
         });
         einkaufPanel.add(panel, BorderLayout.SOUTH);
@@ -218,8 +218,8 @@ class Oberflaeche implements OberflaechenInterface, StatusBeobachter
         });
         fenster.getContentPane().add(button, BorderLayout.SOUTH);
         status = new JTextArea("");
-        fenster.getContentPane().add(new JScrollPane(status),
-                BorderLayout.CENTER);
+        fenster.getContentPane()
+            .add(new JScrollPane(status), BorderLayout.CENTER);
         fenster.addWindowListener(new WindowAdapter()
         {
             public void windowClosing(WindowEvent e)
@@ -255,7 +255,7 @@ class Oberflaeche implements OberflaechenInterface, StatusBeobachter
             public void actionPerformed(ActionEvent event)
             {
                 kontrolleur.KontoSetzen(
-                        Integer.parseInt((String) konten.getSelectedItem()));
+                    Integer.parseInt((String) konten.getSelectedItem()));
             }
         });
     }

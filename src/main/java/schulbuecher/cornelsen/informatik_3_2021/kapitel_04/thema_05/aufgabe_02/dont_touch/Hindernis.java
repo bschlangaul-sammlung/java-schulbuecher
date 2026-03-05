@@ -101,7 +101,7 @@ class Hindernis extends Figur
                     else
                     {
                         System.out.println(
-                                "Fehlerhafte Richtung in Konstruktor von Hindernis");
+                            "Fehlerhafte Richtung in Konstruktor von Hindernis");
                     }
                 }
             }

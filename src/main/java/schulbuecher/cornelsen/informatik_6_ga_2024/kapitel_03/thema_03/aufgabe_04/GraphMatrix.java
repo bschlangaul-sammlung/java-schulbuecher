@@ -63,8 +63,8 @@ class GraphMatrix
                     && (!besuchteKnoten.contains(nummer)))
             {
                 KnotenBesuchen(nummer);
-                System.out.println("Zurück nach: "
-                        + knoten.get(aktuell).BezeichnerGeben());
+                System.out.println(
+                    "Zurück nach: " + knoten.get(aktuell).BezeichnerGeben());
             }
         }
         knoten.get(aktuell).FarbeSetzen("grün");

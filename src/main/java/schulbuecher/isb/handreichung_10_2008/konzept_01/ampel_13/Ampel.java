@@ -4,7 +4,11 @@ public class Ampel
 {
     enum Zustand
     {
-        rot, gruen, gelb, rotgelb, aus
+        rot,
+        gruen,
+        gelb,
+        rotgelb,
+        aus
     };
 
     private SpielWalze oben, mitte, unten;

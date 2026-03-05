@@ -52,7 +52,7 @@ class Textzeichen
     boolean IstGleich(Textzeichen dvergleich)
     {
         if (SchlüsselAlsStringGeben()
-                .compareTo(dvergleich.SchlüsselAlsStringGeben()) == 0)
+            .compareTo(dvergleich.SchlüsselAlsStringGeben()) == 0)
         {
             return true;
         }
@@ -75,7 +75,7 @@ class Textzeichen
     boolean IstGrößerAls(Textzeichen dvergleich)
     {
         if (SchlüsselAlsStringGeben()
-                .compareTo(dvergleich.SchlüsselAlsStringGeben()) > 0)
+            .compareTo(dvergleich.SchlüsselAlsStringGeben()) > 0)
         {
             return true;
         }

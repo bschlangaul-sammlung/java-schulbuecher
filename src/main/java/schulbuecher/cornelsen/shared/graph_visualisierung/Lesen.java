@@ -33,28 +33,29 @@ public class Lesen
             // Eingefügt, damit die Datei in main/resources/graph-databases
             // abgelegt werden kann.
             Path source = Paths.get(
-                    getClass().getResource("/graph-databases/" + name).toURI());
+                getClass().getResource("/graph-databases/" + name).toURI());
             Path target = Paths.get(System.getProperty("java.io.tmpdir"), name);
             Files.copy(source, target, StandardCopyOption.REPLACE_EXISTING);
             Connection verbindung;
             verbindung = DriverManager
-                    .getConnection("jdbc:sqlite:" + target.toString());
+                .getConnection("jdbc:sqlite:" + target.toString());
             Statement anweisung = verbindung.createStatement();
             ResultSet daten = anweisung.executeQuery(
-                    "SELECT bezeichner, x, y FROM knoten ORDER BY bezeichner");
+                "SELECT bezeichner, x, y FROM knoten ORDER BY bezeichner");
             while (daten.next())
             {
                 g.KnotenEinfügen(daten.getString("bezeichner"),
-                        daten.getInt("x"), daten.getInt("y"));
+                    daten.getInt("x"),
+                    daten.getInt("y"));
             }
             daten.close();
             daten = anweisung.executeQuery(
-                    "SELECT bezeichnerStart, bezeichnerZiel, gewicht, gerichtet FROM kanten");
+                "SELECT bezeichnerStart, bezeichnerZiel, gewicht, gerichtet FROM kanten");
             while (daten.next())
             {
                 g.KanteEinfügen(daten.getString("bezeichnerStart"),
-                        daten.getString("bezeichnerZiel"),
-                        daten.getInt("gewicht"));
+                    daten.getString("bezeichnerZiel"),
+                    daten.getInt("gewicht"));
             }
             daten.close();
             verbindung.close();
@@ -62,8 +63,8 @@ public class Lesen
         }
         catch (Exception e)
         {
-            System.out.println(
-                    "Fehler beim Lesen der Datenbank: " + e.getMessage());
+            System.out
+                .println("Fehler beim Lesen der Datenbank: " + e.getMessage());
             return false;
         }
     }

@@ -128,10 +128,10 @@ class FAHRZEUGSYMBOL
         this.x = x;
         this.y = y;
         anzeige.setLocation(
-                OBERFLAECHE.FensterBreiteGeben() / 2
-                        + (int) (x * OBERFLAECHE.MeterAlsPixelGeben()),
-                OBERFLAECHE.FensterHoeheGeben() / 2
-                        + (int) (y * OBERFLAECHE.MeterAlsPixelGeben()));
+            OBERFLAECHE.FensterBreiteGeben() / 2
+                    + (int) (x * OBERFLAECHE.MeterAlsPixelGeben()),
+            OBERFLAECHE.FensterHoeheGeben() / 2
+                    + (int) (y * OBERFLAECHE.MeterAlsPixelGeben()));
     }
 
     /**

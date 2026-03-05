@@ -88,8 +88,8 @@ public class GRAPH
 
     private void reihenfolgeAusgeben(int[] feld)
     {
-        System.out.println(
-                "Der Durchlauf der Breitensuche ergibt die Reihenfolge: ");
+        System.out
+            .println("Der Durchlauf der Breitensuche ergibt die Reihenfolge: ");
         System.out.print(knotennamen[feld[0]].bezeichnerGeben()); // feld[0]
         for (int i = 1; i < feld.length; i++)
         {

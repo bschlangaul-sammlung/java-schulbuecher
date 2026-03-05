@@ -14,20 +14,20 @@ class Test
         radnetz = new GraphMatrix(20);
         // Zu Testzwecken werden die ersten sieben Knoten fest angegeben.
         // Die Rueckgabewerte bezeichnen den Index des Knotens.
-        int a = radnetz.knotenHinzufuegen(
-                new Datenelement("Altdorf", 100, "Marktplatz"));
+        int a = radnetz
+            .knotenHinzufuegen(new Datenelement("Altdorf", 100, "Marktplatz"));
         int f = radnetz.knotenHinzufuegen(
-                new Datenelement("Fischbach", 80, "Fischspezialitaeten"));
+            new Datenelement("Fischbach", 80, "Fischspezialitaeten"));
         int w = radnetz
-                .knotenHinzufuegen(new Datenelement("Weiler", 20, "Naturbad"));
+            .knotenHinzufuegen(new Datenelement("Weiler", 20, "Naturbad"));
         int z = radnetz.knotenHinzufuegen(
-                new Datenelement("Ziegelstein", 200, "Heimatmuseum"));
+            new Datenelement("Ziegelstein", 200, "Heimatmuseum"));
         int b = radnetz.knotenHinzufuegen(
-                new Datenelement("Burg", 50, "Historische Burg"));
+            new Datenelement("Burg", 50, "Historische Burg"));
         int n = radnetz.knotenHinzufuegen(
-                new Datenelement("Neustadt", 80, "Einkaufszentrum"));
-        int r = radnetz.knotenHinzufuegen(
-                new Datenelement("Rain", 50, "Klettergarten"));
+            new Datenelement("Neustadt", 80, "Einkaufszentrum"));
+        int r = radnetz
+            .knotenHinzufuegen(new Datenelement("Rain", 50, "Klettergarten"));
         // Zu Testzwecken werden Kanten zwischen obigen Knoten festgelegt.
         radnetz.kanteHinzufuegen(a, f, 20);
         radnetz.kanteHinzufuegen(a, w, 15);

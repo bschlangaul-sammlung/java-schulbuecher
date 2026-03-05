@@ -89,10 +89,12 @@ class Dijkstra implements StatusErzeuger
             if (aktOrt.OrtGeben() == ziel)
             {
                 StatusMelden(
-                        "Der Weg von " + start.NameGeben() + " nach "
-                                + ziel.NameGeben() + " ist "
-                                + aktOrt.LaengeGeben() + "km lang.",
-                        fertig, start.NameGeben(), ziel.NameGeben());
+                    "Der Weg von " + start.NameGeben() + " nach "
+                            + ziel.NameGeben() + " ist " + aktOrt.LaengeGeben()
+                            + "km lang.",
+                    fertig,
+                    start.NameGeben(),
+                    ziel.NameGeben());
                 break;
             }
             while (true)
@@ -125,8 +127,8 @@ class Dijkstra implements StatusErzeuger
                     if (alt.LaengeGeben() > aktOrt.LaengeGeben()
                             + aktStrecke.LaengeGeben())
                     {
-                        alt.LaengeSetzen(aktOrt.LaengeGeben()
-                                + aktStrecke.LaengeGeben());
+                        alt.LaengeSetzen(
+                            aktOrt.LaengeGeben() + aktStrecke.LaengeGeben());
                         alt.VorgaengerSetzen(aktOrt.OrtGeben());
                     }
                 }

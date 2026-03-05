@@ -94,16 +94,20 @@ class Karte extends JComponent implements StatusBeobachter
         for (Strecke s : strecken)
         {
             g.drawLine(s.StartortGeben().XPosGeben(),
-                    s.StartortGeben().YPosGeben(), s.ZielortGeben().XPosGeben(),
-                    s.ZielortGeben().YPosGeben());
+                s.StartortGeben().YPosGeben(),
+                s.ZielortGeben().XPosGeben(),
+                s.ZielortGeben().YPosGeben());
         }
         // Zeichnet alle Orte und beschrifte sie mit den Ortsnamen
         for (Ort o : orte)
         {
-            g.fillOval(o.XPosGeben() - radius, o.YPosGeben() - radius,
-                    2 * radius, 2 * radius);
-            g.drawString(o.NameGeben(), o.XPosGeben() - radius,
-                    o.YPosGeben() - 2 * radius);
+            g.fillOval(o.XPosGeben() - radius,
+                o.YPosGeben() - radius,
+                2 * radius,
+                2 * radius);
+            g.drawString(o.NameGeben(),
+                o.XPosGeben() - radius,
+                o.YPosGeben() - 2 * radius);
         }
         // Falls ein Weg berechnet wurde
         if (weg != null)
@@ -117,18 +121,19 @@ class Karte extends JComponent implements StatusBeobachter
             while (true)
             {
                 g.fillOval(akt.OrtGeben().XPosGeben() - radius,
-                        akt.OrtGeben().YPosGeben() - radius, 2 * radius,
-                        2 * radius);
+                    akt.OrtGeben().YPosGeben() - radius,
+                    2 * radius,
+                    2 * radius);
                 if (akt.VorgaengerGeben() == null)
                 {
                     break;
                 }
                 g.drawLine(akt.OrtGeben().XPosGeben(),
-                        akt.OrtGeben().YPosGeben(),
-                        akt.VorgaengerGeben().XPosGeben(),
-                        akt.VorgaengerGeben().YPosGeben());
+                    akt.OrtGeben().YPosGeben(),
+                    akt.VorgaengerGeben().XPosGeben(),
+                    akt.VorgaengerGeben().YPosGeben());
                 akt = (Vorgaengerinfo) weg
-                        .Suchen(akt.VorgaengerGeben().NameGeben());
+                    .Suchen(akt.VorgaengerGeben().NameGeben());
             }
             for (Ort o : orte)
             {
@@ -136,15 +141,19 @@ class Karte extends JComponent implements StatusBeobachter
                 {
                     // markiere den Startort in der Startfarbe
                     g.setColor(startfarbe);
-                    g.fillOval(o.XPosGeben() - radius, o.YPosGeben() - radius,
-                            2 * radius, 2 * radius);
+                    g.fillOval(o.XPosGeben() - radius,
+                        o.YPosGeben() - radius,
+                        2 * radius,
+                        2 * radius);
                 }
                 if (ziel.equals(o.NameGeben()))
                 {
                     // markiere den Zielort in der Zielfarbe
                     g.setColor(zielfarbe);
-                    g.fillOval(o.XPosGeben() - radius, o.YPosGeben() - radius,
-                            2 * radius, 2 * radius);
+                    g.fillOval(o.XPosGeben() - radius,
+                        o.YPosGeben() - radius,
+                        2 * radius,
+                        2 * radius);
                 }
             }
         }

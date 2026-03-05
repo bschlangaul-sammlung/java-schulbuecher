@@ -23,7 +23,7 @@ public class Woerterbuch
         woerterbuch = new Liste();
         SortiertEinfuegen("cup", "Tasse, Becher");
         SortiertEinfuegen("cube",
-                "Wuerfel, dritte Potenz, in die dritte Potenz heben, in Wuerfel schneiden");
+            "Wuerfel, dritte Potenz, in die dritte Potenz heben, in Wuerfel schneiden");
         SortiertEinfuegen("crow", "Kraehe, Freudenschrei, frohlocken, kraehen");
         SortiertEinfuegen("crab", "Krabbe, Krebs, Griesgram");
         SortiertEinfuegen("cook", "Koch, kochen");

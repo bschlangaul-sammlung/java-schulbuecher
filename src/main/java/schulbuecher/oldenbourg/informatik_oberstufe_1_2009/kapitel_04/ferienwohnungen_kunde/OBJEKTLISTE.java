@@ -56,8 +56,14 @@ class OBJEKTLISTE
     void ObjekteSuchen(OBJEKTLISTE res, LANDINFO land, String art, int persmin,
             int persmax, int zimmin, int zimmax, boolean[] aus)
     {
-        erstes.ObjekteSuchen(res, land, art, persmin, persmax, zimmin, zimmax,
-                aus);
+        erstes.ObjekteSuchen(res,
+            land,
+            art,
+            persmin,
+            persmax,
+            zimmin,
+            zimmax,
+            aus);
     }
 
     /**

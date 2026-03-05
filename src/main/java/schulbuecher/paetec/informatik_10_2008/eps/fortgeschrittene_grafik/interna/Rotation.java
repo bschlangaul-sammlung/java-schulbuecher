@@ -20,8 +20,8 @@ public class Rotation extends Transformation
         this.xDrehpunkt = xDrehpunkt;
         this.yDrehpunkt = yDrehpunkt;
         this.winkel = winkel;
-        transformationGeben().rotate(Math.toRadians(-winkel), xDrehpunkt,
-                yDrehpunkt);
+        transformationGeben()
+            .rotate(Math.toRadians(-winkel), xDrehpunkt, yDrehpunkt);
     }
 
     public double xDrehpunktGeben()

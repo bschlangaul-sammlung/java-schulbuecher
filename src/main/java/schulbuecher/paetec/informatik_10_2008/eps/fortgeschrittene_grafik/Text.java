@@ -69,9 +69,9 @@ public class Text extends Vektorgrafik
         standardSchrift = new Font("SansSerif", Font.PLAIN, schriftgroesse);
         text = "Text";
         standardBreite = fensterGeben().getFontMetrics(standardSchrift)
-                .stringWidth(text);
+            .stringWidth(text);
         standardHoehe = fensterGeben().getFontMetrics(standardSchrift)
-                .getHeight();
+            .getHeight();
         groesseSetzen((int) standardBreite, (int) standardHoehe);
     }
 
@@ -117,9 +117,9 @@ public class Text extends Vektorgrafik
     {
         text = neuerInhalt.toString();
         standardBreite = fensterGeben().getFontMetrics(standardSchrift)
-                .stringWidth(text);
+            .stringWidth(text);
         standardHoehe = fensterGeben().getFontMetrics(standardSchrift)
-                .getHeight();
+            .getHeight();
         transformationenGeben().loeschen();
         double xPosition = xPositionGeben();
         double yPosition = yPositionGeben();
@@ -154,11 +154,11 @@ public class Text extends Vektorgrafik
         Graphics2D kopie = (Graphics2D) zeichnung.create();
         transformationenGeben().anwenden(kopie);
         kopie.setRenderingHint(RenderingHints.KEY_FRACTIONALMETRICS,
-                RenderingHints.VALUE_FRACTIONALMETRICS_ON);
+            RenderingHints.VALUE_FRACTIONALMETRICS_ON);
         kopie.setRenderingHint(RenderingHints.KEY_RENDERING,
-                RenderingHints.VALUE_RENDER_SPEED);
+            RenderingHints.VALUE_RENDER_SPEED);
         kopie.setRenderingHint(RenderingHints.KEY_COLOR_RENDERING,
-                RenderingHints.VALUE_COLOR_RENDER_SPEED);
+            RenderingHints.VALUE_COLOR_RENDER_SPEED);
         kopie.setFont(standardSchrift);
         kopie.setColor(farbeAufloesen());
         kopie.drawString(text, (float) 0.0, standardSchrift.getSize2D());

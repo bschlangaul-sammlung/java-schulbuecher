@@ -134,8 +134,8 @@ class Kontrolleur implements KnotrolleurInterface
     public void KursverlaufAnzeigen(int aktienID)
     {
         kursAnzeige.Anzeigen(
-                verbindung.KurseHolen(Kursanzeige.kursAnzahl, aktienID),
-                verbindung.AktienNameHolen(aktienID));
+            verbindung.KurseHolen(Kursanzeige.kursAnzahl, aktienID),
+            verbindung.AktienNameHolen(aktienID));
     }
 
     /**

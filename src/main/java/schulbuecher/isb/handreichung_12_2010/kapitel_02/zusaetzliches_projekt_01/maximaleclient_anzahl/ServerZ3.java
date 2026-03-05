@@ -94,7 +94,7 @@ public class ServerZ3
         {
             new ClientProzessZ1(clientSocket, this, "toomuchclients");
             System.out.println(
-                    "zu viele Verbindungen, Clientverbindung wird zurueckgesetzt");
+                "zu viele Verbindungen, Clientverbindung wird zurueckgesetzt");
         }
     }
 

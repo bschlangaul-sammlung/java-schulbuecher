@@ -38,10 +38,11 @@ class DATENBANKVERBINDUNG implements MELDUNGSERZEUGER
         allebeobachter = new ArrayList<MELDUNGSBEOBACHTER>();
         try
         {
-            Class.forName("com.mysql.jdbc.Driver").getDeclaredConstructor()
-                    .newInstance();
+            Class.forName("com.mysql.jdbc.Driver")
+                .getDeclaredConstructor()
+                .newInstance();
             conn = DriverManager.getConnection(
-                    "jdbc:mysql://localhost/adressverwaltung?user=adress&password=verwaltung");
+                "jdbc:mysql://localhost/adressverwaltung?user=adress&password=verwaltung");
         }
         catch (Exception e)
         {
@@ -140,12 +141,12 @@ class DATENBANKVERBINDUNG implements MELDUNGSERZEUGER
             st = conn.createStatement();
             st2 = conn.createStatement();
             rs = st.executeQuery(
-                    "SELECT personennummer, name, vorname, adressnummer FROM person");
+                "SELECT personennummer, name, vorname, adressnummer FROM person");
             while (rs.next())
             {
                 rs2 = st2.executeQuery(
-                        "SELECT strasse, hausnummer, plz, ort FROM adresse WHERE adressnummer = "
-                                + rs.getInt("adressnummer"));
+                    "SELECT strasse, hausnummer, plz, ort FROM adresse WHERE adressnummer = "
+                            + rs.getInt("adressnummer"));
                 if (rs2.next())
                 {
                     personen.Einfuegen(new PERSON(rs.getInt("personennummer"),
@@ -180,8 +181,8 @@ class DATENBANKVERBINDUNG implements MELDUNGSERZEUGER
         {
             st = conn.createStatement();
             rs = st.executeQuery(
-                    "SELECT lfnr, nummer, notiz, art FROM telefon WHERE personennummer = "
-                            + personennummer);
+                "SELECT lfnr, nummer, notiz, art FROM telefon WHERE personennummer = "
+                        + personennummer);
             while (rs.next())
             {
                 nummern.Einfuegen(new TELEFON(personennummer, rs.getInt("lfnr"),
@@ -211,8 +212,8 @@ class DATENBANKVERBINDUNG implements MELDUNGSERZEUGER
         {
             st = conn.createStatement();
             rs = st.executeQuery(
-                    "SELECT lfnr, email, notiz FROM email WHERE personennummer = "
-                            + personennummer);
+                "SELECT lfnr, email, notiz FROM email WHERE personennummer = "
+                        + personennummer);
             while (rs.next())
             {
                 adressen.Einfuegen(new EMAIL(personennummer, rs.getInt("lfnr"),
@@ -267,10 +268,9 @@ class DATENBANKVERBINDUNG implements MELDUNGSERZEUGER
             ResultSet rs;
             st = conn.createStatement();
             st.executeUpdate(
-                    "INSERT INTO person (Name, Vorname, Adressnummer) VALUES ('"
-                            + person.NameGeben() + "',  '"
-                            + person.VornameGeben() + "',  "
-                            + person.AdressNummerGeben() + ")");
+                "INSERT INTO person (Name, Vorname, Adressnummer) VALUES ('"
+                        + person.NameGeben() + "',  '" + person.VornameGeben()
+                        + "',  " + person.AdressNummerGeben() + ")");
             rs = st.executeQuery("SELECT MAX(Personennummer) FROM person");
             if (rs.next())
             {
@@ -354,11 +354,10 @@ class DATENBANKVERBINDUNG implements MELDUNGSERZEUGER
             ResultSet rs;
             st = conn.createStatement();
             st.executeUpdate(
-                    "INSERT INTO adresse (Strasse, Hausnummer, PLZ, Ort) VALUES ('"
-                            + person.StrasseGeben() + "',  '"
-                            + person.HausnummerGeben() + "',  '"
-                            + person.PlzGeben() + "', '" + person.OrtGeben()
-                            + "')");
+                "INSERT INTO adresse (Strasse, Hausnummer, PLZ, Ort) VALUES ('"
+                        + person.StrasseGeben() + "',  '"
+                        + person.HausnummerGeben() + "',  '" + person.PlzGeben()
+                        + "', '" + person.OrtGeben() + "')");
             rs = st.executeQuery("SELECT MAX(Adressnummer) FROM adresse");
             if (rs.next())
             {
@@ -394,9 +393,9 @@ class DATENBANKVERBINDUNG implements MELDUNGSERZEUGER
         try
         {
             Statement st = conn.createStatement();
-            st.executeUpdate("UPDATE person SET Adressnummer = "
-                    + person.AdressNummerGeben() + " WHERE Personennummer = "
-                    + person.NummerGeben());
+            st.executeUpdate(
+                "UPDATE person SET Adressnummer = " + person.AdressNummerGeben()
+                        + " WHERE Personennummer = " + person.NummerGeben());
             st.close();
             return true;
         }
@@ -420,11 +419,11 @@ class DATENBANKVERBINDUNG implements MELDUNGSERZEUGER
         {
             Statement st = conn.createStatement();
             st.executeUpdate(
-                    "UPDATE telefon SET Nummer = '" + telefon.NummerGeben()
-                            + "', Art = '" + telefon.ArtGeben() + "', Notiz = '"
-                            + telefon.NotizGeben() + "' WHERE Personennummer = "
-                            + telefon.PersonenNummerGeben() + " AND Lfnr = "
-                            + telefon.LaufendeNummerGeben());
+                "UPDATE telefon SET Nummer = '" + telefon.NummerGeben()
+                        + "', Art = '" + telefon.ArtGeben() + "', Notiz = '"
+                        + telefon.NotizGeben() + "' WHERE Personennummer = "
+                        + telefon.PersonenNummerGeben() + " AND Lfnr = "
+                        + telefon.LaufendeNummerGeben());
             st.close();
             return true;
         }
@@ -451,8 +450,8 @@ class DATENBANKVERBINDUNG implements MELDUNGSERZEUGER
         {
             st = conn.createStatement();
             rs = st.executeQuery(
-                    "SELECT MAX(Lfnr) FROM telefon WHERE Personennummer = "
-                            + telefon.PersonenNummerGeben());
+                "SELECT MAX(Lfnr) FROM telefon WHERE Personennummer = "
+                        + telefon.PersonenNummerGeben());
             if (rs.next())
             {
                 lfnr = rs.getInt(1) + 1;
@@ -463,11 +462,10 @@ class DATENBANKVERBINDUNG implements MELDUNGSERZEUGER
             }
             telefon.LaufendeNummerSetzen(lfnr);
             st.executeUpdate(
-                    "INSERT INTO telefon (Personennummer, Lfnr, Nummer, Art, Notiz) VALUES ("
-                            + telefon.PersonenNummerGeben() + ", " + lfnr
-                            + ", '" + telefon.NummerGeben() + "', '"
-                            + telefon.ArtGeben() + "', '" + telefon.NotizGeben()
-                            + "')");
+                "INSERT INTO telefon (Personennummer, Lfnr, Nummer, Art, Notiz) VALUES ("
+                        + telefon.PersonenNummerGeben() + ", " + lfnr + ", '"
+                        + telefon.NummerGeben() + "', '" + telefon.ArtGeben()
+                        + "', '" + telefon.NotizGeben() + "')");
             st.close();
             return true;
         }
@@ -545,8 +543,8 @@ class DATENBANKVERBINDUNG implements MELDUNGSERZEUGER
         {
             st = conn.createStatement();
             rs = st.executeQuery(
-                    "SELECT MAX(Lfnr) FROM email WHERE Personennummer = "
-                            + email.PersonenNummerGeben());
+                "SELECT MAX(Lfnr) FROM email WHERE Personennummer = "
+                        + email.PersonenNummerGeben());
             if (rs.next())
             {
                 lfnr = rs.getInt(1) + 1;
@@ -557,10 +555,10 @@ class DATENBANKVERBINDUNG implements MELDUNGSERZEUGER
             }
             email.LaufendeNummerSetzen(lfnr);
             st.executeUpdate(
-                    "INSERT INTO email (Personennummer, Lfnr, EMail, Notiz) VALUES ("
-                            + email.PersonenNummerGeben() + ", " + lfnr + ", '"
-                            + email.AdresseGeben() + "', '" + email.NotizGeben()
-                            + "')");
+                "INSERT INTO email (Personennummer, Lfnr, EMail, Notiz) VALUES ("
+                        + email.PersonenNummerGeben() + ", " + lfnr + ", '"
+                        + email.AdresseGeben() + "', '" + email.NotizGeben()
+                        + "')");
             st.close();
             return true;
         }
@@ -607,7 +605,7 @@ class DATENBANKVERBINDUNG implements MELDUNGSERZEUGER
         {
             Statement st = conn.createStatement();
             int res = st.executeUpdate(
-                    "DELETE FROM adresse WHERE NOT (Adressnummer IN (SELECT DISTINCT Adressnummer FROM person))");
+                "DELETE FROM adresse WHERE NOT (Adressnummer IN (SELECT DISTINCT Adressnummer FROM person))");
             st.close();
             return res;
         }
@@ -633,13 +631,13 @@ class DATENBANKVERBINDUNG implements MELDUNGSERZEUGER
             st = conn.createStatement();
             st2 = conn.createStatement();
             rs = st.executeQuery(
-                    "SELECT personennummer, name, vorname, adressnummer FROM person WHERE vorname LIKE '%"
-                            + text + "%'");
+                "SELECT personennummer, name, vorname, adressnummer FROM person WHERE vorname LIKE '%"
+                        + text + "%'");
             while (rs.next())
             {
                 rs2 = st2.executeQuery(
-                        "SELECT strasse, hausnummer, plz, ort FROM adresse WHERE adressnummer = "
-                                + rs.getInt("adressnummer"));
+                    "SELECT strasse, hausnummer, plz, ort FROM adresse WHERE adressnummer = "
+                            + rs.getInt("adressnummer"));
                 if (rs2.next())
                 {
                     personen.Einfuegen(new PERSON(rs.getInt("personennummer"),
@@ -689,9 +687,9 @@ class DATENBANKVERBINDUNG implements MELDUNGSERZEUGER
                         + strasse + "%'";
             }
             rs = st.executeQuery(
-                    "SELECT personennummer, name, vorname, person.adressnummer AS adressnummer, strasse, hausnummer, plz, ort FROM person, adresse "
-                            + "WHERE person.adressnummer = adresse.adressnummer AND "
-                            + bedingung);
+                "SELECT personennummer, name, vorname, person.adressnummer AS adressnummer, strasse, hausnummer, plz, ort FROM person, adresse "
+                        + "WHERE person.adressnummer = adresse.adressnummer AND "
+                        + bedingung);
             while (rs.next())
             {
                 personen.Einfuegen(new PERSON(rs.getInt("personennummer"),
@@ -724,14 +722,14 @@ class DATENBANKVERBINDUNG implements MELDUNGSERZEUGER
             st = conn.createStatement();
             st2 = conn.createStatement();
             rs = st.executeQuery(
-                    "SELECT personennummer, name, vorname, adressnummer FROM person WHERE personennummer IN "
-                            + "(SELECT DISTINCT Personennummer FROM telefon WHERE nummer LIKE '%"
-                            + text + "%')");
+                "SELECT personennummer, name, vorname, adressnummer FROM person WHERE personennummer IN "
+                        + "(SELECT DISTINCT Personennummer FROM telefon WHERE nummer LIKE '%"
+                        + text + "%')");
             while (rs.next())
             {
                 rs2 = st2.executeQuery(
-                        "SELECT strasse, hausnummer, plz, ort FROM adresse WHERE adressnummer = "
-                                + rs.getInt("adressnummer"));
+                    "SELECT strasse, hausnummer, plz, ort FROM adresse WHERE adressnummer = "
+                            + rs.getInt("adressnummer"));
                 if (rs2.next())
                 {
                     personen.Einfuegen(new PERSON(rs.getInt("personennummer"),
@@ -767,14 +765,14 @@ class DATENBANKVERBINDUNG implements MELDUNGSERZEUGER
             st = conn.createStatement();
             st2 = conn.createStatement();
             rs = st.executeQuery(
-                    "SELECT personennummer, name, vorname, adressnummer FROM person WHERE personennummer IN "
-                            + "(SELECT DISTINCT Personennummer FROM email WHERE Email LIKE '%"
-                            + text + "%')");
+                "SELECT personennummer, name, vorname, adressnummer FROM person WHERE personennummer IN "
+                        + "(SELECT DISTINCT Personennummer FROM email WHERE Email LIKE '%"
+                        + text + "%')");
             while (rs.next())
             {
                 rs2 = st2.executeQuery(
-                        "SELECT strasse, hausnummer, plz, ort FROM adresse WHERE adressnummer = "
-                                + rs.getInt("adressnummer"));
+                    "SELECT strasse, hausnummer, plz, ort FROM adresse WHERE adressnummer = "
+                            + rs.getInt("adressnummer"));
                 if (rs2.next())
                 {
                     personen.Einfuegen(new PERSON(rs.getInt("personennummer"),

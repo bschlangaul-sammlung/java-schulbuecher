@@ -101,7 +101,7 @@ class KantenSymbol
         double x2 = nach.XGeben();
         double y2 = nach.YGeben();
         int länge = (int) Math
-                .sqrt((x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2));
+            .sqrt((x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2));
         int xm = (int) ((x1 + x2) / 2.0);
         int ym = (int) ((y1 + y2) / 2.0);
         int x = xm - länge / 2;
@@ -163,22 +163,22 @@ class KantenSymbol
         if ((-90 <= winkel) && (winkel <= 0))
         {
             text.PositionSetzen(xm + (int) (delta * Math.cos(w)),
-                    ym - (int) (delta * Math.sin(w)));
+                ym - (int) (delta * Math.sin(w)));
         }
         else if ((0 < winkel) && (winkel <= 90))
         {
             text.PositionSetzen(xm - (int) (delta * Math.cos(w)),
-                    ym + (int) (delta * Math.sin(w)) + 7);
+                ym + (int) (delta * Math.sin(w)) + 7);
         }
         else if ((90 < winkel) && (winkel <= 180))
         {
             text.PositionSetzen(xm - (int) (delta * Math.cos(w)),
-                    ym + (int) (delta * Math.sin(w)));
+                ym + (int) (delta * Math.sin(w)));
         }
         else
         {
             text.PositionSetzen(xm + (int) (delta * Math.cos(w)),
-                    ym - (int) (delta * Math.sin(w)) + 10);
+                ym - (int) (delta * Math.sin(w)) + 10);
         }
     }
 

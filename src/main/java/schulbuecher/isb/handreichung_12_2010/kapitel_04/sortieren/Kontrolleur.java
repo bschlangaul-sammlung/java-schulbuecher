@@ -52,12 +52,12 @@ class Kontrolleur implements KontrolleurInterface
         if (auswahl)
         {
             oberflaeche
-                    .AuswahlSortierzeitSetzen("" + test.ZeitFuerAuswahlGeben());
+                .AuswahlSortierzeitSetzen("" + test.ZeitFuerAuswahlGeben());
         }
         if (mischen)
         {
             oberflaeche
-                    .MischSortierzeitSetzen("" + test.ZeitFuerMergesortGeben());
+                .MischSortierzeitSetzen("" + test.ZeitFuerMergesortGeben());
         }
     }
 

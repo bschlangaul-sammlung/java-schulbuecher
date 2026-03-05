@@ -14,7 +14,7 @@ public class DatenKnoten extends BaumElement
         if (inhalt.nationGeben().equals("Deutschland"))
         {
             System.out
-                    .println(inhalt.nameGeben() + ": " + inhalt.nationGeben());
+                .println(inhalt.nameGeben() + ": " + inhalt.nationGeben());
         }
         naechsterRechts.k2();
     }

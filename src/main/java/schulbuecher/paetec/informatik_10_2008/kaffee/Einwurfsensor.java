@@ -43,8 +43,8 @@ public class Einwurfsensor extends Sensor
         if (muenzwert == null)
         {
             System.err.println(
-                    "Bitte als Muenzwert eine ganze Zahl eingeben und nicht: \""
-                            + feld.inhaltGeben() + "\"");
+                "Bitte als Muenzwert eine ganze Zahl eingeben und nicht: \""
+                        + feld.inhaltGeben() + "\"");
             return;
         }
         automat.muenzeEinwerfen(muenzwert);

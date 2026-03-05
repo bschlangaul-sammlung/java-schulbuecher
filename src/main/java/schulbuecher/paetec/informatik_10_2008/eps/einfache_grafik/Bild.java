@@ -59,7 +59,7 @@ public class Bild
     {// uh
         einfachegrafikAnmelden(this, fortgeschrittenesFensterGeben(fenster));// uh
         schulbuecher.paetec.informatik_10_2008.eps.fortgeschrittene_grafik.Bild fg = (schulbuecher.paetec.informatik_10_2008.eps.fortgeschrittene_grafik.Bild) fortgeschrittenegrafikGeben(
-                this);
+            this);
         wirdAngezeigt = false;
         breite = fg.breiteGeben();
         hoehe = fg.hoeheGeben();
@@ -83,7 +83,7 @@ public class Bild
     public void dateinameSetzen(String neuerDateiname)
     {
         schulbuecher.paetec.informatik_10_2008.eps.fortgeschrittene_grafik.Bild fg = (schulbuecher.paetec.informatik_10_2008.eps.fortgeschrittene_grafik.Bild) fortgeschrittenegrafikGeben(
-                this);
+            this);
         fg.dateinameSetzen(neuerDateiname);
         dateiname = fg.dateinameGeben();
         if (wirdAngezeigt)
@@ -98,7 +98,7 @@ public class Bild
     {
         String ergebnis = "";
         String[] dateiliste = schulbuecher.paetec.informatik_10_2008.eps.fortgeschrittene_grafik.Bild
-                .bilderGeben();
+            .bilderGeben();
         for (int i = 0; i < dateiliste.length; i++)
         {
             if (i == dateiliste.length - 1)
@@ -118,7 +118,7 @@ public class Bild
     public void groesseSetzen(int neueBreite, int neueHoehe)
     {
         schulbuecher.paetec.informatik_10_2008.eps.fortgeschrittene_grafik.Bild fg = (schulbuecher.paetec.informatik_10_2008.eps.fortgeschrittene_grafik.Bild) fortgeschrittenegrafikGeben(
-                this);
+            this);
         fg.groesseSetzen(neueBreite, neueHoehe);
         breite = fg.breiteGeben();
         hoehe = fg.hoeheGeben();
@@ -135,7 +135,7 @@ public class Bild
         xPosition = neueXPosition;
         yPosition = neueYPosition;
         schulbuecher.paetec.informatik_10_2008.eps.fortgeschrittene_grafik.Bild fg = (schulbuecher.paetec.informatik_10_2008.eps.fortgeschrittene_grafik.Bild) fortgeschrittenegrafikGeben(
-                this);
+            this);
         fg.positionSetzen(neueXPosition, neueYPosition);
         if (wirdAngezeigt)
             fg.fensterGeben().zeichnen();
@@ -150,7 +150,7 @@ public class Bild
         xPosition += deltaX;
         yPosition += deltaY;
         schulbuecher.paetec.informatik_10_2008.eps.fortgeschrittene_grafik.Bild fg = (schulbuecher.paetec.informatik_10_2008.eps.fortgeschrittene_grafik.Bild) fortgeschrittenegrafikGeben(
-                this);
+            this);
         fg.verschieben(deltaX, deltaY);
         if (wirdAngezeigt)
             fg.fensterGeben().zeichnen();
@@ -162,7 +162,7 @@ public class Bild
     public void anzeigen()
     {
         schulbuecher.paetec.informatik_10_2008.eps.fortgeschrittene_grafik.Bild fg = (schulbuecher.paetec.informatik_10_2008.eps.fortgeschrittene_grafik.Bild) fortgeschrittenegrafikGeben(
-                this);
+            this);
         fg.abmelden();
         fg.anmelden();
         wirdAngezeigt = true;
@@ -175,7 +175,7 @@ public class Bild
     public void verstecken()
     {
         schulbuecher.paetec.informatik_10_2008.eps.fortgeschrittene_grafik.Bild fg = (schulbuecher.paetec.informatik_10_2008.eps.fortgeschrittene_grafik.Bild) fortgeschrittenegrafikGeben(
-                this);
+            this);
         fg.abmelden();
         wirdAngezeigt = false;
         fg.fensterGeben().zeichnen();
@@ -188,7 +188,7 @@ public class Bild
     public String toString()
     {
         schulbuecher.paetec.informatik_10_2008.eps.fortgeschrittene_grafik.Bild fg = (schulbuecher.paetec.informatik_10_2008.eps.fortgeschrittene_grafik.Bild) fortgeschrittenegrafikGeben(
-                this);
+            this);
         return fg.toString();
     }
 }

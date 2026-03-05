@@ -47,7 +47,7 @@ public class Bildwahlsensor extends Sensor
         feld.inhaltSetzen(bild.dateinameGeben());
         feld.anzeigen();
         anzeige.inhaltSetzen(
-                "Zur Verfuegung stehen folgende Bilder: " + bild.bilderGeben());
+            "Zur Verfuegung stehen folgende Bilder: " + bild.bilderGeben());
         anzeige.anzeigen();
     }
 

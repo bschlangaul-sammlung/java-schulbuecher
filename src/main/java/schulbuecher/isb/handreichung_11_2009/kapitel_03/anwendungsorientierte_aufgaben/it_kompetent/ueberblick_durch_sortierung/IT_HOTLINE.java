@@ -52,9 +52,9 @@ class IT_HOTLINE
         else
         {
             System.out
-                    .println("Derzeit sind keine Anrufer in der Warteschleife");
+                .println("Derzeit sind keine Anrufer in der Warteschleife");
             System.out.println(
-                    "----------------------------------------------------");
+                "----------------------------------------------------");
         }
     }
 
@@ -66,8 +66,8 @@ class IT_HOTLINE
     {
         System.out.println("Momentane Anzahl der Anrufer in der Warteschleife: "
                 + anruferschlange.AnzahlGeben());
-        System.out.println(
-                "----------------------------------------------------");
+        System.out
+            .println("----------------------------------------------------");
     }
 
     // Aufgabe 2: Plege der Kundendaten

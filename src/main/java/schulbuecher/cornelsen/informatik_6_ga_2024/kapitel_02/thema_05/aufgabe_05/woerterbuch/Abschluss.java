@@ -186,8 +186,8 @@ class Abschluss extends Baumelement
     @Override
     Baumelement Entfernen(String vergleichsSchlüssel)
     {
-        System.out.println(
-                "Schlüssel nicht vorhanden, entfernen nicht möglich!!");
+        System.out
+            .println("Schlüssel nicht vorhanden, entfernen nicht möglich!!");
         return this;
     }
 
@@ -203,8 +203,8 @@ class Abschluss extends Baumelement
     @Override
     Baumelement Entfernen2(String vergleichsSchlüssel)
     {
-        System.out.println(
-                "Schlüssel nicht vorhanden, entfernen nicht möglich!!");
+        System.out
+            .println("Schlüssel nicht vorhanden, entfernen nicht möglich!!");
         return this;
     }
 

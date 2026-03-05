@@ -61,7 +61,7 @@ public class Turtle
     public Turtle()
     {
         symbol = (Zeichenfenster.TurtleIntern) Zeichenfenster
-                .SymbolErzeugen(Zeichenfenster.SymbolArt.turtle);
+            .SymbolErzeugen(Zeichenfenster.SymbolArt.turtle);
         symbol.SichtbarkeitSetzen(true);
         x = symbol.x;
         y = symbol.y;

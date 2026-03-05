@@ -41,7 +41,7 @@ class KUNDEWENIG extends KUNDE
             if (schlangen[i].IstAnstellenMoeglich())
             {
                 if (schlangen[i].ArtikelanzahlGeben() < beste
-                        .ArtikelanzahlGeben())
+                    .ArtikelanzahlGeben())
                 {
                     beste = schlangen[i];
                 }

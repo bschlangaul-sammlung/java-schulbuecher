@@ -66,22 +66,28 @@ class KopfSymbol
                 switch (ausrichtung)
                 {
                 case 'N':
-                    g2.transform(AffineTransform.getRotateInstance(
-                            Math.toRadians(270), größe / 2, größe / 2));
                     g2.transform(
-                            AffineTransform.getTranslateInstance(-größe, 0));
+                        AffineTransform.getRotateInstance(Math.toRadians(270),
+                            größe / 2,
+                            größe / 2));
+                    g2.transform(
+                        AffineTransform.getTranslateInstance(-größe, 0));
                     break;
 
                 case 'S':
-                    g2.transform(AffineTransform.getRotateInstance(
-                            Math.toRadians(90), größe / 2, größe / 2));
+                    g2.transform(
+                        AffineTransform.getRotateInstance(Math.toRadians(90),
+                            größe / 2,
+                            größe / 2));
                     break;
 
                 case 'W':
-                    g2.transform(AffineTransform.getRotateInstance(
-                            Math.toRadians(180), größe / 2, größe / 2));
                     g2.transform(
-                            AffineTransform.getTranslateInstance(-größe, 0));
+                        AffineTransform.getRotateInstance(Math.toRadians(180),
+                            größe / 2,
+                            größe / 2));
+                    g2.transform(
+                        AffineTransform.getTranslateInstance(-größe, 0));
                     break;
 
                 default:
@@ -111,14 +117,22 @@ class KopfSymbol
                 g.drawLine(größe, größe / 2 - 1, größe * 5 / 4, größe / 2 - 1);
                 g.drawLine(größe, größe / 2, größe * 5 / 4, größe / 2);
                 g.drawLine(größe, größe / 2 + 1, größe * 5 / 4, größe / 2 + 1);
-                g.drawLine(größe * 5 / 4, größe / 2, größe * 6 / 4,
-                        größe * 3 / 4);
-                g.drawLine(größe * 5 / 4, größe / 2 + 1, größe * 6 / 4,
-                        größe * 3 / 4 + 1);
-                g.drawLine(größe * 5 / 4, größe / 2, größe * 6 / 4,
-                        größe * 1 / 4);
-                g.drawLine(größe * 5 / 4, größe / 2 - 1, größe * 6 / 4,
-                        größe * 1 / 4 - 1);
+                g.drawLine(größe * 5 / 4,
+                    größe / 2,
+                    größe * 6 / 4,
+                    größe * 3 / 4);
+                g.drawLine(größe * 5 / 4,
+                    größe / 2 + 1,
+                    größe * 6 / 4,
+                    größe * 3 / 4 + 1);
+                g.drawLine(größe * 5 / 4,
+                    größe / 2,
+                    größe * 6 / 4,
+                    größe * 1 / 4);
+                g.drawLine(größe * 5 / 4,
+                    größe / 2 - 1,
+                    größe * 6 / 4,
+                    größe * 1 / 4 - 1);
                 g2.setTransform(old);
             }
         };
@@ -141,29 +155,29 @@ class KopfSymbol
         case 'O':
             anzeige.setSize(größe * 2, größe);
             anzeige.setLocation(
-                    Oberflaeche.FensterBreiteGeben() / 2 + x * größe,
-                    Oberflaeche.FensterHöheGeben() / 2 + y * größe);
+                Oberflaeche.FensterBreiteGeben() / 2 + x * größe,
+                Oberflaeche.FensterHöheGeben() / 2 + y * größe);
             break;
 
         case 'W':
             anzeige.setSize(größe * 2, größe);
             anzeige.setLocation(
-                    Oberflaeche.FensterBreiteGeben() / 2 + (x - 1) * größe,
-                    Oberflaeche.FensterHöheGeben() / 2 + y * größe);
+                Oberflaeche.FensterBreiteGeben() / 2 + (x - 1) * größe,
+                Oberflaeche.FensterHöheGeben() / 2 + y * größe);
             break;
 
         case 'S':
             anzeige.setSize(größe, größe * 2);
             anzeige.setLocation(
-                    Oberflaeche.FensterBreiteGeben() / 2 + x * größe,
-                    Oberflaeche.FensterHöheGeben() / 2 + y * größe);
+                Oberflaeche.FensterBreiteGeben() / 2 + x * größe,
+                Oberflaeche.FensterHöheGeben() / 2 + y * größe);
             break;
 
         case 'N':
             anzeige.setSize(größe, größe * 2);
             anzeige.setLocation(
-                    Oberflaeche.FensterBreiteGeben() / 2 + x * größe,
-                    Oberflaeche.FensterHöheGeben() / 2 + (y - 1) * größe);
+                Oberflaeche.FensterBreiteGeben() / 2 + x * größe,
+                Oberflaeche.FensterHöheGeben() / 2 + (y - 1) * größe);
             break;
         }
     }

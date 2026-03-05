@@ -39,11 +39,11 @@ public class WoerterbuchTest
         System.out.println("Startsituation:");
         woerterbuch.InformationAusgeben();
         System.out.println(
-                "Entfernen eines Knotens mit nur einem linken, keinen rechten Nachfolger: coin");
+            "Entfernen eines Knotens mit nur einem linken, keinen rechten Nachfolger: coin");
         woerterbuch.KnotenEntfernen("coin");
         woerterbuch.InformationAusgeben();
         System.out.println(
-                "Entfernen eines Knotens mit rechten, keinen linken Nachfolger: cable");
+            "Entfernen eines Knotens mit rechten, keinen linken Nachfolger: cable");
         woerterbuch.KnotenEntfernen("cable");
         woerterbuch.InformationAusgeben();
         System.out.println("Entfernen eines Knotens mit zwei Nachfolger: crab");
@@ -51,7 +51,7 @@ public class WoerterbuchTest
         woerterbuch.KnotenEntfernen("crab");
         woerterbuch.InformationAusgeben();
         System.out
-                .println("Entfernen eines Knotens mit zwei Nachfolger: creek");
+            .println("Entfernen eines Knotens mit zwei Nachfolger: creek");
         System.out.println("(Rechter Nachfolger ist eine entartete Liste)");
         woerterbuch.KnotenEntfernen("creek");
         woerterbuch.InformationAusgeben();
@@ -68,7 +68,7 @@ public class WoerterbuchTest
         woerterbuch.KnotenEntfernen("canvas");
         woerterbuch.InformationAusgeben();
         System.out.println(
-                "Versuch einen Schluessel zu entfernen, der nicht existiert: city");
+            "Versuch einen Schluessel zu entfernen, der nicht existiert: city");
         woerterbuch.KnotenEntfernen("city");
         woerterbuch.InformationAusgeben();
     }

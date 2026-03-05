@@ -40,8 +40,9 @@ public class SpielAutomat
 
     public void spiele()
     {
-        setzeFarbmuster(zufall.nextInt(9), zufall.nextInt(9),
-                zufall.nextInt(9));
+        setzeFarbmuster(zufall.nextInt(9),
+            zufall.nextInt(9),
+            zufall.nextInt(9));
     }
 
     public void schreibeWerte()

@@ -47,7 +47,7 @@ public class RangierBahnhof
         gleis3.AlleAusgeben();
         System.out.println();
         System.out.println(
-                "--------------------------------------------------------------");
+            "--------------------------------------------------------------");
     }
 
     /**
@@ -171,7 +171,7 @@ public class RangierBahnhof
         default:
             anzahl = -1;
         }
-        System.out.println("Gleis " + gleisnummer + ": " + anzahl
-                + " Waggons vom Typ " + typ);
+        System.out.println(
+            "Gleis " + gleisnummer + ": " + anzahl + " Waggons vom Typ " + typ);
     }
 }

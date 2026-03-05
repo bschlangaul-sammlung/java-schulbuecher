@@ -11,8 +11,13 @@ class ClientAutomat
 {
     private enum Zustaende
     {
-        start, aktionWaehlen, dateinameSchicken, dateinameHolen, schicken,
-        holen, beenden
+        start,
+        aktionWaehlen,
+        dateinameSchicken,
+        dateinameHolen,
+        schicken,
+        holen,
+        beenden
     };
 
     private Zustaende zustand;
@@ -61,7 +66,7 @@ class ClientAutomat
 
             case aktionWaehlen:
                 text = ein.TextLesen(
-                        "Bitte die gewünschte Aktion (schicken, holen, beenden) eingeben.");
+                    "Bitte die gewünschte Aktion (schicken, holen, beenden) eingeben.");
                 if (text.equals("schicken"))
                 {
                     verb.ZeileSenden("schicken");
@@ -87,7 +92,7 @@ class ClientAutomat
 
             case dateinameSchicken:
                 text = ein.TextLesen(
-                        "Bitte den Namen der zu schickenden Datei eingeben.");
+                    "Bitte den Namen der zu schickenden Datei eingeben.");
                 in = new DateiLesen();
                 if (in.Oeffnen(text))
                 {
@@ -95,8 +100,8 @@ class ClientAutomat
                 }
                 else
                 {
-                    System.out.println(
-                            "Konnte die Datei nicht \u00F6ffnen: " + text);
+                    System.out
+                        .println("Konnte die Datei nicht \u00F6ffnen: " + text);
                     in = null;
                     zustand = Zustaende.aktionWaehlen;
                 }
@@ -125,7 +130,7 @@ class ClientAutomat
 
             case dateinameHolen:
                 text = ein.TextLesen(
-                        "Bitte den Namen der zu holenden Datei eingeben.");
+                    "Bitte den Namen der zu holenden Datei eingeben.");
                 out = new DateiSchreiben();
                 if (out.Oeffnen(text))
                 {
@@ -134,7 +139,7 @@ class ClientAutomat
                 else
                 {
                     System.out
-                            .println("Konnte die Datei nicht anlegen: " + text);
+                        .println("Konnte die Datei nicht anlegen: " + text);
                     out = null;
                     zustand = Zustaende.aktionWaehlen;
                 }
@@ -190,7 +195,7 @@ class ClientAutomat
         if (!text.equals("*"))
         {
             System.out.println(
-                    "Protokollverletzung: * erwartet, " + text + " empfangen");
+                "Protokollverletzung: * erwartet, " + text + " empfangen");
         }
     }
 }

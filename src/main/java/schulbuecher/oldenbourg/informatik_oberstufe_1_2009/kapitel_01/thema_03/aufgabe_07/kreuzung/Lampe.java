@@ -20,7 +20,15 @@ public class Lampe
 {
     private enum Farbe
     {
-        weiss, schwarz, rot, gruen, blau, gelb, magenta, cyan, grau;
+        weiss,
+        schwarz,
+        rot,
+        gruen,
+        blau,
+        gelb,
+        magenta,
+        cyan,
+        grau;
 
         /**
          * Konvertiert die angegebene Farbe in ihr AWT-Pendant.
@@ -165,6 +173,6 @@ public class Lampe
         this.x = x;
         this.y = y;
         anzeige.setLocation(Oberfaeche.FensterBreiteGeben() / 2 + x * groesse,
-                Oberfaeche.FensterHoeheGeben() / 2 + y * groesse);
+            Oberfaeche.FensterHoeheGeben() / 2 + y * groesse);
     }
 }

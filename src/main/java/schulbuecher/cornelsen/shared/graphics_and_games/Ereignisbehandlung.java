@@ -15,29 +15,29 @@ public class Ereignisbehandlung
      */
     public Ereignisbehandlung()
     {
-        Zeichenfenster.AktionsEmpfängerEintragen(
-                new Zeichenfenster.AktionsEmpfaenger()
+        Zeichenfenster
+            .AktionsEmpfängerEintragen(new Zeichenfenster.AktionsEmpfaenger()
+            {
+                public void Ausführen()
                 {
-                    public void Ausführen()
-                    {
-                        TaktImpulsAusführen();
-                    }
+                    TaktImpulsAusführen();
+                }
 
-                    public void Taste(char taste)
-                    {
-                        TasteGedrückt(taste);
-                    }
+                public void Taste(char taste)
+                {
+                    TasteGedrückt(taste);
+                }
 
-                    public void SonderTaste(int taste)
-                    {
-                        SonderTasteGedrückt(taste);
-                    }
+                public void SonderTaste(int taste)
+                {
+                    SonderTasteGedrückt(taste);
+                }
 
-                    public void Geklickt(int x, int y, int anzahl)
-                    {
-                        MausGeklickt(x, y, anzahl);
-                    }
-                });
+                public void Geklickt(int x, int y, int anzahl)
+                {
+                    MausGeklickt(x, y, anzahl);
+                }
+            });
     }
 
     /**

@@ -51,9 +51,9 @@ class Kunde extends Thread
             {
                 auswahl = 1;
             }
-            System.out.println(getName() + ": Platz "
-                    + zuege[auswahl].nochFrei() + " in der "
-                    + zuege[auswahl].getName() + " reserviert");
+            System.out.println(
+                getName() + ": Platz " + zuege[auswahl].nochFrei() + " in der "
+                        + zuege[auswahl].getName() + " reserviert");
         }
     }
 }

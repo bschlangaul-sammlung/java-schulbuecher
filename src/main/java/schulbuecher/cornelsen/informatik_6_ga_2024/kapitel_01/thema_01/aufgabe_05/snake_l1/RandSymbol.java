@@ -135,10 +135,10 @@ class RandSymbol
         }
         anzeige.setSize((breite + 2) * größe, (hoehe + 2) * größe);
         anzeige.setLocation(
-                Oberflaeche.FensterBreiteGeben() / 2
-                        - (breite / 2 + 1 + breite % 2) * größe,
-                Oberflaeche.FensterHöheGeben() / 2
-                        - (hoehe / 2 + 1 + hoehe % 2) * größe);
+            Oberflaeche.FensterBreiteGeben() / 2
+                    - (breite / 2 + 1 + breite % 2) * größe,
+            Oberflaeche.FensterHöheGeben() / 2
+                    - (hoehe / 2 + 1 + hoehe % 2) * größe);
     }
 
     /**

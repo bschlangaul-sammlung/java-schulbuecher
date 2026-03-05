@@ -13,7 +13,11 @@ class OBJEKTINFO
 {
     enum Ausstattungen
     {
-        Fernseher, Waschmaschine, Trockner, Kuehlschrank, Gefrierschrank,
+        Fernseher,
+        Waschmaschine,
+        Trockner,
+        Kuehlschrank,
+        Gefrierschrank,
         Swimmingpool;
 
         /**
@@ -71,14 +75,15 @@ class OBJEKTINFO
         this.preis = preis;
         this.sperre = sperre;
         this.ausstattung = EnumSet
-                .noneOf(Ausstattungen.Fernseher.getDeclaringClass());
+            .noneOf(Ausstattungen.Fernseher.getDeclaringClass());
         String[] hilf = ausstattung.split(",");
         for (int i = 0; i < hilf.length; i++)
         {
             try
             {
                 this.ausstattung.add(Ausstattungen.valueOf(
-                        Ausstattungen.Fernseher.getDeclaringClass(), hilf[i]));
+                    Ausstattungen.Fernseher.getDeclaringClass(),
+                    hilf[i]));
             }
             catch (Exception e)
             {

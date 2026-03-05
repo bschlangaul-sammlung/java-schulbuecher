@@ -38,7 +38,7 @@ public class BuchstabenAnzeige extends Actor
     public void update()
     {
         ausgabeBuchstabe = v.codiereBuchstabe(aktuellerBuchstabe,
-                s.gibSchluessel());
+            s.gibSchluessel());
         setImage(createImage());
     }
 

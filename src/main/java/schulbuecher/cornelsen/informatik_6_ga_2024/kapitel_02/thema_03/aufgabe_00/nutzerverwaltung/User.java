@@ -44,8 +44,8 @@ class User
      */
     void InformationAusgeben()
     {
-        System.out.println("Der User " + vorname + " " + nachname
-                + " hat die Id " + id + ".");
+        System.out.println(
+            "Der User " + vorname + " " + nachname + " hat die Id " + id + ".");
     }
 
     /**

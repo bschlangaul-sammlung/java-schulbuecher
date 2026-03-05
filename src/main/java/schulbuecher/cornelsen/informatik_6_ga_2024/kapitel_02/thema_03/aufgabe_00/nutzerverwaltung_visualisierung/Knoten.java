@@ -169,13 +169,20 @@ class Knoten
 
         if (rechterNachfolger != null)
         {
-            rechterNachfolger.KnotenZeichnen(xmin + (xmax - xmin) / 2, xmax,
-                    y + dy, dy, knotenSymbol);
+            rechterNachfolger.KnotenZeichnen(xmin
+                    + (xmax - xmin) / 2,
+                xmax,
+                y + dy,
+                dy,
+                knotenSymbol);
         }
         if (linkerNachfolger != null)
         {
-            linkerNachfolger.KnotenZeichnen(xmin, xmin + (xmax - xmin) / 2,
-                    y + dy, dy, knotenSymbol);
+            linkerNachfolger.KnotenZeichnen(xmin,
+                xmin + (xmax - xmin) / 2,
+                y + dy,
+                dy,
+                knotenSymbol);
         }
     }
 

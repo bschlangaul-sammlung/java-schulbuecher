@@ -134,17 +134,19 @@ class MonteCarlo
             double neuY = yPosition;
             for (int i = 0; i < laenge; i++)
             {
-                canvas.draw(this, farbe, new Ellipse2D.Double(neuX, neuY,
-                        linienstaerke, linienstaerke));
+                canvas.draw(this,
+                    farbe,
+                    new Ellipse2D.Double(neuX, neuY, linienstaerke,
+                            linienstaerke));
                 canvas.wait(3);
                 neuX = neuX + Math.cos(winkel * Math.PI / 180);
                 neuY = neuY - Math.sin(winkel * Math.PI / 180);
             }
         }
         xPosition = Math
-                .round(xPosition + Math.cos(winkel * Math.PI / 180) * laenge);
+            .round(xPosition + Math.cos(winkel * Math.PI / 180) * laenge);
         yPosition = Math
-                .round(yPosition - Math.sin(winkel * Math.PI / 180) * laenge);
+            .round(yPosition - Math.sin(winkel * Math.PI / 180) * laenge);
     }
 
     void auswischen()

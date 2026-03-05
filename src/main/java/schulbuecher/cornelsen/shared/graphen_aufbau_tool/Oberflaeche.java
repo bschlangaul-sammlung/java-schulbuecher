@@ -187,9 +187,12 @@ class Oberflaeche
             {
                 klickZeit = e.getWhen();
                 malfläche.requestFocus();
-                empfänger.MausGedrückt(e.getX(), e.getY(),
-                        e.getButton() == MouseEvent.BUTTON3, e.isControlDown(),
-                        e.isShiftDown(), e.isAltDown());
+                empfänger.MausGedrückt(e.getX(),
+                    e.getY(),
+                    e.getButton() == MouseEvent.BUTTON3,
+                    e.isControlDown(),
+                    e.isShiftDown(),
+                    e.isAltDown());
             }
 
             /**
@@ -200,9 +203,12 @@ class Oberflaeche
              */
             public void mouseReleased(MouseEvent e)
             {
-                empfänger.MausLosgelassen(e.getX(), e.getY(),
-                        e.getButton() == MouseEvent.BUTTON3, e.isControlDown(),
-                        e.isShiftDown(), e.isAltDown());
+                empfänger.MausLosgelassen(e.getX(),
+                    e.getY(),
+                    e.getButton() == MouseEvent.BUTTON3,
+                    e.isControlDown(),
+                    e.isShiftDown(),
+                    e.isAltDown());
             }
 
             /**
@@ -213,9 +219,13 @@ class Oberflaeche
              */
             public void mouseClicked(MouseEvent e)
             {
-                empfänger.MausGeklickt(e.getX(), e.getY(), e.getClickCount(),
-                        e.getButton() == MouseEvent.BUTTON3, e.isControlDown(),
-                        e.isShiftDown(), e.isAltDown());
+                empfänger.MausGeklickt(e.getX(),
+                    e.getY(),
+                    e.getClickCount(),
+                    e.getButton() == MouseEvent.BUTTON3,
+                    e.isControlDown(),
+                    e.isShiftDown(),
+                    e.isAltDown());
             }
         });
         malfläche.addMouseMotionListener(new MouseMotionAdapter()
@@ -277,9 +287,10 @@ class Oberflaeche
             public void actionPerformed(ActionEvent e)
             {
                 if (!empfänger.IstGeändert() || (JOptionPane.showConfirmDialog(
-                        fenster, "Ungesicherte Änderungen verwerfen?",
-                        "Achtung",
-                        JOptionPane.OK_CANCEL_OPTION) == JOptionPane.OK_OPTION))
+                    fenster,
+                    "Ungesicherte Änderungen verwerfen?",
+                    "Achtung",
+                    JOptionPane.OK_CANCEL_OPTION) == JOptionPane.OK_OPTION))
                 {
                     aktuelleDatei = null;
                     fenster.setTitle("Graphenaufbau");
@@ -295,9 +306,10 @@ class Oberflaeche
             public void actionPerformed(ActionEvent e)
             {
                 if (!empfänger.IstGeändert() || (JOptionPane.showConfirmDialog(
-                        fenster, "Ungesicherte Änderungen verwerfen?",
-                        "Achtung",
-                        JOptionPane.OK_CANCEL_OPTION) == JOptionPane.OK_OPTION))
+                    fenster,
+                    "Ungesicherte Änderungen verwerfen?",
+                    "Achtung",
+                    JOptionPane.OK_CANCEL_OPTION) == JOptionPane.OK_OPTION))
                 {
                     DateiLesen();
                 }
@@ -306,16 +318,17 @@ class Oberflaeche
         dateiMenü.add(item);
         dateiMenü.addSeparator();
         schließenItem = new JMenuItem("Schließen", KeyEvent.VK_W);
-        schließenItem.setAccelerator(
-                KeyStroke.getKeyStroke(KeyEvent.VK_W, kommando));
+        schließenItem
+            .setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_W, kommando));
         schließenItem.addActionListener(new ActionListener()
         {
             public void actionPerformed(ActionEvent e)
             {
                 if (!empfänger.IstGeändert() || (JOptionPane.showConfirmDialog(
-                        fenster, "Ungesicherte Änderungen verwerfen?",
-                        "Achtung",
-                        JOptionPane.OK_CANCEL_OPTION) == JOptionPane.OK_OPTION))
+                    fenster,
+                    "Ungesicherte Änderungen verwerfen?",
+                    "Achtung",
+                    JOptionPane.OK_CANCEL_OPTION) == JOptionPane.OK_OPTION))
                 {
                     aktuelleDatei = null;
                     fenster.setTitle("Graphenaufbau");
@@ -325,8 +338,8 @@ class Oberflaeche
         });
         dateiMenü.add(schließenItem);
         sichernItem = new JMenuItem("Sichern", KeyEvent.VK_S);
-        sichernItem.setAccelerator(
-                KeyStroke.getKeyStroke(KeyEvent.VK_S, kommando));
+        sichernItem
+            .setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_S, kommando));
         sichernItem.addActionListener(new ActionListener()
         {
             public void actionPerformed(ActionEvent e)
@@ -337,7 +350,7 @@ class Oberflaeche
         dateiMenü.add(sichernItem);
         sichernUnterItem = new JMenuItem("Sichern unter …");
         sichernUnterItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_S,
-                kommando + InputEvent.SHIFT_DOWN_MASK));
+            kommando + InputEvent.SHIFT_DOWN_MASK));
         sichernUnterItem.addActionListener(new ActionListener()
         {
             public void actionPerformed(ActionEvent e)
@@ -354,9 +367,10 @@ class Oberflaeche
             public void actionPerformed(ActionEvent e)
             {
                 if (!empfänger.IstGeändert() || (JOptionPane.showConfirmDialog(
-                        fenster, "Ungesicherte Änderungen verwerfen?",
-                        "Achtung",
-                        JOptionPane.OK_CANCEL_OPTION) == JOptionPane.OK_OPTION))
+                    fenster,
+                    "Ungesicherte Änderungen verwerfen?",
+                    "Achtung",
+                    JOptionPane.OK_CANCEL_OPTION) == JOptionPane.OK_OPTION))
                 {
                     System.exit(0);
                 }
@@ -367,23 +381,23 @@ class Oberflaeche
         bearbeitenMenü = new JMenu("Bearbeiten");
         menüZeile.add(bearbeitenMenü);
         item = new JMenuItem("Ausschneiden", KeyEvent.VK_X);
-        item.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_X,
-                InputEvent.META_DOWN_MASK));
+        item.setAccelerator(
+            KeyStroke.getKeyStroke(KeyEvent.VK_X, InputEvent.META_DOWN_MASK));
         item.setEnabled(false);
         bearbeitenMenü.add(item);
         item = new JMenuItem("Kopieren", KeyEvent.VK_C);
-        item.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_C,
-                InputEvent.META_DOWN_MASK));
+        item.setAccelerator(
+            KeyStroke.getKeyStroke(KeyEvent.VK_C, InputEvent.META_DOWN_MASK));
         item.setEnabled(false);
         bearbeitenMenü.add(item);
         item = new JMenuItem("Einfügen", KeyEvent.VK_V);
-        item.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_V,
-                InputEvent.META_DOWN_MASK));
+        item.setAccelerator(
+            KeyStroke.getKeyStroke(KeyEvent.VK_V, InputEvent.META_DOWN_MASK));
         item.setEnabled(false);
         bearbeitenMenü.add(item);
         item = new JMenuItem("Alles auswählen", KeyEvent.VK_A);
-        item.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_A,
-                InputEvent.META_DOWN_MASK));
+        item.setAccelerator(
+            KeyStroke.getKeyStroke(KeyEvent.VK_A, InputEvent.META_DOWN_MASK));
         item.setEnabled(false);
         bearbeitenMenü.add(item);
 
@@ -481,20 +495,20 @@ class Oberflaeche
     {
         öffnenDialog = new JFileChooser();
         öffnenDialog
-                .addChoosableFileFilter(new javax.swing.filechooser.FileFilter()
+            .addChoosableFileFilter(new javax.swing.filechooser.FileFilter()
+            {
+                public boolean accept(File f)
                 {
-                    public boolean accept(File f)
-                    {
-                        String n = f.getName();
-                        return (n.toLowerCase().endsWith(".grph"))
-                                || f.isDirectory();
-                    }
+                    String n = f.getName();
+                    return (n.toLowerCase().endsWith(".grph"))
+                            || f.isDirectory();
+                }
 
-                    public String getDescription()
-                    {
-                        return ("Graphendatei");
-                    }
-                });
+                public String getDescription()
+                {
+                    return ("Graphendatei");
+                }
+            });
         javax.swing.filechooser.FileFilter dbFilter = new javax.swing.filechooser.FileFilter()
         {
             public boolean accept(File f)
@@ -537,24 +551,29 @@ class Oberflaeche
             if (res == JFileChooser.APPROVE_OPTION)
             {
                 aktuelleDatei = öffnenDialog.getSelectedFile();
-                if (öffnenDialog.getFileFilter().getDescription()
-                        .equals("Graphendatei"))
+                if (öffnenDialog.getFileFilter()
+                    .getDescription()
+                    .equals("Graphendatei"))
                 {
-                    if (!aktuelleDatei.getName().toLowerCase()
-                            .endsWith(".grph"))
+                    if (!aktuelleDatei.getName()
+                        .toLowerCase()
+                        .endsWith(".grph"))
                     {
                         aktuelleDatei = new File(
                                 aktuelleDatei.getPath() + ".grph");
                     }
                     letzterOrdner = aktuelleDatei;
                 }
-                else if (öffnenDialog.getFileFilter().getDescription()
-                        .equals("Graphendatenbank"))
+                else if (öffnenDialog.getFileFilter()
+                    .getDescription()
+                    .equals("Graphendatenbank"))
                 {
-                    if (!(aktuelleDatei.getName().toLowerCase()
-                            .endsWith(".grdb")
-                            || aktuelleDatei.getName().toLowerCase()
-                                    .endsWith(".db")))
+                    if (!(aktuelleDatei.getName()
+                        .toLowerCase()
+                        .endsWith(".grdb")
+                            || aktuelleDatei.getName()
+                                .toLowerCase()
+                                .endsWith(".db")))
                     {
                         aktuelleDatei = new File(
                                 aktuelleDatei.getPath() + ".grdb");

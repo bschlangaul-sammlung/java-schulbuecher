@@ -220,7 +220,7 @@ public abstract class Grafik
     public void verschieben(int deltaX, int deltaY)
     {
         transformationen.transformationHinzufuegen(
-                new Translation((double) deltaX, (double) deltaY));
+            new Translation((double) deltaX, (double) deltaY));
         grenzenAktualisieren();
     }
 
@@ -251,7 +251,7 @@ public abstract class Grafik
     public void drehenUm(int xDrehpunkt, int yDrehpunkt, int winkel)
     {
         transformationen.transformationHinzufuegen(
-                new Rotation((double) xDrehpunkt, (double) yDrehpunkt, winkel));
+            new Rotation((double) xDrehpunkt, (double) yDrehpunkt, winkel));
         grenzenAktualisieren();
     }
 
@@ -276,7 +276,7 @@ public abstract class Grafik
     private void grenzenAktualisieren()
     {
         Grenze g = transformationen.aktuelleGrenzenGeben(standardBreite,
-                standardHoehe);
+            standardHoehe);
         xPosition = g.xGeben();
         yPosition = g.yGeben();
         breite = g.breiteGeben();
@@ -292,7 +292,7 @@ public abstract class Grafik
         if (xFaktor < 0 || yFaktor < 0)
             return;
         transformationen.transformationHinzufuegen(
-                new Skalierung(xFaktor, yFaktor, xZentrum, yZentrum));
+            new Skalierung(xFaktor, yFaktor, xZentrum, yZentrum));
         grenzenAktualisieren();
     }
 }

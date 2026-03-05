@@ -123,8 +123,8 @@ class Rucksack
                     OptimumSichern(nährwerte.get(index) + aktuellerNährwert);
                 }
                 SchrittAusführen(index + 1,
-                        gewichte.get(index) + aktuellesGewicht,
-                        nährwerte.get(index) + aktuellerNährwert);
+                    gewichte.get(index) + aktuellesGewicht,
+                    nährwerte.get(index) + aktuellerNährwert);
                 aktuelleVorräte.remove(aktuelleVorräte.size() - 1);
             }
         }

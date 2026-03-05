@@ -98,8 +98,14 @@ class KNOTEN extends LISTENELEMENT
         {
             res.Einfuegen(daten);
         }
-        nachfolger.ObjekteSuchen(res, land, art, persmin, persmax, zimmin,
-                zimmax, aus);
+        nachfolger.ObjekteSuchen(res,
+            land,
+            art,
+            persmin,
+            persmax,
+            zimmin,
+            zimmax,
+            aus);
     }
 
     /**

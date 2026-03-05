@@ -100,7 +100,7 @@ public class KNaechsterNachbar // gibt es ein Problem bei Umlauten im
 
         // Datenpunkte um die Cluster erzeugen
         datenpunkte = DatenpunkteUmClusterGenerieren(anzahlDatenpunkte,
-                clusterzentren);
+            clusterzentren);
 
         // Datenpunkte zeichnen
         DatenZeichnen();
@@ -127,7 +127,8 @@ public class KNaechsterNachbar // gibt es ein Problem bei Umlauten im
         // zu labelnden Punkt in der Zeichnung passend positionieren und
         // sichtbar machen
         zuLabelnderDatenpunktVisualisierung.PositionSetzen(
-                (int) punktNeu.XGeben(), 500 - (int) punktNeu.YGeben());
+            (int) punktNeu.XGeben(),
+            500 - (int) punktNeu.YGeben());
         zuLabelnderDatenpunktVisualisierung.SichtbarkeitSetzen(true);
 
         // Abstand zum neuen Datenpunkt wird in dem Feld Datenpunkte ergänzt;
@@ -147,7 +148,7 @@ public class KNaechsterNachbar // gibt es ein Problem bei Umlauten im
             int j;
             j = i;
             while (j > 0 && datenpunkte.get(j - 1)
-                    .AbstandGeben() > zuSortierenderDatenpunkt.AbstandGeben())
+                .AbstandGeben() > zuSortierenderDatenpunkt.AbstandGeben())
             {
                 datenpunkte.set(j, datenpunkte.get(j - 1));
                 j = j - 1;
@@ -220,7 +221,7 @@ public class KNaechsterNachbar // gibt es ein Problem bei Umlauten im
             if (häufigkeitLabel.get(i) == max)
             {
                 System.out.println(
-                        "Das gesuchte Label ist " + labelListe.get(i) + " .");
+                    "Das gesuchte Label ist " + labelListe.get(i) + " .");
             }
         }
 

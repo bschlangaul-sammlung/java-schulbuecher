@@ -69,7 +69,7 @@ class WAHL
         if (stapel.IstLeer())
         {
             System.out.println(
-                    "Kein Kandidat erreicht die absolute Mehrheit erreicht!");
+                "Kein Kandidat erreicht die absolute Mehrheit erreicht!");
         }
         else
         {
@@ -79,14 +79,14 @@ class WAHL
             if (stimmenanzahl > stimmenInListe / 2)
             {
                 System.out.print(
-                        "Folgender Kandidat hat die absolute Mehrheit erhalten: ");
+                    "Folgender Kandidat hat die absolute Mehrheit erhalten: ");
                 vergleichsstimme.Ausgeben();
                 System.out.println();
             }
             else
             {
                 System.out.println(
-                        "Kein Kandidat erreicht die absolute Mehrheit erreicht!");
+                    "Kein Kandidat erreicht die absolute Mehrheit erreicht!");
             }
         }
     }

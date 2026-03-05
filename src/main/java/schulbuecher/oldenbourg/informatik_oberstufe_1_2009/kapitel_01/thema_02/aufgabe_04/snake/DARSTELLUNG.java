@@ -60,7 +60,7 @@ class DARSTELLUNG
                 kaestchenzahl_nach_rechts, kaestchenzahl_nach_unten);
         oberflaeche.add(anzeige, 0);
         anzeige.setLocation(oberflaeche.RandLinksGeben(),
-                oberflaeche.RandObenGeben());
+            oberflaeche.RandObenGeben());
         Zeichnen();
     }
 

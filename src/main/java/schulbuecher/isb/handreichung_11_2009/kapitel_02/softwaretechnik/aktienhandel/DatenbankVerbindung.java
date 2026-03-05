@@ -51,7 +51,7 @@ class DatenbankVerbindung implements StatusErzeuger
         catch (Exception e)
         {
             System.out
-                    .println("Start_Fehler beim Laden des JDBC-Treibers " + e);
+                .println("Start_Fehler beim Laden des JDBC-Treibers " + e);
             System.exit(-1);
         }
         // öffnen der Datenbank beim MySqlServer
@@ -123,7 +123,7 @@ class DatenbankVerbindung implements StatusErzeuger
         {
             stmt = conn.createStatement();
             sqlResult = stmt.executeQuery(
-                    "SELECT Name FROM aktie WHERE AktienID=" + aktienID);
+                "SELECT Name FROM aktie WHERE AktienID=" + aktienID);
             if (sqlResult.next())
             {
                 name = sqlResult.getString("Name");
@@ -189,14 +189,14 @@ class DatenbankVerbindung implements StatusErzeuger
         {
             stmt = conn.createStatement();
             sqlResult = stmt.executeQuery(
-                    "SELECT Wert " + " FROM kurs " + " WHERE AktienID = " + id + // AktienID
-                                                                                 // wird
-                                                                                 // beim
-                                                                                 // Aufruf
-                                                                                 // mitgegeben
-                            " ORDER BY Datum DESC " + // die jüngsten Kurse
-                            " LIMIT " + kursAnzahl); // Anzahl wird beim Aufruf
-                                                     // mitgegeben
+                "SELECT Wert " + " FROM kurs " + " WHERE AktienID = " + id + // AktienID
+                                                                             // wird
+                                                                             // beim
+                                                                             // Aufruf
+                                                                             // mitgegeben
+                        " ORDER BY Datum DESC " + // die jüngsten Kurse
+                        " LIMIT " + kursAnzahl); // Anzahl wird beim Aufruf
+                                                 // mitgegeben
         }
         catch (Exception e)
         {
@@ -238,9 +238,9 @@ class DatenbankVerbindung implements StatusErzeuger
         {
             stmt = conn.createStatement();
             sqlResult = stmt.executeQuery(
-                    "SELECT PaketNummer, Name, aktie.AktienID AS AktienID, Stueckzahl, KaufDatum, KaufKurs "
-                            + "FROM depotaktie, aktie "
-                            + "WHERE depotaktie.AktienID = aktie.AktienID;");
+                "SELECT PaketNummer, Name, aktie.AktienID AS AktienID, Stueckzahl, KaufDatum, KaufKurs "
+                        + "FROM depotaktie, aktie "
+                        + "WHERE depotaktie.AktienID = aktie.AktienID;");
         }
         catch (Exception e)
         {
@@ -264,7 +264,7 @@ class DatenbankVerbindung implements StatusErzeuger
         catch (Exception e)
         {
             Fehlermeldung(
-                    "AktienpaketeGeben: Fehler bei Datenbankzugriff\n" + e);
+                "AktienpaketeGeben: Fehler bei Datenbankzugriff\n" + e);
         }
         return liste;
     }
@@ -286,8 +286,8 @@ class DatenbankVerbindung implements StatusErzeuger
         {
             stmt = conn.createStatement();
             sqlResult = stmt
-                    .executeQuery("SELECT SUM(Stueckzahl) FROM depotaktie "
-                            + "WHERE AktienID = " + aktienID);
+                .executeQuery("SELECT SUM(Stueckzahl) FROM depotaktie "
+                        + "WHERE AktienID = " + aktienID);
             if (sqlResult.next())
             {
                 res = sqlResult.getInt(1);
@@ -319,11 +319,11 @@ class DatenbankVerbindung implements StatusErzeuger
         {
             stmt = conn.createStatement();
             sqlResult = stmt.executeQuery(
-                    "SELECT PaketNummer, Name, Stueckzahl, KaufDatum, KaufKurs "
-                            + "FROM depotaktie, aktie "
-                            + "WHERE depotaktie.AktienID = aktie.AktienID AND aktie.AktienID="
-                            + aktienID + " AND Stueckzahl>=" + anzahl
-                            + " ORDER BY Stueckzahl;");
+                "SELECT PaketNummer, Name, Stueckzahl, KaufDatum, KaufKurs "
+                        + "FROM depotaktie, aktie "
+                        + "WHERE depotaktie.AktienID = aktie.AktienID AND aktie.AktienID="
+                        + aktienID + " AND Stueckzahl>=" + anzahl
+                        + " ORDER BY Stueckzahl;");
             if (sqlResult.next())
             {
                 res = new Aktienpaket(sqlResult.getInt("PaketNummer"),
@@ -358,8 +358,8 @@ class DatenbankVerbindung implements StatusErzeuger
         {
             stmt = conn.createStatement();
             sqlResult = stmt
-                    .executeQuery("SELECT MAX(Stueckzahl) FROM depotaktie "
-                            + "WHERE AktienID = " + aktienID);
+                .executeQuery("SELECT MAX(Stueckzahl) FROM depotaktie "
+                        + "WHERE AktienID = " + aktienID);
             if (sqlResult.next())
             {
                 maxanzahl = sqlResult.getInt(1);
@@ -369,11 +369,11 @@ class DatenbankVerbindung implements StatusErzeuger
                 Fehlermeldung("GroesstesAktienpaketGeben: Dateninkonsistenz 1");
                 return null;
             }
-            sqlResult = stmt.executeQuery(
-                    "SELECT PaketNummer, Name, KaufDatum, KaufKurs "
-                            + "FROM depotaktie, aktie "
-                            + "WHERE depotaktie.AktienID = aktie.AktienID AND aktie.AktienID="
-                            + aktienID + " AND Stueckzahl=" + maxanzahl);
+            sqlResult = stmt
+                .executeQuery("SELECT PaketNummer, Name, KaufDatum, KaufKurs "
+                        + "FROM depotaktie, aktie "
+                        + "WHERE depotaktie.AktienID = aktie.AktienID AND aktie.AktienID="
+                        + aktienID + " AND Stueckzahl=" + maxanzahl);
             if (sqlResult.next())
             {
                 res = new Aktienpaket(sqlResult.getInt("PaketNummer"),
@@ -417,10 +417,10 @@ class DatenbankVerbindung implements StatusErzeuger
         {
             stmt = conn.createStatement();
             stmt.executeUpdate(
-                    "INSERT INTO verkaeufe (AktienID, Stueckzahl, KDatum, KKurs, VDatum, VKurs) "
-                            + " VALUES (" + aktienID + "," + anzahl + ", '"
-                            + kaufdat + "'," + kaufkurs + ", '" + verkaufdat
-                            + "'," + verkaufkurs + ");");
+                "INSERT INTO verkaeufe (AktienID, Stueckzahl, KDatum, KKurs, VDatum, VKurs) "
+                        + " VALUES (" + aktienID + "," + anzahl + ", '"
+                        + kaufdat + "'," + kaufkurs + ", '" + verkaufdat + "',"
+                        + verkaufkurs + ");");
             if (restAnzahl > 0)
             {
                 stmt.executeUpdate("UPDATE depotaktie SET Stueckzahl = "
@@ -428,8 +428,8 @@ class DatenbankVerbindung implements StatusErzeuger
             }
             else
             {
-                stmt.executeUpdate("DELETE FROM depotaktie WHERE PaketNummer = "
-                        + paketID);
+                stmt.executeUpdate(
+                    "DELETE FROM depotaktie WHERE PaketNummer = " + paketID);
             }
             stmt.close();
         }
@@ -454,9 +454,9 @@ class DatenbankVerbindung implements StatusErzeuger
         {
             stmt = conn.createStatement();
             stmt.executeUpdate(
-                    "INSERT INTO DepotAktie(AktienId, Stueckzahl, Kaufdatum, Kaufkurs) "
-                            + "VALUES (" + aktienID + "," + anzahl + ", '"
-                            + datum + "'," + kurs + ");");
+                "INSERT INTO DepotAktie(AktienId, Stueckzahl, Kaufdatum, Kaufkurs) "
+                        + "VALUES (" + aktienID + "," + anzahl + ", '" + datum
+                        + "'," + kurs + ");");
             stmt.close();
         }
         catch (Exception e)
@@ -481,9 +481,9 @@ class DatenbankVerbindung implements StatusErzeuger
         try
         {
             stmt = conn.createStatement();
-            sqlResult = stmt.executeQuery(
-                    "SELECT Wert, Datum FROM Kurs WHERE AktienID =" + aktienID
-                            + " ORDER BY Datum DESC;");
+            sqlResult = stmt
+                .executeQuery("SELECT Wert, Datum FROM Kurs WHERE AktienID ="
+                        + aktienID + " ORDER BY Datum DESC;");
             if (sqlResult.next())
             {
                 info = new Kursinfo(aktienID, sqlResult.getDouble("Wert"),
@@ -513,7 +513,7 @@ class DatenbankVerbindung implements StatusErzeuger
             stmt = conn.createStatement();
             stmt2 = conn.createStatement();
             sqlResult = stmt.executeQuery(
-                    "SELECT COUNT(*) FROM (SELECT DISTINCT AktienID FROM kurs) AS Ids");
+                "SELECT COUNT(*) FROM (SELECT DISTINCT AktienID FROM kurs) AS Ids");
             if (sqlResult.next())
             {
                 anzahl = sqlResult.getInt(1);
@@ -525,16 +525,15 @@ class DatenbankVerbindung implements StatusErzeuger
                 return null;
             }
             sqlResult = stmt.executeQuery(
-                    "SELECT AktienID, MAX(Datum) AS Datum FROM kurs GROUP BY AktienID");
+                "SELECT AktienID, MAX(Datum) AS Datum FROM kurs GROUP BY AktienID");
             i = 0;
             while (sqlResult.next())
             {
                 sqlResult2 = stmt2
-                        .executeQuery("SELECT AktienID, Wert, Datum FROM kurs "
-                                + "WHERE AktienID="
-                                + sqlResult.getString("AktienID")
-                                + " AND Datum='" + sqlResult.getString("Datum")
-                                + "'");
+                    .executeQuery("SELECT AktienID, Wert, Datum FROM kurs "
+                            + "WHERE AktienID="
+                            + sqlResult.getString("AktienID") + " AND Datum='"
+                            + sqlResult.getString("Datum") + "'");
                 if (sqlResult2.next())
                 {
                     res[i] = new Kursinfo(sqlResult2.getInt("AktienID"),
@@ -568,7 +567,7 @@ class DatenbankVerbindung implements StatusErzeuger
         {
             stmt = conn.createStatement();
             sqlResult = stmt.executeQuery(
-                    "SELECT  DATE_ADD(MAX(Datum), INTERVAL 1 DAY) AS Datum FROM kurs");
+                "SELECT  DATE_ADD(MAX(Datum), INTERVAL 1 DAY) AS Datum FROM kurs");
             if (sqlResult.next())
             {
                 datum = sqlResult.getString("Datum");

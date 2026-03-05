@@ -150,8 +150,12 @@ public class ZeichenFenster
     public void zeichneBogen(int x, int y, int halbachseX, int halbachseY,
             int startWinkel, int winkel)
     {
-        graphic.drawArc(x - halbachseX, y - halbachseY, 2 * halbachseX,
-                2 * halbachseY, startWinkel, winkel);
+        graphic.drawArc(x - halbachseX,
+            y - halbachseY,
+            2 * halbachseX,
+            2 * halbachseY,
+            startWinkel,
+            winkel);
         canvas.repaint();
     }
 

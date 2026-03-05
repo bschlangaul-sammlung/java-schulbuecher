@@ -91,7 +91,7 @@ class SNAKE
         xkopf = ende.XGeben();
         ykopf = ende.YGeben();
         if (!spiel.IstFutter(spiel.Nachbarzelle_XBerechnen(xkopf, ausrichtung),
-                spiel.Nachbarzelle_YBerechnen(ykopf, ausrichtung)))
+            spiel.Nachbarzelle_YBerechnen(ykopf, ausrichtung)))
         {
             Entfernen();
         }

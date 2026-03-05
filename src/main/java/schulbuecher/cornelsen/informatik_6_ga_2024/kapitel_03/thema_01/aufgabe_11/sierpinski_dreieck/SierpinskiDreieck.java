@@ -40,10 +40,16 @@ class SierpinskiDreieck
         if (tiefe > 0)
         {
             SchrittAusführen(x, y, breite / 2, höhe / 2, tiefe - 1);
-            SchrittAusführen(x - breite / 4, y + höhe / 2, breite / 2, höhe / 2,
-                    tiefe - 1);
-            SchrittAusführen(x + breite / 4, y + höhe / 2, breite / 2, höhe / 2,
-                    tiefe - 1);
+            SchrittAusführen(x - breite / 4,
+                y + höhe / 2,
+                breite / 2,
+                höhe / 2,
+                tiefe - 1);
+            SchrittAusführen(x + breite / 4,
+                y + höhe / 2,
+                breite / 2,
+                höhe / 2,
+                tiefe - 1);
 
         }
         else

@@ -68,8 +68,10 @@ class Boerse implements StatusErzeuger
         else
         {
             konto.Abheben(gesamtbetrag);
-            verbindung.KaufEintragen(anzahl, aktienID, info.DatumGeben(),
-                    info.KursGeben());
+            verbindung.KaufEintragen(anzahl,
+                aktienID,
+                info.DatumGeben(),
+                info.KursGeben());
         }
     }
 
@@ -100,18 +102,26 @@ class Boerse implements StatusErzeuger
                     int anz = paket.AnzahlGeben();
                     konto.Einzahlen(anz * info.KursGeben());
                     verbindung.VerkaufEintragen(paket.PaketNummerGeben(),
-                            aktienID, anz, 0, paket.KaufDatumGeben(),
-                            paket.KaufKursGeben(), info.DatumGeben(),
-                            info.KursGeben());
+                        aktienID,
+                        anz,
+                        0,
+                        paket.KaufDatumGeben(),
+                        paket.KaufKursGeben(),
+                        info.DatumGeben(),
+                        info.KursGeben());
                     anzahl -= anz;
                 }
                 else
                 {
                     konto.Einzahlen(anzahl * info.KursGeben());
                     verbindung.VerkaufEintragen(paket.PaketNummerGeben(),
-                            aktienID, anzahl, paket.AnzahlGeben() - anzahl,
-                            paket.KaufDatumGeben(), paket.KaufKursGeben(),
-                            info.DatumGeben(), info.KursGeben());
+                        aktienID,
+                        anzahl,
+                        paket.AnzahlGeben() - anzahl,
+                        paket.KaufDatumGeben(),
+                        paket.KaufKursGeben(),
+                        info.DatumGeben(),
+                        info.KursGeben());
                     anzahl = 0;
                 }
             }

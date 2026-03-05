@@ -113,8 +113,11 @@ public class Adressbuch
         }
         else
         {
-            adressbucheintrag.EintragSetzen(telefonnummerNeu, eMailNeu,
-                    strasseNeu, plzNeu, ortNeu);
+            adressbucheintrag.EintragSetzen(telefonnummerNeu,
+                eMailNeu,
+                strasseNeu,
+                plzNeu,
+                ortNeu);
         }
     }
 }

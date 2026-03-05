@@ -316,7 +316,7 @@ public class TextField extends Actor
                         {
                             temp = text.substring(0, cursorPosition - 1);
                             temp += text.substring(cursorPosition,
-                                    text.length() - 1);
+                                text.length() - 1);
                             text = temp;
                             temp = "";
                         }
@@ -337,7 +337,7 @@ public class TextField extends Actor
                             temp = text.substring(0, cursorPosition);
                             temp += " ";
                             temp += text.substring(cursorPosition,
-                                    text.length() - 1);
+                                text.length() - 1);
                             text = temp;
                             temp = "";
                         }
@@ -374,7 +374,7 @@ public class TextField extends Actor
                             temp = text.substring(0, cursorPosition);
                             temp += input;
                             temp += text.substring(cursorPosition,
-                                    text.length() - 1);
+                                text.length() - 1);
                             text = temp;
                             temp = "";
                         }
@@ -409,19 +409,20 @@ public class TextField extends Actor
                 new Color(0, 0, 0, 0));
         resetImage();
         getImage().drawImage(textImage,
-                (textImage.getWidth() > getImage().getWidth() - 10
-                        ? -(textImage.getWidth() - getImage().getWidth()) - 10
-                        : 5),
-                (getImage().getHeight() / 2 - textImage.getHeight() / 2));
+            (textImage.getWidth() > getImage().getWidth() - 10
+                    ? -(textImage.getWidth() - getImage().getWidth()) - 10
+                    : 5),
+            (getImage().getHeight() / 2 - textImage.getHeight() / 2));
         getImage().setColor(textColor);
         if (cursorActive)
         {
             getImage().fillRect(
-                    (textBeforeCursor.getWidth() > getImage().getWidth() - 10
-                            ? getImage().getWidth() - 8
-                            : textBeforeCursor.getWidth() + 7),
-                    getImage().getHeight() / 2 - textFontSize / 2, 2,
-                    textFontSize);
+                (textBeforeCursor.getWidth() > getImage().getWidth() - 10
+                        ? getImage().getWidth() - 8
+                        : textBeforeCursor.getWidth() + 7),
+                getImage().getHeight() / 2 - textFontSize / 2,
+                2,
+                textFontSize);
         }
         getImage().setColor(bgColor);
         getImage().fillRect(0, 0, 3, getImage().getHeight() - 2);
@@ -435,10 +436,10 @@ public class TextField extends Actor
         getImage().setColor(bgColor);
         getImage().fill();
         getImage().setColor(Color.BLACK);
-        getImage().fillRect(0, getImage().getHeight() - 2,
-                getImage().getWidth(), 3);
-        getImage().fillRect(getImage().getWidth() - 2, 0, 3,
-                getImage().getHeight());
+        getImage()
+            .fillRect(0, getImage().getHeight() - 2, getImage().getWidth(), 3);
+        getImage()
+            .fillRect(getImage().getWidth() - 2, 0, 3, getImage().getHeight());
     }
 
     /**

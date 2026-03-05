@@ -1502,7 +1502,7 @@ public class AutomatPasswort2
         String zeichenketteRest = zeichenkette; // noch zu verarbeitende
                                                 // Restzeichenkette
         for (int zaehler = 1; zaehler <= zeichenkette
-                .length(); zaehler = zaehler + 1)
+            .length(); zaehler = zaehler + 1)
         {
             ZeicheneingabeWeiterleiten(zeichenketteRest.charAt(0));
             zeichenketteRest = zeichenketteRest.substring(1);

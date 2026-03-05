@@ -31,20 +31,21 @@ class Lesen
             verbindung = DriverManager.getConnection("jdbc:sqlite:" + name);
             Statement anweisung = verbindung.createStatement();
             ResultSet daten = anweisung
-                    .executeQuery("SELECT bezeichner, x, y FROM knoten");
+                .executeQuery("SELECT bezeichner, x, y FROM knoten");
             while (daten.next())
             {
                 g.KnotenEinfügen(daten.getString("bezeichner"),
-                        daten.getInt("x"), daten.getInt("y"));
+                    daten.getInt("x"),
+                    daten.getInt("y"));
             }
             daten.close();
             daten = anweisung.executeQuery(
-                    "SELECT bezeichnerStart, bezeichnerZiel, gewicht, gerichtet FROM kanten");
+                "SELECT bezeichnerStart, bezeichnerZiel, gewicht, gerichtet FROM kanten");
             while (daten.next())
             {
                 g.KanteEinfügen(daten.getString("bezeichnerStart"),
-                        daten.getString("bezeichnerZiel"),
-                        daten.getInt("gewicht"));
+                    daten.getString("bezeichnerZiel"),
+                    daten.getInt("gewicht"));
             }
             daten.close();
             verbindung.close();
@@ -52,8 +53,8 @@ class Lesen
         }
         catch (Exception e)
         {
-            System.out.println(
-                    "Fehler beim Lesen der Datenbank: " + e.getMessage());
+            System.out
+                .println("Fehler beim Lesen der Datenbank: " + e.getMessage());
             return false;
         }
     }
@@ -77,8 +78,9 @@ class Lesen
             {
                 zeile = eingabe.readLine();
                 teile = zeile.split("\t");
-                g.KnotenEinfügen(teile[2], new Integer(teile[0]),
-                        new Integer(teile[1]));
+                g.KnotenEinfügen(teile[2],
+                    new Integer(teile[0]),
+                    new Integer(teile[1]));
             }
             zeile = eingabe.readLine();
             teile = zeile.split(": ");

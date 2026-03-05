@@ -62,7 +62,7 @@ public class Rechteck
         sichtbar = true;
         winkel = 0;
         symbol = Zeichenfenster
-                .SymbolErzeugen(Zeichenfenster.SymbolArt.rechteck);
+            .SymbolErzeugen(Zeichenfenster.SymbolArt.rechteck);
         symbol.PositionSetzen(x, y);
         symbol.GrößeSetzen(breite, höhe);
         symbol.FarbeSetzen(farbe);

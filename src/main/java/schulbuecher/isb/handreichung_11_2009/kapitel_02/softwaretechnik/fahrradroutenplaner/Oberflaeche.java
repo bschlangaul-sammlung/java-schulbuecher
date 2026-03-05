@@ -88,7 +88,7 @@ class Oberflaeche implements StatusBeobachter
             public void actionPerformed(ActionEvent e)
             {
                 kontrolleur.WegBerechnen(startOrt.getSelectedItem(),
-                        zielOrt.getSelectedItem());
+                    zielOrt.getSelectedItem());
             }
         });
         button = new JButton("Beenden");

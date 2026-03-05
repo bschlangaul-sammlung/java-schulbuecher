@@ -61,7 +61,7 @@ class VerdopplerQuadrat extends Quadrat
                         else
                         {
                             System.out.println(
-                                    "unbekannte Richtung in Methode Bewegen, Klasse VerdopplerQuadrat");
+                                "unbekannte Richtung in Methode Bewegen, Klasse VerdopplerQuadrat");
                         }
                     }
                 }

@@ -58,7 +58,7 @@ class Maus implements Datenelement
     public void InformationAusgeben()
     {
         System.out
-                .println(nummer + " | " + siegeszahl + " | " + niederlagenzahl);
+            .println(nummer + " | " + siegeszahl + " | " + niederlagenzahl);
     }
 
     /**

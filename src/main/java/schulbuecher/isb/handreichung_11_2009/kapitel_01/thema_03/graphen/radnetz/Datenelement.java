@@ -25,6 +25,6 @@ class Datenelement
         System.out.println(" Im Ort " + ortsname + " gibt es "
                 + uebernachtungsplaetze + " Betten. ");
         System.out.println(
-                " Sie können hier folgendes erleben: " + sehenswuerdigkeiten);
+            " Sie können hier folgendes erleben: " + sehenswuerdigkeiten);
     }
 }

@@ -31,10 +31,11 @@ class DATENBANKVERBINDUNG
     {
         try
         {
-            Class.forName("com.mysql.jdbc.Driver").getDeclaredConstructor()
-                    .newInstance();
+            Class.forName("com.mysql.jdbc.Driver")
+                .getDeclaredConstructor()
+                .newInstance();
             conn = DriverManager.getConnection(
-                    "jdbc:mysql://localhost/fahrplan?user=fahr&password=plan");
+                "jdbc:mysql://localhost/fahrplan?user=fahr&password=plan");
         }
         catch (Exception e)
         {
@@ -90,16 +91,16 @@ class DATENBANKVERBINDUNG
             }
             rs.close();
             rs = st.executeQuery(
-                    "SELECT linie, bahnhof1, bahnhof2, laenge FROM abschnitt");
+                "SELECT linie, bahnhof1, bahnhof2, laenge FROM abschnitt");
             while (rs.next())
             {
                 aliste.Einfuegen(
-                        new ABSCHNITT(rs.getInt("linie"), rs.getInt("bahnhof1"),
-                                rs.getInt("bahnhof2"), rs.getFloat("laenge")));
+                    new ABSCHNITT(rs.getInt("linie"), rs.getInt("bahnhof1"),
+                            rs.getInt("bahnhof2"), rs.getFloat("laenge")));
             }
             rs.close();
-            rs = st.executeQuery(
-                    "SELECT Nummer, Linie1, Linie2 FROM umsteigen");
+            rs = st
+                .executeQuery("SELECT Nummer, Linie1, Linie2 FROM umsteigen");
             while (rs.next())
             {
                 uliste.Einfuegen(new UMSTEIGEINFO(rs.getInt("Nummer"),
@@ -179,8 +180,8 @@ class DATENBANKVERBINDUNG
         try
         {
             st = conn.createStatement();
-            st.executeUpdate("DELETE FROM bahnhof WHERE Nummer="
-                    + bahnhof.NummerGeben());
+            st.executeUpdate(
+                "DELETE FROM bahnhof WHERE Nummer=" + bahnhof.NummerGeben());
             st.close();
         }
         catch (Exception e)
@@ -201,11 +202,11 @@ class DATENBANKVERBINDUNG
         {
             st = conn.createStatement();
             st.executeUpdate(
-                    "INSERT INTO abschnitt (linie, bahnhof1, bahnhof2, laenge) VALUES ("
-                            + abschnitt.LinieGeben() + ", "
-                            + abschnitt.Bahnhof1Geben() + ", "
-                            + abschnitt.Bahnhof2Geben() + ", "
-                            + abschnitt.LaengeGeben() + ")");
+                "INSERT INTO abschnitt (linie, bahnhof1, bahnhof2, laenge) VALUES ("
+                        + abschnitt.LinieGeben() + ", "
+                        + abschnitt.Bahnhof1Geben() + ", "
+                        + abschnitt.Bahnhof2Geben() + ", "
+                        + abschnitt.LaengeGeben() + ")");
             st.close();
         }
         catch (Exception e)
@@ -226,10 +227,10 @@ class DATENBANKVERBINDUNG
         {
             st = conn.createStatement();
             st.executeUpdate(
-                    "UPDATE abschnitt SET laenge = " + abschnitt.LaengeGeben()
-                            + " WHERE linie = " + abschnitt.LinieGeben()
-                            + " AND bahnhof1 = " + abschnitt.Bahnhof1Geben()
-                            + " AND bahnhof2 = " + abschnitt.Bahnhof2Geben());
+                "UPDATE abschnitt SET laenge = " + abschnitt.LaengeGeben()
+                        + " WHERE linie = " + abschnitt.LinieGeben()
+                        + " AND bahnhof1 = " + abschnitt.Bahnhof1Geben()
+                        + " AND bahnhof2 = " + abschnitt.Bahnhof2Geben());
             st.close();
         }
         catch (Exception e)
@@ -273,10 +274,10 @@ class DATENBANKVERBINDUNG
         {
             st = conn.createStatement();
             st.executeUpdate(
-                    "INSERT INTO umsteigen (Nummer, Linie1, Linie2) VALUES ("
-                            + umsteigen.BahnhofGeben() + ", "
-                            + umsteigen.VonLinieGeben() + ", "
-                            + umsteigen.AbLinieGeben() + ")");
+                "INSERT INTO umsteigen (Nummer, Linie1, Linie2) VALUES ("
+                        + umsteigen.BahnhofGeben() + ", "
+                        + umsteigen.VonLinieGeben() + ", "
+                        + umsteigen.AbLinieGeben() + ")");
             st.close();
         }
         catch (Exception e)

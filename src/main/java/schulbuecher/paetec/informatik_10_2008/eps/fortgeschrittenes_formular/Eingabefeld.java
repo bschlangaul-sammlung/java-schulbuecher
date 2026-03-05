@@ -61,20 +61,22 @@ public class Eingabefeld extends Formulargrafik
     {
         Component awtKomponente = new JPanel();
         ((JPanel) awtKomponente).setLayout(null);
-        ((JPanel) awtKomponente).setBounds(0, 0, formularGeben().breiteGeben(),
-                feldhoehe);// 0, 0
+        ((JPanel) awtKomponente)
+            .setBounds(0, 0, formularGeben().breiteGeben(), feldhoehe);// 0, 0
         ((JPanel) awtKomponente).setBackground(Color.white);
         feld = new JTextField(vorgabetext, maximaleEingabelaenge);
         if (istGesperrt)
         {
             feld.setEditable(false);
         }
-        feld.setBounds(formularGeben().breiteGeben() / 2, 0,
-                formularGeben().breiteGeben() / 2 - 10, feldhoehe);
+        feld.setBounds(formularGeben().breiteGeben() / 2,
+            0,
+            formularGeben().breiteGeben() / 2 - 10,
+            feldhoehe);
         beschriftungslabel = new JLabel(beschriftung);
-        beschriftungslabel.setBounds(6, 0,
-                formularGeben().breiteGeben() / 2 - 10, feldhoehe);// 0,
-                                                                   // 0
+        beschriftungslabel
+            .setBounds(6, 0, formularGeben().breiteGeben() / 2 - 10, feldhoehe);// 0,
+                                                                                // 0
         ((JPanel) awtKomponente).add(beschriftungslabel);
         ((JPanel) awtKomponente).add(feld);
         awtKomponenteSetzen(awtKomponente);

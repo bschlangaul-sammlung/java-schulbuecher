@@ -56,7 +56,7 @@ public class Knoten
         {
             linkerNachfolger = null;
             System.out.println(
-                    "Linker Nachfolger wurde nicht eingefügt, um die Ordnng des Bin\u00E4rbaums zu erhalten!");
+                "Linker Nachfolger wurde nicht eingefügt, um die Ordnng des Bin\u00E4rbaums zu erhalten!");
         }
         if (datenNeu.IstKleinerAls(reNachfolgerNeu.DatenGeben()))
         {
@@ -66,7 +66,7 @@ public class Knoten
         {
             rechterNachfolger = null;
             System.out.println(
-                    "Rechter Nachfolger wurde nicht eingefügt, um die Ordnng des Bin\u00E4rbaums zu erhalten!");
+                "Rechter Nachfolger wurde nicht eingefügt, um die Ordnng des Bin\u00E4rbaums zu erhalten!");
         }
     }
 
@@ -360,7 +360,7 @@ public class Knoten
             // veraenderten
             // rechten Teilbaum als neuen rechten Teilbaum ein.
             rechterNachfolger = rechterNachfolger
-                    .Entfernen(daten.SchluesselAlsStringGeben());
+                .Entfernen(daten.SchluesselAlsStringGeben());
             return this;
         }
     }

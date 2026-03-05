@@ -71,7 +71,7 @@ class KONTROLLEUR
     void RouteBerechnen(int nummer1, int nummer2)
     {
         g.WegeSuche(bahnhoefe.BahnhofMitIndexGeben(nummer1),
-                bahnhoefe.BahnhofMitIndexGeben(nummer2));
+            bahnhoefe.BahnhofMitIndexGeben(nummer2));
         oberflaeche.FahrtstreckeSetzen(g.RoutenbeschreibungErstellen());
     }
 

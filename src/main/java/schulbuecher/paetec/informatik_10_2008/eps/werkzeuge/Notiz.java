@@ -65,7 +65,7 @@ public class Notiz
     public int ganzeZahlLesen(String aufforderung)
     {
         Scanner scanner = eingabeLesen("Eingabe einer ganzen Zahl",
-                aufforderung);
+            aufforderung);
         if (scanner.hasNextInt())
         {
             return scanner.nextInt();
@@ -73,9 +73,9 @@ public class Notiz
         else
         {
             return new Notiz()
-                    .ganzeZahlLesen("Sie haben keine ganze Zahl eingegeben. "
-                            + "Bitte versuchen Sie erneut, eine ganze Zahl einzugeben! \n"
-                            + aufforderung);
+                .ganzeZahlLesen("Sie haben keine ganze Zahl eingegeben. "
+                        + "Bitte versuchen Sie erneut, eine ganze Zahl einzugeben! \n"
+                        + aufforderung);
         }
     }
 
@@ -114,9 +114,9 @@ public class Notiz
         else
         {
             return new Notiz().kommaZahlLesen(
-                    "Sie haben keine Zahl eingegeben. Haben Sie evt. ein falsches Trennzeichen verwendet?"
-                            + "\nBitte versuchen Sie erneut, eine Zahl einzugeben! \n"
-                            + aufforderung);
+                "Sie haben keine Zahl eingegeben. Haben Sie evt. ein falsches Trennzeichen verwendet?"
+                        + "\nBitte versuchen Sie erneut, eine Zahl einzugeben! \n"
+                        + aufforderung);
         }
     }
 

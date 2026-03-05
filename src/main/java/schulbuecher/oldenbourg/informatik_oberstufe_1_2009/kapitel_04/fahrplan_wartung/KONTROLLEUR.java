@@ -60,11 +60,12 @@ class KONTROLLEUR
     {
         BAHNHOF akt;
         akt = plan.AktBahnhofGeben();
-        oberflaeche.BahnhofsdatenSetzen("" + akt.XGeben(), "" + akt.YGeben(),
-                akt.NameGeben());
+        oberflaeche.BahnhofsdatenSetzen("" + akt.XGeben(),
+            "" + akt.YGeben(),
+            akt.NameGeben());
         oberflaeche.LinienauswahlUmsteigenSetzen(
-                abschnitte.LinienFuerBahnhofGeben(akt.NummerGeben()),
-                umsteigen.UmsteigenFuerBahnhofGeben(akt.NummerGeben()));
+            abschnitte.LinienFuerBahnhofGeben(akt.NummerGeben()),
+            umsteigen.UmsteigenFuerBahnhofGeben(akt.NummerGeben()));
     }
 
     /**
@@ -128,7 +129,7 @@ class KONTROLLEUR
     boolean KannAktbahnhofGeloeschtWerden()
     {
         return !abschnitte
-                .BahnhofWirdErreicht(plan.AktBahnhofGeben().NummerGeben());
+            .BahnhofWirdErreicht(plan.AktBahnhofGeben().NummerGeben());
     }
 
     /**
@@ -252,9 +253,8 @@ class KONTROLLEUR
                 umsteigen.Einfuegen(neu);
                 verb.UmsteigenEinfuegen(neu);
                 oberflaeche.LinienauswahlUmsteigenSetzen(
-                        abschnitte.LinienFuerBahnhofGeben(neu.BahnhofGeben()),
-                        umsteigen
-                                .UmsteigenFuerBahnhofGeben(neu.BahnhofGeben()));
+                    abschnitte.LinienFuerBahnhofGeben(neu.BahnhofGeben()),
+                    umsteigen.UmsteigenFuerBahnhofGeben(neu.BahnhofGeben()));
             }
         }
     }
@@ -269,14 +269,14 @@ class KONTROLLEUR
     {
         UMSTEIGEINFO alt;
         alt = umsteigen.UmsteigeinfoMitIndexGeben(index,
-                plan.AktBahnhofGeben().NummerGeben());
+            plan.AktBahnhofGeben().NummerGeben());
         if (alt != null)
         {
             umsteigen.Loeschen(alt);
             verb.UmsteigenLoeschen(alt);
             oberflaeche.LinienauswahlUmsteigenSetzen(
-                    abschnitte.LinienFuerBahnhofGeben(alt.BahnhofGeben()),
-                    umsteigen.UmsteigenFuerBahnhofGeben(alt.BahnhofGeben()));
+                abschnitte.LinienFuerBahnhofGeben(alt.BahnhofGeben()),
+                umsteigen.UmsteigenFuerBahnhofGeben(alt.BahnhofGeben()));
         }
     }
 

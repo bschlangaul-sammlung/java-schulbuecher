@@ -106,7 +106,7 @@ public class GraphMatrix
         else
         {
             System.out.println(
-                    "Es wurde keine Kante erzeugt, da Start- oder Zielknoten nicht existieren.");
+                "Es wurde keine Kante erzeugt, da Start- oder Zielknoten nicht existieren.");
         }
     }
 
@@ -120,7 +120,7 @@ public class GraphMatrix
         else
         {
             System.out.println(
-                    "Es wurde keine Kante gelöscht, da Start- oder Zielknoten nicht existieren.");
+                "Es wurde keine Kante gelöscht, da Start- oder Zielknoten nicht existieren.");
         }
     }
 
@@ -138,7 +138,7 @@ public class GraphMatrix
         else
         {
             System.out.println(
-                    "Es wurde kein Knoten erzeugt, da der Graph schon die maximale Anzahl an Knoten enthält.");
+                "Es wurde kein Knoten erzeugt, da der Graph schon die maximale Anzahl an Knoten enthält.");
         }
         return index;
     }
@@ -185,8 +185,8 @@ public class GraphMatrix
             }
         }
         anzahlKnoten = anzahlKnoten - 1;
-        System.out.println("Es wurde der Knoten mit der Nummer " + knotenIndex
-                + " gelöscht.");
+        System.out.println(
+            "Es wurde der Knoten mit der Nummer " + knotenIndex + " gelöscht.");
     }
 
     // Ergänzung der notwendigen Methoden für Aufgabe 3, 4

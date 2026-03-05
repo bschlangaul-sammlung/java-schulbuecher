@@ -71,8 +71,9 @@ class KnotenSymbol extends GraphenSymbol
         g.setColor(Color.black);
         g.drawOval(x - r, y - r, r * 2, r * 2);
         FontMetrics metrics = g.getFontMetrics();
-        g.drawString(bezeichner, x - metrics.stringWidth(bezeichner) / 2,
-                y + (metrics.getAscent() - metrics.getDescent()) / 2);
+        g.drawString(bezeichner,
+            x - metrics.stringWidth(bezeichner) / 2,
+            y + (metrics.getAscent() - metrics.getDescent()) / 2);
     }
 
     /**

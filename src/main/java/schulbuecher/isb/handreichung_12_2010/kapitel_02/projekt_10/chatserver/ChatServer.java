@@ -106,7 +106,7 @@ public class ChatServer
         {
             new ClientProzess(clientSocket, this, "toomuchclients");
             System.out.println(
-                    "zu viele Verbindungen, Clientverbindung wird zurückgesetzt");
+                "zu viele Verbindungen, Clientverbindung wird zurückgesetzt");
         }
     }
 
@@ -128,9 +128,9 @@ public class ChatServer
         {
             clientprozesse.add(clientprozess);
             AnAlleSenden(
-                    clientprozess.SpitznameHolen() + " hat den Raum betreten.");
+                clientprozess.SpitznameHolen() + " hat den Raum betreten.");
             System.out.println(
-                    clientprozess.SpitznameHolen() + " hat den Raum betreten.");
+                clientprozess.SpitznameHolen() + " hat den Raum betreten.");
             System.out.println(clientprozesse.size() + " Verbindungen / "
                     + clientprozesse.size() + " User angemeldet");
             return true;
@@ -139,7 +139,7 @@ public class ChatServer
         {
             // clientprozess.ClientVerbindungBeenden();
             System.out.println(
-                    "zu viele Verbindungen, Clientverbindung wird zurückgesetzt");
+                "zu viele Verbindungen, Clientverbindung wird zurückgesetzt");
             return false;
         }
     }
@@ -154,10 +154,10 @@ public class ChatServer
     {
         if (clientprozesse.remove(clientprozess))
         {
-            AnAlleSenden(clientprozess.SpitznameHolen()
-                    + " hat den Raum verlassen.");
-            System.out.println(clientprozess.SpitznameHolen()
-                    + " hat den Raum verlassen.");
+            AnAlleSenden(
+                clientprozess.SpitznameHolen() + " hat den Raum verlassen.");
+            System.out.println(
+                clientprozess.SpitznameHolen() + " hat den Raum verlassen.");
         }
         System.out.println(clientprozesse.size() + " Verbindungen / "
                 + clientprozesse.size() + " User angemeldet");

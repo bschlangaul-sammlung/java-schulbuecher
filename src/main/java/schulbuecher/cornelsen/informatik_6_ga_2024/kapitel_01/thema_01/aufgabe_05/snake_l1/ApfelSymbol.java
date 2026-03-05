@@ -32,22 +32,34 @@ class ApfelSymbol extends SonderSymbol
                 g.setColor(Color.red);
                 g.fillOval(größe / 4, 3 * größe / 8, größe / 2, größe / 2);
                 g.setColor(Color.green);
-                g.drawLine(größe / 2 - 1, 3 * größe / 8, 5 * größe / 8 - 1,
-                        größe / 8);
+                g.drawLine(größe / 2 - 1,
+                    3 * größe / 8,
+                    5 * größe / 8 - 1,
+                    größe / 8);
                 g.drawLine(größe / 2, 3 * größe / 8, 5 * größe / 8, größe / 8);
-                g.drawLine(größe / 2 + 1, 3 * größe / 8, 5 * größe / 8 + 1,
-                        größe / 8);
-                g.drawLine(größe / 2 - 1, 3 * größe / 8, größe / 4 - 1,
-                        größe / 8);
+                g.drawLine(größe / 2 + 1,
+                    3 * größe / 8,
+                    5 * größe / 8 + 1,
+                    größe / 8);
+                g.drawLine(größe / 2 - 1,
+                    3 * größe / 8,
+                    größe / 4 - 1,
+                    größe / 8);
                 g.drawLine(größe / 2, 3 * größe / 8, größe / 4, größe / 8);
-                g.drawLine(größe / 2 + 1, 3 * größe / 8, größe / 4 + 1,
-                        größe / 8);
+                g.drawLine(größe / 2 + 1,
+                    3 * größe / 8,
+                    größe / 4 + 1,
+                    größe / 8);
                 g.setColor(new Color(200, 100, 0));
-                g.drawLine(größe / 2 - 1, 3 * größe / 8, 3 * größe / 8 - 1,
-                        größe / 8);
+                g.drawLine(größe / 2 - 1,
+                    3 * größe / 8,
+                    3 * größe / 8 - 1,
+                    größe / 8);
                 g.drawLine(größe / 2, 3 * größe / 8, 3 * größe / 8, größe / 8);
-                g.drawLine(größe / 2 + 1, 3 * größe / 8, 3 * größe / 8 + 1,
-                        größe / 8);
+                g.drawLine(größe / 2 + 1,
+                    3 * größe / 8,
+                    3 * größe / 8 + 1,
+                    größe / 8);
             }
         };
         anzeige.setVisible(true);

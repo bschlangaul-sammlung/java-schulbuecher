@@ -33,10 +33,11 @@ class DATENBANKVERBINDUNG implements MELDUNGSERZEUGER
         allebeobachter = new ArrayList<MELDUNGSBEOBACHTER>();
         try
         {
-            Class.forName("com.mysql.jdbc.Driver").getDeclaredConstructor()
-                    .newInstance();
+            Class.forName("com.mysql.jdbc.Driver")
+                .getDeclaredConstructor()
+                .newInstance();
             conn = DriverManager.getConnection(
-                    "jdbc:mysql://localhost/bankverwaltung?user=bank&password=verwaltung");
+                "jdbc:mysql://localhost/bankverwaltung?user=bank&password=verwaltung");
             // conn = DriverManager.
             // getConnection("jdbc:mysql://126.0.0.2/bankverwaltung?user=bank&password=verwaltung");
             LogeintragMelden("Verbindung aufgebaut.");
@@ -139,12 +140,12 @@ class DATENBANKVERBINDUNG implements MELDUNGSERZEUGER
         try
         {
             Statement st = conn.createStatement();
-            ResultSet rs = st.executeQuery(
-                    "SELECT name, pin FROM person WHERE klasse='k'");
+            ResultSet rs = st
+                .executeQuery("SELECT name, pin FROM person WHERE klasse='k'");
             while (rs.next())
             {
                 kunden.Einfuegen(
-                        new KUNDE(rs.getString("name"), rs.getInt("pin")));
+                    new KUNDE(rs.getString("name"), rs.getInt("pin")));
             }
             rs.close();
             st.close();
@@ -167,8 +168,8 @@ class DATENBANKVERBINDUNG implements MELDUNGSERZEUGER
         try
         {
             Statement st = conn.createStatement();
-            ResultSet rs = st.executeQuery(
-                    "SELECT name, pin FROM person WHERE klasse='a'");
+            ResultSet rs = st
+                .executeQuery("SELECT name, pin FROM person WHERE klasse='a'");
             while (rs.next())
             {
                 angestellte.Einfuegen(new ANGESTELLTER(rs.getString("name"),
@@ -200,7 +201,7 @@ class DATENBANKVERBINDUNG implements MELDUNGSERZEUGER
             KONTO k;
             st = conn.createStatement();
             rs = st.executeQuery(
-                    "SELECT konto.kontonummer, kontostand, eigentuemer, zinssatz FROM konto, sparkonto WHERE konto.kontonummer=sparkonto.kontonummer");
+                "SELECT konto.kontonummer, kontostand, eigentuemer, zinssatz FROM konto, sparkonto WHERE konto.kontonummer=sparkonto.kontonummer");
             while (rs.next())
             {
                 eigentuemer = rs.getString("eigentuemer");
@@ -212,7 +213,7 @@ class DATENBANKVERBINDUNG implements MELDUNGSERZEUGER
             }
             rs.close();
             rs = st.executeQuery(
-                    "SELECT konto.kontonummer, kontostand, eigentuemer, ueberziehungsrahmen FROM konto, girokonto WHERE konto.kontonummer=girokonto.kontonummer");
+                "SELECT konto.kontonummer, kontostand, eigentuemer, ueberziehungsrahmen FROM konto, girokonto WHERE konto.kontonummer=girokonto.kontonummer");
             while (rs.next())
             {
                 eigentuemer = rs.getString("eigentuemer");
@@ -247,7 +248,7 @@ class DATENBANKVERBINDUNG implements MELDUNGSERZEUGER
                     + a.NameGeben() + "', '" + a.PinGeben() + "', 'a')");
             st.close();
             LogeintragMelden(
-                    "Neuer Angestellter eingefügt: " + a.NameGeben() + ".");
+                "Neuer Angestellter eingefügt: " + a.NameGeben() + ".");
         }
         catch (Exception e)
         {
@@ -310,14 +311,14 @@ class DATENBANKVERBINDUNG implements MELDUNGSERZEUGER
         {
             Statement st = conn.createStatement();
             st.executeUpdate(
-                    "INSERT INTO konto (kontonummer, kontostand, eigentuemer) VALUES ("
-                            + konto.KontonummerGeben() + ", "
-                            + konto.KontostandGeben() + ", '"
-                            + konto.EigentuemerGeben().NameGeben() + "')");
+                "INSERT INTO konto (kontonummer, kontostand, eigentuemer) VALUES ("
+                        + konto.KontonummerGeben() + ", "
+                        + konto.KontostandGeben() + ", '"
+                        + konto.EigentuemerGeben().NameGeben() + "')");
             st.executeUpdate(
-                    "INSERT INTO sparkonto (kontonummer, zinssatz) VALUES ("
-                            + konto.KontonummerGeben() + ", "
-                            + konto.ZinssatzGeben() + ")");
+                "INSERT INTO sparkonto (kontonummer, zinssatz) VALUES ("
+                        + konto.KontonummerGeben() + ", "
+                        + konto.ZinssatzGeben() + ")");
             st.close();
             LogeintragMelden("Neues Sparkonto eingefügt mit Nummer: "
                     + konto.KontonummerGeben() + ".");
@@ -339,14 +340,14 @@ class DATENBANKVERBINDUNG implements MELDUNGSERZEUGER
         {
             Statement st = conn.createStatement();
             st.executeUpdate(
-                    "INSERT INTO konto (kontonummer, kontostand, eigentuemer) VALUES ("
-                            + konto.KontonummerGeben() + ", "
-                            + konto.KontostandGeben() + ", '"
-                            + konto.EigentuemerGeben().NameGeben() + "')");
+                "INSERT INTO konto (kontonummer, kontostand, eigentuemer) VALUES ("
+                        + konto.KontonummerGeben() + ", "
+                        + konto.KontostandGeben() + ", '"
+                        + konto.EigentuemerGeben().NameGeben() + "')");
             st.executeUpdate(
-                    "INSERT INTO girokonto (kontonummer, ueberziehungsrahmen) VALUES ("
-                            + konto.KontonummerGeben() + ", "
-                            + konto.UeberziehungsrahmenGeben() + ")");
+                "INSERT INTO girokonto (kontonummer, ueberziehungsrahmen) VALUES ("
+                        + konto.KontonummerGeben() + ", "
+                        + konto.UeberziehungsrahmenGeben() + ")");
             st.close();
             LogeintragMelden("Neues Girokonto eingefügt mit Nummer: "
                     + konto.KontonummerGeben() + ".");
@@ -392,10 +393,10 @@ class DATENBANKVERBINDUNG implements MELDUNGSERZEUGER
         {
             Statement st = conn.createStatement();
             st.executeUpdate(
-                    "DELETE FROM person WHERE name='" + p.NameGeben() + "'");
+                "DELETE FROM person WHERE name='" + p.NameGeben() + "'");
             st.close();
             LogeintragMelden(
-                    "Person gel\u00F6scht mit Name: " + p.NameGeben() + ".");
+                "Person gel\u00F6scht mit Name: " + p.NameGeben() + ".");
         }
         catch (Exception e)
         {
@@ -418,12 +419,12 @@ class DATENBANKVERBINDUNG implements MELDUNGSERZEUGER
         try
         {
             st = conn.createStatement();
-            st.executeUpdate("UPDATE konto SET kontostand=kontostand+("
-                    + differenz + ") WHERE kontonummer="
-                    + konto.KontonummerGeben());
+            st.executeUpdate(
+                "UPDATE konto SET kontostand=kontostand+(" + differenz
+                        + ") WHERE kontonummer=" + konto.KontonummerGeben());
             rs = st.executeQuery(
-                    "SELECT MAX(auszugsnummer) FROM auszugseintrag WHERE kontonummer="
-                            + konto.KontonummerGeben());
+                "SELECT MAX(auszugsnummer) FROM auszugseintrag WHERE kontonummer="
+                        + konto.KontonummerGeben());
             if (rs.next())
             {
                 nummer = rs.getInt(1) + 1;
@@ -434,13 +435,13 @@ class DATENBANKVERBINDUNG implements MELDUNGSERZEUGER
             }
             rs.close();
             st.executeUpdate(
-                    "INSERT INTO auszugseintrag (kontonummer, auszugsnummer, datum, beschreibung, betrag) VALUES ("
-                            + konto.KontonummerGeben() + ", " + nummer
-                            + ", NOW(), '" + beschreibung + "', " + differenz
-                            + ")");
-            rs = st.executeQuery(
-                    "SELECT kontostand FROM konto WHERE kontonummer="
-                            + konto.KontonummerGeben());
+                "INSERT INTO auszugseintrag (kontonummer, auszugsnummer, datum, beschreibung, betrag) VALUES ("
+                        + konto.KontonummerGeben() + ", " + nummer
+                        + ", NOW(), '" + beschreibung + "', " + differenz
+                        + ")");
+            rs = st
+                .executeQuery("SELECT kontostand FROM konto WHERE kontonummer="
+                        + konto.KontonummerGeben());
             if ((!rs.next())
                     || (konto.KontostandGeben() != rs.getDouble("kontostand")))
             {
@@ -450,9 +451,9 @@ class DATENBANKVERBINDUNG implements MELDUNGSERZEUGER
                         + rs.getDouble("kontostand") + ".");
             }
             st.close();
-            LogeintragMelden("Kontostand ge\u00E4ndert, Konto: "
-                    + konto.KontonummerGeben() + ", Stand: "
-                    + konto.KontostandGeben() + ".");
+            LogeintragMelden(
+                "Kontostand ge\u00E4ndert, Konto: " + konto.KontonummerGeben()
+                        + ", Stand: " + konto.KontostandGeben() + ".");
         }
         catch (Exception e)
         {
@@ -478,8 +479,8 @@ class DATENBANKVERBINDUNG implements MELDUNGSERZEUGER
         {
             st = conn.createStatement();
             rs = st.executeQuery(
-                    "SELECT COUNT(*) FROM auszugseintrag WHERE kontonummer="
-                            + konto.KontonummerGeben());
+                "SELECT COUNT(*) FROM auszugseintrag WHERE kontonummer="
+                        + konto.KontonummerGeben());
             if (rs.next())
             {
                 anzahl = rs.getInt(1);
@@ -495,10 +496,9 @@ class DATENBANKVERBINDUNG implements MELDUNGSERZEUGER
                 return null;
             }
             resultat = new AUSZUGSEINTRAG[anzahl];
-            rs = st.executeQuery(
-                    "SELECT * FROM auszugseintrag WHERE kontonummer="
-                            + konto.KontonummerGeben()
-                            + " ORDER BY auszugsnummer");
+            rs = st
+                .executeQuery("SELECT * FROM auszugseintrag WHERE kontonummer="
+                        + konto.KontonummerGeben() + " ORDER BY auszugsnummer");
             for (pos = 0; rs.next(); pos++)
             {
                 resultat[pos] = new AUSZUGSEINTRAG(rs.getInt("auszugsnummer"),

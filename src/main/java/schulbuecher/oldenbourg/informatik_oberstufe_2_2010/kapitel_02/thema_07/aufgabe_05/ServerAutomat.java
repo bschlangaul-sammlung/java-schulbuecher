@@ -11,7 +11,11 @@ class ServerAutomat extends Thread
 {
     private enum Zustaende
     {
-        start, dateinameSchreiben, dateinameLesen, verstandenWarten, beenden
+        start,
+        dateinameSchreiben,
+        dateinameLesen,
+        verstandenWarten,
+        beenden
     };
 
     private Zustaende zustand;
@@ -72,9 +76,9 @@ class ServerAutomat extends Thread
                 zeile = verb.ZeileLesen();
                 if (!zeile.equals("verstanden"))
                 {
-                    System.out.println(
-                            "Protokollverletzung: verstanden erwartet, " + zeile
-                                    + " empfangen");
+                    System.out
+                        .println("Protokollverletzung: verstanden erwartet, "
+                                + zeile + " empfangen");
                 }
                 zustand = Zustaende.beenden;
             case dateinameSchreiben:
@@ -146,8 +150,8 @@ class ServerAutomat extends Thread
         zeile = verb.ZeileLesen();
         if (!zeile.equals("*"))
         {
-            System.out.println("Protokollverletzung, '*' erwartet, " + zeile
-                    + " empfangen");
+            System.out.println(
+                "Protokollverletzung, '*' erwartet, " + zeile + " empfangen");
         }
         else if (datei.Oeffnen(name))
         {
@@ -165,7 +169,7 @@ class ServerAutomat extends Thread
         else
         {
             System.out.println(
-                    "Ausgabedatei konnte nicht ge\u00F6ffnet werden: " + name);
+                "Ausgabedatei konnte nicht ge\u00F6ffnet werden: " + name);
         }
         VerstandenSenden();
     }

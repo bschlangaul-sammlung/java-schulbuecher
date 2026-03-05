@@ -11,7 +11,10 @@ class ServerAutomat
 {
     private enum Zustaende
     {
-        start, dateinameSchreiben, dateinameLesen, verstandenWarten
+        start,
+        dateinameSchreiben,
+        dateinameLesen,
+        verstandenWarten
     };
 
     private Zustaende zustand;
@@ -69,9 +72,9 @@ class ServerAutomat
                 zeile = verb.ZeileLesen();
                 if (!zeile.equals("verstanden"))
                 {
-                    System.out.println(
-                            "Protokollverletzung: verstanden erwartet, " + zeile
-                                    + " empfangen");
+                    System.out
+                        .println("Protokollverletzung: verstanden erwartet, "
+                                + zeile + " empfangen");
                 }
                 return false;
 
@@ -141,8 +144,8 @@ class ServerAutomat
         zeile = verb.ZeileLesen();
         if (!zeile.equals("*"))
         {
-            System.out.println("Protokollverletzung, '*' erwartet, " + zeile
-                    + " empfangen");
+            System.out.println(
+                "Protokollverletzung, '*' erwartet, " + zeile + " empfangen");
         }
         else if (datei.Oeffnen(name))
         {
@@ -160,7 +163,7 @@ class ServerAutomat
         else
         {
             System.out.println(
-                    "Ausgabedatei konnte nicht ge\u00F6ffnet werden: " + name);
+                "Ausgabedatei konnte nicht ge\u00F6ffnet werden: " + name);
         }
         VerstandenSenden();
     }

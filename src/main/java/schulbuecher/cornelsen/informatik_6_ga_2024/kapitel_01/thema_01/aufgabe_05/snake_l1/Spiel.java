@@ -112,8 +112,8 @@ class Spiel extends EreignisBehandlung
      */
     int XKoordinateZufälligGeben()
     {
-        return zzGenerator.nextInt(
-                spielfeldrand.XMaxGeben() - spielfeldrand.XMinGeben() + 1)
+        return zzGenerator
+            .nextInt(spielfeldrand.XMaxGeben() - spielfeldrand.XMinGeben() + 1)
                 + spielfeldrand.XMinGeben();
     }
 
@@ -124,8 +124,8 @@ class Spiel extends EreignisBehandlung
      */
     int YKoordinateZufälligGeben()
     {
-        return zzGenerator.nextInt(
-                spielfeldrand.YMaxGeben() - spielfeldrand.YMinGeben() + 1)
+        return zzGenerator
+            .nextInt(spielfeldrand.YMaxGeben() - spielfeldrand.YMinGeben() + 1)
                 + spielfeldrand.YMinGeben();
     }
 
@@ -257,12 +257,12 @@ class Spiel extends EreignisBehandlung
             if (schlange.KopfInRumpf())
             {
                 spielfeldrand.EndemeldungSetzen(
-                        "Game Over - Schlange hat sich selbst gebissen");
+                    "Game Over - Schlange hat sich selbst gebissen");
             }
             else
             {
                 spielfeldrand.EndemeldungSetzen(
-                        "Game Over - Schlange über Spielfeldrand");
+                    "Game Over - Schlange über Spielfeldrand");
             }
         }
     }

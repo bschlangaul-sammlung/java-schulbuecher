@@ -35,7 +35,7 @@ public class Mannschaft
         while (i < spielerliste.length - 1)
         {
             if (spielerliste[i].nenneSpielzeit() > spielerliste[i + 1]
-                    .nenneSpielzeit())
+                .nenneSpielzeit())
             {
                 h = spielerliste[i];
                 spielerliste[i] = spielerliste[i + 1];

@@ -342,9 +342,16 @@ class Knoten extends Baumelement
             }
         }
 
-        rechterNachfolger.KnotenZeichnen(xmin + (xmax - xmin) / 2, xmax, y + dy,
-                dy, knotenSymbol);
-        linkerNachfolger.KnotenZeichnen(xmin, xmin + (xmax - xmin) / 2, y + dy,
-                dy, knotenSymbol);
+        rechterNachfolger.KnotenZeichnen(xmin
+                + (xmax - xmin) / 2,
+            xmax,
+            y + dy,
+            dy,
+            knotenSymbol);
+        linkerNachfolger.KnotenZeichnen(xmin,
+            xmin + (xmax - xmin) / 2,
+            y + dy,
+            dy,
+            knotenSymbol);
     }
 }

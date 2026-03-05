@@ -80,7 +80,7 @@ class Spiel
                 {
                     mausZiel.SiegeszahlErhoehen();
                     Maus mausUrsprung = (Maus) ursprungsstapel
-                            .AnfangEntfernen();
+                        .AnfangEntfernen();
                     mausUrsprung.NiederlagenzahlErhoehen();
                     ursprungsstapel.VorneEinfuegen(mausUrsprung);
                 }
@@ -97,7 +97,7 @@ class Spiel
                 {
                     mausZiel.SiegeszahlErhoehen();
                     Maus mausUrsprung = (Maus) ursprungsstapel
-                            .AnfangEntfernen();
+                        .AnfangEntfernen();
                     mausUrsprung.NiederlagenzahlErhoehen();
                     ursprungsstapel.VorneEinfuegen(mausUrsprung);
                 }
@@ -107,13 +107,13 @@ class Spiel
                 if (sackgassenstapel.LaengeGeben() != 0)
                 {
                     Maus mausSackgasse = (Maus) sackgassenstapel
-                            .AnfangEntfernen();
+                        .AnfangEntfernen();
                     ursprungsstapel.VorneEinfuegen(mausSackgasse);
                     if (sackgassenstapel.LaengeGeben() != 0)
                     {
                         mausSackgasse.SiegeszahlErhoehen();
                         mausSackgasse = (Maus) sackgassenstapel
-                                .AnfangEntfernen();
+                            .AnfangEntfernen();
                         mausSackgasse.NiederlagenzahlErhoehen();
                         sackgassenstapel.VorneEinfuegen(mausSackgasse);
                     }

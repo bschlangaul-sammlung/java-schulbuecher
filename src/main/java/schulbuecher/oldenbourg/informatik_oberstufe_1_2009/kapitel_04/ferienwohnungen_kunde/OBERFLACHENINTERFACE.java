@@ -14,7 +14,8 @@ interface OBERFLACHENINTERFACE
      */
     enum Status
     {
-        anmleden, auswaehlen
+        anmleden,
+        auswaehlen
     };
 
     /**

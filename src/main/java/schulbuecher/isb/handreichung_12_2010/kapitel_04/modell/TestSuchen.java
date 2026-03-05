@@ -47,7 +47,7 @@ public class TestSuchen
     {
         this.anzahl = anzahl;
         matrix = new Generieren(anzahl)
-                .AdjazenzmatrixGenerieren((anzahl - 1) * 2);
+            .AdjazenzmatrixGenerieren((anzahl - 1) * 2);
     }
 
     /**

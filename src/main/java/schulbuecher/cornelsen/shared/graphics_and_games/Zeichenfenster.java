@@ -71,7 +71,12 @@ public class Zeichenfenster
      */
     static enum SymbolArt
     {
-        kreis, dreieck, rechteck, turtle, figur, text;
+        kreis,
+        dreieck,
+        rechteck,
+        turtle,
+        figur,
+        text;
     };
 
     /**
@@ -425,7 +430,7 @@ public class Zeichenfenster
             zeichenfläche = new Zeichenfenster();
         }
         zeichenfläche.slider
-                .setValue(dauer < 0 ? 0 : (dauer > 1000 ? 1000 : dauer));
+            .setValue(dauer < 0 ? 0 : (dauer > 1000 ? 1000 : dauer));
     }
 
     /**
@@ -744,7 +749,7 @@ public class Zeichenfenster
                 if (index < zeichenfläche.alleSymbole.size() - 1)
                 {
                     zeichenfläche.alleSymbole.set(index,
-                            zeichenfläche.alleSymbole.get(index + 1));
+                        zeichenfläche.alleSymbole.get(index + 1));
                     zeichenfläche.alleSymbole.set(index + 1, this);
                     zeichenfläche.malfläche.repaint();
                 }
@@ -779,7 +784,7 @@ public class Zeichenfenster
                 if (index > 0)
                 {
                     zeichenfläche.alleSymbole.set(index,
-                            zeichenfläche.alleSymbole.get(index - 1));
+                        zeichenfläche.alleSymbole.get(index - 1));
                     zeichenfläche.alleSymbole.set(index - 1, this);
                     zeichenfläche.malfläche.repaint();
                 }
@@ -1057,9 +1062,10 @@ public class Zeichenfenster
                 // g2.rotate(DrehwinkelGeben (winkel), x + text.length() * size
                 // / 4, y + size / 2);
                 Rectangle2D bounds = f2.getStringBounds(text,
-                        g2.getFontRenderContext());
-                g2.rotate(DrehwinkelGeben(winkel), x + bounds.getWidth() / 2,
-                        y - bounds.getHeight() / 2);
+                    g2.getFontRenderContext());
+                g2.rotate(DrehwinkelGeben(winkel),
+                    x + bounds.getWidth() / 2,
+                    y - bounds.getHeight() / 2);
                 g.drawString(text, x, y);
                 g2.setTransform(alt);
             }
@@ -1158,9 +1164,11 @@ public class Zeichenfenster
         @Override
         void ElementZuForm(Path2D.Double p, double größe, int x, int y)
         {
-            p.append(new Rectangle2D.Double(x + größe * xe / 100.0,
-                    y + größe * ye / 100.0, größe * breite / 100.0,
-                    größe * höhe / 100.0), false);
+            p.append(
+                new Rectangle2D.Double(x + größe * xe / 100.0,
+                        y + größe * ye / 100.0, größe * breite / 100.0,
+                        größe * höhe / 100.0),
+                false);
         }
     }
 
@@ -1218,9 +1226,11 @@ public class Zeichenfenster
         @Override
         void ElementZuForm(Path2D.Double p, double größe, int x, int y)
         {
-            p.append(new Ellipse2D.Double(x + größe * xe / 100.0,
-                    y + größe * ye / 100.0, größe * breite / 100.0,
-                    größe * höhe / 100.0), false);
+            p.append(
+                new Ellipse2D.Double(x + größe * xe / 100.0,
+                        y + größe * ye / 100.0, größe * breite / 100.0,
+                        größe * höhe / 100.0),
+                false);
         }
     }
 
@@ -1471,27 +1481,27 @@ public class Zeichenfenster
         private void StandardfigurErzeugen()
         {
             // Kopf
-            standardFigur.add(
-                    new FigurenElementEllipse(50, -12.5, 25, 25, Color.GREEN));
+            standardFigur
+                .add(new FigurenElementEllipse(50, -12.5, 25, 25, Color.GREEN));
             // Beine
             standardFigur.add(new FigurenElementEllipse(22.5, -32.5, 12.5, 17.5,
                     Color.GREEN));
             standardFigur.add(new FigurenElementEllipse(40.0, -32.5, 12.5, 17.5,
                     Color.GREEN));
-            standardFigur.add(new FigurenElementEllipse(22.5, 15.0, 12.5, 17.5,
-                    Color.GREEN));
-            standardFigur.add(new FigurenElementEllipse(40.0, 15.0, 12.5, 17.5,
-                    Color.GREEN));
+            standardFigur.add(
+                new FigurenElementEllipse(22.5, 15.0, 12.5, 17.5, Color.GREEN));
+            standardFigur.add(
+                new FigurenElementEllipse(40.0, 15.0, 12.5, 17.5, Color.GREEN));
             // Augen
             standardFigur
-                    .add(new FigurenElementRechteck(67.5, -10.0, 5.0, 7.5, c));
+                .add(new FigurenElementRechteck(67.5, -10.0, 5.0, 7.5, c));
             standardFigur
-                    .add(new FigurenElementRechteck(67.5, 2.5, 5.0, 7.5, c));
+                .add(new FigurenElementRechteck(67.5, 2.5, 5.0, 7.5, c));
             // Schwanz
             standardFigur.add(new FigurenElementEllipse(0, -3.75, 25, 7.5, c));
             // Rumpf
-            standardFigur.add(
-                    new FigurenElementEllipse(7.5, -23.75, 57.5, 47.5, braun));
+            standardFigur
+                .add(new FigurenElementEllipse(7.5, -23.75, 57.5, 47.5, braun));
         }
 
         /**
@@ -1865,8 +1875,8 @@ public class Zeichenfenster
             int[] x = new int[] { -50, 50, -50 };
             int[] y = new int[] { -50, 0, 50 };
             standardFigur.add(new FigurenElementPolygon(x, y, Color.yellow));
-            standardFigur.add(
-                    new FigurenElementEllipse(-10, -10, 20, 20, Color.blue));
+            standardFigur
+                .add(new FigurenElementEllipse(-10, -10, 20, 20, Color.blue));
         }
 
         /**
@@ -2174,8 +2184,8 @@ public class Zeichenfenster
             {
                 int[] x = new int[] { x1, x2, x3 };
                 int[] y = new int[] { y1, y2, y3 };
-                eigeneFigur.add(
-                        new FigurenElementPolygon(x, y, FarbeCodieren(farbe)));
+                eigeneFigur
+                    .add(new FigurenElementPolygon(x, y, FarbeCodieren(farbe)));
             }
             FormErzeugen();
             zeichenfläche.malfläche.repaint();

@@ -55,7 +55,7 @@ public class Kennzeichen_KI
                                                                 // wurde).
         {
             if (ergebnisIndex < 0 && kennzeichen == kennzeichenliste.get(i)
-                    .OertskuerzelGeben())
+                .OertskuerzelGeben())
             {
                 ergebnisIndex = i;
             }
@@ -65,16 +65,16 @@ public class Kennzeichen_KI
         if (ergebnisIndex >= 0)
         {
             System.out.println("Klar, weiß ich das! Der Ort zum Kennzeichen ");
-            System.out.println(
-                    kennzeichenliste.get(ergebnisIndex).OertskuerzelGeben()
-                            + " ist "
-                            + kennzeichenliste.get(ergebnisIndex).OrtGeben()
-                            + " .");
+            System.out
+                .println(kennzeichenliste.get(ergebnisIndex).OertskuerzelGeben()
+                        + " ist "
+                        + kennzeichenliste.get(ergebnisIndex).OrtGeben()
+                        + " .");
         }
         else
         {
             System.out.println(
-                    "Da muss ich passen. Bist du sicher, dass das ein KFZ Kennzeichen ist?");
+                "Da muss ich passen. Bist du sicher, dass das ein KFZ Kennzeichen ist?");
         }
     }
 
@@ -110,15 +110,15 @@ public class Kennzeichen_KI
         kennzeichenliste.add(new Kennzeichen("BB", "Böblingen"));
         kennzeichenliste.add(new Kennzeichen("BC", "Biberach/Riß"));
         kennzeichenliste.add(
-                new Kennzeichen("BD", "Bundestag, Bundesrat, Bundesregierung"));
+            new Kennzeichen("BD", "Bundestag, Bundesrat, Bundesregierung"));
         kennzeichenliste.add(new Kennzeichen("BGL", "Berchtesgadener Land"));
         kennzeichenliste.add(new Kennzeichen("BI", "Bielefeld"));
-        kennzeichenliste.add(
-                new Kennzeichen("BIR", "Birkenfeld/Nahe und Idar-Oberstein"));
+        kennzeichenliste
+            .add(new Kennzeichen("BIR", "Birkenfeld/Nahe und Idar-Oberstein"));
         kennzeichenliste.add(new Kennzeichen("BIT", "Bitburg-Prüm"));
         kennzeichenliste.add(new Kennzeichen("BK", "Bochum"));
         kennzeichenliste
-                .add(new Kennzeichen("BL", "Zollernalbkreis / Balingen"));
+            .add(new Kennzeichen("BL", "Zollernalbkreis / Balingen"));
         kennzeichenliste.add(new Kennzeichen("BLK", "Burgenlandkreis"));
         kennzeichenliste.add(new Kennzeichen("BM", "Erftkreis / Bergheim"));
         kennzeichenliste.add(new Kennzeichen("BN", "Bonn"));
@@ -132,12 +132,12 @@ public class Kennzeichen_KI
         kennzeichenliste.add(new Kennzeichen("BT", "Bayreuth"));
         kennzeichenliste.add(new Kennzeichen("BTF", "Bitterfeld"));
         kennzeichenliste.add(new Kennzeichen("BÜS", "Büsingen am Hochrhein"));
-        kennzeichenliste.add(new Kennzeichen("BW",
-                "Bundes-Wasser- und Schiffahrtsverwaltung"));
+        kennzeichenliste.add(
+            new Kennzeichen("BW", "Bundes-Wasser- und Schiffahrtsverwaltung"));
         kennzeichenliste.add(new Kennzeichen("BWL",
                 "Baden-Württemberg Landesregierung und Landtag"));
-        kennzeichenliste.add(
-                new Kennzeichen("BYL", "Bayern Landesregierung und Landtag"));
+        kennzeichenliste
+            .add(new Kennzeichen("BYL", "Bayern Landesregierung und Landtag"));
         kennzeichenliste.add(new Kennzeichen("BZ", "Bautzen"));
         kennzeichenliste.add(new Kennzeichen("C", "Chemnitz"));
         kennzeichenliste.add(new Kennzeichen("CB", "Cottbus"));
@@ -166,8 +166,8 @@ public class Kennzeichen_KI
         kennzeichenliste.add(new Kennzeichen("Do", "Dortmund"));
         kennzeichenliste.add(new Kennzeichen("DON", "Donauwörth"));
         kennzeichenliste.add(new Kennzeichen("DU", "Duisburg"));
-        kennzeichenliste.add(
-                new Kennzeichen("DÜW", "Bad Dürkheim / Neustadt/Weinstraße"));
+        kennzeichenliste
+            .add(new Kennzeichen("DÜW", "Bad Dürkheim / Neustadt/Weinstraße"));
         kennzeichenliste.add(new Kennzeichen("E", "Essen"));
         kennzeichenliste.add(new Kennzeichen("EA", "Eisenach"));
         kennzeichenliste.add(new Kennzeichen("EB", "Eilenburg"));
@@ -198,7 +198,7 @@ public class Kennzeichen_KI
         kennzeichenliste.add(new Kennzeichen("FG", "Freiberg"));
         kennzeichenliste.add(new Kennzeichen("FL", "Flensburg"));
         kennzeichenliste
-                .add(new Kennzeichen("FN", "Friedrichshafen/Bodenseekreis"));
+            .add(new Kennzeichen("FN", "Friedrichshafen/Bodenseekreis"));
         kennzeichenliste.add(new Kennzeichen("FO", "Forchheim"));
         kennzeichenliste.add(new Kennzeichen("FR", "Freiburg"));
         kennzeichenliste.add(new Kennzeichen("FRG", "Freyung-Grafenau"));
@@ -230,15 +230,15 @@ public class Kennzeichen_KI
         kennzeichenliste.add(new Kennzeichen("HAM", "Hamm"));
         kennzeichenliste.add(new Kennzeichen("HAS", "Haßberge / Haßfurt"));
         kennzeichenliste
-                .add(new Kennzeichen("HB", "Hansestadt Bremen/Bremerhaven"));
+            .add(new Kennzeichen("HB", "Hansestadt Bremen/Bremerhaven"));
         kennzeichenliste.add(new Kennzeichen("HBN", "Hildburghausen"));
         kennzeichenliste.add(new Kennzeichen("HD", "Heidelberg"));
         kennzeichenliste.add(new Kennzeichen("HDH", "Heidenheim"));
         kennzeichenliste.add(new Kennzeichen("HE", "Helmstedt"));
         kennzeichenliste.add(new Kennzeichen("HEF", "Bad Hersfeld"));
         kennzeichenliste.add(new Kennzeichen("HEI", "Heide"));
-        kennzeichenliste.add(
-                new Kennzeichen("HEL", "Hessen Landesregierung und Landtag"));
+        kennzeichenliste
+            .add(new Kennzeichen("HEL", "Hessen Landesregierung und Landtag"));
         kennzeichenliste.add(new Kennzeichen("HER", "Herne"));
         kennzeichenliste.add(new Kennzeichen("HF", "Herford"));
         kennzeichenliste.add(new Kennzeichen("HG", "Bad Homburg"));
@@ -307,12 +307,12 @@ public class Kennzeichen_KI
         kennzeichenliste.add(new Kennzeichen("LM", "Limburg-Weilburg"));
         kennzeichenliste.add(new Kennzeichen("LÖ", "Lörrach"));
         kennzeichenliste
-                .add(new Kennzeichen("LOS", "Oder-Spree-Kreis Beeskow"));
+            .add(new Kennzeichen("LOS", "Oder-Spree-Kreis Beeskow"));
         kennzeichenliste.add(new Kennzeichen("LRO", "Landkreis Rostock"));
         kennzeichenliste.add(new Kennzeichen("LSA",
                 "Sachsen-Anhalt Landesregierung und Landtag"));
-        kennzeichenliste.add(
-                new Kennzeichen("LSN", "Sachsen Landesregierung und Landtag"));
+        kennzeichenliste
+            .add(new Kennzeichen("LSN", "Sachsen Landesregierung und Landtag"));
         kennzeichenliste.add(new Kennzeichen("LU", "Ludwigshafen"));
         kennzeichenliste.add(new Kennzeichen("LWL", "Ludwigslust"));
         kennzeichenliste.add(new Kennzeichen("M", "München"));
@@ -349,14 +349,14 @@ public class Kennzeichen_KI
         kennzeichenliste.add(new Kennzeichen("NDH", "Nordhausen"));
         kennzeichenliste.add(new Kennzeichen("NE", "Neuss"));
         kennzeichenliste
-                .add(new Kennzeichen("NEA", "Neustadt-Bad Windsheim/Aisch"));
+            .add(new Kennzeichen("NEA", "Neustadt-Bad Windsheim/Aisch"));
         kennzeichenliste.add(new Kennzeichen("NES", "Bad Neustadt/Saale"));
         kennzeichenliste.add(new Kennzeichen("NEW", "Neustadt/Waldnaab"));
         kennzeichenliste.add(new Kennzeichen("NF", "Nordfriesland"));
         kennzeichenliste.add(new Kennzeichen("NI", "Nienburg"));
         kennzeichenliste.add(new Kennzeichen("NK", "Neunkirchen"));
-        kennzeichenliste.add(new Kennzeichen("NL",
-                "Niedersachsen Landesregierung und Landtag"));
+        kennzeichenliste.add(
+            new Kennzeichen("NL", "Niedersachsen Landesregierung und Landtag"));
         kennzeichenliste.add(new Kennzeichen("NM", "Neumarkt/Oberpfalz"));
         kennzeichenliste.add(new Kennzeichen("NMS", "Neumünster"));
         kennzeichenliste.add(new Kennzeichen("NOH", "Nordhorn"));
@@ -394,7 +394,7 @@ public class Kennzeichen_KI
         kennzeichenliste.add(new Kennzeichen("PF", "Pforzheim"));
         kennzeichenliste.add(new Kennzeichen("PI", "Pinneberg"));
         kennzeichenliste
-                .add(new Kennzeichen("PIR", "Pirna/Sächsische Schweiz"));
+            .add(new Kennzeichen("PIR", "Pirna/Sächsische Schweiz"));
         kennzeichenliste.add(new Kennzeichen("PLÖ", "Plön"));
         kennzeichenliste.add(new Kennzeichen("PM", "Potsdam-Mittelmark"));
         kennzeichenliste.add(new Kennzeichen("PR", "Prignitz / Perleberg"));
@@ -420,7 +420,7 @@ public class Kennzeichen_KI
         kennzeichenliste.add(new Kennzeichen("S", "Stuttgart"));
         kennzeichenliste.add(new Kennzeichen("SAD", "Schwandorf"));
         kennzeichenliste.add(
-                new Kennzeichen("SAL", "Saarland Landesregierung und Landtag"));
+            new Kennzeichen("SAL", "Saarland Landesregierung und Landtag"));
         kennzeichenliste.add(new Kennzeichen("SAW", "Salzwedel"));
         kennzeichenliste.add(new Kennzeichen("SB", "Saarbrücken"));
         kennzeichenliste.add(new Kennzeichen("SC", "Schwabach"));
@@ -461,8 +461,8 @@ public class Kennzeichen_KI
         kennzeichenliste.add(new Kennzeichen("TBB", "Tauberbischofsheim"));
         kennzeichenliste.add(new Kennzeichen("TF", "Teltow-Fläming"));
         kennzeichenliste.add(new Kennzeichen("TG", "Torgau"));
-        kennzeichenliste.add(new Kennzeichen("THL",
-                "Thüringen Landesregierung und Landtag"));
+        kennzeichenliste.add(
+            new Kennzeichen("THL", "Thüringen Landesregierung und Landtag"));
         kennzeichenliste.add(new Kennzeichen("THW", "Technisches Hilfswerk"));
         kennzeichenliste.add(new Kennzeichen("TIR", "Tirschenreuth"));
         kennzeichenliste.add(new Kennzeichen("TÖL", "Bad Tölz"));

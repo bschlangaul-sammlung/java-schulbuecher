@@ -86,7 +86,7 @@ class GoldbachMitLaufzeitMessung
         {
             schrittzaehler++;
             System.out
-                    .println("Wertebereich-Fehler: n <= 1 oder ungerade Zahl");
+                .println("Wertebereich-Fehler: n <= 1 oder ungerade Zahl");
         }
         else
         {

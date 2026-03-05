@@ -217,8 +217,8 @@ class Florian extends Figur
     {
         Gehen();
         Pflücken();
-        anzeige.TextSetzen(
-                "Schritte " + schritte + " Blumen " + gesammelteBlumen);
+        anzeige
+            .TextSetzen("Schritte " + schritte + " Blumen " + gesammelteBlumen);
         if (gesammelteBlumen == 10)
         {
             Zeichenfenster.TaktgeberStoppen();

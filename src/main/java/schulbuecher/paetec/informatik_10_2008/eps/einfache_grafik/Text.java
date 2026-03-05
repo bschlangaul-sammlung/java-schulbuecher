@@ -68,10 +68,11 @@ public class Text
      */
     public Text(int schriftgroesse, Zeichenfenster fenster)
     {// uh
-        einfachenTextAnmelden(schriftgroesse, this,
-                fortgeschrittenesFensterGeben(fenster));// uh
+        einfachenTextAnmelden(schriftgroesse,
+            this,
+            fortgeschrittenesFensterGeben(fenster));// uh
         schulbuecher.paetec.informatik_10_2008.eps.fortgeschrittene_grafik.Text fg = (schulbuecher.paetec.informatik_10_2008.eps.fortgeschrittene_grafik.Text) fortgeschrittenegrafikGeben(
-                this);
+            this);
         wirdAngezeigt = false;
         breite = fg.breiteGeben();
         hoehe = fg.hoeheGeben();
@@ -88,7 +89,7 @@ public class Text
     public void groesseSetzen(int neueBreite, int neueHoehe)
     {
         schulbuecher.paetec.informatik_10_2008.eps.fortgeschrittene_grafik.Text fg = (schulbuecher.paetec.informatik_10_2008.eps.fortgeschrittene_grafik.Text) fortgeschrittenegrafikGeben(
-                this);
+            this);
         fg.groesseSetzen(neueBreite, neueHoehe);
         breite = fg.breiteGeben();
         hoehe = fg.hoeheGeben();
@@ -105,7 +106,7 @@ public class Text
         xPosition = neueXPosition;
         yPosition = neueYPosition;
         schulbuecher.paetec.informatik_10_2008.eps.fortgeschrittene_grafik.Text fg = (schulbuecher.paetec.informatik_10_2008.eps.fortgeschrittene_grafik.Text) fortgeschrittenegrafikGeben(
-                this);
+            this);
         fg.positionSetzen(neueXPosition, neueYPosition);
         if (wirdAngezeigt)
             fg.fensterGeben().zeichnen();
@@ -120,7 +121,7 @@ public class Text
         xPosition += deltaX;
         yPosition += deltaY;
         schulbuecher.paetec.informatik_10_2008.eps.fortgeschrittene_grafik.Text fg = (schulbuecher.paetec.informatik_10_2008.eps.fortgeschrittene_grafik.Text) fortgeschrittenegrafikGeben(
-                this);
+            this);
         fg.verschieben(deltaX, deltaY);
         if (wirdAngezeigt)
             fg.fensterGeben().zeichnen();
@@ -134,7 +135,7 @@ public class Text
     public void farbeSetzen(String neueFarbe)
     {
         schulbuecher.paetec.informatik_10_2008.eps.fortgeschrittene_grafik.Text fg = (schulbuecher.paetec.informatik_10_2008.eps.fortgeschrittene_grafik.Text) fortgeschrittenegrafikGeben(
-                this);
+            this);
         fg.farbeSetzen(neueFarbe);
         farbe = fg.farbeGeben();
         if (wirdAngezeigt)
@@ -152,7 +153,7 @@ public class Text
     public void inhaltSetzen(Object neuerInhalt)
     {
         schulbuecher.paetec.informatik_10_2008.eps.fortgeschrittene_grafik.Text fg = (schulbuecher.paetec.informatik_10_2008.eps.fortgeschrittene_grafik.Text) fortgeschrittenegrafikGeben(
-                this);
+            this);
         fg.inhaltSetzen(neuerInhalt);
         breite = fg.breiteGeben();
         hoehe = fg.hoeheGeben();
@@ -167,7 +168,7 @@ public class Text
     public void anzeigen()
     {
         schulbuecher.paetec.informatik_10_2008.eps.fortgeschrittene_grafik.Text fg = (schulbuecher.paetec.informatik_10_2008.eps.fortgeschrittene_grafik.Text) fortgeschrittenegrafikGeben(
-                this);
+            this);
         fg.abmelden();
         fg.anmelden();
         wirdAngezeigt = true;
@@ -180,7 +181,7 @@ public class Text
     public void verstecken()
     {
         schulbuecher.paetec.informatik_10_2008.eps.fortgeschrittene_grafik.Text fg = (schulbuecher.paetec.informatik_10_2008.eps.fortgeschrittene_grafik.Text) fortgeschrittenegrafikGeben(
-                this);
+            this);
         fg.abmelden();
         wirdAngezeigt = false;
         fg.fensterGeben().zeichnen();
@@ -193,7 +194,7 @@ public class Text
     public String toString()
     {
         schulbuecher.paetec.informatik_10_2008.eps.fortgeschrittene_grafik.Text fg = (schulbuecher.paetec.informatik_10_2008.eps.fortgeschrittene_grafik.Text) fortgeschrittenegrafikGeben(
-                this);
+            this);
         return fg.toString();
     }
 }

@@ -360,8 +360,10 @@ public class FIGUR extends Figur
     public void fuegeZustandVonSpritesheetHinzu(String zustandsName,
             String bildpfad, int anzahlX, int anzahlY)
     {
-        super.fuegeZustandVonSpritesheetHinzu(zustandsName, bildpfad, anzahlX,
-                anzahlY);
+        super.fuegeZustandVonSpritesheetHinzu(zustandsName,
+            bildpfad,
+            anzahlX,
+            anzahlY);
     }
 
     /**

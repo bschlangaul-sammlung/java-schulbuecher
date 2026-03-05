@@ -64,7 +64,7 @@ class Goldbach
         if (n <= 1 || n % 2 == 1)
         {
             System.out
-                    .println("Wertebereich-Fehler: n <= 1 oder ungerade Zahl");
+                .println("Wertebereich-Fehler: n <= 1 oder ungerade Zahl");
         }
         else
         {
@@ -75,8 +75,8 @@ class Goldbach
                 {
                     goldbachErfuellt = true;
                     int j = n - i;
-                    System.out.println(n + " ist die Summe der Primzahlen " + i
-                            + " und " + j);
+                    System.out.println(
+                        n + " ist die Summe der Primzahlen " + i + " und " + j);
                 }
                 i = i + 1;
             }

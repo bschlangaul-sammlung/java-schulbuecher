@@ -379,7 +379,7 @@ class Knoten extends Baumelement
                 // veränderten
                 // rechten Teilbaum als neuen rechten Teilbaum ein.
                 rechterNachfolger = rechterNachfolger
-                        .Entfernen(daten.SchlüsselAlsStringGeben());
+                    .Entfernen(daten.SchlüsselAlsStringGeben());
                 return this;
             }
         }
@@ -414,7 +414,7 @@ class Knoten extends Baumelement
         if (daten.SchlüsselIstGleich(suchSchlüssel))
         {
             linkerNachfolger = linkerNachfolger
-                    .RechtsEinfügen(rechterNachfolger);
+                .RechtsEinfügen(rechterNachfolger);
             return linkerNachfolger; // linker Teilbaum wird zurückgegeben und
                                      // entfernt dadurch den zu entfernenden
                                      // Knoten

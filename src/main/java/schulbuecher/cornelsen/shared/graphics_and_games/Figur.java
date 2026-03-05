@@ -56,7 +56,7 @@ public class Figur
     public Figur()
     {
         symbol = (Zeichenfenster.FigurIntern) Zeichenfenster
-                .SymbolErzeugen(Zeichenfenster.SymbolArt.figur);
+            .SymbolErzeugen(Zeichenfenster.SymbolArt.figur);
         symbol.SichtbarkeitSetzen(true);
         x = symbol.x;
         y = symbol.y;

@@ -73,7 +73,7 @@ class Verbraucher extends Thread
             }
             akt = System.currentTimeMillis();
         }
-        System.out.println("Kiste Nummer " + kisteNeu.KistennummerGeben()
-                + " eingelagert.");
+        System.out.println(
+            "Kiste Nummer " + kisteNeu.KistennummerGeben() + " eingelagert.");
     }
 }

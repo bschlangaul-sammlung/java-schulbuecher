@@ -121,7 +121,7 @@ public class TestSortieren
                 {
                     anzahl2 += 1;
                     if (((StringDaten) von[posUnten])
-                            .Vergleichen(von[posOben]) <= 0)
+                        .Vergleichen(von[posOben]) <= 0)
                     {
                         nach[pos] = von[posUnten];
                         posUnten += 1;

@@ -54,29 +54,35 @@ class FAHRBAHNSYMBOL
                 switch (ausrichtung)
                 {
                 case 'N':
-                    g.fillRect(2, OBERFLAECHE.FensterHoeheGeben() / 2
-                            + (y + 2) * breite, breite - 4, breite / 5);
+                    g.fillRect(2,
+                        OBERFLAECHE.FensterHoeheGeben() / 2 + (y + 2) * breite,
+                        breite - 4,
+                        breite / 5);
                     break;
 
                 case 'S':
                     g.fillRect(2,
-                            OBERFLAECHE.FensterHoeheGeben() / 2
-                                    + (y - 2) * breite - breite / 5,
-                            breite - 4, breite / 5);
+                        OBERFLAECHE.FensterHoeheGeben() / 2 + (y - 2) * breite
+                                - breite / 5,
+                        breite - 4,
+                        breite / 5);
                     break;
 
                 case 'O':
                     g.fillRect(
-                            OBERFLAECHE.FensterBreiteGeben() / 2
-                                    + (x - 2) * breite - breite / 5,
-                            2, breite / 5, breite - 4);
+                        OBERFLAECHE.FensterBreiteGeben() / 2 + (x - 2) * breite
+                                - breite / 5,
+                        2,
+                        breite / 5,
+                        breite - 4);
                     break;
 
                 case 'W':
-                    g.fillRect(
-                            OBERFLAECHE.FensterBreiteGeben() / 2
-                                    + (x + 2) * breite,
-                            2, breite / 5, breite - 4);
+                    g.fillRect(OBERFLAECHE.FensterBreiteGeben() / 2
+                            + (x + 2) * breite,
+                        2,
+                        breite / 5,
+                        breite - 4);
                     break;
                 }
             }
@@ -102,25 +108,27 @@ class FAHRBAHNSYMBOL
         case 'N':
             anzeige.setSize(breite, OBERFLAECHE.FensterHoeheGeben());
             anzeige.setLocation(
-                    OBERFLAECHE.FensterBreiteGeben() / 2 + x * breite, 0);
+                OBERFLAECHE.FensterBreiteGeben() / 2 + x * breite,
+                0);
             break;
 
         case 'S':
             anzeige.setSize(breite, OBERFLAECHE.FensterHoeheGeben());
             anzeige.setLocation(
-                    OBERFLAECHE.FensterBreiteGeben() / 2 + (x - 1) * breite, 0);
+                OBERFLAECHE.FensterBreiteGeben() / 2 + (x - 1) * breite,
+                0);
             break;
 
         case 'O':
             anzeige.setSize(OBERFLAECHE.FensterBreiteGeben(), breite);
             anzeige.setLocation(0,
-                    OBERFLAECHE.FensterHoeheGeben() / 2 + y * breite);
+                OBERFLAECHE.FensterHoeheGeben() / 2 + y * breite);
             break;
 
         case 'W':
             anzeige.setSize(OBERFLAECHE.FensterBreiteGeben(), breite);
             anzeige.setLocation(0,
-                    OBERFLAECHE.FensterHoeheGeben() / 2 + (y - 1) * breite);
+                OBERFLAECHE.FensterHoeheGeben() / 2 + (y - 1) * breite);
             break;
         }
         Zeichne();

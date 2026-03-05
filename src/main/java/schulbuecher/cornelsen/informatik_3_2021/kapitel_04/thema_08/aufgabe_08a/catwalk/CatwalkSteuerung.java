@@ -45,7 +45,7 @@ class CatwalkSteuerung extends Figur
             laufsteg.FarbeSetzen(spalte, laufsteg.FarbeGeben(spalte + 1));
         }
         laufsteg.FarbeSetzen(laufsteg.SpaltenanzahlGeben() - 1,
-                ZufälligeFarbeGeben());
+            ZufälligeFarbeGeben());
     }
 
     /**

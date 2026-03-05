@@ -83,7 +83,7 @@ class KASSENSYMBOL
             try
             {
                 aktFarbe = OBERFLAECHE.FARBE
-                        .valueOf(aktFarbe.getDeclaringClass(), neueFarbe);
+                    .valueOf(aktFarbe.getDeclaringClass(), neueFarbe);
             }
             catch (Exception e)
             {

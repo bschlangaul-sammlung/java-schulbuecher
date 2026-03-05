@@ -65,15 +65,24 @@ class KONTROLLEUR implements KONTROLLEURINTERFACE
             verb.TelefonnummernHolen(nummern, aktPerson.NummerGeben());
             verb.EMailadressenHolen(emails, aktPerson.NummerGeben());
             oberflaeche.PersonenInfoSetzen(aktPerson.NameGeben(),
-                    aktPerson.VornameGeben(), aktPerson.StrasseGeben(),
-                    aktPerson.HausnummerGeben(), aktPerson.PlzGeben(),
-                    aktPerson.OrtGeben(), nummern.ReferenzenAlsFeldGeben(),
-                    emails.ReferenzenAlsFeldGeben());
+                aktPerson.VornameGeben(),
+                aktPerson.StrasseGeben(),
+                aktPerson.HausnummerGeben(),
+                aktPerson.PlzGeben(),
+                aktPerson.OrtGeben(),
+                nummern.ReferenzenAlsFeldGeben(),
+                emails.ReferenzenAlsFeldGeben());
         }
         else
         {
-            oberflaeche.PersonenInfoSetzen("", "", "", "", "", "",
-                    new Object[0], new Object[0]);
+            oberflaeche.PersonenInfoSetzen("",
+                "",
+                "",
+                "",
+                "",
+                "",
+                new Object[0],
+                new Object[0]);
         }
     }
 
@@ -93,15 +102,24 @@ class KONTROLLEUR implements KONTROLLEURINTERFACE
             verb.TelefonnummernHolen(nummern, aktPerson.NummerGeben());
             verb.EMailadressenHolen(emails, aktPerson.NummerGeben());
             oberflaeche.PersonenInfoSetzenBearbeiten(aktPerson.NameGeben(),
-                    aktPerson.VornameGeben(), aktPerson.StrasseGeben(),
-                    aktPerson.HausnummerGeben(), aktPerson.PlzGeben(),
-                    aktPerson.OrtGeben(), nummern.ReferenzenAlsFeldGeben(),
-                    emails.ReferenzenAlsFeldGeben());
+                aktPerson.VornameGeben(),
+                aktPerson.StrasseGeben(),
+                aktPerson.HausnummerGeben(),
+                aktPerson.PlzGeben(),
+                aktPerson.OrtGeben(),
+                nummern.ReferenzenAlsFeldGeben(),
+                emails.ReferenzenAlsFeldGeben());
         }
         else
         {
-            oberflaeche.PersonenInfoSetzenBearbeiten("", "", "", "", "", "",
-                    new Object[0], new Object[0]);
+            oberflaeche.PersonenInfoSetzenBearbeiten("",
+                "",
+                "",
+                "",
+                "",
+                "",
+                new Object[0],
+                new Object[0]);
         }
     }
 
@@ -121,15 +139,25 @@ class KONTROLLEUR implements KONTROLLEURINTERFACE
             emails = new LISTE();
             verb.TelefonnummernHolen(nummern, p.NummerGeben());
             verb.EMailadressenHolen(emails, p.NummerGeben());
-            oberflaeche.PersonenInfoSetzenSuche(p.NameGeben(), p.VornameGeben(),
-                    p.StrasseGeben(), p.HausnummerGeben(), p.PlzGeben(),
-                    p.OrtGeben(), nummern.ReferenzenAlsFeldGeben(),
-                    emails.ReferenzenAlsFeldGeben());
+            oberflaeche.PersonenInfoSetzenSuche(p.NameGeben(),
+                p.VornameGeben(),
+                p.StrasseGeben(),
+                p.HausnummerGeben(),
+                p.PlzGeben(),
+                p.OrtGeben(),
+                nummern.ReferenzenAlsFeldGeben(),
+                emails.ReferenzenAlsFeldGeben());
         }
         else
         {
-            oberflaeche.PersonenInfoSetzenSuche("", "", "", "", "", "",
-                    new Object[0], new Object[0]);
+            oberflaeche.PersonenInfoSetzenSuche("",
+                "",
+                "",
+                "",
+                "",
+                "",
+                new Object[0],
+                new Object[0]);
         }
     }
 
@@ -144,7 +172,8 @@ class KONTROLLEUR implements KONTROLLEURINTERFACE
         {
             TELEFON t = (TELEFON) objekt;
             oberflaeche.NummernInfoSetzenBearbeiten(t.NummerGeben(),
-                    t.NotizGeben(), t.ArtGeben());
+                t.NotizGeben(),
+                t.ArtGeben());
         }
     }
 
@@ -159,7 +188,7 @@ class KONTROLLEUR implements KONTROLLEURINTERFACE
         {
             EMAIL e = (EMAIL) objekt;
             oberflaeche.EmailInfoSetzenBearbeiten(e.AdresseGeben(),
-                    e.NotizGeben());
+                e.NotizGeben());
         }
     }
 
@@ -228,12 +257,12 @@ class KONTROLLEUR implements KONTROLLEURINTERFACE
             if (nummer != "")
             {
                 verb.TelefonAnlegen(
-                        new TELEFON(p.NummerGeben(), -1, nummer, notiz1, art));
+                    new TELEFON(p.NummerGeben(), -1, nummer, notiz1, art));
             }
             if (adresse != "")
             {
                 verb.EmailAnlegen(
-                        new EMAIL(p.NummerGeben(), -1, adresse, notiz2));
+                    new EMAIL(p.NummerGeben(), -1, adresse, notiz2));
             }
             oberflaeche.StatusSetzen("Person angelegt.");
             oberflaeche.PersonenSetzen(personenListe.ReferenzenAlsFeldGeben());
@@ -251,8 +280,8 @@ class KONTROLLEUR implements KONTROLLEURINTERFACE
     public void AdressdatenAendern(String strasse, String hausnummer,
             String plz, String ort)
     {
-        aktPerson.AdresseSetzen(aktPerson.AdressNummerGeben(), strasse,
-                hausnummer, plz, ort);
+        aktPerson.AdresseSetzen(aktPerson
+            .AdressNummerGeben(), strasse, hausnummer, plz, ort);
         if (verb.AdressdatenAendern(aktPerson))
         {
             oberflaeche.StatusSetzen("Adressdaten ge\u00E4ndert.");
@@ -288,8 +317,11 @@ class KONTROLLEUR implements KONTROLLEURINTERFACE
     {
         PERSON p;
         p = (PERSON) person;
-        aktPerson.AdresseSetzen(p.AdressNummerGeben(), p.StrasseGeben(),
-                p.HausnummerGeben(), p.PlzGeben(), p.OrtGeben());
+        aktPerson.AdresseSetzen(p.AdressNummerGeben(),
+            p.StrasseGeben(),
+            p.HausnummerGeben(),
+            p.PlzGeben(),
+            p.OrtGeben());
         if (verb.AdressdatenUebernehmen(aktPerson))
         {
             oberflaeche.StatusSetzen("Adressdaten übernommen.");

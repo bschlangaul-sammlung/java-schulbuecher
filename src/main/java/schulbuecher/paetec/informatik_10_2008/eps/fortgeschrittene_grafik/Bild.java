@@ -63,7 +63,8 @@ public class Bild extends Grafik
         super(anmelden, fenster);
         dateiname = "Tulpe.png";
         internesBild = schulbuecher.paetec.informatik_10_2008.eps.fortgeschrittene_grafik.interna.BildSpeicher
-                .speicherGeben().ladeBild(dateiname);
+            .speicherGeben()
+            .ladeBild(dateiname);
         standardBreite = internesBild.getWidth(fensterGeben());
         standardHoehe = internesBild.getHeight(fensterGeben());
         if (internesBild != null)
@@ -104,7 +105,8 @@ public class Bild extends Grafik
     public void dateinameSetzen(String neuerDateiname)
     {
         Image bild = schulbuecher.paetec.informatik_10_2008.eps.fortgeschrittene_grafik.interna.BildSpeicher
-                .speicherGeben().ladeBild(neuerDateiname);
+            .speicherGeben()
+            .ladeBild(neuerDateiname);
         if (bild != null)
         {
             standardBreite = bild.getWidth(fensterGeben());
@@ -125,7 +127,7 @@ public class Bild extends Grafik
     public static String[] bilderGeben()
     {
         URL u = Bild.class.getResource(
-                schulbuecher.paetec.informatik_10_2008.eps.fortgeschrittene_grafik.interna.BildSpeicher.ordnerpfad);
+            schulbuecher.paetec.informatik_10_2008.eps.fortgeschrittene_grafik.interna.BildSpeicher.ordnerpfad);
         if (u == null || u.getPath() == null)
             return new String[0];
         File file = new File(pfadFormatieren(u.getPath()));
@@ -138,7 +140,7 @@ public class Bild extends Grafik
         while (it.hasNext())
         {
             if (!schulbuecher.paetec.informatik_10_2008.eps.fortgeschrittene_grafik.interna.BildSpeicher
-                    .istDateiDarstellbar(it.next()))
+                .istDateiDarstellbar(it.next()))
             {
                 it.remove();
             }
@@ -197,16 +199,30 @@ public class Bild extends Grafik
 
     private static String pfadFormatieren(String pfad)
     {
-        return pfad.replace("%20", " ").replace("%25", "%")
-                .replace("%c3%84", "\u00C4").replace("%c3%96", "\u00D6")
-                .replace("%c3%9c", "\u00DC").replace("%c3%a4", "\u00E4")
-                .replace("%c3%b6", "\u00F6").replace("%c3%bc", "ü")
-                .replace("%3d", "=").replace("%5b", "[").replace("%5d", "]")
-                .replace("%7b", "{").replace("%7d", "}").replace("%60", "`")
-                .replace("%C3%84", "\u00C4").replace("%C3%96", "\u00D6")
-                .replace("%C3%9C", "\u00DC").replace("%C3%A4", "\u00E4")
-                .replace("%C3%C6", "\u00F6").replace("%C3%BC", "ü")
-                .replace("%3D", "=").replace("%5B", "[").replace("%5D", "]")
-                .replace("%7B", "{").replace("%7D", "}");
+        return pfad.replace("%20", " ")
+            .replace("%25", "%")
+            .replace("%c3%84", "\u00C4")
+            .replace("%c3%96", "\u00D6")
+            .replace("%c3%9c", "\u00DC")
+            .replace("%c3%a4", "\u00E4")
+            .replace("%c3%b6", "\u00F6")
+            .replace("%c3%bc", "ü")
+            .replace("%3d", "=")
+            .replace("%5b", "[")
+            .replace("%5d", "]")
+            .replace("%7b", "{")
+            .replace("%7d", "}")
+            .replace("%60", "`")
+            .replace("%C3%84", "\u00C4")
+            .replace("%C3%96", "\u00D6")
+            .replace("%C3%9C", "\u00DC")
+            .replace("%C3%A4", "\u00E4")
+            .replace("%C3%C6", "\u00F6")
+            .replace("%C3%BC", "ü")
+            .replace("%3D", "=")
+            .replace("%5B", "[")
+            .replace("%5D", "]")
+            .replace("%7B", "{")
+            .replace("%7D", "}");
     }
 }

@@ -106,7 +106,7 @@ class FlugnetzGerichtet
             if (flugnetz.KantePruefen(i, k))
             {
                 DatenElement zielflughafen = flugnetz
-                        .DatenDesKnotenMitIndexAusgeben(k);
+                    .DatenDesKnotenMitIndexAusgeben(k);
                 zielflughafen.FlughafennameAusgeben();
             }
         }
@@ -121,7 +121,7 @@ class FlugnetzGerichtet
     void ErreichbareFlughaefenSuchen(int indexStartflughafen)
     {
         DatenElement flughafen = flugnetz
-                .DatenDesKnotenMitIndexAusgeben(indexStartflughafen);
+            .DatenDesKnotenMitIndexAusgeben(indexStartflughafen);
         System.out.print("Ausgangsflughafen ");
         flughafen.FlughafennameAusgeben();
         System.out.println("Erreichbar sind folgende Flughäfen: ");

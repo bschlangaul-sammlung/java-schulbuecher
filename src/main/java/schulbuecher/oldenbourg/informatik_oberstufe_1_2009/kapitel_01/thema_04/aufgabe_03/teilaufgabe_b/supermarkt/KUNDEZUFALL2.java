@@ -48,7 +48,7 @@ class KUNDEZUFALL2 extends KUNDE
                 if (schlangen[i].IstAnstellenMoeglich())
                 {
                     if (schlangen[i].ArtikelanzahlGeben() < beste
-                            .ArtikelanzahlGeben())
+                        .ArtikelanzahlGeben())
                     {
                         beste = schlangen[i];
                     }
@@ -62,7 +62,7 @@ class KUNDEZUFALL2 extends KUNDE
                 if (schlangen[i].IstAnstellenMoeglich())
                 {
                     if (schlangen[i].KundenanzahlGeben() < beste
-                            .KundenanzahlGeben())
+                        .KundenanzahlGeben())
                     {
                         beste = schlangen[i];
                     }

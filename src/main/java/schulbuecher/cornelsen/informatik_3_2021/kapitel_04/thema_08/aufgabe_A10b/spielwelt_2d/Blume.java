@@ -54,7 +54,7 @@ class Blume extends Figur
         else
         {
             System.out.println(
-                    "Die Koordinaten liegen außerhalb der Welt. Bitte Positionen im Bereichs [0;10] eingeben!");
+                "Die Koordinaten liegen außerhalb der Welt. Bitte Positionen im Bereichs [0;10] eingeben!");
         }
     }
 

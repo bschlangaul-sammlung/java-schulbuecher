@@ -95,7 +95,7 @@ public class Spielwelt extends World
         while (blattlausNr < zaehleLaeuse())
         {
             Blattlaus aktuelleLaus = getObjects(Blattlaus.class)
-                    .get(blattlausNr);
+                .get(blattlausNr);
             int dx = x - aktuelleLaus.getX();
             int dy = y - aktuelleLaus.getY();
             double aktuelleDistanz = Math.sqrt(dx * dx + dy * dy);

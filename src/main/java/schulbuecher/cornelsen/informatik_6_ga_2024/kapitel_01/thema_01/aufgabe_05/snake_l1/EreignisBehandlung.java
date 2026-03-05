@@ -52,26 +52,26 @@ class EreignisBehandlung
             }
         });
         Oberflaeche.OberflächeGeben()
-                .SteuerungSetzen(new Oberflaeche.Steuerung()
+            .SteuerungSetzen(new Oberflaeche.Steuerung()
+            {
+                /**
+                 * Setzt den Starttakt für das Spiel.
+                 *
+                 * @param starttakt Der Starttakt in Millisekunden
+                 */
+                public void StartTaktSetzen(int starttakt)
                 {
-                    /**
-                     * Setzt den Starttakt für das Spiel.
-                     *
-                     * @param starttakt Der Starttakt in Millisekunden
-                     */
-                    public void StartTaktSetzen(int starttakt)
-                    {
-                        TaktdauerSetzen(starttakt);
-                    }
+                    TaktdauerSetzen(starttakt);
+                }
 
-                    /**
-                     * Startet das Spiel.
-                     */
-                    public void StartAusführen()
-                    {
-                        Starten();
-                    }
-                });
+                /**
+                 * Startet das Spiel.
+                 */
+                public void StartAusführen()
+                {
+                    Starten();
+                }
+            });
     }
 
     /**

@@ -103,7 +103,7 @@ public class ServerZ5
         {
             new ClientProzess2(clientSocket, this, "toomuchclients");
             System.out.println(
-                    "zu viele Verbindungen, Clientverbindung wird zurueckgesetzt");
+                "zu viele Verbindungen, Clientverbindung wird zurueckgesetzt");
         }
     }
 

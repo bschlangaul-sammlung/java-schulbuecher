@@ -128,10 +128,10 @@ class FahrzeugSymbol
         this.x = x;
         this.y = y;
         anzeige.setLocation(
-                Oberfaeche.FensterBreiteGeben() / 2
-                        + (int) (x * Oberfaeche.MeterAlsPixelGeben()),
-                Oberfaeche.FensterHoeheGeben() / 2
-                        + (int) (y * Oberfaeche.MeterAlsPixelGeben()));
+            Oberfaeche.FensterBreiteGeben() / 2
+                    + (int) (x * Oberfaeche.MeterAlsPixelGeben()),
+            Oberfaeche.FensterHoeheGeben() / 2
+                    + (int) (y * Oberfaeche.MeterAlsPixelGeben()));
     }
 
     /**

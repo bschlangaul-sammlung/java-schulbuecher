@@ -326,7 +326,7 @@ public class Knoten extends BaumElement
         // --> Entfernen ueber die Methode RechtsEinfuegen
         {
             linkerNachfolger = linkerNachfolger
-                    .RechtsEinfuegen(rechterNachfolger);
+                .RechtsEinfuegen(rechterNachfolger);
             return linkerNachfolger; // linker Teilbaum wird zurückgegeben und
                                      // entfernt dadurch den
                                      // zu entfernenden knoten

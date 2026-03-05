@@ -99,7 +99,7 @@ public class BinBaum
         else
         {
             System.out.println(
-                    "Inhalt existiert nicht und kann deshalb nicht gelöscht werden");
+                "Inhalt existiert nicht und kann deshalb nicht gelöscht werden");
         }
     }
 }

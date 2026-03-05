@@ -56,13 +56,19 @@ public class DrawingUtil
         if (actor.getWorld() == null)
         {
             System.err.println(
-                    "Cannot draw Bubble for Actor that is not in the world!");
+                "Cannot draw Bubble for Actor that is not in the world!");
             return;
         }
-        font = actor.getWorld().getBackground().getAwtImage().getGraphics()
-                .getFont();
-        fm = actor.getWorld().getBackground().getAwtImage().createGraphics()
-                .getFontMetrics(font);
+        font = actor.getWorld()
+            .getBackground()
+            .getAwtImage()
+            .getGraphics()
+            .getFont();
+        fm = actor.getWorld()
+            .getBackground()
+            .getAwtImage()
+            .createGraphics()
+            .getFontMetrics(font);
         initLines(text);
         pseudoActor = new Actor()
         {

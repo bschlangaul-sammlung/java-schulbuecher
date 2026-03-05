@@ -23,7 +23,7 @@ class ANRUFER extends DATENELEMENT
     {
         System.out.println("Kundennummer: " + kundennummer);
         System.out.println("Problembeschreibung: " + problembeschreibung);
-        System.out.println(
-                "----------------------------------------------------");
+        System.out
+            .println("----------------------------------------------------");
     }
 }

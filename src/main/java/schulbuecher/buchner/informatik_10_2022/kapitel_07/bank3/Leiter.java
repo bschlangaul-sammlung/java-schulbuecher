@@ -26,6 +26,6 @@ public class Leiter
     {
         filiale = eineFiliale;
         System.out
-                .println("Erfolgreich Filiale in Klasse Filialleiter gesetzt");
+            .println("Erfolgreich Filiale in Klasse Filialleiter gesetzt");
     }
 }

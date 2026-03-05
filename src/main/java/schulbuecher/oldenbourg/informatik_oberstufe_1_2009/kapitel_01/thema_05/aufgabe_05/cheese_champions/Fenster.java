@@ -89,8 +89,8 @@ class Fenster extends Frame
         titel.setFont(new Font("MS Sans Serif", Font.PLAIN, 21));
         cp.add(titel);
         beschreibung.setBounds(16, 48, 322, 16);
-        beschreibung.setText(
-                "Geben Sie die Reihenfolge der Ankunft beim Käse ein:");
+        beschreibung
+            .setText("Geben Sie die Reihenfolge der Ankunft beim Käse ein:");
         beschreibung.setFont(new Font("MS Sans Serif", Font.PLAIN, 13));
         cp.add(beschreibung);
         mausnummer.setBounds(16, 80, 145, 24);
@@ -103,7 +103,7 @@ class Fenster extends Frame
             public void actionPerformed(ActionEvent evt)
             {
                 spiel.Einfuegen(
-                        new Maus(Integer.parseInt(mausnummer.getText())));
+                    new Maus(Integer.parseInt(mausnummer.getText())));
                 texfeldZiel.setText(spiel.StapelAusgeben('z'));
             }
         });
@@ -155,11 +155,11 @@ class Fenster extends Frame
         labelUnzulaessigeReihenfolge.setBounds(16, 448, 300, 16);
         labelUnzulaessigeReihenfolge.setText("");
         labelUnzulaessigeReihenfolge
-                .setFont(new Font("MS Sans Serif", Font.PLAIN, 13));
+            .setFont(new Font("MS Sans Serif", Font.PLAIN, 13));
         cp.add(labelUnzulaessigeReihenfolge);
         labelInfo.setBounds(16, 168, 338, 16);
-        labelInfo.setText(
-                "Ausgabe in der Form Mausnummer | gewonnen | verloren");
+        labelInfo
+            .setText("Ausgabe in der Form Mausnummer | gewonnen | verloren");
         labelInfo.setFont(new Font("MS Sans Serif", Font.PLAIN, 13));
         cp.add(labelInfo);
         // Ende Komponenten

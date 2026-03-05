@@ -25,7 +25,15 @@ class Oberflaeche
      */
     enum FARBE
     {
-        weiss, schwarz, rot, gruen, blau, gelb, magenta, cyan, grau;
+        weiss,
+        schwarz,
+        rot,
+        gruen,
+        blau,
+        gelb,
+        magenta,
+        cyan,
+        grau;
 
         /**
          * Konvertiert die angegebene FARBE in ihr AWT-Pendant.

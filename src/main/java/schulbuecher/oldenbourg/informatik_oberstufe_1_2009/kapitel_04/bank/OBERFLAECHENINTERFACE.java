@@ -14,8 +14,12 @@ interface OBERFLAECHENINTERFACE
      */
     enum Status
     {
-        anmelden, kundenkontowahl, kundenkontoarbeit, angestelltensicht,
-        angestelltensicht_kunde, angestelltensicht_kundeundkonto
+        anmelden,
+        kundenkontowahl,
+        kundenkontoarbeit,
+        angestelltensicht,
+        angestelltensicht_kunde,
+        angestelltensicht_kundeundkonto
     };
 
     /**

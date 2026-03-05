@@ -201,8 +201,8 @@ public class Arbeit
                 minLaufzeit = dauer;
             }
         }
-        System.out.println("Suche aller Wege (Brute Force): " + minLaufzeit
-                + " Nanosekunden");
+        System.out.println(
+            "Suche aller Wege (Brute Force): " + minLaufzeit + " Nanosekunden");
         // Suche des kürzesten Weges mit Dijkstra
         startNanoTime = System.nanoTime();
         g.KuerzesterWeg("M", "F");

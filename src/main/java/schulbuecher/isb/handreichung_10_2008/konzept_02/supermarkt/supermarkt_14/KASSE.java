@@ -11,7 +11,9 @@ class KASSE implements TaktKlient
 {
     private enum Zustaende
     {
-        offen, schliessend, geschlossen
+        offen,
+        schliessend,
+        geschlossen
     };
 
     private RECHTECK darstellung;

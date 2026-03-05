@@ -104,7 +104,7 @@ public class Abschluss extends BaumElement
     public BaumElement Entfernen(String suchSchluessel)
     {
         System.out.println(
-                "Suchschlüessel nicht vorhanden, entfernen nicht möglich!!");
+            "Suchschlüessel nicht vorhanden, entfernen nicht möglich!!");
         return this;
     }
 }

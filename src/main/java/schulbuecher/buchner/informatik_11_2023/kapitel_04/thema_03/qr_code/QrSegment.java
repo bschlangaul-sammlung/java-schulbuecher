@@ -97,8 +97,8 @@ public final class QrSegment
         { // Consume up to 3 digits per iteration
             int n = Math.min(digits.length() - i, 3);
             bb.appendBits(
-                    Integer.parseInt(digits.subSequence(i, i + n).toString()),
-                    n * 3 + 1);
+                Integer.parseInt(digits.subSequence(i, i + n).toString()),
+                n * 3 + 1);
             i += n;
         }
         return new QrSegment(Mode.NUMERIC, digits.length(), bb);
@@ -162,8 +162,8 @@ public final class QrSegment
         else if (isAlphanumeric(text))
             result.add(makeAlphanumeric(text));
         else
-            result.add(makeBytes(
-                    text.toString().getBytes(StandardCharsets.UTF_8)));
+            result.add(
+                makeBytes(text.toString().getBytes(StandardCharsets.UTF_8)));
         return result;
     }
 
@@ -322,7 +322,7 @@ public final class QrSegment
 
     // Describes precisely all strings that are encodable in alphanumeric mode.
     private static final Pattern ALPHANUMERIC_REGEX = Pattern
-            .compile("[A-Z0-9 $%*+./:-]*");
+        .compile("[A-Z0-9 $%*+./:-]*");
 
     // The set of all legal characters in alphanumeric mode, where
     // each character value maps to the index in the string.
@@ -335,8 +335,11 @@ public final class QrSegment
     public enum Mode
     {
         /*-- Constants --*/
-        NUMERIC(0x1, 10, 12, 14), ALPHANUMERIC(0x2, 9, 11, 13),
-        BYTE(0x4, 8, 16, 16), KANJI(0x8, 8, 10, 12), ECI(0x7, 0, 0, 0);
+        NUMERIC(0x1, 10, 12, 14),
+        ALPHANUMERIC(0x2, 9, 11, 13),
+        BYTE(0x4, 8, 16, 16),
+        KANJI(0x8, 8, 10, 12),
+        ECI(0x7, 0, 0, 0);
 
         /*-- Fields --*/
         // The mode indicator bits, which is a uint4 value (range 0 to 15).

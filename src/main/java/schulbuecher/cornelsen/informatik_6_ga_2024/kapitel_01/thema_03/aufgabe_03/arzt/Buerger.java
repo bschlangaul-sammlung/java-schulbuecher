@@ -34,7 +34,7 @@ class Buerger implements Datenelement
     public void InformationAusgeben()
     {
         System.out
-                .println("Name: " + name + "Dienstleistung:" + dienstleistung);
+            .println("Name: " + name + "Dienstleistung:" + dienstleistung);
     }
 
     /**

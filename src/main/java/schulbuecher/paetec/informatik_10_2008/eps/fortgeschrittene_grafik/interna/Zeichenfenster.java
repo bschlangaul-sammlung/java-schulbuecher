@@ -356,7 +356,7 @@ public class Zeichenfenster extends Canvas implements Fenster
         }
         frame.setIconImage(new ImageIcon(
                 Bild.class.getResource(BildSpeicher.ordnerpfad + "logo.gif"))
-                .getImage());
+                    .getImage());
         frame.setPreferredSize(new Dimension(breite, hoehe));
         frame.setBounds(offset, offset, breite, hoehe);// UH - 0,0
         offset = offset + 10;
@@ -369,7 +369,7 @@ public class Zeichenfenster extends Canvas implements Fenster
         buttonHoehe = gitterIcon.getIconHeight() + 55;
         leinwandPanel = new JPanel();
         leinwandPanel
-                .setPreferredSize(new Dimension(breite, hoehe - buttonHoehe));
+            .setPreferredSize(new Dimension(breite, hoehe - buttonHoehe));
         leinwandPanel.setLayout(null);
         leinwandPanel.setBounds(0, 0, breite, hoehe - buttonHoehe);
         leinwandPanel.setBackground(HINTERGRUND_FARBE);
@@ -380,8 +380,9 @@ public class Zeichenfenster extends Canvas implements Fenster
         buttonPanel.setBounds(0, hoehe - buttonHoehe, breite, buttonHoehe);
         buttonPanel.setLayout(null);
         gitternetzButton.setBounds(breite / 2 - gitterIcon.getIconWidth() / 2,
-                0, gitterIcon.getIconWidth() + 10,
-                gitterIcon.getIconHeight() + 10);
+            0,
+            gitterIcon.getIconWidth() + 10,
+            gitterIcon.getIconHeight() + 10);
         buttonPanel.add(gitternetzButton);
         frame.add(buttonPanel);
         frame.pack();
@@ -408,36 +409,36 @@ public class Zeichenfenster extends Canvas implements Fenster
         if (inGuterQualitaetZeichnen)
         {
             g.setRenderingHint(RenderingHints.KEY_ANTIALIASING,
-                    RenderingHints.VALUE_ANTIALIAS_ON);
+                RenderingHints.VALUE_ANTIALIAS_ON);
             g.setRenderingHint(RenderingHints.KEY_ALPHA_INTERPOLATION,
-                    RenderingHints.VALUE_ALPHA_INTERPOLATION_SPEED);
+                RenderingHints.VALUE_ALPHA_INTERPOLATION_SPEED);
             g.setRenderingHint(RenderingHints.KEY_COLOR_RENDERING,
-                    RenderingHints.VALUE_COLOR_RENDER_QUALITY);
+                RenderingHints.VALUE_COLOR_RENDER_QUALITY);
             g.setRenderingHint(RenderingHints.KEY_DITHERING,
-                    RenderingHints.VALUE_DITHER_ENABLE);
+                RenderingHints.VALUE_DITHER_ENABLE);
             g.setRenderingHint(RenderingHints.KEY_FRACTIONALMETRICS,
-                    RenderingHints.VALUE_FRACTIONALMETRICS_OFF);
+                RenderingHints.VALUE_FRACTIONALMETRICS_OFF);
             g.setRenderingHint(RenderingHints.KEY_RENDERING,
-                    RenderingHints.VALUE_RENDER_QUALITY);
+                RenderingHints.VALUE_RENDER_QUALITY);
             g.setRenderingHint(RenderingHints.KEY_STROKE_CONTROL,
-                    RenderingHints.VALUE_STROKE_DEFAULT);
+                RenderingHints.VALUE_STROKE_DEFAULT);
         }
         else
         {
             g.setRenderingHint(RenderingHints.KEY_ANTIALIASING,
-                    RenderingHints.VALUE_ANTIALIAS_OFF);
+                RenderingHints.VALUE_ANTIALIAS_OFF);
             g.setRenderingHint(RenderingHints.KEY_ALPHA_INTERPOLATION,
-                    RenderingHints.VALUE_ALPHA_INTERPOLATION_SPEED);
+                RenderingHints.VALUE_ALPHA_INTERPOLATION_SPEED);
             g.setRenderingHint(RenderingHints.KEY_COLOR_RENDERING,
-                    RenderingHints.VALUE_COLOR_RENDER_DEFAULT);
+                RenderingHints.VALUE_COLOR_RENDER_DEFAULT);
             g.setRenderingHint(RenderingHints.KEY_DITHERING,
-                    RenderingHints.VALUE_DITHER_DISABLE);
+                RenderingHints.VALUE_DITHER_DISABLE);
             g.setRenderingHint(RenderingHints.KEY_FRACTIONALMETRICS,
-                    RenderingHints.VALUE_FRACTIONALMETRICS_OFF);
+                RenderingHints.VALUE_FRACTIONALMETRICS_OFF);
             g.setRenderingHint(RenderingHints.KEY_RENDERING,
-                    RenderingHints.VALUE_RENDER_SPEED);
+                RenderingHints.VALUE_RENDER_SPEED);
             g.setRenderingHint(RenderingHints.KEY_STROKE_CONTROL,
-                    RenderingHints.VALUE_STROKE_DEFAULT);
+                RenderingHints.VALUE_STROKE_DEFAULT);
         }
         g.setColor(HINTERGRUND_FARBE);
         g.clearRect(0, 0, getWidth(), getHeight());
@@ -456,7 +457,7 @@ public class Zeichenfenster extends Canvas implements Fenster
     private static Dimension standardDimensionenAuslesen()
     {
         URL u = Bild.class
-                .getResource("sonstigeRessourcen/standardFenstergroesse.txt");
+            .getResource("sonstigeRessourcen/standardFenstergroesse.txt");
         if (u == null || u.getPath() == null)
             return new Dimension(STANDARD_FENSTER_BREITE,
                     STANDARD_FENSTER_HOEHE);
@@ -523,9 +524,9 @@ public class Zeichenfenster extends Canvas implements Fenster
         public void windowClosing(WindowEvent e)
         {
             Notiz meldung = new Notiz();// UH
-            if (meldung.jaNeinAntwortLesen(
-                    "Wenn Sie schliessen werden ALLE erzeugten "
-                            + "Objekte entfernt.\n Beabsichtigen Sie dies?"))
+            if (meldung
+                .jaNeinAntwortLesen("Wenn Sie schliessen werden ALLE erzeugten "
+                        + "Objekte entfernt.\n Beabsichtigen Sie dies?"))
             {
                 System.exit(0);
             }
@@ -560,19 +561,23 @@ public class Zeichenfenster extends Canvas implements Fenster
 
         public void componentResized(ComponentEvent arg0)
         {
-            leinwandPanel.setBounds(0, 0,
-                    ((JFrame) arg0.getSource()).getWidth(),
-                    ((JFrame) arg0.getSource()).getHeight() - buttonHoehe);
-            setBounds(0, 0, leinwandPanel.getWidth(),
-                    leinwandPanel.getHeight());
+            leinwandPanel.setBounds(0,
+                0,
+                ((JFrame) arg0.getSource()).getWidth(),
+                ((JFrame) arg0.getSource()).getHeight() - buttonHoehe);
+            setBounds(0,
+                0,
+                leinwandPanel.getWidth(),
+                leinwandPanel.getHeight());
             buttonPanel.setBounds(0,
-                    ((JFrame) arg0.getSource()).getHeight() - buttonHoehe,
-                    ((JFrame) arg0.getSource()).getWidth(), buttonHoehe);
+                ((JFrame) arg0.getSource()).getHeight() - buttonHoehe,
+                ((JFrame) arg0.getSource()).getWidth(),
+                buttonHoehe);
             gitternetzButton.setBounds(
-                    buttonPanel.getWidth() / 2
-                            - gitternetzButton.getWidth() / 2,
-                    0, gitternetzButton.getWidth(),
-                    gitternetzButton.getHeight());
+                buttonPanel.getWidth() / 2 - gitternetzButton.getWidth() / 2,
+                0,
+                gitternetzButton.getWidth(),
+                gitternetzButton.getHeight());
             buttonPanel.repaint();
             neuZeichnen();
         }

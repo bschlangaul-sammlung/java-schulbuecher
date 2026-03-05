@@ -120,16 +120,16 @@ public class Knoten
     {
         Abmessungen abmessungen = graph.AbmessungenAusgeben();
 
-        System.out
-                .println(String.format("g.addNode(\"%s\", %s, %s);", bezeichner,
-                        // In der Engine Pi misst ein Meter standardmäßig 32
-                        // Pixel, wir teilen durch 32 und zwar mit Kommazahlen,
-                        // damit wir einen double-Wert erhalten.
-                        // Der Knoten am linken Rand soll in der Engine Pi eine
-                        // x-Koordinate von 0 erhalten.
-                        (x - abmessungen.minX()) / 32.0,
-                        // Der Knoten ganz unten, der Knoten mit der größten
-                        // y-Koordinate soll bei 0 in der Engine Pi liegen.
-                        (abmessungen.maxY() - y) / 32.0));
+        System.out.println(String.format("g.addNode(\"%s\", %s, %s);",
+            bezeichner,
+            // In der Engine Pi misst ein Meter standardmäßig 32
+            // Pixel, wir teilen durch 32 und zwar mit Kommazahlen,
+            // damit wir einen double-Wert erhalten.
+            // Der Knoten am linken Rand soll in der Engine Pi eine
+            // x-Koordinate von 0 erhalten.
+            (x - abmessungen.minX()) / 32.0,
+            // Der Knoten ganz unten, der Knoten mit der größten
+            // y-Koordinate soll bei 0 in der Engine Pi liegen.
+            (abmessungen.maxY() - y) / 32.0));
     }
 }

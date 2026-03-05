@@ -46,14 +46,18 @@ public class Ulamspirale extends World
 
     void fuegeZelleEin(Zelle zelle)
     {
-        addObject(zelle, getWidth() / 2 + zelle.x - 1,
-                getHeight() / 2 + zelle.y);
+        addObject(zelle,
+            getWidth() / 2 + zelle.x - 1,
+            getHeight() / 2 + zelle.y);
         zelle.erstelleBild();
     }
 
     enum Richtung
     {
-        RECHTS, OBEN, LINKS, UNTEN;
+        RECHTS,
+        OBEN,
+        LINKS,
+        UNTEN;
 
         Richtung next()
         {

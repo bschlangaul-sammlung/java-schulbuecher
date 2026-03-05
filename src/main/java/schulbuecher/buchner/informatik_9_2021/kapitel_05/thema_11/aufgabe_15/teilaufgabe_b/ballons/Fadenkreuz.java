@@ -22,7 +22,7 @@ public class Fadenkreuz extends Actor
         if (Greenfoot.getMouseInfo() != null)
         {
             setLocation(Greenfoot.getMouseInfo().getX(),
-                    Greenfoot.getMouseInfo().getY());
+                Greenfoot.getMouseInfo().getY());
         }
     }
 }

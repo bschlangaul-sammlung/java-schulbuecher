@@ -42,8 +42,9 @@ class Songwettbewerb
     {
         kandidatenWunschlisteCoaches = new ArrayList<ArrayList<Integer>>();
         coachesWunschlisteKandidaten = new ArrayList<ArrayList<Integer>>();
-        if (!Lesen("Wunschlisten.txt", kandidatenWunschlisteCoaches,
-                coachesWunschlisteKandidaten))
+        if (!Lesen("Wunschlisten.txt",
+            kandidatenWunschlisteCoaches,
+            coachesWunschlisteKandidaten))
         {
             return;
         }
@@ -91,7 +92,7 @@ class Songwettbewerb
                 for (String num : teile)
                 {
                     kandidatenWunschlisteCoaches.get(pos)
-                            .add(Integer.parseInt(num.strip()));
+                        .add(Integer.parseInt(num.strip()));
                 }
                 zeile = eingabe.readLine();
             }
@@ -105,13 +106,13 @@ class Songwettbewerb
                 for (String num : teile)
                 {
                     coachesWunschlisteKandidaten.get(pos)
-                            .add(Integer.parseInt(num.strip()));
+                        .add(Integer.parseInt(num.strip()));
                 }
                 zeile = eingabe.readLine();
             }
             eingabe.close();
             return (kandidatenWunschlisteCoaches
-                    .size() == coachesWunschlisteKandidaten.size());
+                .size() == coachesWunschlisteKandidaten.size());
         }
         catch (Exception e)
         {
@@ -134,9 +135,10 @@ class Songwettbewerb
             String text = "   " + coach;
             System.out.print(text.substring(text.length() - 3));
             zufriedenheitKandidaten += kandidatenWunschlisteCoaches
-                    .get(kandidat).get(coach);
+                .get(kandidat)
+                .get(coach);
             zufriedenheitCoaches += coachesWunschlisteKandidaten.get(coach)
-                    .get(kandidat);
+                .get(kandidat);
             kandidat += 1;
         }
         String text = "    " + zufriedenheitKandidaten;
@@ -160,7 +162,7 @@ class Songwettbewerb
         for (int nummer = 0; nummer < anzahl; nummer += 1)
         {
             if (kandidatenWunschlisteCoaches.get(kandidat)
-                    .get(nummer) == wunschwert)
+                .get(nummer) == wunschwert)
             {
                 return nummer;
             }
@@ -201,12 +203,13 @@ class Songwettbewerb
         for (int kandidat = 0; kandidat < aktuellerKandidat; kandidat += 1)
         {
             if ((kandidatenWunschlisteCoaches.get(kandidat)
-                    .get(aktuellerCoach) > kandidatenWunschlisteCoaches
-                            .get(kandidat).get(coachFürKandidat.get(kandidat)))
+                .get(aktuellerCoach) > kandidatenWunschlisteCoaches
+                    .get(kandidat)
+                    .get(coachFürKandidat.get(kandidat)))
                     && (coachesWunschlisteKandidaten.get(aktuellerCoach)
-                            .get(kandidat) > coachesWunschlisteKandidaten
-                                    .get(aktuellerCoach)
-                                    .get(aktuellerKandidat)))
+                        .get(kandidat) > coachesWunschlisteKandidaten
+                            .get(aktuellerCoach)
+                            .get(aktuellerKandidat)))
             {
                 return false;
             }
@@ -217,12 +220,13 @@ class Songwettbewerb
                                                   // frei
             {
                 if ((coachesWunschlisteKandidaten.get(coach)
-                        .get(aktuellerKandidat) > coachesWunschlisteKandidaten
-                                .get(coach).get(KandidatFürCoachGeben(coach)))
+                    .get(aktuellerKandidat) > coachesWunschlisteKandidaten
+                        .get(coach)
+                        .get(KandidatFürCoachGeben(coach)))
                         && (kandidatenWunschlisteCoaches.get(aktuellerKandidat)
-                                .get(coach) > kandidatenWunschlisteCoaches
-                                        .get(aktuellerKandidat)
-                                        .get(aktuellerCoach)))
+                            .get(coach) > kandidatenWunschlisteCoaches
+                                .get(aktuellerKandidat)
+                                .get(aktuellerCoach)))
                 {
                     return false;
                 }

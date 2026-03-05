@@ -80,8 +80,8 @@ public class Petrus
                 erzeugeFlocken(holeEingabe());
             }
         });
-        ZeichenFenster.gibFenster().komponenteHinzufuegen(schneeknopf,
-                "rechts");
+        ZeichenFenster.gibFenster()
+            .komponenteHinzufuegen(schneeknopf, "rechts");
         wirbelknopf = new JButton("Wirbelschnee erzeugen");
         wirbelknopf.addActionListener(new ActionListener()
         {
@@ -90,8 +90,8 @@ public class Petrus
                 erzeugeWirbelflocken(holeEingabe());
             }
         });
-        ZeichenFenster.gibFenster().komponenteHinzufuegen(wirbelknopf,
-                "rechts");
+        ZeichenFenster.gibFenster()
+            .komponenteHinzufuegen(wirbelknopf, "rechts");
         nebelknopf = new JButton("Nebel erzeugen");
         nebelknopf.addActionListener(new ActionListener()
         {
@@ -109,8 +109,8 @@ public class Petrus
                 erzeugeBlasen(holeEingabe());
             }
         });
-        ZeichenFenster.gibFenster().komponenteHinzufuegen(blasenknopf,
-                "rechts");
+        ZeichenFenster.gibFenster()
+            .komponenteHinzufuegen(blasenknopf, "rechts");
     }
 
     private void ticke()

@@ -125,8 +125,9 @@ public class MyWorld extends World
         {
             buttons[i] = new Button("bt" + i, i, this);
             if (buttons[i] != null)
-                addObject(buttons[i], 560,
-                        55 + i * ystep + (i > 11 ? ystep : 0));
+                addObject(buttons[i],
+                    560,
+                    55 + i * ystep + (i > 11 ? ystep : 0));
         }
         plus = new Button("btplus", maxButtons, this, true);
         minus = new Button("btminus", maxButtons + 1, this, true);
@@ -150,8 +151,8 @@ public class MyWorld extends World
         // Hilfe für Bit-Muster
         case 0:
             printString(
-                    "Mit Hilfe der fünf folgenden Befehle wird die Grundstruktur des QR-Codes erstellt",
-                    false);
+                "Mit Hilfe der fünf folgenden Befehle wird die Grundstruktur des QR-Codes erstellt",
+                false);
             break;
 
         // Knopf Synchronisation
@@ -182,8 +183,8 @@ public class MyWorld extends World
         // Hilfe für Daten
         case 6:
             printString(
-                    "Die Daten können aus dem gelben Eingabefeld erstellt oder\naus dem QR-Code mit 'Pixel einlesen' eingelesen werden.\nHinweis: Das Einlesen von Pixeln ist nur für sehr kurze Text sinnvoll, da man für jeden\nBuchstaben acht Pixel setzen muss.\nIm Anschluss kann der Code mit Füllzeichen ergänzt werden, falls er nicht den Gesamtendatenbereich des QR-Codes benötigt.",
-                    false);
+                "Die Daten können aus dem gelben Eingabefeld erstellt oder\naus dem QR-Code mit 'Pixel einlesen' eingelesen werden.\nHinweis: Das Einlesen von Pixeln ist nur für sehr kurze Text sinnvoll, da man für jeden\nBuchstaben acht Pixel setzen muss.\nIm Anschluss kann der Code mit Füllzeichen ergänzt werden, falls er nicht den Gesamtendatenbereich des QR-Codes benötigt.",
+                false);
             break;
 
         // Knopf Eingabe codieren
@@ -301,15 +302,17 @@ public class MyWorld extends World
                 matrix[x][y] = new Pixel(-1, true, this, pixelsize); // white,
                                                                      // clickable
                 isFunction[x][y] = false;
-                addObject(matrix[x][y], x * pixelsize + pixelsize / 2,
-                        y * pixelsize + pixelsize / 2);
+                addObject(matrix[x][y],
+                    x * pixelsize + pixelsize / 2,
+                    y * pixelsize + pixelsize / 2);
             }
         }
         if (marker != null)
             removeObject(marker);
         marker = new PixelMarker(this, pixelsize);
-        addObject(marker, size * pixelsize + pixelsize / 2,
-                size * pixelsize + pixelsize / 2);
+        addObject(marker,
+            size * pixelsize + pixelsize / 2,
+            size * pixelsize + pixelsize / 2);
         marker.setVisible(false);
         patternCounter = -1;
         generatePattern();
@@ -351,13 +354,15 @@ public class MyWorld extends World
         // Check if enough databytes in QR-Code Version
         int dataUsedBits;
         int dataCapacityBits = QrCode.getNumDataCodewords(version,
-                errorCorrectionLevel) * 8; // Number of data bits
-                                           // available
+            errorCorrectionLevel) * 8; // Number of data bits
+                                       // available
         dataUsedBits = QrSegment.getTotalBits(qrseg, version);
         if (!(dataUsedBits != -1 && dataUsedBits <= dataCapacityBits))
         {
-            printString("Eingabe ist zu groß für die QR-Code Version #"
-                    + version + "\nVersion erhöhen!", false);
+            printString(
+                "Eingabe ist zu groß für die QR-Code Version #" + version
+                        + "\nVersion erhöhen!",
+                false);
             return null;
         }
         else
@@ -373,7 +378,8 @@ public class MyWorld extends World
     private BitBuffer fillToByteLength(BitBuffer bb)
     {
         String output = "";
-        bb.appendBits(0, Math.min(4,
+        bb.appendBits(0,
+            Math.min(4,
                 QrCode.getNumDataCodewords(version, errorCorrectionLevel) * 8
                         - bb.bitLength()));
         bb.appendBits(0, (8 - bb.bitLength() % 8) % 8);
@@ -389,8 +395,9 @@ public class MyWorld extends World
     private BitBuffer fillUpToDataCapacity(BitBuffer bb)
     {
         String output;
-        for (int padByte = 0xEC; bb.bitLength() < QrCode.getNumDataCodewords(
-                version, errorCorrectionLevel) * 8; padByte ^= 0xEC ^ 0x11)
+        for (int padByte = 0xEC; bb.bitLength() < QrCode
+            .getNumDataCodewords(version, errorCorrectionLevel)
+                * 8; padByte ^= 0xEC ^ 0x11)
             bb.appendBits(padByte, 8);
         output = bb.toString(true) + " #bis zur maximalen Kapazität füllen.";
         printString(output, true);
@@ -443,8 +450,8 @@ public class MyWorld extends World
     private void drawAligmentpattern()
     {
         if (version == 1)
-            outputBox.setText("Version#" + version
-                    + " benötigt keine Ausrichtungsmuster.");
+            outputBox.setText(
+                "Version#" + version + " benötigt keine Ausrichtungsmuster.");
         else
         {
             // Ausrichtungsquadrate zeichenen
@@ -458,7 +465,7 @@ public class MyWorld extends World
                     if (!(i == 0 && j == 0 || i == 0 && j == numAlign - 1
                             || i == numAlign - 1 && j == 0))
                         drawAlignmentPatternSubroutine(alignPatPos[i],
-                                alignPatPos[j]);
+                            alignPatPos[j]);
                 }
             }
             generatePattern();
@@ -501,8 +508,8 @@ public class MyWorld extends World
         {
             marker.setVisible(true);
             marker.setLocation(
-                    pattern[patternCounter][0] * pixelsize + pixelsize / 2,
-                    pattern[patternCounter][1] * pixelsize + pixelsize / 2);
+                pattern[patternCounter][0] * pixelsize + pixelsize / 2,
+                pattern[patternCounter][1] * pixelsize + pixelsize / 2);
         }
     }
 
@@ -598,8 +605,8 @@ public class MyWorld extends World
                         pattern[i][0] = x;
                         // Debug
                         if (debug)
-                            System.out.println(
-                                    "i: " + i + " (" + x + "|" + y + ")");
+                            System.out
+                                .println("i: " + i + " (" + x + "|" + y + ")");
                         i++;
                     }
                 }
@@ -645,9 +652,9 @@ public class MyWorld extends World
     {
         // Calculate parameter numbers 428
         int numBlocks = NUM_ERROR_CORRECTION_BLOCKS[errorCorrectionLevel
-                .ordinal()][version];
+            .ordinal()][version];
         int blockEccLen = ECC_CODEWORDS_PER_BLOCK[errorCorrectionLevel
-                .ordinal()][version];
+            .ordinal()][version];
         int rawCodewords = getNumRawDataModules(version) / 8;
         int numShortBlocks = numBlocks - rawCodewords % numBlocks;
         int shortBlockLen = rawCodewords / numBlocks;
@@ -656,13 +663,17 @@ public class MyWorld extends World
         byte[] rsDiv = reedSolomonComputeDivisor(blockEccLen);
         for (int i = 0, k = 0; i < numBlocks; i++)
         {
-            byte[] dat = Arrays.copyOfRange(data, k, k + shortBlockLen
-                    - blockEccLen + (i < numShortBlocks ? 0 : 1));
+            byte[] dat = Arrays.copyOfRange(data,
+                k,
+                k + shortBlockLen - blockEccLen + (i < numShortBlocks ? 0 : 1));
             k += dat.length;
             byte[] block = Arrays.copyOf(dat, shortBlockLen + 1);
             byte[] ecc = reedSolomonComputeRemainder(dat, rsDiv);
-            System.arraycopy(ecc, 0, block, block.length - blockEccLen,
-                    ecc.length);
+            System.arraycopy(ecc,
+                0,
+                block,
+                block.length - blockEccLen,
+                ecc.length);
             blocks[i] = block;
         }
         // Interleave (not concatenate) the bytes from every block into a single
@@ -920,8 +931,8 @@ public class MyWorld extends World
     {
         if (version < 7)
         {
-            outputBox.setText("Version#" + version
-                    + " - Versionsmuster erst ab Version#7");
+            outputBox.setText(
+                "Version#" + version + " - Versionsmuster erst ab Version#7");
             return;
         }
         // Calculate error correction code and pack bits
@@ -947,8 +958,9 @@ public class MyWorld extends World
         for (int dy = -2; dy <= 2; dy++)
         {
             for (int dx = -2; dx <= 2; dx++)
-                setFunctionModule(x + dx, y + dy,
-                        Math.max(Math.abs(dx), Math.abs(dy)) != 1);
+                setFunctionModule(x + dx,
+                    y + dy,
+                    Math.max(Math.abs(dx), Math.abs(dy)) != 1);
         }
     }
 

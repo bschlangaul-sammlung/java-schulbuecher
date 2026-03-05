@@ -47,7 +47,8 @@ class Arbeit
         polizist.start();
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args)
+    {
         new Arbeit().Ausfuhren();
     }
 }

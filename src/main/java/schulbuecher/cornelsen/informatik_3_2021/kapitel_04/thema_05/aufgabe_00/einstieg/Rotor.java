@@ -62,7 +62,7 @@ class Rotor extends Hindernis
                     else
                     {
                         System.out.println(
-                                "unbekannte Richtung in Methode Bewegen, Klasse Hindernis");
+                            "unbekannte Richtung in Methode Bewegen, Klasse Hindernis");
                     }
                 }
             }

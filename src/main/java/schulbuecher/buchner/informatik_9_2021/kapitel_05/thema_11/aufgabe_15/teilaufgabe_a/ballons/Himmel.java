@@ -46,8 +46,9 @@ public class Himmel extends World
         if (Greenfoot.mouseClicked(null) == true)
         {
             Ballon meinBallon = new Ballon();
-            addObject(meinBallon, Greenfoot.getMouseInfo().getX(),
-                    Greenfoot.getMouseInfo().getY());
+            addObject(meinBallon,
+                Greenfoot.getMouseInfo().getX(),
+                Greenfoot.getMouseInfo().getY());
             zaehleBallons();
         }
     }

@@ -56,7 +56,7 @@ class SpeisendePhilosophen
         philosophen = new ArrayList<Philosoph>();
         anleitung = new Text();
         anleitung.TextSetzen(
-                "Abgelegte Gabeln sind schwarz, aufgenommene Gabeln haben die Farbe ihres aktuellen Besitzers.");
+            "Abgelegte Gabeln sind schwarz, aufgenommene Gabeln haben die Farbe ihres aktuellen Besitzers.");
         anleitung.PositionSetzen(10, 50);
         anleitung.TextGrößeSetzen(17);
 
@@ -64,8 +64,11 @@ class SpeisendePhilosophen
         {
             gabeln.add(new Gabel(zähler));
             gabeln.get(zähler).SymbolGeben().GrößeSetzen(100, 10);
-            gabeln.get(zähler).SymbolGeben().PositionSetzen(350
-                    + (int) (150 * Math.cos(Math.toRadians(54 + 72 * zähler))),
+            gabeln.get(zähler)
+                .SymbolGeben()
+                .PositionSetzen(
+                    350 + (int) (150
+                            * Math.cos(Math.toRadians(54 + 72 * zähler))),
                     295 - (int) (150
                             * Math.sin(Math.toRadians(54 + 72 * zähler))));
             gabeln.get(zähler).SymbolGeben().Drehen(54 + 72 * zähler);
@@ -73,8 +76,10 @@ class SpeisendePhilosophen
             teller.add(new Kreis());
             teller.get(zähler).RadiusSetzen(50);
             teller.get(zähler).FarbeSetzen(tellerfarben.get(zähler));
-            teller.get(zähler).PositionSetzen(400
-                    + (int) (175 * Math.cos(Math.toRadians(18 + 72 * zähler))),
+            teller.get(zähler)
+                .PositionSetzen(
+                    400 + (int) (175
+                            * Math.cos(Math.toRadians(18 + 72 * zähler))),
                     300 - (int) (175
                             * Math.sin(Math.toRadians(18 + 72 * zähler))));
         }

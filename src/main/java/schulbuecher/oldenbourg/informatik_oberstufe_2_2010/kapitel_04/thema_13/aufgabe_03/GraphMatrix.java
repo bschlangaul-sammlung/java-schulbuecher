@@ -193,8 +193,10 @@ public class GraphMatrix
                             + knoten[abzweigNummer].BezeichnungGeben();
                     neueLaenge = laenge + matrix[knotenNummer][abzweigNummer];
                     // rekursiver Aufruf des Ablaufes
-                    Ablaufen(abzweigNummer, zielKnotenNummer, neuerPfad,
-                            neueLaenge);
+                    Ablaufen(abzweigNummer,
+                        zielKnotenNummer,
+                        neuerPfad,
+                        neueLaenge);
                 }
             }
         }

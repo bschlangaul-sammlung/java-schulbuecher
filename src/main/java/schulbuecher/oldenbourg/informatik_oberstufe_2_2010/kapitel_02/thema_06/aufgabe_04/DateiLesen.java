@@ -40,7 +40,7 @@ class DateiLesen
         catch (FileNotFoundException e)
         {
             System.out
-                    .println("Fehler beimffnen der Datei: " + e.getMessage());
+                .println("Fehler beimffnen der Datei: " + e.getMessage());
             return false;
         }
     }

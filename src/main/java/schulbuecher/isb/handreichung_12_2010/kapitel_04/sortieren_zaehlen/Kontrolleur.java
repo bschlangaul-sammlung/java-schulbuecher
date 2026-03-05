@@ -51,13 +51,13 @@ class Kontrolleur implements KontrolleurInterface
         test.DurchschnittsTestAnzahl(auswahl, mischen);
         if (auswahl)
         {
-            oberflaeche.AuswahlSortieranzahlSetzen(
-                    "" + test.AnzahlFuerAuswahlGeben());
+            oberflaeche
+                .AuswahlSortieranzahlSetzen("" + test.AnzahlFuerAuswahlGeben());
         }
         if (mischen)
         {
-            oberflaeche.MischSortieranzahlSetzen(
-                    "" + test.AnzahlFuerMergesortGeben());
+            oberflaeche
+                .MischSortieranzahlSetzen("" + test.AnzahlFuerMergesortGeben());
         }
     }
 

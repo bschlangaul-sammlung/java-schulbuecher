@@ -100,11 +100,16 @@ class KONTROLLEUR implements KONTROLLEURINTERFACE
                     break;
                 }
             }
-            oberflaeche.ObjektInfoSetzen(info.NummerGeben(), info.NameGeben(),
-                    info.GroesseGeben(), info.ZimmerAnzahlGeben(),
-                    info.PersonenAnzahlGeben(), land, info.ArtGeben(),
-                    info.PreisGeben(), info.SperreGeben(),
-                    info.AusstattungenGeben());
+            oberflaeche.ObjektInfoSetzen(info.NummerGeben(),
+                info.NameGeben(),
+                info.GroesseGeben(),
+                info.ZimmerAnzahlGeben(),
+                info.PersonenAnzahlGeben(),
+                land,
+                info.ArtGeben(),
+                info.PreisGeben(),
+                info.SperreGeben(),
+                info.AusstattungenGeben());
         }
     }
 
@@ -185,12 +190,19 @@ class KONTROLLEUR implements KONTROLLEURINTERFACE
                 }
             }
         }
-        int nummer = verb.NeuesObjektAnlegen(name, groesse, zimmer, personen,
-                ((LANDINFO) land).IDGeben(), art, preis, gesperrt, res);
+        int nummer = verb.NeuesObjektAnlegen(name,
+            groesse,
+            zimmer,
+            personen,
+            ((LANDINFO) land).IDGeben(),
+            art,
+            preis,
+            gesperrt,
+            res);
         ObjektdatenSetzen();
-        oberflaeche.ObjektWaehlen(new OBJEKTINFO(nummer, name, groesse, zimmer,
-                personen, ((LANDINFO) land).IDGeben(), art, preis, res,
-                gesperrt));
+        oberflaeche.ObjektWaehlen(
+            new OBJEKTINFO(nummer, name, groesse, zimmer, personen,
+                    ((LANDINFO) land).IDGeben(), art, preis, res, gesperrt));
     }
 
     /**
@@ -232,12 +244,20 @@ class KONTROLLEUR implements KONTROLLEURINTERFACE
                 }
             }
         }
-        verb.ObjektAendern(nummer, name, groesse, zimmer, personen,
-                ((LANDINFO) land).IDGeben(), art, preis, gesperrt, res);
+        verb.ObjektAendern(nummer,
+            name,
+            groesse,
+            zimmer,
+            personen,
+            ((LANDINFO) land).IDGeben(),
+            art,
+            preis,
+            gesperrt,
+            res);
         ObjektdatenSetzen();
-        oberflaeche.ObjektWaehlen(new OBJEKTINFO(nummer, name, groesse, zimmer,
-                personen, ((LANDINFO) land).IDGeben(), art, preis, res,
-                gesperrt));
+        oberflaeche.ObjektWaehlen(
+            new OBJEKTINFO(nummer, name, groesse, zimmer, personen,
+                    ((LANDINFO) land).IDGeben(), art, preis, res, gesperrt));
     }
 
     /**
@@ -281,8 +301,9 @@ class KONTROLLEUR implements KONTROLLEURINTERFACE
     {
         if (info != null)
         {
-            oberflaeche.KundenInfoSetzen(info.IDGeben(), info.NameGeben(),
-                    info.VornameGeben());
+            oberflaeche.KundenInfoSetzen(info.IDGeben(),
+                info.NameGeben(),
+                info.VornameGeben());
         }
     }
 
@@ -299,7 +320,7 @@ class KONTROLLEUR implements KONTROLLEURINTERFACE
         verb.NeuenKundenAnlegen(benutzername, name, vorname);
         KundendatenSetzen();
         oberflaeche
-                .KundeWaehlen(new KUNDENINFO(benutzername, name, vorname, ""));
+            .KundeWaehlen(new KUNDENINFO(benutzername, name, vorname, ""));
     }
 
     /**
@@ -314,7 +335,7 @@ class KONTROLLEUR implements KONTROLLEURINTERFACE
         verb.KundenAendern(benutzername, name, vorname);
         KundendatenSetzen();
         oberflaeche
-                .KundeWaehlen(new KUNDENINFO(benutzername, name, vorname, ""));
+            .KundeWaehlen(new KUNDENINFO(benutzername, name, vorname, ""));
     }
 
     /**
@@ -347,8 +368,8 @@ class KONTROLLEUR implements KONTROLLEURINTERFACE
      */
     public void BuchungenFuerObjektHolen(Object objekt)
     {
-        oberflaeche.BuchungenSetzen(verb
-                .BuchungenFuerObjektHolen(((OBJEKTINFO) objekt).NummerGeben()));
+        oberflaeche.BuchungenSetzen(
+            verb.BuchungenFuerObjektHolen(((OBJEKTINFO) objekt).NummerGeben()));
     }
 
     /**
@@ -359,7 +380,7 @@ class KONTROLLEUR implements KONTROLLEURINTERFACE
     public void BuchungenFuerKundeHolen(Object kunde)
     {
         oberflaeche.BuchungenSetzen(
-                verb.BuchungenFuerKundenHolen(((KUNDENINFO) kunde).IDGeben()));
+            verb.BuchungenFuerKundenHolen(((KUNDENINFO) kunde).IDGeben()));
     }
 
     /**

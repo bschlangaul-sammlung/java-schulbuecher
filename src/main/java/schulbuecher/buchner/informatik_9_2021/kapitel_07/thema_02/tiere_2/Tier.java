@@ -81,6 +81,6 @@ public class Tier extends Actor
     private <T> boolean istRechtsObject(Class<T> objectClass)
     {
         return getWorld().getObjectsAt(getX() + 1, getY(), objectClass)
-                .size() > 0;
+            .size() > 0;
     }
 }

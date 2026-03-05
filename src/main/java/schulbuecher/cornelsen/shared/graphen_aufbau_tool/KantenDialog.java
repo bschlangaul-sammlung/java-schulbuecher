@@ -47,7 +47,7 @@ class KantenDialog extends JDialog
         setSize(300, 160);
         setVisible(false);
         setLocation(fenster.getX() + fenster.getWidth() / 2 - 150,
-                fenster.getY());
+            fenster.getY());
         JLabel l = new JLabel();
         l.setSize(180, 20);
         l.setLocation(10, 10);
@@ -102,7 +102,7 @@ class KantenDialog extends JDialog
             public void actionPerformed(ActionEvent e)
             {
                 empfänger.KanteEditieren(gewichtung.getText(),
-                        gerichtet.isSelected());
+                    gerichtet.isSelected());
                 setVisible(false);
             }
         });

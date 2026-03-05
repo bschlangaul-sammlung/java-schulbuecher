@@ -268,7 +268,7 @@ class Darstellung extends Ereignisbehandlung
         }
         scheibenanzahl = türme.get(ziel).size() + 1;
         Absenken(bodenPosition - ScheibenSymbol.basis * scheibenanzahl,
-                scheibe);
+            scheibe);
         türme.get(ziel).add(scheibe);
         Anheben(null);
     }

@@ -60,9 +60,9 @@ class IT_HOTLINE
         else
         {
             System.out
-                    .println("Derzeit sind keine Anrufer in der Warteschleife");
+                .println("Derzeit sind keine Anrufer in der Warteschleife");
             System.out.println(
-                    "----------------------------------------------------");
+                "----------------------------------------------------");
         }
     }
 
@@ -75,7 +75,7 @@ class IT_HOTLINE
         // Das ist hier wegen des Attributs anzahlAnrufer natürlich einfach
         System.out.println("Momentane Anzahl der Anrufer in der Warteschleife: "
                 + anzahlAnrufer);
-        System.out.println(
-                "----------------------------------------------------");
+        System.out
+            .println("----------------------------------------------------");
     }
 }

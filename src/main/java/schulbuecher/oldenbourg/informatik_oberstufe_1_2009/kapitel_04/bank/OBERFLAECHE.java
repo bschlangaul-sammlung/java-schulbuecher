@@ -343,7 +343,7 @@ class OBERFLAECHE implements OBERFLAECHENINTERFACE, MELDUNGSBEOBACHTER
             kundeArbeitPanel.setVisible(true);
             kundeArbeitPanel_betrag.setText("");
             kontostandFuerKunde
-                    .setText("" + kontroller.BetragFuerKundenKontoGeben());
+                .setText("" + kontroller.BetragFuerKundenKontoGeben());
             aktKontoFuerKunde.setText("Das aktuelle Konto hat die Nummer "
                     + kontroller.NummerFuerKundenKontoGeben());
             break;
@@ -539,7 +539,7 @@ class OBERFLAECHE implements OBERFLAECHENINTERFACE, MELDUNGSBEOBACHTER
                 try
                 {
                     kontroller.KundeAnmelden(anmeldePanel_name.getText(),
-                            Integer.parseInt(anmeldePanel_pin.getText()));
+                        Integer.parseInt(anmeldePanel_pin.getText()));
                 }
                 catch (Exception ex)
                 {
@@ -560,7 +560,7 @@ class OBERFLAECHE implements OBERFLAECHENINTERFACE, MELDUNGSBEOBACHTER
                 try
                 {
                     kontroller.AngestellterAnmelden(anmeldePanel_name.getText(),
-                            Integer.parseInt(anmeldePanel_pin.getText()));
+                        Integer.parseInt(anmeldePanel_pin.getText()));
                 }
                 catch (Exception ex)
                 {
@@ -612,7 +612,7 @@ class OBERFLAECHE implements OBERFLAECHENINTERFACE, MELDUNGSBEOBACHTER
                 try
                 {
                     kontroller.KundeKontoWaehlen(
-                            Integer.parseInt(kontenwahl.getSelectedItem()));
+                        Integer.parseInt(kontenwahl.getSelectedItem()));
                 }
                 catch (Exception ex)
                 {
@@ -659,7 +659,7 @@ class OBERFLAECHE implements OBERFLAECHENINTERFACE, MELDUNGSBEOBACHTER
                     try
                     {
                         kontroller.KundePinAendern(
-                                Integer.parseInt(pin_neu_1.getText()));
+                            Integer.parseInt(pin_neu_1.getText()));
                         StatusmeldungSetzen("Pin ge\u00E4ndert.");
                     }
                     catch (Exception ex)
@@ -670,7 +670,7 @@ class OBERFLAECHE implements OBERFLAECHENINTERFACE, MELDUNGSBEOBACHTER
                 else
                 {
                     FehlertextZeigen(
-                            "Die beiden Angaben für die PIN müssen übereinstimmen.");
+                        "Die beiden Angaben für die PIN müssen übereinstimmen.");
                 }
             }
         });
@@ -730,15 +730,15 @@ class OBERFLAECHE implements OBERFLAECHENINTERFACE, MELDUNGSBEOBACHTER
             {
                 try
                 {
-                    kontroller.KundeKontoAbheben(Double
-                            .parseDouble(kundeArbeitPanel_betrag.getText()));
-                    kontostandFuerKunde.setText(
-                            "" + kontroller.BetragFuerKundenKontoGeben());
+                    kontroller.KundeKontoAbheben(
+                        Double.parseDouble(kundeArbeitPanel_betrag.getText()));
+                    kontostandFuerKunde
+                        .setText("" + kontroller.BetragFuerKundenKontoGeben());
                 }
                 catch (Exception ex)
                 {
                     StatusmeldungSetzen(
-                            "Bitte einen korrekten Betrag eingeben");
+                        "Bitte einen korrekten Betrag eingeben");
                     (Toolkit.getDefaultToolkit()).beep();
                     kundeArbeitPanel_betrag.requestFocus();
                     kundeArbeitPanel_betrag.selectAll();
@@ -757,15 +757,15 @@ class OBERFLAECHE implements OBERFLAECHENINTERFACE, MELDUNGSBEOBACHTER
             {
                 try
                 {
-                    kontroller.KundeKontoEinzahlen(Double
-                            .parseDouble(kundeArbeitPanel_betrag.getText()));
-                    kontostandFuerKunde.setText(
-                            "" + kontroller.BetragFuerKundenKontoGeben());
+                    kontroller.KundeKontoEinzahlen(
+                        Double.parseDouble(kundeArbeitPanel_betrag.getText()));
+                    kontostandFuerKunde
+                        .setText("" + kontroller.BetragFuerKundenKontoGeben());
                 }
                 catch (Exception ex)
                 {
                     StatusmeldungSetzen(
-                            "Bitte einen korrekten Betrag eingeben");
+                        "Bitte einen korrekten Betrag eingeben");
                     (Toolkit.getDefaultToolkit()).beep();
                     kundeArbeitPanel_betrag.requestFocus();
                     kundeArbeitPanel_betrag.selectAll();
@@ -834,8 +834,8 @@ class OBERFLAECHE implements OBERFLAECHENINTERFACE, MELDUNGSBEOBACHTER
             {
                 try
                 {
-                    kontroller.AngestellterKundeWaehlen(
-                            kundenwahl.getSelectedItem());
+                    kontroller
+                        .AngestellterKundeWaehlen(kundenwahl.getSelectedItem());
                 }
                 catch (Exception ex)
                 {
@@ -878,7 +878,7 @@ class OBERFLAECHE implements OBERFLAECHENINTERFACE, MELDUNGSBEOBACHTER
                 try
                 {
                     kontroller.KundeErzeugen(angestelltenPanel_name.getText(),
-                            Integer.parseInt(angestelltenPanel_pin.getText()));
+                        Integer.parseInt(angestelltenPanel_pin.getText()));
                 }
                 catch (Exception ex)
                 {
@@ -898,7 +898,7 @@ class OBERFLAECHE implements OBERFLAECHENINTERFACE, MELDUNGSBEOBACHTER
             public void actionPerformed(ActionEvent e)
             {
                 FrageStellen(
-                        "Wollen Sie den aktuellen Kunden wirklich l\u00F6schen?");
+                    "Wollen Sie den aktuellen Kunden wirklich l\u00F6schen?");
                 if (antwort)
                 {
                     kontroller.KundeLoeschen();
@@ -937,7 +937,7 @@ class OBERFLAECHE implements OBERFLAECHENINTERFACE, MELDUNGSBEOBACHTER
                 try
                 {
                     kontroller.KontoFuerAngestelltenSetzen(
-                            Integer.parseInt(kontenwahl2.getSelectedItem()));
+                        Integer.parseInt(kontenwahl2.getSelectedItem()));
                 }
                 catch (Exception ex)
                 {
@@ -1047,7 +1047,7 @@ class OBERFLAECHE implements OBERFLAECHENINTERFACE, MELDUNGSBEOBACHTER
             public void actionPerformed(ActionEvent e)
             {
                 FrageStellen(
-                        "Wollen Sie das aktuelle Konto wirklich l\u00F6schen?");
+                    "Wollen Sie das aktuelle Konto wirklich l\u00F6schen?");
                 if (antwort)
                 {
                     kontroller.KontoLoeschen();
@@ -1077,11 +1077,11 @@ class OBERFLAECHE implements OBERFLAECHENINTERFACE, MELDUNGSBEOBACHTER
             public void actionPerformed(ActionEvent e)
             {
                 FrageStellen(
-                        "Wollen Sie den Angestellten wirklich l\u00F6schen?");
+                    "Wollen Sie den Angestellten wirklich l\u00F6schen?");
                 if (antwort)
                 {
                     kontroller.AngestelltenLoeschen(
-                            angestelltenwahl.getSelectedItem());
+                        angestelltenwahl.getSelectedItem());
                 }
             }
         });
@@ -1120,8 +1120,8 @@ class OBERFLAECHE implements OBERFLAECHENINTERFACE, MELDUNGSBEOBACHTER
                 try
                 {
                     kontroller.AngestellterErzeugen(
-                            angestelltenPanel_name2.getText(),
-                            Integer.parseInt(angestelltenPanel_pin2.getText()));
+                        angestelltenPanel_name2.getText(),
+                        Integer.parseInt(angestelltenPanel_pin2.getText()));
                 }
                 catch (Exception ex)
                 {

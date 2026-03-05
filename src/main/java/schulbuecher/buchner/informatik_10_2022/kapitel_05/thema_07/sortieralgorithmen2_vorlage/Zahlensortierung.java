@@ -56,9 +56,9 @@ public class Zahlensortierung
         {
             bubble();
             // System.out.println("Schreibe Array auf Konsole:");
-            System.out.println(zahlen[0] + " " + zahlen[1] + " " + zahlen[2]
-                    + " " + zahlen[3] + " " + zahlen[4] + " " + zahlen[5] + " "
-                    + zahlen[6]);
+            System.out.println(
+                zahlen[0] + " " + zahlen[1] + " " + zahlen[2] + " " + zahlen[3]
+                        + " " + zahlen[4] + " " + zahlen[5] + " " + zahlen[6]);
             i = i + 1;
         }
     }

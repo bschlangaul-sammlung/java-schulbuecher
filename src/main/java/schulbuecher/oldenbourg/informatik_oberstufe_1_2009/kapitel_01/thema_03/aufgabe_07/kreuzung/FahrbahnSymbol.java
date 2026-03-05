@@ -54,29 +54,35 @@ class FahrbahnSymbol
                 switch (ausrichtung)
                 {
                 case 'N':
-                    g.fillRect(2, Oberfaeche.FensterHoeheGeben() / 2
-                            + (y + 2) * breite, breite - 4, breite / 5);
+                    g.fillRect(2,
+                        Oberfaeche.FensterHoeheGeben() / 2 + (y + 2) * breite,
+                        breite - 4,
+                        breite / 5);
                     break;
 
                 case 'S':
                     g.fillRect(2,
-                            Oberfaeche.FensterHoeheGeben() / 2
-                                    + (y - 2) * breite - breite / 5,
-                            breite - 4, breite / 5);
+                        Oberfaeche.FensterHoeheGeben() / 2 + (y - 2) * breite
+                                - breite / 5,
+                        breite - 4,
+                        breite / 5);
                     break;
 
                 case 'O':
                     g.fillRect(
-                            Oberfaeche.FensterBreiteGeben() / 2
-                                    + (x - 2) * breite - breite / 5,
-                            2, breite / 5, breite - 4);
+                        Oberfaeche.FensterBreiteGeben() / 2 + (x - 2) * breite
+                                - breite / 5,
+                        2,
+                        breite / 5,
+                        breite - 4);
                     break;
 
                 case 'W':
-                    g.fillRect(
-                            Oberfaeche.FensterBreiteGeben() / 2
-                                    + (x + 2) * breite,
-                            2, breite / 5, breite - 4);
+                    g.fillRect(Oberfaeche.FensterBreiteGeben() / 2
+                            + (x + 2) * breite,
+                        2,
+                        breite / 5,
+                        breite - 4);
                     break;
                 }
             }
@@ -102,25 +108,27 @@ class FahrbahnSymbol
         case 'N':
             anzeige.setSize(breite, Oberfaeche.FensterHoeheGeben());
             anzeige.setLocation(
-                    Oberfaeche.FensterBreiteGeben() / 2 + x * breite, 0);
+                Oberfaeche.FensterBreiteGeben() / 2 + x * breite,
+                0);
             break;
 
         case 'S':
             anzeige.setSize(breite, Oberfaeche.FensterHoeheGeben());
             anzeige.setLocation(
-                    Oberfaeche.FensterBreiteGeben() / 2 + (x - 1) * breite, 0);
+                Oberfaeche.FensterBreiteGeben() / 2 + (x - 1) * breite,
+                0);
             break;
 
         case 'O':
             anzeige.setSize(Oberfaeche.FensterBreiteGeben(), breite);
             anzeige.setLocation(0,
-                    Oberfaeche.FensterHoeheGeben() / 2 + y * breite);
+                Oberfaeche.FensterHoeheGeben() / 2 + y * breite);
             break;
 
         case 'W':
             anzeige.setSize(Oberfaeche.FensterBreiteGeben(), breite);
             anzeige.setLocation(0,
-                    Oberfaeche.FensterHoeheGeben() / 2 + (y - 1) * breite);
+                Oberfaeche.FensterHoeheGeben() / 2 + (y - 1) * breite);
             break;
         }
         Zeichne();

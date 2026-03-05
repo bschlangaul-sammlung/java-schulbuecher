@@ -63,9 +63,9 @@ class KONTROLLEUR implements KONTROLLEURINTERFACE
             if (pass.equals(kunde.PasswortGeben()))
             {
                 oberflaeche.ReservierungslisteSetzen(
-                        verb.ReservierungenFuerBenutzerHolen(kunde.IDGeben()));
+                    verb.ReservierungenFuerBenutzerHolen(kunde.IDGeben()));
                 oberflaeche
-                        .StatusSetzen(OBERFLACHENINTERFACE.Status.auswaehlen);
+                    .StatusSetzen(OBERFLACHENINTERFACE.Status.auswaehlen);
             }
             else
             {
@@ -105,8 +105,14 @@ class KONTROLLEUR implements KONTROLLEURINTERFACE
         {
             art = null;
         }
-        alleObjekte.ObjekteSuchen(res, (LANDINFO) land, art, persmin, persmax,
-                zimmin, zimmax, aus);
+        alleObjekte.ObjekteSuchen(res,
+            (LANDINFO) land,
+            art,
+            persmin,
+            persmax,
+            zimmin,
+            zimmax,
+            aus);
         oberflaeche.AuswahllisteSetzen(res.AlsFeldAusgeben());
     }
 
@@ -145,8 +151,8 @@ class KONTROLLEUR implements KONTROLLEURINTERFACE
         o = (OBJEKTINFO) objekt;
         if (o != null)
         {
-            reservierungen = verb.ReservierungenHolen(o.NummerGeben(), start,
-                    ende);
+            reservierungen = verb
+                .ReservierungenHolen(o.NummerGeben(), start, ende);
             reserviert = "keine Reservierungen";
             erster = true;
             for (RESERVIERUNGSINFO r : reservierungen)
@@ -165,14 +171,15 @@ class KONTROLLEUR implements KONTROLLEURINTERFACE
                         + " bis "
                         + ausgabeKonvertierung.format(r.EndeDatumGeben());
             }
-            oberflaeche.ObjektinfoSetzen(o.NameGeben() + " (" + o.ArtGeben()
-                    + ") in " + LandSuchen(o.LandNummerGeben())
-                    + " Wochenpreis: " + o.PreisGeben() + "Û",
-                    "" + o.GroesseGeben() + "qm verteilt auf "
-                            + o.ZimmerAnzahlGeben() + " Zimmer für maximal "
-                            + o.PersonenAnzahlGeben() + " Personen",
-                    "Ausstattung: " + o.AusstattungenAlsTextGeben(),
-                    reserviert);
+            oberflaeche.ObjektinfoSetzen(
+                o.NameGeben() + " (" + o.ArtGeben() + ") in "
+                        + LandSuchen(o.LandNummerGeben()) + " Wochenpreis: "
+                        + o.PreisGeben() + "Û",
+                "" + o.GroesseGeben() + "qm verteilt auf "
+                        + o.ZimmerAnzahlGeben() + " Zimmer für maximal "
+                        + o.PersonenAnzahlGeben() + " Personen",
+                "Ausstattung: " + o.AusstattungenAlsTextGeben(),
+                reserviert);
         }
     }
 
@@ -186,14 +193,16 @@ class KONTROLLEUR implements KONTROLLEURINTERFACE
     public void ObjektReservieren(Object objekt, Date start, Date ende)
     {
         if (verb.Reservieren(((OBJEKTINFO) objekt).NummerGeben(),
-                kunde.IDGeben(), start, ende))
+            kunde.IDGeben(),
+            start,
+            ende))
         {
             oberflaeche.StatuszeileSetzen("Objekt erfolgreich reserviert");
         }
         else
         {
-            oberflaeche.StatuszeileSetzen(
-                    "Das Objekt konnte nicht reserviert werden");
+            oberflaeche
+                .StatuszeileSetzen("Das Objekt konnte nicht reserviert werden");
         }
     }
 
@@ -205,9 +214,9 @@ class KONTROLLEUR implements KONTROLLEURINTERFACE
     public void ObjektBuchen(Object reservierung)
     {
         verb.ReservierungBuchen(
-                ((RESERVIERUNGSINFO) reservierung).NummerGeben());
+            ((RESERVIERUNGSINFO) reservierung).NummerGeben());
         oberflaeche.ReservierungslisteSetzen(
-                verb.ReservierungenFuerBenutzerHolen(kunde.IDGeben()));
+            verb.ReservierungenFuerBenutzerHolen(kunde.IDGeben()));
     }
 
     /**
@@ -218,9 +227,9 @@ class KONTROLLEUR implements KONTROLLEURINTERFACE
     public void ReservierungLoeschen(Object reservierung)
     {
         verb.ReservierungLoeschen(
-                ((RESERVIERUNGSINFO) reservierung).NummerGeben());
+            ((RESERVIERUNGSINFO) reservierung).NummerGeben());
         oberflaeche.ReservierungslisteSetzen(
-                verb.ReservierungenFuerBenutzerHolen(kunde.IDGeben()));
+            verb.ReservierungenFuerBenutzerHolen(kunde.IDGeben()));
     }
 
     /**

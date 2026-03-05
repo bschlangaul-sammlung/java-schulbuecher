@@ -38,7 +38,7 @@ class DatenbankVerbindung
         catch (Exception e)
         {
             System.out
-                    .println("Start_Fehler beim Laden des JDBC-Treibers " + e);
+                .println("Start_Fehler beim Laden des JDBC-Treibers " + e);
             System.exit(-1);
         }
         // öffnen der Datenbank beim MySqlServer
@@ -64,8 +64,8 @@ class DatenbankVerbindung
         }
         catch (Exception e)
         {
-            System.out.println(
-                    "Fehler beim Beenden der Datenbankverbindung\n" + e);
+            System.out
+                .println("Fehler beim Beenden der Datenbankverbindung\n" + e);
         }
     }
 
@@ -128,10 +128,10 @@ class DatenbankVerbindung
                 }
                 else
                 {
-                    strecken.Anfuegen(new Strecke(ort1, ort2,
-                            sqlResult.getString("Infos"),
-                            sqlResult.getInt("Laenge"),
-                            sqlResult.getInt("Steigung")));
+                    strecken.Anfuegen(
+                        new Strecke(ort1, ort2, sqlResult.getString("Infos"),
+                                sqlResult.getInt("Laenge"),
+                                sqlResult.getInt("Steigung")));
                 }
             }
             sqlResult.close();

@@ -158,6 +158,6 @@ class UMWANDLER
     void ErgebnisAusgeben()
     {
         System.out
-                .println(termInInfixnotation + " --> " + termInPostfixnotation);
+            .println(termInInfixnotation + " --> " + termInPostfixnotation);
     }
 }

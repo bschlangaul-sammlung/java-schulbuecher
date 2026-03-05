@@ -24,7 +24,9 @@ class Aufbau implements EreignisEmpfaenger
      */
     private enum DraggingStatus
     {
-        keinDragging, draggingMöglich, draggingAktiv
+        keinDragging,
+        draggingMöglich,
+        draggingAktiv
     }
 
     /**
@@ -438,7 +440,7 @@ class Aufbau implements EreignisEmpfaenger
             {
                 double m = (y2 - y1) / (x2 - x1);
                 double d = Math
-                        .abs((m * (x - x1) + y1 - y) / Math.sqrt(m * m + 1)); // HNF
+                    .abs((m * (x - x1) + y1 - y) / Math.sqrt(m * m + 1)); // HNF
                 if (d <= 5.0)
                 {
                     if (Math.abs(m) > 1)
@@ -551,25 +553,24 @@ class Aufbau implements EreignisEmpfaenger
             anweisung.executeUpdate("DROP TABLE IF EXISTS knoten");
             anweisung.executeUpdate("DROP TABLE IF EXISTS kanten");
             anweisung.executeUpdate(
-                    "CREATE TABLE \"knoten\" (\"bezeichner\" TEXT,\"x\" INTEGER NOT NULL, \"y\" INTEGER NOT NULL, PRIMARY KEY(\"bezeichner\"))");
+                "CREATE TABLE \"knoten\" (\"bezeichner\" TEXT,\"x\" INTEGER NOT NULL, \"y\" INTEGER NOT NULL, PRIMARY KEY(\"bezeichner\"))");
             anweisung.executeUpdate(
-                    "CREATE TABLE \"kanten\" (\"bezeichnerStart\" TEXT, \"bezeichnerZiel\" TEXT, \"gewicht\" TEXT, \"gerichtet\" TEXT)");
+                "CREATE TABLE \"kanten\" (\"bezeichnerStart\" TEXT, \"bezeichnerZiel\" TEXT, \"gewicht\" TEXT, \"gerichtet\" TEXT)");
             for (KnotenSymbol k : knoten)
             {
                 anweisung.executeUpdate(
-                        "INSERT INTO knoten (bezeichner, x, y) VALUES ('"
-                                + k.BezeichnerGeben() + "', " + k.XGeben()
-                                + ", " + k.YGeben() + ")");
+                    "INSERT INTO knoten (bezeichner, x, y) VALUES ('"
+                            + k.BezeichnerGeben() + "', " + k.XGeben() + ", "
+                            + k.YGeben() + ")");
             }
 
             for (KantenSymbol k : kanten)
             {
                 anweisung.executeUpdate(
-                        "INSERT INTO kanten (bezeichnerStart, bezeichnerZiel, gewicht, gerichtet) VALUES ('"
-                                + k.StartsymbolGeben().BezeichnerGeben()
-                                + "', '" + k.ZielsymbolGeben().BezeichnerGeben()
-                                + "', " + k.GewichtGeben() + ", "
-                                + k.IstGerichtet() + ")");
+                    "INSERT INTO kanten (bezeichnerStart, bezeichnerZiel, gewicht, gerichtet) VALUES ('"
+                            + k.StartsymbolGeben().BezeichnerGeben() + "', '"
+                            + k.ZielsymbolGeben().BezeichnerGeben() + "', "
+                            + k.GewichtGeben() + ", " + k.IstGerichtet() + ")");
             }
             geändert = false;
 
@@ -578,7 +579,7 @@ class Aufbau implements EreignisEmpfaenger
         catch (Exception ex)
         {
             System.out.println(
-                    "Fehler beim Bearbeiten der Datenbank: " + ex.getMessage());
+                "Fehler beim Bearbeiten der Datenbank: " + ex.getMessage());
         }
     }
 
@@ -682,7 +683,7 @@ class Aufbau implements EreignisEmpfaenger
             verbindung = DriverManager.getConnection("jdbc:sqlite:" + name);
             Statement anweisung = verbindung.createStatement();
             ResultSet daten = anweisung
-                    .executeQuery("SELECT bezeichner, x, y FROM knoten");
+                .executeQuery("SELECT bezeichner, x, y FROM knoten");
             while (daten.next())
             {
                 knoten.add(new KnotenSymbol(daten.getInt("x"),
@@ -691,7 +692,7 @@ class Aufbau implements EreignisEmpfaenger
             }
             daten.close();
             daten = anweisung.executeQuery(
-                    "SELECT bezeichnerStart, bezeichnerZiel, gewicht, gerichtet FROM kanten");
+                "SELECT bezeichnerStart, bezeichnerZiel, gewicht, gerichtet FROM kanten");
             while (daten.next())
             {
                 kanten.add(new KantenSymbol(
@@ -707,8 +708,8 @@ class Aufbau implements EreignisEmpfaenger
         }
         catch (Exception e)
         {
-            System.out.println(
-                    "Fehler beim Lesen der Datenbank: " + e.getMessage());
+            System.out
+                .println("Fehler beim Lesen der Datenbank: " + e.getMessage());
             return false;
         }
     }

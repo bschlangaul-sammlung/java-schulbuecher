@@ -31,9 +31,12 @@ class Schachbrett
             {
                 brett.get(zeile).add(new Rechteck());
                 brett.get(zeile).get(spalte).GrößeSetzen(50, 50);
-                brett.get(zeile).get(spalte).PositionSetzen(50 + spalte * 50,
-                        400 - zeile * 50);
-                brett.get(zeile).get(spalte).FarbeSetzen(
+                brett.get(zeile)
+                    .get(spalte)
+                    .PositionSetzen(50 + spalte * 50, 400 - zeile * 50);
+                brett.get(zeile)
+                    .get(spalte)
+                    .FarbeSetzen(
                         ((spalte + zeile) % 2 == 0 ? "schwarz" : "weiß"));
             }
         }

@@ -52,7 +52,7 @@ class FENSTER extends Frame implements KeyListener
         raender = new Insets(0, 0, 0, 0);
         raender = getInsets();
         setSize(breite + raender.left + raender.right,
-                hoehe + raender.top + raender.bottom);
+            hoehe + raender.top + raender.bottom);
         this.addWindowListener(new WindowAdapter()
         {
             public void windowClosing(WindowEvent e)

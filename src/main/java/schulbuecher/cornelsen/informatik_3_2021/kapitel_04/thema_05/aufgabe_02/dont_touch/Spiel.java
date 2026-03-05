@@ -101,8 +101,8 @@ class Spiel extends Ereignisbehandlung
                     }
                     else
                     {
-                        System.out.println(
-                                "Fehler in Spiel, HindernisErzeugen()");
+                        System.out
+                            .println("Fehler in Spiel, HindernisErzeugen()");
                     }
                 }
             }
@@ -165,7 +165,7 @@ class Spiel extends Ereignisbehandlung
                                 else
                                 {
                                     System.out.println(
-                                            "Fehler in Spiel, HindernisErzeugen()");
+                                        "Fehler in Spiel, HindernisErzeugen()");
                                 }
                             }
                         }

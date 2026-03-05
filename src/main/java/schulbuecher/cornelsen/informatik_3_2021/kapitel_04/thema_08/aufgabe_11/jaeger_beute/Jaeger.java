@@ -111,7 +111,7 @@ class Jaeger extends Figur
         else if (dx > 0)
         {
             richtung = -((int) Math
-                    .round(Math.atan(dy / dx) * 180.0 / Math.PI));
+                .round(Math.atan(dy / dx) * 180.0 / Math.PI));
         }
         else
         {

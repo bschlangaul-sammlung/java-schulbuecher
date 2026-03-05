@@ -27,52 +27,52 @@ public class WoerterbuchTest
     public void TiefeGebenTesten()
     {
         System.out.println(
-                "Test der Tiefe des Datenelements mit dem Schlüe\u00dfel clip:");
+            "Test der Tiefe des Datenelements mit dem Schlüe\u00dfel clip:");
         System.out.println(woerterbuch.TiefeGeben("clip"));
-        System.out.println(
-                "Testergebnis: " + (woerterbuch.TiefeGeben("clip") == 0));
+        System.out
+            .println("Testergebnis: " + (woerterbuch.TiefeGeben("clip") == 0));
         System.out.println("------------------------------------------------");
         System.out.println(
-                "Test der Tiefe des Datenelements mit dem Schlüe\u00dfel car:");
+            "Test der Tiefe des Datenelements mit dem Schlüe\u00dfel car:");
         System.out.println(woerterbuch.TiefeGeben("car"));
-        System.out.println(
-                "Testergebnis: " + (woerterbuch.TiefeGeben("car") == 1));
+        System.out
+            .println("Testergebnis: " + (woerterbuch.TiefeGeben("car") == 1));
         System.out.println("------------------------------------------------");
         System.out.println(
-                "Test der Tiefe des Datenelements mit dem Schlüe\u00dfel cat:");
+            "Test der Tiefe des Datenelements mit dem Schlüe\u00dfel cat:");
         System.out.println(woerterbuch.TiefeGeben("cat"));
-        System.out.println(
-                "Testergebnis: " + (woerterbuch.TiefeGeben("cat") == 2));
+        System.out
+            .println("Testergebnis: " + (woerterbuch.TiefeGeben("cat") == 2));
         System.out.println("------------------------------------------------");
         System.out.println(
-                "Test der Tiefe des Datenelements mit dem Schlüe\u00dfel cave:");
+            "Test der Tiefe des Datenelements mit dem Schlüe\u00dfel cave:");
         System.out.println(woerterbuch.TiefeGeben("cave"));
-        System.out.println(
-                "Testergebnis: " + (woerterbuch.TiefeGeben("cave") == 3));
+        System.out
+            .println("Testergebnis: " + (woerterbuch.TiefeGeben("cave") == 3));
         System.out.println("------------------------------------------------");
         System.out.println(
-                "Test der Tiefe des Datenelements mit dem Schlüe\u00dfel cook:");
+            "Test der Tiefe des Datenelements mit dem Schlüe\u00dfel cook:");
         System.out.println(woerterbuch.TiefeGeben("cook"));
-        System.out.println(
-                "Testergebnis: " + (woerterbuch.TiefeGeben("cook") == 3));
+        System.out
+            .println("Testergebnis: " + (woerterbuch.TiefeGeben("cook") == 3));
         System.out.println("------------------------------------------------");
         System.out.println(
-                "Test der Tiefe des Datenelements mit dem Schlüe\u00dfel cell:");
+            "Test der Tiefe des Datenelements mit dem Schlüe\u00dfel cell:");
         System.out.println(woerterbuch.TiefeGeben("cell"));
-        System.out.println(
-                "Testergebnis: " + (woerterbuch.TiefeGeben("cell") == -1));
+        System.out
+            .println("Testergebnis: " + (woerterbuch.TiefeGeben("cell") == -1));
         System.out.println("------------------------------------------------");
         System.out.println(
-                "Test der Tiefe des Datenelements mit dem Schlüe\u00dfel cable:");
+            "Test der Tiefe des Datenelements mit dem Schlüe\u00dfel cable:");
         System.out.println(woerterbuch.TiefeGeben("cable"));
         System.out.println(
-                "Testergebnis: " + (woerterbuch.TiefeGeben("cable") == -1));
+            "Testergebnis: " + (woerterbuch.TiefeGeben("cable") == -1));
         System.out.println("------------------------------------------------");
         System.out.println(
-                "Test der Tiefe des Datenelements mit dem Schlüe\u00dfel cut:");
+            "Test der Tiefe des Datenelements mit dem Schlüe\u00dfel cut:");
         System.out.println(woerterbuch.TiefeGeben("cut"));
-        System.out.println(
-                "Testergebnis: " + (woerterbuch.TiefeGeben("cut") == -1));
+        System.out
+            .println("Testergebnis: " + (woerterbuch.TiefeGeben("cut") == -1));
         System.out.println("------------------------------------------------");
     }
 

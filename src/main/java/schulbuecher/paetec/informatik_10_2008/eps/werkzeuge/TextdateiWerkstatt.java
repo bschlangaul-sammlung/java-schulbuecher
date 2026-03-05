@@ -385,8 +385,8 @@ public class TextdateiWerkstatt
         }
         catch (IOException e)
         {
-            System.err.println(
-                    "Die gewaehlte Datei konnte nicht gefunden werden:");
+            System.err
+                .println("Die gewaehlte Datei konnte nicht gefunden werden:");
             throw new RuntimeException(e);
         }
         return sb.toString();

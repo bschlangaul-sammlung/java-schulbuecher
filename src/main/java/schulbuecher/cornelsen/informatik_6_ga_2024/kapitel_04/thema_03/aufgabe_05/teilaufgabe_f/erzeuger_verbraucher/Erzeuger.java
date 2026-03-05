@@ -46,11 +46,11 @@ class Erzeuger extends Thread
         while (true)
         {
             Kiste kNeu = Produzieren();
-            System.out.println(
-                    "Ablegeversuch von Kiste " + kNeu.KistennummerGeben());
+            System.out
+                .println("Ablegeversuch von Kiste " + kNeu.KistennummerGeben());
             speicher.Ablegen(kNeu);
-            System.out.println(
-                    "Kiste " + kNeu.KistennummerGeben() + " abgelegt.");
+            System.out
+                .println("Kiste " + kNeu.KistennummerGeben() + " abgelegt.");
         }
 
     }
