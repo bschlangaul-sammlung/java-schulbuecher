@@ -25,11 +25,9 @@ import javakarol.Welt;
  * der Klasse WELT kann ein Objekt in der Programmierumgebung BlueJ erstellt
  * werden.
  *
- *
  * @author Ulli Freiberger
  *
  * @version 1.0 (2.1.2008)
- *
  */
 public class KarolWelt extends Welt
 {

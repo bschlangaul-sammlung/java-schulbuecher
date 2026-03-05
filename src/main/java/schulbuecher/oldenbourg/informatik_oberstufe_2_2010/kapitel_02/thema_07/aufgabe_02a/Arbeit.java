@@ -46,4 +46,8 @@ class Arbeit
         schmuggler.start();
         polizist.start();
     }
+
+    public static void main(String[] args) {
+        new Arbeit().Ausfuhren();
+    }
 }

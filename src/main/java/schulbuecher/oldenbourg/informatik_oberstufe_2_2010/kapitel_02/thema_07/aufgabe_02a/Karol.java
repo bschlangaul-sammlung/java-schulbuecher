@@ -22,11 +22,9 @@ import javakarol.Roboter;
  * erneut definiert (unter Aufruf der geerbten Methoden). Die restlichen
  * Methoden können über "geerbt von Roboter" aufgerufen werden.
  *
- *
  * @author Ulli Freiberger
  *
  * @version 1.0 (2.1.2008)
- *
  */
 public class Karol extends Roboter
 {
@@ -58,7 +56,6 @@ public class Karol extends Roboter
      * sonst ein Default-Roboter mit (1,1) und Blickrichtung 'S'
      *
      * @param inWelt Referenz auf die Welt in der der Roboter leben soll
-     *
      */
     public Karol(KarolWelt inWelt)
     {
