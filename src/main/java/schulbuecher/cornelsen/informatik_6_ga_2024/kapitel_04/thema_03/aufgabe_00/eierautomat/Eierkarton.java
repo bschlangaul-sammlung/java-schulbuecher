@@ -11,7 +11,6 @@ import schulbuecher.cornelsen.shared.graphics_and_games.Rechteck;
  */
 class Eierkarton extends Rechteck
 {
-
     /**
      * Legt das Aussehen des Kartons fest
      */

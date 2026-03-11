@@ -14,7 +14,9 @@ import schulbuecher.cornelsen.shared.graphics_and_games.Rechteck;
  */
 class Eierautomat
 {
-    /** Feld, das die Eierkartons im Automaten verwaltet **/
+    /**
+     * Feld, das die Eierkartons im Automaten verwaltet
+     **/
     protected ArrayList<Eierkarton> eierkartons;
 
     /**

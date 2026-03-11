@@ -13,16 +13,24 @@ import schulbuecher.cornelsen.shared.graphics_and_games.Text;
  */
 class Leo extends Thread
 {
-    /** Zufallsgenertator zum Erzeugen einer zufälligen Wartezeit */
+    /**
+     * Zufallsgenertator zum Erzeugen einer zufälligen Wartezeit
+     */
     Random zufallsgenerator;
 
-    /** Zähler für die Anzahl der Zugriffsversuche */
+    /**
+     * Zähler für die Anzahl der Zugriffsversuche
+     */
     int anzahlVersuche;
 
-    /** Textanzeige */
+    /**
+     * Textanzeige
+     */
     Text ausgabeAnna;
 
-    /** der zu verwendene Eierautomat */
+    /**
+     * der zu verwendene Eierautomat
+     */
     Eierautomat automat;
 
     /**
