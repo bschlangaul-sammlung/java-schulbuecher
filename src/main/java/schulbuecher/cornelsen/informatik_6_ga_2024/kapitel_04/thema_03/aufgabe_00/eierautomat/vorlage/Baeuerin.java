@@ -1,17 +1,17 @@
-package schulbuecher.cornelsen.informatik_6_ga_2024.kapitel_04.thema_03.aufgabe_00.eierautomat;
+package schulbuecher.cornelsen.informatik_6_ga_2024.kapitel_04.thema_03.aufgabe_00.eierautomat.vorlage;
 
 import java.util.Random;
 
 import schulbuecher.cornelsen.shared.graphics_and_games.Text;
 
 /**
- * Leo, ein extremer Eierkonsument
+ * Bäuerin, die einen Eierautomaten betreibt
  *
  * @author Johannes Neumeyer
  *
  * @version 1.0
  */
-class Leo extends Thread
+class Baeuerin extends Thread
 {
     /**
      * Zufallsgenertator zum Erzeugen einer zufälligen Wartezeit
@@ -26,7 +26,7 @@ class Leo extends Thread
     /**
      * Textanzeige
      */
-    Text ausgabeAnna;
+    Text ausgabeBäuerin;
 
     /**
      * der zu verwendene Eierautomat
@@ -34,23 +34,23 @@ class Leo extends Thread
     Eierautomat automat;
 
     /**
-     * Konstruktor für Objekte der Klasse Anna
+     * Konstruktor für Objekte der Klasse Baeuerin
      *
      * @param eierautomat der zu verwendene Eierautomat
      */
-    Leo(Eierautomat eierautomat)
+    Baeuerin(Eierautomat eierautomat)
     {
         super();
         automat = eierautomat;
         zufallsgenerator = new Random();
-        ausgabeAnna = new Text();
-        ausgabeAnna.PositionSetzen(550, 200);
+        ausgabeBäuerin = new Text();
+        ausgabeBäuerin.PositionSetzen(50, 200);
         anzahlVersuche = 0;
     }
 
     /**
-     * Leo versucht in unregelmäßigen Zeitabständen, einen Eierkarton aus dem
-     * Automaten zu holen.
+     * Die Bäuerin versucht in unregelmäßigen Zeitabständen, den Eierautomaten
+     * wieder neu zu befüllen.
      */
     @Override
     public void run()
@@ -59,16 +59,16 @@ class Leo extends Thread
         {
             // Textausgabe
             anzahlVersuche += 1;
-            ausgabeAnna.TextSetzen(anzahlVersuche + ". Eierholbesuch");
+            ausgabeBäuerin.TextSetzen(anzahlVersuche + ". Befüllbesuch");
 
-            // Eierholversuch
-            automat.EierHolen();
+            // Automatenbefüllversuch
+            automat.Befüllen();
 
-            // Simulation der Zeitdauer zwischen zwei Eierholversuchen
+            // Simulation der Zeitdauer zwischen zwei Befüllversuchen
             try
             {
-                // Zufallszahl aus dem Bereich [0; 200[
-                sleep(zufallsgenerator.nextInt(200));
+                sleep(zufallsgenerator.nextInt(4000)); // Zufallszahl aus dem
+                                                       // Bereich [0; 4000[
             }
             catch (InterruptedException e)
             {

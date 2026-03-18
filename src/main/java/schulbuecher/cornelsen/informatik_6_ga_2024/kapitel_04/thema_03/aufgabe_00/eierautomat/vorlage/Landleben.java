@@ -1,4 +1,4 @@
-package schulbuecher.cornelsen.informatik_6_ga_2024.kapitel_04.thema_03.aufgabe_00.eierautomat;
+package schulbuecher.cornelsen.informatik_6_ga_2024.kapitel_04.thema_03.aufgabe_00.eierautomat.vorlage;
 
 /**
  * Befüllen und Entleeren eines ländlichen Eierautomaten
@@ -14,8 +14,8 @@ class Landleben
      */
     Landleben()
     {
-        // Eierautomat automat = new Eierautomat();
-        Eierautomat automat = new BessererEierautomat();
+        Eierautomat automat = new Eierautomat();
+        // Eierautomat automat = new BessererEierautomat();
         Baeuerin b = new Baeuerin(automat);
         Leo l = new Leo(automat);
         b.start();

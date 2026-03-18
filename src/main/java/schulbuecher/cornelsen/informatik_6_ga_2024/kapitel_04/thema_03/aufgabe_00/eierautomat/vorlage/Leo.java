@@ -1,4 +1,4 @@
-package schulbuecher.cornelsen.informatik_6_ga_2024.kapitel_04.thema_03.aufgabe_00.eierautomat;
+package schulbuecher.cornelsen.informatik_6_ga_2024.kapitel_04.thema_03.aufgabe_00.eierautomat.vorlage;
 
 import java.util.Random;
 
@@ -67,8 +67,8 @@ class Leo extends Thread
             // Simulation der Zeitdauer zwischen zwei Eierholversuchen
             try
             {
-                // Zufallszahl aus dem Bereich [0; 200[
-                sleep(zufallsgenerator.nextInt(200));
+                sleep(zufallsgenerator.nextInt(200));// Zufallszahl aus dem
+                                                     // Bereich [0; 200[
             }
             catch (InterruptedException e)
             {
