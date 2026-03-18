@@ -26,7 +26,7 @@ class Leo extends Thread
     /**
      * Textanzeige
      */
-    Text ausgabeAnna;
+    Text ausgabeLeo;
 
     /**
      * der zu verwendene Eierautomat
@@ -34,7 +34,7 @@ class Leo extends Thread
     Eierautomat automat;
 
     /**
-     * Konstruktor für Objekte der Klasse Anna
+     * Konstruktor für Objekte der Klasse Leo
      *
      * @param eierautomat der zu verwendene Eierautomat
      */
@@ -43,8 +43,8 @@ class Leo extends Thread
         super();
         automat = eierautomat;
         zufallsgenerator = new Random();
-        ausgabeAnna = new Text();
-        ausgabeAnna.PositionSetzen(550, 200);
+        ausgabeLeo = new Text();
+        ausgabeLeo.PositionSetzen(550, 200);
         anzahlVersuche = 0;
     }
 
@@ -59,7 +59,7 @@ class Leo extends Thread
         {
             // Textausgabe
             anzahlVersuche += 1;
-            ausgabeAnna.TextSetzen(anzahlVersuche + ". Eierholbesuch");
+            ausgabeLeo.TextSetzen(anzahlVersuche + ". Eierholbesuch");
 
             // Eierholversuch
             automat.EierHolen();
