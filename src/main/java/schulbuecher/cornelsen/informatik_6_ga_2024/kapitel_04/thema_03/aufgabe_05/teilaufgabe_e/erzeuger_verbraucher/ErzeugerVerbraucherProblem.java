@@ -39,4 +39,9 @@ class ErzeugerVerbraucherProblem
             verbraucher.start();
         }
     }
+
+    public static void main(String[] args)
+    {
+        new ErzeugerVerbraucherProblem();
+    }
 }
