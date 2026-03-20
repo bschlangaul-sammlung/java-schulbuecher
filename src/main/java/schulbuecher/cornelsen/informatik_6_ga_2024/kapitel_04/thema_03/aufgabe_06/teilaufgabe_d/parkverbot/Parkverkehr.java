@@ -23,4 +23,9 @@ class Parkverkehr
             f.start();
         }
     }
+
+    public static void main(String[] args)
+    {
+        new Parkverkehr();
+    }
 }

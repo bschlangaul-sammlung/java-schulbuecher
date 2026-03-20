@@ -9,10 +9,14 @@ package schulbuecher.cornelsen.informatik_6_ga_2024.kapitel_04.thema_03.aufgabe_
  */
 class Fahrzeug extends Thread
 {
-    /** Id des Fahrzeugs */
+    /**
+     * Id des Fahrzeugs
+     */
     int kennzeichen;
 
-    /** angestrebter Parkplatz */
+    /**
+     * angestrebter Parkplatz
+     */
     Parkplatz zielParkplatz;
 
     /**

@@ -16,11 +16,15 @@ class Parkverkehr
     {
         Parkplatz p = new Parkplatz();
         Fahrzeug f;
-
         for (int id = 0; id < 10; id++)
         {
             f = new Fahrzeug(id, p);
             f.start();
         }
+    }
+
+    public static void main(String[] args)
+    {
+        new Parkverkehr();
     }
 }
