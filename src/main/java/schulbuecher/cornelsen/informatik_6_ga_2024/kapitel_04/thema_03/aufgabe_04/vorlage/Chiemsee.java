@@ -9,7 +9,9 @@ package schulbuecher.cornelsen.informatik_6_ga_2024.kapitel_04.thema_03.aufgabe_
  */
 class Chiemsee
 {
-    /** Verwaltung der Liegeplätze */
+    /**
+     * Verwaltung der Liegeplätze
+     */
     Stegverwaltung steg;
 
     /**
@@ -24,5 +26,10 @@ class Chiemsee
             boot = new Boot(i, steg);
             boot.start();
         }
+    }
+
+    public static void main(String[] args)
+    {
+        new Chiemsee();
     }
 }

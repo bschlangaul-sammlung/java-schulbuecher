@@ -27,4 +27,9 @@ class Chiemsee
             boot.start();
         }
     }
+
+    public static void main(String[] args)
+    {
+        new Chiemsee();
+    }
 }
