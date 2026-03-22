@@ -92,4 +92,9 @@ class SpeisendePhilosophen
             philosophen.get(zähler).start();
         }
     }
+
+    public static void main(String[] args)
+    {
+        new SpeisendePhilosophen();
+    }
 }
