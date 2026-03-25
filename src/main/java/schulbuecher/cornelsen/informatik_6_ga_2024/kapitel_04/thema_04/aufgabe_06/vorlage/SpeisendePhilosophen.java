@@ -17,7 +17,6 @@ class SpeisendePhilosophen
     /**
      * verwaltet alle Gabeln
      */
-
     private ArrayList<Gabel> gabeln;
 
     /**
