@@ -187,6 +187,10 @@
                     https://maven.apache.org/plugins/maven-javadoc-plugin/javadoc-mojo.html#verbose -->
                     <!-- To disable verbose output for each class -->
                     <verbose>false</verbose>
+                    <additionalJOptions>
+                        <additionalJOption>--snippet-path</additionalJOption>
+                        <additionalJOption>${project.basedir}/src/main/java</additionalJOption>
+                    </additionalJOptions>
                 </configuration>
                 <executions>
                     <execution>
