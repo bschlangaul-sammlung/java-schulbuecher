@@ -19,3 +19,7 @@ docs_open:
 build:
     mvn clean
     mvn compile
+
+
+cli *args:
+	mvn --quiet exec:java -Dexec.mainClass=schulbuecher.tools.PackageInfoGenerator -Dexec.args="{{args}}"

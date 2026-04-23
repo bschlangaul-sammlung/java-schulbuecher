@@ -139,7 +139,7 @@ public final class PackageInfoGenerator
 
     private static String buildPackageInfoContent(String packageName)
     {
-        return "/**\n" + " * Paketdokumentation.\n" + " */\n" + "package "
+        return "/**\n" + " *\n" + " */\n" + "package "
                 + packageName + ";\n";
     }
 
