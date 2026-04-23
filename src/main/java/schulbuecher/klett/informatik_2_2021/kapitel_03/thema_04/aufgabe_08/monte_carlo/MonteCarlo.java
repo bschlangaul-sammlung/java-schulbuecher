@@ -6,10 +6,13 @@ import java.awt.geom.Rectangle2D;
 import schulbuecher.klett.shared.figures.Canvas;
 
 /**
- * Simuliert eine Schildkröte zum Zeichnen auf einem Canvas (Monte-Carlo-Methode).
+ * Simuliert eine Schildkröte zum Zeichnen auf einem Canvas
+ * (Monte-Carlo-Methode).
  *
- * <p>Quellcode:
- * {@snippet file="schulbuecher/klett/informatik_2_2021/kapitel_03/thema_04/aufgabe_08/monte_carlo/MonteCarlo.java"}
+ * <p>
+ * Quellcode:
+ * {@snippet file =
+ * "schulbuecher/klett/informatik_2_2021/kapitel_03/thema_04/aufgabe_08/monte_carlo/MonteCarlo.java"}
  */
 public class MonteCarlo
 {

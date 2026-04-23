@@ -169,6 +169,12 @@
                     </dependencies>
                 </plugin>
 
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-wrapper-plugin</artifactId>
+                    <version>3.3.4</version>
+                </plugin>
+
             </plugins>
         </pluginManagement>
         <plugins>
@@ -288,6 +294,15 @@
                     </execution>
                 </executions>
             </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-wrapper-plugin</artifactId>
+        <configuration>
+            <mavenVersion>3.9.15</mavenVersion>
+            <distributionType>bin</distributionType>
+        </configuration>
+      </plugin>
+
         </plugins>
         <!-- Um *.java Dateien im jar Archiv zu haben. -->
         <resources>

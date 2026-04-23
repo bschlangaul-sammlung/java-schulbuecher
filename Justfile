@@ -1,16 +1,16 @@
 export JAVA_HOME := "/usr/lib/jvm/java-25-openjdk-amd64"
 
 test:
-    mvn clean
-    mvn test
+    ./mvnw clean
+    ./mvnw test
 
 format:
-    mvn formatter:format
+    ./mvnw formatter:format
 
 doc:
-    mvn clean
+    ./mvnw clean
     rm -rf target/reports/apidocs
-    mvn javadoc:javadoc
+    ./mvnw javadoc:javadoc
     xdg-open target/reports/apidocs/index.html
 
 docs: doc
@@ -19,9 +19,8 @@ docs_open:
     xdg-open target/reports/apidocs/index.html
 
 build:
-    mvn clean
-    mvn compile
-
+    ./mvnw clean
+    ./mvnw compile
 
 cli *args:
-	mvn --quiet exec:java -Dexec.mainClass=schulbuecher.tools.PackageInfoGenerator -Dexec.args="{{args}}"
+    ./mvnw --quiet exec:java -Dexec.mainClass=schulbuecher.tools.PackageInfoGenerator -Dexec.args="{{args}}"
