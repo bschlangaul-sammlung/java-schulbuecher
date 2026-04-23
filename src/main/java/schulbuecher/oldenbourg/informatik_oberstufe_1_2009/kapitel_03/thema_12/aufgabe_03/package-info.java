@@ -1,4 +1,4 @@
 /**
- *
+ * Aufgabe <b>3</b>
  */
 package schulbuecher.oldenbourg.informatik_oberstufe_1_2009.kapitel_03.thema_12.aufgabe_03;

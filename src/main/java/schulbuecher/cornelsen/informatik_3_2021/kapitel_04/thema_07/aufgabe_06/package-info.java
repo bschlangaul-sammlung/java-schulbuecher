@@ -1,4 +1,4 @@
 /**
- *
+ * Aufgabe <b>6</b>
  */
 package schulbuecher.cornelsen.informatik_3_2021.kapitel_04.thema_07.aufgabe_06;

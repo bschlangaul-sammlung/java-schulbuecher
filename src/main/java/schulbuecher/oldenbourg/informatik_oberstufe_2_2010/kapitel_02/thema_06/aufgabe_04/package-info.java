@@ -1,4 +1,4 @@
 /**
- *
+ * Aufgabe <b>4</b>
  */
 package schulbuecher.oldenbourg.informatik_oberstufe_2_2010.kapitel_02.thema_06.aufgabe_04;
