@@ -1,0 +1,4 @@
+/**
+ *
+ */
+package schulbuecher.paetec.informatik_10_2008.gesicht.interna;

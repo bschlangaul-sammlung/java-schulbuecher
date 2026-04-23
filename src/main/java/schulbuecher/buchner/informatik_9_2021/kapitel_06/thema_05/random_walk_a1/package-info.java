@@ -1,0 +1,4 @@
+/**
+ *
+ */
+package schulbuecher.buchner.informatik_9_2021.kapitel_06.thema_05.random_walk_a1;

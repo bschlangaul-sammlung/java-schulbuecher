@@ -1,0 +1,4 @@
+/**
+ *
+ */
+package schulbuecher.klett.shared;

@@ -139,8 +139,7 @@ public final class PackageInfoGenerator
 
     private static String buildPackageInfoContent(String packageName)
     {
-        return "/**\n" + " *\n" + " */\n" + "package "
-                + packageName + ";\n";
+        return "/**\n" + " *\n" + " */\n" + "package " + packageName + ";\n";
     }
 
     private static Path detectSourceRoot(Path packagePath)
