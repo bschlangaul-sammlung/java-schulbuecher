@@ -5,7 +5,7 @@ import java.awt.geom.Rectangle2D;
 
 import schulbuecher.klett.shared.figures.Canvas;
 
-class MonteCarlo
+public class MonteCarlo
 {
     double xPosition;
 

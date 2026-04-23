@@ -1,3 +1,5 @@
+export JAVA_HOME := "/usr/lib/jvm/java-25-openjdk-amd64"
+
 test:
     mvn clean
     mvn test
