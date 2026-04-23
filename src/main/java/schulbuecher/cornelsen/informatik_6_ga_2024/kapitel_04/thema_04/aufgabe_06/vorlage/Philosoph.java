@@ -87,7 +87,7 @@ class Philosoph extends Thread
             }
             catch (InterruptedException e)
             {
-            } ; // denken
+            }  // denken
             gabelLinks.Aufnehmen(tellerfarbe);
             gabelRechts.Aufnehmen(tellerfarbe);
             try
@@ -96,7 +96,7 @@ class Philosoph extends Thread
             }
             catch (InterruptedException e)
             {
-            } ; // essen
+            } // essen
             gabelLinks.Ablegen();
             gabelRechts.Ablegen();
         }
