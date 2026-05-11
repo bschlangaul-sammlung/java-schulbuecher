@@ -1,4 +1,4 @@
-package schulbuecher.isb.abitur.illustrierende_2023.aufgabe_01.skipass;
+package schulbuecher.isb.abitur.illustrierende_2023.ga.aufgabe_i.teilaufgabe_01.skipass;
 
 public class BinBaum
 {

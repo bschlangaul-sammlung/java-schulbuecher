@@ -6,6 +6,8 @@ public class Athlet
 
     String nation;
 
+    String sportart;
+
     String nameGeben()
     {
         return name;
@@ -14,5 +16,10 @@ public class Athlet
     String nationGeben()
     {
         return nation;
+    }
+
+    String sportartGeben()
+    {
+        return sportart;
     }
 }
