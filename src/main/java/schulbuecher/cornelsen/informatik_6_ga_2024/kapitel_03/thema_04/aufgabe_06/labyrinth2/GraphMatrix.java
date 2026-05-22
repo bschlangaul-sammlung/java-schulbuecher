@@ -44,12 +44,12 @@ class GraphMatrix
      */
     GraphMatrix()
     {
-        knoten = new ArrayList<Knoten>();
+        knoten = new ArrayList<>();
         matrix = new ArrayList<ArrayList<Integer>>();
-        kanten = new ArrayList<KantenSymbol>();
-        besuchteKnoten = new ArrayList<Integer>();
-        aktuellerWeg = new ArrayList<Knoten>();
-        optimalerWeg = new ArrayList<Knoten>();
+        kanten = new ArrayList<>();
+        besuchteKnoten = new ArrayList<>();
+        aktuellerWeg = new ArrayList<>();
+        optimalerWeg = new ArrayList<>();
     }
 
     /**
