@@ -2,6 +2,9 @@ package schulbuecher.cornelsen.informatik_6_ga_2024.kapitel_03.thema_04.aufgabe_
 
 import java.util.ArrayList;
 
+import schulbuecher.cornelsen.shared.graph_visualisierung.KantenSymbol;
+import schulbuecher.cornelsen.shared.graph_visualisierung.Knoten;
+
 /**
  * Verwaltet einen ungerichteten, gewichteten Graphen mittels Adjazenzmatrix
  *
@@ -10,6 +13,7 @@ import java.util.ArrayList;
  * @version 1.0
  */
 class GraphMatrix
+        extends schulbuecher.cornelsen.shared.graph_visualisierung.GraphMatrix
 {
     /**
      * Feld der Knoten des Graphen
@@ -66,7 +70,7 @@ class GraphMatrix
      * @param x x-Koordinate für die Anzeige des Knotens
      * @param y y-Koordinate für die Anzeige des Knotens
      */
-    void KnotenEinfügen(String bezeichner, int x, int y)
+    public void KnotenEinfügen(String bezeichner, int x, int y)
     {
         knoten.add(new Knoten(bezeichner, x, y));
         for (int index = 0; index < matrix.size(); index++)
@@ -88,7 +92,7 @@ class GraphMatrix
      *
      * @return Referenz auf das Knotenobjekt oder null
      */
-    private Knoten KnotenGeben(String bezeichner)
+    public Knoten KnotenGeben(String bezeichner)
     {
         for (Knoten k : knoten)
         {
@@ -109,7 +113,7 @@ class GraphMatrix
      * @return Indexnummer des Knotens im Knotenfeld; 0 <= res <=
      *     knoten.size()-1 bzw. -1
      */
-    int KnotenNummerGeben(String bezeichner)
+    public int KnotenNummerGeben(String bezeichner)
     {
         for (int index = 0; index < knoten.size(); index++)
         {
@@ -128,7 +132,7 @@ class GraphMatrix
      *
      * @return Bezeichner des Knotens
      */
-    String KnotenBezeichnerGeben(int knotenNummer)
+    public String KnotenBezeichnerGeben(int knotenNummer)
     {
         if ((knotenNummer < knoten.size()) && (knotenNummer >= 0))
         {
@@ -148,7 +152,7 @@ class GraphMatrix
      * @param nach Bezeichner des Endknotens
      * @param gewichtung Gewichtung der Kante als Ganzzahl
      */
-    void KanteEinfügen(String von, String nach, int gewichtung)
+    public void KanteEinfügen(String von, String nach, int gewichtung)
     {
         int vonNummer, nachNummer;
         vonNummer = KnotenNummerGeben(von);
@@ -169,7 +173,7 @@ class GraphMatrix
      *
      * @return Anzahl der Knoten
      */
-    int KnotenAnzahlGeben()
+    public int KnotenAnzahlGeben()
     {
         return knoten.size();
     }
@@ -183,7 +187,7 @@ class GraphMatrix
      *
      * @return Gewichtung der Kante
      */
-    int KanteGewichtGeben(String von, String nach)
+    public int KanteGewichtGeben(String von, String nach)
     {
         int vonNummer, nachNummer;
 

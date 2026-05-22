@@ -2,6 +2,8 @@ package schulbuecher.cornelsen.informatik_6_ga_2024.kapitel_03.thema_04.aufgabe_
 
 import java.util.*;
 
+import schulbuecher.cornelsen.shared.graph_visualisierung.KnotenSymbol;
+
 /**
  * Beschreibt einen Knoten für die Graphendarstellung mit Adjazenzlisten
  *
@@ -37,7 +39,7 @@ class Knoten
     {
         this.bezeichner = bezeichner;
         symbol = new KnotenSymbol(x, y, 20, "weiß", bezeichner);
-        adjazenzliste = new ArrayList<Kante>();
+        adjazenzliste = new ArrayList<>();
     }
 
     /**

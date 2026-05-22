@@ -1,5 +1,7 @@
 package schulbuecher.cornelsen.informatik_6_ga_2024.kapitel_03.thema_04.aufgabe_07.teilaufgabe_b.handelsreisende;
 
+import schulbuecher.cornelsen.shared.graph_visualisierung.Lesen;
+
 /**
  * Der Handlungsreisende: Alle Orte besuchen
  *
