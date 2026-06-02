@@ -1,6 +1,7 @@
 package schulbuecher.cornelsen.informatik_6_ga_2024.kapitel_03.thema_04.aufgabe_03.labyrinth;
 
 import java.util.ArrayList;
+import schulbuecher.cornelsen.shared.graph_visualisierung.KantenSymbol;
 
 /**
  * Verwaltet einen ungerichteten, gewichteten Graphen mittels Adjazenzmatrix
@@ -10,6 +11,7 @@ import java.util.ArrayList;
  * @version 1.0
  */
 class GraphMatrix
+        extends schulbuecher.cornelsen.shared.graph_visualisierung.GraphMatrix
 {
     /**
      * Feld der Knoten des Graphen
@@ -140,7 +142,7 @@ class GraphMatrix
      *
      * @return Anzahl der Knoten
      */
-    int KnotenAnzahlGeben()
+    public int KnotenAnzahlGeben()
     {
         return knoten.size();
     }

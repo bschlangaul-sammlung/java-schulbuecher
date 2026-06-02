@@ -227,6 +227,19 @@ public class KantenSymbol
     }
 
     /**
+     * Setzt die Sichtbarkeit des Symbols
+     *
+     * @param sichtbar wenn wahr, ist das Symbol sichtbar
+     */
+    public void SichtbarkeitSetzen(boolean sichtbar)
+    {
+        außen.SichtbarkeitSetzen(sichtbar);
+        innen.SichtbarkeitSetzen(sichtbar && (breite >= 4));
+        text.SichtbarkeitSetzen(sichtbar);
+        pfeil.SichtbarkeitSetzen(sichtbar && gerichtet);
+    }
+
+    /**
      * <p>
      * Diese Methode wurde nachträglich hinzugefügt. Sie ist nicht im originalen
      * Projekt zu finden.

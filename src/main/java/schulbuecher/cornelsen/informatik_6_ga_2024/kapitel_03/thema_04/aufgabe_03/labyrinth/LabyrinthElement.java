@@ -1,5 +1,7 @@
 package schulbuecher.cornelsen.informatik_6_ga_2024.kapitel_03.thema_04.aufgabe_03.labyrinth;
 
+import schulbuecher.cornelsen.shared.graphics_and_games.Rechteck;
+
 /**
  * Oberklasse aller Bausteine des Labyrinths
  *

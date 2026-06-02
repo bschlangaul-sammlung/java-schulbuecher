@@ -1,5 +1,7 @@
 package schulbuecher.cornelsen.informatik_6_ga_2024.kapitel_03.thema_04.aufgabe_03.labyrinth;
 
+import schulbuecher.cornelsen.shared.graph_visualisierung.KnotenSymbol;
+
 /**
  * Beschreibt einen Knoten
  *
@@ -7,7 +9,7 @@ package schulbuecher.cornelsen.informatik_6_ga_2024.kapitel_03.thema_04.aufgabe_
  *
  * @version 1.0
  */
-class Knoten
+class Knoten extends schulbuecher.cornelsen.shared.graph_visualisierung.Knoten
 {
     /**
      * x-Koordinate des Knotens
@@ -37,6 +39,7 @@ class Knoten
      */
     Knoten(int x, int y)
     {
+        super(null, x, y);
         this.x = x;
         this.y = y;
         symbol = new KnotenSymbol(
@@ -53,7 +56,7 @@ class Knoten
      *
      * @return x-Koordinate
      */
-    int XGeben()
+    public int XGeben()
     {
         return x;
     }
@@ -63,7 +66,7 @@ class Knoten
      *
      * @return y-Koordinate
      */
-    int YGeben()
+    public int YGeben()
     {
         return y;
     }
@@ -73,7 +76,7 @@ class Knoten
      *
      * @return Knotensymbol
      */
-    KnotenSymbol SymbolGeben()
+    public KnotenSymbol SymbolGeben()
     {
         return symbol;
     }
@@ -83,7 +86,7 @@ class Knoten
      *
      * @return Vorgänger
      */
-    Knoten VorgängerGeben()
+    public Knoten VorgängerGeben()
     {
         return vorgänger;
     }
@@ -93,7 +96,7 @@ class Knoten
      *
      * @param v der Vorgänger
      */
-    void VorgängerSetzen(Knoten v)
+    public void VorgängerSetzen(Knoten v)
     {
         vorgänger = v;
     }
@@ -103,7 +106,7 @@ class Knoten
      *
      * @param f die (neue) Farbe
      */
-    void FarbeSetzen(String f)
+    public void FarbeSetzen(String f)
     {
         symbol.FarbeSetzen(f);
     }

@@ -1,6 +1,8 @@
 package schulbuecher.cornelsen.informatik_6_ga_2024.kapitel_03.thema_04.aufgabe_03.labyrinth;
 
-import java.util.*;
+import java.util.ArrayList;
+
+import schulbuecher.cornelsen.shared.graphics_and_games.Figur;
 
 /**
  * Theseus erhält einen Weg, auf dem er zum Ausgang findet
@@ -77,7 +79,7 @@ class Theseus extends Figur
      * Bewegt Theseus ein Feld in Richtung Ausgang
      */
     @Override
-    void AktionAusführen()
+    public void AktionAusführen()
     {
         if ((weg != null) && (schritte < weg.size()))
         {
