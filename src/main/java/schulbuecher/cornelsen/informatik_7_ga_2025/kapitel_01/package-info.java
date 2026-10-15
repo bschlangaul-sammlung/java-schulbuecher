@@ -1,0 +1,1 @@
+package schulbuecher.cornelsen.informatik_7_ga_2025.kapitel_01;

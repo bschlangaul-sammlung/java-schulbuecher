@@ -15,8 +15,8 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <!-- javadoc: release version 13 not supported -->
-        <maven.compiler.target>25</maven.compiler.target>
-        <maven.compiler.source>25</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <maven.compiler.source>17</maven.compiler.source>
     </properties>
 
     <repositories>
@@ -193,10 +193,6 @@
                     https://maven.apache.org/plugins/maven-javadoc-plugin/javadoc-mojo.html#verbose -->
                     <!-- To disable verbose output for each class -->
                     <verbose>false</verbose>
-                    <additionalJOptions>
-                        <additionalJOption>--snippet-path</additionalJOption>
-                        <additionalJOption>${project.basedir}/src/main/java</additionalJOption>
-                    </additionalJOptions>
                 </configuration>
                 <executions>
                     <execution>

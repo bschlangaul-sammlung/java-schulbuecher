@@ -294,7 +294,7 @@ class Zeichenfenster
     /**
      * Meldet die aktuelle Breite der Malfläche.
      *
-     * @returns Breite der Malfläche
+     * @return Breite der Malfläche
      */
     static int MalflächenBreiteGeben()
     {
@@ -308,7 +308,7 @@ class Zeichenfenster
     /**
      * Meldet die aktuelle Höhe der Malfläche.
      *
-     * @returns Höhe der Malfläche
+     * @return Höhe der Malfläche
      */
     static int MalflächenHöheGeben()
     {

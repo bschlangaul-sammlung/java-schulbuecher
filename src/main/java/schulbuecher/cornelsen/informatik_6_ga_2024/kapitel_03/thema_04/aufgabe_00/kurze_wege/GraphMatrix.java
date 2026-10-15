@@ -152,7 +152,7 @@ class GraphMatrix extends Ereignisbehandlung
      *
      * @param bezeichner Bezeichner des Knoten, der gesucht wird
      *
-     * @return Indexnummer des Knotens im Knotenfeld; 0 <= res <=
+     * @return Indexnummer des Knotens im Knotenfeld; 0 &lt;= res &lt;=
      *     knoten.size()-1 bzw. -1
      */
     int KnotenNummerGeben(String bezeichner)
@@ -170,7 +170,8 @@ class GraphMatrix extends Ereignisbehandlung
     /**
      * Gibt die Bezeichnung eines Knotens mit der internen Knotennummer
      *
-     * @param Indexnummer des Knotens im Knotenarray; 0<= x <= knoten.size()
+     * @param knotenNummer Indexnummer des Knotens im Knotenarray; 0 &lt;= x
+     *     &lt;= knoten.size()
      *
      * @return Bezeichner des Knotens
      */

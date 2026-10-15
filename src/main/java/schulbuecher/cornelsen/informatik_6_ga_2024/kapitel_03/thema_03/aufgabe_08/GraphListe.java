@@ -72,7 +72,8 @@ class GraphListe
     /**
      * Gibt die Bezeichnung eines Knotens mit der internen Knotennummer
      *
-     * @param Indexnummer des Knotens im Knotenarray; 0<= x <= knoten.size()
+     * @param knotenNummer Indexnummer des Knotens im Knotenarray; 0 &lt;= x
+     *     &lt;= knoten.size()
      *
      * @return Bezeichner des Knotens
      */

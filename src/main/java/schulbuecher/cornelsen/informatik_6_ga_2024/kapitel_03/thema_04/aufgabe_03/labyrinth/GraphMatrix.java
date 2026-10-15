@@ -96,7 +96,7 @@ class GraphMatrix
      * @param x x-Koordinate des Knotens
      * @param y y-Koordinate des Knotens
      *
-     * @return Indexnummer des Knotens im Knotenfeld; 0 <= res <=
+     * @return Indexnummer des Knotens im Knotenfeld; 0 &lt;= res &lt;=
      *     knoten.size()-1 bzw. -1
      */
     private int KnotenNummerGeben(int x, int y)
